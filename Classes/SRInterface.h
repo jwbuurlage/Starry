@@ -68,7 +68,7 @@
 -(void)loadModules;
 -(void)renderInterface;
 -(void)drawModules;
--(void)touchEnded;
+-(void)touchEndedAndExecute:(BOOL)result;
 -(void)hideInterface;
 -(void)showInterface;
 -(void)hideAllModules;
