@@ -102,7 +102,7 @@
 		dY += y;
 		
 		// Als er teveel wordt verschuift cancel de clicks
-		if ( -10 < dX < 10 || -10 < dY < 10) {
+		if ( -15 < dX < 15 || -15 < dY < 15) {
 			//NSLog(@"Click canceld");
 			ScreenClick = NO;
 			if(UIClick) {
@@ -169,12 +169,19 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	if(UIClick) {
-		NSLog(@"Clicked the interface");
+	
+	NSUInteger touchCount = [touches count]; // Voor kliken mag maar 1 touch gebruikt worden
+	
+	if(UIClick && touchCount == 1) {
+		//NSLog(@"Clicked the interface");
 		[[renderer interface] touchEndedAndExecute:YES];	
 	}
-	else if(ScreenClick && dTouch < 4) { // Het scherm mag niet lang aangeraakt worden vandaar dTouch < 4
-		NSLog(@"Clicked the screen");
+	else if(ScreenClick && dTouch < 4 && touchCount == 1) { // Het scherm mag niet lang aangeraakt worden vandaar dTouch < 4
+		UITouch *aTouch = [touches anyObject];
+		int x = [aTouch locationInView:theView].x;
+		int y = [aTouch locationInView:theView].y;
+		NSLog(@"Clicked the screen at location x:%i y:%i",x,y);
+		
 	}
 	else {
 	UITouch *aTouch = [touches anyObject];
