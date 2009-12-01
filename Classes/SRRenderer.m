@@ -46,7 +46,14 @@
 		[interface loadTexture:@"saturn.png" intoLocation:textures[10]];
 		[interface loadTexture:@"uranus.png" intoLocation:textures[11]];
 		[interface loadTexture:@"neptune.png" intoLocation:textures[12]];
-
+		
+		NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+		
+		brightnessFactor = [prefs floatForKey:@"brightness"];
+		if(brightnessFactor <= 0) {
+			brightnessFactor = 1.0;
+			[prefs setFloat:brightnessFactor forKey:@"brightness"];
+		}
 		
 		// set de appdelegate
 		appDelegate = [[UIApplication sharedApplication] delegate];
@@ -252,8 +259,8 @@
 	GLfloat size = 0;
 	while(i <= starNum) {
 		if(starPoints[(i*8)+7] != 0) {
-			if((starPoints[(i*8)+7] * zoomFactor) > 1.0) {
-				size = starPoints[(i*8)+7] * zoomFactor;
+			if((starPoints[(i*8)+7] * zoomFactor * brightnessFactor) > 1.0) {
+				size = starPoints[(i*8)+7] * zoomFactor * brightnessFactor;
 				glPointSize(size);
 			glDrawArrays(GL_POINTS, i, 1);
 			}
@@ -460,7 +467,7 @@
 	[neptune setViewOrigin:[earth position]];*/
 	
 	const GLfloat planetPointsTmp[] = {
-		[sun position].x, [sun position].y, [sun position].z,				1.0, 1.0, 0.0, 1.0, 50.0, // Sun point, yellow
+		[sun position].x, [sun position].y, [sun position].z,				1.0, 1.0, 0.0, 1.0, 30.0, // Sun point, yellow
 		[jupiter position].x, [jupiter position].y, [jupiter position].z,	1.0, 1.0, 1.0, 1.0, 20.0,  // Sun point, red
 		[mars position].x, [mars position].y, [mars position].z,			1.0, 1.0, 1.0, 1.0, 20.0,// Sun point, red
 		[mercury position].x, [mercury position].y, [mercury position].z,	1.0, 1.0, 1.0, 1.0, 10.0,// Sun point, red
@@ -478,6 +485,11 @@
 		//NSLog(@"%i", i);
 	}
 	
+}
+
+-(void)brightnessChanged {
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+	brightnessFactor = [prefs floatForKey:@"brightness"];	
 }
 
 @end

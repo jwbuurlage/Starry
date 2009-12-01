@@ -61,6 +61,7 @@
 	GLuint textures[16];
 
 	float zoomFactor;
+	float brightnessFactor;
 }
 
 @property (readonly) SRInterface* interface;
@@ -76,6 +77,8 @@
 -(void)drawEcliptic;
 -(SRCamera*)camera;
 -(void)recalculatePlanetaryPositions;
+-(void)brightnessChanged;
+
 
 
 @end

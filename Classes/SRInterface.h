@@ -66,6 +66,8 @@
 	BOOL defaultTextureBool;
 	
 	float alphaDefault;
+	
+	BOOL redOverlay;
 }
 
 @property (readonly) SRTimeModule* timeModule;
@@ -78,7 +80,6 @@
 -(void)loadMenu;
 -(void)loadModules;
 -(void)renderInterface;
--(void)drawModules;
 -(void)touchEndedAndExecute:(BOOL)result;
 -(void)hideInterface;
 -(void)showInterface;
@@ -89,6 +90,7 @@
 - (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle;
 -(void)bringUpTheKeyboardWithText:(NSString *)placeholder onLocation:(int)location andSendResultsTo:(id)delegate;
 -(void)fadeDefaultTexture;
+-(void)drawRedOverlay;
 -(void)fade:(NSTimer*)theTimer;
 
 @end

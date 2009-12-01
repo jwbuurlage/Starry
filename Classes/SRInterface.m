@@ -24,6 +24,9 @@
 	if(self = [super init]) {
 		renderer = theRenderer;
 		
+		NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+		redOverlay = [prefs boolForKey:@"redOverlay"];
+		
 		[self loadMenu];
 		[self loadModules];
 		[self loadNameplate];
@@ -252,6 +255,7 @@
 	
 	glTranslatef(-xTranslate, 0, 0);
 	
+
 	if(isClicking) {
 		GLfloat touchCorners[] = {
 			rectClicked.origin.x, rectClicked.origin.y + rectClicked.size.height, 0,
@@ -274,11 +278,12 @@
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 	}
 	
+	if(redOverlay) {
+		[self drawRedOverlay];
+	}
+	
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 		
-	glTranslatef(-xTranslate, 0, 0);
-
-	[self drawModules];
 	
 	glEnable(GL_DEPTH_TEST);
 	glDepthMask(GL_TRUE); 
@@ -286,8 +291,24 @@
 	glDisable(GL_TEXTURE_2D);
 }
 
--(void)drawModules {
-
+-(void)drawRedOverlay {
+	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+	glDisable(GL_TEXTURE_2D);
+	const GLfloat redOverlay[] = {
+		0.0, 0.0, 0.0,			1.0f, 0.0f, 0.0f, 0.5f,			//bottom-left
+		0.0, 320.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//top-left
+		480.0, 0.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//bottom-right
+		480.0, 320.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//top-right
+	};
+	
+	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_COLOR);
+	glEnableClientState(GL_VERTEX_ARRAY);
+	//glEnableClientState(GL_COLOR_ARRAY);
+	glDisableClientState(GL_COLOR_ARRAY);
+	glVertexPointer(3, GL_FLOAT, 28, redOverlay);
+	//glColorPointer(4, GL_FLOAT, 28, &redOverlay[3]);	
+	glColor4f(0.5f, 0.0f, 0.0f, 1.0f);
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
 
 -(BOOL)UIElementAtPoint:(CGPoint)point {
@@ -422,7 +443,32 @@
 		else if(clicker == @"gps-toggle") {
 			[locationModule toggleGPS];
 		}
-	
+		else if(clicker == @"red") {
+			NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+			if(!redOverlay) {
+				[prefs setBool:TRUE forKey:@"redOverlay"];
+				redOverlay = TRUE;
+			}
+			else {
+				[prefs setBool:FALSE forKey:@"redOverlay"];
+				redOverlay = FALSE;
+			}
+		}
+		else if(clicker == @"brightness_plus") {
+			NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+			float brightness = [prefs floatForKey:@"brightness"];
+			brightness += 0.1;
+			[prefs setFloat:brightness forKey:@"brightness"];
+			[renderer brightnessChanged];
+		}
+		else if(clicker == @"brightness_minus") {
+			NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+			float brightness = [prefs floatForKey:@"brightness"];
+			brightness -= 0.1;
+			[prefs setFloat:brightness forKey:@"brightness"];
+			[renderer brightnessChanged];
+		}		
+
 		if(flagToggle) {
 			if(![posiTimer isValid] && ![negiTimer isValid]) {
 				if(xTranslate == 0) {
