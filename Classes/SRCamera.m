@@ -79,6 +79,12 @@
 
 - (void)rotateCameraWithX:(int)deltaX Y:(int)deltaY {
 	
+	float rotationConstant = 5.5850536;
+	// Berekening het scherm is 320 pixels hoog. fieldOfView is normaal 0.3*PI.
+	// 0.3PI * 180 / PI = 54 dus de complete verticale hoek in beeld is altijd 54.
+	// De bereking is deltaX/constante/fieldOfView=altitude
+	// 54=320/(x/0.3PI) => x=5.5850536
+	
 	if(swipeHor) {
 		swipeHor = FALSE;
 		accH = 0;
@@ -87,8 +93,8 @@
 		swipeVer = FALSE;
 		accV = 0;
 	}
-	float deltaAzimuth = deltaY / (6/fieldOfView);
-	float deltaAltitude = -deltaX / (6/fieldOfView);
+	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView);
+	float deltaAltitude = -deltaX / (rotationConstant/fieldOfView);
 	azimuth += deltaAzimuth; // Waarom fieldOfView? Waarom 4? Kwam goed uit... 6 komt beter uit
 	azimuth = fmod(azimuth, 360); // Wat is dit?
 	altitude += deltaAltitude;

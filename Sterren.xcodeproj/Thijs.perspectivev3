@@ -230,8 +230,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -274,13 +272,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
+									<integer>18</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {258, 780}}</string>
+							<string>{{0, 2}, {258, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -308,12 +306,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>asm __dyld__dyld_start  0x2fe01028</string>
+								<string>SRCamera.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,7 +321,25 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>asm __dyld__dyld_start  0x2fe01028</string>
+										<string>SRCamera.m</string>
+										<key>_historyCapacity</key>
+										<integer>0</integer>
+										<key>bookmark</key>
+										<string>764457D310C5B57500AB935D</string>
+										<key>history</key>
+										<array>
+											<string>7644575110C5A7FC00AB935D</string>
+											<string>764457B010C5AE9900AB935D</string>
+											<string>764457B110C5AE9900AB935D</string>
+											<string>764457B210C5AE9900AB935D</string>
+											<string>764457B910C5B0C200AB935D</string>
+											<string>764457BC10C5B0C200AB935D</string>
+											<string>764457CE10C5B57500AB935D</string>
+											<string>764457CF10C5B57500AB935D</string>
+											<string>764457D010C5B57500AB935D</string>
+											<string>764457D110C5B57500AB935D</string>
+											<string>764457D210C5B57500AB935D</string>
+										</array>
 									</dict>
 									<key>SplitCount</key>
 									<string>1</string>

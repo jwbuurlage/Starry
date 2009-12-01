@@ -183,6 +183,8 @@
 		// Tenopzichte van het midden uitrekenen iPhone screen (480*320)
 		int dmX = -x+160;
 		int dmY = -y+240;
+		
+		// Voor het testen zoom de camera daar heen
 		[camera rotateCameraWithX:dmX 
 								Y:dmY];
 		
