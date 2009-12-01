@@ -95,11 +95,28 @@
 	}
 	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView);
 	float deltaAltitude = -deltaX / (rotationConstant/fieldOfView);
-	azimuth += deltaAzimuth; // Waarom fieldOfView? Waarom 4? Kwam goed uit... 6 komt beter uit
-	azimuth = fmod(azimuth, 360); // Wat is dit?
+	azimuth += deltaAzimuth;
+	azimuth = fmod(azimuth, 360); // Modulo 360
 	altitude += deltaAltitude;
 	//NSLog(@"Rotate Camera With X:%i Y:%i dAz:%f dAl:%f az:%f al:%f fov:%f",deltaX,deltaY,deltaAzimuth,deltaAltitude,azimuth,altitude,fieldOfView);
 }
+
+// Berekeningen voor camera locatie
+
+-(float)calculateAzimuthWithY:(int)deltaY {
+	float deltaAzimuth = deltaY / (5.5850536/fieldOfView);
+	float result = fmod((azimuth + deltaAzimuth), 360);
+	return result;
+}
+
+-(float)calculateAltitudeWithX:(int)deltaX {
+	float deltaAltitude = -deltaX / (rotationConstant/fieldOfView);
+	float result = altitude + deltaAltitude;
+	return result;
+
+}
+
+
 
 - (void)initiateHorizontalSwipeWithX:(int)theX {
 	swipeHor = YES;

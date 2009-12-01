@@ -313,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRCamera.m</string>
+								<string>asm __dyld__dyld_start  0x2fe01028</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,11 +321,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRCamera.m</string>
+										<string>asm __dyld__dyld_start  0x2fe01028</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>764457D310C5B57500AB935D</string>
+										<string>764457DD10C5B72500AB935D</string>
 										<key>history</key>
 										<array>
 											<string>7644575110C5A7FC00AB935D</string>
@@ -655,6 +655,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>764457DE10C5B72500AB935D</string>
 		<string>7644574C10C5A5A900AB935D</string>
 		<string>7644574E10C5A5A900AB935D</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>

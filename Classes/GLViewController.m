@@ -180,15 +180,21 @@
 		UITouch *aTouch = [touches anyObject];
 		int x = [aTouch locationInView:theView].x;
 		int y = [aTouch locationInView:theView].y;
-		// Tenopzichte van het midden uitrekenen iPhone screen (480*320)
-		int dmX = -x+160;
-		int dmY = -y+240;
 		
-		// Voor het testen zoom de camera daar heen
-		[camera rotateCameraWithX:dmX 
-								Y:dmY];
+		// Aan de buitenste zeide is de destortion veel erger dan verder naar binnen.
+		if (40 < y && y < 440 && 30 < x && x < 290) {
+			
+			// Tenopzichte van het midden uitrekenen iPhone screen (480*320)
+			int dmX = -x+160;
+			int dmY = -y+240;
 		
-		NSLog(@"Clicked the screen at location x:%i y:%i",x,y);
+			// Voor het testen zoom de camera daar heen
+			//[camera rotateCameraWithX:dmX 
+			//						Y:dmY];
+			
+			
+			//NSLog(@"Clicked the screen at location x:%i y:%i",x,y);
+		}
 		
 	}
 	else {

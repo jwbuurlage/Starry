@@ -30,16 +30,16 @@
 	};
 	1F92F5E90FDFF83200548BE8 /* GLViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 666}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1099, 643}}";
 			sepNavSelRange = "{794, 0}";
 			sepNavVisRange = "{0, 919}";
 		};
 	};
 	1F92F5EA0FDFF83200548BE8 /* GLViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 2795}}";
-			sepNavSelRange = "{4682, 0}";
-			sepNavVisRange = "{3984, 1410}";
+			sepNavIntBoundsRect = "{{0, 0}, {1099, 2834}}";
+			sepNavSelRange = "{4884, 0}";
+			sepNavVisRange = "{3947, 1483}";
 		};
 	};
 	1F92F5EB0FDFF83200548BE8 /* OpenGLCommon.h */ = {
@@ -74,13 +74,13 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1202, 2184}}";
 			sepNavSelRange = "{899, 0}";
-			sepNavVisRange = "{0, 1387}";
+			sepNavVisRange = "{0, 1207}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = 76FBD269109DE495005A0ADE /* Sterren */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Sterren */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Sterren */,
@@ -244,6 +244,32 @@
 			764457D110C5B57500AB935D /* PBXTextBookmark */ = 764457D110C5B57500AB935D /* PBXTextBookmark */;
 			764457D210C5B57500AB935D /* PBXTextBookmark */ = 764457D210C5B57500AB935D /* PBXTextBookmark */;
 			764457D310C5B57500AB935D /* PBXTextBookmark */ = 764457D310C5B57500AB935D /* PBXTextBookmark */;
+			764457D410C5B57600AB935D /* PBXTextBookmark */ = 764457D410C5B57600AB935D /* PBXTextBookmark */;
+			764457D810C5B71D00AB935D /* PBXTextBookmark */ = 764457D810C5B71D00AB935D /* PBXTextBookmark */;
+			764457D910C5B71D00AB935D /* PBXTextBookmark */ = 764457D910C5B71D00AB935D /* PBXTextBookmark */;
+			764457DB10C5B71D00AB935D /* PBXTextBookmark */ = 764457DB10C5B71D00AB935D /* PBXTextBookmark */;
+			764457DD10C5B72500AB935D /* PBXTextBookmark */ = 764457DD10C5B72500AB935D /* PBXTextBookmark */;
+			764457E110C5B85600AB935D /* PBXTextBookmark */ = 764457E110C5B85600AB935D /* PBXTextBookmark */;
+			764457E210C5B85600AB935D /* PBXTextBookmark */ = 764457E210C5B85600AB935D /* PBXTextBookmark */;
+			764457E310C5B85600AB935D /* PBXTextBookmark */ = 764457E310C5B85600AB935D /* PBXTextBookmark */;
+			764457E410C5B85600AB935D /* PBXTextBookmark */ = 764457E410C5B85600AB935D /* PBXTextBookmark */;
+			764457E510C5B85600AB935D /* PBXTextBookmark */ = 764457E510C5B85600AB935D /* PBXTextBookmark */;
+			764457E710C5B88600AB935D /* PBXTextBookmark */ = 764457E710C5B88600AB935D /* PBXTextBookmark */;
+			764457E810C5B88600AB935D /* PBXTextBookmark */ = 764457E810C5B88600AB935D /* PBXTextBookmark */;
+			764457E910C5B88600AB935D /* PBXTextBookmark */ = 764457E910C5B88600AB935D /* PBXTextBookmark */;
+			764457EB10C5B88600AB935D /* PBXTextBookmark */ = 764457EB10C5B88600AB935D /* PBXTextBookmark */;
+			764457ED10C5B89800AB935D /* PBXTextBookmark */ = 764457ED10C5B89800AB935D /* PBXTextBookmark */;
+			764457F110C5B97200AB935D /* PBXTextBookmark */ = 764457F110C5B97200AB935D /* PBXTextBookmark */;
+			764457F210C5B97200AB935D /* PBXTextBookmark */ = 764457F210C5B97200AB935D /* PBXTextBookmark */;
+			764457F410C5B97200AB935D /* PBXTextBookmark */ = 764457F410C5B97200AB935D /* PBXTextBookmark */;
+			764457F810C5B9B000AB935D /* PBXTextBookmark */ = 764457F810C5B9B000AB935D /* PBXTextBookmark */;
+			764457FA10C5B9D800AB935D /* PBXTextBookmark */ = 764457FA10C5B9D800AB935D /* PBXTextBookmark */;
+			764457FB10C5B9D800AB935D /* PBXTextBookmark */ = 764457FB10C5B9D800AB935D /* PBXTextBookmark */;
+			764457FD10C5B9D800AB935D /* PBXTextBookmark */ = 764457FD10C5B9D800AB935D /* PBXTextBookmark */;
+			7644580310C5BA5E00AB935D /* PBXTextBookmark */ = 7644580310C5BA5E00AB935D /* PBXTextBookmark */;
+			7644580510C5BA9A00AB935D /* PBXTextBookmark */ = 7644580510C5BA9A00AB935D /* PBXTextBookmark */;
+			7644580610C5BA9A00AB935D /* PBXTextBookmark */ = 7644580610C5BA9A00AB935D /* PBXTextBookmark */;
+			7644580810C5BA9A00AB935D /* PBXTextBookmark */ = 7644580810C5BA9A00AB935D /* PBXTextBookmark */;
 		};
 		sourceControlManager = 76FBD280109DE49A005A0ADE /* Source Control */;
 		userBuildSettings = {
@@ -333,7 +359,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 187";
 		rLen = 0;
-		rLoc = 4729;
+		rLoc = 4874;
 		rType = 0;
 		vrLen = 1477;
 		vrLoc = 3859;
@@ -343,7 +369,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 187";
 		rLen = 0;
-		rLoc = 4729;
+		rLoc = 4874;
 		rType = 0;
 		vrLen = 380;
 		vrLoc = 4482;
@@ -381,7 +407,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 185";
 		rLen = 0;
-		rLoc = 4631;
+		rLoc = 4771;
 		rType = 0;
 		vrLen = 1477;
 		vrLoc = 3859;
@@ -391,7 +417,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 185";
 		rLen = 0;
-		rLoc = 4631;
+		rLoc = 4771;
 		rType = 0;
 		vrLen = 423;
 		vrLoc = 4437;
@@ -428,7 +454,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 185";
 		rLen = 0;
-		rLoc = 4629;
+		rLoc = 4771;
 		rType = 0;
 		vrLen = 1473;
 		vrLoc = 3859;
@@ -438,7 +464,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 185";
 		rLen = 0;
-		rLoc = 4629;
+		rLoc = 4771;
 		rType = 0;
 		vrLen = 419;
 		vrLoc = 4437;
@@ -475,7 +501,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 185";
 		rLen = 0;
-		rLoc = 4631;
+		rLoc = 4771;
 		rType = 0;
 		vrLen = 1473;
 		vrLoc = 3859;
@@ -485,7 +511,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 185";
 		rLen = 0;
-		rLoc = 4631;
+		rLoc = 4771;
 		rType = 0;
 		vrLen = 419;
 		vrLoc = 4437;
@@ -522,7 +548,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 184";
 		rLen = 0;
-		rLoc = 4607;
+		rLoc = 4771;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 3859;
@@ -532,7 +558,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 184";
 		rLen = 0;
-		rLoc = 4607;
+		rLoc = 4771;
 		rType = 0;
 		vrLen = 415;
 		vrLoc = 4396;
@@ -568,8 +594,8 @@
 		isa = PBXTextBookmark;
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 186";
-		rLen = 46;
-		rLoc = 4685;
+		rLen = 48;
+		rLoc = 4827;
 		rType = 0;
 		vrLen = 1403;
 		vrLoc = 3859;
@@ -599,7 +625,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 1219;
 		vrLoc = 1317;
@@ -609,7 +635,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 184";
 		rLen = 0;
-		rLoc = 4607;
+		rLoc = 4771;
 		rType = 0;
 		vrLen = 421;
 		vrLoc = 4437;
@@ -619,7 +645,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 556;
 		vrLoc = 1847;
@@ -656,7 +682,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 1219;
 		vrLoc = 1317;
@@ -666,7 +692,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 556;
 		vrLoc = 1847;
@@ -703,7 +729,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 1317;
@@ -713,7 +739,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 560;
 		vrLoc = 1847;
@@ -797,7 +823,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 1215;
 		vrLoc = 1317;
@@ -807,7 +833,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 552;
 		vrLoc = 1847;
@@ -844,7 +870,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 92";
 		rLen = 0;
-		rLoc = 2514;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 1184;
 		vrLoc = 1317;
@@ -893,8 +919,8 @@
 		isa = PBXTextBookmark;
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 186";
-		rLen = 46;
-		rLoc = 4685;
+		rLen = 48;
+		rLoc = 4827;
 		rType = 0;
 		vrLen = 1400;
 		vrLoc = 3862;
@@ -904,7 +930,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 187";
 		rLen = 0;
-		rLoc = 4682;
+		rLoc = 4821;
 		rType = 0;
 		vrLen = 1411;
 		vrLoc = 3862;
@@ -934,7 +960,7 @@
 		fRef = ACB7B11510615C1000CA447E /* SRCamera.h */;
 		name = "SRCamera.h: 67";
 		rLen = 0;
-		rLoc = 1356;
+		rLoc = 1338;
 		rType = 0;
 		vrLen = 922;
 		vrLoc = 498;
@@ -954,7 +980,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 188";
 		rLen = 0;
-		rLoc = 4724;
+		rLoc = 4869;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 3944;
@@ -964,7 +990,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 187";
 		rLen = 0;
-		rLoc = 4682;
+		rLoc = 4821;
 		rType = 0;
 		vrLen = 1444;
 		vrLoc = 3944;
@@ -974,7 +1000,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 187";
 		rLen = 0;
-		rLoc = 4682;
+		rLoc = 4821;
 		rType = 0;
 		vrLen = 1442;
 		vrLoc = 3944;
@@ -984,7 +1010,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 1954;
@@ -994,7 +1020,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 187";
 		rLen = 0;
-		rLoc = 4682;
+		rLoc = 4821;
 		rType = 0;
 		vrLen = 451;
 		vrLoc = 4396;
@@ -1004,7 +1030,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 187";
 		rLen = 0;
-		rLoc = 4682;
+		rLoc = 4821;
 		rType = 0;
 		vrLen = 1408;
 		vrLoc = 3986;
@@ -1024,7 +1050,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 1306;
 		vrLoc = 1497;
@@ -1034,7 +1060,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 1497;
@@ -1044,7 +1070,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 187";
 		rLen = 0;
-		rLoc = 4682;
+		rLoc = 4821;
 		rType = 0;
 		vrLen = 451;
 		vrLoc = 4396;
@@ -1054,7 +1080,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 544;
 		vrLoc = 527;
@@ -1064,7 +1090,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 187";
 		rLen = 0;
-		rLoc = 4682;
+		rLoc = 4821;
 		rType = 0;
 		vrLen = 1410;
 		vrLoc = 3984;
@@ -1084,7 +1110,7 @@
 		fRef = ACB7B11510615C1000CA447E /* SRCamera.h */;
 		name = "SRCamera.h: 67";
 		rLen = 0;
-		rLoc = 1356;
+		rLoc = 1338;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 499;
@@ -1104,7 +1130,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 91";
 		rLen = 0;
-		rLoc = 2456;
+		rLoc = 2447;
 		rType = 0;
 		vrLen = 1182;
 		vrLoc = 195;
@@ -1118,6 +1144,301 @@
 		rType = 0;
 		vrLen = 1488;
 		vrLoc = 1380;
+	};
+	764457D410C5B57600AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 86";
+		rLen = 0;
+		rLoc = 2189;
+		rType = 0;
+		vrLen = 1488;
+		vrLoc = 1380;
+	};
+	764457D810C5B71D00AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 86";
+		rLen = 0;
+		rLoc = 2189;
+		rType = 0;
+		vrLen = 354;
+		vrLoc = 1380;
+	};
+	764457D910C5B71D00AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 764457DA10C5B71D00AB935D /* asm __dyld__dyld_start  0x2fe01028 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	764457DA10C5B71D00AB935D /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	764457DB10C5B71D00AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 764457DC10C5B71D00AB935D /* asm __dyld__dyld_start  0x2fe01028 */;
+		name = "asm __dyld__dyld_start  0x2fe01028: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 0;
+	};
+	764457DC10C5B71D00AB935D /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	764457DD10C5B72500AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 86";
+		rLen = 0;
+		rLoc = 2189;
+		rType = 0;
+		vrLen = 1382;
+		vrLoc = 1619;
+	};
+	764457E110C5B85600AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 99";
+		rLen = 0;
+		rLoc = 2492;
+		rType = 0;
+		vrLen = 1251;
+		vrLoc = 2948;
+	};
+	764457E210C5B85600AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28FD14FD0DC6FC130079059D /* GLView.m */;
+		name = "GLView.m: 41";
+		rLen = 0;
+		rLoc = 899;
+		rType = 0;
+		vrLen = 1207;
+		vrLoc = 0;
+	};
+	764457E310C5B85600AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5E90FDFF83200548BE8 /* GLViewController.h */;
+		name = "GLViewController.h: 39";
+		rLen = 0;
+		rLoc = 794;
+		rType = 0;
+		vrLen = 919;
+		vrLoc = 0;
+	};
+	764457E410C5B85600AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 187";
+		rLen = 0;
+		rLoc = 4821;
+		rType = 0;
+		vrLen = 1410;
+		vrLoc = 3984;
+	};
+	764457E510C5B85600AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 183";
+		rLen = 0;
+		rLoc = 4529;
+		rType = 0;
+		vrLen = 1536;
+		vrLoc = 3986;
+	};
+	764457E710C5B88600AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 86";
+		rLen = 0;
+		rLoc = 2189;
+		rType = 0;
+		vrLen = 459;
+		vrLoc = 2448;
+	};
+	764457E810C5B88600AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 183";
+		rLen = 0;
+		rLoc = 4529;
+		rType = 0;
+		vrLen = 648;
+		vrLoc = 4274;
+	};
+	764457E910C5B88600AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 764457EA10C5B88600AB935D /* asm __dyld__dyld_start  0x2fe01028 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	764457EA10C5B88600AB935D /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	764457EB10C5B88600AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 764457EC10C5B88600AB935D /* asm __dyld__dyld_start  0x2fe01028 */;
+		name = "asm __dyld__dyld_start  0x2fe01028: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 0;
+	};
+	764457EC10C5B88600AB935D /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	764457ED10C5B89800AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 185";
+		rLen = 0;
+		rLoc = 4620;
+		rType = 0;
+		vrLen = 1533;
+		vrLoc = 3986;
+	};
+	764457F110C5B97200AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 143";
+		rLen = 0;
+		rLoc = 3465;
+		rType = 0;
+		vrLen = 661;
+		vrLoc = 4182;
+	};
+	764457F210C5B97200AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 764457F310C5B97200AB935D /* asm __dyld__dyld_start  0x2fe01028 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	764457F310C5B97200AB935D /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	764457F410C5B97200AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 764457F510C5B97200AB935D /* asm __dyld__dyld_start  0x2fe01028 */;
+		name = "asm __dyld__dyld_start  0x2fe01028: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 0;
+	};
+	764457F510C5B97200AB935D /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	764457F810C5B9B000AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 185";
+		rLen = 0;
+		rLoc = 4654;
+		rType = 0;
+		vrLen = 1569;
+		vrLoc = 3947;
+	};
+	764457FA10C5B9D800AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 185";
+		rLen = 0;
+		rLoc = 4654;
+		rType = 0;
+		vrLen = 664;
+		vrLoc = 4182;
+	};
+	764457FB10C5B9D800AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 764457FC10C5B9D800AB935D /* asm __dyld__dyld_start  0x2fe01028 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	764457FC10C5B9D800AB935D /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	764457FD10C5B9D800AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 764457FE10C5B9D800AB935D /* asm __dyld__dyld_start  0x2fe01028 */;
+		name = "asm __dyld__dyld_start  0x2fe01028: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 0;
+	};
+	764457FE10C5B9D800AB935D /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	7644580310C5BA5E00AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 185";
+		rLen = 0;
+		rLoc = 4654;
+		rType = 0;
+		vrLen = 1576;
+		vrLoc = 3947;
+	};
+	7644580510C5BA9A00AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 185";
+		rLen = 0;
+		rLoc = 4654;
+		rType = 0;
+		vrLen = 502;
+		vrLoc = 4437;
+	};
+	7644580610C5BA9A00AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7644580710C5BA9A00AB935D /* asm __dyld__dyld_start  0x2fe01028 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	7644580710C5BA9A00AB935D /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	7644580810C5BA9A00AB935D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7644580910C5BA9A00AB935D /* asm __dyld__dyld_start  0x2fe01028 */;
+		name = "asm __dyld__dyld_start  0x2fe01028: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 0;
+	};
+	7644580910C5BA9A00AB935D /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
 	};
 	765DA28810A0B19300C4B16A /* SRLocation.h */ = {
 		uiCtxt = {
@@ -1343,15 +1664,15 @@
 	ACB7B11510615C1000CA447E /* SRCamera.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1099, 910}}";
-			sepNavSelRange = "{1356, 0}";
-			sepNavVisRange = "{499, 921}";
+			sepNavSelRange = "{1336, 0}";
+			sepNavVisRange = "{499, 889}";
 		};
 	};
 	ACB7B11610615C1000CA447E /* SRCamera.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 2197}}";
-			sepNavSelRange = "{2189, 0}";
-			sepNavVisRange = "{1380, 1488}";
+			sepNavIntBoundsRect = "{{0, 0}, {1099, 2210}}";
+			sepNavSelRange = "{2678, 0}";
+			sepNavVisRange = "{1640, 1300}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
