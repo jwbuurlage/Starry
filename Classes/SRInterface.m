@@ -28,6 +28,11 @@
 		[self loadModules];
 		[self loadNameplate];
 		[self loadTexture:@"click.png" intoLocation:textures[[UIElements count]]];
+		
+		defaultTextureBool = TRUE;
+		alphaDefault = 1.0f;
+		defaultTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"defaultTexture.png"]];
+		[self fadeDefaultTexture];
 	}
 	return self;
 }
@@ -161,8 +166,8 @@
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"module_bg.png"]]
 														  identifier:@"modulebg" 
 														   clickable:NO]];
-		
-	[self hideInterface];
+	
+	xTranslate = 48;
 }
 
 -(void)loadModules {
@@ -194,7 +199,6 @@
 	
 	//glAlphaFunc( GL_EQUAL, 1.0f );
 	//glEnable( GL_ALPHA_TEST );
-	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 
 	glEnable(GL_TEXTURE_2D);
@@ -208,6 +212,16 @@
     glVertexPointer(3, GL_FLOAT, 0, textureCorners);
     glEnableClientState(GL_VERTEX_ARRAY);
 	
+	if(defaultTextureBool) {
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+		glColor4f(1.0, 1.0, 1.0, alphaDefault);      
+		[defaultTexture drawInRect:CGRectMake(0,-192,512,512)];
+	}
+	
+	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+	glColor4f(1.0, 1.0, 1.0, 1.0);      
+
 	[theNameplate draw];
 	
 	glTranslatef(xTranslate, 0, 0);
@@ -574,5 +588,19 @@
     [textField resignFirstResponder];
     return NO;
 }
+						  
+-(void)fadeDefaultTexture {
+	fadeTimer = [[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(fade:) userInfo:nil repeats:YES] retain];
+}
+
+-(void)fade:(NSTimer*)theTimer {
+	alphaDefault -= 0.05;
+	if (alphaDefault <= 0.0) {
+		defaultTextureBool = FALSE;
+		[fadeTimer invalidate];
+		[defaultTexture release];
+	}
+}
+
 
 @end

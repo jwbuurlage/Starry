@@ -57,10 +57,15 @@
 	
 	NSTimer *posiTimer;
 	NSTimer *negiTimer;
-	
+	NSTimer *fadeTimer;
 	UITextField *fieldTmp;
 	
 	NSString* currentlyEditingIdentifier;
+	
+	Texture2D* defaultTexture;
+	BOOL defaultTextureBool;
+	
+	float alphaDefault;
 }
 
 @property (readonly) SRTimeModule* timeModule;
@@ -83,5 +88,7 @@
 -(BOOL)UIElementAtPoint:(CGPoint)point;
 - (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle;
 -(void)bringUpTheKeyboardWithText:(NSString *)placeholder onLocation:(int)location andSendResultsTo:(id)delegate;
+-(void)fadeDefaultTexture;
+-(void)fade:(NSTimer*)theTimer;
 
 @end
