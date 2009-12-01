@@ -1,5 +1,5 @@
 //
-//  SRSettingsModule.h
+//  SRSlider.h
 //  Sterren
 //
 //  Created by Jan-Willem Buurlage on 01-12-09.
@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SRModule.h"
-#import "SRInterfaceElement.h"
 
-@interface SRSettingsModule : SRModule {
+
+@interface SRSlider : NSObject {
 
 }
 
