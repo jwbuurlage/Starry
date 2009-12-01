@@ -282,14 +282,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>8</integer>
-									<integer>4</integer>
+									<integer>30</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {236, 934}}</string>
+							<string>{{0, 125}, {236, 934}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -324,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRSettingsModule.m</string>
+								<string>SRRenderer.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRSettingsModule.m</string>
+										<string>SRRenderer.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>AC8A89C310C5894C0015CDF5</string>
+										<string>AC8A89ED10C58A540015CDF5</string>
 										<key>history</key>
 										<array>
 											<string>ACD52783108A2CDA009B07BF</string>
@@ -399,11 +398,13 @@
 											<string>AC8A884410C574540015CDF5</string>
 											<string>AC8A884510C574540015CDF5</string>
 											<string>AC8A884610C574540015CDF5</string>
-											<string>AC8A884710C574540015CDF5</string>
 											<string>AC8A89BF10C5894C0015CDF5</string>
 											<string>AC8A89C010C5894C0015CDF5</string>
 											<string>AC8A89C110C5894C0015CDF5</string>
-											<string>AC8A89C210C5894C0015CDF5</string>
+											<string>AC8A89E710C58A3F0015CDF5</string>
+											<string>AC8A89E810C58A3F0015CDF5</string>
+											<string>AC8A89E910C58A3F0015CDF5</string>
+											<string>AC8A89EA10C58A3F0015CDF5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -443,6 +444,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1418, 14}}</string>
+										<key>RubberWindowFrame</key>
+										<string>4 35 1676 993 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -497,8 +500,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1418, 14}}</string>
-										<key>RubberWindowFrame</key>
-										<string>4 35 1676 993 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>

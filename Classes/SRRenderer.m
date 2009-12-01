@@ -124,6 +124,7 @@
 		
 		for(star in appDelegate.stars) {
 			//NSLog(@"Loading star %@",star.name);
+			if(star.name != @"Sol") {
 			if([star.mag floatValue] < 1) {
 				size = 4.0;
 				alpha = 1.0;
@@ -155,6 +156,7 @@
 			starPointsTmp[matrixStartPos+6] = alpha;
 			starPointsTmp[matrixStartPos+7] = size;
 			starNum++;
+			}
 		}
 		
 		for (int i=0; i <= starNum*8; i++) {
