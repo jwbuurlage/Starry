@@ -87,9 +87,9 @@
 		swipeVer = FALSE;
 		accV = 0;
 	}
-	float deltaAzimuth = deltaY / (4/fieldOfView);
-	float deltaAltitude = -deltaX / (4/fieldOfView);
-	azimuth += deltaAzimuth; // Waarom fieldOfView? Waarom 4? Kwam goed uit...
+	float deltaAzimuth = deltaY / (6/fieldOfView);
+	float deltaAltitude = -deltaX / (6/fieldOfView);
+	azimuth += deltaAzimuth; // Waarom fieldOfView? Waarom 4? Kwam goed uit... 6 komt beter uit
 	azimuth = fmod(azimuth, 360); // Wat is dit?
 	altitude += deltaAltitude;
 	//NSLog(@"Rotate Camera With X:%i Y:%i dAz:%f dAl:%f az:%f al:%f fov:%f",deltaX,deltaY,deltaAzimuth,deltaAltitude,azimuth,altitude,fieldOfView);
