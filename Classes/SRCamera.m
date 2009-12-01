@@ -110,7 +110,7 @@
 }
 
 -(float)calculateAltitudeWithX:(int)deltaX {
-	float deltaAltitude = -deltaX / (rotationConstant/fieldOfView);
+	float deltaAltitude = -deltaX / (5.5850536/fieldOfView);
 	float result = altitude + deltaAltitude;
 	return result;
 

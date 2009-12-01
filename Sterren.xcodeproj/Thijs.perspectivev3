@@ -278,7 +278,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 2}, {258, 780}}</string>
+							<string>{{0, 0}, {258, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -313,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>asm __dyld__dyld_start  0x2fe01028</string>
+								<string>SRCamera.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,24 +321,22 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>asm __dyld__dyld_start  0x2fe01028</string>
+										<string>SRCamera.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>764457DD10C5B72500AB935D</string>
+										<string>7644581A10C5BC4500AB935D</string>
 										<key>history</key>
 										<array>
 											<string>7644575110C5A7FC00AB935D</string>
 											<string>764457B010C5AE9900AB935D</string>
 											<string>764457B110C5AE9900AB935D</string>
 											<string>764457B210C5AE9900AB935D</string>
-											<string>764457B910C5B0C200AB935D</string>
-											<string>764457BC10C5B0C200AB935D</string>
-											<string>764457CE10C5B57500AB935D</string>
 											<string>764457CF10C5B57500AB935D</string>
-											<string>764457D010C5B57500AB935D</string>
 											<string>764457D110C5B57500AB935D</string>
-											<string>764457D210C5B57500AB935D</string>
+											<string>764457E210C5B85600AB935D</string>
+											<string>764457E310C5B85600AB935D</string>
+											<string>7644581910C5BC4500AB935D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -352,18 +350,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1160, 698}}</string>
+								<string>{{0, 0}, {1160, 695}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 39 1440 839 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>698pt</string>
+							<string>695pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>95pt</string>
+							<string>98pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -377,9 +375,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1160, 68}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 39 1440 839 0 0 1440 878 </string>
+										<string>{{10, 27}, {1160, 71}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -433,7 +429,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 31}, {603, 297}}</string>
+										<string>{{10, 27}, {1160, 71}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 39 1440 839 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -461,11 +459,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>7644574410C5A5A900AB935D</string>
+				<string>7644581B10C5BC4500AB935D</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>7644574510C5A5A900AB935D</string>
+				<string>7644581C10C5BC4500AB935D</string>
 				<string>7644572810C5A54000AB935D</string>
-				<string>7644574610C5A5A900AB935D</string>
+				<string>7644581D10C5BC4500AB935D</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -655,9 +653,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>764457DE10C5B72500AB935D</string>
-		<string>7644574C10C5A5A900AB935D</string>
-		<string>7644574E10C5A5A900AB935D</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
