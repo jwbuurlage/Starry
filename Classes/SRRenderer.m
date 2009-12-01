@@ -31,12 +31,22 @@
 		//[location useGPSValues]; // dit moet gebeuren in de init van location vanwege static locations
 		interface = [[SRInterface alloc] initWithRenderer:self];
 		
-		glGenTextures(5, &textures[0]);
+		glGenTextures(13, &textures[0]);
 		[interface loadTexture:@"horizon_bg.png" intoLocation:textures[0]];
 		[interface loadTextureWithString:@"Z" intoLocation:textures[1]];
 		[interface loadTextureWithString:@"W" intoLocation:textures[2]];		
 		[interface loadTextureWithString:@"N" intoLocation:textures[3]];
 		[interface loadTextureWithString:@"O" intoLocation:textures[4]];
+		
+		[interface loadTexture:@"sun.png" intoLocation:textures[5]];
+		[interface loadTexture:@"jupiter.png" intoLocation:textures[6]];
+		[interface loadTexture:@"mars.png" intoLocation:textures[7]];
+		[interface loadTexture:@"mercury.png" intoLocation:textures[8]];
+		[interface loadTexture:@"venus.png" intoLocation:textures[9]];
+		[interface loadTexture:@"saturn.png" intoLocation:textures[10]];
+		[interface loadTexture:@"uranus.png" intoLocation:textures[11]];
+		[interface loadTexture:@"neptune.png" intoLocation:textures[12]];
+
 		
 		// set de appdelegate
 		appDelegate = [[UIApplication sharedApplication] delegate];
@@ -253,22 +263,37 @@
 }
 
 -(void)drawPlanets {
+	glEnable(GL_POINT_SPRITE_OES);
+	glTexEnvi(GL_POINT_SPRITE_OES, GL_COORD_REPLACE_OES, GL_TRUE);	
+	glEnable(GL_TEXTURE_2D);
+	
 	glVertexPointer(3, GL_FLOAT, 32, planetPoints);
     glColorPointer(4, GL_FLOAT, 32, &planetPoints[3]);
+	//glPointSizePointerOES(GL_FLOAT, 0, &planetPoints[7]);
+		
 	int i = 0;
 	GLfloat size = 0;
-	while(i < planetNum) {
+	while(i < (planetNum + 5)) {
 		if(planetPoints[(i*8)+7] != 0) {
 			//NSLog(@"wel");
 			size = planetPoints[(i*8)+7] * zoomFactor;
 			glPointSize(size);
-			glDrawArrays(GL_POINTS, i, 1);
+			glBindTexture(GL_TEXTURE_2D, textures[i + 5]);
+			glDrawArrays(GL_POINTS,i, 1);
 		}
 		else {
 			//NSLog(@"niet");
 		}
+		
+		
 		++i;
 	}	
+	
+	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_POINT_SPRITE_OES);
+	glDisableClientState(GL_POINT_SIZE_ARRAY_OES);
+	
+	glEnable(GL_DEPTH_TEST);
 }
 
 -(void)drawCompass {	
@@ -435,14 +460,14 @@
 	[neptune setViewOrigin:[earth position]];*/
 	
 	const GLfloat planetPointsTmp[] = {
-		[sun position].x, [sun position].y, [sun position].z,				1.0, 1.0, 0.0, 1.0, 25.0, // Sun point, yellow
-		[jupiter position].x, [jupiter position].y, [jupiter position].z,	1.0, 0.5, 1.0, 1.0, 8.0,  // Sun point, red
-		[mars position].x, [mars position].y, [mars position].z,			1.0, 0.0, 0.0, 1.0, 10.0,// Sun point, red
-		[mercury position].x, [mercury position].y, [mercury position].z,	0.5, 0.5, 0.5, 1.0, 8.0,// Sun point, red
-		[venus position].x, [venus position].y, [venus position].z,			0.0, 1.0, 0.0, 1.0, 8.0,// Sun point, red
-		[saturn position].x, [saturn position].y, [saturn position].z,		1.0, 0.8, 0.0, 1.0, 10.0,// Sun point, red
-		[uranus position].x, [uranus position].y, [uranus position].z,		0.0, 0.5, 1.0, 1.0, 10.0,// Sun point, red
-		[neptune position].x, [neptune position].y, [neptune position].z,	0.0, 1.0, 1.0, 1.0, 10.0 // Sun point, red
+		[sun position].x, [sun position].y, [sun position].z,				1.0, 1.0, 0.0, 1.0, 50.0, // Sun point, yellow
+		[jupiter position].x, [jupiter position].y, [jupiter position].z,	1.0, 1.0, 1.0, 1.0, 20.0,  // Sun point, red
+		[mars position].x, [mars position].y, [mars position].z,			1.0, 1.0, 1.0, 1.0, 20.0,// Sun point, red
+		[mercury position].x, [mercury position].y, [mercury position].z,	1.0, 1.0, 1.0, 1.0, 10.0,// Sun point, red
+		[venus position].x, [venus position].y, [venus position].z,			1.0, 1.0, 1.0, 1.0, 20.0,// Sun point, red
+		[saturn position].x, [saturn position].y, [saturn position].z,		1.0, 1.0, 1.0, 1.0, 25.0,// Sun point, red
+		[uranus position].x, [uranus position].y, [uranus position].z,		1.0, 1.0, 1.0, 1.0, 10.0,// Sun point, red
+		[neptune position].x, [neptune position].y, [neptune position].z,	1.0, 1.0, 1.0, 1.0, 10.0 // Sun point, red
 	};
 	
 	planetNum = 8;

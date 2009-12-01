@@ -58,7 +58,7 @@
 	int planetNum;
 	int starNum;
 	
-	GLuint textures[5];
+	GLuint textures[16];
 
 	float zoomFactor;
 }

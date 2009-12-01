@@ -44,14 +44,7 @@
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
 	for (SRInterfaceElement* mElement in elements) {
-		if([mElement identifier] == @"text-transparent") {
-			glColor4f(1.0f, 1.0f, 1.0f, 0.5f);
-			[[mElement texture] drawInRect:[mElement bounds]];
-			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-		}
-		else {
-			[[mElement texture] drawInRect:[mElement bounds]];
-		}
+		[[mElement texture] drawInRect:[mElement bounds]];
 	}	
 }
 
