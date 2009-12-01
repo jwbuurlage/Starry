@@ -192,7 +192,12 @@
 			//[camera rotateCameraWithX:dmX 
 			//						Y:dmY];
 			
+			float azimuth = [camera calculateAzimuthWithY:dmY];
+			float altitude = [camera calculateAltitudeWithX:dmX];
 			
+			// Matrix conversions met Location en TimeManager
+			// maar zonder glRotatef
+		
 			//NSLog(@"Clicked the screen at location x:%i y:%i",x,y);
 		}
 		
