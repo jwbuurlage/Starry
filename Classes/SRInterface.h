@@ -19,6 +19,8 @@
 #import "SRTimeModule.h"
 #import "SRLocation.h"
 #import "SRLocationModule.h"
+#import "SRSettingsModule.h"
+#import "SRNamePlate.h"
 #import "Texture2D.h"
 
 @class SRRenderer;
@@ -30,6 +32,9 @@
 	
 	SRTimeModule* timeModule;
 	SRLocationModule* locationModule;
+	SRSettingsModule* settingsModule;
+	
+	SRNamePlate* theNameplate;
 	
 	SRLocation* locationData;
 		/* We moeten de data van SRLocation naar SRLocationModule krijgen, dit is de volgens mij de kortste route */
@@ -62,6 +67,7 @@
 @property (readonly) SRRenderer* renderer;
 
 -(id)initWithRenderer:(SRRenderer*)theRenderer;
+-(void)loadNameplate;
 -(void)loadTextureWithString:(NSString *)text intoLocation:(GLuint)location;
 -(void)loadTexture:(NSString *)name intoLocation:(GLuint)location;
 -(void)loadMenu;
