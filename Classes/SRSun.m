@@ -56,9 +56,9 @@
 	float DecSun = asin(sin((M_PI / 180) * eclipticLongitudeSun) * sin((M_PI / 180) * obliquity));
 	//NSLog(@"DecSun: %f", fmod(DecSun * (180 / M_PI), 360));
 	
-	float X = 15.0f * cos(RASun) * sin((M_PI / 2) - DecSun);
-	float Y = 15.0f * sin(RASun) * sin((M_PI / 2) - DecSun);
-	float Z = 15.0f * cos((M_PI / 2) - DecSun);
+	float X = 16.0f * cos(RASun) * sin((M_PI / 2) - DecSun);
+	float Y = 16.0f * sin(RASun) * sin((M_PI / 2) - DecSun);
+	float Z = 16.0f * cos((M_PI / 2) - DecSun);
 	
 	//NSLog(@"X: %f, Y: %f, Z: %F", X,Y,Z);
 	
