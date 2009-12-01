@@ -18,6 +18,7 @@
 		28FD14FE0DC6FC130079059D /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD14FD0DC6FC130079059D /* GLView.m */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		7644565110C5837800AB935D /* SRSettingsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7644565010C5837800AB935D /* SRSettingsModule.m */; };
 		765DA28A10A0B19300C4B16A /* SRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 765DA28910A0B19300C4B16A /* SRLocation.m */; };
 		765DA31510A0B97000C4B16A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765DA31410A0B97000C4B16A /* CoreLocation.framework */; };
 		76B2988510BD9EBB00EEDA5D /* SRLocationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */; };
@@ -76,6 +77,8 @@
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Sterren_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sterren_Prefix.pch; sourceTree = "<group>"; };
+		7644564F10C5837800AB935D /* SRSettingsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSettingsModule.h; sourceTree = "<group>"; };
+		7644565010C5837800AB935D /* SRSettingsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSettingsModule.m; sourceTree = "<group>"; };
 		765DA28810A0B19300C4B16A /* SRLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLocation.h; sourceTree = "<group>"; };
 		765DA28910A0B19300C4B16A /* SRLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLocation.m; sourceTree = "<group>"; };
 		765DA31410A0B97000C4B16A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -276,6 +279,8 @@
 		ACA875E7109DD08C00465577 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				7644564F10C5837800AB935D /* SRSettingsModule.h */,
+				7644565010C5837800AB935D /* SRSettingsModule.m */,
 				AC24C98E10BAE7BF0063DF87 /* SRModule.h */,
 				AC24C98F10BAE7BF0063DF87 /* SRModule.m */,
 				AC24C99310BAE8F00063DF87 /* SRTimeModule.h */,
@@ -408,6 +413,7 @@
 				76B2988510BD9EBB00EEDA5D /* SRLocationModule.m in Sources */,
 				AC1BA73C10C0225D0084CF6F /* SRConstellation.m in Sources */,
 				AC6D777E10C56A1900442254 /* SRSpriteManager.m in Sources */,
+				7644565110C5837800AB935D /* SRSettingsModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

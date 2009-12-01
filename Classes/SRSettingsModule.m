@@ -1,5 +1,5 @@
 //
-//  main.m
+//  SRSettingsModule.m
 //
 //  A part of Sterren.app, planitarium iPhone application.
 //  Created by: Jan-Willem Buurlage and Thijs Scheepers
@@ -11,13 +11,9 @@
 //  Chamber of Commerce registration number: 37126951
 //
 
+#import "SRSettingsModule.h"
 
-#import <UIKit/UIKit.h>
 
-int main(int argc, char *argv[]) {
-    
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    [pool release];
-    return retVal;
-}
+@implementation SRSettingsModule
+
+@end

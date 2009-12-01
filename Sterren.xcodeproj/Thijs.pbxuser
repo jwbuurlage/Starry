@@ -1227,6 +1227,20 @@
 		vrLen = 1398;
 		vrLoc = 3788;
 	};
+	7644564F10C5837800AB935D /* SRSettingsModule.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1080, 690}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 233}";
+		};
+	};
+	7644565010C5837800AB935D /* SRSettingsModule.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1080, 690}}";
+			sepNavSelRange = "{25, 0}";
+			sepNavVisRange = "{0, 473}";
+		};
+	};
 	765DA28810A0B19300C4B16A /* SRLocation.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1080, 663}}";
@@ -1411,8 +1425,8 @@
 	};
 	AC24C99310BAE8F00063DF87 /* SRTimeModule.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1080, 444}}";
-			sepNavSelRange = "{32, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1080, 690}}";
+			sepNavSelRange = "{25, 372}";
 			sepNavVisRange = "{0, 650}";
 		};
 	};
