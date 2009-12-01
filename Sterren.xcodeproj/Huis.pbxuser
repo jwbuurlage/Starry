@@ -80,7 +80,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = ACB7B0F910615ACD00CA447E /* Sterren */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Sterren */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Sterren */,
@@ -228,6 +228,11 @@
 			AC8A884710C574540015CDF5 = AC8A884710C574540015CDF5 /* PBXTextBookmark */;
 			AC8A884810C574540015CDF5 = AC8A884810C574540015CDF5 /* PBXTextBookmark */;
 			AC8A884910C574540015CDF5 = AC8A884910C574540015CDF5 /* PBXTextBookmark */;
+			AC8A89BF10C5894C0015CDF5 /* PBXTextBookmark */ = AC8A89BF10C5894C0015CDF5 /* PBXTextBookmark */;
+			AC8A89C010C5894C0015CDF5 /* PBXTextBookmark */ = AC8A89C010C5894C0015CDF5 /* PBXTextBookmark */;
+			AC8A89C110C5894C0015CDF5 /* PBXTextBookmark */ = AC8A89C110C5894C0015CDF5 /* PBXTextBookmark */;
+			AC8A89C210C5894C0015CDF5 /* PBXTextBookmark */ = AC8A89C210C5894C0015CDF5 /* PBXTextBookmark */;
+			AC8A89C310C5894C0015CDF5 /* PBXTextBookmark */ = AC8A89C310C5894C0015CDF5 /* PBXTextBookmark */;
 			ACA059FB10C09941000B4E21 = ACA059FB10C09941000B4E21 /* PBXTextBookmark */;
 			ACA05A0E10C099E2000B4E21 = ACA05A0E10C099E2000B4E21 /* PBXTextBookmark */;
 			ACA05A0F10C099E2000B4E21 = ACA05A0F10C099E2000B4E21 /* PBXBookmark */;
@@ -255,6 +260,20 @@
 			sepNavIntBoundsRect = "{{0, 0}, {1615, 425}}";
 			sepNavSelRange = "{269, 0}";
 			sepNavVisRange = "{0, 368}";
+		};
+	};
+	7644564F10C5837800AB935D /* SRSettingsModule.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1357, 874}}";
+			sepNavSelRange = "{251, 0}";
+			sepNavVisRange = "{0, 257}";
+		};
+	};
+	7644565010C5837800AB935D /* SRSettingsModule.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1357, 851}}";
+			sepNavSelRange = "{218, 0}";
+			sepNavVisRange = "{0, 218}";
 		};
 	};
 	765DA28810A0B19300C4B16A /* SRLocation.h */ = {
@@ -375,9 +394,9 @@
 	};
 	AC24C98E10BAE7BF0063DF87 /* SRModule.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1357, 892}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1357, 874}}";
 			sepNavSelRange = "{921, 0}";
-			sepNavVisRange = "{0, 928}";
+			sepNavVisRange = "{0, 1181}";
 		};
 	};
 	AC24C98F10BAE7BF0063DF87 /* SRModule.m */ = {
@@ -560,8 +579,8 @@
 	};
 	AC55F121109600990021D39C /* SRInterface.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1357, 8021}}";
-			sepNavSelRange = "{11557, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1357, 8073}}";
+			sepNavSelRange = "{11197, 0}";
 			sepNavVisRange = "{10015, 1948}";
 			sepNavWindowFrame = "{{19, 0}, {996, 1028}}";
 		};
@@ -1203,6 +1222,64 @@
 		rType = 0;
 		vrLen = 1865;
 		vrLoc = 10058;
+	};
+	AC8A89B510C588D60015CDF5 /* SRNamePlate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1357, 851}}";
+			sepNavSelRange = "{639, 0}";
+			sepNavVisRange = "{0, 655}";
+			sepNavWindowFrame = "{{19, 0}, {996, 1028}}";
+		};
+	};
+	AC8A89BF10C5894C0015CDF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC24C98E10BAE7BF0063DF87 /* SRModule.h */;
+		name = "SRModule.h: 41";
+		rLen = 0;
+		rLoc = 921;
+		rType = 0;
+		vrLen = 1181;
+		vrLoc = 0;
+	};
+	AC8A89C010C5894C0015CDF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC55F121109600990021D39C /* SRInterface.m */;
+		name = "SRInterface.m: 368";
+		rLen = 0;
+		rLoc = 11197;
+		rType = 0;
+		vrLen = 1948;
+		vrLoc = 10015;
+	};
+	AC8A89C110C5894C0015CDF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7644564F10C5837800AB935D /* SRSettingsModule.h */;
+		name = "SRSettingsModule.h: 15";
+		rLen = 0;
+		rLoc = 251;
+		rType = 0;
+		vrLen = 257;
+		vrLoc = 0;
+	};
+	AC8A89C210C5894C0015CDF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7644565010C5837800AB935D /* SRSettingsModule.m */;
+		name = "SRSettingsModule.m: 3";
+		rLen = 0;
+		rLoc = 26;
+		rType = 0;
+		vrLen = 218;
+		vrLoc = 0;
+	};
+	AC8A89C310C5894C0015CDF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7644565010C5837800AB935D /* SRSettingsModule.m */;
+		name = "SRSettingsModule.m: 14";
+		rLen = 0;
+		rLoc = 218;
+		rType = 0;
+		vrLen = 218;
+		vrLoc = 0;
 	};
 	ACA059FB10C09941000B4E21 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
