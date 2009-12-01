@@ -46,6 +46,7 @@
 		AC8A87F010C56FCE0015CDF5 /* latitude.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A87ED10C56FCE0015CDF5 /* latitude.png */; };
 		AC8A87F110C56FCE0015CDF5 /* location_off.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A87EE10C56FCE0015CDF5 /* location_off.png */; };
 		AC8A87F210C56FCE0015CDF5 /* longitude.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A87EF10C56FCE0015CDF5 /* longitude.png */; };
+		AC8A89B710C588D60015CDF5 /* SRNamePlate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8A89B610C588D60015CDF5 /* SRNamePlate.m */; };
 		ACA8757D109DC88900465577 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757A109DC88900465577 /* location.png */; };
 		ACA8757E109DC88900465577 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757B109DC88900465577 /* search.png */; };
 		ACA8757F109DC88900465577 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757C109DC88900465577 /* settings.png */; };
@@ -118,6 +119,8 @@
 		AC8A87ED10C56FCE0015CDF5 /* latitude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = latitude.png; path = Resources/latitude.png; sourceTree = "<group>"; };
 		AC8A87EE10C56FCE0015CDF5 /* location_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location_off.png; path = Resources/location_off.png; sourceTree = "<group>"; };
 		AC8A87EF10C56FCE0015CDF5 /* longitude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = longitude.png; path = Resources/longitude.png; sourceTree = "<group>"; };
+		AC8A89B510C588D60015CDF5 /* SRNamePlate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRNamePlate.h; sourceTree = "<group>"; };
+		AC8A89B610C588D60015CDF5 /* SRNamePlate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRNamePlate.m; sourceTree = "<group>"; };
 		ACA8757A109DC88900465577 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location.png; path = Resources/location.png; sourceTree = "<group>"; };
 		ACA8757B109DC88900465577 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = Resources/search.png; sourceTree = "<group>"; };
 		ACA8757C109DC88900465577 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Resources/settings.png; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 				7644564F10C5837800AB935D /* SRSettingsModule.h */,
 				7644565010C5837800AB935D /* SRSettingsModule.m */,
 				AC24C98E10BAE7BF0063DF87 /* SRModule.h */,
+				AC8A89B510C588D60015CDF5 /* SRNamePlate.h */,
+				AC8A89B610C588D60015CDF5 /* SRNamePlate.m */,
 				AC24C98F10BAE7BF0063DF87 /* SRModule.m */,
 				AC24C99310BAE8F00063DF87 /* SRTimeModule.h */,
 				AC24C99410BAE8F00063DF87 /* SRTimeModule.m */,
@@ -414,6 +419,7 @@
 				AC1BA73C10C0225D0084CF6F /* SRConstellation.m in Sources */,
 				AC6D777E10C56A1900442254 /* SRSpriteManager.m in Sources */,
 				7644565110C5837800AB935D /* SRSettingsModule.m in Sources */,
+				AC8A89B710C588D60015CDF5 /* SRNamePlate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

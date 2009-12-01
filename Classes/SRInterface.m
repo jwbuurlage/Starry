@@ -26,9 +26,14 @@
 		
 		[self loadMenu];
 		[self loadModules];
+		[self loadNameplate];
 		[self loadTexture:@"click.png" intoLocation:textures[[UIElements count]]];
 	}
 	return self;
+}
+
+-(void)loadNameplate {
+	theNameplate = [[SRNamePlate alloc] init];
 }
 
 - (void)loadTextureWithString:(NSString *)text intoLocation:(GLuint)location {
@@ -170,6 +175,9 @@
 	//locatie
 	locationModule = [[SRLocationModule alloc] initWithSRLocation:[renderer location]];
 	[modules addObject:locationModule];
+	
+	settingsModule = [[SRSettingsModule alloc] init];
+	[modules addObject:settingsModule];
 }
 
 -(void)renderInterface {
@@ -200,7 +208,10 @@
     glVertexPointer(3, GL_FLOAT, 0, textureCorners);
     glEnableClientState(GL_VERTEX_ARRAY);
 	
+	[theNameplate draw];
+	
 	glTranslatef(xTranslate, 0, 0);
+	
 	
 	int i = 0;
 	for (SRInterfaceElement* element in UIElements) {
@@ -333,6 +344,27 @@
 				[locationModule show];
 			}
 		}
+		else if(clicker == @"settings") {
+			//show tijd crap
+			flagToggle = YES;
+			if([settingsModule visible]) {
+				[settingsModule hide];	
+			}
+			else {
+				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
+				[self hideAllModules];
+				// Haal nog een keer de nieuwe locatieData op.
+				[settingsModule show];
+			}
+		}
+		else if(clicker == @"search") {
+			if([theNameplate visible]) {
+				[theNameplate hide];
+			}
+			else {
+				[theNameplate setName:@"Zon" inConstellation:@"Orion" showInfo:FALSE];
+			}
+		}
 		else if(clicker == @"arrow") {
 			flagToggle = YES;
 		}
@@ -408,6 +440,9 @@
 	}
 	if([locationModule visible]) {
 		[locationModule hide];
+	}
+	if([settingsModule visible]) {
+		[settingsModule hide];
 	}
 }
 
