@@ -26,6 +26,8 @@
 	
 	BOOL latVisible;
 	BOOL longVisible;
+	
+	BOOL GPS;
 }
 
 @property (readonly) float latitude;
@@ -33,6 +35,7 @@
 @property (readonly) SRLocation* locationManager;
 @property (readwrite) BOOL latVisible;
 @property (readwrite) BOOL longVisible;
+@property (readonly) BOOL GPS;
 
 -(id)initWithSRLocation:(SRLocation*)aLocation;
 -(void)updateDisplayedLocationData;

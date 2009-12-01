@@ -15,10 +15,11 @@
 
 @implementation SRLocationModule
 
-@synthesize latitude,longitude,longVisible,latVisible,locationManager;
+@synthesize latitude,longitude,longVisible,latVisible,locationManager, GPS;
 
 -(id)initWithSRLocation:(SRLocation*)aLocation {
 	if(self = [super init]) {
+		NSString* locationString;
 		
 		locationManager = aLocation;
 		
@@ -28,28 +29,55 @@
 		
 		elements = [[NSMutableArray alloc] init];
 		
+		if([locationManager staticValues]) {
+			locationString = [[NSString alloc] initWithString:@"location_off.png"];
+			GPS = FALSE;
+		}
+		else {
+			locationString = [[NSString alloc] initWithString:@"location.png"];
+			GPS = TRUE;
+		}
+		
 		//laad elements in - sla op in textures
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(74,-48, 80,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(104,-48, 80,32) 
 															   texture:[[Texture2D alloc] initWithString:@"BREEDTEGRAAD" dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent"
 															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(174,-48, 80,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(224,-48, 80,32) 
 															   texture:[[Texture2D alloc] initWithString:@"LENGTEGRAAD" dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(74,-59, 80,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(104,-59, 80,32) 
 															   texture:nil 
 															identifier:@"lat" 
+															 clickable:NO]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-42, 28,28) 
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"latitude.png"]] 
+															identifier:@"lat-edit" 
 															 clickable:YES]];
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(174,-59, 80,32) 
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(224,-59, 80,32) 
 															   texture:nil 
 															identifier:@"long" 
-															 clickable:YES]];
+															 clickable:NO]];
+				 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(190,-42, 28,28) 
+																texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"longitude.png"]]
+																							  identifier:@"long-edit" 
+																							   clickable:YES]];
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(380,-40, 28,28) 
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:locationString]]
+																							   identifier:@"gps-toggle" 
+																							  clickable:YES]];
+		  
+		
 		
 		latVisible = YES;
 		longVisible = YES;
+		
+		[locationString release];
 	}
 	return self;
 }
@@ -156,5 +184,17 @@
 	// NSLog(@"SRLocationModule meldt de locatie lo:%f la:%f",longitude,latitude);
 }
 
+-(void)toggleGPS {
+	if(GPS) {
+		[locationManager useStaticValues];
+		[[elements objectAtIndex:6] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"location_off.png"]]];
+		GPS = FALSE;
+	}
+	else {
+		[locationManager useGPSValues];
+		[[elements objectAtIndex:6] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"location.png"]]];
+		GPS = TRUE;
+	}
+}
 
 @end

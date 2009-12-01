@@ -346,22 +346,34 @@
 			[[timeModule manager] rew];
 		}
 		// Knoppen voor de locatie module
-		else if(clicker == @"lat") {
+		else if(clicker == @"lat-edit") {
 			NSNumber* aNumber = [[NSNumber alloc] initWithFloat:[locationModule latitude]];
 			currentlyEditingIdentifier = @"lat";
 			[locationModule setLatVisible:NO];
-			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocation:74 andSendResultsTo:self]; // 74 omdat dit ook de locatie is van de data
+			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocation:104 andSendResultsTo:self]; // 74 omdat dit ook de locatie is van de data
 			//Waarom reset de interface zich naar alles ingeklapt?
+			
+			if([locationModule GPS]) {
+				[locationModule toggleGPS];	
+			}
 			
 			[aNumber release];
 		}
-		else if(clicker == @"long") {
+		else if(clicker == @"long-edit") {
 			NSNumber* aNumber = [[NSNumber alloc] initWithFloat:[locationModule longitude]];
 			currentlyEditingIdentifier = @"long";
 			[locationModule setLongVisible:NO];
-			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocation:174 andSendResultsTo:self]; // 174 omdat dit ook de locatie is van de data
+			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocation:224 andSendResultsTo:self]; // 174 omdat dit ook de locatie is van de data
 			//Waarom reset de interface zich naar alles ingeklapt?
+			
+			if([locationModule GPS]) {
+				[locationModule toggleGPS];	
+			}
+			
 			[aNumber release];
+		}
+		else if(clicker == @"gps-toggle") {
+			[locationModule toggleGPS];
 		}
 	
 		if(flagToggle) {
