@@ -31,6 +31,10 @@
 	CGPoint pinchCenter;
 	
 	BOOL UIClick;
+	BOOL ScreenClick;
+	
+	int dX;
+	int dY;
 }
 
 @property (assign) SRCamera *camera;

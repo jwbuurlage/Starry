@@ -62,6 +62,8 @@
 	//NSLog(@"touchesBegan count: %d", touchCount);
 	//lastTouchCount = touchCount;
 	dTouch = 1;
+	dX = 0;
+	dY = 0;
 	
 	//[camera registerInitialLocationWithX:[aTouch locationInView:theView].x y:[aTouch locationInView:theView].y]
 	
@@ -90,9 +92,24 @@
 		y = [aTouch locationInView:theView].y - [aTouch previousLocationInView:theView].y;
 		[camera rotateCameraWithX:x 
 							Y:y];
+		
+		dX += x;
+		dY += y;
+		
+		// Als er teveel wordt verschuift cancel de clicks
+		if ( -10 > dX > 10 || -10 > dY > 10) {
+			NSLog(@"Click canceld");
+			ScreenClick = NO;
+			UIClick = NO;
+		}
+		
 		return;
 	}
 	else if(touchCount == 2) {
+		
+		ScreenClick = NO;
+		UIClick = NO;
+		
 		NSArray *twoTouches = [touches allObjects];
 		UITouch *firstTouch = [twoTouches objectAtIndex:0];
 		UITouch *secondTouch = [twoTouches objectAtIndex:1];
@@ -146,7 +163,11 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	if(UIClick) {
+		NSLog(@"Clicked the interface");
 		[[renderer interface] touchEnded];	
+	}
+	else if(ScreenClick && dTouch < 4) { // Het scherm mag niet lang aangeraakt worden vandaar dTouch < 4
+		NSLog(@"Clicked the screen");
 	}
 	else {
 	UITouch *aTouch = [touches anyObject];
