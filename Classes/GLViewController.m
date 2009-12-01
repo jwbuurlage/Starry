@@ -180,6 +180,12 @@
 		UITouch *aTouch = [touches anyObject];
 		int x = [aTouch locationInView:theView].x;
 		int y = [aTouch locationInView:theView].y;
+		// Tenopzichte van het midden uitrekenen iPhone screen (480*320)
+		int dmX = -x+160;
+		int dmY = -y+240;
+		[camera rotateCameraWithX:dmX 
+								Y:dmY];
+		
 		NSLog(@"Clicked the screen at location x:%i y:%i",x,y);
 		
 	}
