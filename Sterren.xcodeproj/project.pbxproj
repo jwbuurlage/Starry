@@ -18,6 +18,7 @@
 		28FD14FE0DC6FC130079059D /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD14FD0DC6FC130079059D /* GLView.m */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		7644565110C5837800AB935D /* SRSettingsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7644565010C5837800AB935D /* SRSettingsModule.m */; };
 		765DA28A10A0B19300C4B16A /* SRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 765DA28910A0B19300C4B16A /* SRLocation.m */; };
 		765DA31510A0B97000C4B16A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765DA31410A0B97000C4B16A /* CoreLocation.framework */; };
 		76B2988510BD9EBB00EEDA5D /* SRLocationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */; };
@@ -45,10 +46,7 @@
 		AC8A87F010C56FCE0015CDF5 /* latitude.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A87ED10C56FCE0015CDF5 /* latitude.png */; };
 		AC8A87F110C56FCE0015CDF5 /* location_off.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A87EE10C56FCE0015CDF5 /* location_off.png */; };
 		AC8A87F210C56FCE0015CDF5 /* longitude.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A87EF10C56FCE0015CDF5 /* longitude.png */; };
-		AC8A884D10C5791F0015CDF5 /* SRNamePlate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8A884C10C5791F0015CDF5 /* SRNamePlate.m */; };
-		AC8A885010C57AA50015CDF5 /* SRSettingsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8A884F10C57AA50015CDF5 /* SRSettingsModule.m */; };
-		AC8A887510C57CBC0015CDF5 /* nameplatebg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A887410C57CBC0015CDF5 /* nameplatebg.png */; };
-		AC8A88BE10C580560015CDF5 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A88BD10C580560015CDF5 /* info.png */; };
+		AC8A89B710C588D60015CDF5 /* SRNamePlate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8A89B610C588D60015CDF5 /* SRNamePlate.m */; };
 		ACA8757D109DC88900465577 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757A109DC88900465577 /* location.png */; };
 		ACA8757E109DC88900465577 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757B109DC88900465577 /* search.png */; };
 		ACA8757F109DC88900465577 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757C109DC88900465577 /* settings.png */; };
@@ -80,6 +78,8 @@
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Sterren_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sterren_Prefix.pch; sourceTree = "<group>"; };
+		7644564F10C5837800AB935D /* SRSettingsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSettingsModule.h; sourceTree = "<group>"; };
+		7644565010C5837800AB935D /* SRSettingsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSettingsModule.m; sourceTree = "<group>"; };
 		765DA28810A0B19300C4B16A /* SRLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLocation.h; sourceTree = "<group>"; };
 		765DA28910A0B19300C4B16A /* SRLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLocation.m; sourceTree = "<group>"; };
 		765DA31410A0B97000C4B16A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -119,12 +119,8 @@
 		AC8A87ED10C56FCE0015CDF5 /* latitude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = latitude.png; path = Resources/latitude.png; sourceTree = "<group>"; };
 		AC8A87EE10C56FCE0015CDF5 /* location_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location_off.png; path = Resources/location_off.png; sourceTree = "<group>"; };
 		AC8A87EF10C56FCE0015CDF5 /* longitude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = longitude.png; path = Resources/longitude.png; sourceTree = "<group>"; };
-		AC8A884B10C5791F0015CDF5 /* SRNamePlate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRNamePlate.h; sourceTree = "<group>"; };
-		AC8A884C10C5791F0015CDF5 /* SRNamePlate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRNamePlate.m; sourceTree = "<group>"; };
-		AC8A884E10C57AA50015CDF5 /* SRSettingsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSettingsModule.h; sourceTree = "<group>"; };
-		AC8A884F10C57AA50015CDF5 /* SRSettingsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSettingsModule.m; sourceTree = "<group>"; };
-		AC8A887410C57CBC0015CDF5 /* nameplatebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nameplatebg.png; path = Resources/nameplatebg.png; sourceTree = "<group>"; };
-		AC8A88BD10C580560015CDF5 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = Resources/info.png; sourceTree = "<group>"; };
+		AC8A89B510C588D60015CDF5 /* SRNamePlate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRNamePlate.h; sourceTree = "<group>"; };
+		AC8A89B610C588D60015CDF5 /* SRNamePlate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRNamePlate.m; sourceTree = "<group>"; };
 		ACA8757A109DC88900465577 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location.png; path = Resources/location.png; sourceTree = "<group>"; };
 		ACA8757B109DC88900465577 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = Resources/search.png; sourceTree = "<group>"; };
 		ACA8757C109DC88900465577 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Resources/settings.png; sourceTree = "<group>"; };
@@ -218,8 +214,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AC8A887410C57CBC0015CDF5 /* nameplatebg.png */,
-				AC8A88BD10C580560015CDF5 /* info.png */,
 				AC8A87ED10C56FCE0015CDF5 /* latitude.png */,
 				AC8A87EE10C56FCE0015CDF5 /* location_off.png */,
 				AC8A87EF10C56FCE0015CDF5 /* longitude.png */,
@@ -288,16 +282,16 @@
 		ACA875E7109DD08C00465577 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				AC8A884B10C5791F0015CDF5 /* SRNamePlate.h */,
-				AC8A884C10C5791F0015CDF5 /* SRNamePlate.m */,
+				7644564F10C5837800AB935D /* SRSettingsModule.h */,
+				7644565010C5837800AB935D /* SRSettingsModule.m */,
 				AC24C98E10BAE7BF0063DF87 /* SRModule.h */,
+				AC8A89B510C588D60015CDF5 /* SRNamePlate.h */,
+				AC8A89B610C588D60015CDF5 /* SRNamePlate.m */,
 				AC24C98F10BAE7BF0063DF87 /* SRModule.m */,
 				AC24C99310BAE8F00063DF87 /* SRTimeModule.h */,
 				AC24C99410BAE8F00063DF87 /* SRTimeModule.m */,
 				76B2988310BD9EBB00EEDA5D /* SRLocationModule.h */,
 				76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */,
-				AC8A884E10C57AA50015CDF5 /* SRSettingsModule.h */,
-				AC8A884F10C57AA50015CDF5 /* SRSettingsModule.m */,
 				ACA875EC109DD0A000465577 /* SRInterfaceElement.h */,
 				ACA875ED109DD0A000465577 /* SRInterfaceElement.m */,
 				AC55F120109600990021D39C /* SRInterface.h */,
@@ -393,8 +387,6 @@
 				AC8A87F010C56FCE0015CDF5 /* latitude.png in Resources */,
 				AC8A87F110C56FCE0015CDF5 /* location_off.png in Resources */,
 				AC8A87F210C56FCE0015CDF5 /* longitude.png in Resources */,
-				AC8A887510C57CBC0015CDF5 /* nameplatebg.png in Resources */,
-				AC8A88BE10C580560015CDF5 /* info.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,8 +418,8 @@
 				76B2988510BD9EBB00EEDA5D /* SRLocationModule.m in Sources */,
 				AC1BA73C10C0225D0084CF6F /* SRConstellation.m in Sources */,
 				AC6D777E10C56A1900442254 /* SRSpriteManager.m in Sources */,
-				AC8A884D10C5791F0015CDF5 /* SRNamePlate.m in Sources */,
-				AC8A885010C57AA50015CDF5 /* SRSettingsModule.m in Sources */,
+				7644565110C5837800AB935D /* SRSettingsModule.m in Sources */,
+				AC8A89B710C588D60015CDF5 /* SRNamePlate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

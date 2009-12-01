@@ -1,7 +1,7 @@
 //
 //  SRInterface.m
 //
-//  A part of Sterren.app, planitarium iPhone application.
+//  A part of Sterren.app, planetarium iPhone application.
 //  Created by: Jan-Willem Buurlage and Thijs Scheepers
 //  Copyright 2006-2009 Mote of Life. All rights reserved.
 //
@@ -309,11 +309,12 @@
 	return flag;
 }
 
--(void)touchEnded {
+-(void)touchEndedAndExecute:(BOOL)result {
 	isClicking = FALSE;
 	
 	// Als er een keyboard omhoog staat mag er niet nog een keer een keyboard omhoog komen.
-	if(![fieldTmp isFirstResponder]) {
+	// Als de click niet weggesleept is mag er door worden gegaan
+	if(![fieldTmp isFirstResponder] && result) {
 		
 		BOOL flagToggle = FALSE;
 	

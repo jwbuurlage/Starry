@@ -1,7 +1,7 @@
 //
 //  GLViewController.h
 //
-//  A part of Sterren.app, planitarium iPhone application.
+//  A part of Sterren.app, planetarium iPhone application.
 //  Created by: Jan-Willem Buurlage and Thijs Scheepers
 //  Copyright 2006-2009 Mote of Life. All rights reserved.
 //
@@ -31,6 +31,10 @@
 	CGPoint pinchCenter;
 	
 	BOOL UIClick;
+	BOOL ScreenClick;
+	
+	int dX;
+	int dY;
 }
 
 @property (assign) SRCamera *camera;

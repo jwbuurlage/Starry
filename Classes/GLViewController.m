@@ -1,7 +1,7 @@
 //
 //  GLViewController.m
 //
-//  A part of Sterren.app, planitarium iPhone application.
+//  A part of Sterren.app, planetarium iPhone application.
 //  Created by: Jan-Willem Buurlage and Thijs Scheepers
 //  Copyright 2006-2009 Mote of Life. All rights reserved.
 //
@@ -53,15 +53,19 @@
 
 	if([[renderer interface] UIElementAtPoint:[aTouch locationInView:theView]]) {
 		UIClick = YES;
+		ScreenClick = NO;
 	}
 	else {
 		UIClick = NO;
+		ScreenClick = YES;
 	}
 	
 	//NSUInteger touchCount = [touches count];	
 	//NSLog(@"touchesBegan count: %d", touchCount);
 	//lastTouchCount = touchCount;
 	dTouch = 1;
+	dX = 0;
+	dY = 0;\
 	
 	//[camera registerInitialLocationWithX:[aTouch locationInView:theView].x y:[aTouch locationInView:theView].y]
 	
@@ -69,7 +73,7 @@
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	if(!UIClick) {
+	//if(!UIClick) {
 	NSUInteger touchCount = [touches count];
 	dTouch++;
 	//NSLog(@"touchesMoved count: %d lastTouchCount: %d dTouch: %d", touchCount, lastTouchCount, dTouch);
@@ -88,11 +92,31 @@
 		int x, y;
 		x = [aTouch locationInView:theView].x - [aTouch previousLocationInView:theView].x;
 		y = [aTouch locationInView:theView].y - [aTouch previousLocationInView:theView].y;
-		[camera rotateCameraWithX:x 
+		
+		if (UIClick == NO) {
+			[camera rotateCameraWithX:x 
 							Y:y];
+		}
+		
+		dX += x;
+		dY += y;
+		
+		// Als er teveel wordt verschuift cancel de clicks
+		if ( -15 < dX < 15 || -15 < dY < 15) {
+			//NSLog(@"Click canceld");
+			ScreenClick = NO;
+			if(UIClick) {
+				UIClick = NO;
+				[[renderer interface] touchEndedAndExecute:NO];
+			}
+		}
+		
 		return;
 	}
-	else if(touchCount == 2) {
+	else if(touchCount == 2 && UIClick == NO) {
+		
+		ScreenClick = NO;
+		
 		NSArray *twoTouches = [touches allObjects];
 		UITouch *firstTouch = [twoTouches objectAtIndex:0];
 		UITouch *secondTouch = [twoTouches objectAtIndex:1];
@@ -141,12 +165,23 @@
 	}
 	
 	lastTouchCount = touchCount;
-	}
+	//}
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	if(UIClick) {
-		[[renderer interface] touchEnded];	
+	
+	NSUInteger touchCount = [touches count]; // Voor kliken mag maar 1 touch gebruikt worden
+	
+	if(UIClick && touchCount == 1) {
+		//NSLog(@"Clicked the interface");
+		[[renderer interface] touchEndedAndExecute:YES];	
+	}
+	else if(ScreenClick && dTouch < 4 && touchCount == 1) { // Het scherm mag niet lang aangeraakt worden vandaar dTouch < 4
+		UITouch *aTouch = [touches anyObject];
+		int x = [aTouch locationInView:theView].x;
+		int y = [aTouch locationInView:theView].y;
+		NSLog(@"Clicked the screen at location x:%i y:%i",x,y);
+		
 	}
 	else {
 	UITouch *aTouch = [touches anyObject];

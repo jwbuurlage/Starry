@@ -1,7 +1,7 @@
 //
 //  SRInterface.h
 //
-//  A part of Sterren.app, planitarium iPhone application.
+//  A part of Sterren.app, planetarium iPhone application.
 //  Created by: Jan-Willem Buurlage and Thijs Scheepers
 //  Copyright 2006-2009 Mote of Life. All rights reserved.
 //
@@ -74,7 +74,7 @@
 -(void)loadModules;
 -(void)renderInterface;
 -(void)drawModules;
--(void)touchEnded;
+-(void)touchEndedAndExecute:(BOOL)result;
 -(void)hideInterface;
 -(void)showInterface;
 -(void)hideAllModules;
