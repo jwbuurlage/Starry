@@ -206,9 +206,16 @@
 			al = azimuth;
 			fi = altitude;
 			
+			om = ([[renderer location] latitude] - 90) - [[renderer location] longitude];
+			be = (-[[[[renderer interface] timeModule] manager] elapsed]);
+			
+			r = 20; // straal denkbeeldige omzet circel
+			
 			brX = r*(cos(al)*sin(fi)*cos(om)*cos(be)-sin(al)*sin(fi)*cos(be)*sin(om)+cos(fi)*sin(be));
 			brY = r*(cos(al)*sin(fi)*sin(om)+sin(al)*sin(fi)*cos(om));
 			brZ = r*(-cos(al)*sin(fi)*cos(om)*sin(be)-sin(al)*sin(fi)*sin(om)*cos(be)+cos(fi)*cos(be));
+			
+			NSLog(@"click location for database x:%f y:%f z:%f",brX,brY,brZ);
 			
 			//alOm = acos(brZ/sqrt(brX^2+brY^2+brZ^2));
 			//fiOm = atan(brY,brX); // klopt niet? hoe kan deze 2 parm nemen?

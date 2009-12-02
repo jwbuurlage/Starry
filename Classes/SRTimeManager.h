@@ -35,6 +35,7 @@
 
 @property (readonly) NSDate* simulatedDate;
 @property (assign) int totalInterval;
+@property (readonly) float elapsed;
 
 -(id)initWithOwner:(SRTimeModule*)theOwner;
 -(NSString*)theTime;
