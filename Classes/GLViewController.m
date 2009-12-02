@@ -196,34 +196,46 @@
 			float readRADeg = [camera calculateAzimuthWithY:dmY];
 			float readDECDeg = [camera calculateAltitudeWithX:dmX];
 			float readRARad = readRADeg * (M_PI/180);
-			float readDECRad = readDECDeg * (M_PI/180);
+			float readDECRad = (readDECDeg * (M_PI/180));
 			//NSLog(@"RA/DEC punt RA:%f DEC:%f",azimuth,altitude);
 			
 			// Uit de php
 			//$x = 20*sin($dec)*cos($ra);
 			//$y = 20*sin($dec)*sin($ra);
 			//$z = 20*cos($dec);
+			NSLog(@"RA/DEC clicked punt RA:%f DEC:%f",readRADeg,readDECDeg);
 			
 			float brX = sin(readDECRad)*cos(readRARad);
 			float brY = sin(readDECRad)*sin(readRARad);
 			float brZ = cos(readDECRad);
 			
-			float rotationY = (([[renderer location] latitude] - 90)*M_PI)/180;
-			float rotationZ = ((-[[[[renderer interface] timeModule] manager] elapsed] - [[renderer location] longitude])*M_PI)/180;
+			float rotationY = ((90-[[renderer location] latitude])*M_PI)/180;
+			//float rotationZ = ((-[[[[renderer interface] timeModule] manager] elapsed] - [[renderer location] longitude])*M_PI)/180;
+			float rotationZ1 = ([[renderer location] longitude]*M_PI)/180;
+			float rotationZ2 = (fmod([[[[renderer interface] timeModule] manager] elapsed],360)*M_PI)/180;
 			
 			// voor goed voorbeeld: http://www.math.umn.edu/~nykamp/m2374/readings/matvecmultex/
 			// wikipedia rotatie matrix: http://en.wikipedia.org/wiki/Rotation_matrix
 			
-			// Matrix vermenigvuldiging met draai om de  z-as
-			float maX = (cos(rotationZ)*brX-sin(rotationZ)*brY+0*brZ);
-			float maY = (sin(rotationZ)*brX+cos(rotationZ)*brY+0*brZ);
+			// Matrix vermenigvuldiging met draai om de  z-as (tijd)
+			float maX = (cos(rotationZ2)*brX-sin(rotationZ2)*brY+0*brZ);
+			float maY = (sin(rotationZ2)*brX+cos(rotationZ2)*brY+0*brZ);
 			float maZ = (0*brX+0*brY+1*brZ);
 			
 			brX = maX;
 			brY = maY;
 			brZ = maZ;
 			
-			// Matrix vermenigvuldiging met draai om de y-as
+			// Matrix vermenigvuldiging met draai om de  z-as (locatie)
+			maX = (cos(rotationZ1)*brX-sin(rotationZ1)*brY+0*brZ);
+			maY = (sin(rotationZ1)*brX+cos(rotationZ1)*brY+0*brZ);
+			maZ = (0*brX+0*brY+1*brZ);
+			
+			brX = maX;
+			brY = maY;
+			brZ = maZ;
+			
+			// Matrix vermenigvuldiging met draai om de y-as (locatie)
 			maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
 			maY = (0*brX+1*brY+0*brZ);
 			maZ = (-sin(rotationY)*brX+0*brY+cos(rotationY)*brZ);

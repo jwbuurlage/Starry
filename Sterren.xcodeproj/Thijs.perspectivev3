@@ -298,7 +298,7 @@
 							<real>258</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>474 37 970 839 0 0 1440 878 </string>
+						<string>469 39 970 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -316,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>asm __dyld__dyld_start  0x2fe01028</string>
+								<string>GLViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,30 +324,31 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>asm __dyld__dyld_start  0x2fe01028</string>
+										<string>GLViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7628396F10C707A700843A3A</string>
+										<string>769767C510C7177300451D65</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
-											<string>76E09EF310C6DC9D00EE2021</string>
 											<string>76E09F1010C6DF2A00EE2021</string>
-											<string>76E09F1210C6DF2A00EE2021</string>
-											<string>76E09F1410C6DF2A00EE2021</string>
-											<string>76E09F1710C6DF2A00EE2021</string>
 											<string>76E09F4310C6ECA100EE2021</string>
 											<string>76E09F5810C6EDB800EE2021</string>
 											<string>76E09FDC10C6F82C00EE2021</string>
 											<string>76E09FDD10C6F82C00EE2021</string>
-											<string>7628393A10C7060900843A3A</string>
 											<string>7628393B10C7060900843A3A</string>
-											<string>7628393C10C7060900843A3A</string>
-											<string>7628393D10C7060900843A3A</string>
-											<string>7628393E10C7060900843A3A</string>
-											<string>7628393F10C7060900843A3A</string>
-											<string>7628394010C7060900843A3A</string>
+											<string>769766FE10C70CDD00451D65</string>
+											<string>769766FF10C70CDD00451D65</string>
+											<string>7697674D10C7100A00451D65</string>
+											<string>7697676F10C7129300451D65</string>
+											<string>7697679810C7154300451D65</string>
+											<string>7697679910C7154300451D65</string>
+											<string>769767A910C7169200451D65</string>
+											<string>769767B810C716D800451D65</string>
+											<string>769767C210C7177300451D65</string>
+											<string>769767C310C7177300451D65</string>
+											<string>769767C410C7177300451D65</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -361,18 +362,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {690, 677}}</string>
+								<string>{{0, 0}, {690, 674}}</string>
 								<key>RubberWindowFrame</key>
-								<string>474 37 970 839 0 0 1440 878 </string>
+								<string>469 39 970 839 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>677pt</string>
+							<string>674pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>116pt</string>
+							<string>119pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -386,9 +387,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {690, 89}}</string>
-										<key>RubberWindowFrame</key>
-										<string>474 37 970 839 0 0 1440 878 </string>
+										<string>{{10, 27}, {690, 92}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -442,7 +441,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1160, 86}}</string>
+										<string>{{10, 27}, {690, 92}}</string>
+										<key>RubberWindowFrame</key>
+										<string>469 39 970 839 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -470,11 +471,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>7628395B10C7071D00843A3A</string>
+				<string>769766EA10C70BA000451D65</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>7628395C10C7071D00843A3A</string>
+				<string>769766EB10C70BA000451D65</string>
 				<string>7644572810C5A54000AB935D</string>
-				<string>7628395D10C7071D00843A3A</string>
+				<string>769766EC10C70BA000451D65</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -623,13 +624,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>7628395E10C7071D00843A3A</string>
+				<string>769766ED10C70BA000451D65</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>7628395F10C7071D00843A3A</string>
-				<string>7628396010C7071D00843A3A</string>
-				<string>7628396110C7071D00843A3A</string>
-				<string>7628396210C7071D00843A3A</string>
+				<string>769766EE10C70BA000451D65</string>
+				<string>769766EF10C70BA000451D65</string>
+				<string>769766F010C70BA000451D65</string>
+				<string>769766F110C70BA000451D65</string>
 				<string>7644572810C5A54000AB935D</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -664,13 +665,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>7628397010C707A700843A3A</string>
-		<string>7628396410C7071D00843A3A</string>
-		<string>7628396510C7071D00843A3A</string>
+		<string>769767C610C7177300451D65</string>
+		<string>769766F310C70BA000451D65</string>
+		<string>769766F410C70BA000451D65</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>474 37 970 839 0 0 1440 878 </string>
+	<string>469 39 970 839 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
