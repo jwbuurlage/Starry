@@ -102,7 +102,7 @@
 						 
 	float sT = La + ( Lb * dJ ) + ( Lc * pow(dJ,2) ) + ( Ld * pow(dJ,3) );
 	sT = fmod(sT, 360);
-	elapsed = sT;
+	elapsed = sT; // in graden
 	
 	//NSLog(@"elapsed: %f",sT / 15);
 	

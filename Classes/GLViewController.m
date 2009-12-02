@@ -193,8 +193,12 @@
 			//[camera rotateCameraWithX:dmX 
 			//						Y:dmY];
 			
-			float azimuth = [camera calculateAzimuthWithY:dmY];
-			float altitude = [camera calculateAltitudeWithX:dmX];
+			float readRA = [camera calculateAzimuthWithY:dmY];
+			float readDEC = [camera calculateAltitudeWithX:dmX];
+			//NSLog(@"RA/DEC punt RA:%f DEC:%f",azimuth,altitude);
+			
+			
+			 
 			
 			// al = right assention
 			// fi = declination
@@ -203,13 +207,13 @@
 			
 			float al,be,fi,om,r,brX,brY,brZ,alOm,fiOm;
 			
-			al = azimuth;
-			fi = altitude;
+			al = (readRA*M_PI)/180;
+			fi = (readDEC*M_PI)/180;
 			
-			om = ([[renderer location] latitude] - 90);
-			be = (-[[[[renderer interface] timeModule] manager] elapsed] - [[renderer location] longitude]);
+			om = (([[renderer location] latitude] - 90)*M_PI)/180;
+			be = ((-[[[[renderer interface] timeModule] manager] elapsed] - [[renderer location] longitude])*M_PI)/180;
 			
-			r = 20; // straal denkbeeldige omzet circel
+			r = 1; // straal denkbeeldige omzet circel
 			
 			brX = r*(cos(al)*sin(fi)*cos(om)*cos(be)-sin(al)*sin(fi)*cos(be)*sin(om)+cos(fi)*sin(be));
 			brY = r*(cos(al)*sin(fi)*sin(om)+sin(al)*sin(fi)*cos(om));
@@ -221,6 +225,7 @@
 			fiOm = atan2(brY,brX); // klopt niet? hoe kan deze 2 parm nemen?
 
 			NSLog(@"RA/DEC punt RA:%f DEC:%f",alOm,fiOm);
+			
 			
 			//NSLog(@"Clicked the screen at location x:%i y:%i",x,y);
 		}
