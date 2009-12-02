@@ -65,7 +65,7 @@
 	//lastTouchCount = touchCount;
 	dTouch = 1;
 	dX = 0;
-	dY = 0;\
+	dY = 0;
 	
 	//[camera registerInitialLocationWithX:[aTouch locationInView:theView].x y:[aTouch locationInView:theView].y]
 	
@@ -193,12 +193,54 @@
 			//[camera rotateCameraWithX:dmX 
 			//						Y:dmY];
 			
-			float readRA = [camera calculateAzimuthWithY:dmY];
-			float readDEC = [camera calculateAltitudeWithX:dmX];
+			float readRADeg = [camera calculateAzimuthWithY:dmY];
+			float readDECDeg = [camera calculateAltitudeWithX:dmX];
+			float readRARad = readRADeg * (M_PI/180);
+			float readDECRad = readDECDeg * (M_PI/180);
 			//NSLog(@"RA/DEC punt RA:%f DEC:%f",azimuth,altitude);
 			
+			// Uit de php
+			//$x = 20*sin($dec)*cos($ra);
+			//$y = 20*sin($dec)*sin($ra);
+			//$z = 20*cos($dec);
 			
-			 
+			float brX = sin(readDECRad)*cos(readRARad);
+			float brY = sin(readDECRad)*sin(readRARad);
+			float brZ = cos(readDECRad);
+			
+			float rotationY = (([[renderer location] latitude] - 90)*M_PI)/180;
+			float rotationZ = ((-[[[[renderer interface] timeModule] manager] elapsed] - [[renderer location] longitude])*M_PI)/180;
+			
+			// voor goed voorbeeld: http://www.math.umn.edu/~nykamp/m2374/readings/matvecmultex/
+			// wikipedia rotatie matrix: http://en.wikipedia.org/wiki/Rotation_matrix
+			
+			// Matrix vermenigvuldiging met draai om de  z-as
+			float maX = (cos(rotationZ)*brX-sin(rotationZ)*brY+0*brZ);
+			float maY = (sin(rotationZ)*brX+cos(rotationZ)*brY+0*brZ);
+			float maZ = (0*brX+0*brY+1*brZ);
+			
+			brX = maX;
+			brY = maY;
+			brZ = maZ;
+			
+			// Matrix vermenigvuldiging met draai om de y-as
+			maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
+			maY = (0*brX+1*brY+0*brZ);
+			maZ = (-sin(rotationY)*brX+0*brY+cos(rotationY)*brZ);
+			
+			brX = 20*maX;
+			brY = 20*maY;
+			brZ = 20*maZ;
+			
+			NSLog(@"click location for database x:%f y:%f z:%f",brX,brY,brZ);
+			
+			float dbRA = acos(brZ/sqrt(pow(brX,2)+pow(brY,2)+pow(brZ,2)));
+			float dbDEC = atan2(brY,brX); // klopt niet? hoe kan deze 2 parm nemen?
+			
+			//NSLog(@"RA/DEC punt RA:%f DEC:%f",dbRA,dbDEC);
+			
+			/*
+			Leuk geprobeerd 
 			
 			// al = right assention
 			// fi = declination
@@ -225,7 +267,7 @@
 			fiOm = atan2(brY,brX); // klopt niet? hoe kan deze 2 parm nemen?
 
 			NSLog(@"RA/DEC punt RA:%f DEC:%f",alOm,fiOm);
-			
+			*/
 			
 			//NSLog(@"Clicked the screen at location x:%i y:%i",x,y);
 		}
