@@ -397,7 +397,7 @@
 				[theNameplate hide];
 			}
 			else {
-				[theNameplate setName:@"Zon" inConstellation:@"Orion" showInfo:FALSE];
+				[theNameplate setName:@"Zon" inConstellation:@"Orion" showInfo:YES];
 			}
 		}
 		else if(clicker == @"arrow") {
