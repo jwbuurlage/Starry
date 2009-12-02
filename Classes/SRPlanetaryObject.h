@@ -51,5 +51,6 @@
 -(Vertex3D)position;
 -(float)azimuth;
 -(float)altitude;
+-(GLuint)texture;
 
 @end
