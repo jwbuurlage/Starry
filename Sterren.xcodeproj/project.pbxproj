@@ -63,6 +63,7 @@
 		AC97059510C5B4190048DB59 /* uranus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058E10C5B4190048DB59 /* uranus.png */; };
 		AC97059610C5B4190048DB59 /* venus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058F10C5B4190048DB59 /* venus.png */; };
 		AC9A924410C6EC0A00657268 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = AC9A924310C6EC0A00657268 /* planet.png */; };
+		AC9A926B10C6F1C500657268 /* SRConstellationLine.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9A926A10C6F1C500657268 /* SRConstellationLine.m */; };
 		ACA8757D109DC88900465577 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757A109DC88900465577 /* location.png */; };
 		ACA8757E109DC88900465577 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757B109DC88900465577 /* search.png */; };
 		ACA8757F109DC88900465577 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757C109DC88900465577 /* settings.png */; };
@@ -154,6 +155,8 @@
 		AC97058E10C5B4190048DB59 /* uranus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uranus.png; path = Resources/Textures/uranus.png; sourceTree = "<group>"; };
 		AC97058F10C5B4190048DB59 /* venus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = venus.png; path = Resources/Textures/venus.png; sourceTree = "<group>"; };
 		AC9A924310C6EC0A00657268 /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet.png; path = Resources/planet.png; sourceTree = "<group>"; };
+		AC9A926910C6F1C500657268 /* SRConstellationLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRConstellationLine.h; sourceTree = "<group>"; };
+		AC9A926A10C6F1C500657268 /* SRConstellationLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRConstellationLine.m; sourceTree = "<group>"; };
 		ACA8757A109DC88900465577 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location.png; path = Resources/location.png; sourceTree = "<group>"; };
 		ACA8757B109DC88900465577 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = Resources/search.png; sourceTree = "<group>"; };
 		ACA8757C109DC88900465577 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Resources/settings.png; sourceTree = "<group>"; };
@@ -190,6 +193,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AC9A926910C6F1C500657268 /* SRConstellationLine.h */,
+				AC9A926A10C6F1C500657268 /* SRConstellationLine.m */,
 				ACA875E7109DD08C00465577 /* Interface */,
 				765DA28810A0B19300C4B16A /* SRLocation.h */,
 				765DA28910A0B19300C4B16A /* SRLocation.m */,
@@ -494,6 +499,7 @@
 				7644565110C5837800AB935D /* SRSettingsModule.m in Sources */,
 				AC8A89B710C588D60015CDF5 /* SRNamePlate.m in Sources */,
 				AC8A8AA110C5A14C0015CDF5 /* SRSlider.m in Sources */,
+				AC9A926B10C6F1C500657268 /* SRConstellationLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

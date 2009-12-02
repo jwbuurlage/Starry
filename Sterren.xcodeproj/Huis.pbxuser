@@ -343,9 +343,16 @@
 	};
 	AC1BA73A10C0225D0084CF6F /* SRConstellation.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1357, 892}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1345, 883}}";
+			sepNavSelRange = "{480, 0}";
+			sepNavVisRange = "{0, 489}";
+		};
+	};
+	AC1BA73B10C0225D0084CF6F /* SRConstellation.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1345, 883}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 235}";
+			sepNavVisRange = "{0, 471}";
 		};
 	};
 	AC1BA73E10C022690084CF6F /* PBXTextBookmark */ = {
@@ -377,9 +384,9 @@
 	};
 	AC24C98610BAE6420063DF87 /* SRTimeManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1357, 1742}}";
-			sepNavSelRange = "{2368, 0}";
-			sepNavVisRange = "{1420, 2044}";
+			sepNavIntBoundsRect = "{{0, 0}, {1345, 1716}}";
+			sepNavSelRange = "{2630, 0}";
+			sepNavVisRange = "{1432, 2071}";
 		};
 	};
 	AC24C98E10BAE7BF0063DF87 /* SRModule.h */ = {
@@ -1476,14 +1483,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1345, 1105}}";
 			sepNavSelRange = "{1548, 0}";
-			sepNavVisRange = "{396, 1541}";
+			sepNavVisRange = "{393, 1543}";
 		};
 	};
 	ACB7B16B10615F4F00CA447E /* SRRenderer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1345, 5811}}";
-			sepNavSelRange = "{13628, 0}";
-			sepNavVisRange = "{11956, 2872}";
+			sepNavIntBoundsRect = "{{0, 0}, {1524, 6253}}";
+			sepNavSelRange = "{1201, 0}";
+			sepNavVisRange = "{7157, 1575}";
 			sepNavWindowFrame = "{{547, 0}, {996, 1028}}";
 		};
 	};
