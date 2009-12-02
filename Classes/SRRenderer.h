@@ -54,11 +54,12 @@
     GLuint      sphereTriangleFanVertexCount;
 	
 	GLfloat planetPoints[56];
+	GLfloat stringPoints[56];
 	GLfloat starPoints[15000];
 	int planetNum;
 	int starNum;
 	
-	GLuint textures[16];
+	GLuint textures[21];
 
 	float zoomFactor;
 	float brightnessFactor;

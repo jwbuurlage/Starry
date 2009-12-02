@@ -31,7 +31,7 @@
 		//[location useGPSValues]; // dit moet gebeuren in de init van location vanwege static locations
 		interface = [[SRInterface alloc] initWithRenderer:self];
 		
-		glGenTextures(13, &textures[0]);
+		glGenTextures(20, &textures[0]);
 		[interface loadTexture:@"horizon_bg.png" intoLocation:textures[0]];
 		[interface loadTextureWithString:@"Z" intoLocation:textures[1]];
 		[interface loadTextureWithString:@"W" intoLocation:textures[2]];		
@@ -46,7 +46,7 @@
 		[interface loadTexture:@"planet.png" intoLocation:textures[10]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[11]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[12]];
-		
+				
 		NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 		
 		brightnessFactor = [prefs floatForKey:@"brightness"];
@@ -275,24 +275,18 @@
 	glEnable(GL_TEXTURE_2D);
 	
 	glVertexPointer(3, GL_FLOAT, 32, planetPoints);
-    glColorPointer(4, GL_FLOAT, 32, &planetPoints[3]);
+	glColorPointer(4, GL_FLOAT, 32, &planetPoints[3]);
+
 	//glPointSizePointerOES(GL_FLOAT, 0, &planetPoints[7]);
 		
 	int i = 0;
 	GLfloat size = 0;
-	while(i < (planetNum + 5)) {
-		if(planetPoints[(i*8)+7] != 0) {
+	while(i < planetNum) {
 			//NSLog(@"wel");
 			size = planetPoints[(i*8)+7] * zoomFactor;
 			glPointSize(size);
 			glBindTexture(GL_TEXTURE_2D, textures[i + 5]);
 			glDrawArrays(GL_POINTS,i, 1);
-		}
-		else {
-			//NSLog(@"niet");
-		}
-		
-		
 		++i;
 	}	
 	
@@ -448,21 +442,20 @@
 	[uranus setViewOrigin:earth.position];
 	
 	const GLfloat planetPointsTmp[] = {
-		[sun position].x, [sun position].y, [sun position].z,				1.0, 1.0, 0.0, 1.0, 80.0, // Sun point, yellow
-		[jupiter position].x, [jupiter position].y, [jupiter position].z,	1.0, 1.0, 1.0, 1.0, 40.0,  // Sun point, red
-		[mars position].x, [mars position].y, [mars position].z,			1.0, 1.0, 1.0, 1.0, 30.0,// Sun point, red
-		[mercury position].x, [mercury position].y, [mercury position].z,	1.0, 1.0, 1.0, 1.0, 25.0,// Sun point, red
-		[venus position].x, [venus position].y, [venus position].z,			1.0, 1.0, 1.0, 1.0, 40.0,// Sun point, red
-		[saturn position].x, [saturn position].y, [saturn position].z,		1.0, 1.0, 1.0, 1.0, 25.0,// Sun point, red
-		[uranus position].x, [uranus position].y, [uranus position].z,		1.0, 1.0, 1.0, 1.0, 15.0,// Sun point, red
-		[neptune position].x, [neptune position].y, [neptune position].z,	1.0, 1.0, 1.0, 1.0, 15.0 // Sun point, red
+		[sun position].x, [sun position].y, [sun position].z,				1.0, 1.0, 0.0, 1.0, 70.0, // Sun point, yellow
+		[jupiter position].x, [jupiter position].y, [jupiter position].z,	1.0, 1.0, 1.0, 1.0, 30.0,  // Sun point, red
+		[mars position].x, [mars position].y, [mars position].z,			1.0, 1.0, 1.0, 1.0, 25.0,// Sun point, red
+		[mercury position].x, [mercury position].y, [mercury position].z,	1.0, 1.0, 1.0, 1.0, 20.0,// Sun point, red
+		[venus position].x, [venus position].y, [venus position].z,			1.0, 1.0, 1.0, 1.0, 30.0,// Sun point, red
+		[saturn position].x, [saturn position].y, [saturn position].z,		1.0, 1.0, 1.0, 1.0, 17.0,// Sun point, red
+		[uranus position].x, [uranus position].y, [uranus position].z,		1.0, 1.0, 1.0, 1.0, 10.0,// Sun point, red
+		[neptune position].x, [neptune position].y, [neptune position].z,	1.0, 1.0, 1.0, 1.0, 10.0 // Sun point, red
 	};
 	
 	planetNum = 8;
 	
 	for (int i=0; i < planetNum*8; i++) {
 		planetPoints[i] = planetPointsTmp[i];
-		
 		//NSLog(@"%i", i);
 	}
 	

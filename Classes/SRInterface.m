@@ -44,6 +44,7 @@
 	theNameplate = [[SRNamePlate alloc] init];
 }
 
+
 - (void)loadTextureWithString:(NSString *)text intoLocation:(GLuint)location {
 	//Text opzetten
 	UIFont* font;	

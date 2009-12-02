@@ -16,12 +16,6 @@
 
 @implementation SRPlanetaryObject
 
--(id)init {
-	if(self = [super init]) {
-	
-	}
-	return self;
-}
 
 -(id)initWitha:(float)ia		
 			 e:(float)ie		
@@ -41,7 +35,6 @@
         Mo = iMo;  
 		name = iName;
 		
-		//!!Texture2D texture* = ..;
     }
     return self;
 }
@@ -55,29 +48,31 @@
 	
 	//dagen sinds tabel geldig is http://www.astro.uu.nl/~strous/AA/en/reken/hemelpositie.html
 	float d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730530;
-	d = d - 2451545;
+	//d = d - 2451545;
 	//test
-	//d = 1460.6;
+	NSLog(@"d: %f",d);
 	
 	float n = (M_PI / 180) * (0.9856076686/(a*sqrt(a)));
-	//NSLog(@"n: %f",n * (180 / M_PI));
 	float meanAnomaly = ((M_PI / 180) * Mo) + n*(d);
 	//NSLog(@"meanAnomaly: %f", fmod(meanAnomaly * (180 / M_PI), 360));
-
 	//we lossen Keplers' vergelijking op
 	//iteratie tot di te klein is
 	float Ea = meanAnomaly; 
+	//float Ea = 1.047197551; 
 	float E;
-	float di = 1;
+	float di = 0;
 	
-	while(di < 10) {
+	while(di <= 15) {
 		E = Ea;
-		Ea = meanAnomaly + (e*sin(E));
+		Ea = E + ((meanAnomaly + (e*sin(E)) - E)/(1-(e*cos(E))));
+		//NSLog(@"Ea: %f",Ea);
 		++di;
 	}
-	float trueAnomaly = Ea;
-	//NSLog(@"trueAnomaly: %f", fmod(trueAnomaly * (180 / M_PI), 360));
 	
+	float eccentricAnomaly = Ea;
+	float trueAnomaly = 2*atan(sqrt((1+e)/(1-e))*tan(eccentricAnomaly / 2));
+	//NSLog(@"trueAnomaly: %f", fmod(trueAnomaly * (180 / M_PI), 360));
+
 	float distance = a*(1 - pow(e,2))/(1 + e*cos(trueAnomaly));
 	//NSLog(@"Distance: %f",distance);
 	
