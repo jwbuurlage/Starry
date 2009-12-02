@@ -218,7 +218,7 @@
 			// wikipedia rotatie matrix: http://en.wikipedia.org/wiki/Rotation_matrix
 			
 			// Matrix vermenigvuldiging met draai om de  z-as (tijd)
-			float maX = (cos(rotationZ2)*brX-sin(rotationZ2)*brY+0*brZ);
+			float maX = (cos(rotationZ2)*brX+(-sin(rotationZ2)*brY)+0*brZ);
 			float maY = (sin(rotationZ2)*brX+cos(rotationZ2)*brY+0*brZ);
 			float maZ = (0*brX+0*brY+1*brZ);
 			
@@ -227,7 +227,7 @@
 			brZ = maZ;
 			
 			// Matrix vermenigvuldiging met draai om de  z-as (locatie)
-			maX = (cos(rotationZ1)*brX-sin(rotationZ1)*brY+0*brZ);
+			maX = (cos(rotationZ1)*brX+(-sin(rotationZ1)*brY)+0*brZ);
 			maY = (sin(rotationZ1)*brX+cos(rotationZ1)*brY+0*brZ);
 			maZ = (0*brX+0*brY+1*brZ);
 			
@@ -238,7 +238,7 @@
 			// Matrix vermenigvuldiging met draai om de y-as (locatie)
 			maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
 			maY = (0*brX+1*brY+0*brZ);
-			maZ = (-sin(rotationY)*brX+0*brY+cos(rotationY)*brZ);
+			maZ = ((-sin(rotationY)*brX)+0*brY+cos(rotationY)*brZ);
 			
 			brX = 20*maX;
 			brY = 20*maY;
