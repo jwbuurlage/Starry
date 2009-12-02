@@ -62,6 +62,7 @@
 		AC97059410C5B4190048DB59 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058D10C5B4190048DB59 /* sun.png */; };
 		AC97059510C5B4190048DB59 /* uranus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058E10C5B4190048DB59 /* uranus.png */; };
 		AC97059610C5B4190048DB59 /* venus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058F10C5B4190048DB59 /* venus.png */; };
+		AC9A924410C6EC0A00657268 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = AC9A924310C6EC0A00657268 /* planet.png */; };
 		ACA8757D109DC88900465577 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757A109DC88900465577 /* location.png */; };
 		ACA8757E109DC88900465577 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757B109DC88900465577 /* search.png */; };
 		ACA8757F109DC88900465577 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757C109DC88900465577 /* settings.png */; };
@@ -152,6 +153,7 @@
 		AC97058D10C5B4190048DB59 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun.png; path = Resources/Textures/sun.png; sourceTree = "<group>"; };
 		AC97058E10C5B4190048DB59 /* uranus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uranus.png; path = Resources/Textures/uranus.png; sourceTree = "<group>"; };
 		AC97058F10C5B4190048DB59 /* venus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = venus.png; path = Resources/Textures/venus.png; sourceTree = "<group>"; };
+		AC9A924310C6EC0A00657268 /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet.png; path = Resources/planet.png; sourceTree = "<group>"; };
 		ACA8757A109DC88900465577 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location.png; path = Resources/location.png; sourceTree = "<group>"; };
 		ACA8757B109DC88900465577 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = Resources/search.png; sourceTree = "<group>"; };
 		ACA8757C109DC88900465577 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Resources/settings.png; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				AC97058B10C5B4190048DB59 /* neptune.png */,
 				AC97058C10C5B4190048DB59 /* saturn.png */,
 				AC97058D10C5B4190048DB59 /* sun.png */,
+				AC9A924310C6EC0A00657268 /* planet.png */,
 				AC97058E10C5B4190048DB59 /* uranus.png */,
 				AC97058F10C5B4190048DB59 /* venus.png */,
 				ACB56B3510C41A210002842B /* jupiter.png */,
@@ -456,6 +459,7 @@
 				AC97059410C5B4190048DB59 /* sun.png in Resources */,
 				AC97059510C5B4190048DB59 /* uranus.png in Resources */,
 				AC97059610C5B4190048DB59 /* venus.png in Resources */,
+				AC9A924410C6EC0A00657268 /* planet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,13 +39,13 @@
 		[interface loadTextureWithString:@"O" intoLocation:textures[4]];
 		
 		[interface loadTexture:@"sun.png" intoLocation:textures[5]];
-		[interface loadTexture:@"jupiter.png" intoLocation:textures[6]];
-		[interface loadTexture:@"mars.png" intoLocation:textures[7]];
-		[interface loadTexture:@"mercury.png" intoLocation:textures[8]];
-		[interface loadTexture:@"venus.png" intoLocation:textures[9]];
-		[interface loadTexture:@"saturn.png" intoLocation:textures[10]];
-		[interface loadTexture:@"uranus.png" intoLocation:textures[11]];
-		[interface loadTexture:@"neptune.png" intoLocation:textures[12]];
+		[interface loadTexture:@"planet.png" intoLocation:textures[6]];
+		[interface loadTexture:@"planet.png" intoLocation:textures[7]];
+		[interface loadTexture:@"planet.png" intoLocation:textures[8]];
+		[interface loadTexture:@"planet.png" intoLocation:textures[9]];
+		[interface loadTexture:@"planet.png" intoLocation:textures[10]];
+		[interface loadTexture:@"planet.png" intoLocation:textures[11]];
+		[interface loadTexture:@"planet.png" intoLocation:textures[12]];
 		
 		NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 		
@@ -447,34 +447,15 @@
 	[uranus recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
 	[uranus setViewOrigin:earth.position];
 	
-	//[jupiter recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	
-	/* [mercury recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[mercury setViewOrigin:[earth position]];
-	
-	[venus recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[venus setViewOrigin:[earth position]];
-	
-	[mars recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[mars setViewOrigin:[earth position]];
-	[saturn recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[saturn setViewOrigin:[earth position]];
-	
-	[uranus recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[uranus setViewOrigin:[earth position]];
-	
-	[neptune recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[neptune setViewOrigin:[earth position]];*/
-	
 	const GLfloat planetPointsTmp[] = {
-		[sun position].x, [sun position].y, [sun position].z,				1.0, 1.0, 0.0, 1.0, 30.0, // Sun point, yellow
-		[jupiter position].x, [jupiter position].y, [jupiter position].z,	1.0, 1.0, 1.0, 1.0, 20.0,  // Sun point, red
-		[mars position].x, [mars position].y, [mars position].z,			1.0, 1.0, 1.0, 1.0, 20.0,// Sun point, red
-		[mercury position].x, [mercury position].y, [mercury position].z,	1.0, 1.0, 1.0, 1.0, 10.0,// Sun point, red
-		[venus position].x, [venus position].y, [venus position].z,			1.0, 1.0, 1.0, 1.0, 20.0,// Sun point, red
+		[sun position].x, [sun position].y, [sun position].z,				1.0, 1.0, 0.0, 1.0, 80.0, // Sun point, yellow
+		[jupiter position].x, [jupiter position].y, [jupiter position].z,	1.0, 1.0, 1.0, 1.0, 40.0,  // Sun point, red
+		[mars position].x, [mars position].y, [mars position].z,			1.0, 1.0, 1.0, 1.0, 30.0,// Sun point, red
+		[mercury position].x, [mercury position].y, [mercury position].z,	1.0, 1.0, 1.0, 1.0, 25.0,// Sun point, red
+		[venus position].x, [venus position].y, [venus position].z,			1.0, 1.0, 1.0, 1.0, 40.0,// Sun point, red
 		[saturn position].x, [saturn position].y, [saturn position].z,		1.0, 1.0, 1.0, 1.0, 25.0,// Sun point, red
-		[uranus position].x, [uranus position].y, [uranus position].z,		1.0, 1.0, 1.0, 1.0, 10.0,// Sun point, red
-		[neptune position].x, [neptune position].y, [neptune position].z,	1.0, 1.0, 1.0, 1.0, 10.0 // Sun point, red
+		[uranus position].x, [uranus position].y, [uranus position].z,		1.0, 1.0, 1.0, 1.0, 15.0,// Sun point, red
+		[neptune position].x, [neptune position].y, [neptune position].z,	1.0, 1.0, 1.0, 1.0, 15.0 // Sun point, red
 	};
 	
 	planetNum = 8;
