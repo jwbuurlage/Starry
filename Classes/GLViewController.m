@@ -187,6 +187,7 @@
 			// Tenopzichte van het midden uitrekenen iPhone screen (480*320)
 			int dmX = -x+160;
 			int dmY = -y+240;
+			
 		
 			// Voor het testen zoom de camera daar heen
 			//[camera rotateCameraWithX:dmX 
@@ -195,8 +196,23 @@
 			float azimuth = [camera calculateAzimuthWithY:dmY];
 			float altitude = [camera calculateAltitudeWithX:dmX];
 			
-			// Matrix conversions met Location en TimeManager
-			// maar zonder glRotatef
+			// al = right assention
+			// fi = declination
+			// om = y-as hoek
+			// be = z-as hoek
+			
+			float al,be,fi,om,r,brX,brY,brZ,alOm,fiOm;
+			
+			al = azimuth;
+			fi = altitude;
+			
+			brX = r*(cos(al)*sin(fi)*cos(om)*cos(be)-sin(al)*sin(fi)*cos(be)*sin(om)+cos(fi)*sin(be));
+			brY = r*(cos(al)*sin(fi)*sin(om)+sin(al)*sin(fi)*cos(om));
+			brZ = r*(-cos(al)*sin(fi)*cos(om)*sin(be)-sin(al)*sin(fi)*sin(om)*cos(be)+cos(fi)*cos(be));
+			
+			//alOm = acos(brZ/sqrt(brX^2+brY^2+brZ^2));
+			//fiOm = atan(brY,brX); // klopt niet? hoe kan deze 2 parm nemen?
+
 		
 			//NSLog(@"Clicked the screen at location x:%i y:%i",x,y);
 		}
