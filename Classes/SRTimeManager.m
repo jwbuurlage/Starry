@@ -90,7 +90,7 @@
 	//http://www.astro.uu.nl/~strous/AA/en/reken/sterrentijd.html
 	
 	
-	NSTimeInterval dJ = [simulatedDate timeIntervalSinceDate:[NSDate dateWithString:@"2000-01-01 00:00:00 +0100"]]; 
+	NSTimeInterval dJ = [simulatedDate timeIntervalSinceDate:[NSDate dateWithString:@"2000-01-01 00:00:00 +0000"]]; 
 					
 	//seconden --> dagen
 	dJ = dJ / 86400;
