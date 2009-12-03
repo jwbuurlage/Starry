@@ -96,6 +96,7 @@ These functions require GL_TEXTURE_2D and both GL_VERTEX_ARRAY and GL_TEXTURE_CO
 @interface Texture2D (Drawing)
 - (void) drawAtPoint:(CGPoint)point;
 - (void) drawInRect:(CGRect)rect;
+- (void) drawAtPoint:(CGPoint)point withZ:(float)z;
 @end
 
 /*

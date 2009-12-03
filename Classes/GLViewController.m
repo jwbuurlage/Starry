@@ -257,6 +257,10 @@
 			stY = -20*brY;
 			stZ = -20*brZ;
 			
+			float distance = sqrt(pow(stX,2) + pow(stY,2) + pow(stZ,2));
+			float RA = asin(stZ/distance);
+			float Dec = atan2(stY,stX);
+			NSLog(@"Aangeklikte locatie voor sterren database RA:%f Dec:%f",RA,Dec);
 			//NSLog(@"Aangeklikte locatie voor sterren database x:%f y:%f z:%f",stX,stY,stZ);
 			
 			if(stX < 1 &&

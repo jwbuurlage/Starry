@@ -305,6 +305,27 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
 
+- (void) drawAtPoint:(CGPoint)point withZ:(float)z
+{
+	
+	GLfloat		coordinates[] = { 0,	_maxT,
+		_maxS,	_maxT,
+		0,		0,
+		_maxS,	0 };
+	GLfloat		width = (GLfloat)_width * _maxS,
+	height = (GLfloat)_height * _maxT;
+	
+	GLfloat		vertices[] = {	-width / 2 + point.x,	-height / 2 + point.y,	z,
+		width / 2 + point.x,	-height / 2 + point.y,	z,
+		-width / 2 + point.x,	height / 2 + point.y,	z,
+		width / 2 + point.x,	height / 2 + point.y,	z };
+	
+	glBindTexture(GL_TEXTURE_2D, _name);
+	glVertexPointer(3, GL_FLOAT, 0, vertices);
+	glTexCoordPointer(2, GL_FLOAT, 0, coordinates);
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+}
+
 
 - (void) drawInRect:(CGRect)rect
 {
@@ -322,5 +343,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	glTexCoordPointer(2, GL_FLOAT, 0, coordinates);
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
+
+
 
 @end

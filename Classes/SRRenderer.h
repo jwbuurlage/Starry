@@ -63,6 +63,8 @@
 
 	float zoomFactor;
 	float brightnessFactor;
+	
+	//Texture2D* textTest;
 }
 
 @property (readonly) SRInterface* interface;

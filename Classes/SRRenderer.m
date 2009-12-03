@@ -46,6 +46,8 @@
 		[interface loadTexture:@"planet.png" intoLocation:textures[10]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[11]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[12]];
+		
+		//textTest = [[Texture2D alloc] initWithString:@"Sun" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12];
 				
 		NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 		
@@ -290,8 +292,16 @@
 		++i;
 	}	
 	
-	glDisable(GL_TEXTURE_2D);
 	glDisable(GL_POINT_SPRITE_OES);
+	
+	/*i = 0;
+	while(i < planetNum) {
+		[textTest drawAtPoint:CGPointMake(planetPoints[i*8], planetPoints[(i*8)+1]) withZ:planetPoints[(i*8)+2] - 0.5f];
+		++i;
+	}*/
+		
+	
+	glDisable(GL_TEXTURE_2D);
 	glDisableClientState(GL_POINT_SIZE_ARRAY_OES);
 	
 	glEnable(GL_DEPTH_TEST);

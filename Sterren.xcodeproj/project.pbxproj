@@ -193,8 +193,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AC9A926910C6F1C500657268 /* SRConstellationLine.h */,
-				AC9A926A10C6F1C500657268 /* SRConstellationLine.m */,
 				ACA875E7109DD08C00465577 /* Interface */,
 				765DA28810A0B19300C4B16A /* SRLocation.h */,
 				765DA28910A0B19300C4B16A /* SRLocation.m */,
@@ -202,6 +200,8 @@
 				AC6D777D10C56A1900442254 /* SRSpriteManager.m */,
 				AC1BA73A10C0225D0084CF6F /* SRConstellation.h */,
 				AC1BA73B10C0225D0084CF6F /* SRConstellation.m */,
+				AC9A926910C6F1C500657268 /* SRConstellationLine.h */,
+				AC9A926A10C6F1C500657268 /* SRConstellationLine.m */,
 				AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */,
 				AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */,
 				ACEC7CEF109B25A700149C80 /* SRStar.h */,
