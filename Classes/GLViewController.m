@@ -188,13 +188,16 @@
 			int dmX = -x+160;
 			int dmY = -y+240;
 			
-		
+			
 			// Voor het testen zoom de camera daar heen
 			//[camera rotateCameraWithX:dmX 
 			//						Y:dmY];
 			
-			float readRADeg = [camera calculateAzimuthWithY:dmY];
-			float readDECDeg = [camera calculateAltitudeWithX:dmX];
+			float readRADeg = fmod([camera calculateAzimuthWithY:dmY],360);
+			if (readRADeg < 0) {
+				readRADeg = readRADeg + 360;
+			}
+			float readDECDeg = fmod(90+[camera calculateAltitudeWithX:dmX],180);
 			float readRARad = readRADeg * (M_PI/180);
 			float readDECRad = (readDECDeg * (M_PI/180));
 			//NSLog(@"RA/DEC punt RA:%f DEC:%f",azimuth,altitude);
@@ -203,24 +206,29 @@
 			//$x = 20*sin($dec)*cos($ra);
 			//$y = 20*sin($dec)*sin($ra);
 			//$z = 20*cos($dec);
-			NSLog(@"RA/DEC clicked punt RA:%f DEC:%f",readRADeg,readDECDeg);
+			//NSLog(@"Aangeklikt punt in graden RA:%f DEC:%f",readRADeg,readDECDeg);
+			//NSLog(@"Aangeklikt punt in radialen RA:%f DEC:%f",readRARad,readDECRad);
 			
 			float brX = sin(readDECRad)*cos(readRARad);
 			float brY = sin(readDECRad)*sin(readRARad);
 			float brZ = cos(readDECRad);
+			//NSLog(@"Aangeklikte locatie op bol x:%f y:%f z:%f",brX,brY,brZ);
 			
-			float rotationY = ((90-[[renderer location] latitude])*M_PI)/180;
-			//float rotationZ = ((-[[[[renderer interface] timeModule] manager] elapsed] - [[renderer location] longitude])*M_PI)/180;
-			float rotationZ1 = ([[renderer location] longitude]*M_PI)/180;
-			float rotationZ2 = (fmod([[[[renderer interface] timeModule] manager] elapsed],360)*M_PI)/180;
+			
+			float rotationY = (90-[[renderer location] latitude])*(M_PI/180);
+			float rotationZ1 = [[renderer location] longitude]*(M_PI/180);
+			float rotationZ2 = [[[[renderer interface] timeModule] manager] elapsed]*(M_PI/180);
+			//float rotationZ2 = rotationZ1 + rotationZ3;
 			
 			// voor goed voorbeeld: http://www.math.umn.edu/~nykamp/m2374/readings/matvecmultex/
 			// wikipedia rotatie matrix: http://en.wikipedia.org/wiki/Rotation_matrix
 			
-			// Matrix vermenigvuldiging met draai om de  z-as (tijd)
-			float maX = (cos(rotationZ2)*brX+(-sin(rotationZ2)*brY)+0*brZ);
-			float maY = (sin(rotationZ2)*brX+cos(rotationZ2)*brY+0*brZ);
-			float maZ = (0*brX+0*brY+1*brZ);
+			float maX,maY,maZ;
+			
+			// Matrix vermenigvuldiging met draai om de y-as (locatie)
+			maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
+			maY = (0*brX+1*brY+0*brZ);
+			maZ = ((-sin(rotationY)*brX)+0*brY+cos(rotationY)*brZ);
 			
 			brX = maX;
 			brY = maY;
@@ -235,53 +243,40 @@
 			brY = maY;
 			brZ = maZ;
 			
-			// Matrix vermenigvuldiging met draai om de y-as (locatie)
-			maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
-			maY = (0*brX+1*brY+0*brZ);
-			maZ = ((-sin(rotationY)*brX)+0*brY+cos(rotationY)*brZ);
+			// Matrix vermenigvuldiging met draai om de  z-as (tijd)
+			maX = (cos(rotationZ2)*brX+(-sin(rotationZ2)*brY)+0*brZ);
+			maY = (sin(rotationZ2)*brX+cos(rotationZ2)*brY+0*brZ);
+			maZ = (0*brX+0*brY+1*brZ);
 			
-			brX = 20*maX;
-			brY = 20*maY;
-			brZ = 20*maZ;
+			brX = maX;
+			brY = maY;
+			brZ = maZ;
 			
-			NSLog(@"click location for database x:%f y:%f z:%f",brX,brY,brZ);
+			float stX,stY,stZ;
+			stX = -20*brX;
+			stY = -20*brY;
+			stZ = -20*brZ;
 			
-			float dbRA = acos(brZ/sqrt(pow(brX,2)+pow(brY,2)+pow(brZ,2)));
-			float dbDEC = atan2(brY,brX); // klopt niet? hoe kan deze 2 parm nemen?
+			//NSLog(@"Aangeklikte locatie voor sterren database x:%f y:%f z:%f",stX,stY,stZ);
 			
-			//NSLog(@"RA/DEC punt RA:%f DEC:%f",dbRA,dbDEC);
+			if(stX < 1 &&
+			   stX >= 0 &&
+			   stY < 1 &&
+			   stY >= 0 &&
+			   stZ <= 20 &&
+			   stZ > 19) {
+					//Poolster aangeklikt
+				if ([[[renderer interface] theNameplate] visible]) {
+					[[[renderer interface] theNameplate] hide];
+					// Iets van een timer
+					//[[[renderer interface] theNameplate] setName:@"Polaris" inConstellation:@"Kleine beer" showInfo:NO];
+					
+				}
+				else {
+					[[[renderer interface] theNameplate] setName:@"Polaris" inConstellation:@"Kleine beer" showInfo:NO];
+				}
+			}
 			
-			/*
-			Leuk geprobeerd 
-			
-			// al = right assention
-			// fi = declination
-			// om = y-as hoek
-			// be = z-as hoek
-			
-			float al,be,fi,om,r,brX,brY,brZ,alOm,fiOm;
-			
-			al = (readRA*M_PI)/180;
-			fi = (readDEC*M_PI)/180;
-			
-			om = (([[renderer location] latitude] - 90)*M_PI)/180;
-			be = ((-[[[[renderer interface] timeModule] manager] elapsed] - [[renderer location] longitude])*M_PI)/180;
-			
-			r = 1; // straal denkbeeldige omzet circel
-			
-			brX = r*(cos(al)*sin(fi)*cos(om)*cos(be)-sin(al)*sin(fi)*cos(be)*sin(om)+cos(fi)*sin(be));
-			brY = r*(cos(al)*sin(fi)*sin(om)+sin(al)*sin(fi)*cos(om));
-			brZ = r*(-cos(al)*sin(fi)*cos(om)*sin(be)-sin(al)*sin(fi)*sin(om)*cos(be)+cos(fi)*cos(be));
-			
-			//NSLog(@"click location for database x:%f y:%f z:%f",brX,brY,brZ);
-			
-			alOm = acos(brZ/sqrt(pow(brX,2)+pow(brY,2)+pow(brZ,2)));
-			fiOm = atan2(brY,brX); // klopt niet? hoe kan deze 2 parm nemen?
-
-			NSLog(@"RA/DEC punt RA:%f DEC:%f",alOm,fiOm);
-			*/
-			
-			//NSLog(@"Clicked the screen at location x:%i y:%i",x,y);
 		}
 		
 	}

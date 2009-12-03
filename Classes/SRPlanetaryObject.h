@@ -36,6 +36,8 @@
 	Vertex3D position;
 }
 
+@property (readonly) Vertex3D position;
+
 -(id)initWitha:(float)ia		
 			 e:(float)ie		
 			 i:(float)ii
@@ -48,9 +50,11 @@
 -(void)setViewOrigin:(Vertex3D)origin;
 
 //getters
+/*
 -(Vertex3D)position;
 -(float)azimuth;
 -(float)altitude;
 -(GLuint)texture;
+*/
 
 @end

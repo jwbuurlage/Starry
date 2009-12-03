@@ -72,6 +72,7 @@
 
 @property (readonly) SRTimeModule* timeModule;
 @property (readonly) SRRenderer* renderer;
+@property (readonly) SRNamePlate* theNameplate;
 
 -(id)initWithRenderer:(SRRenderer*)theRenderer;
 -(void)loadNameplate;
