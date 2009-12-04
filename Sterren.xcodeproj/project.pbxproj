@@ -37,6 +37,7 @@
 		AC4E0145109E187400C13AC5 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4E0144109E187400C13AC5 /* arrow.png */; };
 		AC4F8957109DF46900B8BD64 /* click.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4F8956109DF46900B8BD64 /* click.png */; };
 		AC55F122109600990021D39C /* SRInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AC55F121109600990021D39C /* SRInterface.m */; };
+		AC57BD0E10C957DC00B0BD5C /* constellations.xml in Resources */ = {isa = PBXBuildFile; fileRef = AC57BD0D10C957DC00B0BD5C /* constellations.xml */; };
 		AC59B8BA1075075F00ABAE22 /* SRPlanetaryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */; };
 		AC6636E110AB16C600D4FB1C /* horizon_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6636E010AB16C600D4FB1C /* horizon_bg.png */; };
 		AC6D777E10C56A1900442254 /* SRSpriteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D777D10C56A1900442254 /* SRSpriteManager.m */; };
@@ -124,6 +125,7 @@
 		AC4F8956109DF46900B8BD64 /* click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = click.png; path = Resources/click.png; sourceTree = "<group>"; };
 		AC55F120109600990021D39C /* SRInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRInterface.h; sourceTree = "<group>"; };
 		AC55F121109600990021D39C /* SRInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInterface.m; sourceTree = "<group>"; };
+		AC57BD0D10C957DC00B0BD5C /* constellations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = constellations.xml; sourceTree = "<group>"; };
 		AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlanetaryObject.h; sourceTree = "<group>"; };
 		AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRPlanetaryObject.m; sourceTree = "<group>"; };
 		AC6636E010AB16C600D4FB1C /* horizon_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = horizon_bg.png; path = Resources/horizon_bg.png; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				AC045E32109E062B0066EAA6 /* menu.png */,
 				AC75CA0B108B4A5F00463F3A /* icon_png.png */,
 				76FBD51D108B227000E08E82 /* stars.xml */,
+				AC57BD0D10C957DC00B0BD5C /* constellations.xml */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Sterren-Info.plist */,
 			);
@@ -465,6 +468,7 @@
 				AC97059510C5B4190048DB59 /* uranus.png in Resources */,
 				AC97059610C5B4190048DB59 /* venus.png in Resources */,
 				AC9A924410C6EC0A00657268 /* planet.png in Resources */,
+				AC57BD0E10C957DC00B0BD5C /* constellations.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

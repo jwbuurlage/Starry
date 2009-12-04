@@ -14,6 +14,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import "SRConstellation.h";
 
 @class SterrenAppDelegate, SRStar;
 
@@ -23,6 +24,12 @@
 	
 	SterrenAppDelegate *appDelegate;
 	SRStar *aStar;
+	SRConstellation *aConstellation;
+	SRConstellationLine *aLine;
+	Vector3D aPoint;
+	
+	BOOL stars; //1 = sterren, 0 = sterrenbeelden
+	BOOL start; //1 = start, 0 = end
 }
 
 - (XMLParser *) initXMLParser;

@@ -182,7 +182,31 @@
 			starPoints[i] = starPointsTmp[i];
 		}
 		
-		//getSolidSphere(&sphereTriangleStripVertices, &sphereTriangleStripNormals, &sphereTriangleStripVertexCount, &sphereTriangleFanVertices, &sphereTriangleFanNormals, &sphereTriangleFanVertexCount, 4.0, 50, 50);
+		constellationNum = 0;
+		GLfloat constellationPointsTmp[5000];
+		int i = 0;
+		SRConstellation * constellation;
+		SRConstellationLine * line;
+		
+		for(constellation in appDelegate.constellations) {
+			for(line in constellation.lines) {
+				constellationPointsTmp[i] = line.start.x;
+				constellationPointsTmp[i+1] = line.start.y;
+				constellationPointsTmp[i+2] = line.start.z;
+				constellationPointsTmp[i+3] = line.end.x;
+				constellationPointsTmp[i+4] = line.end.y;
+				constellationPointsTmp[i+5] = line.end.z;
+				i += 6;
+			}
+			++constellationNum;
+		}
+				
+		
+		constellationNum = i;
+		
+		for (int a=0; a <= i; a++) {
+			constellationPoints[a] = constellationPointsTmp[a];
+		}
 	}
 	return self;
 }
@@ -225,9 +249,9 @@
 	[location adjustView];
 	[[[interface timeModule] manager] adjustView];
 	
+	[self drawConstellations];
 	[self drawStars];
 	[self drawEcliptic];
-	//glRotatef(90, 0, 0, 1);
 	[self drawPlanets];
 	
 	[[[interface timeModule] manager] adjustViewBack]; 
@@ -269,6 +293,17 @@
 		}
 		++i;
 	}
+}
+
+-(void)drawConstellations {
+	glDisableClientState(GL_COLOR_ARRAY);
+	
+	glLineWidth(1.5f);
+	glColor4f(0.4f, 0.4f, 0.4f, 0.1f);
+	glVertexPointer(3, GL_FLOAT, 12, constellationPoints);
+    glDrawArrays(GL_LINES, 0, constellationNum);
+		
+	glEnableClientState(GL_COLOR_ARRAY);
 }
 
 -(void)drawPlanets {
@@ -418,15 +453,16 @@
 	glLineWidth(1.5);
 	
 	const GLfloat verticesEcliptic[] = {
-		-25.0, 0.0, 0.0,														1.0, 1.0, 1.0, 0.1,
-		0.0, -25.0 * cos(23.44/180 * M_PI), -25.0 * sin(23.44/180 * M_PI),	1.0, 1.0, 1.0, 0.1,
-		25.0, 0.0, 0.0,															1.0, 1.0, 1.0, 0.1,
-		0.0, 25.0 * cos(23.44/180 * M_PI), 25.0 * sin(23.44/180 * M_PI),		1.0, 1.0, 1.0, 0.1
+		-25.0, 0.0, 0.0,													
+		0.0, -25.0 * cos(23.44/180 * M_PI), -25.0 * sin(23.44/180 * M_PI),	
+		25.0, 0.0, 0.0,														
+		0.0, 25.0 * cos(23.44/180 * M_PI), 25.0 * sin(23.44/180 * M_PI),
 	};
-	
-	glVertexPointer(3, GL_FLOAT, 28, verticesEcliptic);
-    glColorPointer(4, GL_FLOAT, 28, &verticesEcliptic[3]);
+	glDisableClientState(GL_COLOR_ARRAY);
+	glColor4f(0.2, 0.2f, 0.2f, 0.7f);
+	glVertexPointer(3, GL_FLOAT, 12, verticesEcliptic);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
+	glEnableClientState(GL_COLOR_ARRAY);
 }
 
 -(SRCamera*)camera {

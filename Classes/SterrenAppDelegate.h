@@ -22,6 +22,7 @@
     GLView *glView;
 	UIView *uiElementsView;
 	NSMutableArray * stars;
+	NSMutableArray * constellations;
 	SRLocation* location;
 }
 
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) IBOutlet GLView *glView;
 @property (nonatomic, retain) IBOutlet UIView *uiElementsView;
 @property (nonatomic, retain) NSMutableArray *stars;
+@property (nonatomic, retain) NSMutableArray *constellations;
 @property (assign) SRLocation* location;
 
 @end
