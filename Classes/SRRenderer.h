@@ -67,7 +67,7 @@
 	float zoomFactor;
 	float brightnessFactor;
 	
-	//Texture2D* textTest;
+	NSMutableArray* textTest;
 }
 
 @property (readonly) SRInterface* interface;

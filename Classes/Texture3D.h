@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Texture2D.h"
 
 @interface Texture3D : Texture2D {
 	

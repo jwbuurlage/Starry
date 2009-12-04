@@ -47,7 +47,16 @@
 		[interface loadTexture:@"planet.png" intoLocation:textures[11]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[12]];
 		
-		//textTest = [[Texture2D alloc] initWithString:@"Sun" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12];
+		textTest = [[NSMutableArray alloc] init];
+		[textTest addObject:[[Texture2D alloc] initWithString:@"Zon" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
+		[textTest addObject:[[Texture2D alloc] initWithString:@"Jupiter" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
+		[textTest addObject:[[Texture2D alloc] initWithString:@"Mars" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
+		[textTest addObject:[[Texture2D alloc] initWithString:@"Mercurius" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
+		[textTest addObject:[[Texture2D alloc] initWithString:@"Venus" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
+		[textTest addObject:[[Texture2D alloc] initWithString:@"Saturnus" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
+		[textTest addObject:[[Texture2D alloc] initWithString:@"Uranus" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
+		[textTest addObject:[[Texture2D alloc] initWithString:@"Neptunus" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
+
 				
 		NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 		
@@ -212,10 +221,8 @@
 }
 
 -(void)render {
-	if(glGetError() != GL_NO_ERROR) {
-		//NSLog(@"Render error");
-	};
 	glEnable(GL_POINT_SMOOTH);
+	glEnable (GL_LINE_SMOOTH);
 
 	zoomFactor = [camera zoomingValue];
 	
@@ -249,6 +256,7 @@
 	[location adjustView];
 	[[[interface timeModule] manager] adjustView];
 	
+
 	[self drawConstellations];
 	[self drawStars];
 	[self drawEcliptic];
@@ -259,6 +267,7 @@
 	
 	[self drawHorizon];
 	[self drawCompass];
+	
 
 	glDisable(GL_ALPHA_TEST);
 	glDisable(GL_BLEND);
@@ -327,15 +336,14 @@
 		++i;
 	}	
 	
-	glDisable(GL_POINT_SPRITE_OES);
 	
-	/*i = 0;
+	/* i = 0;
 	while(i < planetNum) {
-		[textTest drawAtPoint:CGPointMake(planetPoints[i*8], planetPoints[(i*8)+1]) withZ:planetPoints[(i*8)+2] - 0.5f];
+		[[textTest objectAtIndex:i] drawAtPoint:CGPointMake(planetPoints[i*8], planetPoints[(i*8)+1]) withZ:planetPoints[(i*8)+2] - 0.5f];
 		++i;
-	}*/
+	} */
 		
-	
+	glDisable(GL_POINT_SPRITE_OES);
 	glDisable(GL_TEXTURE_2D);
 	glDisableClientState(GL_POINT_SIZE_ARRAY_OES);
 	
@@ -459,7 +467,7 @@
 		0.0, 25.0 * cos(23.44/180 * M_PI), 25.0 * sin(23.44/180 * M_PI),
 	};
 	glDisableClientState(GL_COLOR_ARRAY);
-	glColor4f(0.2, 0.2f, 0.2f, 0.7f);
+	glColor4f(1.0f, 1.0f, 0.0f, 0.075f);
 	glVertexPointer(3, GL_FLOAT, 12, verticesEcliptic);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 	glEnableClientState(GL_COLOR_ARRAY);

@@ -234,6 +234,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 - (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions alignment:(UITextAlignment)alignment fontName:(NSString*)name fontSize:(CGFloat)size
 {
+	
 	NSUInteger				width,
 							height,
 							i;
@@ -264,13 +265,13 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	context = CGBitmapContextCreate(data, width, height, 8, width, colorSpace, kCGImageAlphaNone);
 	CGColorSpaceRelease(colorSpace);
 	
-	
 	CGContextSetGrayFillColor(context, 1.0, 1.0);
 	CGContextTranslateCTM(context, 0.0, height);
 	CGContextScaleCTM(context, 1.0, -1.0); //NOTE: NSString draws in UIKit referential i.e. renders upside-down compared to CGBitmapContext referential
 	UIGraphicsPushContext(context);
 		[string drawInRect:CGRectMake(0, 0, dimensions.width, dimensions.height) withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
 	UIGraphicsPopContext();
+	
 	
 	self = [self initWithData:data pixelFormat:kTexture2DPixelFormat_A8 pixelsWide:width pixelsHigh:height contentSize:dimensions];
 	
@@ -279,6 +280,53 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	
 	return self;
 }
+
+- (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle
+{
+	// Uitleg: http://blog.coriolis.ch/2009/09/04/arbitrary-rotation-of-a-cgimage/
+	
+	CGFloat angleInRadians = angle * (M_PI / 180);
+	CGFloat width = CGImageGetWidth(imgRef);
+	CGFloat height = CGImageGetHeight(imgRef);
+	
+	CGRect imgRect = CGRectMake(0, 0, width, height);
+	CGAffineTransform transform = CGAffineTransformMakeRotation(angleInRadians);
+	CGRect rotatedRect = CGRectApplyAffineTransform(imgRect, transform);
+	
+	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+	CGContextRef bmContext = CGBitmapContextCreate(NULL,
+												   rotatedRect.size.width,
+												   rotatedRect.size.height,
+												   8,
+												   0,
+												   colorSpace,
+												   kCGImageAlphaPremultipliedFirst);
+	CGContextSetAllowsAntialiasing(bmContext, FALSE);
+	CGContextSetInterpolationQuality(bmContext, kCGInterpolationNone);
+	CGColorSpaceRelease(colorSpace);
+	CGContextTranslateCTM(bmContext,
+						  +(rotatedRect.size.width/2),
+						  +(rotatedRect.size.height/2));
+	CGContextRotateCTM(bmContext, angleInRadians);
+	CGContextTranslateCTM(bmContext,
+						  -(rotatedRect.size.width/2),
+						  -(rotatedRect.size.height/2));
+	
+	CGContextScaleCTM(bmContext, 1, -1);
+	CGContextTranslateCTM(bmContext, 0, -height);
+	
+	CGContextDrawImage(bmContext, CGRectMake(0, 0,
+											 rotatedRect.size.width,
+											 rotatedRect.size.height),
+					   imgRef);
+	
+	CGImageRef rotatedImage = CGBitmapContextCreateImage(bmContext);
+	CFRelease(bmContext);
+	[(id)rotatedImage autorelease];
+	
+	return rotatedImage;
+}
+
 
 @end
 
@@ -307,23 +355,27 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 - (void) drawAtPoint:(CGPoint)point withZ:(float)z
 {
-	
+	//billboards..
+
+	glDisableClientState(GL_COLOR_ARRAY);
+
 	GLfloat		coordinates[] = { 0,	_maxT,
 		_maxS,	_maxT,
 		0,		0,
-		_maxS,	0 };
+		_maxS,	0 }; 
 	GLfloat		width = (GLfloat)_width * _maxS,
-	height = (GLfloat)_height * _maxT;
+	height = (GLfloat)_height * _maxT; 
 	
-	GLfloat		vertices[] = {	-width / 2 + point.x,	-height / 2 + point.y,	z,
-		width / 2 + point.x,	-height / 2 + point.y,	z,
-		-width / 2 + point.x,	height / 2 + point.y,	z,
-		width / 2 + point.x,	height / 2 + point.y,	z };
+	GLfloat		vertices[] = {	
+	
+	};
 	
 	glBindTexture(GL_TEXTURE_2D, _name);
-	glVertexPointer(3, GL_FLOAT, 0, vertices);
 	glTexCoordPointer(2, GL_FLOAT, 0, coordinates);
-	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+	glVertexPointer(3, GL_FLOAT, 0, vertices);
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 1);
+	
+	glEnableClientState(GL_COLOR_ARRAY);
 }
 
 

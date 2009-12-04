@@ -47,6 +47,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 #import <UIKit/UIKit.h>
 #import <OpenGLES/ES1/gl.h>
+#import "OpenGLCommon.h"
 
 //CONSTANTS:
 
@@ -75,6 +76,8 @@ Be aware that the content of the generated textures will be upside-down!
 	Texture2DPixelFormat		_format;
 	GLfloat						_maxS,
 								_maxT;
+	
+	BOOL turned;
 }
 - (id) initWithData:(const void*)data pixelFormat:(Texture2DPixelFormat)pixelFormat pixelsWide:(NSUInteger)width pixelsHigh:(NSUInteger)height contentSize:(CGSize)size;
 
@@ -113,4 +116,5 @@ Note that the generated textures are of type A8 - use the blending mode (GL_SRC_
 */
 @interface Texture2D (Text)
 - (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions alignment:(UITextAlignment)alignment fontName:(NSString*)name fontSize:(CGFloat)size;
+- (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle;
 @end
