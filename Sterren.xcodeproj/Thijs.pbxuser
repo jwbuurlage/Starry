@@ -45,9 +45,9 @@
 	};
 	1F92F5EB0FDFF83200548BE8 /* OpenGLCommon.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 10010}}";
-			sepNavSelRange = "{747, 0}";
-			sepNavVisRange = "{34, 960}";
+			sepNavIntBoundsRect = "{{0, 0}, {1099, 10569}}";
+			sepNavSelRange = "{1084, 0}";
+			sepNavVisRange = "{402, 753}";
 		};
 	};
 	28FD14FC0DC6FC130079059D /* GLView.h */ = {
@@ -73,8 +73,8 @@
 			1D6058900D05DD3D006BFB54 /* Sterren */,
 		);
 		breakpoints = (
-			76179FD610CAAE5E00768180 /* SRRenderer.m:74 */,
-			7617A06B10CAB1E900768180 /* SRObjectManager.m:189 */,
+			76179FD610CAAE5E00768180 /* SRRenderer.m:79 */,
+			7617A06B10CAB1E900768180 /* SRObjectManager.m:197 */,
 		);
 		codeSenseManager = 76FBD281109DE49A005A0ADE /* Code sense */;
 		executables = (
@@ -746,6 +746,102 @@
 			7617A07810CAB27B00768180 /* PBXTextBookmark */ = 7617A07810CAB27B00768180 /* PBXTextBookmark */;
 			7617A07A10CAB29700768180 /* PBXTextBookmark */ = 7617A07A10CAB29700768180 /* PBXTextBookmark */;
 			7617A07B10CAB29700768180 /* PBXTextBookmark */ = 7617A07B10CAB29700768180 /* PBXTextBookmark */;
+			7617A08410CAB4B500768180 /* PBXTextBookmark */ = 7617A08410CAB4B500768180 /* PBXTextBookmark */;
+			7617A08510CAB4B500768180 /* PBXTextBookmark */ = 7617A08510CAB4B500768180 /* PBXTextBookmark */;
+			7617A08610CAB4B500768180 /* PBXTextBookmark */ = 7617A08610CAB4B500768180 /* PBXTextBookmark */;
+			7617A08710CAB4B500768180 /* PBXTextBookmark */ = 7617A08710CAB4B500768180 /* PBXTextBookmark */;
+			7617A08810CAB4B500768180 /* XCBuildMessageTextBookmark */ = 7617A08810CAB4B500768180 /* XCBuildMessageTextBookmark */;
+			7617A08910CAB4B500768180 /* PBXTextBookmark */ = 7617A08910CAB4B500768180 /* PBXTextBookmark */;
+			7617A08A10CAB4B500768180 /* PBXTextBookmark */ = 7617A08A10CAB4B500768180 /* PBXTextBookmark */;
+			7617A08B10CAB4B500768180 /* PBXTextBookmark */ = 7617A08B10CAB4B500768180 /* PBXTextBookmark */;
+			7617A08E10CAB4C000768180 /* PBXTextBookmark */ = 7617A08E10CAB4C000768180 /* PBXTextBookmark */;
+			7617A08F10CAB4C000768180 /* PBXTextBookmark */ = 7617A08F10CAB4C000768180 /* PBXTextBookmark */;
+			7617A09010CAB4C000768180 /* PBXTextBookmark */ = 7617A09010CAB4C000768180 /* PBXTextBookmark */;
+			7617A09210CAB4C000768180 /* PBXTextBookmark */ = 7617A09210CAB4C000768180 /* PBXTextBookmark */;
+			7617A09610CAB4D200768180 /* PBXTextBookmark */ = 7617A09610CAB4D200768180 /* PBXTextBookmark */;
+			7617A09710CAB4D200768180 /* XCBuildMessageTextBookmark */ = 7617A09710CAB4D200768180 /* XCBuildMessageTextBookmark */;
+			7617A09810CAB4D200768180 /* PBXTextBookmark */ = 7617A09810CAB4D200768180 /* PBXTextBookmark */;
+			7617A09910CAB4D300768180 /* PBXTextBookmark */ = 7617A09910CAB4D300768180 /* PBXTextBookmark */;
+			7617A09A10CAB4D300768180 /* PBXTextBookmark */ = 7617A09A10CAB4D300768180 /* PBXTextBookmark */;
+			7617A09D10CAB4DA00768180 /* PBXTextBookmark */ = 7617A09D10CAB4DA00768180 /* PBXTextBookmark */;
+			7617A09E10CAB4DA00768180 /* PBXTextBookmark */ = 7617A09E10CAB4DA00768180 /* PBXTextBookmark */;
+			7617A09F10CAB4DA00768180 /* PBXTextBookmark */ = 7617A09F10CAB4DA00768180 /* PBXTextBookmark */;
+			7617A0A110CAB4DA00768180 /* PBXTextBookmark */ = 7617A0A110CAB4DA00768180 /* PBXTextBookmark */;
+			7617A0A510CAB4EA00768180 /* XCBuildMessageTextBookmark */ = 7617A0A510CAB4EA00768180 /* XCBuildMessageTextBookmark */;
+			7617A0A610CAB4EA00768180 /* PBXTextBookmark */ = 7617A0A610CAB4EA00768180 /* PBXTextBookmark */;
+			7617A0A710CAB4EA00768180 /* PBXTextBookmark */ = 7617A0A710CAB4EA00768180 /* PBXTextBookmark */;
+			7617A0A810CAB4EA00768180 /* PBXTextBookmark */ = 7617A0A810CAB4EA00768180 /* PBXTextBookmark */;
+			7617A0AB10CAB4F400768180 /* PBXTextBookmark */ = 7617A0AB10CAB4F400768180 /* PBXTextBookmark */;
+			7617A0AC10CAB4F400768180 /* PBXTextBookmark */ = 7617A0AC10CAB4F400768180 /* PBXTextBookmark */;
+			7617A0AD10CAB4F400768180 /* PBXTextBookmark */ = 7617A0AD10CAB4F400768180 /* PBXTextBookmark */;
+			7617A0AF10CAB4F400768180 /* PBXTextBookmark */ = 7617A0AF10CAB4F400768180 /* PBXTextBookmark */;
+			7617A0B110CAB50D00768180 /* PBXTextBookmark */ = 7617A0B110CAB50D00768180 /* PBXTextBookmark */;
+			7617A0B210CAB50D00768180 /* PBXTextBookmark */ = 7617A0B210CAB50D00768180 /* PBXTextBookmark */;
+			7617A0B310CAB50D00768180 /* PBXTextBookmark */ = 7617A0B310CAB50D00768180 /* PBXTextBookmark */;
+			7617A0B410CAB50D00768180 /* PBXTextBookmark */ = 7617A0B410CAB50D00768180 /* PBXTextBookmark */;
+			7617A0B510CAB50D00768180 /* PBXTextBookmark */ = 7617A0B510CAB50D00768180 /* PBXTextBookmark */;
+			7617A0B610CAB52000768180 /* PBXTextBookmark */ = 7617A0B610CAB52000768180 /* PBXTextBookmark */;
+			7617A0B810CAB52000768180 /* PBXTextBookmark */ = 7617A0B810CAB52000768180 /* PBXTextBookmark */;
+			7617A0BD10CAB56500768180 /* PBXTextBookmark */ = 7617A0BD10CAB56500768180 /* PBXTextBookmark */;
+			7617A0BE10CAB56500768180 /* PBXTextBookmark */ = 7617A0BE10CAB56500768180 /* PBXTextBookmark */;
+			7617A0BF10CAB56500768180 /* PBXTextBookmark */ = 7617A0BF10CAB56500768180 /* PBXTextBookmark */;
+			7617A0C010CAB56500768180 /* PBXTextBookmark */ = 7617A0C010CAB56500768180 /* PBXTextBookmark */;
+			7617A0C110CAB56500768180 /* XCBuildMessageTextBookmark */ = 7617A0C110CAB56500768180 /* XCBuildMessageTextBookmark */;
+			7617A0C210CAB56500768180 /* PBXTextBookmark */ = 7617A0C210CAB56500768180 /* PBXTextBookmark */;
+			7617A0C310CAB56600768180 /* PBXTextBookmark */ = 7617A0C310CAB56600768180 /* PBXTextBookmark */;
+			7617A0C610CAB56600768180 /* PBXBookmark */ = 7617A0C610CAB56600768180 /* PBXBookmark */;
+			7617A0C710CAB56600768180 /* PBXTextBookmark */ = 7617A0C710CAB56600768180 /* PBXTextBookmark */;
+			7617A0C810CAB56600768180 /* PBXTextBookmark */ = 7617A0C810CAB56600768180 /* PBXTextBookmark */;
+			7617A0CB10CAB57300768180 /* PBXTextBookmark */ = 7617A0CB10CAB57300768180 /* PBXTextBookmark */;
+			7617A0CC10CAB57300768180 /* PBXTextBookmark */ = 7617A0CC10CAB57300768180 /* PBXTextBookmark */;
+			7617A0CD10CAB57300768180 /* PBXTextBookmark */ = 7617A0CD10CAB57300768180 /* PBXTextBookmark */;
+			7617A0CE10CAB57300768180 /* PBXTextBookmark */ = 7617A0CE10CAB57300768180 /* PBXTextBookmark */;
+			7617A0D010CAB57300768180 /* PBXTextBookmark */ = 7617A0D010CAB57300768180 /* PBXTextBookmark */;
+			7617A0D410CAB73D00768180 /* PBXTextBookmark */ = 7617A0D410CAB73D00768180 /* PBXTextBookmark */;
+			7617A0D510CAB73E00768180 /* PBXTextBookmark */ = 7617A0D510CAB73E00768180 /* PBXTextBookmark */;
+			7617A0D610CAB73E00768180 /* PBXTextBookmark */ = 7617A0D610CAB73E00768180 /* PBXTextBookmark */;
+			7617A0D710CAB73E00768180 /* PBXTextBookmark */ = 7617A0D710CAB73E00768180 /* PBXTextBookmark */;
+			7617A0DA10CAB74A00768180 /* PBXTextBookmark */ = 7617A0DA10CAB74A00768180 /* PBXTextBookmark */;
+			7617A0DB10CAB74A00768180 /* PBXTextBookmark */ = 7617A0DB10CAB74A00768180 /* PBXTextBookmark */;
+			7617A0DC10CAB74A00768180 /* PBXTextBookmark */ = 7617A0DC10CAB74A00768180 /* PBXTextBookmark */;
+			7617A0DE10CAB74A00768180 /* PBXTextBookmark */ = 7617A0DE10CAB74A00768180 /* PBXTextBookmark */;
+			7617A0E210CAB76E00768180 /* PBXTextBookmark */ = 7617A0E210CAB76E00768180 /* PBXTextBookmark */;
+			7617A0E310CAB76E00768180 /* PBXTextBookmark */ = 7617A0E310CAB76E00768180 /* PBXTextBookmark */;
+			7617A0E410CAB76E00768180 /* PBXTextBookmark */ = 7617A0E410CAB76E00768180 /* PBXTextBookmark */;
+			7617A0E510CAB76E00768180 /* PBXTextBookmark */ = 7617A0E510CAB76E00768180 /* PBXTextBookmark */;
+			7617A0E710CAB7AF00768180 /* PBXTextBookmark */ = 7617A0E710CAB7AF00768180 /* PBXTextBookmark */;
+			7617A0E810CAB7AF00768180 /* PBXTextBookmark */ = 7617A0E810CAB7AF00768180 /* PBXTextBookmark */;
+			7617A0E910CAB7AF00768180 /* PBXTextBookmark */ = 7617A0E910CAB7AF00768180 /* PBXTextBookmark */;
+			7617A0F410CAB98600768180 /* PBXTextBookmark */ = 7617A0F410CAB98600768180 /* PBXTextBookmark */;
+			7617A0F510CAB98600768180 /* PBXTextBookmark */ = 7617A0F510CAB98600768180 /* PBXTextBookmark */;
+			7617A0F610CAB98600768180 /* PBXTextBookmark */ = 7617A0F610CAB98600768180 /* PBXTextBookmark */;
+			7617A0F710CAB98600768180 /* PBXTextBookmark */ = 7617A0F710CAB98600768180 /* PBXTextBookmark */;
+			7617A0F810CAB98600768180 /* PBXTextBookmark */ = 7617A0F810CAB98600768180 /* PBXTextBookmark */;
+			7617A0F910CAB98600768180 /* PBXTextBookmark */ = 7617A0F910CAB98600768180 /* PBXTextBookmark */;
+			7617A0FA10CAB98600768180 /* PBXTextBookmark */ = 7617A0FA10CAB98600768180 /* PBXTextBookmark */;
+			7617A0FB10CAB98600768180 /* PBXTextBookmark */ = 7617A0FB10CAB98600768180 /* PBXTextBookmark */;
+			7617A0FE10CAB98D00768180 /* PBXTextBookmark */ = 7617A0FE10CAB98D00768180 /* PBXTextBookmark */;
+			7617A0FF10CAB98D00768180 /* PBXTextBookmark */ = 7617A0FF10CAB98D00768180 /* PBXTextBookmark */;
+			7617A10010CAB98D00768180 /* PBXTextBookmark */ = 7617A10010CAB98D00768180 /* PBXTextBookmark */;
+			7617A10210CAB98D00768180 /* PBXTextBookmark */ = 7617A10210CAB98D00768180 /* PBXTextBookmark */;
+			7617A10810CABA6700768180 /* PBXTextBookmark */ = 7617A10810CABA6700768180 /* PBXTextBookmark */;
+			7617A10910CABA6700768180 /* PBXTextBookmark */ = 7617A10910CABA6700768180 /* PBXTextBookmark */;
+			7617A10A10CABA6700768180 /* PBXTextBookmark */ = 7617A10A10CABA6700768180 /* PBXTextBookmark */;
+			7617A10B10CABA6700768180 /* PBXTextBookmark */ = 7617A10B10CABA6700768180 /* PBXTextBookmark */;
+			7617A10C10CABA6700768180 /* PBXTextBookmark */ = 7617A10C10CABA6700768180 /* PBXTextBookmark */;
+			7617A10D10CABA6800768180 /* PBXTextBookmark */ = 7617A10D10CABA6800768180 /* PBXTextBookmark */;
+			7617A10E10CABA6800768180 /* PBXTextBookmark */ = 7617A10E10CABA6800768180 /* PBXTextBookmark */;
+			7617A10F10CABA6800768180 /* PBXTextBookmark */ = 7617A10F10CABA6800768180 /* PBXTextBookmark */;
+			7617A11110CABA8800768180 /* PBXTextBookmark */ = 7617A11110CABA8800768180 /* PBXTextBookmark */;
+			7617A11210CABA8800768180 /* PBXTextBookmark */ = 7617A11210CABA8800768180 /* PBXTextBookmark */;
+			7617A11510CABA9A00768180 /* PBXTextBookmark */ = 7617A11510CABA9A00768180 /* PBXTextBookmark */;
+			7617A11610CABA9A00768180 /* PBXTextBookmark */ = 7617A11610CABA9A00768180 /* PBXTextBookmark */;
+			7617A11710CABA9A00768180 /* PBXTextBookmark */ = 7617A11710CABA9A00768180 /* PBXTextBookmark */;
+			7617A11810CABA9A00768180 /* PBXTextBookmark */ = 7617A11810CABA9A00768180 /* PBXTextBookmark */;
+			7617A11A10CABAB200768180 /* PBXTextBookmark */ = 7617A11A10CABAB200768180 /* PBXTextBookmark */;
+			7617A11B10CABAB900768180 /* PBXTextBookmark */ = 7617A11B10CABAB900768180 /* PBXTextBookmark */;
+			7617A11C10CABAB900768180 /* PBXTextBookmark */ = 7617A11C10CABAB900768180 /* PBXTextBookmark */;
+			7617A11D10CABAB900768180 /* PBXTextBookmark */ = 7617A11D10CABAB900768180 /* PBXTextBookmark */;
 			7628393B10C7060900843A3A = 7628393B10C7060900843A3A /* PBXTextBookmark */;
 			764457CF10C5B57500AB935D = 764457CF10C5B57500AB935D /* PBXTextBookmark */;
 			769766FE10C70CDD00451D65 = 769766FE10C70CDD00451D65 /* PBXTextBookmark */;
@@ -832,7 +928,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 443";
 		rLen = 0;
-		rLoc = 12250;
+		rLoc = 12408;
 		rType = 0;
 		vrLen = 2249;
 		vrLoc = 12427;
@@ -1414,15 +1510,15 @@
 	76179CF210CA61D500768180 /* SRObjectManager.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1099, 819}}";
-			sepNavSelRange = "{1297, 0}";
-			sepNavVisRange = "{364, 934}";
+			sepNavSelRange = "{1285, 0}";
+			sepNavVisRange = "{389, 934}";
 		};
 	};
 	76179CF310CA61D500768180 /* SRObjectManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 2431}}";
-			sepNavSelRange = "{5730, 0}";
-			sepNavVisRange = "{4053, 1731}";
+			sepNavIntBoundsRect = "{{0, 0}, {1379, 2431}}";
+			sepNavSelRange = "{517, 0}";
+			sepNavVisRange = "{5428, 507}";
 		};
 	};
 	76179CF910CA644B00768180 /* PBXTextBookmark */ = {
@@ -1500,7 +1596,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 40";
 		rLen = 0;
-		rLoc = 972;
+		rLoc = 977;
 		rType = 0;
 		vrLen = 890;
 		vrLoc = 0;
@@ -1530,7 +1626,7 @@
 		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
 		name = "SRRenderer.h: 88";
 		rLen = 0;
-		rLoc = 2213;
+		rLoc = 2216;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 694;
@@ -1540,7 +1636,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 293";
 		rLen = 0;
-		rLoc = 7728;
+		rLoc = 7886;
 		rType = 0;
 		vrLen = 1163;
 		vrLoc = 8539;
@@ -1784,7 +1880,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 151";
 		rLen = 14;
-		rLoc = 4046;
+		rLoc = 4204;
 		rType = 0;
 		vrLen = 1105;
 		vrLoc = 5528;
@@ -2262,7 +2358,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 151";
 		rLen = 14;
-		rLoc = 4046;
+		rLoc = 4204;
 		rType = 0;
 		vrLen = 1091;
 		vrLoc = 5561;
@@ -2359,7 +2455,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 14";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 287;
 		rType = 0;
 		vrLen = 249;
 		vrLoc = 0;
@@ -2369,7 +2465,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 25";
 		rLen = 0;
-		rLoc = 525;
+		rLoc = 530;
 		rType = 0;
 		vrLen = 1042;
 		vrLoc = 25;
@@ -2439,7 +2535,7 @@
 		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
 		name = "SRRenderer.h: 88";
 		rLen = 0;
-		rLoc = 2213;
+		rLoc = 2216;
 		rType = 0;
 		vrLen = 1049;
 		vrLoc = 647;
@@ -2449,7 +2545,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 200";
 		rLen = 0;
-		rLoc = 5239;
+		rLoc = 5397;
 		rType = 0;
 		vrLen = 1275;
 		vrLoc = 6191;
@@ -2489,7 +2585,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 14";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 287;
 		rType = 0;
 		vrLen = 249;
 		vrLoc = 0;
@@ -2499,7 +2595,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 14";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 287;
 		rType = 0;
 		vrLen = 249;
 		vrLoc = 0;
@@ -2518,7 +2614,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 147";
 		rLen = 0;
-		rLoc = 3976;
+		rLoc = 4134;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 4811;
@@ -2548,7 +2644,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 24";
 		rLen = 0;
-		rLoc = 5778;
+		rLoc = 6065;
 		rType = 0;
 		vrLen = 413;
 		vrLoc = 0;
@@ -2883,7 +2979,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 24";
 		rLen = 0;
-		rLoc = 5778;
+		rLoc = 6065;
 		rType = 0;
 		vrLen = 413;
 		vrLoc = 0;
@@ -2988,7 +3084,7 @@
 		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
 		name = "SRRenderer.h: 88";
 		rLen = 0;
-		rLoc = 2213;
+		rLoc = 2216;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 694;
@@ -3113,7 +3209,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 144";
 		rLen = 0;
-		rLoc = 3920;
+		rLoc = 4078;
 		rType = 0;
 		vrLen = 431;
 		vrLoc = 5531;
@@ -3170,7 +3266,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 200";
 		rLen = 13;
-		rLoc = 5226;
+		rLoc = 5384;
 		rType = 0;
 		vrLen = 1270;
 		vrLoc = 6211;
@@ -3240,7 +3336,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 147";
 		rLen = 0;
-		rLoc = 3991;
+		rLoc = 4149;
 		rType = 0;
 		vrLen = 415;
 		vrLoc = 5609;
@@ -3261,7 +3357,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 116;
+		rLoc = 121;
 		rType = 1;
 	};
 	76179E1C10CA7C6700768180 /* PBXTextBookmark */ = {
@@ -3269,7 +3365,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 147";
 		rLen = 0;
-		rLoc = 3960;
+		rLoc = 4118;
 		rType = 0;
 		vrLen = 1168;
 		vrLoc = 5528;
@@ -3279,7 +3375,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 147";
 		rLen = 0;
-		rLoc = 3960;
+		rLoc = 4118;
 		rType = 0;
 		vrLen = 1157;
 		vrLoc = 5528;
@@ -3314,7 +3410,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 153";
 		rLen = 0;
-		rLoc = 4064;
+		rLoc = 4222;
 		rType = 0;
 		vrLen = 529;
 		vrLoc = 6253;
@@ -3324,7 +3420,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 147";
 		rLen = 0;
-		rLoc = 3960;
+		rLoc = 4118;
 		rType = 0;
 		vrLen = 441;
 		vrLoc = 5488;
@@ -3334,7 +3430,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 293";
 		rLen = 0;
-		rLoc = 7666;
+		rLoc = 7824;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 8625;
@@ -3364,7 +3460,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 24";
 		rLen = 0;
-		rLoc = 5778;
+		rLoc = 6065;
 		rType = 0;
 		vrLen = 413;
 		vrLoc = 0;
@@ -3374,7 +3470,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 45";
 		rLen = 114;
-		rLoc = 976;
+		rLoc = 981;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 40;
@@ -3439,7 +3535,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 153";
 		rLen = 0;
-		rLoc = 4064;
+		rLoc = 4222;
 		rType = 0;
 		vrLen = 422;
 		vrLoc = 6462;
@@ -3540,7 +3636,7 @@
 		isa = PBXTextBookmark;
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		rLen = 0;
-		rLoc = 91;
+		rLoc = 96;
 		rType = 1;
 	};
 	76179E4A10CA7E3500768180 /* PBXTextBookmark */ = {
@@ -3548,7 +3644,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 153";
 		rLen = 0;
-		rLoc = 4064;
+		rLoc = 4222;
 		rType = 0;
 		vrLen = 403;
 		vrLoc = 5488;
@@ -3568,7 +3664,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 153";
 		rLen = 0;
-		rLoc = 4064;
+		rLoc = 4222;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 5113;
@@ -3578,7 +3674,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 45";
 		rLen = 114;
-		rLoc = 976;
+		rLoc = 981;
 		rType = 0;
 		vrLen = 999;
 		vrLoc = 37;
@@ -3588,7 +3684,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 24";
 		rLen = 0;
-		rLoc = 5778;
+		rLoc = 6065;
 		rType = 0;
 		vrLen = 413;
 		vrLoc = 0;
@@ -3628,7 +3724,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 153";
 		rLen = 0;
-		rLoc = 4064;
+		rLoc = 4222;
 		rType = 0;
 		vrLen = 403;
 		vrLoc = 5488;
@@ -3668,7 +3764,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 48";
 		rLen = 0;
-		rLoc = 1297;
+		rLoc = 1316;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 40;
@@ -3728,7 +3824,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 24";
 		rLen = 0;
-		rLoc = 520;
+		rLoc = 581;
 		rType = 0;
 		vrLen = 1342;
 		vrLoc = 37;
@@ -3778,7 +3874,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 39";
 		rLen = 0;
-		rLoc = 866;
+		rLoc = 871;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 84;
@@ -3858,7 +3954,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 39";
 		rLen = 0;
-		rLoc = 866;
+		rLoc = 871;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 84;
@@ -4182,7 +4278,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 49";
 		rLen = 0;
-		rLoc = 1297;
+		rLoc = 1316;
 		rType = 0;
 		vrLen = 928;
 		vrLoc = 142;
@@ -4192,7 +4288,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 52";
 		rLen = 0;
-		rLoc = 1500;
+		rLoc = 1561;
 		rType = 0;
 		vrLen = 1204;
 		vrLoc = 196;
@@ -4262,7 +4358,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 201";
 		rLen = 0;
-		rLoc = 5239;
+		rLoc = 5397;
 		rType = 0;
 		vrLen = 1159;
 		vrLoc = 6413;
@@ -4282,7 +4378,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 201";
 		rLen = 0;
-		rLoc = 5239;
+		rLoc = 5397;
 		rType = 0;
 		vrLen = 390;
 		vrLoc = 6641;
@@ -4292,7 +4388,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 201";
 		rLen = 0;
-		rLoc = 5239;
+		rLoc = 5397;
 		rType = 0;
 		vrLen = 1059;
 		vrLoc = 6513;
@@ -4302,7 +4398,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 49";
 		rLen = 0;
-		rLoc = 1297;
+		rLoc = 1316;
 		rType = 0;
 		vrLen = 924;
 		vrLoc = 146;
@@ -4352,7 +4448,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 52";
 		rLen = 0;
-		rLoc = 1500;
+		rLoc = 1561;
 		rType = 0;
 		vrLen = 1198;
 		vrLoc = 197;
@@ -4362,7 +4458,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 17";
 		rLen = 0;
-		rLoc = 285;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 1196;
 		vrLoc = 196;
@@ -4372,7 +4468,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 201";
 		rLen = 0;
-		rLoc = 5239;
+		rLoc = 5397;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 6684;
@@ -4382,7 +4478,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 17";
 		rLen = 0;
-		rLoc = 285;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 368;
 		vrLoc = 196;
@@ -4429,7 +4525,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 49";
 		rLen = 0;
-		rLoc = 1297;
+		rLoc = 1316;
 		rType = 0;
 		vrLen = 924;
 		vrLoc = 146;
@@ -4439,7 +4535,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 17";
 		rLen = 0;
-		rLoc = 285;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 1287;
 		vrLoc = 40;
@@ -4468,7 +4564,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 17";
 		rLen = 0;
-		rLoc = 285;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 368;
 		vrLoc = 196;
@@ -4778,7 +4874,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 200";
 		rLen = 0;
-		rLoc = 5239;
+		rLoc = 5397;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 6470;
@@ -4788,7 +4884,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 175";
 		rLen = 0;
-		rLoc = 4560;
+		rLoc = 4718;
 		rType = 0;
 		vrLen = 1065;
 		vrLoc = 5785;
@@ -4798,7 +4894,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 175";
 		rLen = 0;
-		rLoc = 4560;
+		rLoc = 4718;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 5821;
@@ -4828,7 +4924,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 175";
 		rLen = 0;
-		rLoc = 4560;
+		rLoc = 4718;
 		rType = 0;
 		vrLen = 357;
 		vrLoc = 5428;
@@ -4838,7 +4934,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 175";
 		rLen = 0;
-		rLoc = 4560;
+		rLoc = 4718;
 		rType = 0;
 		vrLen = 1039;
 		vrLoc = 5132;
@@ -4858,7 +4954,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 175";
 		rLen = 0;
-		rLoc = 4560;
+		rLoc = 4718;
 		rType = 0;
 		vrLen = 598;
 		vrLoc = 15257;
@@ -4868,7 +4964,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 49";
 		rLen = 0;
-		rLoc = 1297;
+		rLoc = 1316;
 		rType = 0;
 		vrLen = 928;
 		vrLoc = 142;
@@ -4888,7 +4984,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 17";
 		rLen = 0;
-		rLoc = 285;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 37;
@@ -4938,7 +5034,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 52";
 		rLen = 0;
-		rLoc = 1297;
+		rLoc = 1316;
 		rType = 0;
 		vrLen = 972;
 		vrLoc = 145;
@@ -4948,7 +5044,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 17";
 		rLen = 0;
-		rLoc = 285;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 37;
@@ -4958,7 +5054,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 57";
 		rLen = 0;
-		rLoc = 5777;
+		rLoc = 6064;
 		rType = 0;
 		vrLen = 1157;
 		vrLoc = 265;
@@ -4978,7 +5074,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 74";
 		rLen = 0;
-		rLoc = 3851;
+		rLoc = 4009;
 		rType = 0;
 		vrLen = 2125;
 		vrLoc = 2216;
@@ -4988,7 +5084,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 57";
 		rLen = 0;
-		rLoc = 5777;
+		rLoc = 6064;
 		rType = 0;
 		vrLen = 1191;
 		vrLoc = 231;
@@ -4998,7 +5094,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 57";
 		rLen = 0;
-		rLoc = 1543;
+		rLoc = 1604;
 		rType = 0;
 		vrLen = 1405;
 		vrLoc = 313;
@@ -5038,7 +5134,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 42";
 		rLen = 0;
-		rLoc = 872;
+		rLoc = 877;
 		rType = 0;
 		vrLen = 1013;
 		vrLoc = 199;
@@ -5068,7 +5164,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 153";
 		rLen = 0;
-		rLoc = 4157;
+		rLoc = 4213;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 0;
@@ -5108,7 +5204,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 428";
 		rLen = 2032;
-		rLoc = 13606;
+		rLoc = 13764;
 		rType = 0;
 		vrLen = 1184;
 		vrLoc = 9485;
@@ -5208,7 +5304,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 78";
 		rLen = 0;
-		rLoc = 2108;
+		rLoc = 2150;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 1535;
@@ -5268,7 +5364,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 17";
 		rLen = 0;
-		rLoc = 287;
+		rLoc = 300;
 		rType = 0;
 		vrLen = 1327;
 		vrLoc = 0;
@@ -5278,7 +5374,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 46";
 		rLen = 0;
-		rLoc = 972;
+		rLoc = 977;
 		rType = 0;
 		vrLen = 1007;
 		vrLoc = 199;
@@ -5288,7 +5384,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 46";
 		rLen = 0;
-		rLoc = 958;
+		rLoc = 963;
 		rType = 0;
 		vrLen = 1049;
 		vrLoc = 40;
@@ -5298,7 +5394,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 46";
 		rLen = 0;
-		rLoc = 958;
+		rLoc = 963;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 142;
@@ -5318,7 +5414,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 107";
 		rLen = 0;
-		rLoc = 4560;
+		rLoc = 4718;
 		rType = 0;
 		vrLen = 558;
 		vrLoc = 4891;
@@ -5328,7 +5424,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 46";
 		rLen = 0;
-		rLoc = 958;
+		rLoc = 963;
 		rType = 0;
 		vrLen = 408;
 		vrLoc = 681;
@@ -5366,7 +5462,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 46";
 		rLen = 0;
-		rLoc = 958;
+		rLoc = 963;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 312;
@@ -5426,7 +5522,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 46";
 		rLen = 0;
-		rLoc = 958;
+		rLoc = 963;
 		rType = 0;
 		vrLen = 408;
 		vrLoc = 681;
@@ -5555,7 +5651,7 @@
 		isa = PBXTextBookmark;
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 15";
-		rLen = 44;
+		rLen = 57;
 		rLoc = 231;
 		rType = 0;
 		vrLen = 1352;
@@ -5566,7 +5662,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 43";
 		rLen = 26;
-		rLoc = 893;
+		rLoc = 898;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 180;
@@ -5577,7 +5673,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 76;
+		rLoc = 81;
 		rType = 1;
 	};
 	76179F8110CAA79900768180 /* PBXTextBookmark */ = {
@@ -5585,7 +5681,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3750;
+		rLoc = 3908;
 		rType = 0;
 		vrLen = 1378;
 		vrLoc = 2900;
@@ -5605,7 +5701,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1124;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 924;
 		vrLoc = 364;
@@ -5615,7 +5711,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 75";
 		rLen = 0;
-		rLoc = 3848;
+		rLoc = 4006;
 		rType = 0;
 		vrLen = 2602;
 		vrLoc = 1506;
@@ -5626,7 +5722,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 180;
+		rLoc = 181;
 		rType = 1;
 	};
 	76179F9010CAAA0700768180 /* PBXTextBookmark */ = {
@@ -5634,7 +5730,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 183";
 		rLen = 0;
-		rLoc = 5581;
+		rLoc = 5637;
 		rType = 0;
 		vrLen = 1911;
 		vrLoc = 3907;
@@ -5654,7 +5750,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 162";
 		rLen = 0;
-		rLoc = 4248;
+		rLoc = 4304;
 		rType = 0;
 		vrLen = 1974;
 		vrLoc = 3914;
@@ -5674,7 +5770,7 @@
 		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
 		name = "SRRenderer.h: 61";
 		rLen = 0;
-		rLoc = 1563;
+		rLoc = 1566;
 		rType = 0;
 		vrLen = 1050;
 		vrLoc = 1198;
@@ -5684,7 +5780,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 41";
 		rLen = 0;
-		rLoc = 974;
+		rLoc = 1035;
 		rType = 0;
 		vrLen = 1352;
 		vrLoc = 0;
@@ -5694,7 +5790,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1123;
+		rLoc = 1122;
 		rType = 0;
 		vrLen = 936;
 		vrLoc = 340;
@@ -5704,7 +5800,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1123;
+		rLoc = 1122;
 		rType = 0;
 		vrLen = 936;
 		vrLoc = 340;
@@ -5724,7 +5820,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1094;
+		rLoc = 1097;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 293;
@@ -5734,7 +5830,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 41";
 		rLen = 0;
-		rLoc = 974;
+		rLoc = 1035;
 		rType = 0;
 		vrLen = 1352;
 		vrLoc = 0;
@@ -5744,7 +5840,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5775;
+		rLoc = 6060;
 		rType = 0;
 		vrLen = 1851;
 		vrLoc = 3856;
@@ -5764,7 +5860,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 187";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 5758;
 		rType = 0;
 		vrLen = 1846;
 		vrLoc = 3856;
@@ -5774,7 +5870,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 40";
 		rLen = 0;
-		rLoc = 851;
+		rLoc = 856;
 		rType = 0;
 		vrLen = 914;
 		vrLoc = 364;
@@ -5784,7 +5880,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 262";
 		rLen = 0;
-		rLoc = 8580;
+		rLoc = 8738;
 		rType = 0;
 		vrLen = 1193;
 		vrLoc = 7634;
@@ -5794,7 +5890,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 76";
 		rLen = 0;
-		rLoc = 3848;
+		rLoc = 4006;
 		rType = 0;
 		vrLen = 2235;
 		vrLoc = 1839;
@@ -5804,7 +5900,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 76";
 		rLen = 0;
-		rLoc = 3848;
+		rLoc = 4006;
 		rType = 0;
 		vrLen = 2232;
 		vrLoc = 1842;
@@ -5834,7 +5930,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 76";
 		rLen = 0;
-		rLoc = 3848;
+		rLoc = 4006;
 		rType = 0;
 		vrLen = 426;
 		vrLoc = 3577;
@@ -5844,7 +5940,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 76";
 		rLen = 0;
-		rLoc = 3848;
+		rLoc = 4006;
 		rType = 0;
 		vrLen = 2232;
 		vrLoc = 1842;
@@ -5864,7 +5960,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3708;
+		rLoc = 3904;
 		rType = 0;
 		vrLen = 1228;
 		vrLoc = 3069;
@@ -5874,7 +5970,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 15";
 		rLen = 0;
-		rLoc = 273;
+		rLoc = 286;
 		rType = 0;
 		vrLen = 1352;
 		vrLoc = 0;
@@ -5884,7 +5980,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1123;
+		rLoc = 1122;
 		rType = 0;
 		vrLen = 937;
 		vrLoc = 340;
@@ -5894,7 +5990,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1123;
+		rLoc = 1122;
 		rType = 0;
 		vrLen = 937;
 		vrLoc = 340;
@@ -5914,7 +6010,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1094;
+		rLoc = 1097;
 		rType = 0;
 		vrLen = 977;
 		vrLoc = 254;
@@ -5924,7 +6020,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 15";
 		rLen = 0;
-		rLoc = 273;
+		rLoc = 286;
 		rType = 0;
 		vrLen = 1352;
 		vrLoc = 0;
@@ -5934,7 +6030,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 187";
 		rLen = 0;
-		rLoc = 5659;
+		rLoc = 5758;
 		rType = 0;
 		vrLen = 1852;
 		vrLoc = 3856;
@@ -5949,7 +6045,7 @@
 		vrLen = 1634;
 		vrLoc = 136;
 	};
-	76179FD610CAAE5E00768180 /* SRRenderer.m:74 */ = {
+	76179FD610CAAE5E00768180 /* SRRenderer.m:79 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -5959,11 +6055,11 @@
 		delayBeforeContinue = 0;
 		fileReference = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		functionName = "-setupWithOwner:";
-		hitCount = 0;
+		hitCount = 1;
 		ignoreCount = 0;
-		lineNumber = 74;
+		lineNumber = 79;
 		location = Sterren;
-		modificationTime = 281719347.155226;
+		modificationTime = 281721504.021401;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -5972,7 +6068,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5684;
+		rLoc = 5970;
 		rType = 0;
 		vrLen = 1911;
 		vrLoc = 3856;
@@ -5982,7 +6078,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 1387;
 		vrLoc = 2900;
@@ -5992,7 +6088,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 1387;
 		vrLoc = 2900;
@@ -6002,7 +6098,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 1218;
 		vrLoc = 3069;
@@ -6022,7 +6118,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 467;
 		vrLoc = 3370;
@@ -6060,7 +6156,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 2244;
 		vrLoc = 1842;
@@ -6070,7 +6166,7 @@
 		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
 		name = "SRRenderer.h: 59";
 		rLen = 0;
-		rLoc = 1507;
+		rLoc = 1510;
 		rType = 0;
 		vrLen = 998;
 		vrLoc = 828;
@@ -6080,7 +6176,7 @@
 		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
 		name = "SRRenderer.h: 59";
 		rLen = 0;
-		rLoc = 1494;
+		rLoc = 1493;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 616;
@@ -6090,7 +6186,7 @@
 		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
 		name = "SRRenderer.h: 59";
 		rLen = 0;
-		rLoc = 1494;
+		rLoc = 1493;
 		rType = 0;
 		vrLen = 1028;
 		vrLoc = 671;
@@ -6110,7 +6206,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 467;
 		vrLoc = 3370;
@@ -6120,7 +6216,7 @@
 		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
 		name = "SRRenderer.h: 59";
 		rLen = 0;
-		rLoc = 1494;
+		rLoc = 1493;
 		rType = 0;
 		vrLen = 402;
 		vrLoc = 1297;
@@ -6172,7 +6268,7 @@
 		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
 		name = "SRRenderer.h: 59";
 		rLen = 0;
-		rLoc = 1494;
+		rLoc = 1493;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 960;
@@ -6192,7 +6288,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 2259;
 		vrLoc = 1842;
@@ -6202,7 +6298,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5684;
+		rLoc = 5970;
 		rType = 0;
 		vrLen = 1806;
 		vrLoc = 3961;
@@ -6212,7 +6308,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1094;
+		rLoc = 1097;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 293;
@@ -6222,7 +6318,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1094;
+		rLoc = 1097;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 293;
@@ -6232,7 +6328,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1094;
+		rLoc = 1097;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 312;
@@ -6252,7 +6348,7 @@
 		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
 		name = "SRRenderer.h: 59";
 		rLen = 0;
-		rLoc = 1494;
+		rLoc = 1493;
 		rType = 0;
 		vrLen = 428;
 		vrLoc = 1252;
@@ -6262,7 +6358,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1094;
+		rLoc = 1097;
 		rType = 0;
 		vrLen = 404;
 		vrLoc = 867;
@@ -6314,7 +6410,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1094;
+		rLoc = 1097;
 		rType = 0;
 		vrLen = 889;
 		vrLoc = 388;
@@ -6324,7 +6420,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5684;
+		rLoc = 5970;
 		rType = 0;
 		vrLen = 1806;
 		vrLoc = 3961;
@@ -6334,7 +6430,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 189";
 		rLen = 0;
-		rLoc = 5758;
+		rLoc = 6045;
 		rType = 0;
 		vrLen = 1851;
 		vrLoc = 3961;
@@ -6344,7 +6440,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 189";
 		rLen = 0;
-		rLoc = 5758;
+		rLoc = 6045;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 4025;
@@ -6364,7 +6460,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1094;
+		rLoc = 1097;
 		rType = 0;
 		vrLen = 404;
 		vrLoc = 867;
@@ -6374,7 +6470,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 189";
 		rLen = 0;
-		rLoc = 5758;
+		rLoc = 6045;
 		rType = 0;
 		vrLen = 448;
 		vrLoc = 5358;
@@ -6426,7 +6522,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5731;
+		rLoc = 6017;
 		rType = 0;
 		vrLen = 1801;
 		vrLoc = 3961;
@@ -6436,7 +6532,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5731;
+		rLoc = 6017;
 		rType = 0;
 		vrLen = 1709;
 		vrLoc = 4053;
@@ -6456,7 +6552,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5731;
+		rLoc = 6017;
 		rType = 0;
 		vrLen = 544;
 		vrLoc = 5210;
@@ -6493,7 +6589,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5731;
+		rLoc = 6017;
 		rType = 0;
 		vrLen = 1709;
 		vrLoc = 4053;
@@ -6523,7 +6619,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 2259;
 		vrLoc = 1842;
@@ -6533,7 +6629,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 2279;
 		vrLoc = 1842;
@@ -6543,7 +6639,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 2235;
 		vrLoc = 1886;
@@ -6563,7 +6659,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5731;
+		rLoc = 6017;
 		rType = 0;
 		vrLen = 544;
 		vrLoc = 5210;
@@ -6573,7 +6669,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 440;
 		vrLoc = 3490;
@@ -6625,7 +6721,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 2235;
 		vrLoc = 1886;
@@ -6645,7 +6741,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3665;
+		rLoc = 3664;
 		rType = 0;
 		vrLen = 1164;
 		vrLoc = 9456;
@@ -6655,7 +6751,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 53";
 		rLen = 0;
-		rLoc = 1094;
+		rLoc = 1097;
 		rType = 0;
 		vrLen = 890;
 		vrLoc = 387;
@@ -6665,7 +6761,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5731;
+		rLoc = 6017;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 4025;
@@ -6675,7 +6771,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 190";
 		rLen = 0;
-		rLoc = 5774;
+		rLoc = 6059;
 		rType = 0;
 		vrLen = 1736;
 		vrLoc = 4025;
@@ -6695,7 +6791,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 189";
 		rLen = 0;
-		rLoc = 5758;
+		rLoc = 6045;
 		rType = 0;
 		vrLen = 1848;
 		vrLoc = 3961;
@@ -6705,7 +6801,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 189";
 		rLen = 0;
-		rLoc = 5758;
+		rLoc = 6045;
 		rType = 0;
 		vrLen = 1756;
 		vrLoc = 4053;
@@ -6725,7 +6821,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3679;
+		rLoc = 3699;
 		rType = 0;
 		vrLen = 332;
 		vrLoc = 3789;
@@ -6735,7 +6831,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 189";
 		rLen = 0;
-		rLoc = 5758;
+		rLoc = 6045;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 5358;
@@ -6772,7 +6868,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 189";
 		rLen = 0;
-		rLoc = 5758;
+		rLoc = 6045;
 		rType = 0;
 		vrLen = 1756;
 		vrLoc = 4053;
@@ -6782,7 +6878,7 @@
 		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
 		name = "SRRenderer.h: 59";
 		rLen = 0;
-		rLoc = 1494;
+		rLoc = 1493;
 		rType = 0;
 		vrLen = 1020;
 		vrLoc = 803;
@@ -6792,7 +6888,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3665;
+		rLoc = 3664;
 		rType = 0;
 		vrLen = 1112;
 		vrLoc = 3246;
@@ -6802,7 +6898,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3665;
+		rLoc = 3664;
 		rType = 0;
 		vrLen = 1112;
 		vrLoc = 3246;
@@ -6822,7 +6918,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 73";
 		rLen = 0;
-		rLoc = 3665;
+		rLoc = 3664;
 		rType = 0;
 		vrLen = 1380;
 		vrLoc = 2900;
@@ -6832,7 +6928,7 @@
 		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
 		name = "SRObjectManager.h: 60";
 		rLen = 0;
-		rLoc = 1297;
+		rLoc = 1316;
 		rType = 0;
 		vrLen = 934;
 		vrLoc = 364;
@@ -6842,7 +6938,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 189";
 		rLen = 0;
-		rLoc = 5758;
+		rLoc = 6045;
 		rType = 0;
 		vrLen = 1784;
 		vrLoc = 4025;
@@ -6852,7 +6948,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5730;
+		rLoc = 6016;
 		rType = 0;
 		vrLen = 1848;
 		vrLoc = 3961;
@@ -6862,7 +6958,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5730;
+		rLoc = 6016;
 		rType = 0;
 		vrLen = 1756;
 		vrLoc = 4053;
@@ -6882,7 +6978,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5730;
+		rLoc = 6016;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 5358;
@@ -6929,7 +7025,7 @@
 		path = "asm _objc_fatal  0x904453df";
 		sourceTree = "<group>";
 	};
-	7617A06B10CAB1E900768180 /* SRObjectManager.m:189 */ = {
+	7617A06B10CAB1E900768180 /* SRObjectManager.m:197 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -6941,18 +7037,18 @@
 		functionName = "-planetPoints";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 189;
+		lineNumber = 197;
 		location = Sterren;
-		modificationTime = 281719347.155798;
+		modificationTime = 281721501.952519;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	7617A06F10CAB23000768180 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5730;
+		rLoc = 6016;
 		rType = 0;
 		vrLen = 1756;
 		vrLoc = 4053;
@@ -6962,7 +7058,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5691;
+		rLoc = 5977;
 		rType = 0;
 		vrLen = 1827;
 		vrLoc = 3961;
@@ -6972,7 +7068,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5691;
+		rLoc = 5977;
 		rType = 0;
 		vrLen = 1735;
 		vrLoc = 4053;
@@ -6992,7 +7088,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5691;
+		rLoc = 5977;
 		rType = 0;
 		vrLen = 570;
 		vrLoc = 5210;
@@ -7029,12 +7125,1006 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 188";
 		rLen = 0;
-		rLoc = 5730;
+		rLoc = 6016;
 		rType = 0;
 		vrLen = 1731;
 		vrLoc = 4053;
 	};
 	7617A07B10CAB29700768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
+		name = "XMLParser.m: 42";
+		rLen = 0;
+		rLoc = 1066;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 136;
+	};
+	7617A08410CAB4B500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 182";
+		rLen = 0;
+		rLoc = 5640;
+		rType = 0;
+		vrLen = 1770;
+		vrLoc = 4025;
+	};
+	7617A08510CAB4B500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
+		name = "SRObjectManager.h: 53";
+		rLen = 0;
+		rLoc = 1122;
+		rType = 0;
+		vrLen = 918;
+		vrLoc = 389;
+	};
+	7617A08610CAB4B500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
+		name = "SRRenderer.h: 59";
+		rLen = 0;
+		rLoc = 1493;
+		rType = 0;
+		vrLen = 998;
+		vrLoc = 828;
+	};
+	7617A08710CAB4B500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EB0FDFF83200548BE8 /* OpenGLCommon.h */;
+		name = "OpenGLCommon.h: 56";
+		rLen = 0;
+		rLoc = 1084;
+		rType = 0;
+		vrLen = 753;
+		vrLoc = 402;
+	};
+	7617A08810CAB4B500768180 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Subscripted value is neither array nor pointer";
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 297;
+		rType = 1;
+	};
+	7617A08910CAB4B500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 293";
+		rLen = 0;
+		rLoc = 9426;
+		rType = 0;
+		vrLen = 1109;
+		vrLoc = 8739;
+	};
+	7617A08A10CAB4B500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 293";
+		rLen = 0;
+		rLoc = 9426;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 8765;
+	};
+	7617A08B10CAB4B500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
+		name = "XMLParser.m: 42";
+		rLen = 0;
+		rLoc = 1066;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 136;
+	};
+	7617A08E10CAB4C000768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 188";
+		rLen = 0;
+		rLoc = 6016;
+		rType = 0;
+		vrLen = 431;
+		vrLoc = 5358;
+	};
+	7617A08F10CAB4C000768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 293";
+		rLen = 0;
+		rLoc = 9426;
+		rType = 0;
+		vrLen = 449;
+		vrLoc = 8974;
+	};
+	7617A09010CAB4C000768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A09110CAB4C000768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	7617A09110CAB4C000768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */ = {
+		isa = PBXFileReference;
+		path = "asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000";
+		sourceTree = "<group>";
+	};
+	7617A09210CAB4C000768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A09310CAB4C000768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */;
+		name = "asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 206;
+		vrLoc = 0;
+	};
+	7617A09310CAB4C000768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */ = {
+		isa = PBXFileReference;
+		path = "asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000";
+		sourceTree = "<group>";
+	};
+	7617A09610CAB4D200768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 293";
+		rLen = 0;
+		rLoc = 9426;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 8765;
+	};
+	7617A09710CAB4D200768180 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Property 'planetPoints' requires method '-planetPoints' to be defined - use @synthesize, @dynamic or provide a method implementation";
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 200;
+		rType = 1;
+	};
+	7617A09810CAB4D200768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 15";
+		rLen = 0;
+		rLoc = 286;
+		rType = 0;
+		vrLen = 1352;
+		vrLoc = 0;
+	};
+	7617A09910CAB4D300768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 15";
+		rLen = 0;
+		rLoc = 286;
+		rType = 0;
+		vrLen = 1349;
+		vrLoc = 3;
+	};
+	7617A09A10CAB4D300768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
+		name = "XMLParser.m: 42";
+		rLen = 0;
+		rLoc = 1066;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 136;
+	};
+	7617A09D10CAB4DA00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 293";
+		rLen = 0;
+		rLoc = 9426;
+		rType = 0;
+		vrLen = 449;
+		vrLoc = 8974;
+	};
+	7617A09E10CAB4DA00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 15";
+		rLen = 0;
+		rLoc = 286;
+		rType = 0;
+		vrLen = 301;
+		vrLoc = 0;
+	};
+	7617A09F10CAB4DA00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A0A010CAB4DA00768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	7617A0A010CAB4DA00768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */ = {
+		isa = PBXFileReference;
+		path = "asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000";
+		sourceTree = "<group>";
+	};
+	7617A0A110CAB4DA00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A0A210CAB4DA00768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */;
+		name = "asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 206;
+		vrLoc = 0;
+	};
+	7617A0A210CAB4DA00768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */ = {
+		isa = PBXFileReference;
+		path = "asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000";
+		sourceTree = "<group>";
+	};
+	7617A0A510CAB4EA00768180 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'-simulatedDate' not found in protocol(s)";
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 154;
+		rType = 1;
+	};
+	7617A0A610CAB4EA00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 154";
+		rLen = 0;
+		rLoc = 4213;
+		rType = 0;
+		vrLen = 1775;
+		vrLoc = 3450;
+	};
+	7617A0A710CAB4EA00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 154";
+		rLen = 0;
+		rLoc = 4213;
+		rType = 0;
+		vrLen = 1754;
+		vrLoc = 3471;
+	};
+	7617A0A810CAB4EA00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
+		name = "XMLParser.m: 42";
+		rLen = 0;
+		rLoc = 1066;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 136;
+	};
+	7617A0AB10CAB4F400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 154";
+		rLen = 0;
+		rLoc = 4213;
+		rType = 0;
+		vrLen = 409;
+		vrLoc = 3450;
+	};
+	7617A0AC10CAB4F400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 74";
+		rLen = 0;
+		rLoc = 3905;
+		rType = 0;
+		vrLen = 404;
+		vrLoc = 3547;
+	};
+	7617A0AD10CAB4F400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A0AE10CAB4F400768180 /* asm objc_msgSend  0x9043bec0 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	7617A0AE10CAB4F400768180 /* asm objc_msgSend  0x9043bec0 */ = {
+		isa = PBXFileReference;
+		path = "asm objc_msgSend  0x9043bec0";
+		sourceTree = "<group>";
+	};
+	7617A0AF10CAB4F400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A0B010CAB4F400768180 /* asm objc_msgSend  0x9043bec0 */;
+		name = "asm objc_msgSend  0x9043bec0: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 733;
+		vrLoc = 0;
+	};
+	7617A0B010CAB4F400768180 /* asm objc_msgSend  0x9043bec0 */ = {
+		isa = PBXFileReference;
+		path = "asm objc_msgSend  0x9043bec0";
+		sourceTree = "<group>";
+	};
+	7617A0B110CAB50D00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 154";
+		rLen = 0;
+		rLoc = 4213;
+		rType = 0;
+		vrLen = 1221;
+		vrLoc = 0;
+	};
+	7617A0B210CAB50D00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
+		name = "SRObjectManager.h: 53";
+		rLen = 0;
+		rLoc = 1122;
+		rType = 0;
+		vrLen = 919;
+		vrLoc = 388;
+	};
+	7617A0B310CAB50D00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 293";
+		rLen = 0;
+		rLoc = 9426;
+		rType = 0;
+		vrLen = 1056;
+		vrLoc = 8765;
+	};
+	7617A0B410CAB50D00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
+		name = "SRRenderer.h: 59";
+		rLen = 0;
+		rLoc = 1493;
+		rType = 0;
+		vrLen = 998;
+		vrLoc = 828;
+	};
+	7617A0B510CAB50D00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
+		name = "SRRenderer.h: 59";
+		rLen = 0;
+		rLoc = 1493;
+		rType = 0;
+		vrLen = 1056;
+		vrLoc = 0;
+	};
+	7617A0B610CAB52000768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A0B710CAB52000768180 /* asm objc_msgSend  0x9043bec0 */;
+		name = "asm objc_msgSend  0x9043bec0: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 733;
+		vrLoc = 0;
+	};
+	7617A0B710CAB52000768180 /* asm objc_msgSend  0x9043bec0 */ = {
+		isa = PBXFileReference;
+		path = "asm objc_msgSend  0x9043bec0";
+		sourceTree = "<group>";
+	};
+	7617A0B810CAB52000768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
+		name = "SRRenderer.h: 59";
+		rLen = 0;
+		rLoc = 1493;
+		rType = 0;
+		vrLen = 362;
+		vrLoc = 694;
+	};
+	7617A0BD10CAB56500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
+		name = "SRRenderer.h: 59";
+		rLen = 0;
+		rLoc = 1493;
+		rType = 0;
+		vrLen = 1015;
+		vrLoc = 851;
+	};
+	7617A0BE10CAB56500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 73";
+		rLen = 0;
+		rLoc = 3699;
+		rType = 0;
+		vrLen = 1380;
+		vrLoc = 2900;
+	};
+	7617A0BF10CAB56500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */;
+		name = "SRPlanetaryObject.m: 19";
+		rLen = 0;
+		rLoc = 495;
+		rType = 0;
+		vrLen = 985;
+		vrLoc = 27;
+	};
+	7617A0C010CAB56500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
+		name = "SRObjectManager.h: 22";
+		rLen = 0;
+		rLoc = 459;
+		rType = 0;
+		vrLen = 920;
+		vrLoc = 387;
+	};
+	7617A0C110CAB56500768180 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "No declaration of property 'planetPoints' found in the interface";
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 14;
+		rType = 1;
+	};
+	7617A0C210CAB56500768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 15";
+		rLen = 0;
+		rLoc = 286;
+		rType = 0;
+		vrLen = 1339;
+		vrLoc = 0;
+	};
+	7617A0C310CAB56600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 15";
+		rLen = 0;
+		rLoc = 286;
+		rType = 0;
+		vrLen = 1336;
+		vrLoc = 3;
+	};
+	7617A0C610CAB56600768180 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+	};
+	7617A0C710CAB56600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 297";
+		rLen = 0;
+		rLoc = 9538;
+		rType = 0;
+		vrLen = 1386;
+		vrLoc = 8580;
+	};
+	7617A0C810CAB56600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
+		name = "XMLParser.m: 42";
+		rLen = 0;
+		rLoc = 1066;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 136;
+	};
+	7617A0CB10CAB57300768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
+		name = "SRRenderer.h: 59";
+		rLen = 0;
+		rLoc = 1493;
+		rType = 0;
+		vrLen = 362;
+		vrLoc = 694;
+	};
+	7617A0CC10CAB57300768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 15";
+		rLen = 0;
+		rLoc = 286;
+		rType = 0;
+		vrLen = 420;
+		vrLoc = 5372;
+	};
+	7617A0CD10CAB57300768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 74";
+		rLen = 0;
+		rLoc = 3905;
+		rType = 0;
+		vrLen = 404;
+		vrLoc = 3547;
+	};
+	7617A0CE10CAB57300768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A0CF10CAB57300768180 /* asm objc_msgSend  0x9043bec0 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	7617A0CF10CAB57300768180 /* asm objc_msgSend  0x9043bec0 */ = {
+		isa = PBXFileReference;
+		path = "asm objc_msgSend  0x9043bec0";
+		sourceTree = "<group>";
+	};
+	7617A0D010CAB57300768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A0D110CAB57300768180 /* asm objc_msgSend  0x9043bec0 */;
+		name = "asm objc_msgSend  0x9043bec0: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 733;
+		vrLoc = 0;
+	};
+	7617A0D110CAB57300768180 /* asm objc_msgSend  0x9043bec0 */ = {
+		isa = PBXFileReference;
+		path = "asm objc_msgSend  0x9043bec0";
+		sourceTree = "<group>";
+	};
+	7617A0D410CAB73D00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 190";
+		rLen = 0;
+		rLoc = 6032;
+		rType = 0;
+		vrLen = 1782;
+		vrLoc = 4025;
+	};
+	7617A0D510CAB73E00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 190";
+		rLen = 0;
+		rLoc = 6032;
+		rType = 0;
+		vrLen = 1752;
+		vrLoc = 4055;
+	};
+	7617A0D610CAB73E00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 297";
+		rLen = 0;
+		rLoc = 9538;
+		rType = 0;
+		vrLen = 1386;
+		vrLoc = 8580;
+	};
+	7617A0D710CAB73E00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
+		name = "XMLParser.m: 42";
+		rLen = 0;
+		rLoc = 1066;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 136;
+	};
+	7617A0DA10CAB74A00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 190";
+		rLen = 0;
+		rLoc = 6032;
+		rType = 0;
+		vrLen = 558;
+		vrLoc = 5224;
+	};
+	7617A0DB10CAB74A00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 74";
+		rLen = 0;
+		rLoc = 3905;
+		rType = 0;
+		vrLen = 404;
+		vrLoc = 3547;
+	};
+	7617A0DC10CAB74A00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A0DD10CAB74A00768180 /* asm objc_msgSend  0x9043bec0 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	7617A0DD10CAB74A00768180 /* asm objc_msgSend  0x9043bec0 */ = {
+		isa = PBXFileReference;
+		path = "asm objc_msgSend  0x9043bec0";
+		sourceTree = "<group>";
+	};
+	7617A0DE10CAB74A00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A0DF10CAB74A00768180 /* asm objc_msgSend  0x9043bec0 */;
+		name = "asm objc_msgSend  0x9043bec0: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 733;
+		vrLoc = 0;
+	};
+	7617A0DF10CAB74A00768180 /* asm objc_msgSend  0x9043bec0 */ = {
+		isa = PBXFileReference;
+		path = "asm objc_msgSend  0x9043bec0";
+		sourceTree = "<group>";
+	};
+	7617A0E210CAB76E00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 188";
+		rLen = 0;
+		rLoc = 5978;
+		rType = 0;
+		vrLen = 1836;
+		vrLoc = 3961;
+	};
+	7617A0E310CAB76E00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 188";
+		rLen = 0;
+		rLoc = 5978;
+		rType = 0;
+		vrLen = 1744;
+		vrLoc = 4053;
+	};
+	7617A0E410CAB76E00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 297";
+		rLen = 0;
+		rLoc = 9538;
+		rType = 0;
+		vrLen = 1386;
+		vrLoc = 8580;
+	};
+	7617A0E510CAB76E00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
+		name = "XMLParser.m: 42";
+		rLen = 0;
+		rLoc = 1066;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 136;
+	};
+	7617A0E710CAB7AF00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 188";
+		rLen = 0;
+		rLoc = 5978;
+		rType = 0;
+		vrLen = 565;
+		vrLoc = 5224;
+	};
+	7617A0E810CAB7AF00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		rLen = 0;
+		rLoc = 78;
+		rType = 1;
+	};
+	7617A0E910CAB7AF00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 74";
+		rLen = 0;
+		rLoc = 3905;
+		rType = 0;
+		vrLen = 404;
+		vrLoc = 3547;
+	};
+	7617A0F410CAB98600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 74";
+		rLen = 0;
+		rLoc = 3905;
+		rType = 0;
+		vrLen = 1951;
+		vrLoc = 14006;
+	};
+	7617A0F510CAB98600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */;
+		name = "SRPlanetaryObject.h: 41";
+		rLen = 0;
+		rLoc = 1012;
+		rType = 0;
+		vrLen = 840;
+		vrLoc = 467;
+	};
+	7617A0F610CAB98600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
+		name = "SRObjectManager.h: 22";
+		rLen = 0;
+		rLoc = 446;
+		rType = 0;
+		vrLen = 955;
+		vrLoc = 364;
+	};
+	7617A0F710CAB98600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 23";
+		rLen = 0;
+		rLoc = 517;
+		rType = 0;
+		vrLen = 1326;
+		vrLoc = 0;
+	};
+	7617A0F810CAB98600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 23";
+		rLen = 0;
+		rLoc = 517;
+		rType = 0;
+		vrLen = 1775;
+		vrLoc = 4302;
+	};
+	7617A0F910CAB98600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 23";
+		rLen = 0;
+		rLoc = 517;
+		rType = 0;
+		vrLen = 1768;
+		vrLoc = 4309;
+	};
+	7617A0FA10CAB98600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 297";
+		rLen = 0;
+		rLoc = 9538;
+		rType = 0;
+		vrLen = 1386;
+		vrLoc = 8580;
+	};
+	7617A0FB10CAB98600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
+		name = "XMLParser.m: 42";
+		rLen = 0;
+		rLoc = 1066;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 136;
+	};
+	7617A0FE10CAB98D00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 74";
+		rLen = 0;
+		rLoc = 3905;
+		rType = 0;
+		vrLen = 404;
+		vrLoc = 3547;
+	};
+	7617A0FF10CAB98D00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 23";
+		rLen = 0;
+		rLoc = 517;
+		rType = 0;
+		vrLen = 970;
+		vrLoc = 4302;
+	};
+	7617A10010CAB98D00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A10110CAB98D00768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	7617A10110CAB98D00768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */ = {
+		isa = PBXFileReference;
+		path = "asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000";
+		sourceTree = "<group>";
+	};
+	7617A10210CAB98D00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7617A10310CAB98D00768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */;
+		name = "asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 206;
+		vrLoc = 0;
+	};
+	7617A10310CAB98D00768180 /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000 */ = {
+		isa = PBXFileReference;
+		path = "asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x01d89000";
+		sourceTree = "<group>";
+	};
+	7617A10810CABA6700768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
+		name = "SRObjectManager.h: 60";
+		rLen = 0;
+		rLoc = 1285;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 389;
+	};
+	7617A10910CABA6700768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 182";
+		rLen = 135;
+		rLoc = 5600;
+		rType = 0;
+		vrLen = 1771;
+		vrLoc = 4300;
+	};
+	7617A10A10CABA6700768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16A10615F4F00CA447E /* SRRenderer.h */;
+		name = "SRRenderer.h: 59";
+		rLen = 0;
+		rLoc = 1510;
+		rType = 0;
+		vrLen = 1045;
+		vrLoc = 1198;
+	};
+	7617A10B10CABA6700768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 76";
+		rLen = 0;
+		rLoc = 3864;
+		rType = 0;
+		vrLen = 1995;
+		vrLoc = 2222;
+	};
+	7617A10C10CABA6700768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 76";
+		rLen = 0;
+		rLoc = 3877;
+		rType = 0;
+		vrLen = 2037;
+		vrLoc = 2222;
+	};
+	7617A10D10CABA6800768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 76";
+		rLen = 0;
+		rLoc = 3877;
+		rType = 0;
+		vrLen = 1870;
+		vrLoc = 2389;
+	};
+	7617A10E10CABA6800768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 302";
+		rLen = 0;
+		rLoc = 9538;
+		rType = 0;
+		vrLen = 1357;
+		vrLoc = 8735;
+	};
+	7617A10F10CABA6800768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
+		name = "XMLParser.m: 42";
+		rLen = 0;
+		rLoc = 1066;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 136;
+	};
+	7617A11110CABA8800768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 23";
+		rLen = 0;
+		rLoc = 517;
+		rType = 0;
+		vrLen = 507;
+		vrLoc = 5428;
+	};
+	7617A11210CABA8800768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 76";
+		rLen = 0;
+		rLoc = 3877;
+		rType = 0;
+		vrLen = 354;
+		vrLoc = 3905;
+	};
+	7617A11510CABA9A00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 75";
+		rLen = 0;
+		rLoc = 3801;
+		rType = 0;
+		vrLen = 1189;
+		vrLoc = 3311;
+	};
+	7617A11610CABA9A00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 75";
+		rLen = 0;
+		rLoc = 3801;
+		rType = 0;
+		vrLen = 1130;
+		vrLoc = 3370;
+	};
+	7617A11710CABA9A00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 302";
+		rLen = 0;
+		rLoc = 9538;
+		rType = 0;
+		vrLen = 1357;
+		vrLoc = 8735;
+	};
+	7617A11810CABA9A00768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
+		name = "XMLParser.m: 42";
+		rLen = 0;
+		rLoc = 1066;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 136;
+	};
+	7617A11A10CABAB200768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 75";
+		rLen = 0;
+		rLoc = 3801;
+		rType = 0;
+		vrLen = 343;
+		vrLoc = 3901;
+	};
+	7617A11B10CABAB900768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 75";
+		rLen = 0;
+		rLoc = 3801;
+		rType = 0;
+		vrLen = 1130;
+		vrLoc = 3370;
+	};
+	7617A11C10CABAB900768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 302";
+		rLen = 0;
+		rLoc = 9538;
+		rType = 0;
+		vrLen = 1357;
+		vrLoc = 8735;
+	};
+	7617A11D10CABAB900768180 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
 		name = "XMLParser.m: 42";
@@ -7320,14 +8410,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1099, 819}}";
 			sepNavSelRange = "{1012, 0}";
-			sepNavVisRange = "{467, 861}";
+			sepNavVisRange = "{467, 840}";
 		};
 	};
 	AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 1950}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1099, 1963}}";
 			sepNavSelRange = "{495, 0}";
-			sepNavVisRange = "{27, 1172}";
+			sepNavVisRange = "{27, 985}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -7401,17 +8491,17 @@
 	};
 	ACB7B16A10615F4F00CA447E /* SRRenderer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 1209}}";
-			sepNavSelRange = "{1494, 0}";
-			sepNavVisRange = "{803, 1020}";
+			sepNavIntBoundsRect = "{{0, 0}, {1099, 1235}}";
+			sepNavSelRange = "{1510, 0}";
+			sepNavVisRange = "{1198, 1045}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
 	ACB7B16B10615F4F00CA447E /* SRRenderer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1251, 6162}}";
-			sepNavSelRange = "{3665, 0}";
-			sepNavVisRange = "{2900, 1380}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 6799}}";
+			sepNavSelRange = "{9538, 0}";
+			sepNavVisRange = "{8735, 1357}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};

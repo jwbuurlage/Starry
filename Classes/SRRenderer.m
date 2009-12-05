@@ -70,8 +70,13 @@
 		objectManager = [appDelegate objectManager];
 		
 		[objectManager buildPlanetData];
-		planetPoints = [objectManager planetPoints];
+		NSMutableArray * planetPointsTmp = [objectManager planetPoints];
 		planetNum = [objectManager planetNum];
+		for (int i=0; i < planetNum*7; i++) {
+			planetPoints[i] = [[planetPointsTmp objectAtIndex:i] floatValue];
+			//NSLog(@"%i", i);
+		}
+		
 		/*for (int i=0, i<planetNum*7,i++) {
 			[objectManager planetPoints][i] = planetPoints[i];
 		}*/

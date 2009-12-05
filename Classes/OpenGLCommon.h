@@ -37,6 +37,24 @@ static inline void SRRaDecSet(SRRaDec *radec, float inRa, float inDec)
     radec->dec = inDec;
 }
 
+#pragma mark -
+#pragma mark SRPlaPoints
+#pragma mark -
+typedef struct {
+	GLfloat	points[56];
+} SRPlaPoints;
+
+/*static inline SRPlaPoints SRPlaPointsMake(GLfloat points[56])
+{
+	SRPlaPoints ret;
+	ret.points = points;
+	return ret;
+}
+static inline void SRPlaPointsSet(SRPlaPoints *po, GLfloat points [56])
+{
+    po->points = points;
+}*/
+
 
 #pragma mark -
 #pragma mark Color3D

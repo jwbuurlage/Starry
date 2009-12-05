@@ -56,7 +56,7 @@
     Vector3D    *sphereTriangleFanNormals;
     GLuint      sphereTriangleFanVertexCount;
 	
-	GLfloat* planetPoints;
+	GLfloat planetPoints[56];
 	GLfloat stringPoints[56];
 	GLfloat starPoints[15000];
 	GLfloat constellationPoints[15000];

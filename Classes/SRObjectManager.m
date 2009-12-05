@@ -12,7 +12,7 @@
 
 @implementation SRObjectManager
 
-@synthesize stars,constellations,planetNum;
+@synthesize stars,constellations,planetNum,planetPoints;
 
 -(id)init {
     
@@ -20,6 +20,7 @@
 		stars = [[NSMutableArray alloc] init];
 		constellations = [[NSMutableArray alloc] init];
 		planets = [[NSMutableArray alloc] init];
+		planetPoints = [[NSMutableArray alloc] init];
 		//appDelegate = [[UIApplication sharedApplication] delegate];
     }
     return self;
@@ -57,7 +58,7 @@
 -(void)buildPlanetData {
 	if ([planets count] < 1) {
 		
-		SRPlanetaryObject *sun = [[SRSun alloc] init];
+		sun = [[SRSun alloc] init];
 		//[planets addObject:sun];
 		//[sun release];
 		
@@ -151,7 +152,7 @@
 	SRPlanetaryObject *planet;
 	
 	for (planet in planets) {
-		[planet recalculatePosition:[[[UIApplication sharedApplication] delegate] simulatedDate]];
+		[planet recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
 		if (planet.a > 1.1) {
 			[planet setViewOrigin:earthPosition];
 		}
@@ -179,15 +180,22 @@
 	planetNum = 8;
 	
 	for (int i=0; i < planetNum*8; i++) {
-		planetPoints[i] = planetPointsTmp[i];
+		[planetPoints addObject:[NSNumber numberWithFloat:planetPointsTmp[i]]];
 		//NSLog(@"%i", i);
 	}
 }
 
--(GLfloat*)planetPoints{
-	GLfloat* pointer = (GLfloat *)malloc(sizeof(GLfloat)*56);
-	pointer = &planetPoints;
-	return pointer;
-}
+/*-(NSMutableArray*)planetPoints{
+	NSMutableArray *array;
+	array = [[NSMutableArray alloc] init];
+	float point;
+	for(point in planetPoints) {
+		[array addObject:[NSNumber numberWithFloat:point]];
+	}
+	//[array release];
+	//GLfloat* pointer = (GLfloat *)malloc(sizeof(GLfloat)*56);
+	//pointer = planetPoints;
+	return array;
+}*/
 
 @end
