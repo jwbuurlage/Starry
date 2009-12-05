@@ -61,7 +61,7 @@
 - (void)initiateHorizontalSwipeWithX:(int)theX;
 - (void)initiateVerticalSwipeWithY:(int)theY;
 - (void)reenable;
-- (void)RAAndDecForPoint:(CGPoint)point;
+//- (void)RAAndDecForPoint:(CGPoint)point;
 
 -(float)calculateAzimuthWithY:(int)deltaY;
 -(float)calculateAltitudeWithX:(int)deltaX;

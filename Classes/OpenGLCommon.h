@@ -15,6 +15,29 @@
 #import "ConstantsAndMacros.h"
 
 @class OpenGLWaveFrontMaterial;
+
+#pragma mark -
+#pragma mark SRRaDec
+#pragma mark -
+typedef struct {
+	float	ra;
+	float dec;
+} SRRaDec;
+
+static inline SRRaDec SARaDecMake(float inRa, float inDec)
+{
+	SRRaDec ret;
+	ret.ra = inRa;
+	ret.dec = inDec;
+	return ret;
+}
+static inline void SRRaDecSet(SRRaDec *radec, float inRa, float inDec)
+{
+    radec->ra = inX;
+    radec->dec = inY;
+}
+
+
 #pragma mark -
 #pragma mark Color3D
 #pragma mark -

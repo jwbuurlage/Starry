@@ -184,6 +184,8 @@
 		// Aan de buitenste zeide is de destortion veel erger dan verder naar binnen.
 		if (40 < y && y < 440 && 30 < x && x < 290) {
 			
+			//[objectManager clickedAtX:x Y:y];
+			
 			// Tenopzichte van het midden uitrekenen iPhone screen (480*320)
 			int dmX = -x+160;
 			int dmY = -y+240;
