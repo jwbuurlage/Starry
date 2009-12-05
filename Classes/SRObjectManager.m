@@ -144,13 +144,13 @@
 		//
 	}
 	
-	[sun recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
+	[sun recalculatePosition:[ simulatedDate]];
 	
 	Vertex3D earthPosition = [[planets objectAtIndex:0] position];
 	SRPlanetaryObject *planet;
 	
 	for (planet in planets) {
-		[planet recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
+		[planet recalculatePosition:[ simulatedDate]];
 		if (planet.a > 1.1) {
 			[planet setViewOrigin:earthPosition];
 		}

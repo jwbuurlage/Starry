@@ -21,11 +21,13 @@
 
 @implementation SterrenAppDelegate
 
-@synthesize window, glView, uiElementsView, location, objectManager;
+@synthesize window, glView, uiElementsView, location, timeManager, objectManager;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	
 	objectManager = [[SRObjectManager alloc] init];
+	location = [[SRLocation alloc] init];
+	timeManager = [[SRTimeManager alloc] init];
 	[objectManager parseData];
 	
 	// Loading screen annimation;

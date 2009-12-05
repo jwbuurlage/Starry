@@ -2,16 +2,16 @@
 {
 	1D3623240D0F684500981E51 /* SterrenAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 559}}";
-			sepNavSelRange = "{1045, 0}";
-			sepNavVisRange = "{0, 1155}";
+			sepNavIntBoundsRect = "{{0, 0}, {1099, 585}}";
+			sepNavSelRange = "{1226, 0}";
+			sepNavVisRange = "{0, 1235}";
 		};
 	};
 	1D3623250D0F684500981E51 /* SterrenAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1379, 780}}";
-			sepNavSelRange = "{1066, 0}";
-			sepNavVisRange = "{849, 495}";
+			sepNavIntBoundsRect = "{{0, 0}, {1099, 819}}";
+			sepNavSelRange = "{884, 0}";
+			sepNavVisRange = "{146, 1295}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -566,6 +566,17 @@
 			76179F2F10CA9F3600768180 /* PBXTextBookmark */ = 76179F2F10CA9F3600768180 /* PBXTextBookmark */;
 			76179F3010CA9F3600768180 /* PBXTextBookmark */ = 76179F3010CA9F3600768180 /* PBXTextBookmark */;
 			76179F3110CA9F3600768180 /* PBXTextBookmark */ = 76179F3110CA9F3600768180 /* PBXTextBookmark */;
+			76179F3210CAA0B400768180 /* PBXTextBookmark */ = 76179F3210CAA0B400768180 /* PBXTextBookmark */;
+			76179F3310CAA0B400768180 /* PBXTextBookmark */ = 76179F3310CAA0B400768180 /* PBXTextBookmark */;
+			76179F3410CAA0B400768180 /* PBXTextBookmark */ = 76179F3410CAA0B400768180 /* PBXTextBookmark */;
+			76179F3510CAA0B400768180 /* PBXTextBookmark */ = 76179F3510CAA0B400768180 /* PBXTextBookmark */;
+			76179F3610CAA0B400768180 /* PBXTextBookmark */ = 76179F3610CAA0B400768180 /* PBXTextBookmark */;
+			76179F3710CAA0B400768180 /* PBXTextBookmark */ = 76179F3710CAA0B400768180 /* PBXTextBookmark */;
+			76179F3810CAA0B400768180 /* PBXTextBookmark */ = 76179F3810CAA0B400768180 /* PBXTextBookmark */;
+			76179F3910CAA0B400768180 /* PBXTextBookmark */ = 76179F3910CAA0B400768180 /* PBXTextBookmark */;
+			76179F3A10CAA0B400768180 /* PBXTextBookmark */ = 76179F3A10CAA0B400768180 /* PBXTextBookmark */;
+			76179F3B10CAA0B400768180 /* PBXTextBookmark */ = 76179F3B10CAA0B400768180 /* PBXTextBookmark */;
+			76179F3C10CAA0B400768180 /* PBXTextBookmark */ = 76179F3C10CAA0B400768180 /* PBXTextBookmark */;
 			7628393B10C7060900843A3A = 7628393B10C7060900843A3A /* PBXTextBookmark */;
 			764457CF10C5B57500AB935D = 764457CF10C5B57500AB935D /* PBXTextBookmark */;
 			769766FE10C70CDD00451D65 = 769766FE10C70CDD00451D65 /* PBXTextBookmark */;
@@ -652,7 +663,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 443";
 		rLen = 0;
-		rLoc = 12218;
+		rLoc = 12026;
 		rType = 0;
 		vrLen = 2249;
 		vrLoc = 12427;
@@ -1240,9 +1251,9 @@
 	};
 	76179CF310CA61D500768180 /* SRObjectManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 2444}}";
-			sepNavSelRange = "{3981, 0}";
-			sepNavVisRange = "{0, 1309}";
+			sepNavIntBoundsRect = "{{0, 0}, {1099, 2587}}";
+			sepNavSelRange = "{2034, 0}";
+			sepNavVisRange = "{1535, 1248}";
 		};
 	};
 	76179CF910CA644B00768180 /* PBXTextBookmark */ = {
@@ -1360,7 +1371,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 293";
 		rLen = 0;
-		rLoc = 7696;
+		rLoc = 7504;
 		rType = 0;
 		vrLen = 1163;
 		vrLoc = 8539;
@@ -1370,7 +1381,7 @@
 		fRef = AC24C98510BAE6420063DF87 /* SRTimeManager.h */;
 		name = "SRTimeManager.h: 38";
 		rLen = 0;
-		rLoc = 868;
+		rLoc = 908;
 		rType = 0;
 		vrLen = 1004;
 		vrLoc = 85;
@@ -1380,7 +1391,7 @@
 		fRef = AC24C98610BAE6420063DF87 /* SRTimeManager.m */;
 		name = "SRTimeManager.m: 121";
 		rLen = 0;
-		rLoc = 3481;
+		rLoc = 3450;
 		rType = 0;
 		vrLen = 1182;
 		vrLoc = 2419;
@@ -1390,7 +1401,7 @@
 		fRef = AC24C98610BAE6420063DF87 /* SRTimeManager.m */;
 		name = "SRTimeManager.m: 33";
 		rLen = 0;
-		rLoc = 881;
+		rLoc = 850;
 		rType = 0;
 		vrLen = 1340;
 		vrLoc = 0;
@@ -1410,7 +1421,7 @@
 		fRef = AC24C98610BAE6420063DF87 /* SRTimeManager.m */;
 		name = "SRTimeManager.m: 33";
 		rLen = 0;
-		rLoc = 881;
+		rLoc = 850;
 		rType = 0;
 		vrLen = 616;
 		vrLoc = 1681;
@@ -1447,7 +1458,7 @@
 		fRef = AC24C98610BAE6420063DF87 /* SRTimeManager.m */;
 		name = "SRTimeManager.m: 121";
 		rLen = 0;
-		rLoc = 3479;
+		rLoc = 3448;
 		rType = 0;
 		vrLen = 1201;
 		vrLoc = 2408;
@@ -1457,7 +1468,7 @@
 		fRef = AC24C98610BAE6420063DF87 /* SRTimeManager.m */;
 		name = "SRTimeManager.m: 121";
 		rLen = 0;
-		rLoc = 3479;
+		rLoc = 3448;
 		rType = 0;
 		vrLen = 403;
 		vrLoc = 2408;
@@ -1494,7 +1505,7 @@
 		fRef = AC24C98610BAE6420063DF87 /* SRTimeManager.m */;
 		name = "SRTimeManager.m: 132";
 		rLen = 0;
-		rLoc = 3604;
+		rLoc = 3573;
 		rType = 0;
 		vrLen = 1180;
 		vrLoc = 2429;
@@ -1504,7 +1515,7 @@
 		fRef = AC24C98510BAE6420063DF87 /* SRTimeManager.h */;
 		name = "SRTimeManager.h: 38";
 		rLen = 0;
-		rLoc = 868;
+		rLoc = 908;
 		rType = 0;
 		vrLen = 1003;
 		vrLoc = 85;
@@ -1514,7 +1525,7 @@
 		fRef = AC24C98510BAE6420063DF87 /* SRTimeManager.h */;
 		name = "SRTimeManager.h: 47";
 		rLen = 0;
-		rLoc = 1045;
+		rLoc = 1085;
 		rType = 0;
 		vrLen = 911;
 		vrLoc = 141;
@@ -1524,7 +1535,7 @@
 		fRef = AC24C98610BAE6420063DF87 /* SRTimeManager.m */;
 		name = "SRTimeManager.m: 132";
 		rLen = 0;
-		rLoc = 3604;
+		rLoc = 3573;
 		rType = 0;
 		vrLen = 1508;
 		vrLoc = 1955;
@@ -1534,7 +1545,7 @@
 		fRef = AC24C98510BAE6420063DF87 /* SRTimeManager.h */;
 		name = "SRTimeManager.h: 47";
 		rLen = 0;
-		rLoc = 1045;
+		rLoc = 1085;
 		rType = 0;
 		vrLen = 911;
 		vrLoc = 141;
@@ -1604,7 +1615,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 151";
 		rLen = 14;
-		rLoc = 4014;
+		rLoc = 3822;
 		rType = 0;
 		vrLen = 1105;
 		vrLoc = 5528;
@@ -1684,7 +1695,7 @@
 		fRef = AC24C98610BAE6420063DF87 /* SRTimeManager.m */;
 		name = "SRTimeManager.m: 121";
 		rLen = 0;
-		rLoc = 3479;
+		rLoc = 3448;
 		rType = 0;
 		vrLen = 576;
 		vrLoc = 2904;
@@ -2082,7 +2093,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 151";
 		rLen = 14;
-		rLoc = 4014;
+		rLoc = 3822;
 		rType = 0;
 		vrLen = 1091;
 		vrLoc = 5561;
@@ -2199,7 +2210,7 @@
 		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
 		name = "SterrenAppDelegate.h: 29";
 		rLen = 0;
-		rLoc = 1106;
+		rLoc = 1135;
 		rType = 0;
 		vrLen = 853;
 		vrLoc = 0;
@@ -2219,7 +2230,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 46";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 1508;
 		vrLoc = 509;
@@ -2269,7 +2280,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 200";
 		rLen = 0;
-		rLoc = 5207;
+		rLoc = 5015;
 		rType = 0;
 		vrLen = 1275;
 		vrLoc = 6191;
@@ -2279,7 +2290,7 @@
 		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
 		name = "SterrenAppDelegate.h: 27";
 		rLen = 0;
-		rLoc = 722;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 0;
@@ -2299,7 +2310,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 39";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 1465;
 		vrLoc = 270;
@@ -2338,7 +2349,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 147";
 		rLen = 0;
-		rLoc = 3944;
+		rLoc = 3752;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 4811;
@@ -2368,7 +2379,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 24";
 		rLen = 0;
-		rLoc = 5540;
+		rLoc = 5476;
 		rType = 0;
 		vrLen = 413;
 		vrLoc = 0;
@@ -2479,7 +2490,7 @@
 		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
 		name = "SterrenAppDelegate.h: 27";
 		rLen = 0;
-		rLoc = 722;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 0;
@@ -2489,7 +2500,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 39";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 1431;
 		vrLoc = 270;
@@ -2499,7 +2510,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 39";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 1465;
 		vrLoc = 270;
@@ -2534,7 +2545,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 23";
 		rLen = 0;
-		rLoc = 666;
+		rLoc = 679;
 		rType = 0;
 		vrLen = 596;
 		vrLoc = 533;
@@ -2571,7 +2582,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 23";
 		rLen = 0;
-		rLoc = 665;
+		rLoc = 678;
 		rType = 0;
 		vrLen = 1480;
 		vrLoc = 270;
@@ -2595,7 +2606,7 @@
 		isa = PBXTextBookmark;
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		rLen = 0;
-		rLoc = 29;
+		rLoc = 31;
 		rType = 1;
 	};
 	76179DD810CA7A2F00768180 /* PBXTextBookmark */ = {
@@ -2603,7 +2614,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 40";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 412;
 		vrLoc = 1423;
@@ -2613,7 +2624,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 40";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 1585;
 		vrLoc = 779;
@@ -2653,7 +2664,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 40";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 412;
 		vrLoc = 1423;
@@ -2683,7 +2694,7 @@
 		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
 		name = "SterrenAppDelegate.h: 27";
 		rLen = 0;
-		rLoc = 722;
+		rLoc = 751;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 0;
@@ -2693,7 +2704,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 40";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 1502;
 		vrLoc = 708;
@@ -2703,7 +2714,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 24";
 		rLen = 0;
-		rLoc = 5540;
+		rLoc = 5476;
 		rType = 0;
 		vrLen = 413;
 		vrLoc = 0;
@@ -2778,7 +2789,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 611;
 		vrLoc = 533;
@@ -2788,7 +2799,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 894;
@@ -2818,7 +2829,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 27";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 1429;
 		vrLoc = 406;
@@ -2888,7 +2899,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 30";
 		rLen = 0;
-		rLoc = 927;
+		rLoc = 735;
 		rType = 0;
 		vrLen = 1020;
 		vrLoc = 5181;
@@ -2898,7 +2909,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 30";
 		rLen = 0;
-		rLoc = 927;
+		rLoc = 735;
 		rType = 0;
 		vrLen = 1030;
 		vrLoc = 5181;
@@ -2908,7 +2919,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 894;
@@ -2933,7 +2944,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 144";
 		rLen = 0;
-		rLoc = 3888;
+		rLoc = 3696;
 		rType = 0;
 		vrLen = 431;
 		vrLoc = 5531;
@@ -2990,7 +3001,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 200";
 		rLen = 13;
-		rLoc = 5194;
+		rLoc = 5002;
 		rType = 0;
 		vrLen = 1270;
 		vrLoc = 6211;
@@ -3060,7 +3071,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 147";
 		rLen = 0;
-		rLoc = 3959;
+		rLoc = 3767;
 		rType = 0;
 		vrLen = 415;
 		vrLoc = 5609;
@@ -3081,7 +3092,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 113;
+		rLoc = 110;
 		rType = 1;
 	};
 	76179E1C10CA7C6700768180 /* PBXTextBookmark */ = {
@@ -3089,7 +3100,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 147";
 		rLen = 0;
-		rLoc = 3928;
+		rLoc = 3736;
 		rType = 0;
 		vrLen = 1168;
 		vrLoc = 5528;
@@ -3099,7 +3110,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 147";
 		rLen = 0;
-		rLoc = 3928;
+		rLoc = 3736;
 		rType = 0;
 		vrLen = 1157;
 		vrLoc = 5528;
@@ -3134,7 +3145,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 153";
 		rLen = 0;
-		rLoc = 4032;
+		rLoc = 3840;
 		rType = 0;
 		vrLen = 529;
 		vrLoc = 6253;
@@ -3144,7 +3155,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 147";
 		rLen = 0;
-		rLoc = 3928;
+		rLoc = 3736;
 		rType = 0;
 		vrLen = 441;
 		vrLoc = 5488;
@@ -3154,7 +3165,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 293";
 		rLen = 0;
-		rLoc = 7634;
+		rLoc = 7442;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 8625;
@@ -3184,7 +3195,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 24";
 		rLen = 0;
-		rLoc = 5540;
+		rLoc = 5476;
 		rType = 0;
 		vrLen = 413;
 		vrLoc = 0;
@@ -3204,7 +3215,7 @@
 		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
 		name = "SterrenAppDelegate.h: 35";
 		rLen = 0;
-		rLoc = 1106;
+		rLoc = 1135;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 0;
@@ -3214,7 +3225,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 23";
 		rLen = 0;
-		rLoc = 666;
+		rLoc = 679;
 		rType = 0;
 		vrLen = 1534;
 		vrLoc = 205;
@@ -3224,7 +3235,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 81";
 		rLen = 0;
-		rLoc = 1176;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1363;
 		vrLoc = 1167;
@@ -3234,7 +3245,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 81";
 		rLen = 0;
-		rLoc = 1176;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 430;
 		vrLoc = 2100;
@@ -3259,7 +3270,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 153";
 		rLen = 0;
-		rLoc = 4032;
+		rLoc = 3840;
 		rType = 0;
 		vrLen = 422;
 		vrLoc = 6462;
@@ -3296,7 +3307,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 81";
 		rLen = 0;
-		rLoc = 1176;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1156;
 		vrLoc = 1739;
@@ -3360,7 +3371,7 @@
 		isa = PBXTextBookmark;
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		rLen = 0;
-		rLoc = 88;
+		rLoc = 85;
 		rType = 1;
 	};
 	76179E4A10CA7E3500768180 /* PBXTextBookmark */ = {
@@ -3368,7 +3379,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 153";
 		rLen = 0;
-		rLoc = 4032;
+		rLoc = 3840;
 		rType = 0;
 		vrLen = 403;
 		vrLoc = 5488;
@@ -3388,7 +3399,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 153";
 		rLen = 0;
-		rLoc = 4032;
+		rLoc = 3840;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 5113;
@@ -3408,7 +3419,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 24";
 		rLen = 0;
-		rLoc = 5540;
+		rLoc = 5476;
 		rType = 0;
 		vrLen = 413;
 		vrLoc = 0;
@@ -3428,7 +3439,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 81";
 		rLen = 0;
-		rLoc = 1176;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1156;
 		vrLoc = 1739;
@@ -3438,7 +3449,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 36";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 1496;
 		vrLoc = 404;
@@ -3448,7 +3459,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 153";
 		rLen = 0;
-		rLoc = 4032;
+		rLoc = 3840;
 		rType = 0;
 		vrLen = 403;
 		vrLoc = 5488;
@@ -3458,7 +3469,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 36";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 702;
 		vrLoc = 831;
@@ -3508,7 +3519,7 @@
 		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
 		name = "SterrenAppDelegate.h: 35";
 		rLen = 0;
-		rLoc = 1106;
+		rLoc = 1135;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 0;
@@ -3568,7 +3579,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 27";
 		rLen = 0;
-		rLoc = 817;
+		rLoc = 914;
 		rType = 0;
 		vrLen = 520;
 		vrLoc = 546;
@@ -3588,7 +3599,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 739;
+		rLoc = 752;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 0;
@@ -3638,7 +3649,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 739;
+		rLoc = 752;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 0;
@@ -3768,7 +3779,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 739;
+		rLoc = 752;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 0;
@@ -3778,7 +3789,7 @@
 		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
 		name = "SterrenAppDelegate.h: 35";
 		rLen = 0;
-		rLoc = 1106;
+		rLoc = 1135;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 0;
@@ -3788,7 +3799,7 @@
 		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
 		name = "SterrenAppDelegate.h: 28";
 		rLen = 0;
-		rLoc = 719;
+		rLoc = 748;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 0;
@@ -3808,7 +3819,7 @@
 		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
 		name = "SterrenAppDelegate.h: 28";
 		rLen = 0;
-		rLoc = 719;
+		rLoc = 748;
 		rType = 0;
 		vrLen = 386;
 		vrLoc = 481;
@@ -3828,7 +3839,7 @@
 		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
 		name = "SterrenAppDelegate.h: 31";
 		rLen = 0;
-		rLoc = 787;
+		rLoc = 816;
 		rType = 0;
 		vrLen = 1096;
 		vrLoc = 0;
@@ -3898,7 +3909,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 28";
 		rLen = 0;
-		rLoc = 761;
+		rLoc = 774;
 		rType = 0;
 		vrLen = 1362;
 		vrLoc = 0;
@@ -3918,7 +3929,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 28";
 		rLen = 0;
-		rLoc = 761;
+		rLoc = 774;
 		rType = 0;
 		vrLen = 555;
 		vrLoc = 562;
@@ -3955,7 +3966,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 28";
 		rLen = 0;
-		rLoc = 761;
+		rLoc = 774;
 		rType = 0;
 		vrLen = 1362;
 		vrLoc = 0;
@@ -3965,7 +3976,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 28";
 		rLen = 0;
-		rLoc = 761;
+		rLoc = 774;
 		rType = 0;
 		vrLen = 449;
 		vrLoc = 538;
@@ -4022,7 +4033,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 815;
+		rLoc = 912;
 		rType = 0;
 		vrLen = 1218;
 		vrLoc = 0;
@@ -4072,7 +4083,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 71";
 		rLen = 0;
-		rLoc = 3768;
+		rLoc = 3576;
 		rType = 0;
 		vrLen = 2429;
 		vrLoc = 1802;
@@ -4082,7 +4093,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 201";
 		rLen = 0;
-		rLoc = 5207;
+		rLoc = 5015;
 		rType = 0;
 		vrLen = 1159;
 		vrLoc = 6413;
@@ -4092,7 +4103,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 28";
 		rLen = 0;
-		rLoc = 761;
+		rLoc = 774;
 		rType = 0;
 		vrLen = 510;
 		vrLoc = 598;
@@ -4102,7 +4113,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 201";
 		rLen = 0;
-		rLoc = 5207;
+		rLoc = 5015;
 		rType = 0;
 		vrLen = 390;
 		vrLoc = 6641;
@@ -4112,7 +4123,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 201";
 		rLen = 0;
-		rLoc = 5207;
+		rLoc = 5015;
 		rType = 0;
 		vrLen = 1059;
 		vrLoc = 6513;
@@ -4142,7 +4153,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 788;
+		rLoc = 885;
 		rType = 0;
 		vrLen = 1215;
 		vrLoc = 0;
@@ -4192,7 +4203,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 201";
 		rLen = 0;
-		rLoc = 5207;
+		rLoc = 5015;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 6684;
@@ -4270,7 +4281,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 28;
+		rLoc = 30;
 		rType = 1;
 	};
 	76179ED310CA839000768180 /* PBXTextBookmark */ = {
@@ -4278,7 +4289,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 790;
+		rLoc = 887;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 0;
@@ -4298,7 +4309,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 790;
+		rLoc = 887;
 		rType = 0;
 		vrLen = 515;
 		vrLoc = 598;
@@ -4308,7 +4319,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 790;
+		rLoc = 887;
 		rType = 0;
 		vrLen = 1329;
 		vrLoc = 3;
@@ -4318,7 +4329,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 790;
+		rLoc = 887;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 31;
@@ -4338,7 +4349,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 790;
+		rLoc = 887;
 		rType = 0;
 		vrLen = 492;
 		vrLoc = 598;
@@ -4385,7 +4396,7 @@
 		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
 		name = "SterrenAppDelegate.h: 38";
 		rLen = 0;
-		rLoc = 1045;
+		rLoc = 1074;
 		rType = 0;
 		vrLen = 1155;
 		vrLoc = 0;
@@ -4405,7 +4416,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 40";
 		rLen = 0;
-		rLoc = 1066;
+		rLoc = 1163;
 		rType = 0;
 		vrLen = 1210;
 		vrLoc = 31;
@@ -4425,7 +4436,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 40";
 		rLen = 0;
-		rLoc = 1066;
+		rLoc = 1163;
 		rType = 0;
 		vrLen = 1313;
 		vrLoc = 31;
@@ -4435,7 +4446,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 40";
 		rLen = 0;
-		rLoc = 1066;
+		rLoc = 1163;
 		rType = 0;
 		vrLen = 425;
 		vrLoc = 816;
@@ -4472,7 +4483,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 40";
 		rLen = 0;
-		rLoc = 1066;
+		rLoc = 1163;
 		rType = 0;
 		vrLen = 1254;
 		vrLoc = 90;
@@ -4492,7 +4503,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 40";
 		rLen = 0;
-		rLoc = 1066;
+		rLoc = 1163;
 		rType = 0;
 		vrLen = 1373;
 		vrLoc = 90;
@@ -4541,7 +4552,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
 		name = "SterrenAppDelegate.m: 40";
 		rLen = 0;
-		rLoc = 1066;
+		rLoc = 1163;
 		rType = 0;
 		vrLen = 495;
 		vrLoc = 849;
@@ -4598,7 +4609,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 200";
 		rLen = 0;
-		rLoc = 5207;
+		rLoc = 5015;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 6470;
@@ -4608,7 +4619,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 175";
 		rLen = 0;
-		rLoc = 4528;
+		rLoc = 4336;
 		rType = 0;
 		vrLen = 1065;
 		vrLoc = 5785;
@@ -4618,7 +4629,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 175";
 		rLen = 0;
-		rLoc = 4528;
+		rLoc = 4336;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 5821;
@@ -4648,7 +4659,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 175";
 		rLen = 0;
-		rLoc = 4528;
+		rLoc = 4336;
 		rType = 0;
 		vrLen = 357;
 		vrLoc = 5428;
@@ -4658,7 +4669,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 175";
 		rLen = 0;
-		rLoc = 4528;
+		rLoc = 4336;
 		rType = 0;
 		vrLen = 1039;
 		vrLoc = 5132;
@@ -4678,7 +4689,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 175";
 		rLen = 0;
-		rLoc = 4528;
+		rLoc = 4336;
 		rType = 0;
 		vrLen = 2211;
 		vrLoc = 15257;
@@ -4778,7 +4789,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 57";
 		rLen = 0;
-		rLoc = 5539;
+		rLoc = 5475;
 		rType = 0;
 		vrLen = 1157;
 		vrLoc = 265;
@@ -4798,7 +4809,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 74";
 		rLen = 0;
-		rLoc = 3821;
+		rLoc = 3629;
 		rType = 0;
 		vrLen = 2125;
 		vrLoc = 2216;
@@ -4808,7 +4819,7 @@
 		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
 		name = "SRObjectManager.m: 57";
 		rLen = 0;
-		rLoc = 5539;
+		rLoc = 5475;
 		rType = 0;
 		vrLen = 1191;
 		vrLoc = 231;
@@ -4898,7 +4909,7 @@
 		fRef = AC24C98610BAE6420063DF87 /* SRTimeManager.m */;
 		name = "SRTimeManager.m: 132";
 		rLen = 0;
-		rLoc = 3604;
+		rLoc = 3573;
 		rType = 0;
 		vrLen = 1508;
 		vrLoc = 1955;
@@ -4908,7 +4919,7 @@
 		fRef = AC24C98510BAE6420063DF87 /* SRTimeManager.h */;
 		name = "SRTimeManager.h: 47";
 		rLen = 0;
-		rLoc = 1045;
+		rLoc = 1085;
 		rType = 0;
 		vrLen = 967;
 		vrLoc = 85;
@@ -4928,7 +4939,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 428";
 		rLen = 2032;
-		rLoc = 13572;
+		rLoc = 13380;
 		rType = 0;
 		vrLen = 1184;
 		vrLoc = 9485;
@@ -4944,6 +4955,116 @@
 		vrLoc = 197;
 	};
 	76179F3110CA9F3600768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
+		name = "XMLParser.m: 42";
+		rLen = 0;
+		rLoc = 1066;
+		rType = 0;
+		vrLen = 1634;
+		vrLoc = 136;
+	};
+	76179F3210CAA0B400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* SterrenAppDelegate.h */;
+		name = "SterrenAppDelegate.h: 41";
+		rLen = 0;
+		rLoc = 1226;
+		rType = 0;
+		vrLen = 1235;
+		vrLoc = 0;
+	};
+	76179F3310CAA0B400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC55F120109600990021D39C /* SRInterface.h */;
+		name = "SRInterface.h: 75";
+		rLen = 0;
+		rLoc = 1702;
+		rType = 0;
+		vrLen = 1161;
+		vrLoc = 1302;
+	};
+	76179F3410CAA0B400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC55F121109600990021D39C /* SRInterface.m */;
+		name = "SRInterface.m: 47";
+		rLen = 0;
+		rLoc = 1179;
+		rType = 0;
+		vrLen = 1802;
+		vrLoc = 5016;
+	};
+	76179F3510CAA0B400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
+		name = "SterrenAppDelegate.m: 30";
+		rLen = 0;
+		rLoc = 884;
+		rType = 0;
+		vrLen = 1295;
+		vrLoc = 146;
+	};
+	76179F3610CAA0B400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC24C98610BAE6420063DF87 /* SRTimeManager.m */;
+		name = "SRTimeManager.m: 21";
+		rLen = 0;
+		rLoc = 511;
+		rType = 0;
+		vrLen = 1168;
+		vrLoc = 200;
+	};
+	76179F3710CAA0B400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC24C98510BAE6420063DF87 /* SRTimeManager.h */;
+		name = "SRTimeManager.h: 38";
+		rLen = 0;
+		rLoc = 867;
+		rType = 0;
+		vrLen = 1002;
+		vrLoc = 85;
+	};
+	76179F3810CAA0B400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 28";
+		rLen = 0;
+		rLoc = 771;
+		rType = 0;
+		vrLen = 2913;
+		vrLoc = 398;
+	};
+	76179F3910CAA0B400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 78";
+		rLen = 0;
+		rLoc = 2034;
+		rType = 0;
+		vrLen = 1248;
+		vrLoc = 1535;
+	};
+	76179F3A10CAA0B400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC24C99410BAE8F00063DF87 /* SRTimeModule.m */;
+		name = "SRTimeModule.m: 24";
+		rLen = 0;
+		rLoc = 587;
+		rType = 0;
+		vrLen = 1568;
+		vrLoc = 0;
+	};
+	76179F3B10CAA0B400768180 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC24C99410BAE8F00063DF87 /* SRTimeModule.m */;
+		name = "SRTimeModule.m: 24";
+		rLen = 0;
+		rLoc = 574;
+		rType = 0;
+		vrLen = 1579;
+		vrLoc = 0;
+	};
+	76179F3C10CAA0B400768180 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 76B7CC58108B235100F87C68 /* XMLParser.m */;
 		name = "XMLParser.m: 42";
@@ -5008,7 +5129,7 @@
 		fRef = AC24C98510BAE6420063DF87 /* SRTimeManager.h */;
 		name = "SRTimeManager.h: 38";
 		rLen = 0;
-		rLoc = 868;
+		rLoc = 908;
 		rType = 0;
 		vrLen = 1065;
 		vrLoc = 0;
@@ -5168,16 +5289,16 @@
 	};
 	AC24C98510BAE6420063DF87 /* SRTimeManager.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 650}}";
-			sepNavSelRange = "{1045, 0}";
-			sepNavVisRange = "{85, 967}";
+			sepNavIntBoundsRect = "{{0, 0}, {1099, 663}}";
+			sepNavSelRange = "{867, 0}";
+			sepNavVisRange = "{85, 1002}";
 		};
 	};
 	AC24C98610BAE6420063DF87 /* SRTimeManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1216, 1729}}";
-			sepNavSelRange = "{3604, 0}";
-			sepNavVisRange = "{1955, 1508}";
+			sepNavIntBoundsRect = "{{0, 0}, {1216, 1768}}";
+			sepNavSelRange = "{511, 0}";
+			sepNavVisRange = "{200, 1168}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -5205,23 +5326,23 @@
 	};
 	AC24C99410BAE8F00063DF87 /* SRTimeModule.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1496, 1430}}";
-			sepNavSelRange = "{351, 0}";
-			sepNavVisRange = "{0, 1703}";
+			sepNavIntBoundsRect = "{{0, 0}, {1489, 1508}}";
+			sepNavSelRange = "{574, 0}";
+			sepNavVisRange = "{0, 1579}";
 		};
 	};
 	AC55F120109600990021D39C /* SRInterface.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 1261}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1099, 1274}}";
 			sepNavSelRange = "{1702, 0}";
-			sepNavVisRange = "{1165, 1210}";
+			sepNavVisRange = "{1302, 1161}";
 		};
 	};
 	AC55F121109600990021D39C /* SRInterface.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1118, 8736}}";
-			sepNavSelRange = "{13152, 0}";
-			sepNavVisRange = "{0, 1178}";
+			sepNavIntBoundsRect = "{{0, 0}, {1118, 8593}}";
+			sepNavSelRange = "{1179, 0}";
+			sepNavVisRange = "{5016, 1802}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -5318,9 +5439,9 @@
 	};
 	ACB7B16B10615F4F00CA447E /* SRRenderer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1251, 5629}}";
-			sepNavSelRange = "{734, 0}";
-			sepNavVisRange = "{197, 2364}";
+			sepNavIntBoundsRect = "{{0, 0}, {1251, 5681}}";
+			sepNavSelRange = "{771, 0}";
+			sepNavVisRange = "{398, 2913}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};

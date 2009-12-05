@@ -21,7 +21,8 @@
 -(id)init {
 	if(self = [super init]) {
 		
-		manager = [[SRTimeManager alloc] initWithOwner:self];
+		manager = [[[UIApplication sharedApplication] delegate] timeManager];
+		[manager setOwner:self];
 		
 		elements = [[NSMutableArray alloc] init];
 		

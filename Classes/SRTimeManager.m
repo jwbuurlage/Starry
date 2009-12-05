@@ -18,9 +18,9 @@
 
 @synthesize simulatedDate, totalInterval;
 
--(id)initWithOwner:(SRTimeModule*)theOwner {
+-(id)init {
 	if(self = [super init]) {
-		owner = theOwner;
+		//owner = theOwner;
 		simulatedDate = [[NSDate alloc] init];
 		actualDate = [[NSDate alloc] init];
 		timeTicker = [[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(tickOfTime:) userInfo:nil repeats:YES] retain];

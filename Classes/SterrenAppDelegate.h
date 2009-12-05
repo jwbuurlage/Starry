@@ -23,6 +23,7 @@
     GLView *glView;
 	UIView *uiElementsView;
 	SRLocation* location;
+	SRTimeManager* timeManager;
 	
 	/*NSMutableArray * stars;
 	NSMutableArray * constellations;*/
@@ -36,7 +37,8 @@
 @property (readonly) SRObjectManager * objectManager;
 //@property (nonatomic, retain) NSMutableArray *stars;
 //@property (nonatomic, retain) NSMutableArray *constellations;
-@property (assign) SRLocation* location;
+@property (readonly) SRLocation* location;
+@property (readonly) SRTimeManager* timeManager;
 
 @end
 

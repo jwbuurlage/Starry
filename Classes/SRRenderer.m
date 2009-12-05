@@ -25,9 +25,6 @@
 		myOwner = theOwner;
 		appDelegate = [[UIApplication sharedApplication] delegate];
 		camera = [theOwner camera];
-			/* Location moet voor interface zodat interface weet van location */
-		location = [[SRLocation alloc] init];
-			//Zorg dat de appDelegate weet van location zodat deze hem later kan opslaan
 		location = [appDelegate location];
 		//[location useGPSValues]; // dit moet gebeuren in de init van location vanwege static locations
 		interface = [[SRInterface alloc] initWithRenderer:self];
