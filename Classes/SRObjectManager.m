@@ -12,7 +12,7 @@
 
 @implementation SRObjectManager
 
-@synthesize stars,constellations;
+@synthesize stars,constellations,planetNum;
 
 -(id)init {
     
@@ -20,7 +20,7 @@
 		stars = [[NSMutableArray alloc] init];
 		constellations = [[NSMutableArray alloc] init];
 		planets = [[NSMutableArray alloc] init];
-		appDelegate = [[UIApplication sharedApplication] delegate];
+		//appDelegate = [[UIApplication sharedApplication] delegate];
     }
     return self;
 }
@@ -145,13 +145,13 @@
 		//
 	}
 	
-	[sun recalculatePosition:[[appDelegate timeManager] simulatedDate]];
+	[sun recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
 	
 	Vertex3D earthPosition = [[planets objectAtIndex:0] position];
 	SRPlanetaryObject *planet;
 	
 	for (planet in planets) {
-		[planet recalculatePosition:[[appDelegate timeManager] simulatedDate]];
+		[planet recalculatePosition:[[[UIApplication sharedApplication] delegate] simulatedDate]];
 		if (planet.a > 1.1) {
 			[planet setViewOrigin:earthPosition];
 		}
@@ -176,12 +176,18 @@
 		[[planets objectAtIndex:7] position].x, [[planets objectAtIndex:7] position].y, [[planets objectAtIndex:7] position].z,	1.0, 1.0, 1.0, 1.0, 10.0
 	};
 	
-	int planetNum = 8;
+	planetNum = 8;
 	
 	for (int i=0; i < planetNum*8; i++) {
 		planetPoints[i] = planetPointsTmp[i];
 		//NSLog(@"%i", i);
 	}
+}
+
+-(GLfloat*)planetPoints{
+	GLfloat* planetPointsTmp = (GLfloat *)planetPoints;
+	
+	return planetPointsTmp;
 }
 
 @end

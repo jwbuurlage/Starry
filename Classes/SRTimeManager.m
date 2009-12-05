@@ -16,7 +16,7 @@
 
 @implementation SRTimeManager
 
-@synthesize simulatedDate, totalInterval, owner;
+@synthesize simulatedDate, totalInterval, moduleInstance;
 
 -(id)init {
 	if(self = [super init]) {

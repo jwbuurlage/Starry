@@ -22,7 +22,7 @@
 	if(self = [super init]) {
 		
 		manager = [[[UIApplication sharedApplication] delegate] timeManager];
-		[manager setOwner:self];
+		[manager setModuleInstance:self];
 		
 		elements = [[NSMutableArray alloc] init];
 		

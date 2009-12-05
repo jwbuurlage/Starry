@@ -28,17 +28,17 @@
 	int speed;
 	float elapsed;
 	
-	SRTimeModule* owner;
+	SRTimeModule* moduleInstance;
 	
 	NSCalendar* gregorian;
 }
 
 @property (readonly) NSDate* simulatedDate;
 @property (assign) int totalInterval;
-@property (assign) SRTimeModule *owner;
+@property (assign) SRTimeModule *moduleInstance;
 @property (readonly) float elapsed;
 
--(id)initWithOwner:(SRTimeModule*)theOwner;
+-(id)init;
 -(NSString*)theTime;
 -(NSString*)theDate;
 -(int)speed;

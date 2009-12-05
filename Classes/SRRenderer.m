@@ -69,9 +69,15 @@
 		
 		objectManager = [appDelegate objectManager];
 		
+		[objectManager buildPlanetData];
+		planetPoints = [objectManager planetPoints];
+		planetNum = [objectManager planetNum];
+		/*for (int i=0, i<planetNum*7,i++) {
+			[objectManager planetPoints][i] = planetPoints[i];
+		}*/
 		
 		
-		[self recalculatePlanetaryPositions];
+		//[self recalculatePlanetaryPositions];
 		
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity(); 
@@ -422,7 +428,7 @@
 	return camera;
 }
 
--(void)recalculatePlanetaryPositions {
+/*-(void)recalculatePlanetaryPositions {
 	[sun recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
 	[earth recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
 	[jupiter recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
@@ -458,7 +464,7 @@
 		//NSLog(@"%i", i);
 	}
 	
-}
+}*/
 
 -(void)brightnessChanged {
 	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
