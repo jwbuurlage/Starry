@@ -278,7 +278,7 @@
 					//NSLog(@"Closest star:%@",star.name);
 				}
 			}
-<<<<<<< HEAD:Classes/GLViewController.m
+
 			if (closestD < 1.2) {
 				//NSLog(@"Delta of closest: %f",closestD);
 				[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
@@ -289,9 +289,7 @@
 				}
 			}
 			
-=======
-			[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
->>>>>>> 3a7d285a85d11a126f71ea9e89c41516c878e1fd:Classes/GLViewController.m
+
 			/*
 			Dit kopt niet 
 			float alOm = acos(brZ);

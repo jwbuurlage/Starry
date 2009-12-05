@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Project</string>
+	<string>Debug</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>76179EF210CA842B00768180</string>
+						<string>76179EFC10CA857200768180</string>
 						<key>history</key>
 						<array>
 							<string>76179DA910CA795C00768180</string>
@@ -341,8 +341,6 @@
 							<string>MainColumn</string>
 							<real>258</real>
 						</array>
-						<key>RubberWindowFrame</key>
-						<string>-2 37 1440 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -353,14 +351,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>asm __dyld__dyld_start  0x2fe01028</string>
+								<string>GLViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -368,11 +364,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>asm __dyld__dyld_start  0x2fe01028</string>
+										<string>GLViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>76179EF110CA842B00768180</string>
+										<string>76179EFB10CA857200768180</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -398,7 +394,6 @@
 											<string>76179E7610CA803800768180</string>
 											<string>76179E7710CA803800768180</string>
 											<string>76179EB310CA827800768180</string>
-											<string>76179EB510CA827800768180</string>
 											<string>76179EB610CA827800768180</string>
 											<string>76179EBE10CA830000768180</string>
 											<string>76179EC210CA830000768180</string>
@@ -408,7 +403,8 @@
 											<string>76179ED110CA839000768180</string>
 											<string>76179EE310CA83E200768180</string>
 											<string>76179EE410CA83E200768180</string>
-											<string>76179EE510CA83E200768180</string>
+											<string>76179EF810CA856900768180</string>
+											<string>76179EF910CA856900768180</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -423,8 +419,6 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1160, 638}}</string>
-								<key>RubberWindowFrame</key>
-								<string>-2 37 1440 839 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -502,8 +496,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1160, 128}}</string>
-										<key>RubberWindowFrame</key>
-										<string>-2 37 1440 839 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -576,6 +568,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -587,6 +581,8 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1440, 326}}</string>
+						<key>RubberWindowFrame</key>
+						<string>-2 37 1440 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -661,7 +657,11 @@
 							</array>
 							<key>Frame</key>
 							<string>{{703, 0}, {737, 226}}</string>
+							<key>RubberWindowFrame</key>
+							<string>-2 37 1440 839 0 0 1440 878 </string>
 						</dict>
+						<key>RubberWindowFrame</key>
+						<string>-2 37 1440 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -725,7 +725,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>76179EF310CA842B00768180</string>
+		<string>76179EFD10CA857200768180</string>
 		<string>76179CB610CA5F7D00768180</string>
 		<string>76179CB710CA5F7D00768180</string>
 		<string>76179E1E10CA7C7400768180</string>
