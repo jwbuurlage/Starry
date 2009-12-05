@@ -39,6 +39,7 @@
 
 @property (readonly) Vertex3D position;
 @property (readonly) float a;
+@property (readonly) NSString* name;
 
 -(id)initWitha:(float)ia		
 			 e:(float)ie		

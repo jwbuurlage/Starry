@@ -16,7 +16,7 @@
 
 @implementation SRPlanetaryObject
 
-@synthesize position, a;
+@synthesize position, a, name;
 
 
 -(id)initWitha:(float)ia		

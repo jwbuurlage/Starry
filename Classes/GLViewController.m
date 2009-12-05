@@ -254,40 +254,72 @@
 			brY = maY;
 			brZ = maZ;
 			
-			float stX,stY,stZ;
+			float stX,stY,stZ,plX,plY,plZ;
 			stX = -20*brX;
 			stY = -20*brY;
 			stZ = -20*brZ;
 			
-			SRStar * star;
-			SRStar * closestStar;
-			float xd,yd,zd,starD,closestD;
-			closestD = 20; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
+			plX = -15*brX;
+			plY = -15*brY;
+			plZ = -15*brZ;
 			
-			for(star in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
+			SRPlanetaryObject * planet;
+			SRPlanetaryObject * closestPlanet;
+			float xd,yd,zd,planetD,closestD;
+			closestD = 15; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
+			for(planet in [[[[UIApplication sharedApplication] delegate] objectManager] planets]) {
 				
 				
 				// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
-				xd = [[star x] floatValue]-stX;
-				yd = [[star y] floatValue]-stY;
-				zd = [[star z] floatValue]-stZ;
-				starD = sqrt(xd*xd + yd*yd + zd*zd);
-				if (starD < closestD) {
-					closestD = starD;
-					closestStar = star;
-					//NSLog(@"Closest star:%@",star.name);
+				xd = planet.position.x-plX;
+				yd = planet.position.y-plY;
+				zd = planet.position.z-plZ;
+				planetD = sqrt(xd*xd + yd*yd + zd*zd);
+				if (planetD < closestD) {
+					closestD = planetD;
+					closestPlanet = planet;
+					NSLog(@"Closest planet:%@",planet.name);
 				}
 			}
-
-			if (closestD < 1.2) {
-				//NSLog(@"Delta of closest: %f",closestD);
-				[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
+			if (closestD < 1.5) {
+				NSLog(@"Delta of closest: %f",closestD);
+				[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:NO];
 			}
 			else {
-				if ([[[renderer interface] theNameplate] visible]) {
-					[[[renderer interface] theNameplate] hide];
+				
+				SRStar * star;
+				SRStar * closestStar;
+				float starD;
+				closestD = 20; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
+				
+				for(star in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
+					
+					
+					// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
+					xd = [[star x] floatValue]-stX;
+					yd = [[star y] floatValue]-stY;
+					zd = [[star z] floatValue]-stZ;
+					starD = sqrt(xd*xd + yd*yd + zd*zd);
+					if (starD < closestD) {
+						closestD = starD;
+						closestStar = star;
+						NSLog(@"Closest star:%@",star.name);
+					}
 				}
+				
+				if (closestD < 1.2) {
+					//NSLog(@"Delta of closest: %f",closestD);
+					[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
+				}
+				else {
+					if ([[[renderer interface] theNameplate] visible]) {
+						[[[renderer interface] theNameplate] hide];
+					}
+				}
+				
 			}
+			
+			
 			
 
 			/*

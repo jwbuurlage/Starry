@@ -12,7 +12,7 @@
 
 @implementation SRObjectManager
 
-@synthesize stars,constellations,planetNum,planetPoints;
+@synthesize stars,constellations,planets,planetNum,planetPoints;
 
 -(id)init {
     
