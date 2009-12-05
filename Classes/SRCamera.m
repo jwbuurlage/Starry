@@ -175,10 +175,10 @@
 	glLoadIdentity();	
 }
 
-- (void)RAAndDecForPoint:(CGPoint)point {
+/*- (void)RAAndDecForPoint:(CGPoint)point {
 	//test
 	float RA = ( ((point.y - 240) / 240) * (fieldOfView * (180/M_PI) ) ) + azimuth;
 
-}
+}*/
 
 @end

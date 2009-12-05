@@ -184,6 +184,8 @@
 		// Aan de buitenste zeide is de destortion veel erger dan verder naar binnen.
 		if (40 < y && y < 440 && 30 < x && x < 290) {
 			
+			//[objectManager clickedAtX:x Y:y];
+			
 			// Tenopzichte van het midden uitrekenen iPhone screen (480*320)
 			int dmX = -x+160;
 			int dmY = -y+240;
@@ -257,19 +259,40 @@
 			stY = -20*brY;
 			stZ = -20*brZ;
 			
-			float alOm = acos(-brZ/sqrt(pow(-brX,2)+pow(-brY,2)+pow(-brZ,2)));
-			float fiOm = atan2(-brY,-brX); // klopt niet? hoe kan deze 2 parm nemen?
+			SRStar * star;
+			SRStar * closestStar;
+			float xd,yd,zd,starD,closestD;
+			closestD = 20;
+			// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
+			for(star in [[[UIApplication sharedApplication] delegate] stars]) {
+				
+				xd = [[star x] floatValue]-stX;
+				yd = [[star y] floatValue]-stY;
+				zd = [[star z] floatValue]-stZ;
+				starD = sqrt(xd*xd + yd*yd + zd*zd);
+				if (starD < closestD) {
+					closestD = starD;
+					closestStar = star;
+					//NSLog(@"Closest star:%@",star.name);
+				}
+			}
+			[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
 			
-			NSLog(@"RA/DEC punt RA:%f DEC:%f",alOm,fiOm);
+			/*
+			Dit kopt niet 
+			float alOm = acos(brZ);
+			float fiOm = atan((brY)/(brX)); // klopt niet? hoe kan deze 2 parm nemen?
+			
+			NSLog(@"RA/DEC punt RA:%f DEC:%f",alOm*(180/M_PI),fiOm*(180/M_PI));*/
 			
 			//NSLog(@"Aangeklikte locatie voor sterren database x:%f y:%f z:%f",stX,stY,stZ);
 			
-			if(stX < 1 &&
-			   stX >= 0 &&
-			   stY < 1 &&
-			   stY >= 0 &&
+			/*if(stX < 1.5 &&
+			   stX >= -1.5 &&
+			   stY < 1.5 &&
+			   stY >= -1.5 &&
 			   stZ <= 20 &&
-			   stZ > 19) {
+			   stZ > 18.0) {
 					//Poolster aangeklikt
 				if ([[[renderer interface] theNameplate] visible]) {
 					[[[renderer interface] theNameplate] hide];
@@ -280,7 +303,7 @@
 				else {
 					[[[renderer interface] theNameplate] setName:@"Polaris" inConstellation:@"Kleine beer" showInfo:NO];
 				}
-			}
+			}*/
 			
 		}
 		
@@ -304,7 +327,7 @@
 	}
 	else {
 		//geen swipe, enkele touch?
-		[camera RAAndDecForPoint:[aTouch previousLocationInView:theView]];
+		//[camera RAAndDecForPoint:[aTouch previousLocationInView:theView]];
 	}
 	}
 }

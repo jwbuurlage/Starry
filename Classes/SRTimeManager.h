@@ -45,7 +45,5 @@
 -(void)fwd;
 -(void)rew;
 -(void)reset;
--(void)adjustView;
--(void)adjustViewBack;
 
 @end

@@ -44,7 +44,7 @@
 	SRPlanetaryObject *saturn;
 	SRPlanetaryObject *uranus;
 	SRPlanetaryObject *neptune;
-
+	
 	//sphere:
 	Vertex3D    *sphereTriangleStripVertices;
     Vector3D    *sphereTriangleStripNormals;
@@ -63,7 +63,7 @@
 	int constellationNum;
 	
 	GLuint textures[21];
-
+	
 	float zoomFactor;
 	float brightnessFactor;
 	BOOL constellations;
@@ -86,7 +86,8 @@
 -(SRCamera*)camera;
 -(void)recalculatePlanetaryPositions;
 -(void)brightnessChanged;
--(void)constellationsChanged;
+-(void)adjustViewToLocationAndTime:(BOOL)status;
+
 
 
 @end

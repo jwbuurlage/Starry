@@ -40,14 +40,10 @@
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error;
 
-- (void)adjustView;
-- (void)adjustViewBack;
-- (void)makeAwareOfInterface:(id)aInterface;
 
+- (void)makeAwareOfInterface:(id)aInterface;
 - (void)useStaticValues;
 - (void)useGPSValues;
 
-/*- (float)longitude;
-- (float)latitude;*/
 
 @end
