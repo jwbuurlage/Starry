@@ -46,7 +46,7 @@
 	SRPlanetaryObject *saturn;
 	SRPlanetaryObject *uranus;
 	SRPlanetaryObject *neptune;
-
+	
 	//sphere:
 	Vertex3D    *sphereTriangleStripVertices;
     Vector3D    *sphereTriangleStripNormals;
@@ -65,9 +65,10 @@
 	int constellationNum;
 	
 	GLuint textures[21];
-
+	
 	float zoomFactor;
 	float brightnessFactor;
+	BOOL constellations;
 	
 	NSMutableArray* textTest;
 }

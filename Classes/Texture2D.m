@@ -363,18 +363,22 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 		_maxS,	_maxT,
 		0,		0,
 		_maxS,	0 }; 
+	
 	GLfloat		width = (GLfloat)_width * _maxS,
 	height = (GLfloat)_height * _maxT; 
 	
-	GLfloat		vertices[] = {	
+	GLfloat		vertices[] = {	-width / 2 + point.x,	-height / 2 + point.y,	z,
+		width / 2 + point.x,	-height / 2 + point.y,	z,
+		-width / 2 + point.x,	height / 2 + point.y,	z,
+		width / 2 + point.x,	height / 2 + point.y,	z };
 	
-	};
-	
+	glColor4f(1.0f,1.0f,1.0f,1.0f);
 	glBindTexture(GL_TEXTURE_2D, _name);
 	glTexCoordPointer(2, GL_FLOAT, 0, coordinates);
+	glDisableClientState(GL_TEXTURE_2D);
 	glVertexPointer(3, GL_FLOAT, 0, vertices);
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 1);
-	
+	glEnableClientState(GL_TEXTURE_2D);
 	glEnableClientState(GL_COLOR_ARRAY);
 }
 

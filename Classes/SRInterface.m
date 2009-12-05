@@ -394,12 +394,12 @@
 			}
 		}
 		else if(clicker == @"search") {
-			/*if([theNameplate visible]) {
+			if([theNameplate visible]) {
 				[theNameplate hide];
 			}
 			else {
 				[theNameplate setName:@"Saturnus" inConstellation:@"Orion" showInfo:YES];
-			}*/
+			}
 		}
 		else if(clicker == @"arrow") {
 			flagToggle = YES;
@@ -468,6 +468,17 @@
 			brightness -= 0.1;
 			[prefs setFloat:brightness forKey:@"brightness"];
 			[renderer brightnessChanged];
+		}		
+		else if(clicker == @"constellations") {
+			NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+			BOOL constellations = [prefs boolForKey:@"constellations"];
+			if(constellations) {
+				[prefs setBool:FALSE forKey:@"constellations"];
+			}
+			else {
+				[prefs setBool:TRUE forKey:@"constellations"];
+			}
+			[renderer constellationsChanged];
 		}		
 
 		if(flagToggle) {

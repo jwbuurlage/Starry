@@ -32,7 +32,7 @@
 		//laad elements in - sla op in textures
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(190, -44, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"constellation.png"]] 
-															identifier:@"constellation" 
+															identifier:@"constellations" 
 															 clickable:YES]];
 		
 	}
