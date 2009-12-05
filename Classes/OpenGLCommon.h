@@ -33,8 +33,8 @@ static inline SRRaDec SARaDecMake(float inRa, float inDec)
 }
 static inline void SRRaDecSet(SRRaDec *radec, float inRa, float inDec)
 {
-    radec->ra = inX;
-    radec->dec = inY;
+    radec->ra = inRa;
+    radec->dec = inDec;
 }
 
 

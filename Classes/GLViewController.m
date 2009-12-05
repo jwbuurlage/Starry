@@ -259,6 +259,25 @@
 			stY = -20*brY;
 			stZ = -20*brZ;
 			
+			SRStar * star;
+			SRStar * closestStar;
+			float xd,yd,zd,starD,closestD;
+			closestD = 20;
+			// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
+			for(star in [[[UIApplication sharedApplication] delegate] stars]) {
+				
+				xd = [[star x] floatValue]-stX;
+				yd = [[star y] floatValue]-stY;
+				zd = [[star z] floatValue]-stZ;
+				starD = sqrt(xd*xd + yd*yd + zd*zd);
+				if (starD < closestD) {
+					closestD = starD;
+					closestStar = star;
+					//NSLog(@"Closest star:%@",star.name);
+				}
+			}
+			[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
+			
 			/*
 			Dit kopt niet 
 			float alOm = acos(brZ);
@@ -268,7 +287,7 @@
 			
 			//NSLog(@"Aangeklikte locatie voor sterren database x:%f y:%f z:%f",stX,stY,stZ);
 			
-			if(stX < 1.5 &&
+			/*if(stX < 1.5 &&
 			   stX >= -1.5 &&
 			   stY < 1.5 &&
 			   stY >= -1.5 &&
@@ -284,7 +303,7 @@
 				else {
 					[[[renderer interface] theNameplate] setName:@"Polaris" inConstellation:@"Kleine beer" showInfo:NO];
 				}
-			}
+			}*/
 			
 		}
 		
@@ -308,7 +327,7 @@
 	}
 	else {
 		//geen swipe, enkele touch?
-		[camera RAAndDecForPoint:[aTouch previousLocationInView:theView]];
+		//[camera RAAndDecForPoint:[aTouch previousLocationInView:theView]];
 	}
 	}
 }

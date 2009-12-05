@@ -107,7 +107,9 @@
 	[[elements objectAtIndex:3] setTexture:[[Texture2D alloc] initWithString:constellation dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9]];
 	[[elements objectAtIndex:3] setBounds:CGRectMake([name sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width + 165, 278, 128,32)];
 	info = theInfo;
-	[self show];
+	if (![self visible]) {
+		[self show];
+	}
 }
 
 @end
