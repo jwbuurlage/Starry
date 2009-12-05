@@ -318,6 +318,7 @@
 					closestStar.selected = YES;
 					
 					// CPU intensieve method
+					// Dit moet anders bijvoorbeeld met een selector texture op de x,y,z locatie in de renderer
 					[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
 					[renderer loadStarPoints];
 				}

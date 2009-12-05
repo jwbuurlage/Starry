@@ -93,6 +93,7 @@
 
 -(void)loadStarPoints;
 -(void)loadPlanetPoints;
+-(void)loadConstellations;
 
 
 

@@ -25,6 +25,9 @@
 	NSMutableArray * starPoints;
 	int starNum;
 	
+	NSMutableArray * constellationPoints;
+	int constellationNum;
+	
 	//GLfloat stringPoints[56];
 	//GLfloat starPoints[15000];
 	//GLfloat constellationPoints[15000];
@@ -59,12 +62,15 @@
 @property (readonly) int planetNum;
 @property (readonly) NSMutableArray *starPoints;
 @property (readonly) int starNum;
+@property (readonly) NSMutableArray *constellationPoints;
+@property (readonly) int constellationNum;
 //@property (readonly) GLfloat planetPoints;
 
 -(id)init;
 -(void)parseData;
 -(void)buildPlanetData;
 -(void)buildStarData;
+-(void)buildConstellationData;
 //-(NSMutableArray*)planetPoints;
 
 @end

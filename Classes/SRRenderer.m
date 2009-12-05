@@ -26,8 +26,10 @@
 		appDelegate = [[UIApplication sharedApplication] delegate];
 		camera = [theOwner camera];
 		location = [appDelegate location];
-		//[location useGPSValues]; // dit moet gebeuren in de init van location vanwege static locations
+		objectManager = [appDelegate objectManager];
 		interface = [[SRInterface alloc] initWithRenderer:self];
+		
+		
 		
 		glGenTextures(20, &textures[0]);
 		[interface loadTexture:@"horizon_bg.png" intoLocation:textures[0]];
@@ -36,6 +38,8 @@
 		[interface loadTextureWithString:@"N" intoLocation:textures[3]];
 		[interface loadTextureWithString:@"O" intoLocation:textures[4]];
 		
+		//Dit moet anders, via loadPlanetData misschien
+		// Waarom laad je planet 6 keer in? :-S dat kan makkelijk 1 keer zijn
 		[interface loadTexture:@"sun.png" intoLocation:textures[5]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[6]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[7]];
@@ -65,7 +69,7 @@
 		}
 		constellations = [prefs boolForKey:@"constellations"];
 		
-		objectManager = [appDelegate objectManager];
+		
 		
 		
 		[self loadPlanetPoints];
@@ -73,34 +77,8 @@
 		glLoadIdentity(); 
 		glEnable(GL_DEPTH_TEST);
 		[self loadStarPoints];
-
+		[self loadConstellations];
 		
-		
-		constellationNum = 0;
-		GLfloat constellationPointsTmp[5000];
-		int i = 0;
-		SRConstellation * constellation;
-		SRConstellationLine * line;
-		
-		for(constellation in objectManager.constellations) {
-			for(line in constellation.lines) {
-				constellationPointsTmp[i] = line.start.x;
-				constellationPointsTmp[i+1] = line.start.y;
-				constellationPointsTmp[i+2] = line.start.z;
-				constellationPointsTmp[i+3] = line.end.x;
-				constellationPointsTmp[i+4] = line.end.y;
-				constellationPointsTmp[i+5] = line.end.z;
-				i += 6;
-			}
-			++constellationNum;
-		}
-				
-		
-		constellationNum = i;
-		
-		for (int a=0; a <= i; a++) {
-			constellationPoints[a] = constellationPointsTmp[a];
-		}
 	}
 	return self;
 }
@@ -389,43 +367,15 @@
 	}	
 }
 
-/*-(void)recalculatePlanetaryPositions {
-	[sun recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[earth recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[jupiter recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[jupiter setViewOrigin:earth.position];
-	[mercury recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[mercury setViewOrigin:earth.position];
-	[venus recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[venus setViewOrigin:earth.position];
-	[mars recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[mars setViewOrigin:earth.position];
-	[saturn recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[saturn setViewOrigin:earth.position];
-	[neptune recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[neptune setViewOrigin:earth.position];	
-	[uranus recalculatePosition:[[[interface timeModule] manager] simulatedDate]];
-	[uranus setViewOrigin:earth.position];
-	
-	const GLfloat planetPointsTmp[] = {
-		[sun position].x, [sun position].y, [sun position].z,				1.0, 1.0, 0.0, 1.0, 70.0, // Sun point, yellow
-		[jupiter position].x, [jupiter position].y, [jupiter position].z,	1.0, 1.0, 1.0, 1.0, 30.0,  // Sun point, red
-		[mars position].x, [mars position].y, [mars position].z,			1.0, 1.0, 1.0, 1.0, 25.0,// Sun point, red
-		[mercury position].x, [mercury position].y, [mercury position].z,	1.0, 1.0, 1.0, 1.0, 20.0,// Sun point, red
-		[venus position].x, [venus position].y, [venus position].z,			1.0, 1.0, 1.0, 1.0, 30.0,// Sun point, red
-		[saturn position].x, [saturn position].y, [saturn position].z,		1.0, 1.0, 1.0, 1.0, 17.0,// Sun point, red
-		[uranus position].x, [uranus position].y, [uranus position].z,		1.0, 1.0, 1.0, 1.0, 10.0,// Sun point, red
-		[neptune position].x, [neptune position].y, [neptune position].z,	1.0, 1.0, 1.0, 1.0, 10.0 // Sun point, red
-	};
-	
-	planetNum = 8;
-	
-	for (int i=0; i < planetNum*8; i++) {
-		planetPoints[i] = planetPointsTmp[i];
-		//NSLog(@"%i", i);
+-(void)loadConstellations {
+	[objectManager buildConstellationData];
+	NSMutableArray * constellationPointsTmp = [objectManager constellationPoints];
+	constellationNum = [objectManager constellationNum];
+	for (int i=0; i < constellationNum; i++) {
+		constellationPoints[i] = [[constellationPointsTmp objectAtIndex:i] floatValue];
+		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
 	}
-	
-}*/
+}
 
 //FIXME: verplaats naar appDelegate
 -(void)brightnessChanged {

@@ -12,7 +12,7 @@
 
 @implementation SRObjectManager
 
-@synthesize constellations,
+@synthesize constellations,constellationNum,constellationPoints,
 			planets,planetNum,planetPoints,
 			stars,starNum,starPoints;
 
@@ -255,17 +255,38 @@
 	}
 }
 
-/*-(NSMutableArray*)planetPoints{
-	NSMutableArray *array;
-	array = [[NSMutableArray alloc] init];
-	float point;
-	for(point in planetPoints) {
-		[array addObject:[NSNumber numberWithFloat:point]];
+-(void)buildConstellationData {
+	
+	constellationNum = 0;
+	GLfloat constellationPointsTmp[5000];
+	int lineCount = 0;
+	SRConstellation * constellation;
+	SRConstellationLine * line;
+	
+	for(constellation in constellations) {
+		for(line in constellation.lines) {
+			constellationPointsTmp[lineCount] = line.start.x;
+			constellationPointsTmp[lineCount+1] = line.start.y;
+			constellationPointsTmp[lineCount+2] = line.start.z;
+			constellationPointsTmp[lineCount+3] = line.end.x;
+			constellationPointsTmp[lineCount+4] = line.end.y;
+			constellationPointsTmp[lineCount+5] = line.end.z;
+			lineCount += 6;
+		}
+		++constellationNum;
 	}
-	//[array release];
-	//GLfloat* pointer = (GLfloat *)malloc(sizeof(GLfloat)*56);
-	//pointer = planetPoints;
-	return array;
-}*/
+	
+	constellationNum = lineCount;
+	
+	if (constellationPoints) {
+		[constellationPoints release];
+	}
+	constellationPoints = [[NSMutableArray alloc] init];
+	
+	for (int i=0; i <= lineCount; i++) {
+		[constellationPoints addObject:[NSNumber numberWithFloat:constellationPointsTmp[i]]];
+		//NSLog(@"%i", i);
+	}
+}
 
 @end
