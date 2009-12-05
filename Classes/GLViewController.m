@@ -259,12 +259,12 @@
 			
 			//NSLog(@"Aangeklikte locatie voor sterren database x:%f y:%f z:%f",stX,stY,stZ);
 			
-			if(stX < 1 &&
+			if(stX < 1.5 &&
 			   stX >= 0 &&
-			   stY < 1 &&
-			   stY >= 0 &&
+			   stY < 1.5 &&
+			   stY >= 0.5 &&
 			   stZ <= 20 &&
-			   stZ > 19) {
+			   stZ > 18.5) {
 					//Poolster aangeklikt
 				if ([[[renderer interface] theNameplate] visible]) {
 					[[[renderer interface] theNameplate] hide];
