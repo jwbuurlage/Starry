@@ -66,6 +66,7 @@
 
 	float zoomFactor;
 	float brightnessFactor;
+	BOOL constellations;
 	
 	NSMutableArray* textTest;
 }
@@ -85,7 +86,7 @@
 -(SRCamera*)camera;
 -(void)recalculatePlanetaryPositions;
 -(void)brightnessChanged;
-
+-(void)constellationsChanged;
 
 
 @end

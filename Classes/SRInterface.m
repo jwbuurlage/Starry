@@ -469,6 +469,17 @@
 			[prefs setFloat:brightness forKey:@"brightness"];
 			[renderer brightnessChanged];
 		}		
+		else if(clicker == @"constellations") {
+			NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+			BOOL constellations = [prefs boolForKey:@"constellations"];
+			if(constellations) {
+				[prefs setBool:FALSE forKey:@"constellations"];
+			}
+			else {
+				[prefs setBool:TRUE forKey:@"constellations"];
+			}
+			[renderer constellationsChanged];
+		}		
 
 		if(flagToggle) {
 			if(![posiTimer isValid] && ![negiTimer isValid]) {

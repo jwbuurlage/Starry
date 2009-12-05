@@ -65,6 +65,7 @@
 			brightnessFactor = 1.0;
 			[prefs setFloat:brightnessFactor forKey:@"brightness"];
 		}
+		constellations = [prefs boolForKey:@"constellations"];
 		
 		// set de appdelegate
 		appDelegate = [[UIApplication sharedApplication] delegate];
@@ -257,7 +258,8 @@
 	[[[interface timeModule] manager] adjustView];
 	
 
-	[self drawConstellations];
+	if(constellations) {
+		[self drawConstellations]; }
 	[self drawStars];
 	[self drawEcliptic];
 	[self drawPlanets];
@@ -337,11 +339,11 @@
 	}	
 	
 	
-	/* i = 0;
+	i = 0;
 	while(i < planetNum) {
 		[[textTest objectAtIndex:i] drawAtPoint:CGPointMake(planetPoints[i*8], planetPoints[(i*8)+1]) withZ:planetPoints[(i*8)+2] - 0.5f];
 		++i;
-	} */
+	}
 		
 	glDisable(GL_POINT_SPRITE_OES);
 	glDisable(GL_TEXTURE_2D);
@@ -518,6 +520,11 @@
 -(void)brightnessChanged {
 	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 	brightnessFactor = [prefs floatForKey:@"brightness"];	
+}
+
+-(void)constellationsChanged {
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+	constellations = [prefs floatForKey:@"constellations"];	
 }
 
 @end
