@@ -17,7 +17,7 @@
 
 @implementation SRRenderer
 
-@synthesize interface,location,myOwner;
+@synthesize interface,location,myOwner,camera;
 
 -(id)setupWithOwner:(GLViewController*)theOwner {
 	if(self = [super init]) {
@@ -55,7 +55,7 @@
 		[textTest addObject:[[Texture2D alloc] initWithString:@"Uranus" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
 		[textTest addObject:[[Texture2D alloc] initWithString:@"Neptunus" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
 
-				
+		//FIXME: verplaats naar app delegate		
 		NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 		
 		brightnessFactor = [prefs floatForKey:@"brightness"];
@@ -65,76 +65,16 @@
 		}
 		constellations = [prefs boolForKey:@"constellations"];
 		
-		// set de appdelegate
-		
 		objectManager = [appDelegate objectManager];
 		
-		[objectManager buildPlanetData];
-		NSMutableArray * planetPointsTmp = [objectManager planetPoints];
-		planetNum = [objectManager planetNum];
-		for (int i=0; i < planetNum*8; i++) {
-			planetPoints[i] = [[planetPointsTmp objectAtIndex:i] floatValue];
-			//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
-		}
 		
-		/*for (int i=0, i<planetNum*7,i++) {
-			[objectManager planetPoints][i] = planetPoints[i];
-		}*/
-		
-		
-		//[self recalculatePlanetaryPositions];
-		
+		[self loadPlanetPoints];
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity(); 
 		glEnable(GL_DEPTH_TEST);
+		[self loadStarPoints];
 
-		starNum = 0;
-		GLfloat starPointsTmp[[objectManager.stars count]*8];
-		int matrixStartPos;
-		float size;
-		float alpha;
-		SRStar * star;
 		
-		for(star in objectManager.stars) {
-			//NSLog(@"Loading star %@",star.name);
-			if(star.name != @"Sol") {
-			if([star.mag floatValue] < 1) {
-				size = 4.0;
-				alpha = 1.0;
-			}
-			else if([star.mag floatValue] < 2) {
-				size = 3.5;
-				alpha = 0.7;
-			}
-			else if([star.mag floatValue] < 3) {
-				size = 2.5;
-				alpha = 0.6;
-			}
-			else if([star.mag floatValue] < 4) {
-				size = 2.0;
-				alpha = 0.5;
-			}
-			else {
-				size = 0.9;
-				alpha = 0.4;
-			}
-			
-			matrixStartPos = starNum * 8;
-			starPointsTmp[matrixStartPos] = [star.x floatValue];
-			starPointsTmp[matrixStartPos+1] = [star.y floatValue];
-			starPointsTmp[matrixStartPos+2] = [star.z floatValue];
-			starPointsTmp[matrixStartPos+3] = 0.9;
-			starPointsTmp[matrixStartPos+4] = 0.9;
-			starPointsTmp[matrixStartPos+5] = 0.9;
-			starPointsTmp[matrixStartPos+6] = alpha;
-			starPointsTmp[matrixStartPos+7] = size;
-			starNum++;
-			}
-		}
-		
-		for (int i=0; i <= starNum*8; i++) {
-			starPoints[i] = starPointsTmp[i];
-		}
 		
 		constellationNum = 0;
 		GLfloat constellationPointsTmp[5000];
@@ -216,13 +156,7 @@
 	glDisable(GL_BLEND);
 
 	if([[[interface timeModule] manager] totalInterval] > 10000 || [[[interface timeModule] manager] totalInterval] < -10000) {
-		[objectManager buildPlanetData];
-		NSMutableArray * planetPointsTmp = [objectManager planetPoints];
-		planetNum = [objectManager planetNum];
-		for (int i=0; i < planetNum*8; i++) {
-			planetPoints[i] = [[planetPointsTmp objectAtIndex:i] floatValue];
-			//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
-		}
+		[self loadPlanetPoints];
 		[[[interface timeModule] manager] setTotalInterval:0];
 	}
 	
@@ -435,8 +369,24 @@
 	glEnableClientState(GL_COLOR_ARRAY);
 }
 
--(SRCamera*)camera {
-	return camera;
+-(void)loadPlanetPoints {
+	[objectManager buildPlanetData];
+	NSMutableArray * planetPointsTmp = [objectManager planetPoints];
+	planetNum = [objectManager planetNum];
+	for (int i=0; i < planetNum*8; i++) {
+		planetPoints[i] = [[planetPointsTmp objectAtIndex:i] floatValue];
+		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
+	}	
+}
+
+-(void)loadStarPoints {
+	[objectManager buildStarData];
+	NSMutableArray * starPointsTmp = [objectManager starPoints];
+	starNum = [objectManager starNum];
+	for (int i=0; i < starNum*8; i++) {
+		starPoints[i] = [[starPointsTmp objectAtIndex:i] floatValue];
+		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
+	}	
 }
 
 /*-(void)recalculatePlanetaryPositions {
@@ -477,6 +427,7 @@
 	
 }*/
 
+//FIXME: verplaats naar appDelegate
 -(void)brightnessChanged {
 	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 	brightnessFactor = [prefs floatForKey:@"brightness"];	

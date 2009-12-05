@@ -12,7 +12,9 @@
 
 @implementation SRObjectManager
 
-@synthesize stars,constellations,planets,planetNum,planetPoints;
+@synthesize constellations,
+			planets,planetNum,planetPoints,
+			stars,starNum,starPoints;
 
 -(id)init {
     
@@ -20,7 +22,7 @@
 		stars = [[NSMutableArray alloc] init];
 		constellations = [[NSMutableArray alloc] init];
 		planets = [[NSMutableArray alloc] init];
-		planetPoints = [[NSMutableArray alloc] init];
+		
 		//appDelegate = [[UIApplication sharedApplication] delegate];
     }
     return self;
@@ -179,8 +181,76 @@
 	
 	planetNum = 8;
 	
+	if (planetPoints) {
+		[planetPoints release];
+	}
+	planetPoints = [[NSMutableArray alloc] init];
+	
 	for (int i=0; i < planetNum*8; i++) {
 		[planetPoints addObject:[NSNumber numberWithFloat:planetPointsTmp[i]]];
+		//NSLog(@"%i", i);
+	}
+}
+
+-(void)buildStarData {
+	starNum = 0;
+	GLfloat starPointsTmp[[stars count]*8];
+	int matrixStartPos;
+	float size;
+	float alpha;
+	SRStar * star;
+	
+	for(star in stars) {
+		//NSLog(@"Loading star %@",star.name);
+		if(star.name != @"Sol") {
+			if([star.mag floatValue] < 1) {
+				size = 4.0;
+				alpha = 1.0;
+			}
+			else if([star.mag floatValue] < 2) {
+				size = 3.5;
+				alpha = 0.7;
+			}
+			else if([star.mag floatValue] < 3) {
+				size = 2.5;
+				alpha = 0.6;
+			}
+			else if([star.mag floatValue] < 4) {
+				size = 2.0;
+				alpha = 0.5;
+			}
+			else {
+				size = 0.9;
+				alpha = 0.4;
+			}
+			
+			matrixStartPos = starNum * 8;
+			starPointsTmp[matrixStartPos] = [star.x floatValue];
+			starPointsTmp[matrixStartPos+1] = [star.y floatValue];
+			starPointsTmp[matrixStartPos+2] = [star.z floatValue];
+			if(star.selected) {
+				starPointsTmp[matrixStartPos+3] = 0.9;
+				starPointsTmp[matrixStartPos+4] = 0.9;
+				starPointsTmp[matrixStartPos+5] = 0.0;
+			}
+			else {
+				starPointsTmp[matrixStartPos+3] = 0.9;
+				starPointsTmp[matrixStartPos+4] = 0.9;
+				starPointsTmp[matrixStartPos+5] = 0.9;
+			}
+			starPointsTmp[matrixStartPos+6] = alpha;
+			starPointsTmp[matrixStartPos+7] = size;
+			starNum++;
+		}
+	}
+	
+	if (starPoints) {
+		[starPoints release];
+	}
+	starPoints = [[NSMutableArray alloc] init];
+	
+	for (int i=0; i < starNum*8; i++) {
+		[starPoints addObject:[NSNumber numberWithFloat:starPointsTmp[i]]];
 		//NSLog(@"%i", i);
 	}
 }

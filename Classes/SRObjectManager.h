@@ -21,6 +21,10 @@
 @interface SRObjectManager : NSObject {
 	NSMutableArray * planetPoints;
 	int planetNum;
+	
+	NSMutableArray * starPoints;
+	int starNum;
+	
 	//GLfloat stringPoints[56];
 	//GLfloat starPoints[15000];
 	//GLfloat constellationPoints[15000];
@@ -53,11 +57,14 @@
 
 @property (readonly) NSMutableArray *planetPoints;
 @property (readonly) int planetNum;
+@property (readonly) NSMutableArray *starPoints;
+@property (readonly) int starNum;
 //@property (readonly) GLfloat planetPoints;
 
 -(id)init;
 -(void)parseData;
 -(void)buildPlanetData;
+-(void)buildStarData;
 //-(NSMutableArray*)planetPoints;
 
 @end

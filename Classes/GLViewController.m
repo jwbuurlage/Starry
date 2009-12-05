@@ -278,12 +278,12 @@
 				if (planetD < closestD) {
 					closestD = planetD;
 					closestPlanet = planet;
-					NSLog(@"Closest planet:%@",planet.name);
+					//NSLog(@"Closest planet:%@",planet.name);
 				}
 			}
 			if (closestD < 1.5) {
-				NSLog(@"Delta of closest: %f",closestD);
-				[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:NO];
+				//NSLog(@"Delta of closest: %f",closestD);
+				[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
 			}
 			else {
 				
@@ -303,13 +303,21 @@
 					if (starD < closestD) {
 						closestD = starD;
 						closestStar = star;
-						NSLog(@"Closest star:%@",star.name);
+						//NSLog(@"Closest star:%@",star.name);
 					}
 				}
 				
 				if (closestD < 1.2) {
 					//NSLog(@"Delta of closest: %f",closestD);
-					[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
+					if (closestStar.name == @"" || closestStar.name == @" ") {
+						[[[renderer interface] theNameplate] setName:@"Naamloze ster" inConstellation:closestStar.bayer showInfo:NO];
+					}
+					else {
+						[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
+					}
+					closestStar.selected = YES;
+					[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
+					[renderer loadStarPoints];
 				}
 				else {
 					if ([[[renderer interface] theNameplate] visible]) {

@@ -76,6 +76,7 @@
 @property (readonly) SRInterface* interface;
 @property (readonly) SRLocation* location;
 @property (readonly) GLViewController* myOwner;
+@property (readonly) SRCamera* camera;
 
 -(id)setupWithOwner:(GLViewController*)theOwner;
 -(void)render;
@@ -85,10 +86,13 @@
 -(void)drawHorizon;
 -(void)drawCompass;
 -(void)drawEcliptic;
--(SRCamera*)camera;
--(void)recalculatePlanetaryPositions;
+
+//-(void)recalculatePlanetaryPositions;
 -(void)brightnessChanged;
 -(void)adjustViewToLocationAndTime:(BOOL)status;
+
+-(void)loadStarPoints;
+-(void)loadPlanetPoints;
 
 
 

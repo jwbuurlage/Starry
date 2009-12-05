@@ -15,7 +15,7 @@
 
 @implementation SRStar
 
-@synthesize name,bayer,x,y,z,mag,starID,ci;
+@synthesize name,bayer,x,y,z,mag,starID,ci,selected;
 
 - (void) dealloc {
 	[name release];

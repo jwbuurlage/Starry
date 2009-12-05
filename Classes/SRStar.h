@@ -24,6 +24,7 @@
 	NSString * z;
 	NSString * mag;
 	NSString * ci;
+	BOOL selected;
 	
 }
 
@@ -35,5 +36,6 @@
 @property (nonatomic, retain) NSString * z;
 @property (nonatomic, retain) NSString * ci;
 @property (nonatomic, retain) NSString * mag;
+@property (nonatomic, readwrite) BOOL selected;
 
 @end
