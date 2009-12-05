@@ -315,7 +315,6 @@
 					else {
 						[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
 					}
-					closestStar.selected = YES;
 					
 					// CPU intensieve method
 					// Dit moet anders bijvoorbeeld met een selector texture op de x,y,z locatie in de renderer
@@ -323,6 +322,7 @@
 					for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
 						ster.selected = NO;
 					}
+					closestStar.selected = YES;
 					[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
 					[renderer loadStarPoints];
 				}
