@@ -19,6 +19,6 @@
 
 }
 
--(id)initWithEarth:(SRPlanetaryObject*)earth;
+//-(id)initWithEarth:(SRPlanetaryObject*)earth;
 
 @end

@@ -30,6 +30,7 @@
 	//baan informatie
 	float a,e,i,w,o,Mo;
 	//float x,y,z;
+	BOOL selected;
 	
 	//object informatie
 	NSString* name;
@@ -40,6 +41,7 @@
 @property (readonly) Vertex3D position;
 @property (readonly) float a;
 @property (readonly) NSString* name;
+@property (readwrite) BOOL selected;
 
 -(id)initWitha:(float)ia		
 			 e:(float)ie		

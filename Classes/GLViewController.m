@@ -316,6 +316,8 @@
 						[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
 					}
 					closestStar.selected = YES;
+					
+					// CPU intensieve method
 					[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
 					[renderer loadStarPoints];
 				}
