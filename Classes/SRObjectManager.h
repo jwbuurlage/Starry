@@ -42,6 +42,8 @@
 	NSMutableArray * planets;
 	NSMutableArray * stars;
 	NSMutableArray * constellations;
+	
+	id *appDelegate;
 }
 
 @property (nonatomic, retain) NSMutableArray *stars;

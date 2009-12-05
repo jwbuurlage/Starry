@@ -20,6 +20,7 @@
 		stars = [[NSMutableArray alloc] init];
 		constellations = [[NSMutableArray alloc] init];
 		planets = [[NSMutableArray alloc] init];
+		appDelegate = [[UIApplication sharedApplication] delegate];
     }
     return self;
 }
@@ -144,13 +145,13 @@
 		//
 	}
 	
-	[sun recalculatePosition:[ simulatedDate]];
+	[sun recalculatePosition:[[appDelegate timeManager] simulatedDate]];
 	
 	Vertex3D earthPosition = [[planets objectAtIndex:0] position];
 	SRPlanetaryObject *planet;
 	
 	for (planet in planets) {
-		[planet recalculatePosition:[ simulatedDate]];
+		[planet recalculatePosition:[[appDelegate timeManager] simulatedDate]];
 		if (planet.a > 1.1) {
 			[planet setViewOrigin:earthPosition];
 		}
