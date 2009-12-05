@@ -185,9 +185,9 @@
 }
 
 -(GLfloat*)planetPoints{
-	GLfloat* planetPointsTmp = (GLfloat *)planetPoints;
-	
-	return planetPointsTmp;
+	GLfloat* pointer = (GLfloat *)malloc(sizeof(GLfloat)*56);
+	pointer = &planetPoints;
+	return pointer;
 }
 
 @end

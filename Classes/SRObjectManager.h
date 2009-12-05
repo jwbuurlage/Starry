@@ -50,12 +50,13 @@
 @property (nonatomic, retain) NSMutableArray *stars;
 @property (nonatomic, retain) NSMutableArray *constellations;
 
-@property (readonly) GLfloat* planetPoints;
+//@property (readonly) GLfloat* planetPoints;
 @property (readonly) int planetNum;
 //@property (readonly) GLfloat planetPoints;
 
 -(id)init;
 -(void)parseData;
 -(void)buildPlanetData;
+-(GLfloat*)planetPoints;
 
 @end

@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>7617A04010CAAF8F00768180</string>
+						<string>7617A07B10CAB29700768180</string>
 						<key>history</key>
 						<array>
 							<string>76179DA910CA795C00768180</string>
@@ -271,8 +271,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -320,7 +318,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>35</integer>
+									<integer>4</integer>
+									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -354,12 +353,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>asm _objc_fatal  0x904453df</string>
+								<string>SRObjectManager.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -367,11 +368,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>asm _objc_fatal  0x904453df</string>
+										<string>SRObjectManager.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7617A03F10CAAF8F00768180</string>
+										<string>7617A07A10CAB29700768180</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -402,13 +403,13 @@
 											<string>76179F7A10CAA79900768180</string>
 											<string>76179F7B10CAA79900768180</string>
 											<string>76179F7D10CAA79900768180</string>
-											<string>76179FFA10CAAEEE00768180</string>
 											<string>76179FFB10CAAEEE00768180</string>
-											<string>7617A00F10CAAF3300768180</string>
-											<string>7617A02D10CAAF7B00768180</string>
 											<string>7617A02E10CAAF7B00768180</string>
 											<string>7617A02F10CAAF7B00768180</string>
-											<string>7617A03010CAAF7B00768180</string>
+											<string>7617A05410CAB17600768180</string>
+											<string>7617A05B10CAB1DC00768180</string>
+											<string>7617A05C10CAB1DC00768180</string>
+											<string>7617A06F10CAB23000768180</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -725,7 +726,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>7617A03410CAAF7C00768180</string>
+		<string>7617A07310CAB23000768180</string>
 		<string>76179CB610CA5F7D00768180</string>
 		<string>76179CB710CA5F7D00768180</string>
 		<string>76179E1E10CA7C7400768180</string>
