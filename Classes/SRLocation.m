@@ -70,16 +70,6 @@
 	//NSLog(@"SRLocation Error: %@", [error description]);
 }
 
-- (void)adjustView {
-	glRotatef(latitude - 90, 0.0f, 1.0f, 0.0f);
-	glRotatef(-longitude, 0.0f, 0.0f, 1.0f);
-}
-
-- (void)adjustViewBack {
-	glRotatef(longitude, 0.0f, 0.0f, 1.0f);
-	glRotatef(90 - latitude, 0.0f, 1.0f, 0.0f);
-}
-
 - (void)makeAwareOfInterface:(id)aInterface {
 	interfaceDelegate = aInterface;
 	/* Misschien in de toekomst een array maken voor medere interfaces, bijvoorbeeld voor een lijst met plaatsten */

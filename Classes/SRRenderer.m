@@ -253,17 +253,14 @@
 	glEnableClientState(GL_COLOR_ARRAY);
     glEnableClientState(GL_VERTEX_ARRAY);
 	
-	[location adjustView];
-	[[[interface timeModule] manager] adjustView];
-	
+	[self adjustViewToLocationAndTime:YES];
 
 	[self drawConstellations];
 	[self drawStars];
 	[self drawEcliptic];
 	[self drawPlanets];
 	
-	[[[interface timeModule] manager] adjustViewBack]; 
-	[location adjustViewBack];
+	[self adjustViewToLocationAndTime:NO];
 	
 	[self drawHorizon];
 	[self drawCompass];
@@ -284,6 +281,19 @@
 	
 	[camera reenable];
 
+}
+
+-(void)adjustViewToLocationAndTime:(BOOL)status {
+	if (status == YES) {
+		glRotatef([location latitude] - 90, 0.0f, 1.0f, 0.0f);
+		glRotatef(-[location longitude], 0.0f, 0.0f, 1.0f);
+		glRotatef(-[[[interface timeModule] manager] elapsed], 0.0f, 0.0f, 1.0f);
+	}
+	else {
+		glRotatef([[[interface timeModule] manager] elapsed], 0.0f, 0.0f, 1.0f);
+		glRotatef([location longitude], 0.0f, 0.0f, 1.0f);
+		glRotatef(90 - [location latitude], 0.0f, 1.0f, 0.0f);
+	}
 }
 
 -(void)drawStars {

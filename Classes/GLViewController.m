@@ -257,19 +257,21 @@
 			stY = -20*brY;
 			stZ = -20*brZ;
 			
-			float alOm = acos(-brZ/sqrt(pow(-brX,2)+pow(-brY,2)+pow(-brZ,2)));
-			float fiOm = atan2(-brY,-brX); // klopt niet? hoe kan deze 2 parm nemen?
+			/*
+			Dit kopt niet 
+			float alOm = acos(brZ);
+			float fiOm = atan((brY)/(brX)); // klopt niet? hoe kan deze 2 parm nemen?
 			
-			NSLog(@"RA/DEC punt RA:%f DEC:%f",alOm,fiOm);
+			NSLog(@"RA/DEC punt RA:%f DEC:%f",alOm*(180/M_PI),fiOm*(180/M_PI));*/
 			
 			//NSLog(@"Aangeklikte locatie voor sterren database x:%f y:%f z:%f",stX,stY,stZ);
 			
 			if(stX < 1.5 &&
-			   stX >= 0 &&
+			   stX >= -1.5 &&
 			   stY < 1.5 &&
-			   stY >= 0.5 &&
+			   stY >= -1.5 &&
 			   stZ <= 20 &&
-			   stZ > 18.5) {
+			   stZ > 18.0) {
 					//Poolster aangeklikt
 				if ([[[renderer interface] theNameplate] visible]) {
 					[[[renderer interface] theNameplate] hide];

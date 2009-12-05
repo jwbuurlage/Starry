@@ -85,6 +85,7 @@
 -(SRCamera*)camera;
 -(void)recalculatePlanetaryPositions;
 -(void)brightnessChanged;
+-(void)adjustViewToLocationAndTime:(BOOL)status;
 
 
 

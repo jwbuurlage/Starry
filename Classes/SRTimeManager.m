@@ -16,7 +16,7 @@
 
 @implementation SRTimeManager
 
-@synthesize simulatedDate, totalInterval, elapsed;
+@synthesize simulatedDate, totalInterval;
 
 -(id)initWithOwner:(SRTimeModule*)theOwner {
 	if(self = [super init]) {
@@ -85,7 +85,7 @@
 	//NSTimeInterval dateByAddingTimeInterval:
 }
 
--(void)adjustView {
+-(float)elapsed {
 	//sidereal time
 	//http://www.astro.uu.nl/~strous/AA/en/reken/sterrentijd.html
 	
@@ -115,14 +115,10 @@
 	
 	elapsed = (hour + (minute / 60) + (second / 3600)) / 24; */
 	
-	glRotatef(-elapsed, 0.0f, 0.0f, 1.0f);
 	
 	//[gregorian release];
 	//[referenceDate release];
-}
-
--(void)adjustViewBack {
-	glRotatef(elapsed, 0.0f, 0.0f, 1.0f);
+	return elapsed;
 }
 
 -(void)reset {
