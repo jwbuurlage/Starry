@@ -394,12 +394,12 @@
 			}
 		}
 		else if(clicker == @"search") {
-			/*if([theNameplate visible]) {
+			if([theNameplate visible]) {
 				[theNameplate hide];
 			}
 			else {
 				[theNameplate setName:@"Saturnus" inConstellation:@"Orion" showInfo:YES];
-			}*/
+			}
 		}
 		else if(clicker == @"arrow") {
 			flagToggle = YES;

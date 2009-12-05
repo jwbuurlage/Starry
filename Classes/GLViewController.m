@@ -277,7 +277,6 @@
 				}
 			}
 			[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
-			
 			/*
 			Dit kopt niet 
 			float alOm = acos(brZ);
