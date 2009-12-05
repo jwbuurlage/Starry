@@ -42,13 +42,13 @@
 		// Waarom laad je planet 6 keer in? :-S dat kan makkelijk 1 keer zijn
 		[interface loadTexture:@"sun.png" intoLocation:textures[5]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[6]];
-		[interface loadTexture:@"planet.png" intoLocation:textures[7]];
+		/*[interface loadTexture:@"planet.png" intoLocation:textures[7]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[8]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[9]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[10]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[11]];
-		[interface loadTexture:@"planet.png" intoLocation:textures[12]];
-		
+		[interface loadTexture:@"planet.png" intoLocation:textures[12]];*/
+		/*
 		textTest = [[NSMutableArray alloc] init];
 		[textTest addObject:[[Texture2D alloc] initWithString:@"Zon" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
 		[textTest addObject:[[Texture2D alloc] initWithString:@"Jupiter" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
@@ -58,7 +58,7 @@
 		[textTest addObject:[[Texture2D alloc] initWithString:@"Saturnus" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
 		[textTest addObject:[[Texture2D alloc] initWithString:@"Uranus" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
 		[textTest addObject:[[Texture2D alloc] initWithString:@"Neptunus" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
-
+		 */
 		//FIXME: verplaats naar app delegate		
 		NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 		
@@ -69,9 +69,6 @@
 		}
 		constellations = [prefs boolForKey:@"constellations"];
 		
-		
-		
-		
 		[self loadPlanetPoints];
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity(); 
@@ -81,6 +78,36 @@
 		
 	}
 	return self;
+}
+
+-(void)loadPlanetPoints {
+	[objectManager buildPlanetData];
+	NSMutableArray * planetPointsTmp = [objectManager planetPoints];
+	planetNum = [objectManager planetNum];
+	for (int i=0; i < planetNum*8; i++) {
+		planetPoints[i] = [[planetPointsTmp objectAtIndex:i] floatValue];
+		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
+	}	
+}
+
+-(void)loadStarPoints {
+	[objectManager buildStarData];
+	NSMutableArray * starPointsTmp = [objectManager starPoints];
+	starNum = [objectManager starNum];
+	for (int i=0; i < starNum*8; i++) {
+		starPoints[i] = [[starPointsTmp objectAtIndex:i] floatValue];
+		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
+	}	
+}
+
+-(void)loadConstellations {
+	[objectManager buildConstellationData];
+	NSMutableArray * constellationPointsTmp = [objectManager constellationPoints];
+	constellationNum = [objectManager constellationNum];
+	for (int i=0; i < constellationNum; i++) {
+		constellationPoints[i] = [[constellationPointsTmp objectAtIndex:i] floatValue];
+		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
+	}
 }
 
 -(void)render {
@@ -203,19 +230,24 @@
 	GLfloat size = 0;
 	while(i < planetNum) {
 			//NSLog(@"wel");
-			size = planetPoints[(i*8)+7] * zoomFactor;
-			glPointSize(size);
-			glBindTexture(GL_TEXTURE_2D, textures[i + 5]);
-			glDrawArrays(GL_POINTS,i, 1);
+		size = planetPoints[(i*8)+7] * zoomFactor;
+		glPointSize(size);
+		if (i == 0) { // Bij de zon laad de zon texture in
+			glBindTexture(GL_TEXTURE_2D, textures[5]);
+		}
+		else { // Bij planeten laad de planeet texture in
+			glBindTexture(GL_TEXTURE_2D, textures[6]);
+		}
+		glDrawArrays(GL_POINTS,i, 1);
 		++i;
 	}	
 	
 	
-	i = 0;
+	/*i = 0;
 	while(i < planetNum) {
 		[[textTest objectAtIndex:i] drawAtPoint:CGPointMake(planetPoints[i*8], planetPoints[(i*8)+1]) withZ:planetPoints[(i*8)+2] - 0.5f];
 		++i;
-	}
+	}*/
 		
 	glDisable(GL_POINT_SPRITE_OES);
 	glDisable(GL_TEXTURE_2D);
@@ -345,36 +377,6 @@
 	glVertexPointer(3, GL_FLOAT, 12, verticesEcliptic);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 	glEnableClientState(GL_COLOR_ARRAY);
-}
-
--(void)loadPlanetPoints {
-	[objectManager buildPlanetData];
-	NSMutableArray * planetPointsTmp = [objectManager planetPoints];
-	planetNum = [objectManager planetNum];
-	for (int i=0; i < planetNum*8; i++) {
-		planetPoints[i] = [[planetPointsTmp objectAtIndex:i] floatValue];
-		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
-	}	
-}
-
--(void)loadStarPoints {
-	[objectManager buildStarData];
-	NSMutableArray * starPointsTmp = [objectManager starPoints];
-	starNum = [objectManager starNum];
-	for (int i=0; i < starNum*8; i++) {
-		starPoints[i] = [[starPointsTmp objectAtIndex:i] floatValue];
-		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
-	}	
-}
-
--(void)loadConstellations {
-	[objectManager buildConstellationData];
-	NSMutableArray * constellationPointsTmp = [objectManager constellationPoints];
-	constellationNum = [objectManager constellationNum];
-	for (int i=0; i < constellationNum; i++) {
-		constellationPoints[i] = [[constellationPointsTmp objectAtIndex:i] floatValue];
-		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
-	}
 }
 
 //FIXME: verplaats naar appDelegate
