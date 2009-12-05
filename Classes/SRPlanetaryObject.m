@@ -16,6 +16,8 @@
 
 @implementation SRPlanetaryObject
 
+@synthesize position, a;
+
 
 -(id)initWitha:(float)ia		
 			 e:(float)ie		
@@ -123,7 +125,7 @@
 	//NSLog(@"(x,y,z): (%f,%f,%f)",x,y,z);
 }
 
--(Vertex3D)position { 
+/*-(Vertex3D)position { 
 	return position;
 }
 						

@@ -23,11 +23,12 @@
 	if(self = [super init]) {
 		//setup renderer.. 		
 		myOwner = theOwner;
+		appDelegate = [[UIApplication sharedApplication] delegate];
 		camera = [theOwner camera];
 			/* Location moet voor interface zodat interface weet van location */
 		location = [[SRLocation alloc] init];
 			//Zorg dat de appDelegate weet van location zodat deze hem later kan opslaan
-		[[[UIApplication sharedApplication] delegate] setLocation:location];
+		location = [appDelegate location];
 		//[location useGPSValues]; // dit moet gebeuren in de init van location vanwege static locations
 		interface = [[SRInterface alloc] initWithRenderer:self];
 		
@@ -68,76 +69,10 @@
 		constellations = [prefs boolForKey:@"constellations"];
 		
 		// set de appdelegate
-		appDelegate = [[UIApplication sharedApplication] delegate];
+		
 		objectManager = [appDelegate objectManager];
 		
-		earth = [[SRPlanetaryObject alloc] initWitha:1.00000	
-												   e:0.01671	
-												   i:0.000
-												   w:288.064
-												   o:174.873
-												  Mo:357.529
-												name:@"Aarde"];
 		
-		//jupiter test
-		jupiter = [[SRPlanetaryObject alloc] initWitha:5.20260		
-													 e:0.04849		
-													 i:1.303
-													 w:273.867
-													 o:100.464
-													Mo:20.020
-												  name:@"Jupiter"];
-		
-		mercury = [[SRPlanetaryObject alloc] initWitha:0.38710		
-													 e:0.20563		
-													 i:7.005
-													 w:29.125
-													 o:48.331
-													Mo:174.795
-												  name:@"Mercurius"];
-		
-		venus = [[SRPlanetaryObject alloc] initWitha:0.72333		
-													 e:0.00677		
-													 i:3.395
-													 w:54.884
-													 o:76.680
-													Mo:50.416
-												  name:@"Venus"];
-		
-		mars = [[SRPlanetaryObject alloc] initWitha:1.52368		
-													 e:0.09340		
-													 i:1.850
-													 w:286.502
-													 o:49.558
-													Mo:19.373
-												  name:@"Mars"];
-		
-		saturn = [[SRPlanetaryObject alloc] initWitha:9.55491		
-													 e:0.05551		
-													 i:2.489
-													 w:339.391
-													 o:113.666
-													Mo:317.021
-												  name:@"Saturnus"];
-		
-		uranus = [[SRPlanetaryObject alloc] initWitha:19.21845		
-													 e:0.04630		
-													 i:0.773
-													 w:98.999
-													 o:74.006
-													Mo:141.050
-												  name:@"Uranus"];
-		
-		neptune = [[SRPlanetaryObject alloc] initWitha:30.11039		
-													e:0.00899		
-													i:1.770
-													w:276.340
-													o:131.784
-												   Mo:256.225
-												 name:@"Neptunus"];
-		
-		
-		sun = [[SRSun alloc] init];
 		
 		[self recalculatePlanetaryPositions];
 		

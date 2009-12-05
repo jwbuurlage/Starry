@@ -38,6 +38,7 @@
 }
 
 @property (readonly) Vertex3D position;
+@property (readonly) float a;
 
 -(id)initWitha:(float)ia		
 			 e:(float)ie		
