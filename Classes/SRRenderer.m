@@ -72,9 +72,9 @@
 		[objectManager buildPlanetData];
 		NSMutableArray * planetPointsTmp = [objectManager planetPoints];
 		planetNum = [objectManager planetNum];
-		for (int i=0; i < planetNum*7; i++) {
+		for (int i=0; i < planetNum*8; i++) {
 			planetPoints[i] = [[planetPointsTmp objectAtIndex:i] floatValue];
-			//NSLog(@"%i", i);
+			//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
 		}
 		
 		/*for (int i=0, i<planetNum*7,i++) {
@@ -216,7 +216,13 @@
 	glDisable(GL_BLEND);
 
 	if([[[interface timeModule] manager] totalInterval] > 10000 || [[[interface timeModule] manager] totalInterval] < -10000) {
-		[self recalculatePlanetaryPositions];
+		[objectManager buildPlanetData];
+		NSMutableArray * planetPointsTmp = [objectManager planetPoints];
+		planetNum = [objectManager planetNum];
+		for (int i=0; i < planetNum*8; i++) {
+			planetPoints[i] = [[planetPointsTmp objectAtIndex:i] floatValue];
+			//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
+		}
 		[[[interface timeModule] manager] setTotalInterval:0];
 	}
 	

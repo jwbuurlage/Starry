@@ -153,7 +153,7 @@
 	
 	for (planet in planets) {
 		[planet recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
-		if (planet.a > 1.1) {
+		if (planet.a != 1) {
 			[planet setViewOrigin:earthPosition];
 		}
 	}
