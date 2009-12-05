@@ -28,7 +28,8 @@
 
 @interface SRPlanetaryObject : NSObject {
 	//baan informatie
-	float a,e,i,w,o,Mo;  
+	float a,e,i,w,o,Mo;
+	//float x,y,z;
 	
 	//object informatie
 	NSString* name;

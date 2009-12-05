@@ -52,4 +52,8 @@
 	
 }
 
+-(void)buildPlanetData {
+	
+}
+
 @end

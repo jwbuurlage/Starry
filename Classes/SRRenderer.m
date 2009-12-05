@@ -172,7 +172,7 @@
 				alpha = 0.5;
 			}
 			else {
-				size = 0.8;
+				size = 0.9;
 				alpha = 0.4;
 			}
 			

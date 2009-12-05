@@ -28,7 +28,7 @@
 	int constellationNum;
 	
 	//lichamen
-	SRSun* sun;
+	
 	SRPlanetaryObject *mercury;
 	SRPlanetaryObject *venus;
 	SRPlanetaryObject *earth;
@@ -38,6 +38,8 @@
 	SRPlanetaryObject *uranus;
 	SRPlanetaryObject *neptune;*/
 	
+	SRSun* sun;
+	NSMutableArray * planets;
 	NSMutableArray * stars;
 	NSMutableArray * constellations;
 }
@@ -47,5 +49,6 @@
 
 -(id)init;
 -(void)parseData;
+-(void)buildPlanetData;
 
 @end
