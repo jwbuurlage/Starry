@@ -50,7 +50,7 @@
 	float d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730530;
 	//d = d - 2451545;
 	//test
-	NSLog(@"d: %f",d);
+	//NSLog(@"d: %f",d);
 	
 	float n = (M_PI / 180) * (0.9856076686/(a*sqrt(a)));
 	float meanAnomaly = ((M_PI / 180) * Mo) + n*(d);

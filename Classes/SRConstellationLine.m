@@ -11,4 +11,6 @@
 
 @implementation SRConstellationLine
 
+@synthesize start, end;
+
 @end

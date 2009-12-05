@@ -13,10 +13,14 @@
 
 
 #import <Foundation/Foundation.h>
+#import "SRConstellationLine.h"
 
-
-@interface SRConstellation : NSObject {
-	
+@interface SRConstellation : NSObject {		
+	NSMutableArray* lines;
+	NSString* name;
 }
+	
+@property (nonatomic, retain) NSMutableArray *lines;
+@property (nonatomic, retain) NSString *name;
 
 @end

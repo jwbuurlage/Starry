@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "OpenGLCommon.h"
 
 @interface SRConstellationLine : NSObject {
-
+	Vector3D start;
+	Vector3D end;
 }
+
+@property (assign) Vector3D start;
+@property (assign) Vector3D end;
 
 @end

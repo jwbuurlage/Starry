@@ -20,7 +20,7 @@
 
 @implementation SterrenAppDelegate
 
-@synthesize window, glView, stars, uiElementsView, location;
+@synthesize window, glView, stars, constellations, uiElementsView, location;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	NSData * data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"stars" ofType: @"xml"]];
@@ -35,6 +35,20 @@
 	else {
 		//NSLog(@"XML Parse error"); */
 	}
+	
+	NSData * dataConstellations = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"constellations" ofType: @"xml"]];
+	NSXMLParser *xmlParserConstellations = [[NSXMLParser alloc] initWithData:dataConstellations];
+	XMLParser *parserConstellations = [[XMLParser alloc] initXMLParser];
+	[xmlParserConstellations setDelegate:parserConstellations];
+	success = [xmlParserConstellations parse];
+	
+	if(success) {
+		NSLog(@"Constellations Parse completed");
+	}
+	else {
+		NSLog(@"Constellations Parse error"); 
+	}
+	
 	//uiElementsView.opaque = YES;
 	glView.animationInterval = 1.0 / kRenderingFrequency;
 	[glView startAnimation];
@@ -52,6 +66,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// De locatie opslaan voor het geval de applicatie opnieuw opstart
+	//FIXME: OOK BRIGHTNESS e.d. doen
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	[prefs setFloat:	[location latitude]		forKey:@"lat"];
 	[prefs setFloat:	[location longitude]	forKey:@"long"];

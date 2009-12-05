@@ -20,6 +20,7 @@
 #import "SRSun.h"
 #import "SRCamera.h"
 #import "SRStar.h"
+#import "SRConstellation.h"
 #import "SterrenAppDelegate.h"
 #import "SRInterface.h"
 #import "SRLocation.h"
@@ -56,13 +57,17 @@
 	GLfloat planetPoints[56];
 	GLfloat stringPoints[56];
 	GLfloat starPoints[15000];
+	GLfloat constellationPoints[15000];
 	int planetNum;
 	int starNum;
+	int constellationNum;
 	
 	GLuint textures[21];
 
 	float zoomFactor;
 	float brightnessFactor;
+	
+	NSMutableArray* textTest;
 }
 
 @property (readonly) SRInterface* interface;
@@ -72,6 +77,7 @@
 -(id)setupWithOwner:(GLViewController*)theOwner;
 -(void)render;
 -(void)drawStars;
+-(void)drawConstellations;
 -(void)drawPlanets;
 -(void)drawHorizon;
 -(void)drawCompass;
