@@ -24,6 +24,7 @@
 #import "SterrenAppDelegate.h"
 #import "SRInterface.h"
 #import "SRLocation.h"
+#import "SRObjectManager.h"
 
 @class GLViewController;
 
@@ -32,6 +33,7 @@
 	SRInterface* interface;
 	SRLocation* location;
 	SterrenAppDelegate *appDelegate;
+	SRObjectManager *objectManager;
 	GLViewController *myOwner;
 	
 	//lichamen

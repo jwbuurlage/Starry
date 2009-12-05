@@ -15,6 +15,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SRConstellation.h";
+#import "SRObjectManager.h";
 
 @class SterrenAppDelegate, SRStar;
 
@@ -22,7 +23,8 @@
 	
 	NSMutableString *currentElementValue;
 	
-	SterrenAppDelegate *appDelegate;
+	//SterrenAppDelegate *appDelegate;
+	SRObjectManager *objectManager;
 	SRStar *aStar;
 	SRConstellation *aConstellation;
 	SRConstellationLine *aLine;

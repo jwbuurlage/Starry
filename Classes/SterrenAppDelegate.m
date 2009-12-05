@@ -14,42 +14,21 @@
 
 #import "SterrenAppDelegate.h"
 #import "GLView.h"
+#import "SRLocation.h"
+#import "SRObjectManager.h"
 #import "ConstantsAndMacros.h"
-#import "XMLParser.h"
 #import "SRLocation.h"
 
 @implementation SterrenAppDelegate
 
-@synthesize window, glView, stars, constellations, uiElementsView, location;
+@synthesize window, glView, uiElementsView, location, objectManager;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-	NSData * data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"stars" ofType: @"xml"]];
-	NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:data];
-	XMLParser *parser = [[XMLParser alloc] initXMLParser];
-	[xmlParser setDelegate:parser];
-	BOOL success = [xmlParser parse];
 	
-	if(success) {
-		//NSLog(@"XML Parse completed");
-	}
-	else {
-		//NSLog(@"XML Parse error"); */
-	}
+	objectManager = [[SRObjectManager alloc] init];
+	[objectManager parseData];
 	
-	NSData * dataConstellations = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"constellations" ofType: @"xml"]];
-	NSXMLParser *xmlParserConstellations = [[NSXMLParser alloc] initWithData:dataConstellations];
-	XMLParser *parserConstellations = [[XMLParser alloc] initXMLParser];
-	[xmlParserConstellations setDelegate:parserConstellations];
-	success = [xmlParserConstellations parse];
-	
-	if(success) {
-		NSLog(@"Constellations Parse completed");
-	}
-	else {
-		NSLog(@"Constellations Parse error"); 
-	}
-	
-	//uiElementsView.opaque = YES;
+	// Loading screen annimation;
 	glView.animationInterval = 1.0 / kRenderingFrequency;
 	[glView startAnimation];
 }

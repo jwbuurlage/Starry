@@ -68,6 +68,7 @@
 		
 		// set de appdelegate
 		appDelegate = [[UIApplication sharedApplication] delegate];
+		objectManager = [appDelegate objectManager];
 		
 		earth = [[SRPlanetaryObject alloc] initWitha:1.00000	
 												   e:0.01671	
@@ -144,13 +145,13 @@
 		glEnable(GL_DEPTH_TEST);
 
 		starNum = 0;
-		GLfloat starPointsTmp[[appDelegate.stars count]*8];
+		GLfloat starPointsTmp[[objectManager.stars count]*8];
 		int matrixStartPos;
 		float size;
 		float alpha;
 		SRStar * star;
 		
-		for(star in appDelegate.stars) {
+		for(star in objectManager.stars) {
 			//NSLog(@"Loading star %@",star.name);
 			if(star.name != @"Sol") {
 			if([star.mag floatValue] < 1) {
@@ -197,7 +198,7 @@
 		SRConstellation * constellation;
 		SRConstellationLine * line;
 		
-		for(constellation in appDelegate.constellations) {
+		for(constellation in objectManager.constellations) {
 			for(line in constellation.lines) {
 				constellationPointsTmp[i] = line.start.x;
 				constellationPointsTmp[i+1] = line.start.y;

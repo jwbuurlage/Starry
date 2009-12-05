@@ -262,10 +262,12 @@
 			SRStar * star;
 			SRStar * closestStar;
 			float xd,yd,zd,starD,closestD;
-			closestD = 20;
-			// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
-			for(star in [[[UIApplication sharedApplication] delegate] stars]) {
+			closestD = 20; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
+			
+			for(star in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
 				
+				
+				// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
 				xd = [[star x] floatValue]-stX;
 				yd = [[star y] floatValue]-stY;
 				zd = [[star z] floatValue]-stZ;
@@ -276,7 +278,15 @@
 					//NSLog(@"Closest star:%@",star.name);
 				}
 			}
-			[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
+			if (closestD < 1.2) {
+				//NSLog(@"Delta of closest: %f",closestD);
+				[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
+			}
+			else {
+				if ([[[renderer interface] theNameplate] visible]) {
+					[[[renderer interface] theNameplate] hide];
+				}
+			}
 			
 			/*
 			Dit kopt niet 

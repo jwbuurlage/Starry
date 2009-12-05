@@ -13,7 +13,7 @@
 
 
 #import "XMLParser.h"
-#import "SterrenAppDelegate.h"
+//#import "SterrenAppDelegate.h"
 #import "SRStar.h"
 #import "SRConstellation.h"
 
@@ -26,7 +26,7 @@
 	//NSLog(@"test parser0");
 	stars = TRUE;
 	start = TRUE;
-	appDelegate = [[UIApplication sharedApplication] delegate];
+	objectManager = [[[UIApplication sharedApplication] delegate] objectManager];
 	
 	return self;
 }
@@ -39,11 +39,11 @@
 	if([elementName isEqualToString:@"stars"]) { // Hoofd tag gevonden, Array initializen
 		stars = TRUE;
 		//NSLog(@"Init stars");
-		appDelegate.stars = [[NSMutableArray alloc] init];
+		//objectManager.stars = [[NSMutableArray alloc] init];
 	}
 	else if([elementName isEqualToString:@"constellations"]) {
 		stars = FALSE;
-		appDelegate.constellations = [[NSMutableArray alloc] init];
+		//objectManager.constellations = [[NSMutableArray alloc] init];
 	}
 	
 	if(stars) {
@@ -93,7 +93,7 @@
 			return;
 	
 		else if([elementName isEqualToString:@"star"]) {
-			[appDelegate.stars addObject:aStar];
+			[objectManager.stars addObject:aStar];
 		
 			[aStar release];
 			aStar = nil;
@@ -107,7 +107,7 @@
 			return;
 		
 		else if([elementName isEqualToString:@"constellation"]) {
-			[appDelegate.constellations addObject:aConstellation];
+			[objectManager.constellations addObject:aConstellation];
 			
 			[aConstellation release];
 			aConstellation = nil;

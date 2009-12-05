@@ -14,6 +14,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SRLocation.h"
+#import "SRObjectManager.h"
 
 @class GLView;
 
@@ -21,16 +22,20 @@
     UIWindow *window;
     GLView *glView;
 	UIView *uiElementsView;
-	NSMutableArray * stars;
-	NSMutableArray * constellations;
 	SRLocation* location;
+	
+	/*NSMutableArray * stars;
+	NSMutableArray * constellations;*/
+	
+	SRObjectManager * objectManager;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet GLView *glView;
 @property (nonatomic, retain) IBOutlet UIView *uiElementsView;
-@property (nonatomic, retain) NSMutableArray *stars;
-@property (nonatomic, retain) NSMutableArray *constellations;
+@property (readonly) SRObjectManager * objectManager;
+//@property (nonatomic, retain) NSMutableArray *stars;
+//@property (nonatomic, retain) NSMutableArray *constellations;
 @property (assign) SRLocation* location;
 
 @end

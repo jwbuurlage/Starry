@@ -14,13 +14,12 @@
 #import "SRCamera.h"
 #import "SRStar.h"
 #import "SRConstellation.h"
-#import "SterrenAppDelegate.h"
 #import "SRInterface.h"
 #import "SRLocation.h"
 
 
 @interface SRObjectManager : NSObject {
-	GLfloat planetPoints[56];
+	/*GLfloat planetPoints[56];
 	GLfloat stringPoints[56];
 	GLfloat starPoints[15000];
 	GLfloat constellationPoints[15000];
@@ -37,7 +36,16 @@
 	SRPlanetaryObject *jupiter;
 	SRPlanetaryObject *saturn;
 	SRPlanetaryObject *uranus;
-	SRPlanetaryObject *neptune;
+	SRPlanetaryObject *neptune;*/
+	
+	NSMutableArray * stars;
+	NSMutableArray * constellations;
 }
+
+@property (nonatomic, retain) NSMutableArray *stars;
+@property (nonatomic, retain) NSMutableArray *constellations;
+
+-(id)init;
+-(void)parseData;
 
 @end
