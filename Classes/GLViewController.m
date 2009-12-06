@@ -283,7 +283,7 @@
 					//NSLog(@"Closest planet:%@",planet.name);
 				}
 			}
-			if (closestD < (2 * (1/zoomingValue))) {
+			if (closestD < (2 * (0.7/zoomingValue))) {
 				//NSLog(@"Delta of closest: %f",closestD);
 				[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
 			}
@@ -315,7 +315,7 @@
 					
 				}
 				
-				if (closestD < (1.5 * (1/zoomingValue))) {
+				if (closestD < (1.5 * (0.7/zoomingValue))) {
 					//NSLog(@"Delta of closest: %f",closestD);
 					if (closestStar.name == @"" || closestStar.name == @" ") {
 						[[[renderer interface] theNameplate] setName:@"Naamloze ster" inConstellation:closestStar.bayer showInfo:NO];
