@@ -326,25 +326,25 @@
 					
 					// CPU intensieve method
 					// Dit moet anders bijvoorbeeld met een selector texture op de x,y,z locatie in de renderer
-					SRStar * ster;
+					/*SRStar * ster;
 					for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
 						ster.selected = NO;
 					}
 					closestStar.selected = YES;
 					[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
-					[renderer loadStarPoints];
+					[renderer loadStarPoints];*/
 				}
 				else {
 					if ([[[renderer interface] theNameplate] visible]) {
 						
 						[[[renderer interface] theNameplate] hide];
 						
-						SRStar * ster;
+						/*SRStar * ster;
 						for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
 							ster.selected = NO;
 						}
 						[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
-						[renderer loadStarPoints];
+						[renderer loadStarPoints];*/
 						
 						
 					}

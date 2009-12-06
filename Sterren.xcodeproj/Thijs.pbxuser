@@ -38,8 +38,8 @@
 	1F92F5EA0FDFF83200548BE8 /* GLViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1099, 5291}}";
-			sepNavSelRange = "{9749, 0}";
-			sepNavVisRange = "{8744, 1319}";
+			sepNavSelRange = "{9614, 0}";
+			sepNavVisRange = "{8768, 1355}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -281,6 +281,10 @@
 			76030D4E10CBCA2A0074B0CE /* PBXTextBookmark */ = 76030D4E10CBCA2A0074B0CE /* PBXTextBookmark */;
 			76030D5110CBCA3B0074B0CE /* PBXTextBookmark */ = 76030D5110CBCA3B0074B0CE /* PBXTextBookmark */;
 			76030D5210CBCA410074B0CE /* PBXTextBookmark */ = 76030D5210CBCA410074B0CE /* PBXTextBookmark */;
+			76030D5510CBCAC80074B0CE /* PBXTextBookmark */ = 76030D5510CBCAC80074B0CE /* PBXTextBookmark */;
+			76030D5610CBCAC80074B0CE /* PBXTextBookmark */ = 76030D5610CBCAC80074B0CE /* PBXTextBookmark */;
+			76030D5810CBCAC80074B0CE /* PBXTextBookmark */ = 76030D5810CBCAC80074B0CE /* PBXTextBookmark */;
+			76030D5A10CBCADF0074B0CE /* PBXTextBookmark */ = 76030D5A10CBCADF0074B0CE /* PBXTextBookmark */;
 			76179D0110CA644B00768180 = 76179D0110CA644B00768180 /* PBXTextBookmark */;
 			76179D2910CA6C6400768180 = 76179D2910CA6C6400768180 /* PBXTextBookmark */;
 			76179D2A10CA6C6400768180 = 76179D2A10CA6C6400768180 /* PBXTextBookmark */;
@@ -1494,7 +1498,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 343";
 		rLen = 0;
-		rLoc = 9896;
+		rLoc = 9902;
 		rType = 0;
 		vrLen = 1413;
 		vrLoc = 8829;
@@ -1504,7 +1508,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 343";
 		rLen = 0;
-		rLoc = 9896;
+		rLoc = 9902;
 		rType = 0;
 		vrLen = 1413;
 		vrLoc = 8829;
@@ -1514,7 +1518,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 343";
 		rLen = 0;
-		rLoc = 9896;
+		rLoc = 9902;
 		rType = 0;
 		vrLen = 1233;
 		vrLoc = 9009;
@@ -1524,7 +1528,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 343";
 		rLen = 0;
-		rLoc = 9896;
+		rLoc = 9902;
 		rType = 0;
 		vrLen = 1187;
 		vrLoc = 9144;
@@ -1534,7 +1538,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 343";
 		rLen = 0;
-		rLoc = 9896;
+		rLoc = 9902;
 		rType = 0;
 		vrLen = 1176;
 		vrLoc = 8988;
@@ -1544,7 +1548,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 343";
 		rLen = 0;
-		rLoc = 9896;
+		rLoc = 9902;
 		rType = 0;
 		vrLen = 1338;
 		vrLoc = 9026;
@@ -1554,7 +1558,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 342";
 		rLen = 0;
-		rLoc = 9896;
+		rLoc = 9902;
 		rType = 0;
 		vrLen = 1321;
 		vrLoc = 8742;
@@ -1564,7 +1568,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 342";
 		rLen = 0;
-		rLoc = 9896;
+		rLoc = 9902;
 		rType = 0;
 		vrLen = 1204;
 		vrLoc = 8764;
@@ -1604,7 +1608,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 341";
 		rLen = 0;
-		rLoc = 9749;
+		rLoc = 9753;
 		rType = 0;
 		vrLen = 1334;
 		vrLoc = 8729;
@@ -1614,10 +1618,57 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 341";
 		rLen = 0;
-		rLoc = 9749;
+		rLoc = 9753;
 		rType = 0;
 		vrLen = 1319;
 		vrLoc = 8744;
+	};
+	76030D5510CBCAC80074B0CE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 341";
+		rLen = 0;
+		rLoc = 9753;
+		rType = 0;
+		vrLen = 591;
+		vrLoc = 8729;
+	};
+	76030D5610CBCAC80074B0CE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76030D5710CBCAC80074B0CE /* asm __dyld__dyld_start  0x2fe01028 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	76030D5710CBCAC80074B0CE /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	76030D5810CBCAC80074B0CE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76030D5910CBCAC80074B0CE /* asm __dyld__dyld_start  0x2fe01028 */;
+		name = "asm __dyld__dyld_start  0x2fe01028: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 0;
+	};
+	76030D5910CBCAC80074B0CE /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	76030D5A10CBCADF0074B0CE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 335";
+		rLen = 0;
+		rLoc = 9614;
+		rType = 0;
+		vrLen = 1355;
+		vrLoc = 8768;
 	};
 	76179CF210CA61D500768180 /* SRObjectManager.h */ = {
 		uiCtxt = {
@@ -1954,7 +2005,7 @@
 		ignoreCount = 0;
 		lineNumber = 371;
 		location = Sterren;
-		modificationTime = 281790955.347103;
+		modificationTime = 281791052.088053;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
