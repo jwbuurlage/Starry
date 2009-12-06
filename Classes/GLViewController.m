@@ -51,7 +51,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *aTouch = [touches anyObject];
-
+	
 	if([[renderer interface] UIElementAtPoint:[aTouch locationInView:theView]]) {
 		UIClick = YES;
 		ScreenClick = NO;
@@ -81,11 +81,11 @@
 	
 	
 	/*if(dTouch < 5 && lastTouchCount == 1) 
-		lastTouchCount = touchCount;
-	else {
-		if(touchCount != lastTouchCount)
-			return;
-	//}*/
+	 lastTouchCount = touchCount;
+	 else {
+	 if(touchCount != lastTouchCount)
+	 return;
+	 //}*/
 	
 	if(touchCount == 1) {
 		UITouch *aTouch = [touches anyObject];
@@ -96,7 +96,7 @@
 		
 		if (UIClick == NO) {
 			[camera rotateCameraWithX:x 
-							Y:y];
+									Y:y];
 		}
 		
 		dX += x;
@@ -152,17 +152,17 @@
 		CGFloat zoomDelta;
 		
 		//if (lastTouchCount == 2) {
-			zoomDelta = lastTouchDistance - touchDistance;
+		zoomDelta = lastTouchDistance - touchDistance;
 		
-			[camera zoomCameraWithDelta:zoomDelta
-							  centerX:touchCenter.x
-							  centerY: touchCenter.y];
+		[camera zoomCameraWithDelta:zoomDelta
+							centerX:touchCenter.x
+							centerY: touchCenter.y];
 		//}
 		
 		lastTouchDistance = touchDistance;
 		
 		//NSLog(@"Delta zoom %f", zoomDelta);
-	
+		
 	}
 	
 	lastTouchCount = touchCount;
@@ -286,13 +286,6 @@
 			if (closestD < (2 * (0.7/zoomingValue))) {
 				//NSLog(@"Delta of closest: %f",closestD);
 				[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
-				
-				Vertex3D position = closestPlanet.position;
-				
-				[renderer setHighlightPosition:position];
-				[renderer setHighlightSize:100]; 
-				[renderer setHighlight:TRUE];
-				
 			}
 			else {
 				
@@ -313,9 +306,9 @@
 					if ([star visibleWithZoom:zoomingValue]) {
 						if (starD < closestD) {
 							
-								closestD = starD;
-								closestStar = star;
-								
+							closestD = starD;
+							closestStar = star;
+							
 						}
 						
 					}
@@ -333,20 +326,27 @@
 					
 					// CPU intensieve method
 					// Dit moet anders bijvoorbeeld met een selector texture op de x,y,z locatie in de renderer
-					Vertex3D position = Vector3DMake([closestStar.x floatValue], [closestStar.y floatValue], [closestStar.z floatValue]);
-					
-					[renderer setHighlightPosition:position];
-					[renderer setHighlightSize:[closestStar size] * 10]; 
-					[renderer setHighlight:TRUE];
-
-					//[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
-					//[renderer loadStarPoints];
+					/*SRStar * ster;
+					 for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
+					 ster.selected = NO;
+					 }
+					 closestStar.selected = YES;
+					 [[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
+					 [renderer loadStarPoints];*/
 				}
 				else {
 					if ([[[renderer interface] theNameplate] visible]) {
-						[renderer setHighlight:FALSE];
 						
 						[[[renderer interface] theNameplate] hide];
+						
+						/*SRStar * ster;
+						 for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
+						 ster.selected = NO;
+						 }
+						 [[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
+						 [renderer loadStarPoints];*/
+						
+						
 					}
 				}
 				
@@ -354,58 +354,58 @@
 			
 			
 			
-
-			/*
-			Dit kopt niet 
-			float alOm = acos(brZ);
-			float fiOm = atan((brY)/(brX)); // klopt niet? hoe kan deze 2 parm nemen?
 			
-			NSLog(@"RA/DEC punt RA:%f DEC:%f",alOm*(180/M_PI),fiOm*(180/M_PI));*/
+			/*
+			 Dit kopt niet 
+			 float alOm = acos(brZ);
+			 float fiOm = atan((brY)/(brX)); // klopt niet? hoe kan deze 2 parm nemen?
+			 
+			 NSLog(@"RA/DEC punt RA:%f DEC:%f",alOm*(180/M_PI),fiOm*(180/M_PI));*/
 			
 			//NSLog(@"Aangeklikte locatie voor sterren database x:%f y:%f z:%f",stX,stY,stZ);
 			
 			/*if(stX < 1.5 &&
-			   stX >= -1.5 &&
-			   stY < 1.5 &&
-			   stY >= -1.5 &&
-			   stZ <= 20 &&
-			   stZ > 18.0) {
-					//Poolster aangeklikt
-				if ([[[renderer interface] theNameplate] visible]) {
-					[[[renderer interface] theNameplate] hide];
-					// Iets van een timer
-					//[[[renderer interface] theNameplate] setName:@"Polaris" inConstellation:@"Kleine beer" showInfo:NO];
-					
-				}
-				else {
-					[[[renderer interface] theNameplate] setName:@"Polaris" inConstellation:@"Kleine beer" showInfo:NO];
-				}
-			}*/
+			 stX >= -1.5 &&
+			 stY < 1.5 &&
+			 stY >= -1.5 &&
+			 stZ <= 20 &&
+			 stZ > 18.0) {
+			 //Poolster aangeklikt
+			 if ([[[renderer interface] theNameplate] visible]) {
+			 [[[renderer interface] theNameplate] hide];
+			 // Iets van een timer
+			 //[[[renderer interface] theNameplate] setName:@"Polaris" inConstellation:@"Kleine beer" showInfo:NO];
+			 
+			 }
+			 else {
+			 [[[renderer interface] theNameplate] setName:@"Polaris" inConstellation:@"Kleine beer" showInfo:NO];
+			 }
+			 }*/
 			
 		}
 		
 	}
 	else {
-	UITouch *aTouch = [touches anyObject];
-	int x, y;
-	
-	dTouch = 0; // zet delta touch terug naar nul
-	
-	//testen voor swipe
-	x = [aTouch locationInView:theView].x - [aTouch previousLocationInView:theView].x;
-	y = [aTouch locationInView:theView].y - [aTouch previousLocationInView:theView].y;
-	
-	if(x > 8 || x < -8) {
-		//NSLog(@"swipe horizontal");
-		[camera initiateHorizontalSwipeWithX:x];
-	}
-	else if(y > 8 || y < -8) {
-		[camera initiateVerticalSwipeWithY:y];
-	}
-	else {
-		//geen swipe, enkele touch?
-		//[camera RAAndDecForPoint:[aTouch previousLocationInView:theView]];
-	}
+		UITouch *aTouch = [touches anyObject];
+		int x, y;
+		
+		dTouch = 0; // zet delta touch terug naar nul
+		
+		//testen voor swipe
+		x = [aTouch locationInView:theView].x - [aTouch previousLocationInView:theView].x;
+		y = [aTouch locationInView:theView].y - [aTouch previousLocationInView:theView].y;
+		
+		if(x > 8 || x < -8) {
+			//NSLog(@"swipe horizontal");
+			[camera initiateHorizontalSwipeWithX:x];
+		}
+		else if(y > 8 || y < -8) {
+			[camera initiateVerticalSwipeWithY:y];
+		}
+		else {
+			//geen swipe, enkele touch?
+			//[camera RAAndDecForPoint:[aTouch previousLocationInView:theView]];
+		}
 	}
 }
 
