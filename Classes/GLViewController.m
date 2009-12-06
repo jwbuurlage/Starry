@@ -268,6 +268,7 @@
 			SRPlanetaryObject * closestPlanet;
 			float xd,yd,zd,planetD,closestD;
 			closestD = 15; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
+			float zoomingValue = [camera zoomingValue];
 			for(planet in [[[[UIApplication sharedApplication] delegate] objectManager] planets]) {
 				
 				
@@ -282,7 +283,7 @@
 					//NSLog(@"Closest planet:%@",planet.name);
 				}
 			}
-			if (closestD < 1.5) {
+			if (closestD < (2 * (1/zoomingValue))) {
 				//NSLog(@"Delta of closest: %f",closestD);
 				[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
 			}
@@ -302,8 +303,6 @@
 					zd = [[star z] floatValue]-stZ;
 					starD = sqrt(xd*xd + yd*yd + zd*zd);
 					
-					float zoomingValue = [camera zoomingValue];
-					
 					if ([star visibleWithZoom:zoomingValue]) {
 						if (starD < closestD) {
 							
@@ -316,7 +315,7 @@
 					
 				}
 				
-				if (closestD < 1.2) {
+				if (closestD < (1.5 * (1/zoomingValue))) {
 					//NSLog(@"Delta of closest: %f",closestD);
 					if (closestStar.name == @"" || closestStar.name == @" ") {
 						[[[renderer interface] theNameplate] setName:@"Naamloze ster" inConstellation:closestStar.bayer showInfo:NO];
@@ -337,6 +336,13 @@
 				}
 				else {
 					if ([[[renderer interface] theNameplate] visible]) {
+						SRStar * ster;
+						for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
+							ster.selected = NO;
+						}
+						[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
+						[renderer loadStarPoints];
+						
 						[[[renderer interface] theNameplate] hide];
 					}
 				}

@@ -278,14 +278,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>14</integer>
-									<integer>4</integer>
+									<integer>52</integer>
+									<integer>44</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {258, 780}}</string>
+							<string>{{0, 320}, {258, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRStar.m</string>
+								<string>GLViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +324,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRStar.m</string>
+										<string>GLViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>76030D1B10CBC6A90074B0CE</string>
+										<string>76030D3710CBC8B30074B0CE</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -383,8 +383,8 @@
 											<string>76030CDC10CBC49C0074B0CE</string>
 											<string>76030CE910CBC5150074B0CE</string>
 											<string>76030D0C10CBC6450074B0CE</string>
-											<string>76030D1810CBC6A90074B0CE</string>
-											<string>76030D1910CBC6A90074B0CE</string>
+											<string>76030D2410CBC7CE0074B0CE</string>
+											<string>76030D2510CBC7CE0074B0CE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -705,7 +705,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>76030D1C10CBC6A90074B0CE</string>
+		<string>76030D3810CBC8B30074B0CE</string>
 		<string>76030CAF10CBC17E0074B0CE</string>
 		<string>76030C9F10CBC1020074B0CE</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
