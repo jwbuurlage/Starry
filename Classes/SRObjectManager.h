@@ -33,8 +33,8 @@
 	NSMutableArray * stars;
 	NSMutableArray * constellations;
 	
-	float brightnessFactor;
-	float zoomFactor;
+	//float brightnessFactor;
+	//float zoomFactor;
 	
 	//id *appDelegate;
 }
