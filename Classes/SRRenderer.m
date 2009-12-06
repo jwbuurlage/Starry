@@ -207,7 +207,7 @@
 	glDisableClientState(GL_COLOR_ARRAY);
 	
 	glLineWidth(1.5f);
-	glColor4f(0.4f, 0.4f, 0.4f, 0.3f);
+	glColor4f(0.4f, 0.4f, 0.4f, 0.25f);
 	glVertexPointer(3, GL_FLOAT, 12, constellationPoints);
     glDrawArrays(GL_LINES, 0, constellationNum);
 		

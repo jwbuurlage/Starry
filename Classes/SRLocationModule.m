@@ -192,7 +192,7 @@
 	}
 	else {
 		[locationManager useGPSValues];
-		[[elements objectAtIndex:6] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"location.png"]]];
+		[[elements objectAtIndex:6] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"location_on.png"]]];
 		GPS = TRUE;
 	}
 }
