@@ -34,7 +34,7 @@
 			GPS = FALSE;
 		}
 		else {
-			locationString = [[NSString alloc] initWithString:@"location.png"];
+			locationString = [[NSString alloc] initWithString:@"location_on.png"];
 			GPS = TRUE;
 		}
 		
