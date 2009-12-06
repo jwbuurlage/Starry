@@ -17,7 +17,7 @@
 
 @implementation SRRenderer
 
-@synthesize interface,location,myOwner,camera;
+@synthesize interface,location,myOwner,camera,highlight,highlightPosition,highlightSize;
 
 -(id)setupWithOwner:(GLViewController*)theOwner {
 	if(self = [super init]) {
@@ -43,6 +43,8 @@
 		// Waarom laad je planet 6 keer in? :-S dat kan makkelijk 1 keer zijn
 		[interface loadTexture:@"sun.png" intoLocation:textures[5]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[6]];
+		[interface loadTexture:@"highlight.png" intoLocation:textures[7]];
+
 		/*[interface loadTexture:@"planet.png" intoLocation:textures[7]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[8]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[9]];
@@ -139,6 +141,7 @@
 	if([[appDelegate settingsManager] showConstellations]) {
 		[self drawConstellations]; }
 	[self drawStars];
+	[self drawHighlight];
 	[self drawEcliptic];
 	[self drawPlanets];
 	
@@ -246,6 +249,33 @@
 	
 	glEnable(GL_DEPTH_TEST);
 }
+
+-(void)drawHighlight {	
+	if(highlight) {
+		glEnable(GL_POINT_SPRITE_OES);
+		glTexEnvi(GL_POINT_SPRITE_OES, GL_COORD_REPLACE_OES, GL_TRUE);	
+		glEnable(GL_TEXTURE_2D);
+		
+		glDisableClientState(GL_COLOR_ARRAY);
+	
+		const GLfloat points[] = {
+			highlightPosition.x, highlightPosition.y, highlightPosition.z
+		};
+	
+		glPointSize(highlightSize);
+		glBindTexture(GL_TEXTURE_2D, textures[7]);
+	
+		glVertexPointer(3, GL_FLOAT, 12, points);
+
+		glDrawArrays(GL_POINTS, 0, 1);
+	
+		glDisable(GL_POINT_SPRITE_OES);
+		glDisable(GL_TEXTURE_2D);
+		
+		glEnableClientState(GL_COLOR_ARRAY);
+	}
+}
+
 
 -(void)drawCompass {	
 	//SPRITES! ??

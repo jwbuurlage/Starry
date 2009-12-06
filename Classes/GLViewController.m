@@ -286,6 +286,13 @@
 			if (closestD < (2 * (0.7/zoomingValue))) {
 				//NSLog(@"Delta of closest: %f",closestD);
 				[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
+				
+				Vertex3D position = closestPlanet.position;
+				
+				[renderer setHighlightPosition:position];
+				[renderer setHighlightSize:100]; 
+				[renderer setHighlight:TRUE];
+				
 			}
 			else {
 				
@@ -326,22 +333,18 @@
 					
 					// CPU intensieve method
 					// Dit moet anders bijvoorbeeld met een selector texture op de x,y,z locatie in de renderer
-					SRStar * ster;
-					for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
-						ster.selected = NO;
-					}
-					closestStar.selected = YES;
-					[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
-					[renderer loadStarPoints];
+					Vertex3D position = Vector3DMake([closestStar.x floatValue], [closestStar.y floatValue], [closestStar.z floatValue]);
+					
+					[renderer setHighlightPosition:position];
+					[renderer setHighlightSize:[closestStar size] * 10]; 
+					[renderer setHighlight:TRUE];
+
+					//[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
+					//[renderer loadStarPoints];
 				}
 				else {
 					if ([[[renderer interface] theNameplate] visible]) {
-						SRStar * ster;
-						for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
-							ster.selected = NO;
-						}
-						[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
-						[renderer loadStarPoints];
+						[renderer setHighlight:FALSE];
 						
 						[[[renderer interface] theNameplate] hide];
 					}

@@ -46,16 +46,7 @@
 	SRPlanetaryObject *saturn;
 	SRPlanetaryObject *uranus;
 	SRPlanetaryObject *neptune;
-	
-	//sphere:
-	Vertex3D    *sphereTriangleStripVertices;
-    Vector3D    *sphereTriangleStripNormals;
-    GLuint      sphereTriangleStripVertexCount;
-    
-    Vertex3D    *sphereTriangleFanVertices;
-    Vector3D    *sphereTriangleFanNormals;
-    GLuint      sphereTriangleFanVertexCount;
-	
+		
 	GLfloat planetPoints[64];
 	GLfloat stringPoints[56];
 	GLfloat starPoints[15000];
@@ -66,16 +57,25 @@
 	
 	GLuint textures[21];
 	NSMutableArray* textTest;
+	
+	//highlight
+	BOOL highlight;
+	Vertex3D highlightPosition;
+	float highlightSize;
 }
 
 @property (readonly) SRInterface* interface;
 @property (readonly) SRLocation* location;
 @property (readonly) GLViewController* myOwner;
 @property (readonly) SRCamera* camera;
+@property (assign) BOOL highlight;
+@property (assign) Vertex3D highlightPosition;
+@property (assign) float highlightSize;
 
 -(id)setupWithOwner:(GLViewController*)theOwner;
 -(void)render;
 -(void)drawStars;
+-(void)drawHighlight;
 -(void)drawConstellations;
 -(void)drawPlanets;
 -(void)drawHorizon;
