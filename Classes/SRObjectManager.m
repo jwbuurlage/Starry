@@ -203,26 +203,9 @@
 	for(star in stars) {
 		//NSLog(@"Loading star %@",star.name);
 		if(star.name != @"Sol") {
-			if([star.mag floatValue] < 1) {
-				size = 4.0;
-				alpha = 1.0;
-			}
-			else if([star.mag floatValue] < 2) {
-				size = 3.5;
-				alpha = 0.7;
-			}
-			else if([star.mag floatValue] < 3) {
-				size = 2.5;
-				alpha = 0.6;
-			}
-			else if([star.mag floatValue] < 4) {
-				size = 2.0;
-				alpha = 0.5;
-			}
-			else {
-				size = 0.9;
-				alpha = 0.4;
-			}
+			
+			size = [star size];
+			alpha = [star alpha];
 			
 			matrixStartPos = starNum * 8;
 			starPointsTmp[matrixStartPos] = [star.x floatValue];

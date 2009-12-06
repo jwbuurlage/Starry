@@ -22,6 +22,7 @@
 #import "SRSettingsModule.h"
 #import "SRNamePlate.h"
 #import "Texture2D.h"
+//#import "SterrenAppDelegate.h"
 
 @class SRRenderer;
 @class SRCamera;
@@ -29,6 +30,7 @@
 @interface SRInterface : NSObject {
 	SRRenderer* renderer;
 	SRCamera* camera;
+	id appDelegate;
 	
 	SRTimeModule* timeModule;
 	SRLocationModule* locationModule;
@@ -67,7 +69,7 @@
 	
 	float alphaDefault;
 	
-	BOOL redOverlay;
+	//BOOL redOverlay;
 }
 
 @property (readonly) SRTimeModule* timeModule;

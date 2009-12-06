@@ -38,4 +38,8 @@
 @property (nonatomic, retain) NSString * mag;
 @property (nonatomic, readwrite) BOOL selected;
 
+-(BOOL)visibleWithZoom:(float)zoomf;
+-(float)size;
+-(float)alpha;
+
 @end

@@ -28,28 +28,13 @@
 	NSMutableArray * constellationPoints;
 	int constellationNum;
 	
-	//GLfloat stringPoints[56];
-	//GLfloat starPoints[15000];
-	//GLfloat constellationPoints[15000];
-	/*
-	int starNum;
-	int constellationNum;
-	
-	//lichamen
-	
-	SRPlanetaryObject *mercury;
-	SRPlanetaryObject *venus;
-	SRPlanetaryObject *earth;
-	SRPlanetaryObject *mars;
-	SRPlanetaryObject *jupiter;
-	SRPlanetaryObject *saturn;
-	SRPlanetaryObject *uranus;
-	SRPlanetaryObject *neptune;*/
-	
 	SRSun* sun;
 	NSMutableArray * planets;
 	NSMutableArray * stars;
 	NSMutableArray * constellations;
+	
+	float brightnessFactor;
+	float zoomFactor;
 	
 	//id *appDelegate;
 }
@@ -64,6 +49,7 @@
 @property (readonly) int starNum;
 @property (readonly) NSMutableArray *constellationPoints;
 @property (readonly) int constellationNum;
+
 //@property (readonly) GLfloat planetPoints;
 
 -(id)init;

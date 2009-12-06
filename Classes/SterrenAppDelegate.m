@@ -21,13 +21,14 @@
 
 @implementation SterrenAppDelegate
 
-@synthesize window, glView, uiElementsView, location, timeManager, objectManager;
+@synthesize window, glView, uiElementsView, location, timeManager, objectManager, settingsManager;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	
 	objectManager = [[SRObjectManager alloc] init];
 	location = [[SRLocation alloc] init];
 	timeManager = [[SRTimeManager alloc] init];
+	settingsManager = [[SRSettingsManager alloc] init];
 	[objectManager parseData];
 	
 	// Loading screen annimation;
@@ -49,9 +50,12 @@
 	// De locatie opslaan voor het geval de applicatie opnieuw opstart
 	//FIXME: OOK BRIGHTNESS e.d. doen
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-	[prefs setFloat:	[location latitude]		forKey:@"lat"];
-	[prefs setFloat:	[location longitude]	forKey:@"long"];
-	[prefs setBool:		[location staticValues]	forKey:@"staticCoordinates"];
+	[prefs setFloat:	[location latitude]						forKey:@"lat"];
+	[prefs setFloat:	[location longitude]					forKey:@"long"];
+	[prefs setBool:		[location staticValues]					forKey:@"staticCoordinates"];
+	[prefs setBool:		[settingsManager showRedOverlay]		forKey:@"showRedOverlay"];
+	[prefs setBool:		[settingsManager showConstellations]	forKey:@"showConstellations"];
+	[prefs setFloat:	[settingsManager brightnessFactor]		forKey:@"brightness"];
 	[prefs synchronize];
 }
 

@@ -12,6 +12,8 @@
 //
 
 #import "SRStar.h"
+#import "SRSettingsManager.h"
+#import "SterrenAppDelegate.h"
 
 @implementation SRStar
 
@@ -27,6 +29,60 @@
 	[ci release];
 	//[starID release];
 	[super dealloc];
+}
+
+-(BOOL)visibleWithZoom:(float)zoomf {
+	float size = [self size];
+	id appDelegate = [[UIApplication sharedApplication] delegate]; 
+	//float zoomf = [[[[appDelegate glView] delegate] camera] zoomingValue]; 
+	float brightnessf = [[appDelegate settingsManager] brightnessFactor]; 
+	//NSLog(@"Star visible:%f",zoomf * brightnessf * size);
+	if ((zoomf * brightnessf * size) >= 1) {
+		return YES;
+	}
+	else {
+		return NO;
+	}
+}
+
+-(float)size {
+	float size;
+	if([mag floatValue] < 1) {
+		size = 4.0;
+	}
+	else if([mag floatValue] < 2) {
+		size = 3.5;
+	}
+	else if([mag floatValue] < 3) {
+		size = 2.5;
+	}
+	else if([mag floatValue] < 4) {
+		size = 2.0;
+	}
+	else {
+		size = 0.9;
+	}
+	return size;
+}
+
+-(float)alpha {
+	float alpha;
+	if([mag floatValue] < 1) {
+		alpha = 1.0;
+	}
+	else if([mag floatValue] < 2) {
+		alpha = 0.7;
+	}
+	else if([mag floatValue] < 3) {
+		alpha = 0.6;
+	}
+	else if([mag floatValue] < 4) {
+		alpha = 0.5;
+	}
+	else {
+		alpha = 0.4;
+	}
+	return alpha;
 }
 
 @end

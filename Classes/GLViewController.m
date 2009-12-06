@@ -15,6 +15,7 @@
 #import "GLViewController.h"
 #import "ConstantsAndMacros.h"
 #import "OpenGLCommon.h"
+#import "SterrenAppDelegate.h"
 
 @implementation GLViewController
 
@@ -300,11 +301,19 @@
 					yd = [[star y] floatValue]-stY;
 					zd = [[star z] floatValue]-stZ;
 					starD = sqrt(xd*xd + yd*yd + zd*zd);
-					if (starD < closestD) {
-						closestD = starD;
-						closestStar = star;
-						//NSLog(@"Closest star:%@",star.name);
+					
+					float zoomingValue = [camera zoomingValue];
+					
+					if ([star visibleWithZoom:zoomingValue]) {
+						if (starD < closestD) {
+							
+								closestD = starD;
+								closestStar = star;
+								
+						}
+						
 					}
+					
 				}
 				
 				if (closestD < 1.2) {

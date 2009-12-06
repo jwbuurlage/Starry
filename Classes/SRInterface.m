@@ -24,8 +24,7 @@
 	if(self = [super init]) {
 		renderer = theRenderer;
 		
-		NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-		redOverlay = [prefs boolForKey:@"redOverlay"];
+		appDelegate = [[UIApplication sharedApplication] delegate];
 		
 		[self loadMenu];
 		[self loadModules];
@@ -279,7 +278,7 @@
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 	}
 	
-	if(redOverlay) {
+	if([[appDelegate settingsManager] showRedOverlay]) {
 		[self drawRedOverlay];
 	}
 	
@@ -415,7 +414,7 @@
 			[[timeModule manager] rew];
 		}
 		// Knoppen voor de locatie module
-		else if(clicker == @"lat-edit") {
+		else if(clicker == @"lat-edit" || clicker == @"lat") {
 			NSNumber* aNumber = [[NSNumber alloc] initWithFloat:[locationModule latitude]];
 			currentlyEditingIdentifier = @"lat";
 			[locationModule setLatVisible:NO];
@@ -428,7 +427,7 @@
 			
 			[aNumber release];
 		}
-		else if(clicker == @"long-edit") {
+		else if(clicker == @"long-edit" || clicker == @"long") {
 			NSNumber* aNumber = [[NSNumber alloc] initWithFloat:[locationModule longitude]];
 			currentlyEditingIdentifier = @"long";
 			[locationModule setLongVisible:NO];
@@ -445,40 +444,31 @@
 			[locationModule toggleGPS];
 		}
 		else if(clicker == @"red") {
-			NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-			if(!redOverlay) {
-				[prefs setBool:TRUE forKey:@"redOverlay"];
-				redOverlay = TRUE;
+			if(![[appDelegate settingsManager] showRedOverlay]) {
+				[[appDelegate settingsManager] setShowRedOverlay:TRUE];
 			}
 			else {
-				[prefs setBool:FALSE forKey:@"redOverlay"];
-				redOverlay = FALSE;
+				[[appDelegate settingsManager] setShowRedOverlay:FALSE];
 			}
 		}
 		else if(clicker == @"brightness_plus") {
-			NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-			float brightness = [prefs floatForKey:@"brightness"];
+			float brightness = [[appDelegate settingsManager] brightnessFactor];
 			brightness += 0.1;
-			[prefs setFloat:brightness forKey:@"brightness"];
-			[renderer brightnessChanged];
+			[[appDelegate settingsManager] setBrightnessFactor:brightness];
 		}
 		else if(clicker == @"brightness_minus") {
-			NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-			float brightness = [prefs floatForKey:@"brightness"];
+			float brightness = [[appDelegate settingsManager] brightnessFactor];
 			brightness -= 0.1;
-			[prefs setFloat:brightness forKey:@"brightness"];
-			[renderer brightnessChanged];
+			[[appDelegate settingsManager] setBrightnessFactor:brightness];
 		}		
 		else if(clicker == @"constellations") {
-			NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-			BOOL constellations = [prefs boolForKey:@"constellations"];
+			BOOL constellations = [[appDelegate settingsManager] showConstellations];
 			if(constellations) {
-				[prefs setBool:FALSE forKey:@"constellations"];
+				[[appDelegate settingsManager] setShowConstellations:FALSE];
 			}
 			else {
-				[prefs setBool:TRUE forKey:@"constellations"];
+				[[appDelegate settingsManager] setShowConstellations:TRUE];
 			}
-			[renderer constellationsChanged];
 		}		
 
 		if(flagToggle) {
@@ -597,27 +587,27 @@
 	
 	[fieldTmp setClearsOnBeginEditing:NO];
 	// Unhide de uiElementsView (Anders werkt de multitouch in glView niet)
-	[[[[UIApplication sharedApplication] delegate] uiElementsView] setHidden:NO];
+	[[appDelegate uiElementsView] setHidden:NO];
 	// We moeten de view toevoegen aan de glView
- 	[[[[UIApplication sharedApplication] delegate] uiElementsView] addSubview:fieldTmp];
+ 	[[appDelegate uiElementsView] addSubview:fieldTmp];
 	// Nu om focus te zetten op dit UI element
 	[fieldTmp becomeFirstResponder];
 	// Nu transleren we de hele glView naar boven om plaats te maken voor het keyboard, met animatie
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
-	[[[[UIApplication sharedApplication] delegate] glView] setTransform:CGAffineTransformMakeTranslation(160 , 0)];
+	[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(160 , 0)];
 	[UIView commitAnimations];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
 	if(textField == fieldTmp) {
 		// Hide de uiElementsView
-		[[[[UIApplication sharedApplication] delegate] uiElementsView] setHidden:YES];
+		[[appDelegate uiElementsView] setHidden:YES];
 		// Nu transleren we de hele glView weer naar beneden omdat het keyboard weg gaat.
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
 		// van 160,0 terug naar 0,0
-		[[[[UIApplication sharedApplication] delegate] glView] setTransform:CGAffineTransformMakeTranslation(0 , 0)];
+		[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(0 , 0)];
 		[UIView commitAnimations];
 		
 		NSString *aValue = [[NSString alloc] initWithString:[fieldTmp text]];

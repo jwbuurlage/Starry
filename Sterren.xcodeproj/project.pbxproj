@@ -17,6 +17,7 @@
 		28FD14FE0DC6FC130079059D /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD14FD0DC6FC130079059D /* GLView.m */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		76030C6C10CBBA260074B0CE /* SRSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76030C6B10CBBA260074B0CE /* SRSettingsManager.m */; };
 		76179CF410CA61D500768180 /* SRObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76179CF310CA61D500768180 /* SRObjectManager.m */; };
 		7644565110C5837800AB935D /* SRSettingsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7644565010C5837800AB935D /* SRSettingsModule.m */; };
 		765DA28A10A0B19300C4B16A /* SRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 765DA28910A0B19300C4B16A /* SRLocation.m */; };
@@ -94,6 +95,8 @@
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Sterren_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sterren_Prefix.pch; sourceTree = "<group>"; };
+		76030C6A10CBBA260074B0CE /* SRSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSettingsManager.h; sourceTree = "<group>"; };
+		76030C6B10CBBA260074B0CE /* SRSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSettingsManager.m; sourceTree = "<group>"; };
 		76179CF210CA61D500768180 /* SRObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRObjectManager.h; sourceTree = "<group>"; };
 		76179CF310CA61D500768180 /* SRObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRObjectManager.m; sourceTree = "<group>"; };
 		7644564F10C5837800AB935D /* SRSettingsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSettingsModule.h; sourceTree = "<group>"; };
@@ -195,14 +198,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				76030C6A10CBBA260074B0CE /* SRSettingsManager.h */,
+				76030C6B10CBBA260074B0CE /* SRSettingsManager.m */,
 				76179CF610CA61DE00768180 /* Body's */,
 				ACA875E7109DD08C00465577 /* Interface */,
 				765DA28810A0B19300C4B16A /* SRLocation.h */,
 				765DA28910A0B19300C4B16A /* SRLocation.m */,
-				AC1BA73A10C0225D0084CF6F /* SRConstellation.h */,
-				AC1BA73B10C0225D0084CF6F /* SRConstellation.m */,
-				AC9A926910C6F1C500657268 /* SRConstellationLine.h */,
-				AC9A926A10C6F1C500657268 /* SRConstellationLine.m */,
 				ACB7B16A10615F4F00CA447E /* SRRenderer.h */,
 				ACB7B16B10615F4F00CA447E /* SRRenderer.m */,
 				ACB7B11510615C1000CA447E /* SRCamera.h */,
@@ -289,6 +290,10 @@
 		76179CF610CA61DE00768180 /* Body's */ = {
 			isa = PBXGroup;
 			children = (
+				AC1BA73A10C0225D0084CF6F /* SRConstellation.h */,
+				AC1BA73B10C0225D0084CF6F /* SRConstellation.m */,
+				AC9A926910C6F1C500657268 /* SRConstellationLine.h */,
+				AC9A926A10C6F1C500657268 /* SRConstellationLine.m */,
 				76179CF210CA61D500768180 /* SRObjectManager.h */,
 				76179CF310CA61D500768180 /* SRObjectManager.m */,
 				AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */,
@@ -512,6 +517,7 @@
 				AC8A8AA110C5A14C0015CDF5 /* SRSlider.m in Sources */,
 				AC9A926B10C6F1C500657268 /* SRConstellationLine.m in Sources */,
 				76179CF410CA61D500768180 /* SRObjectManager.m in Sources */,
+				76030C6C10CBBA260074B0CE /* SRSettingsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

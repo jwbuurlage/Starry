@@ -51,7 +51,7 @@
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(104,-59, 80,32) 
 															   texture:nil 
 															identifier:@"lat" 
-															 clickable:NO]];
+															 clickable:YES]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-42, 28,28) 
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"latitude.png"]] 
@@ -61,7 +61,7 @@
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(224,-59, 80,32) 
 															   texture:nil 
 															identifier:@"long" 
-															 clickable:NO]];
+															 clickable:YES]];
 				 
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(190,-42, 28,28) 
 																texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"longitude.png"]]

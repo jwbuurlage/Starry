@@ -27,6 +27,7 @@
 		camera = [theOwner camera];
 		location = [appDelegate location];
 		objectManager = [appDelegate objectManager];
+		//[objectManager setRenderer:self];
 		interface = [[SRInterface alloc] initWithRenderer:self];
 		
 		
@@ -60,14 +61,6 @@
 		[textTest addObject:[[Texture2D alloc] initWithString:@"Neptunus" dimensions:CGSizeMake(64,64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:10]];
 		 */
 		//FIXME: verplaats naar app delegate		
-		NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-		
-		brightnessFactor = [prefs floatForKey:@"brightness"];
-		if(brightnessFactor <= 0) {
-			brightnessFactor = 1.0;
-			[prefs setFloat:brightnessFactor forKey:@"brightness"];
-		}
-		constellations = [prefs boolForKey:@"constellations"];
 		
 		[self loadPlanetPoints];
 		glMatrixMode(GL_MODELVIEW);
@@ -113,8 +106,6 @@
 -(void)render {
 	glEnable(GL_POINT_SMOOTH);
 	glEnable (GL_LINE_SMOOTH);
-
-	zoomFactor = [camera zoomingValue];
 	
 	//view resetten
     glLoadIdentity();
@@ -145,7 +136,7 @@
 	
 	[self adjustViewToLocationAndTime:YES];
 
-	if(constellations) {
+	if([[appDelegate settingsManager] showConstellations]) {
 		[self drawConstellations]; }
 	[self drawStars];
 	[self drawEcliptic];
@@ -195,8 +186,8 @@
 	GLfloat size = 0;
 	while(i <= starNum) {
 		if(starPoints[(i*8)+7] != 0) {
-			if((starPoints[(i*8)+7] * zoomFactor * brightnessFactor) > 1.0) {
-				size = starPoints[(i*8)+7] * zoomFactor * brightnessFactor;
+			if((starPoints[(i*8)+7] * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor]) > 1.0) {
+				size = starPoints[(i*8)+7] * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
 				glPointSize(size);
 			glDrawArrays(GL_POINTS, i, 1);
 			}
@@ -230,7 +221,7 @@
 	GLfloat size = 0;
 	while(i < planetNum) {
 			//NSLog(@"wel");
-		size = planetPoints[(i*8)+7] * zoomFactor;
+		size = planetPoints[(i*8)+7] * [camera zoomingValue];
 		glPointSize(size);
 		if (i == 0) { // Bij de zon laad de zon texture in
 			glBindTexture(GL_TEXTURE_2D, textures[5]);
@@ -377,17 +368,6 @@
 	glVertexPointer(3, GL_FLOAT, 12, verticesEcliptic);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 	glEnableClientState(GL_COLOR_ARRAY);
-}
-
-//FIXME: verplaats naar appDelegate
--(void)brightnessChanged {
-	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-	brightnessFactor = [prefs floatForKey:@"brightness"];	
-}
-
--(void)constellationsChanged {
-	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-	constellations = [prefs floatForKey:@"constellations"];	
 }
 
 @end

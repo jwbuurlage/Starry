@@ -65,11 +65,6 @@
 	int constellationNum;
 	
 	GLuint textures[21];
-	
-	float zoomFactor;
-	float brightnessFactor;
-	BOOL constellations;
-	
 	NSMutableArray* textTest;
 }
 
@@ -87,14 +82,9 @@
 -(void)drawCompass;
 -(void)drawEcliptic;
 
-//-(void)recalculatePlanetaryPositions;
--(void)brightnessChanged;
 -(void)adjustViewToLocationAndTime:(BOOL)status;
-
 -(void)loadStarPoints;
 -(void)loadPlanetPoints;
 -(void)loadConstellations;
-
-
 
 @end
