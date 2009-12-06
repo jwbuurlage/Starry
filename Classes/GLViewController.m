@@ -336,6 +336,9 @@
 				}
 				else {
 					if ([[[renderer interface] theNameplate] visible]) {
+						
+						[[[renderer interface] theNameplate] hide];
+						
 						SRStar * ster;
 						for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
 							ster.selected = NO;
@@ -343,7 +346,7 @@
 						[[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
 						[renderer loadStarPoints];
 						
-						[[[renderer interface] theNameplate] hide];
+						
 					}
 				}
 				
