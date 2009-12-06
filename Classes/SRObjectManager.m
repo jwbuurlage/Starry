@@ -150,13 +150,12 @@
 	
 	[sun recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
 	
-	Vertex3D earthPosition = [[planets objectAtIndex:0] position];
 	SRPlanetaryObject *planet;
 	
 	for (planet in planets) {
 		[planet recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
 		if (planet.a != 1) {
-			[planet setViewOrigin:earthPosition];
+			[planet setViewOrigin:[[planets objectAtIndex:0] position]];
 		}
 	}
 	
