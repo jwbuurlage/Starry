@@ -264,106 +264,128 @@
 			plY = -15*brY;
 			plZ = -15*brZ;
 			
-			SRPlanetaryObject * planet;
-			SRPlanetaryObject * closestPlanet;
-			float xd,yd,zd,planetD,closestD;
-			closestD = 15; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
+			
+			
 			float zoomingValue = [camera zoomingValue];
-			for(planet in [[[[UIApplication sharedApplication] delegate] objectManager] planets]) {
+			float xd,yd,zd,sunD;
+			
+			SRSun * sun = [[[[UIApplication sharedApplication] delegate] objectManager] sun];
+			xd = sun.position.x-plX;
+			yd = sun.position.y-plY;
+			zd = sun.position.z-plZ;
+			sunD = sqrt(xd*xd + yd*yd + zd*zd);
+			
+			if (sunD < (2 * (1/zoomingValue))) {
+				[[[renderer interface] theNameplate] setName:@"Zon" inConstellation:@"onze ster" showInfo:YES];
 				
-				
-				// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
-				xd = planet.position.x-plX;
-				yd = planet.position.y-plY;
-				zd = planet.position.z-plZ;
-				planetD = sqrt(xd*xd + yd*yd + zd*zd);
-				if (planetD < closestD) {
-					closestD = planetD;
-					closestPlanet = planet;
-					//NSLog(@"Closest planet:%@",planet.name);
-				}
-			}
-			if (closestD < (2 * (0.7/zoomingValue))) {
-				//NSLog(@"Delta of closest: %f",closestD);
-				[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
-				
-				Vertex3D position = closestPlanet.position;
+				//Vertex3D position = ;
+				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y-0.2, sun.position.z);
 				
 				[renderer setHighlightPosition:position];
-				[renderer setHighlightSize:64]; 
+				[renderer setHighlightSize:80]; 
 				[renderer setHighlight:TRUE];
 			}
 			else {
-				
-				SRStar * star;
-				SRStar * closestStar;
-				float starD;
-				closestD = 20; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
-				
-				for(star in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
+				float planetD,closestD;
+				closestD = 15; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
+				SRPlanetaryObject * planet;
+				SRPlanetaryObject * closestPlanet;
+				for(planet in [[[[UIApplication sharedApplication] delegate] objectManager] planets]) {
 					
 					
 					// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
-					xd = [[star x] floatValue]-stX;
-					yd = [[star y] floatValue]-stY;
-					zd = [[star z] floatValue]-stZ;
-					starD = sqrt(xd*xd + yd*yd + zd*zd);
+					xd = planet.position.x-plX;
+					yd = planet.position.y-plY;
+					zd = planet.position.z-plZ;
+					planetD = sqrt(xd*xd + yd*yd + zd*zd);
+					if (planetD < closestD) {
+						closestD = planetD;
+						closestPlanet = planet;
+						//NSLog(@"Closest planet:%@",planet.name);
+					}
+				}
+				if (closestD < (2 * (1/zoomingValue))) {
+					//NSLog(@"Delta of closest: %f",closestD);
+					[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
 					
-					if ([star visibleWithZoom:zoomingValue]) {
-						if (starD < closestD) {
-							
-							closestD = starD;
-							closestStar = star;
+					Vertex3D position = closestPlanet.position;
+					
+					[renderer setHighlightPosition:position];
+					[renderer setHighlightSize:64]; 
+					[renderer setHighlight:TRUE];
+				}
+				else {
+					
+					SRStar * star;
+					SRStar * closestStar;
+					float starD;
+					closestD = 20; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
+					
+					for(star in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
+						
+						
+						// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
+						xd = [[star x] floatValue]-stX;
+						yd = [[star y] floatValue]-stY;
+						zd = [[star z] floatValue]-stZ;
+						starD = sqrt(xd*xd + yd*yd + zd*zd);
+						
+						if ([star visibleWithZoom:zoomingValue]) {
+							if (starD < closestD) {
+								
+								closestD = starD;
+								closestStar = star;
+								
+							}
 							
 						}
 						
 					}
 					
-				}
-				
-				if (closestD < (1.5 * (0.7/zoomingValue))) {
-					//NSLog(@"Delta of closest: %f",closestD);
-					if (closestStar.name == @"" || closestStar.name == @" ") {
-						[[[renderer interface] theNameplate] setName:@"Naamloze ster" inConstellation:closestStar.bayer showInfo:NO];
-					}
-					else {
-						[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
-					}
-					
-					
-					Vertex3D position = Vector3DMake([closestStar.x floatValue], [closestStar.y floatValue], [closestStar.z floatValue]);
-					
-					[renderer setHighlightPosition:position];
-					[renderer setHighlightSize:32]; 
-					[renderer setHighlight:TRUE];
-					
-					// CPU intensieve method
-					// Dit moet anders bijvoorbeeld met een selector texture op de x,y,z locatie in de renderer
-					/*SRStar * ster;
-					 for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
-					 ster.selected = NO;
-					 }
-					 closestStar.selected = YES;
-					 [[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
-					 [renderer loadStarPoints];*/
-				}
-				else {
-					if ([[[renderer interface] theNameplate] visible]) {
+					if (closestD < (1.5 * (1/zoomingValue))) {
+						//NSLog(@"Delta of closest: %f",closestD);
+						if (closestStar.name == @"" || closestStar.name == @" ") {
+							[[[renderer interface] theNameplate] setName:@"Naamloze ster" inConstellation:closestStar.bayer showInfo:NO];
+						}
+						else {
+							[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
+						}
 						
-						[renderer setHighlight:FALSE];
-						[[[renderer interface] theNameplate] hide];
 						
+						Vertex3D position = Vector3DMake([closestStar.x floatValue], [closestStar.y floatValue], [closestStar.z floatValue]);
+						
+						[renderer setHighlightPosition:position];
+						[renderer setHighlightSize:32]; 
+						[renderer setHighlight:TRUE];
+						
+						// CPU intensieve method
+						// Dit moet anders bijvoorbeeld met een selector texture op de x,y,z locatie in de renderer
 						/*SRStar * ster;
 						 for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
 						 ster.selected = NO;
 						 }
+						 closestStar.selected = YES;
 						 [[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
 						 [renderer loadStarPoints];*/
-						
-						
 					}
-				}
-				
+					else {
+						if ([[[renderer interface] theNameplate] visible]) {
+							
+							[renderer setHighlight:FALSE];
+							[[[renderer interface] theNameplate] hide];
+							
+							/*SRStar * ster;
+							 for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
+							 ster.selected = NO;
+							 }
+							 [[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
+							 [renderer loadStarPoints];*/
+							
+							
+						}
+					}
+					
+				}	
 			}
 			
 			

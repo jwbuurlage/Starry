@@ -159,6 +159,8 @@
 	if([[[interface timeModule] manager] totalInterval] > 10000 || [[[interface timeModule] manager] totalInterval] < -10000) {
 		[self loadPlanetPoints];
 		[[[interface timeModule] manager] setTotalInterval:0];
+		// FIXME: recalculate highlight for planet moved
+		highlight = FALSE;
 	}
 	
 	[interface renderInterface];
@@ -205,7 +207,7 @@
 	glDisableClientState(GL_COLOR_ARRAY);
 	
 	glLineWidth(1.5f);
-	glColor4f(0.4f, 0.4f, 0.4f, 0.1f);
+	glColor4f(0.4f, 0.4f, 0.4f, 0.3f);
 	glVertexPointer(3, GL_FLOAT, 12, constellationPoints);
     glDrawArrays(GL_LINES, 0, constellationNum);
 		

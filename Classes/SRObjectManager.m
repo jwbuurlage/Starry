@@ -14,7 +14,8 @@
 
 @synthesize constellations,constellationNum,constellationPoints,
 			planets,planetNum,planetPoints,
-			stars,starNum,starPoints;
+			stars,starNum,starPoints,
+			sun;
 
 -(id)init {
     

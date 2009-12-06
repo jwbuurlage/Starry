@@ -27,4 +27,15 @@
 	}
 	return self;
 }
+-(void)setBrightnessFactor:(float)factor {
+	if (factor > 1.5) {
+		brightnessFactor = 1.5;
+	}
+	else if (factor < 0.5) {
+		brightnessFactor = 0.5;
+	}
+	else {
+		brightnessFactor = factor;
+	}
+}
 @end

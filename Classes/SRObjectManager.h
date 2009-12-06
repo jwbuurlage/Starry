@@ -33,8 +33,8 @@
 	NSMutableArray * stars;
 	NSMutableArray * constellations;
 	
-	float brightnessFactor;
-	float zoomFactor;
+	//float brightnessFactor;
+	//float zoomFactor;
 	
 	//id *appDelegate;
 }
@@ -42,6 +42,7 @@
 @property (nonatomic, retain) NSMutableArray *stars;
 @property (nonatomic, retain) NSMutableArray *constellations;
 @property (readonly) NSMutableArray *planets;
+@property (readonly) SRSun *sun;
 
 @property (readonly) NSMutableArray *planetPoints;
 @property (readonly) int planetNum;
