@@ -44,6 +44,7 @@
 		[interface loadTexture:@"sun.png" intoLocation:textures[5]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[6]];
 		[interface loadTexture:@"highlight.png" intoLocation:textures[7]];
+		[interface loadTexture:@"highlight_small.png" intoLocation:textures[8]];
 
 		/*[interface loadTexture:@"planet.png" intoLocation:textures[7]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[8]];
@@ -263,8 +264,14 @@
 		};
 	
 		glPointSize(highlightSize * [camera zoomingValue]);
-		glBindTexture(GL_TEXTURE_2D, textures[7]);
-	
+		if((highlightSize * [camera zoomingValue]) < 50) {
+			glBindTexture(GL_TEXTURE_2D, textures[8]);
+		}
+		else {
+			glBindTexture(GL_TEXTURE_2D, textures[7]);
+		}
+		
+		glColor4f(1.0f,0.6f,0.0f,1.0f);
 		glVertexPointer(3, GL_FLOAT, 12, points);
 
 		glDrawArrays(GL_POINTS, 0, 1);
