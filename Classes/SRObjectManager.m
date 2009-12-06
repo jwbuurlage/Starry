@@ -206,21 +206,16 @@
 			size = [star size];
 			alpha = [star alpha];
 			
+			//starColor color = ;
+			
 			matrixStartPos = starNum * 8;
 			starPointsTmp[matrixStartPos] = [star.x floatValue];
 			starPointsTmp[matrixStartPos+1] = [star.y floatValue];
 			starPointsTmp[matrixStartPos+2] = [star.z floatValue];
-			if(star.selected) {
-				starPointsTmp[matrixStartPos+3] = 0.9;
-				starPointsTmp[matrixStartPos+4] = 0.9;
-				starPointsTmp[matrixStartPos+5] = 0.0;
-			}
-			else {
-				starPointsTmp[matrixStartPos+3] = 0.9;
-				starPointsTmp[matrixStartPos+4] = 0.9;
-				starPointsTmp[matrixStartPos+5] = 0.9;
-			}
-			starPointsTmp[matrixStartPos+6] = alpha;
+			starPointsTmp[matrixStartPos+3] = [star color].red;
+			starPointsTmp[matrixStartPos+4] = [star color].green;
+			starPointsTmp[matrixStartPos+5] = [star color].blue;
+			starPointsTmp[matrixStartPos+6] = [star alpha];
 			starPointsTmp[matrixStartPos+7] = size;
 			starNum++;
 		}

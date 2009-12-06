@@ -14,6 +14,23 @@
 #import <UIKit/UIKit.h>
 //#import "OpenGLCommon.h"
 
+typedef struct {
+	float red;
+	float green;
+	float blue;
+	float alpha;
+} StarColor;
+
+static inline StarColor StarColorMake(float inRed, float inGreen, float inBlue, float inAlpha)
+{
+    StarColor ret;
+	ret.red = inRed;
+	ret.green = inGreen;
+	ret.blue = inBlue;
+	ret.alpha = inAlpha;
+    return ret;
+}
+
 @interface SRStar : NSObject {
 	
 	int starID;
@@ -28,6 +45,8 @@
 	
 }
 
+
+
 @property (nonatomic, readwrite) int starID;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * bayer;
@@ -40,6 +59,7 @@
 
 -(BOOL)visibleWithZoom:(float)zoomf;
 -(float)size;
+-(StarColor)color;
 -(float)alpha;
 
 @end

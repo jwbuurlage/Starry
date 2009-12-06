@@ -20,7 +20,7 @@
 #pragma mark SRRaDec
 #pragma mark -
 typedef struct {
-	float	ra;
+	float ra;
 	float dec;
 } SRRaDec;
 
@@ -65,6 +65,7 @@ typedef struct {
 	GLfloat	blue;
 	GLfloat alpha;
 } Color3D;
+
 static inline Color3D Color3DMake(CGFloat inRed, CGFloat inGreen, CGFloat inBlue, CGFloat inAlpha)
 {
     Color3D ret;

@@ -65,6 +65,39 @@
 	return size;
 }
 
+-(StarColor)color {
+	//http://en.wikipedia.org/wiki/Color_index
+	//http://domeofthesky.com/clicks/bv.html
+	//color index: lager: blauwer, hoger: roder
+	StarColor color;
+	if([ci floatValue] > 1.2) {
+		//rood
+		color = StarColorMake(1.0f, 0.7f, 0.7f, [self alpha]);
+	}
+	else if([ci floatValue] > 0.7) {
+		//oranje
+		color = StarColorMake(1.0, 0.8f, 0.7f, [self alpha]);
+	}
+	else if([ci floatValue] > 0.5) {
+		//geel
+		color = StarColorMake(1.0f, 1.0f, 0.7f, [self alpha]);
+	}
+	else if([ci floatValue] > 0.25) {
+		//geelachtig
+		color = StarColorMake(1.0f, 1.0f, 0.8f, [self alpha]);
+	}
+	else if([ci floatValue] > 0.0) {
+		//wit
+		color = StarColorMake(1.0f, 1.0f, 1.0f, [self alpha]);
+	}
+	else {
+		//blauw
+		color = StarColorMake(0.7f, 0.7f, 1.0f, [self alpha]);
+	}
+	
+	return color;
+}
+
 -(float)alpha {
 	float alpha;
 	if([mag floatValue] < 1) {

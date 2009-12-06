@@ -124,6 +124,7 @@
 	//camera positie callen
 	[camera adjustView];
 	
+	//welke alpha func? FIXME
 	glEnable(GL_ALPHA_TEST);
 	glAlphaFunc(GL_GREATER, 0.0f);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -271,7 +272,7 @@
 			glBindTexture(GL_TEXTURE_2D, textures[7]);
 		}
 		
-		glColor4f(1.0f,0.6f,0.0f,1.0f);
+		glColor4f(1.0f,1.0f,1.0f,0.5f);
 		glVertexPointer(3, GL_FLOAT, 12, points);
 
 		glDrawArrays(GL_POINTS, 0, 1);
