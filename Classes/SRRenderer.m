@@ -144,9 +144,15 @@
 	if([[appDelegate settingsManager] showConstellations]) {
 		[self drawConstellations]; }
 	[self drawStars];
-	[self drawHighlight];
+	
+	glDisable(GL_DEPTH_TEST);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	[self drawEcliptic];
+	[self drawHighlight];
 	[self drawPlanets];
+	glEnable(GL_DEPTH_TEST);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 	
 	[self adjustViewToLocationAndTime:NO];
 	
@@ -154,7 +160,6 @@
 	[self drawCompass];
 	
 
-	glDisable(GL_ALPHA_TEST);
 	glDisable(GL_BLEND);
 
 	if([[[interface timeModule] manager] totalInterval] > 1000 || [[[interface timeModule] manager] totalInterval] < -1000) {

@@ -182,7 +182,7 @@
 		[[planets objectAtIndex:7] position].x, [[planets objectAtIndex:7] position].y, [[planets objectAtIndex:7] position].z,	1.0, 1.0, 1.0, 1.0, 10.0
 	};
 	
-	planetNum = 8;
+	planetNum = 9;
 	
 	if (planetPoints) {
 		[planetPoints release];
