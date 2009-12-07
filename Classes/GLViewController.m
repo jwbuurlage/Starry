@@ -276,7 +276,7 @@
 			sunD = sqrt(xd*xd + yd*yd + zd*zd);
 			
 			if (sunD < (2 * (1/zoomingValue))) {
-				[[[renderer interface] theNameplate] setName:@"Zon" inConstellation:@"" showInfo:YES];
+				[[[renderer interface] theNameplate] setName:@"Zon" inConstellation:@"onze ster" showInfo:YES];
 				
 				//Vertex3D position = ;
 				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y, sun.position.z);
@@ -285,7 +285,7 @@
 				[renderer setHighlightSize:80]; 
 				[renderer setHighlight:TRUE];
 			}
-						
+			else {			
 			SRMoon * moon = [[[[UIApplication sharedApplication] delegate] objectManager] moon];
 			xd = moon.position.x-plX;
 			yd = moon.position.y-plY;
@@ -402,6 +402,8 @@
 							
 						}
 					}
+					
+				}
 					
 				}	
 			}
