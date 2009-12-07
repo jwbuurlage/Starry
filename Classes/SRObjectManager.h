@@ -21,56 +21,50 @@
 
 
 @interface SRObjectManager : NSObject {
+	NSMutableArray * planets;
 	NSMutableArray * planetPoints;
 	int planetNum;
+	SRSun* sun;
+	SRMoon* moon;
 	
+	NSMutableArray * stars;
 	NSMutableArray * starPoints;
 	int starNum;
 	
+	NSMutableArray * constellations;
 	NSMutableArray * constellationPoints;
 	int constellationNum;
 	
+	NSMutableArray * messier;
 	NSMutableArray * messierPoints;
 	int messierNum;
 	
-	SRSun* sun;
-	SRMoon* moon;
-	NSMutableArray * planets;
-	NSMutableArray * stars;
-	NSMutableArray * constellations;
-	NSMutableArray * messier;
-	
-	//float brightnessFactor;
-	//float zoomFactor;
-	
-	//id *appDelegate;
 }
 
-@property (nonatomic, retain) NSMutableArray *stars;
-@property (nonatomic, retain) NSMutableArray *constellations;
-@property (nonatomic, retain) NSMutableArray *messier;
 @property (readonly) NSMutableArray *planets;
+@property (readonly) NSMutableArray *planetPoints;
+@property (readonly) int planetNum;
 @property (readonly) SRSun *sun;
 @property (readonly) SRMoon *moon;
 
-@property (readonly) NSMutableArray *planetPoints;
-@property (readonly) int planetNum;
+@property (nonatomic, retain) NSMutableArray *stars;
 @property (readonly) NSMutableArray *starPoints;
 @property (readonly) int starNum;
+
+@property (nonatomic, retain) NSMutableArray *constellations;
 @property (readonly) NSMutableArray *constellationPoints;
 @property (readonly) int constellationNum;
+
+@property (nonatomic, retain) NSMutableArray *messier;
 @property (readonly) NSMutableArray * messierPoints;
 @property (readonly) int messierNum;
 
-
-
-//@property (readonly) GLfloat planetPoints;
 
 -(id)init;
 -(void)parseData;
 -(void)buildPlanetData;
 -(void)buildStarData;
 -(void)buildConstellationData;
-//-(NSMutableArray*)planetPoints;
+-(void)buildMessierData;
 
 @end
