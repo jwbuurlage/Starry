@@ -74,6 +74,8 @@
 		ACB7B11710615C1000CA447E /* SRCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB7B11610615C1000CA447E /* SRCamera.m */; };
 		ACB7B16C10615F4F00CA447E /* SRRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */; };
 		ACB8F19B10CC76F700C0F87E /* location_on.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8F19A10CC76F700C0F87E /* location_on.png */; };
+		ACC4934C10CD6A8D00DC7967 /* SRMoon.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC4934B10CD6A8D00DC7967 /* SRMoon.m */; };
+		ACC493A210CD777600DC7967 /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = ACC493A110CD777600DC7967 /* moon.png */; };
 		ACEC7CF3109B25A700149C80 /* SRStar.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF0109B25A700149C80 /* SRStar.m */; };
 		ACEC7CF4109B25A700149C80 /* SRSun.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF2109B25A700149C80 /* SRSun.m */; };
 		ACF3D1FA10CBE50E002450B6 /* highlight_small.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF3D1F910CBE50E002450B6 /* highlight_small.png */; };
@@ -176,6 +178,9 @@
 		ACB7B16A10615F4F00CA447E /* SRRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRenderer.h; sourceTree = "<group>"; };
 		ACB7B16B10615F4F00CA447E /* SRRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRenderer.m; sourceTree = "<group>"; };
 		ACB8F19A10CC76F700C0F87E /* location_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location_on.png; path = Resources/location_on.png; sourceTree = "<group>"; };
+		ACC4934A10CD6A8D00DC7967 /* SRMoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMoon.h; sourceTree = "<group>"; };
+		ACC4934B10CD6A8D00DC7967 /* SRMoon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRMoon.m; sourceTree = "<group>"; };
+		ACC493A110CD777600DC7967 /* moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moon.png; path = Resources/moon.png; sourceTree = "<group>"; };
 		ACEC7CEF109B25A700149C80 /* SRStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStar.h; sourceTree = "<group>"; };
 		ACEC7CF0109B25A700149C80 /* SRStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStar.m; sourceTree = "<group>"; };
 		ACEC7CF1109B25A700149C80 /* SRSun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSun.h; sourceTree = "<group>"; };
@@ -256,6 +261,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ACC493A110CD777600DC7967 /* moon.png */,
 				AC8A87ED10C56FCE0015CDF5 /* latitude.png */,
 				AC8A89FB10C5986E0015CDF5 /* defaultTexture.png */,
 				AC8A87EE10C56FCE0015CDF5 /* location_off.png */,
@@ -309,6 +315,8 @@
 				AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */,
 				ACEC7CEF109B25A700149C80 /* SRStar.h */,
 				ACEC7CF0109B25A700149C80 /* SRStar.m */,
+				ACC4934A10CD6A8D00DC7967 /* SRMoon.h */,
+				ACC4934B10CD6A8D00DC7967 /* SRMoon.m */,
 				ACEC7CF1109B25A700149C80 /* SRSun.h */,
 				ACEC7CF2109B25A700149C80 /* SRSun.m */,
 			);
@@ -494,6 +502,7 @@
 				ACFAF6F510CBD02400A6AB77 /* highlight.png in Resources */,
 				ACF3D1FA10CBE50E002450B6 /* highlight_small.png in Resources */,
 				ACB8F19B10CC76F700C0F87E /* location_on.png in Resources */,
+				ACC493A210CD777600DC7967 /* moon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +539,7 @@
 				AC9A926B10C6F1C500657268 /* SRConstellationLine.m in Sources */,
 				76179CF410CA61D500768180 /* SRObjectManager.m in Sources */,
 				76030C6C10CBBA260074B0CE /* SRSettingsManager.m in Sources */,
+				ACC4934C10CD6A8D00DC7967 /* SRMoon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

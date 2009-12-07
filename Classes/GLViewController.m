@@ -267,7 +267,7 @@
 			
 			
 			float zoomingValue = [camera zoomingValue];
-			float xd,yd,zd,sunD;
+			float xd,yd,zd,sunD,moonD;
 			
 			SRSun * sun = [[[[UIApplication sharedApplication] delegate] objectManager] sun];
 			xd = sun.position.x-plX;
@@ -276,15 +276,33 @@
 			sunD = sqrt(xd*xd + yd*yd + zd*zd);
 			
 			if (sunD < (2 * (1/zoomingValue))) {
-				[[[renderer interface] theNameplate] setName:@"Zon" inConstellation:@"onze ster" showInfo:YES];
+				[[[renderer interface] theNameplate] setName:@"Zon" inConstellation:@"" showInfo:YES];
 				
 				//Vertex3D position = ;
-				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y-0.2, sun.position.z);
+				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y, sun.position.z);
 				
 				[renderer setHighlightPosition:position];
 				[renderer setHighlightSize:80]; 
 				[renderer setHighlight:TRUE];
 			}
+						
+			SRMoon * moon = [[[[UIApplication sharedApplication] delegate] objectManager] moon];
+			xd = moon.position.x-plX;
+			yd = moon.position.y-plY;
+			zd = moon.position.z-plZ;
+			moonD = sqrt(xd*xd + yd*yd + zd*zd);
+			
+			if (moonD < (2 * (1/zoomingValue))) {
+				[[[renderer interface] theNameplate] setName:@"Maan" inConstellation:@"" showInfo:YES];
+				
+				//Vertex3D position = ;
+				Vertex3D position = Vector3DMake(moon.position.x, moon.position.y, moon.position.z);
+				
+				[renderer setHighlightPosition:position];
+				[renderer setHighlightSize:80]; 
+				[renderer setHighlight:TRUE];
+			}
+			
 			else {
 				float planetD,closestD;
 				closestD = 15; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden

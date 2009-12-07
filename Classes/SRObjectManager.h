@@ -13,6 +13,7 @@
 #import "SRSun.h"
 #import "SRCamera.h"
 #import "SRStar.h"
+#import "SRMoon.h"
 #import "SRConstellation.h"
 #import "SRInterface.h"
 #import "SRLocation.h"
@@ -29,6 +30,7 @@
 	int constellationNum;
 	
 	SRSun* sun;
+	SRMoon* moon;
 	NSMutableArray * planets;
 	NSMutableArray * stars;
 	NSMutableArray * constellations;
@@ -43,6 +45,7 @@
 @property (nonatomic, retain) NSMutableArray *constellations;
 @property (readonly) NSMutableArray *planets;
 @property (readonly) SRSun *sun;
+@property (readonly) SRMoon *moon;
 
 @property (readonly) NSMutableArray *planetPoints;
 @property (readonly) int planetNum;

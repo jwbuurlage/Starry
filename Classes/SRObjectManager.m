@@ -15,7 +15,7 @@
 @synthesize constellations,constellationNum,constellationPoints,
 			planets,planetNum,planetPoints,
 			stars,starNum,starPoints,
-			sun;
+			sun, moon;
 
 -(id)init {
     
@@ -60,7 +60,7 @@
 
 -(void)buildPlanetData {
 	if ([planets count] < 1) {
-		
+		moon = [[SRMoon alloc] init];
 		sun = [[SRSun alloc] init];
 		//[planets addObject:sun];
 		//[sun release];
@@ -150,6 +150,7 @@
 	}
 	
 	[sun recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
+	[moon recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
 	
 	SRPlanetaryObject *planet;
 	
@@ -163,6 +164,8 @@
 	const GLfloat planetPointsTmp[] = {
 		// de Zon
 		[sun position].x, [sun position].y, [sun position].z,																	1.0, 1.0, 0.0, 1.0, 70.0,
+		//de maan
+		[moon position].x, [moon position].y, [moon position].z,																1.0, 1.0, 1.0, 1.0, 32.0,		
 		// Jupiter
 		[[planets objectAtIndex:1] position].x, [[planets objectAtIndex:1] position].y, [[planets objectAtIndex:1] position].z,	1.0, 1.0, 1.0, 1.0, 30.0,
 		// Mars
