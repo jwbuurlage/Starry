@@ -284,8 +284,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>10</integer>
-									<integer>4</integer>
+									<integer>39</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -326,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRObjectManager.m</string>
+								<string>SRRenderer.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRObjectManager.m</string>
+										<string>SRRenderer.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ACC4946310CD809B00DC7967</string>
+										<string>ACC4947B10CD821C00DC7967</string>
 										<key>history</key>
 										<array>
 											<string>AC4F895D109DF65700B8BD64</string>
@@ -398,7 +397,6 @@
 											<string>ACB8F12D10CC6E8500C0F87E</string>
 											<string>ACB8F17410CC713700C0F87E</string>
 											<string>ACB8F1A210CC77C100C0F87E</string>
-											<string>ACB8F1A410CC77C100C0F87E</string>
 											<string>ACB8F1A810CC77C100C0F87E</string>
 											<string>ACB8F1A910CC77C100C0F87E</string>
 											<string>ACB8F1AA10CC77C100C0F87E</string>
@@ -429,9 +427,11 @@
 											<string>ACC4945D10CD809B00DC7967</string>
 											<string>ACC4945E10CD809B00DC7967</string>
 											<string>ACC4945F10CD809B00DC7967</string>
-											<string>ACC4946010CD809B00DC7967</string>
 											<string>ACC4946110CD809B00DC7967</string>
-											<string>ACC4946210CD809B00DC7967</string>
+											<string>ACC4946F10CD81C300DC7967</string>
+											<string>ACC4947010CD81C300DC7967</string>
+											<string>ACC4947110CD81C300DC7967</string>
+											<string>ACC4947210CD81C300DC7967</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -749,7 +749,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ACC4946410CD809B00DC7967</string>
+		<string>ACC4947C10CD821C00DC7967</string>
 		<string>ACC4938510CD751900DC7967</string>
 		<string>ACC4938010CD6E1700DC7967</string>
 		<string>/Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Sterren.xcodeproj</string>
