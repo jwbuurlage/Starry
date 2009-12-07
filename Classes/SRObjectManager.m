@@ -15,13 +15,15 @@
 @synthesize constellations,constellationNum,constellationPoints,
 			planets,planetNum,planetPoints,
 			stars,starNum,starPoints,
-			sun, moon;
+			sun, moon,
+			messier,messierNum,messierPoints;
 
 -(id)init {
     
     if(self = [super init]) {
 		stars = [[NSMutableArray alloc] init];
 		constellations = [[NSMutableArray alloc] init];
+		messier = [[NSMutableArray alloc] init];
 		planets = [[NSMutableArray alloc] init];
 		
 		//appDelegate = [[UIApplication sharedApplication] delegate];
@@ -55,6 +57,19 @@
 	else {
 		NSLog(@"Constellations Parse error"); 
 	}
+	
+	NSData * dataMessier = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"messier" ofType: @"xml"]];
+	NSXMLParser *xmlParserMessier = [[NSXMLParser alloc] initWithData:dataMessier];
+	XMLParser *parserMessier = [[XMLParser alloc] initXMLParser];
+	[xmlParserMessier setDelegate:parserMessier];
+	success = [xmlParserMessier parse];
+	
+	if(success) {
+		NSLog(@"Messier Parse completed");
+	}
+	else {
+		NSLog(@"Messier Parse error"); 
+	} 
 	
 }
 
@@ -266,6 +281,30 @@
 	
 	for (int i=0; i <= lineCount; i++) {
 		[constellationPoints addObject:[NSNumber numberWithFloat:constellationPointsTmp[i]]];
+		//NSLog(@"%i", i);
+	}
+}
+
+-(void)buildMessierData {
+	messierNum = 0;
+	GLfloat messierPointsTmp[5000];
+	SRMessier * aMessier;
+	
+	for(aMessier in messier) {
+		messierPointsTmp[(messierNum * 3)] = aMessier.position.x;
+		messierPointsTmp[(messierNum * 3)+1] = aMessier.position.y;
+		messierPointsTmp[(messierNum * 3)+2] = aMessier.position.z;
+		
+		++messierNum;
+	}
+	
+	if (constellationPoints) {
+		[constellationPoints release];
+	}
+	messierPoints = [[NSMutableArray alloc] init];
+	
+	for (int i=0; i <= (messierNum * 3); i++) {
+		[messierPoints addObject:[NSNumber numberWithFloat:messierPointsTmp[i]]];
 		//NSLog(@"%i", i);
 	}
 }

@@ -46,6 +46,7 @@
 		[interface loadTexture:@"planet.png" intoLocation:textures[7]];
 		[interface loadTexture:@"highlight.png" intoLocation:textures[8]];
 		[interface loadTexture:@"highlight_small.png" intoLocation:textures[9]];
+		[interface loadTexture:@"messier.png" intoLocation:textures[10]];
 
 		/*[interface loadTexture:@"planet.png" intoLocation:textures[7]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[8]];
@@ -69,9 +70,9 @@
 		[self loadPlanetPoints];
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity(); 
-		glEnable(GL_DEPTH_TEST);
 		[self loadStarPoints];
 		[self loadConstellations];
+		[self loadMessier];
 		
 	}
 	return self;
@@ -83,6 +84,16 @@
 	planetNum = [objectManager planetNum];
 	for (int i=0; i < planetNum*8; i++) {
 		planetPoints[i] = [[planetPointsTmp objectAtIndex:i] floatValue];
+		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
+	}	
+}
+
+-(void)loadMessier {
+	[objectManager buildMessierData];
+	NSMutableArray * messierPointsTmp = [objectManager messierPoints];
+	messierNum = [objectManager messierNum];
+	for (int i=0; i < messierNum*3; i++) {
+		messierPoints[i] = [[messierPointsTmp objectAtIndex:i] floatValue];
 		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
 	}	
 }
@@ -144,13 +155,13 @@
 	if([[appDelegate settingsManager] showConstellations]) {
 		[self drawConstellations]; }
 	[self drawStars];
+	[self drawMessier];
 	
 	glDisable(GL_DEPTH_TEST);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	[self drawEcliptic];
 	[self drawHighlight];
 	[self drawPlanets];
-	glEnable(GL_DEPTH_TEST);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	
@@ -219,6 +230,27 @@
 		
 	glEnableClientState(GL_COLOR_ARRAY);
 }
+
+-(void)drawMessier {
+	glEnable(GL_POINT_SPRITE_OES);
+	glTexEnvi(GL_POINT_SPRITE_OES, GL_COORD_REPLACE_OES, GL_TRUE);	
+	glEnable(GL_TEXTURE_2D);
+	
+	glDisableClientState(GL_COLOR_ARRAY);
+	
+	glPointSize(4.0 * [camera zoomingValue]);
+	glColor4f(0.5f, 0.5f, 0.5f, 0.8f);
+	glVertexPointer(3, GL_FLOAT, 12, messierPoints);
+	glBindTexture(GL_TEXTURE_2D, textures[10]);
+    glDrawArrays(GL_POINTS, 0, messierNum);
+	
+	glEnableClientState(GL_COLOR_ARRAY);
+	
+	glDisable(GL_POINT_SPRITE_OES);
+	glDisable(GL_TEXTURE_2D);
+	glDisableClientState(GL_POINT_SIZE_ARRAY_OES);
+}
+
 
 -(void)drawPlanets {
 	glEnable(GL_POINT_SPRITE_OES);

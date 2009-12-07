@@ -302,7 +302,6 @@
 				[renderer setHighlightSize:80]; 
 				[renderer setHighlight:TRUE];
 			}
-			
 			else {
 				float planetD,closestD;
 				closestD = 15; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
@@ -333,6 +332,34 @@
 					[renderer setHighlight:TRUE];
 				}
 				else {
+					float messierD;
+					closestD = 18; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
+					SRMessier * aMessier;
+					SRMessier * closestMessier;
+					for(aMessier in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
+						xd = aMessier.position.x-plX;
+						yd = aMessier.position.y-plY;
+						zd = aMessier.position.z-plZ;
+						messierD = sqrt(xd*xd + yd*yd + zd*zd);
+						if (messierD < closestD) {
+							closestD = messierD;
+							NSLog(@"closestD: %f", closestD);
+							closestMessier = aMessier;
+							NSLog(@"Closest messier:%@",closestMessier.name);
+						}						
+					}
+					//FIXME waarom zo'n raar getal?
+					if(closestD < (5.1)) {
+						
+						[[[renderer interface] theNameplate] setName:closestMessier.name inConstellation:@"messier" showInfo:YES];
+						
+						Vertex3D position = closestMessier.position;
+						
+						[renderer setHighlightPosition:position];
+						[renderer setHighlightSize:32]; 
+						[renderer setHighlight:TRUE];						
+					}
+					else {
 					
 					SRStar * star;
 					SRStar * closestStar;
@@ -401,6 +428,7 @@
 							
 							
 						}
+					}
 					}
 					
 				}
