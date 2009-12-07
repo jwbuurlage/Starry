@@ -278,8 +278,8 @@
 			if (sunD < (2 * (1/zoomingValue))) {
 				[[[renderer interface] theNameplate] setName:@"Zon" inConstellation:@"onze ster" showInfo:YES];
 				
-				//Vertex3D position = ;
-				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y-0.2, sun.position.z);
+				Vertex3D position = sun.position;
+				//Vertex3D position = Vector3DMake(sun.position.x, sun.position.y-0.2, sun.position.z);
 				
 				[renderer setHighlightPosition:position];
 				[renderer setHighlightSize:80]; 
