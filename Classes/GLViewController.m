@@ -267,7 +267,7 @@
 			
 			
 			float zoomingValue = [camera zoomingValue];
-			float xd,yd,zd,sunD;
+			float xd,yd,zd,sunD,moonD;
 			
 			SRSun * sun = [[[[UIApplication sharedApplication] delegate] objectManager] sun];
 			xd = sun.position.x-plX;
@@ -278,8 +278,30 @@
 			if (sunD < (2 * (1/zoomingValue))) {
 				[[[renderer interface] theNameplate] setName:@"Zon" inConstellation:@"onze ster" showInfo:YES];
 				
+//<<<<<<< HEAD:Classes/GLViewController.m
 				Vertex3D position = sun.position;
 				//Vertex3D position = Vector3DMake(sun.position.x, sun.position.y-0.2, sun.position.z);
+//=======
+				//Vertex3D position = ;
+//				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y, sun.position.z);
+				
+				[renderer setHighlightPosition:position];
+				[renderer setHighlightSize:80]; 
+				[renderer setHighlight:TRUE];
+			}
+			else {			
+			SRMoon * moon = [[[[UIApplication sharedApplication] delegate] objectManager] moon];
+			xd = moon.position.x-plX;
+			yd = moon.position.y-plY;
+			zd = moon.position.z-plZ;
+			moonD = sqrt(xd*xd + yd*yd + zd*zd);
+			
+			if (moonD < (2 * (1/zoomingValue))) {
+				[[[renderer interface] theNameplate] setName:@"Maan" inConstellation:@"" showInfo:YES];
+				
+				//Vertex3D position = ;
+				Vertex3D position = Vector3DMake(moon.position.x, moon.position.y, moon.position.z);
+//>>>>>>> 5b467e71baa2e98bbb44915d597b1fbd5ff73140:Classes/GLViewController.m
 				
 				[renderer setHighlightPosition:position];
 				[renderer setHighlightSize:80]; 
@@ -315,6 +337,34 @@
 					[renderer setHighlight:TRUE];
 				}
 				else {
+					float messierD;
+					closestD = 18; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
+					SRMessier * aMessier;
+					SRMessier * closestMessier;
+					for(aMessier in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
+						xd = aMessier.position.x-plX;
+						yd = aMessier.position.y-plY;
+						zd = aMessier.position.z-plZ;
+						messierD = sqrt(xd*xd + yd*yd + zd*zd);
+						if (messierD < closestD) {
+							closestD = messierD;
+							NSLog(@"closestD: %f", closestD);
+							closestMessier = aMessier;
+							NSLog(@"Closest messier:%@",closestMessier.name);
+						}						
+					}
+					//FIXME waarom zo'n raar getal?
+					if(closestD < (5.1)) {
+						
+						[[[renderer interface] theNameplate] setName:closestMessier.name inConstellation:@"messier" showInfo:YES];
+						
+						Vertex3D position = closestMessier.position;
+						
+						[renderer setHighlightPosition:position];
+						[renderer setHighlightSize:32]; 
+						[renderer setHighlight:TRUE];						
+					}
+					else {
 					
 					SRStar * star;
 					SRStar * closestStar;
@@ -384,6 +434,9 @@
 							
 						}
 					}
+					}
+					
+				}
 					
 				}	
 			}

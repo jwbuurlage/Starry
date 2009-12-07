@@ -51,7 +51,9 @@
 	GLfloat stringPoints[56];
 	GLfloat starPoints[15000];
 	GLfloat constellationPoints[15000];
+	GLfloat messierPoints[1500];
 	int planetNum;
+	int messierNum;
 	int starNum;
 	int constellationNum;
 	
@@ -75,6 +77,7 @@
 -(id)setupWithOwner:(GLViewController*)theOwner;
 -(void)render;
 -(void)drawStars;
+-(void)drawMessier;
 -(void)drawHighlight;
 -(void)drawConstellations;
 -(void)drawPlanets;
@@ -86,5 +89,6 @@
 -(void)loadStarPoints;
 -(void)loadPlanetPoints;
 -(void)loadConstellations;
+-(void)loadMessier;
 
 @end

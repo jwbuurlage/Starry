@@ -13,6 +13,8 @@
 #import "SRSun.h"
 #import "SRCamera.h"
 #import "SRStar.h"
+#import "SRMessier.h"
+#import "SRMoon.h"
 #import "SRConstellation.h"
 #import "SRInterface.h"
 #import "SRLocation.h"
@@ -28,10 +30,15 @@
 	NSMutableArray * constellationPoints;
 	int constellationNum;
 	
+	NSMutableArray * messierPoints;
+	int messierNum;
+	
 	SRSun* sun;
+	SRMoon* moon;
 	NSMutableArray * planets;
 	NSMutableArray * stars;
 	NSMutableArray * constellations;
+	NSMutableArray * messier;
 	
 	//float brightnessFactor;
 	//float zoomFactor;
@@ -41,8 +48,10 @@
 
 @property (nonatomic, retain) NSMutableArray *stars;
 @property (nonatomic, retain) NSMutableArray *constellations;
+@property (nonatomic, retain) NSMutableArray *messier;
 @property (readonly) NSMutableArray *planets;
 @property (readonly) SRSun *sun;
+@property (readonly) SRMoon *moon;
 
 @property (readonly) NSMutableArray *planetPoints;
 @property (readonly) int planetNum;
@@ -50,6 +59,10 @@
 @property (readonly) int starNum;
 @property (readonly) NSMutableArray *constellationPoints;
 @property (readonly) int constellationNum;
+@property (readonly) NSMutableArray * messierPoints;
+@property (readonly) int messierNum;
+
+
 
 //@property (readonly) GLfloat planetPoints;
 

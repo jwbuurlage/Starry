@@ -42,9 +42,11 @@
 		//Dit moet anders, via loadPlanetData misschien
 		// Waarom laad je planet 6 keer in? :-S dat kan makkelijk 1 keer zijn
 		[interface loadTexture:@"sun.png" intoLocation:textures[5]];
-		[interface loadTexture:@"planet.png" intoLocation:textures[6]];
-		[interface loadTexture:@"highlight.png" intoLocation:textures[7]];
-		[interface loadTexture:@"highlight_small.png" intoLocation:textures[8]];
+		[interface loadTexture:@"moon.png" intoLocation:textures[6]];
+		[interface loadTexture:@"planet.png" intoLocation:textures[7]];
+		[interface loadTexture:@"highlight.png" intoLocation:textures[8]];
+		[interface loadTexture:@"highlight_small.png" intoLocation:textures[9]];
+		[interface loadTexture:@"messier.png" intoLocation:textures[10]];
 
 		/*[interface loadTexture:@"planet.png" intoLocation:textures[7]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[8]];
@@ -68,9 +70,9 @@
 		[self loadPlanetPoints];
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity(); 
-		glEnable(GL_DEPTH_TEST);
 		[self loadStarPoints];
 		[self loadConstellations];
+		[self loadMessier];
 		
 	}
 	return self;
@@ -82,6 +84,16 @@
 	planetNum = [objectManager planetNum];
 	for (int i=0; i < planetNum*8; i++) {
 		planetPoints[i] = [[planetPointsTmp objectAtIndex:i] floatValue];
+		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
+	}	
+}
+
+-(void)loadMessier {
+	[objectManager buildMessierData];
+	NSMutableArray * messierPointsTmp = [objectManager messierPoints];
+	messierNum = [objectManager messierNum];
+	for (int i=0; i < messierNum*3; i++) {
+		messierPoints[i] = [[messierPointsTmp objectAtIndex:i] floatValue];
 		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
 	}	
 }
@@ -143,9 +155,15 @@
 	if([[appDelegate settingsManager] showConstellations]) {
 		[self drawConstellations]; }
 	[self drawStars];
-	[self drawHighlight];
+	[self drawMessier];
+	
+	glDisable(GL_DEPTH_TEST);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	[self drawEcliptic];
+	[self drawHighlight];
 	[self drawPlanets];
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 	
 	[self adjustViewToLocationAndTime:NO];
 	
@@ -153,14 +171,13 @@
 	[self drawCompass];
 	
 
-	glDisable(GL_ALPHA_TEST);
 	glDisable(GL_BLEND);
 
-	if([[[interface timeModule] manager] totalInterval] > 10000 || [[[interface timeModule] manager] totalInterval] < -10000) {
+	if([[[interface timeModule] manager] totalInterval] > 1000 || [[[interface timeModule] manager] totalInterval] < -1000) {
 		[self loadPlanetPoints];
 		[[[interface timeModule] manager] setTotalInterval:0];
 		// FIXME: recalculate highlight for planet moved
-		highlight = FALSE;
+		//highlight = FALSE;
 	}
 	
 	[interface renderInterface];
@@ -206,13 +223,34 @@
 -(void)drawConstellations {
 	glDisableClientState(GL_COLOR_ARRAY);
 	
-	glLineWidth(1.5f);
-	glColor4f(0.4f, 0.4f, 0.4f, 0.25f);
+	glLineWidth(1.0f);
+	glColor4f(0.4f, 0.4f, 0.4f, 0.15f);
 	glVertexPointer(3, GL_FLOAT, 12, constellationPoints);
     glDrawArrays(GL_LINES, 0, constellationNum);
 		
 	glEnableClientState(GL_COLOR_ARRAY);
 }
+
+-(void)drawMessier {
+	glEnable(GL_POINT_SPRITE_OES);
+	glTexEnvi(GL_POINT_SPRITE_OES, GL_COORD_REPLACE_OES, GL_TRUE);	
+	glEnable(GL_TEXTURE_2D);
+	
+	glDisableClientState(GL_COLOR_ARRAY);
+	
+	glPointSize(4.0 * [camera zoomingValue]);
+	glColor4f(0.5f, 0.5f, 0.5f, 0.8f);
+	glVertexPointer(3, GL_FLOAT, 12, messierPoints);
+	glBindTexture(GL_TEXTURE_2D, textures[10]);
+    glDrawArrays(GL_POINTS, 0, messierNum);
+	
+	glEnableClientState(GL_COLOR_ARRAY);
+	
+	glDisable(GL_POINT_SPRITE_OES);
+	glDisable(GL_TEXTURE_2D);
+	glDisableClientState(GL_POINT_SIZE_ARRAY_OES);
+}
+
 
 -(void)drawPlanets {
 	glEnable(GL_POINT_SPRITE_OES);
@@ -233,8 +271,11 @@
 		if (i == 0) { // Bij de zon laad de zon texture in
 			glBindTexture(GL_TEXTURE_2D, textures[5]);
 		}
-		else { // Bij planeten laad de planeet texture in
+		else if (i == 1) {
 			glBindTexture(GL_TEXTURE_2D, textures[6]);
+		}
+		else { // Bij planeten laad de planeet texture in
+			glBindTexture(GL_TEXTURE_2D, textures[7]);
 		}
 		glDrawArrays(GL_POINTS,i, 1);
 		++i;
@@ -268,10 +309,10 @@
 	
 		glPointSize(highlightSize * [camera zoomingValue]);
 		if((highlightSize * [camera zoomingValue]) < 50) {
-			glBindTexture(GL_TEXTURE_2D, textures[8]);
+			glBindTexture(GL_TEXTURE_2D, textures[9]);
 		}
 		else {
-			glBindTexture(GL_TEXTURE_2D, textures[7]);
+			glBindTexture(GL_TEXTURE_2D, textures[8]);
 		}
 		
 		glColor4f(1.0f,1.0f,1.0f,0.5f);
@@ -395,7 +436,7 @@
 }
 
 -(void)drawEcliptic {
-	glLineWidth(1.5);
+	glLineWidth(1.0);
 	
 	const GLfloat verticesEcliptic[] = {
 		-25.0, 0.0, 0.0,													
@@ -404,7 +445,7 @@
 		0.0, 25.0 * cos(23.44/180 * M_PI), 25.0 * sin(23.44/180 * M_PI),
 	};
 	glDisableClientState(GL_COLOR_ARRAY);
-	glColor4f(1.0f, 1.0f, 0.0f, 0.075f);
+	glColor4f(0.35f, 0.35f, 0.35f, 0.5f);
 	glVertexPointer(3, GL_FLOAT, 12, verticesEcliptic);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 	glEnableClientState(GL_COLOR_ARRAY);

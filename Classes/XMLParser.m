@@ -24,7 +24,9 @@
 	[super init];
 	
 	//NSLog(@"test parser0");
-	stars = TRUE;
+	stars = FALSE;
+	constellations = FALSE;
+	messier = FALSE;
 	start = TRUE;
 	objectManager = [[[UIApplication sharedApplication] delegate] objectManager];
 	
@@ -38,11 +40,17 @@
 	
 	if([elementName isEqualToString:@"stars"]) { // Hoofd tag gevonden, Array initializen
 		stars = TRUE;
-		//NSLog(@"Init stars");
+		NSLog(@"Init stars");
 		//objectManager.stars = [[NSMutableArray alloc] init];
 	}
 	else if([elementName isEqualToString:@"constellations"]) {
-		stars = FALSE;
+		constellations = TRUE;
+		NSLog(@"Init const");
+		//objectManager.constellations = [[NSMutableArray alloc] init];
+	}
+	else if([elementName isEqualToString:@"messier"]) {
+		messier = TRUE;
+		NSLog(@"Init mess");
 		//objectManager.constellations = [[NSMutableArray alloc] init];
 	}
 	
@@ -54,7 +62,7 @@
 			//NSLog(@"Reading id value :%i", aStar.starID);
 		}
 	}
-	else {
+	else if(constellations) {
 		if([elementName isEqualToString:@"constellation"]) {
 			aConstellation = [[SRConstellation alloc] init];
 			aConstellation.lines = [[NSMutableArray alloc] init];
@@ -66,6 +74,14 @@
 			aPoint = Vector3DMake(0,0,0);
 		}
 		//NSLog(@"Reading id value :%i", aStar.starID);
+	}
+	else if(messier) {
+		if([elementName isEqualToString:@"object"]) {
+			aMessier = [[SRMessier alloc] init];
+		}
+		if([elementName isEqualToString:@"point"]) {
+			aPoint = Vector3DMake(0,0,0);
+		}
 	}
 	
 	//NSLog(@"Processing Element: %@", elementName);
@@ -102,7 +118,7 @@
 			[aStar setValue:currentElementValue forKey:elementName];
 		}
 	}
-	else {
+	else if (constellations) {
 		if([elementName isEqualToString:@"constellations"])
 			return;
 		
@@ -127,6 +143,32 @@
 				aLine.end = aPoint;
 				start = TRUE;
 			}
+		}
+		else if([elementName isEqualToString:@"x"]) {
+			aPoint.x = [currentElementValue floatValue];
+		}
+		else if([elementName isEqualToString:@"y"]) {
+			aPoint.y = [currentElementValue floatValue];
+		}		
+		else if([elementName isEqualToString:@"z"]) {
+			aPoint.z = [currentElementValue floatValue];
+		}
+	}
+	else if (messier) {
+		if([elementName isEqualToString:@"messier"])
+			return;
+		
+		else if([elementName isEqualToString:@"object"]) {
+			[objectManager.messier addObject:aMessier];
+			
+			[aMessier release];
+			aMessier = nil;
+		}
+		else if([elementName isEqualToString:@"point"]) {
+			aMessier.position = aPoint;
+		}
+		else if([elementName isEqualToString:@"name"]) {
+			[aMessier setName:currentElementValue];
 		}
 		else if([elementName isEqualToString:@"x"]) {
 			aPoint.x = [currentElementValue floatValue];

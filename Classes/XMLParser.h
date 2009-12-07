@@ -14,7 +14,6 @@
 
 
 #import <UIKit/UIKit.h>
-#import "SRConstellation.h";
 #import "SRObjectManager.h";
 
 @class SterrenAppDelegate, SRStar;
@@ -26,11 +25,14 @@
 	//SterrenAppDelegate *appDelegate;
 	SRObjectManager *objectManager;
 	SRStar *aStar;
+	SRMessier*aMessier;
 	SRConstellation *aConstellation;
 	SRConstellationLine *aLine;
 	Vector3D aPoint;
 	
 	BOOL stars; //1 = sterren, 0 = sterrenbeelden
+	BOOL constellations;
+	BOOL messier;
 	BOOL start; //1 = start, 0 = end
 }
 
