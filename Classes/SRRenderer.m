@@ -239,7 +239,7 @@
 	glDisableClientState(GL_COLOR_ARRAY);
 	
 	glPointSize(8.0 * [camera zoomingValue]);
-	glColor4f(0.5f, 0.5f, 0.5f, 0.1f);
+	glColor4f(0.5f, 0.5f, 0.5f, 0.15000000000000f);
 	glVertexPointer(3, GL_FLOAT, 12, messierPoints);
 	glBindTexture(GL_TEXTURE_2D, textures[10]);
     glDrawArrays(GL_POINTS, 0, messierNum);
