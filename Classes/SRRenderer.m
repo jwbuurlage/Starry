@@ -142,7 +142,7 @@
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 	
-    glClearColor(0.0, 0.10, 0.16, 1.0);
+    glClearColor(0.0, 0.05, 0.08, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
@@ -238,8 +238,8 @@
 	
 	glDisableClientState(GL_COLOR_ARRAY);
 	
-	glPointSize(4.0 * [camera zoomingValue]);
-	glColor4f(0.5f, 0.5f, 0.5f, 0.8f);
+	glPointSize(8.0 * [camera zoomingValue]);
+	glColor4f(0.5f, 0.5f, 0.5f, 0.15000000000000f);
 	glVertexPointer(3, GL_FLOAT, 12, messierPoints);
 	glBindTexture(GL_TEXTURE_2D, textures[10]);
     glDrawArrays(GL_POINTS, 0, messierNum);
@@ -315,7 +315,7 @@
 			glBindTexture(GL_TEXTURE_2D, textures[8]);
 		}
 		
-		glColor4f(1.0f,1.0f,1.0f,0.5f);
+		glColor4f(0.5f,0.5f,0.5f,0.75f);
 		glVertexPointer(3, GL_FLOAT, 12, points);
 
 		glDrawArrays(GL_POINTS, 0, 1);
@@ -383,16 +383,16 @@
 	};
 	
 	const GLfloat verticesHorizonGlow[] = {
-		-1.0, 0.0, 0.0,		1.0f, 1.0f, 1.0f, 0.8f,		0.0, 0.0,		//bottom-left
-		-1.0, 0.0, 0.5,		1.0f, 1.0f, 1.0f, 0.8f,		0.0, 1.0,		//top-left
-		0.0, 1.0, 0.0,		1.0f, 1.0f, 1.0f, 0.8f,		1.0, 0.0,		//bottom-right
-		0.0, 1.0, 0.5,		1.0f, 1.0f, 1.0f, 0.8f,		1.0, 1.0,		//top-right
-		1.0, 0.0, 0.0,		1.0f, 1.0f, 1.0f, 0.8f,		1.0, 0.0,		//bottom-left
-		1.0, 0.0, 0.5,		1.0f, 1.0f, 1.0f, 0.8f,		1.0, 1.0,		//top-left
-		0.0, -1.0, 0.0,		1.0f, 1.0f, 1.0f, 0.8f,		1.0, 0.0,		//top-left
-		0.0, -1.0, 0.5,		1.0f, 1.0f, 1.0f, 0.8f,		1.0, 1.0,		//top-left
-		-1.0, 0.0, 0.0,		1.0f, 1.0f, 1.0f, 0.8f,		1.0, 0.0,		//bottom-left
-		-1.0, 0.0, 0.5,		1.0f, 1.0f, 1.0f, 0.8f,		1.0, 1.0,		//top-lef
+		-1.0, 0.0, 0.0,		1.0f, 1.0f, 1.0f, 0.5f,		0.0, 0.0,		//bottom-left
+		-1.0, 0.0, 1.0,		1.0f, 1.0f, 1.0f, 0.5f,		0.0, 1.0,		//top-left
+		0.0, 1.0, 0.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 0.0,		//bottom-right
+		0.0, 1.0, 1.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-right
+		1.0, 0.0, 0.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 0.0,		//bottom-left
+		1.0, 0.0, 1.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-left
+		0.0, -1.0, 0.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 0.0,		//top-left
+		0.0, -1.0, 1.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-left
+		-1.0, 0.0, 0.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 0.0,		//bottom-left
+		-1.0, 0.0, 1.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-lef
 	};
 	
 	//alpha horizon test
@@ -411,18 +411,19 @@
 		-5.0, 0.0, 0.0,			0.0f, 0.0f, 0.0f, 0.5f
 	};
 	
+	glDisableClientState(GL_COLOR_ARRAY);
+	
 	glVertexPointer(3, GL_FLOAT, 28, verticesAlphaHorizon);
-    glColorPointer(4, GL_FLOAT, 28, &verticesAlphaHorizon[3]);
+	glColor4f(0.0, 0.0, 0.0, 0.5);
     glDrawArrays(GL_TRIANGLES, 0, 12);
 	
 	glVertexPointer(3, GL_FLOAT, 28, verticesHorizon);
-    glColorPointer(4, GL_FLOAT, 28, &verticesHorizon[3]);
+	glColor4f(0.0f, 0.15f, 0.25f, 0.8f);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 	
 	glEnable(GL_TEXTURE_2D);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-	glDisableClientState(GL_COLOR_ARRAY);
-	glColor4f(0.0, 1.0, 1.0, 0.1);
+	glColor4f(0.0, 1.0, 1.0, 0.05);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
 	glTexCoordPointer(2, GL_FLOAT, 36, &verticesHorizonGlow[7]);
@@ -445,7 +446,7 @@
 		0.0, 25.0 * cos(23.44/180 * M_PI), 25.0 * sin(23.44/180 * M_PI),
 	};
 	glDisableClientState(GL_COLOR_ARRAY);
-	glColor4f(0.35f, 0.35f, 0.35f, 0.5f);
+	glColor4f(0.2f, 0.20f, 0.25f, 0.7f);
 	glVertexPointer(3, GL_FLOAT, 12, verticesEcliptic);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 	glEnableClientState(GL_COLOR_ARRAY);
