@@ -301,13 +301,13 @@
 		480.0, 320.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//top-right
 	};
 	
-	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_COLOR);
+	glBlendFunc(GL_DST_COLOR, GL_SRC_COLOR);
 	glEnableClientState(GL_VERTEX_ARRAY);
 	//glEnableClientState(GL_COLOR_ARRAY);
 	glDisableClientState(GL_COLOR_ARRAY);
 	glVertexPointer(3, GL_FLOAT, 28, redOverlay);
 	//glColorPointer(4, GL_FLOAT, 28, &redOverlay[3]);	
-	glColor4f(0.5f, 0.0f, 0.0f, 1.0f);
+	glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
 
