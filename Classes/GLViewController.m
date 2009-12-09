@@ -362,7 +362,7 @@
 						
 						[renderer setHighlightPosition:position];
 						[renderer setHighlightSize:32]; 
-						[renderer setHighlight:TRUE];						
+						[renderer setHighlight:TRUE];					
 					}
 					else {
 					

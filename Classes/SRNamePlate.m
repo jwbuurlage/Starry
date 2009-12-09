@@ -11,7 +11,7 @@
 
 @implementation SRNamePlate
 
-@synthesize yTranslate, visible;
+@synthesize yTranslate, visible, elements;
 
 -(id)init {
 	if(self = [super self]) {

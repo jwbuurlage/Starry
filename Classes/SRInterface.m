@@ -18,7 +18,7 @@
 
 @implementation SRInterface
 
-@synthesize timeModule,renderer,theNameplate;
+@synthesize timeModule,renderer,theNameplate, messierInfo, showingMessier;
 
 -(id)initWithRenderer:(SRRenderer*)theRenderer {
 	if(self = [super init]) {
@@ -30,6 +30,8 @@
 		[self loadModules];
 		[self loadNameplate];
 		[self loadTexture:@"click.png" intoLocation:textures[[UIElements count]]];
+		
+		messierInfo = [[SRMessierInfo alloc] init];
 		
 		defaultTextureBool = TRUE;
 		alphaDefault = 1.0f;
@@ -206,6 +208,11 @@
 
 	glEnable(GL_TEXTURE_2D);
 	
+	if(showingMessier) {
+		[messierInfo draw];
+		return;
+	}
+	
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glTexCoordPointer(2, GL_FLOAT, 0, textureCoords);
 		
@@ -339,6 +346,17 @@
 				}				
 			}
 		}
+	}
+	
+	for (SRInterfaceElement* element in [theNameplate elements]) {
+		if(CGRectContainsPoint([element bounds], CGPointMake(point.y, point.x + [theNameplate yTranslate])) && !flag && [element clickable])  {
+			clicker = [element identifier];
+			isClicking = TRUE;
+			CGRect clicked = [element bounds];
+			clicked.origin.y -= [theNameplate yTranslate];
+			rectClicked = CGRectInset(clicked, -16, -16);
+			flag = TRUE;
+		}				
 	}
 	
 	return flag;

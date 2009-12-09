@@ -22,6 +22,7 @@
 #import "SRSettingsModule.h"
 #import "SRNamePlate.h"
 #import "Texture2D.h"
+#import "SRMessierInfo.h"
 //#import "SterrenAppDelegate.h"
 
 @class SRRenderer;
@@ -37,6 +38,7 @@
 	SRSettingsModule* settingsModule;
 	
 	SRNamePlate* theNameplate;
+	SRMessierInfo* messierInfo;
 	
 	SRLocation* locationData;
 		/* We moeten de data van SRLocation naar SRLocationModule krijgen, dit is de volgens mij de kortste route */
@@ -69,12 +71,14 @@
 	
 	float alphaDefault;
 	
-	//BOOL redOverlay;
+	BOOL showingMessier;
 }
 
 @property (readonly) SRTimeModule* timeModule;
 @property (readonly) SRRenderer* renderer;
 @property (readonly) SRNamePlate* theNameplate;
+@property (readonly) SRMessierInfo* messierInfo;
+@property (nonatomic, assign) BOOL showingMessier;
 
 -(id)initWithRenderer:(SRRenderer*)theRenderer;
 -(void)loadNameplate;

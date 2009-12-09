@@ -136,6 +136,7 @@
 	//camera positie callen
 	[camera adjustView];
 	
+	if(![interface showingMessier]) {
 	//welke alpha func? FIXME
 	glEnable(GL_ALPHA_TEST);
 	glAlphaFunc(GL_GREATER, 0.0f);
@@ -178,6 +179,8 @@
 		[[[interface timeModule] manager] setTotalInterval:0];
 		// FIXME: recalculate highlight for planet moved
 		//highlight = FALSE;
+	}
+		
 	}
 	
 	[interface renderInterface];
@@ -239,7 +242,7 @@
 	glDisableClientState(GL_COLOR_ARRAY);
 	
 	glPointSize(8.0 * [camera zoomingValue]);
-	glColor4f(0.5f, 0.5f, 0.5f, 0.15000000000000f);
+	glColor4f(0.5f, 0.5f, 0.5f, 0.15f);
 	glVertexPointer(3, GL_FLOAT, 12, messierPoints);
 	glBindTexture(GL_TEXTURE_2D, textures[10]);
     glDrawArrays(GL_POINTS, 0, messierNum);
@@ -384,15 +387,15 @@
 	
 	const GLfloat verticesHorizonGlow[] = {
 		-1.0, 0.0, 0.0,		1.0f, 1.0f, 1.0f, 0.5f,		0.0, 0.0,		//bottom-left
-		-1.0, 0.0, 1.0,		1.0f, 1.0f, 1.0f, 0.5f,		0.0, 1.0,		//top-left
+		-1.0, 0.0, 0.75,	1.0f, 1.0f, 1.0f, 0.5f,		0.0, 1.0,		//top-left
 		0.0, 1.0, 0.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 0.0,		//bottom-right
-		0.0, 1.0, 1.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-right
+		0.0, 1.0, 0.75,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-right
 		1.0, 0.0, 0.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 0.0,		//bottom-left
-		1.0, 0.0, 1.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-left
+		1.0, 0.0, 0.75,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-left
 		0.0, -1.0, 0.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 0.0,		//top-left
-		0.0, -1.0, 1.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-left
+		0.0, -1.0, 0.75,	1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-left
 		-1.0, 0.0, 0.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 0.0,		//bottom-left
-		-1.0, 0.0, 1.0,		1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-lef
+		-1.0, 0.0, 0.75,	1.0f, 1.0f, 1.0f, 0.5f,		1.0, 1.0,		//top-lef
 	};
 	
 	//alpha horizon test
@@ -423,7 +426,7 @@
 	
 	glEnable(GL_TEXTURE_2D);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-	glColor4f(0.0, 1.0, 1.0, 0.05);
+	glColor4f(0.0, 1.0, 1.0, 0.075);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
 	glTexCoordPointer(2, GL_FLOAT, 36, &verticesHorizonGlow[7]);

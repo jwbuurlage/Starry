@@ -268,29 +268,24 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>76179CF610CA61DE00768180</string>
 								<string>ACA875E7109DD08C00465577</string>
-								<string>ACB7B11110615AE000CA447E</string>
-								<string>AC1BA73710C021D00084CF6F</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
-								<string>AC8A8A6E10C59FBD0015CDF5</string>
-								<string>ACB56B3810C41A2C0002842B</string>
-								<string>AC224442109DBE2A0049BF46</string>
-								<string>AC24C9AF10BAEB310063DF87</string>
+								<string>ACE708CE10D029FD003DE4BB</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1C77FABC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>112</integer>
-									<integer>65</integer>
+									<integer>20</integer>
+									<integer>5</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1097}, {250, 934}}</string>
+							<string>{{0, 0}, {250, 934}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -318,12 +313,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Sterren-Info.plist</string>
+								<string>SRInterface.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Sterren-Info.plist</string>
+										<string>SRInterface.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ACDB612210CED0FC0002F7C0</string>
+										<string>AC89DDF310D035370083BFEA</string>
 										<key>history</key>
 										<array>
 											<string>AC4F895D109DF65700B8BD64</string>
@@ -344,7 +341,6 @@
 											<string>ACA636DB10A0DFEB000565D3</string>
 											<string>AC24C9B110BAEBAB0063DF87</string>
 											<string>AC24CAA610BB13FF0063DF87</string>
-											<string>AC7AE6F310BC529B00A63DFB</string>
 											<string>AC7AE6F410BC529B00A63DFB</string>
 											<string>AC7AE71410BC541500A63DFB</string>
 											<string>AC7AE9BA10BC9D9D00A63DFB</string>
@@ -352,7 +348,6 @@
 											<string>AC6EE16E10C1982B008EEC97</string>
 											<string>ACB56B4110C41B150002842B</string>
 											<string>AC8A8A7C10C5A0490015CDF5</string>
-											<string>AC8A8A7E10C5A0490015CDF5</string>
 											<string>AC97059F10C5B4CB0048DB59</string>
 											<string>AC9705A210C5B4CB0048DB59</string>
 											<string>AC9705A310C5B4CB0048DB59</string>
@@ -403,8 +398,6 @@
 											<string>ACC493F410CD7B5900DC7967</string>
 											<string>ACC4941D10CD7D6E00DC7967</string>
 											<string>ACC4947010CD81C300DC7967</string>
-											<string>ACECC67510CD8D7F00CBE4AC</string>
-											<string>ACECC69810CD9E5F00CBE4AC</string>
 											<string>ACECC69910CD9E5F00CBE4AC</string>
 											<string>ACECC69A10CD9E5F00CBE4AC</string>
 											<string>ACECC69C10CD9E5F00CBE4AC</string>
@@ -431,11 +424,16 @@
 											<string>AC69F2F510CEAEC800D9742A</string>
 											<string>AC69F2F610CEAEC800D9742A</string>
 											<string>AC69F2F710CEAEC800D9742A</string>
-											<string>AC76872110CEBBF4008EB87A</string>
 											<string>AC76872210CEBBF4008EB87A</string>
-											<string>AC76875810CECE4A008EB87A</string>
-											<string>ACDB612010CED0FC0002F7C0</string>
-											<string>ACDB612110CED0FC0002F7C0</string>
+											<string>ACE7089710D02405003DE4BB</string>
+											<string>ACE7089810D02405003DE4BB</string>
+											<string>ACE708A510D02446003DE4BB</string>
+											<string>ACE708A610D02446003DE4BB</string>
+											<string>ACE708B610D024DA003DE4BB</string>
+											<string>ACE708D310D02A2D003DE4BB</string>
+											<string>ACE708D410D02A2D003DE4BB</string>
+											<string>ACE708D510D02A2D003DE4BB</string>
+											<string>ACE708D810D031C1003DE4BB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -558,11 +556,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ACDB60ED10CECEF20002F7C0</string>
+				<string>AC89DDF410D035370083BFEA</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>ACDB60EE10CECEF20002F7C0</string>
+				<string>AC89DDF510D035370083BFEA</string>
 				<string>ACB7B10810615AD200CA447E</string>
-				<string>ACDB60EF10CECEF20002F7C0</string>
+				<string>AC89DDF610D035370083BFEA</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -712,14 +710,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>ACDB60F010CECEF20002F7C0</string>
+				<string>ACE7087010D02238003DE4BB</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>ACDB60F110CECEF20002F7C0</string>
-				<string>ACDB60F210CECEF20002F7C0</string>
-				<string>ACDB60F310CECEF20002F7C0</string>
-				<string>ACDB60F410CECEF20002F7C0</string>
-				<string>ACDB60F510CECEF20002F7C0</string>
+				<string>ACE7087110D02238003DE4BB</string>
+				<string>ACE7087210D02238003DE4BB</string>
+				<string>ACE7087310D02238003DE4BB</string>
+				<string>ACE7087410D02238003DE4BB</string>
+				<string>ACE7087510D02238003DE4BB</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -753,9 +751,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D5B069F1CE1000CFCEE</string>
-		<string>ACDB611310CED02D0002F7C0</string>
-		<string>ACDB60FE10CECF160002F7C0</string>
 		<string>/Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

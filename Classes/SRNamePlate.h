@@ -26,6 +26,7 @@
 
 @property (readonly) int yTranslate;
 @property (readonly) BOOL visible;
+@property (readonly) NSMutableArray* elements;
 
 -(void)draw;
 -(void)hide;
