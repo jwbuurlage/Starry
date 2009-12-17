@@ -227,7 +227,7 @@
 	glDisableClientState(GL_COLOR_ARRAY);
 	
 	glLineWidth(1.0f);
-	glColor4f(0.4f, 0.4f, 0.4f, 0.2f);
+	glColor4f(0.4f, 0.40f, 0.40f, 0.3f);
 	glVertexPointer(3, GL_FLOAT, 12, constellationPoints);
     glDrawArrays(GL_LINES, 0, constellationNum);
 		
@@ -441,7 +441,7 @@
 }
 
 -(void)drawEcliptic {
-	glLineWidth(1.0);
+	glLineWidth(2.0);
 	
 	const GLfloat verticesEcliptic[] = {
 		-25.0, 0.0, 0.0,													
@@ -450,7 +450,7 @@
 		0.0, 25.0 * cos(23.44/180 * M_PI), 25.0 * sin(23.44/180 * M_PI),
 	};
 	glDisableClientState(GL_COLOR_ARRAY);
-	glColor4f(0.2f, 0.20f, 0.25f, 0.7f);
+	glColor4f(0.4f, 0.20f, 0.00f, 0.5f);
 	glVertexPointer(3, GL_FLOAT, 12, verticesEcliptic);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 	glEnableClientState(GL_COLOR_ARRAY);
