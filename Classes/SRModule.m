@@ -19,30 +19,15 @@
 @synthesize visible, yTranslate, elements;
 
 -(void)show {
-	posiTimer = [[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(translate:) userInfo:nil repeats:YES] retain];
 	visible = YES;
-	[negiTimer invalidate];
 }
 
 -(void)hide {
-	negiTimer = [[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(translate:) userInfo:nil repeats:YES] retain];
-	[posiTimer invalidate];
+	visible = NO;
 }
 
 -(void)translate:(NSTimer*)theTimer {
-	if([theTimer isEqual:posiTimer]) {
-		yTranslate += 8; }
-	else {
-		yTranslate -= 8;
-	}
-	
-	if(yTranslate >= 48) {
-		[theTimer invalidate];
-	}
-	else if (yTranslate == 0) {
-		[theTimer invalidate];
-		visible = NO;
-	}
+
 }
 
 -(void)draw {

@@ -348,9 +348,9 @@
 						messierD = sqrt(xd*xd + yd*yd + zd*zd);
 						if (messierD < closestD) {
 							closestD = messierD;
-							NSLog(@"closestD: %f", closestD);
+							//NSLog(@"closestD: %f", closestD);
 							closestMessier = aMessier;
-							NSLog(@"Closest messier:%@",closestMessier.name);
+							//NSLog(@"Closest messier:%@",closestMessier.name);
 						}						
 					}
 					//FIXME waarom zo'n raar getal?
@@ -358,11 +358,16 @@
 						
 						[[[renderer interface] theNameplate] setName:closestMessier.name inConstellation:@"messier" showInfo:YES];
 						
+						[[[renderer interface] messierInfo] messierClicked:closestMessier];
+
+						
 						Vertex3D position = closestMessier.position;
 						
 						[renderer setHighlightPosition:position];
 						[renderer setHighlightSize:32]; 
-						[renderer setHighlight:TRUE];					
+						[renderer setHighlight:TRUE];
+						
+
 					}
 					else {
 					

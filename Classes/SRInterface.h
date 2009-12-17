@@ -48,13 +48,15 @@
 
 	NSString* clicker;
 	
-	GLuint textures[9];
-	GLfloat textureCorners[150];
-	GLfloat textureCoords[100];
+	GLuint textures[15];
+	GLfloat textureCorners[300];
+	GLfloat textureCoords[150];
 	
 	//klik support
 	BOOL isClicking;
 	CGRect rectClicked;
+	
+	BOOL stopShowingMessier;
 	
 	int xTranslate;
 	int count;
@@ -72,6 +74,7 @@
 	float alphaDefault;
 	
 	BOOL showingMessier;
+	BOOL menuVisible;
 }
 
 @property (readonly) SRTimeModule* timeModule;

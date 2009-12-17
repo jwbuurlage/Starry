@@ -19,35 +19,41 @@
 		//laad elements in - sla op in textures
 
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-45, 32,32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-55, 32,32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"brightness_minus.png"]] 
 															identifier:@"brightness_minus" 
 															 clickable:YES]];		
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(110,-45, 32,32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(110,-55, 32,32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"brightness_plus.png"]] 
 															identifier:@"brightness_plus" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150,-48, 80,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150,-58, 80,32) 
 															   texture:[[Texture2D alloc] initWithString:@"HELDERHEID" dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150,-59, 80,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150,-69, 80,32) 
 															   texture:nil 
 															identifier:@"brightness_value" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(336, -44, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(336, -55, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"red.png"]] 
 															identifier:@"red" 
 															 clickable:YES]];		
 		//laad elements in - sla op in textures
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(376, -44, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(376, -55, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"constellation.png"]] 
 															identifier:@"constellations" 
 															 clickable:YES]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -55, 31, 31)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"gears.png"]] 
+															identifier:@"icon" 
+															 clickable:YES]];
+		
 		
 	}
 	return self;

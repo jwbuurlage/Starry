@@ -14,15 +14,23 @@
 #import "Texture2D.h"
 #import "SRMessier.h"
 
-@interface SRMessierInfo : NSObject {
+
+@interface SRMessierInfo : NSObject {	
 	SRMessier* currentMessier;
 	
 	Texture2D* messierImage;
+	Texture2D* messierText;
 	Texture2D* interfaceBackground;
 	//text...
+	
+	//BOOL visible;
 }
 
--(void)messierClicked:(SRMessier*)theMessier;
--(void)draw;
+//@property (nonatomic, assign) BOOL visible;
+
+//+ (SRMessierInfo*)shared;
+- (void)messierClicked:(SRMessier*)theMessier;
+- (void)draw;
+
 
 @end

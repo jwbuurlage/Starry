@@ -58,7 +58,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 @implementation Texture2D
 
-@synthesize contentSize=_size, pixelFormat=_format, pixelsWide=_width, pixelsHigh=_height, name=_name, maxS=_maxS, maxT=_maxT;
+@synthesize contentSize=_size, pixelFormat=_format, pixelsWide=_width, pixelsHigh=_height, name=_name, maxS=_maxS, maxT=_maxT, turned;
 
 - (id) initWithData:(const void*)data pixelFormat:(Texture2DPixelFormat)pixelFormat pixelsWide:(NSUInteger)width pixelsHigh:(NSUInteger)height contentSize:(CGSize)size
 {
@@ -91,6 +91,15 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 		_format = pixelFormat;
 		_maxS = size.width / (float)width;
 		_maxT = size.height / (float)height;
+		
+		rectCoordinates[0] = 0;
+		rectCoordinates[1] = _maxT;
+		rectCoordinates[2] = _maxS;
+		rectCoordinates[3] = _maxT;
+		rectCoordinates[4] = 0;
+		rectCoordinates[5] = 0;
+		rectCoordinates[6] = _maxS;
+		rectCoordinates[7] = 0;
 	}					
 	return self;
 }
@@ -228,6 +237,29 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	return self;
 }
 
+-(void)invertTexCoord {
+	if(rectCoordinates[0] == _maxS) {
+		rectCoordinates[0] = 0;
+		rectCoordinates[1] = _maxT;
+		rectCoordinates[2] = _maxS;
+		rectCoordinates[3] = _maxT;
+		rectCoordinates[4] = 0;
+		rectCoordinates[5] = 0;
+		rectCoordinates[6] = _maxS;
+		rectCoordinates[7] = 0;	}
+	else {
+		rectCoordinates[0] = _maxS;
+		rectCoordinates[1] = 0;
+		rectCoordinates[2] = 0;
+		rectCoordinates[3] = 0;
+		rectCoordinates[4] = _maxS;
+		rectCoordinates[5] = _maxT;
+		rectCoordinates[6] = 0;
+		rectCoordinates[7] = _maxT;	
+	}
+	
+}
+
 @end
 
 @implementation Texture2D (Text)
@@ -279,52 +311,6 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	free(data);
 	
 	return self;
-}
-
-- (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle
-{
-	// Uitleg: http://blog.coriolis.ch/2009/09/04/arbitrary-rotation-of-a-cgimage/
-	
-	CGFloat angleInRadians = angle * (M_PI / 180);
-	CGFloat width = CGImageGetWidth(imgRef);
-	CGFloat height = CGImageGetHeight(imgRef);
-	
-	CGRect imgRect = CGRectMake(0, 0, width, height);
-	CGAffineTransform transform = CGAffineTransformMakeRotation(angleInRadians);
-	CGRect rotatedRect = CGRectApplyAffineTransform(imgRect, transform);
-	
-	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-	CGContextRef bmContext = CGBitmapContextCreate(NULL,
-												   rotatedRect.size.width,
-												   rotatedRect.size.height,
-												   8,
-												   0,
-												   colorSpace,
-												   kCGImageAlphaPremultipliedFirst);
-	CGContextSetAllowsAntialiasing(bmContext, FALSE);
-	CGContextSetInterpolationQuality(bmContext, kCGInterpolationNone);
-	CGColorSpaceRelease(colorSpace);
-	CGContextTranslateCTM(bmContext,
-						  +(rotatedRect.size.width/2),
-						  +(rotatedRect.size.height/2));
-	CGContextRotateCTM(bmContext, angleInRadians);
-	CGContextTranslateCTM(bmContext,
-						  -(rotatedRect.size.width/2),
-						  -(rotatedRect.size.height/2));
-	
-	CGContextScaleCTM(bmContext, 1, -1);
-	CGContextTranslateCTM(bmContext, 0, -height);
-	
-	CGContextDrawImage(bmContext, CGRectMake(0, 0,
-											 rotatedRect.size.width,
-											 rotatedRect.size.height),
-					   imgRef);
-	
-	CGImageRef rotatedImage = CGBitmapContextCreateImage(bmContext);
-	CFRelease(bmContext);
-	[(id)rotatedImage autorelease];
-	
-	return rotatedImage;
 }
 
 
@@ -384,11 +370,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 
 - (void) drawInRect:(CGRect)rect
-{
-	GLfloat	 coordinates[] = {  0,		_maxT,
-								_maxS,	_maxT,
-								0,		0,
-								_maxS,	0  };
+{	
 	GLfloat	vertices[] = {	rect.origin.x,							rect.origin.y,							0.0,
 							rect.origin.x + rect.size.width,		rect.origin.y,							0.0,
 							rect.origin.x,							rect.origin.y + rect.size.height,		0.0,
@@ -396,8 +378,9 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	
 	glBindTexture(GL_TEXTURE_2D, _name);
 	glVertexPointer(3, GL_FLOAT, 0, vertices);
-	glTexCoordPointer(2, GL_FLOAT, 0, coordinates);
+	glTexCoordPointer(2, GL_FLOAT, 0, rectCoordinates);
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+	
 }
 
 

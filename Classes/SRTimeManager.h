@@ -46,5 +46,6 @@
 -(void)fwd;
 -(void)rew;
 -(void)reset;
+-(void)playPause;
 
 @end

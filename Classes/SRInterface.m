@@ -26,6 +26,10 @@
 		
 		appDelegate = [[UIApplication sharedApplication] delegate];
 		
+		menuVisible = TRUE;
+		
+		stopShowingMessier = FALSE;
+		
 		[self loadMenu];
 		[self loadModules];
 		[self loadNameplate];
@@ -137,42 +141,54 @@
 	UIElements = [[NSMutableArray alloc] init];
 	
 	//main menu met knoppen
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(402, 130, 32, 64)  
+
+	
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63) 
+															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"nav_bg.png"]] 
+														  identifier:@"menu" 
+														   clickable:NO]];
+		 
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -55, 31, 31)  
+															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"radar.png"]] 
+														  identifier:@"location" 
+														   clickable:YES]];
+	  
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(62, -55, 31, 31)  
+															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"calendar.png"]]
+														  identifier:@"time" 
+														   clickable:YES]];
+	
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(112, -55, 31, 31)  
+															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planeticon.png"]]
+														  identifier:@"planet" 
+														   clickable:YES]];
+	
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(165, -55, 179, 32)  
+															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"search.png"]] 
+														  identifier:@"searchfield" 
+														   clickable:YES]];
+	   
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(345, -55, 31, 31)  
+															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"searchicon.png"]] 
+														  identifier:@"search" 
+														   clickable:NO]];
+	 
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(393, -55, 31, 31)  
+															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"gears.png"]] 
+														  identifier:@"settings" 
+														   clickable:YES]];
+	
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63) 
+															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"indicator_overlay.png"]] 
+														  identifier:@"menu_overlay" 
+														   clickable:NO]];		
+		
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(440, 8, 32, 32)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]] 
 														  identifier:@"arrow" 
 														   clickable:YES]];
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(416, 34, 64, 256) 
-															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"menu.png"]] 
-														  identifier:@"menu" 
-														   clickable:NO]];
-	 
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(442, 211, 32, 32)  
-															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"location.png"]] 
-														  identifier:@"location" 
-														   clickable:YES]];
-	  
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(442, 171, 32, 32)  
-															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"search.png"]]
-														  identifier:@"search" 
-														   clickable:YES]];
-	   
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(442, 131, 32, 32)  
-															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"time.png"]] 
-														  identifier:@"time" 
-														   clickable:YES]];
-	 
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(442, 91, 32, 32)  
-															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"settings.png"]] 
-														  identifier:@"settings" 
-														   clickable:YES]];
-	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(59,-51,512,64) 
-															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"module_bg.png"]]
-														  identifier:@"modulebg" 
-														   clickable:NO]];
-	
-	xTranslate = 48;
+	xTranslate = 63;
 }
 
 -(void)loadModules {
@@ -192,6 +208,11 @@
 
 -(void)renderInterface {
 	
+	if(stopShowingMessier) {
+		showingMessier = FALSE;
+		stopShowingMessier = FALSE;
+	}
+	
 	glMatrixMode(GL_PROJECTION); 
 	glLoadIdentity();
 	glRotatef(-90.0, 0.0, 0.0, 1.0); //x hor, y vert
@@ -208,10 +229,7 @@
 
 	glEnable(GL_TEXTURE_2D);
 	
-	if(showingMessier) {
-		[messierInfo draw];
-		return;
-	}
+	glColor4f(1.0, 1.0, 1.0, 1.0);      
 	
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glTexCoordPointer(2, GL_FLOAT, 0, textureCoords);
@@ -234,33 +252,36 @@
 
 	[theNameplate draw];
 	
-	glTranslatef(xTranslate, 0, 0);
+	glTranslatef(0, xTranslate, 0);
 	
 	
 	int i = 0;
 	for (SRInterfaceElement* element in UIElements) {
-
 		
-		if([element identifier] == @"modulebg") {
-		for (SRModule* module in modules) {
-			if([module visible]) {
-				glTranslatef(-xTranslate, [module yTranslate], 0);
-				[[element texture] drawInRect:[element bounds]];
-				
-				[module draw];
-
-				glTranslatef(xTranslate, -[module yTranslate], 0);
-			}
+		if([element identifier] == @"arrow") {
+			glTranslatef(0, -xTranslate, 0);
+			[[element texture] drawInRect:[element bounds]];
+			glTranslatef(0, xTranslate, 0);
+		} 
+		else if ([element identifier] == @"menu") {
+			[[element texture] drawInRect:[element bounds]];
 		}
-		}
-		else {
+		else if (menuVisible) {
 			[[element texture] drawInRect:[element bounds]];
 		}
 		
 		++i;
 	}
 	
-	glTranslatef(-xTranslate, 0, 0);
+	if(!menuVisible) {
+		for (SRModule* module in modules) {
+			if([module visible]) {
+				[module draw];
+			}
+		}
+	}
+	
+	glTranslatef(0, -xTranslate, 0);
 	
 
 	if(isClicking) {
@@ -289,13 +310,17 @@
 		[self drawRedOverlay];
 	}
 	
+	if(showingMessier) {
+		[messierInfo draw];
+	}
+	
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 		
 	
 	glEnable(GL_DEPTH_TEST);
 	glDepthMask(GL_TRUE); 
 	
-	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_TEXTURE_2D); 
 }
 
 -(void)drawRedOverlay {
@@ -319,33 +344,50 @@
 }
 
 -(BOOL)UIElementAtPoint:(CGPoint)point {
+	
 	BOOL flag = FALSE;
 
+	if(showingMessier == TRUE) {
+		stopShowingMessier = TRUE;
+		return FALSE;
+	}
+	
 	//checken of het onder een UIElement valt
-	for (SRInterfaceElement* element in UIElements) {
-		if(CGRectContainsPoint([element bounds], CGPointMake(point.y - xTranslate, point.x)) && !flag && [element clickable])  {
+	for (SRInterfaceElement* element in UIElements) {		
+		if([element identifier] == @"arrow") {
+			if(CGRectContainsPoint([element bounds], CGPointMake(point.y, point.x)) && !flag && [element clickable]) {
+				clicker = [element identifier];
+				isClicking = TRUE;
+				CGRect clicked = [element bounds];
+				rectClicked = CGRectInset(clicked, -16, -16);
+				flag = TRUE;
+			}
+		}		
+		else if(CGRectContainsPoint([element bounds], CGPointMake(point.y, point.x - xTranslate)) && !flag && [element clickable] && menuVisible)  {
 			clicker = [element identifier];
 			isClicking = TRUE;
 			CGRect clicked = [element bounds];
-			clicked.origin.x += xTranslate;
+			clicked.origin.y += xTranslate;
 			rectClicked = CGRectInset(clicked, -16, -16);
 			flag = TRUE;
 		}
 	}
 	
+	if(!menuVisible) {
 	for (SRModule* module in modules) {
 		if([module visible]) {
 			for (SRInterfaceElement* element in [module elements]) {
-				if(CGRectContainsPoint([element bounds], CGPointMake(point.y, point.x - [module yTranslate])) && !flag && [element clickable])  {
+				if(CGRectContainsPoint([element bounds], CGPointMake(point.y, point.x - xTranslate)) && !flag && [element clickable])  {
 					clicker = [element identifier];
 					isClicking = TRUE;
 					CGRect clicked = [element bounds];
-					clicked.origin.y += [module yTranslate];
+					clicked.origin.y += xTranslate;
 					rectClicked = CGRectInset(clicked, -16, -16);
 					flag = TRUE;
 				}				
 			}
 		}
+	}
 	}
 	
 	for (SRInterfaceElement* element in [theNameplate elements]) {
@@ -358,7 +400,6 @@
 			flag = TRUE;
 		}				
 	}
-	
 	return flag;
 }
 
@@ -373,7 +414,7 @@
 	
 		if(clicker == @"time") {
 			//show tijd crap
-			flagToggle = YES;
+			menuVisible = FALSE;
 			if([timeModule visible]) {
 				[timeModule hide];	
 			}
@@ -385,28 +426,24 @@
 		}
 		else if(clicker == @"location") {
 			//show tijd crap
-			flagToggle = YES;
+			menuVisible = FALSE;
 			if([locationModule visible]) {
 				[locationModule hide];	
 			}
 			else {
 				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
 				[self hideAllModules];
-				// Haal nog een keer de nieuwe locatieData op.
-				[locationModule updateDisplayedLocationData];
 				[locationModule show];
 			}
 		}
 		else if(clicker == @"settings") {
-			//show tijd crap
-			flagToggle = YES;
+			menuVisible = FALSE;
 			if([settingsModule visible]) {
 				[settingsModule hide];	
 			}
 			else {
 				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
 				[self hideAllModules];
-				// Haal nog een keer de nieuwe locatieData op.
 				[settingsModule show];
 			}
 		}
@@ -420,9 +457,13 @@
 		}
 		else if(clicker == @"arrow") {
 			flagToggle = YES;
+			[[[UIElements objectAtIndex:[UIElements count] - 1] texture] invertTexCoord];
 		}
 		// Knoppen voor de tijd module
-		else if(clicker == @"play") {
+		else if(clicker == @"playpause") {
+			[[timeModule manager] playPause];
+		}
+		else if(clicker == @"stop") {
 			[[timeModule manager] reset];
 		}
 		else if(clicker == @"fwd") {
@@ -488,6 +529,13 @@
 				[[appDelegate settingsManager] setShowConstellations:TRUE];
 			}
 		}		
+		else if(clicker == @"info") {
+			showingMessier = YES;
+		}	
+		else if(clicker == @"icon") {	
+			menuVisible = YES;
+			[self hideAllModules];
+		}
 
 		if(flagToggle) {
 			if(![posiTimer isValid] && ![negiTimer isValid]) {
@@ -528,12 +576,12 @@
 
 -(void)translate:(NSTimer*)theTimer {
 	if([theTimer isEqual:posiTimer]) {
-		xTranslate += 6; }
+		xTranslate += 7; }
 	else {
-		xTranslate -= 6;
+		xTranslate -= 7;
 	}
 	
-	if(xTranslate >= 48 || xTranslate == 0) {
+	if(xTranslate >= 63 || xTranslate <= 0) {
 		[theTimer invalidate];
 	}
 }

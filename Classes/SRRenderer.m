@@ -227,7 +227,7 @@
 	glDisableClientState(GL_COLOR_ARRAY);
 	
 	glLineWidth(1.0f);
-	glColor4f(0.4f, 0.4f, 0.4f, 0.15f);
+	glColor4f(0.4f, 0.4f, 0.4f, 0.2f);
 	glVertexPointer(3, GL_FLOAT, 12, constellationPoints);
     glDrawArrays(GL_LINES, 0, constellationNum);
 		
@@ -417,16 +417,17 @@
 	glDisableClientState(GL_COLOR_ARRAY);
 	
 	glVertexPointer(3, GL_FLOAT, 28, verticesAlphaHorizon);
-	glColor4f(0.0, 0.0, 0.0, 0.5);
-    glDrawArrays(GL_TRIANGLES, 0, 12);
+	glColor4f(0.0, 0.0, 0.0, 0.8);
+	
+	glDrawArrays(GL_TRIANGLES, 0, 12);
 	
 	glVertexPointer(3, GL_FLOAT, 28, verticesHorizon);
-	glColor4f(0.0f, 0.15f, 0.25f, 0.8f);
+	glColor4f(0.14f, 0.2075f, 0.0f, 1.0f);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 	
 	glEnable(GL_TEXTURE_2D);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-	glColor4f(0.0, 1.0, 1.0, 0.075);
+	glColor4f(0.0, 1.0, 1.0, 0.05);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
 	glTexCoordPointer(2, GL_FLOAT, 36, &verticesHorizonGlow[7]);

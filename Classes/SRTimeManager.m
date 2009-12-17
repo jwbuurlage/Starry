@@ -72,6 +72,11 @@
 	timeTicker = [[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(tickOfTime:) userInfo:nil repeats:YES] retain];
 }
 
+-(void)playPause {
+	speed = 1;
+	timeTicker = [[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(tickOfTime:) userInfo:nil repeats:YES] retain];
+}
+
 -(void)tickOfTime:(NSTimer*)theTimer {
 	NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:actualDate];
 	NSTimeInterval simulatedInterval = [simulatedDate timeIntervalSinceNow];

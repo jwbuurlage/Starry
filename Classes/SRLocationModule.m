@@ -38,41 +38,43 @@
 			GPS = TRUE;
 		}
 		
-		//laad elements in - sla op in textures
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(104,-48, 80,32) 
+		//laad elements in - sla op in textures		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(104,-60, 80,32) 
 															   texture:[[Texture2D alloc] initWithString:@"BREEDTEGRAAD" dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent"
 															 clickable:NO]];
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(224,-48, 80,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(224,-60, 80,32) 
 															   texture:[[Texture2D alloc] initWithString:@"LENGTEGRAAD" dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(104,-59, 80,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(104,-72, 80,32) 
 															   texture:nil 
 															identifier:@"lat" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-42, 28,28) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-55, 28,28) 
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"latitude.png"]] 
 															identifier:@"lat-edit" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(224,-59, 80,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(224,-72, 80,32) 
 															   texture:nil 
 															identifier:@"long" 
 															 clickable:YES]];
 				 
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(190,-42, 28,28) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(190,-55, 28,28) 
 																texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"longitude.png"]]
 																							  identifier:@"long-edit" 
 																							   clickable:YES]];
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(380,-40, 28,28) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(380,-53, 28,28) 
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:locationString]]
 																							   identifier:@"gps-toggle" 
 																							  clickable:YES]];
 		  
-		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -55, 31, 31)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"radar.png"]] 
+															identifier:@"icon" 
+															 clickable:YES]];		
 		
 		latVisible = YES;
 		longVisible = YES;
@@ -88,7 +90,7 @@
 	
 	for (SRInterfaceElement* mElement in elements) {
 		if([mElement identifier] == @"text-transparent") {
-			glColor4f(1.0f, 1.0f, 1.0f, 0.5f);
+			glColor4f(1.0f, 1.0f, 1.0f, 0.4f);
 			[[mElement texture] drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
@@ -114,7 +116,9 @@
 				}
 				
 				Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i\"%i' %@",degrees,minutes,seconds,northOrSouth] dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
+				glColor4f(0.294f, 0.513f, 0.93f, 1.0f);
 				[texture drawInRect:[mElement bounds]];
+				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 				[texture release];
 																
 				[coordinateNumber release];
@@ -152,7 +156,9 @@
 			
 															
 				Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i\"%i' %@",degrees,minutes,seconds,westOrEast] dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
+				glColor4f(0.294f, 0.513f, 0.93f, 1.0f);
 				[texture drawInRect:[mElement bounds]];
+				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 				[texture release];
 															
 				[coordinateNumber release];

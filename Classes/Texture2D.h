@@ -77,6 +77,8 @@ Be aware that the content of the generated textures will be upside-down!
 	GLfloat						_maxS,
 								_maxT;
 	
+	GLfloat	rectCoordinates[7];
+	
 	BOOL turned;
 }
 - (id) initWithData:(const void*)data pixelFormat:(Texture2DPixelFormat)pixelFormat pixelsWide:(NSUInteger)width pixelsHigh:(NSUInteger)height contentSize:(CGSize)size;
@@ -90,6 +92,9 @@ Be aware that the content of the generated textures will be upside-down!
 @property(readonly, nonatomic) CGSize contentSize;
 @property(readonly) GLfloat maxS;
 @property(readonly) GLfloat maxT;
+
+@property(assign, nonatomic) BOOL turned;
+
 @end
 
 /*
@@ -107,6 +112,7 @@ Extensions to make it easy to create a Texture2D object from an image file.
 Note that RGBA type textures will have their alpha premultiplied - use the blending mode (GL_ONE, GL_ONE_MINUS_SRC_ALPHA).
 */
 @interface Texture2D (Image)
+- (void) invertTexCoord;
 - (id) initWithImage:(UIImage *)uiImage;
 @end
 
@@ -116,5 +122,4 @@ Note that the generated textures are of type A8 - use the blending mode (GL_SRC_
 */
 @interface Texture2D (Text)
 - (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions alignment:(UITextAlignment)alignment fontName:(NSString*)name fontSize:(CGFloat)size;
-- (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle;
 @end

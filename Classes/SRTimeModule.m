@@ -27,47 +27,63 @@
 		elements = [[NSMutableArray alloc] init];
 		
 		//laad elements in - sla op in textures
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(74, -44, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -55, 31, 31)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"calendar.png"]] 
+															identifier:@"icon" 
+															 clickable:YES]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(178, -60, 137, 40)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"controls_bg.png"]] 
+															identifier:@"controls_bg" 
+															 clickable:NO]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(185, -55, 32, 32)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"stop.png"]] 
+															identifier:@"stop" 
+															 clickable:YES]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(215, -55, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"rew.png"]] 
 															identifier:@"rew" 
-															   clickable:YES]];
+															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(110, -44, 32, 32)  
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(245, -55, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"play.png"]] 
-															identifier:@"play" 
-															   clickable:YES]];
+															identifier:@"playpause" 
+															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(146,-44, 32,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(275, -55, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"fwd.png"]] 
 															identifier:@"fwd" 
-															   clickable:YES]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(206,-48, 64,32) 
-															   texture:[[Texture2D alloc] initWithString:@"TIJD" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
+															 clickable:YES]];
+				
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(65, -60, 64,32) 
+															   texture:[[Texture2D alloc] initWithString:@"TIJD:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent"
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(261,-48, 64,32) 
-															   texture:[[Texture2D alloc] initWithString:@"DATUM" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
-															identifier:@"text-transparent" 
-															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(336,-48, 64,32) 
-															   texture:[[Texture2D alloc] initWithString:@"SNELHEID" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
-															identifier:@"text-transparent" 
-															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(206,-59, 64,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(105,-58, 64,32) 
 															   texture:nil
 															identifier:@"time"
+															 clickable:NO]];		
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(65, -75, 64,32) 
+															   texture:[[Texture2D alloc] initWithString:@"DATUM:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
+															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(261,-59, 64,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(105,-73, 64,32) 
 															   texture:nil
 															identifier:@"date" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(336,-59, 64,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(336,-68, 64,32) 
+															   texture:[[Texture2D alloc] initWithString:@"SNELHEID:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
+															identifier:@"text-transparent" 
+															 clickable:NO]];
+		
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(390,-66, 64,32) 
 															   texture:nil 
 															identifier:@"speed" 
 															 clickable:NO]];
@@ -81,24 +97,30 @@
 	
 	for (SRInterfaceElement* mElement in elements) {
 		if([mElement identifier] == @"text-transparent") {
-			glColor4f(1.0f, 1.0f, 1.0f, 0.5f);
+			glColor4f(1.0f, 1.0f, 1.0f, 0.4f);
 			[[mElement texture] drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
 		else if([mElement identifier] == @"time") {
 			Texture2D* texture = [[Texture2D alloc] initWithString:[manager theTime] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
+			glColor4f(0.294f, 0.513f, 0.93f, 1.0f);
 			[texture drawInRect:[mElement bounds]];
+			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 			[texture release];
 		}
 		else if([mElement identifier] == @"date") {
 			Texture2D* texture = [[Texture2D alloc] initWithString:[manager theDate] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
+			glColor4f(0.294f, 0.513f, 0.93f, 1.0f);
 			[texture drawInRect:[mElement bounds]];
+			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 			[texture release];
 			
 		}
 		else if([mElement identifier] == @"speed") {
 			Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ix",[manager speed]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
+			glColor4f(0.56f, 0.831f, 0.0f, 1.0f);
 			[texture drawInRect:[mElement bounds]];
+			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 			[texture release];
 		}
 		else {
