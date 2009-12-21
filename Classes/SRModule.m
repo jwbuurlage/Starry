@@ -19,15 +19,41 @@
 @synthesize visible, yTranslate, elements;
 
 -(void)show {
+	xValueIcon = initialXValueIcon;
+	alphaValue = 0.0f;
 	visible = YES;
+	showTimer = [[NSTimer scheduledTimerWithTimeInterval:0.4 target:self selector:@selector(show:) userInfo:nil repeats:NO] retain];
+	hiding = FALSE;
 }
 
 -(void)hide {
-	visible = NO;
+	alphaTimer = [[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(alpha:) userInfo:nil repeats:YES] retain];
+	hiding = TRUE;
 }
 
--(void)translate:(NSTimer*)theTimer {
+-(void)show:(NSTimer*)theTimer {
+	//alpha increase
+	alphaTimer = [[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(alpha:) userInfo:nil repeats:YES] retain];
+}
 
+-(void)alpha:(NSTimer*)theTimer {
+	if(hiding) {
+		alphaValue -= 0.1f;
+		if(alphaValue <= 0.0f) {
+			[alphaTimer invalidate];
+			[alphaTimer release];
+			visible = NO;
+			hiding = NO;
+		}
+	}
+	else {
+		alphaValue += 0.1f;
+		if(alphaValue >= 1.0f) {
+			[alphaTimer invalidate];
+			[alphaTimer release];
+			alphaValue = 1.0f;
+		}
+	}
 }
 
 -(void)draw {

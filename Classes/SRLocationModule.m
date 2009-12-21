@@ -23,6 +23,8 @@
 		
 		locationManager = aLocation;
 		
+		initialXValueIcon = 12;
+		
 		[locationManager makeAwareOfInterface:self];
 		
 		//NSLog(@"SRLocationModule meldt de locatie lo:%f la:%f",longitude,latitude);
@@ -39,6 +41,13 @@
 		}
 		
 		//laad elements in - sla op in textures		
+		
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -55, 31, 31)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"radar.png"]] 
+															identifier:@"icon" 
+															 clickable:YES]];	
+		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(104,-60, 80,32) 
 															   texture:[[Texture2D alloc] initWithString:@"BREEDTEGRAAD" dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent"
@@ -62,20 +71,16 @@
 															identifier:@"long" 
 															 clickable:YES]];
 				 
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(190,-55, 28,28) 
-																texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"longitude.png"]]
-																							  identifier:@"long-edit" 
-																							   clickable:YES]];
+
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(380,-53, 28,28) 
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:locationString]]
 																							   identifier:@"gps-toggle" 
 																							  clickable:YES]];
-		  
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -55, 31, 31)
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"radar.png"]] 
-															identifier:@"icon" 
-															 clickable:YES]];		
-		
+	
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(190,-55, 28,28) 
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"longitude.png"]]
+															identifier:@"long-edit" 
+															 clickable:YES]];
 		latVisible = YES;
 		longVisible = YES;
 		
@@ -90,7 +95,7 @@
 	
 	for (SRInterfaceElement* mElement in elements) {
 		if([mElement identifier] == @"text-transparent") {
-			glColor4f(1.0f, 1.0f, 1.0f, 0.4f);
+			glColor4f(0.4f, 0.4f, 0.4f, alphaValue);
 			[[mElement texture] drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
@@ -116,7 +121,7 @@
 				}
 				
 				Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i\"%i' %@",degrees,minutes,seconds,northOrSouth] dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
-				glColor4f(0.294f, 0.513f, 0.93f, 1.0f);
+				glColor4f(0.294f, 0.513f, 0.93f, alphaValue);
 				[texture drawInRect:[mElement bounds]];
 				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 				[texture release];
@@ -156,7 +161,7 @@
 			
 															
 				Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i\"%i' %@",degrees,minutes,seconds,westOrEast] dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
-				glColor4f(0.294f, 0.513f, 0.93f, 1.0f);
+				glColor4f(0.294f, 0.513f, 0.93f, alphaValue);
 				[texture drawInRect:[mElement bounds]];
 				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 				[texture release];
@@ -176,8 +181,18 @@
 				[texture release];
 			}*/
 		}
-		else {
+		else if([mElement identifier] == @"icon") {
+			if(hiding) {
+				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
+			}
+			[[elements objectAtIndex:0] setBounds:CGRectMake(xValueIcon,-55, 31, 31)];
 			[[mElement texture] drawInRect:[mElement bounds]];
+			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+		}
+		else {
+			glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
+			[[mElement texture] drawInRect:[mElement bounds]];
+			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
 	}
 }

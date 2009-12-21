@@ -41,6 +41,14 @@
 		AC24C9AB10BAEB2B0063DF87 /* module_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC24C9A710BAEB2B0063DF87 /* module_bg.png */; };
 		AC24C9AC10BAEB2B0063DF87 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AC24C9A810BAEB2B0063DF87 /* play.png */; };
 		AC24C9AD10BAEB2B0063DF87 /* rew.png in Resources */ = {isa = PBXBuildFile; fileRef = AC24C9A910BAEB2B0063DF87 /* rew.png */; };
+		AC38520010DFF35000C94722 /* phase_0.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3851F810DFF35000C94722 /* phase_0.png */; };
+		AC38520110DFF35000C94722 /* phase_1.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3851F910DFF35000C94722 /* phase_1.png */; };
+		AC38520210DFF35000C94722 /* phase_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3851FA10DFF35000C94722 /* phase_2.png */; };
+		AC38520310DFF35000C94722 /* phase_3.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3851FB10DFF35000C94722 /* phase_3.png */; };
+		AC38520410DFF35000C94722 /* phase_4.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3851FC10DFF35000C94722 /* phase_4.png */; };
+		AC38520510DFF35000C94722 /* phase_5.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3851FD10DFF35000C94722 /* phase_5.png */; };
+		AC38520610DFF35000C94722 /* phase_6.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3851FE10DFF35000C94722 /* phase_6.png */; };
+		AC38520710DFF35000C94722 /* phase_7.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3851FF10DFF35000C94722 /* phase_7.png */; };
 		AC4E0145109E187400C13AC5 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4E0144109E187400C13AC5 /* arrow.png */; };
 		AC4F8957109DF46900B8BD64 /* click.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4F8956109DF46900B8BD64 /* click.png */; };
 		AC55F122109600990021D39C /* SRInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AC55F121109600990021D39C /* SRInterface.m */; };
@@ -153,6 +161,14 @@
 		AC24C9A710BAEB2B0063DF87 /* module_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = module_bg.png; path = Resources/module_bg.png; sourceTree = "<group>"; };
 		AC24C9A810BAEB2B0063DF87 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = Resources/play.png; sourceTree = "<group>"; };
 		AC24C9A910BAEB2B0063DF87 /* rew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rew.png; path = Resources/rew.png; sourceTree = "<group>"; };
+		AC3851F810DFF35000C94722 /* phase_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phase_0.png; path = Resources/phases/phase_0.png; sourceTree = "<group>"; };
+		AC3851F910DFF35000C94722 /* phase_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phase_1.png; path = Resources/phases/phase_1.png; sourceTree = "<group>"; };
+		AC3851FA10DFF35000C94722 /* phase_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phase_2.png; path = Resources/phases/phase_2.png; sourceTree = "<group>"; };
+		AC3851FB10DFF35000C94722 /* phase_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phase_3.png; path = Resources/phases/phase_3.png; sourceTree = "<group>"; };
+		AC3851FC10DFF35000C94722 /* phase_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phase_4.png; path = Resources/phases/phase_4.png; sourceTree = "<group>"; };
+		AC3851FD10DFF35000C94722 /* phase_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phase_5.png; path = Resources/phases/phase_5.png; sourceTree = "<group>"; };
+		AC3851FE10DFF35000C94722 /* phase_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phase_6.png; path = Resources/phases/phase_6.png; sourceTree = "<group>"; };
+		AC3851FF10DFF35000C94722 /* phase_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phase_7.png; path = Resources/phases/phase_7.png; sourceTree = "<group>"; };
 		AC4E0144109E187400C13AC5 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = Resources/arrow.png; sourceTree = "<group>"; };
 		AC4F8956109DF46900B8BD64 /* click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = click.png; path = Resources/click.png; sourceTree = "<group>"; };
 		AC55F120109600990021D39C /* SRInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRInterface.h; sourceTree = "<group>"; };
@@ -309,6 +325,7 @@
 				AC8A87EF10C56FCE0015CDF5 /* longitude.png */,
 				AC8A89D010C5898B0015CDF5 /* info.png */,
 				AC8A89D110C5898B0015CDF5 /* nameplatebg.png */,
+				AC3851F710DFF34500C94722 /* Phases */,
 				ACECC6C610CDA19600CBE4AC /* messier.png */,
 				AC6EE16010C09A63008EEC97 /* Default.png */,
 				AC8A8A6E10C59FBD0015CDF5 /* Settings */,
@@ -407,6 +424,21 @@
 				AC24C9A910BAEB2B0063DF87 /* rew.png */,
 			);
 			name = Time;
+			sourceTree = "<group>";
+		};
+		AC3851F710DFF34500C94722 /* Phases */ = {
+			isa = PBXGroup;
+			children = (
+				AC3851F810DFF35000C94722 /* phase_0.png */,
+				AC3851F910DFF35000C94722 /* phase_1.png */,
+				AC3851FA10DFF35000C94722 /* phase_2.png */,
+				AC3851FB10DFF35000C94722 /* phase_3.png */,
+				AC3851FC10DFF35000C94722 /* phase_4.png */,
+				AC3851FD10DFF35000C94722 /* phase_5.png */,
+				AC3851FE10DFF35000C94722 /* phase_6.png */,
+				AC3851FF10DFF35000C94722 /* phase_7.png */,
+			);
+			name = Phases;
 			sourceTree = "<group>";
 		};
 		AC8A8A6E10C59FBD0015CDF5 /* Settings */ = {
@@ -585,6 +617,14 @@
 				ACC380D310DA959D009ED92E /* indicator_overlay.png in Resources */,
 				ACC380E710DA976D009ED92E /* controls_bg.png in Resources */,
 				ACC3810810DA9902009ED92E /* stop.png in Resources */,
+				AC38520010DFF35000C94722 /* phase_0.png in Resources */,
+				AC38520110DFF35000C94722 /* phase_1.png in Resources */,
+				AC38520210DFF35000C94722 /* phase_2.png in Resources */,
+				AC38520310DFF35000C94722 /* phase_3.png in Resources */,
+				AC38520410DFF35000C94722 /* phase_4.png in Resources */,
+				AC38520510DFF35000C94722 /* phase_5.png in Resources */,
+				AC38520610DFF35000C94722 /* phase_6.png in Resources */,
+				AC38520710DFF35000C94722 /* phase_7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

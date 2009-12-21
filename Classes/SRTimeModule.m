@@ -21,13 +21,15 @@
 -(id)init {
 	if(self = [super init]) {
 		
+		initialXValueIcon = 62;
+		
 		manager = [[[UIApplication sharedApplication] delegate] timeManager];
 		[manager setModuleInstance:self];
 		
 		elements = [[NSMutableArray alloc] init];
 		
 		//laad elements in - sla op in textures
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -55, 31, 31)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(62, -55, 31, 31)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"calendar.png"]] 
 															identifier:@"icon" 
 															 clickable:YES]];
@@ -97,20 +99,20 @@
 	
 	for (SRInterfaceElement* mElement in elements) {
 		if([mElement identifier] == @"text-transparent") {
-			glColor4f(1.0f, 1.0f, 1.0f, 0.4f);
+			glColor4f(0.4f, 0.4f, 0.4f, alphaValue);
 			[[mElement texture] drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
 		else if([mElement identifier] == @"time") {
 			Texture2D* texture = [[Texture2D alloc] initWithString:[manager theTime] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
-			glColor4f(0.294f, 0.513f, 0.93f, 1.0f);
+			glColor4f(0.294f, 0.513f, 0.93f, 1.0f * alphaValue);
 			[texture drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 			[texture release];
 		}
 		else if([mElement identifier] == @"date") {
 			Texture2D* texture = [[Texture2D alloc] initWithString:[manager theDate] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
-			glColor4f(0.294f, 0.513f, 0.93f, 1.0f);
+			glColor4f(0.294f, 0.513f, 0.93f, alphaValue);
 			[texture drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 			[texture release];
@@ -118,13 +120,33 @@
 		}
 		else if([mElement identifier] == @"speed") {
 			Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ix",[manager speed]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
-			glColor4f(0.56f, 0.831f, 0.0f, 1.0f);
+			glColor4f(0.56f, 0.831f, 0.0f, alphaValue);
 			[texture drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 			[texture release];
 		}
-		else {
+		else if([mElement identifier] == @"icon") {
+			if(hiding) {
+				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
+			}
+			else {
+				if(xValueIcon > 12) {
+					xValueIcon -= (initialXValueIcon - 12) / 10;
+				}
+				if(xValueIcon < 12) {
+					xValueIcon = 12;	
+				}
+				[[elements objectAtIndex:0] setBounds:CGRectMake(xValueIcon, -55, 31, 31)];
+			}
+			
+			
 			[[mElement texture] drawInRect:[mElement bounds]];
+			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+		}
+		else {
+			glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
+			[[mElement texture] drawInRect:[mElement bounds]];
+			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
 	}
 }

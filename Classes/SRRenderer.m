@@ -47,10 +47,18 @@
 		[interface loadTexture:@"highlight.png" intoLocation:textures[8]];
 		[interface loadTexture:@"highlight_small.png" intoLocation:textures[9]];
 		[interface loadTexture:@"messier.png" intoLocation:textures[10]];
+		
+		//FIXME: phases moeten mooier
+		[interface loadTexture:@"phase_0.png" intoLocation:textures[10]];
+		[interface loadTexture:@"phase_1.png" intoLocation:textures[11]];
+		[interface loadTexture:@"phase_2.png" intoLocation:textures[12]];
+		[interface loadTexture:@"phase_3.png" intoLocation:textures[13]];
+		[interface loadTexture:@"phase_4.png" intoLocation:textures[14]];
+		[interface loadTexture:@"phase_5.png" intoLocation:textures[15]];
+		[interface loadTexture:@"phase_6.png" intoLocation:textures[16]];
+		[interface loadTexture:@"phase_7.png" intoLocation:textures[17]];
 
 		//FIXME: verplaats naar app delegate		
-		
-		
 		glClearColor(0.0, 0.05, 0.08, 1.0);
 
 		[self loadPlanetPoints];
@@ -272,16 +280,49 @@
 	while(i < planetNum) {
 		size = planetPoints[(i*8)+7] * [camera zoomingValue];
 		glPointSize(size);
-		if (i == 0) { // Bij de zon laad de zon texture in
-			glBindTexture(GL_TEXTURE_2D, textures[5]);
-		}
-		else if (i == 1) {
+		
+		if (i == 1) { // maan
 			glBindTexture(GL_TEXTURE_2D, textures[6]);
+			glDrawArrays(GL_POINTS,i, 1);
+			
+			switch([[objectManager moon] phase]) {
+				case 0:
+					glBindTexture(GL_TEXTURE_2D, textures[11]);
+					break;
+				case 1: 
+					glBindTexture(GL_TEXTURE_2D, textures[12]);
+					break;
+				case 2: 
+					glBindTexture(GL_TEXTURE_2D, textures[13]);
+					break;
+				case 3: 
+					glBindTexture(GL_TEXTURE_2D, textures[14]);
+					break;
+				case 4: 
+					glBindTexture(GL_TEXTURE_2D, textures[15]);
+					break;
+				case 5: 
+					glBindTexture(GL_TEXTURE_2D, textures[16]);
+					break;
+				case 6: 
+					glBindTexture(GL_TEXTURE_2D, textures[17]);
+					break;
+				case 7: 
+					glBindTexture(GL_TEXTURE_2D, textures[18]);
+					break;
+			}
+			
+			glDrawArrays(GL_POINTS,i, 1);
 		}
-		else { // Bij planeten laad de planeet texture in
-			glBindTexture(GL_TEXTURE_2D, textures[7]);
+		else {
+			if (i == 0) { // Bij de zon laad de zon texture in
+				glBindTexture(GL_TEXTURE_2D, textures[5]);
+			}
+			else { // Bij planeten laad de planeet texture in
+				glBindTexture(GL_TEXTURE_2D, textures[7]);
+			}
+			glDrawArrays(GL_POINTS,i, 1);
 		}
-		glDrawArrays(GL_POINTS,i, 1);
 		++i;
 	}				
 }

@@ -22,14 +22,25 @@
 @interface SRModule : NSObject {
 	NSMutableArray* elements;
 	BOOL visible; 
+	BOOL hiding;
 	int yTranslate;
 	
 	NSTimer* posiTimer;
 	NSTimer* negiTimer;
 	
+	NSTimer* iconTimer;
+	
 	GLuint textures[9];
 	GLfloat textureCorners[150];
 	GLfloat textureCoords[100];
+	
+	int xValueIcon;
+	int initialXValueIcon;
+	
+	float alphaValue;
+	
+	NSTimer* showTimer;
+	NSTimer* alphaTimer;
 }
 
 @property (readonly) BOOL visible;
@@ -38,8 +49,9 @@
 
 -(void)hide;
 -(void)show;
--(void)translate:(NSTimer*)theTimer;
--(void)draw;
+-(void)icon:(NSTimer*)theTimer;
+-(void)show:(NSTimer*)theTimer;
+-(void)alpha:(NSTimer*)theTimer;
 -(void)loadTexture:(NSString *)name intoLocation:(GLuint)location;
 -(void)loadTextureWithString:(NSString *)text intoLocation:(GLuint)location;
 -(CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle;

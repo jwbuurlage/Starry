@@ -39,6 +39,7 @@
 		
 		defaultTextureBool = TRUE;
 		alphaDefault = 1.0f;
+		yTranslate = 0.0f;
 		defaultTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"defaultTexture.png"]];
 		[self fadeDefaultTexture];
 	}
@@ -173,7 +174,7 @@
 														  identifier:@"search" 
 														   clickable:NO]];
 	 
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(393, -55, 31, 31)  
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(392, -55, 31, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"gears.png"]] 
 														  identifier:@"settings" 
 														   clickable:YES]];
@@ -260,17 +261,17 @@
 			[[element texture] drawInRect:[element bounds]];
 		}
 		else if (menuVisible) {
+			glTranslatef(0, -yTranslate, 0);
 			[[element texture] drawInRect:[element bounds]];
+			glTranslatef(0, yTranslate, 0);
 		}
 		
 		++i;
 	}
 	
-	if(!menuVisible) {
-		for (SRModule* module in modules) {
-			if([module visible]) {
-				[module draw];
-			}
+	for (SRModule* module in modules) {
+		if([module visible]) {
+			[module draw];
 		}
 	}
 	
@@ -403,35 +404,35 @@
 	
 		if(clicker == @"time") {
 			//show tijd crap
-			menuVisible = FALSE;
 			if([timeModule visible]) {
 				[timeModule hide];	
 			}
 			else {
 				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
+				[[UIElements objectAtIndex:2] setBounds:CGRectZero];
 				[self hideAllModules];
 				[timeModule show];
 			}
 		}
 		else if(clicker == @"location") {
 			//show tijd crap
-			menuVisible = FALSE;
 			if([locationModule visible]) {
 				[locationModule hide];	
 			}
 			else {
 				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
+				[[UIElements objectAtIndex:1] setBounds:CGRectZero];
 				[self hideAllModules];
 				[locationModule show];
 			}
 		}
 		else if(clicker == @"settings") {
-			menuVisible = FALSE;
 			if([settingsModule visible]) {
 				[settingsModule hide];	
 			}
 			else {
 				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
+				[[UIElements objectAtIndex:6] setBounds:CGRectZero];
 				[self hideAllModules];
 				[settingsModule show];
 			}
@@ -522,10 +523,24 @@
 			showingMessier = YES;
 		}	
 		else if(clicker == @"icon") {	
-			menuVisible = YES;
-			[self hideAllModules];
+			if([timeModule visible]) {
+				[timeModule hide];	
+				[[UIElements objectAtIndex:2] setBounds:CGRectMake(62, -55, 31, 31)];
+			}
+			if([locationModule visible]) {
+				[locationModule hide];
+				[[UIElements objectAtIndex:1] setBounds:CGRectMake(12, -55, 31, 31)];
+			}
+			if([settingsModule visible]) {
+				[settingsModule hide];
+				[[UIElements objectAtIndex:6] setBounds:CGRectMake(392, -55, 31, 31)];	
+			}
+			
+			hidingMenu = FALSE;
+			menuVisible = TRUE;
+			menuTimer = [[NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(translateY:) userInfo:nil repeats:YES] retain];
 		}
-
+		
 		if(flagToggle) {
 			if(![posiTimer isValid] && ![negiTimer isValid]) {
 				if(xTranslate == 0) {
@@ -552,15 +567,8 @@
 }
 
 -(void) hideAllModules {
-	if([timeModule visible]) {
-		[timeModule hide];	
-	}
-	if([locationModule visible]) {
-		[locationModule hide];
-	}
-	if([settingsModule visible]) {
-		[settingsModule hide];
-	}
+	hidingMenu = TRUE;
+	menuTimer = [[NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(translateY:) userInfo:nil repeats:YES] retain];
 }
 
 -(void)translate:(NSTimer*)theTimer {
@@ -572,6 +580,28 @@
 	
 	if(xTranslate >= 63 || xTranslate <= 0) {
 		[theTimer invalidate];
+	}
+}
+
+-(void)translateY:(NSTimer*)theTimer {
+	if(hidingMenu) {
+		yTranslate += 7; 
+
+		if(yTranslate >= 63) {
+			[theTimer invalidate];
+			menuVisible = NO;
+			yTranslate = 63;
+		}
+	}
+	else {
+		yTranslate -= 7; 
+		
+		if(yTranslate <= 0) {
+			[theTimer invalidate];
+			yTranslate = 0;
+		
+		}
+		
 	}
 }
 

@@ -58,12 +58,16 @@
 	
 	BOOL stopShowingMessier;
 	
+	BOOL hidingMenu;
+	
 	int xTranslate;
+	int yTranslate;
 	int count;
 	
 	NSTimer *posiTimer;
 	NSTimer *negiTimer;
 	NSTimer *fadeTimer;
+	NSTimer *menuTimer;
 	UITextField *fieldTmp;
 	
 	NSString* currentlyEditingIdentifier;

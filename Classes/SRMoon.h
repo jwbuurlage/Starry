@@ -11,10 +11,12 @@
 
 @interface SRMoon : NSObject {
 	Vertex3D position;
+	int phase;
 }
 
 -(void)recalculatePosition:(NSDate*)theDate;
 
 @property (readonly) Vertex3D position;
+@property (readonly) int phase;
 
 @end
