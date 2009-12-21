@@ -49,14 +49,14 @@
 		[interface loadTexture:@"messier.png" intoLocation:textures[10]];
 		
 		//FIXME: phases moeten mooier
-		[interface loadTexture:@"phase_0.png" intoLocation:textures[10]];
-		[interface loadTexture:@"phase_1.png" intoLocation:textures[11]];
-		[interface loadTexture:@"phase_2.png" intoLocation:textures[12]];
-		[interface loadTexture:@"phase_3.png" intoLocation:textures[13]];
-		[interface loadTexture:@"phase_4.png" intoLocation:textures[14]];
-		[interface loadTexture:@"phase_5.png" intoLocation:textures[15]];
-		[interface loadTexture:@"phase_6.png" intoLocation:textures[16]];
-		[interface loadTexture:@"phase_7.png" intoLocation:textures[17]];
+		[interface loadTexture:@"phase_0.png" intoLocation:textures[11]];
+		[interface loadTexture:@"phase_1.png" intoLocation:textures[12]];
+		[interface loadTexture:@"phase_2.png" intoLocation:textures[13]];
+		[interface loadTexture:@"phase_3.png" intoLocation:textures[14]];
+		[interface loadTexture:@"phase_4.png" intoLocation:textures[15]];
+		[interface loadTexture:@"phase_5.png" intoLocation:textures[16]];
+		[interface loadTexture:@"phase_6.png" intoLocation:textures[17]];
+		[interface loadTexture:@"phase_7.png" intoLocation:textures[18]];
 
 		//FIXME: verplaats naar app delegate		
 		glClearColor(0.0, 0.05, 0.08, 1.0);
