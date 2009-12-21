@@ -49,6 +49,7 @@
 
 -(void)hide;
 -(void)show;
+-(void)draw;
 -(void)icon:(NSTimer*)theTimer;
 -(void)show:(NSTimer*)theTimer;
 -(void)alpha:(NSTimer*)theTimer;

@@ -207,10 +207,15 @@
 	[modules addObject:settingsModule];
 }
 
+-(void)stopMessier:(NSTimer*)theTimer {
+	showingMessier = FALSE;
+}
+
 -(void)renderInterface {
 	
 	if(stopShowingMessier) {
-		showingMessier = FALSE;
+		[messierInfo hide];
+		messierTimer = [[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(stopMessier:) userInfo:nil repeats:NO] retain];
 		stopShowingMessier = FALSE;
 	}
 	
@@ -236,10 +241,10 @@
     glEnableClientState(GL_VERTEX_ARRAY);
 	
 	if(defaultTextureBool) {
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glColor4f(1.0, 1.0, 1.0, alphaDefault);      
 		[defaultTexture drawInRect:CGRectMake(0,-192,512,512)];
 	}
+	
 	
 	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
@@ -300,13 +305,15 @@
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 	}
 	
-	if([[appDelegate settingsManager] showRedOverlay]) {
-		[self drawRedOverlay];
-	}
-	
 	if(showingMessier) {
 		[messierInfo draw];
 	}
+	
+	
+	if([[appDelegate settingsManager] showRedOverlay]) {
+		[self drawRedOverlay];
+	}
+
 	
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 			
@@ -520,6 +527,7 @@
 			}
 		}		
 		else if(clicker == @"info") {
+			[messierInfo show];
 			showingMessier = YES;
 		}	
 		else if(clicker == @"icon") {	

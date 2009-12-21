@@ -132,7 +132,6 @@
 	//camera positie callen
 	[camera adjustView];
 	
-	if(![interface showingMessier]) {
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 	
@@ -179,7 +178,6 @@
 		//highlight = FALSE;
 	}
 		
-	}
 	
 	[interface renderInterface];
 	

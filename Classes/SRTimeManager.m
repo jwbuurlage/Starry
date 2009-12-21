@@ -109,20 +109,6 @@
 	sT = fmod(sT, 360);
 	elapsed = sT; // in graden
 	
-	//NSLog(@"elapsed: %f",sT / 15);
-	
-	/* NSCalendar *gregorian = [[NSCalendar alloc]
-							 initWithCalendarIdentifier:NSGregorianCalendar];
-	NSDateComponents *dateComponents = [gregorian components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:simulatedDate];
-	float hour = [dateComponents hour];
-	float minute = [dateComponents minute];
-	float second = [dateComponents second];
-	
-	elapsed = (hour + (minute / 60) + (second / 3600)) / 24; */
-	
-	
-	//[gregorian release];
-	//[referenceDate release];
 	return elapsed;
 }
 

@@ -68,6 +68,7 @@
 	NSTimer *negiTimer;
 	NSTimer *fadeTimer;
 	NSTimer *menuTimer;
+	NSTimer *messierTimer;
 	UITextField *fieldTmp;
 	
 	NSString* currentlyEditingIdentifier;

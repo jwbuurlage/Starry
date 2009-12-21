@@ -13,15 +13,28 @@
 
 #import "Texture2D.h"
 #import "SRMessier.h"
+#import "SRInterfaceElement.h"
 
 
 @interface SRMessierInfo : NSObject {	
 	SRMessier* currentMessier;
 	
+	NSMutableArray* elements;
+	
 	Texture2D* messierImage;
 	Texture2D* messierText;
 	Texture2D* interfaceBackground;
+	Texture2D* pictureBackground;
 	//text...
+	
+	float alphaValue;
+	float alphaValueName;
+	
+	BOOL hiding;
+	NSTimer* showTimer;
+	
+	int pictureBgX;
+	int navBgX;
 	
 	//BOOL visible;
 }
@@ -31,6 +44,8 @@
 //+ (SRMessierInfo*)shared;
 - (void)messierClicked:(SRMessier*)theMessier;
 - (void)draw;
-
+- (void)show; 
+- (void)hide; 
+- (void)alpha:(NSTimer*)theTimer;
 
 @end
