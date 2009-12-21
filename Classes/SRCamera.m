@@ -47,7 +47,7 @@
 		//afremmen in 50 stappen
 		if(hSteps == 0) { hSteps = 50; }
 		
-		hSpeed = accH * hSteps * 0.005;
+		hSpeed = accH * hSteps * 0.010;
 		altitude -= hSpeed / (4/fieldOfView); // voor het zomen is de / (4/fieldOfView) nodig
 		
 		--hSteps;
@@ -60,7 +60,7 @@
 	if(swipeVer) {
 		if(vSteps == 0) { vSteps = 50; }
 		
-		vSpeed = accV * vSteps * 0.005;
+		vSpeed = accV * vSteps * 0.010;
 		azimuth += vSpeed / (4/fieldOfView); // voor het zomen is de / (4/fieldOfView) nodig
 		
 		--vSteps;
@@ -95,9 +95,9 @@
 	}
 	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView);
 	float deltaAltitude = -deltaX / (rotationConstant/fieldOfView);
-	azimuth += deltaAzimuth;
+	azimuth += (deltaAzimuth * 1.4);
 	azimuth = fmod(azimuth, 360); // Modulo 360
-	altitude += deltaAltitude;
+	altitude += (deltaAltitude * 1.4);
 	//NSLog(@"Rotate Camera With X:%i Y:%i dAz:%f dAl:%f az:%f al:%f fov:%f",deltaX,deltaY,deltaAzimuth,deltaAltitude,azimuth,altitude,fieldOfView);
 }
 
@@ -116,8 +116,6 @@
 
 }
 
-
-
 - (void)initiateHorizontalSwipeWithX:(int)theX {
 	swipeHor = YES;
 	accH = theX;
@@ -133,9 +131,9 @@
 	//NSLog(@"Zooming");
 		
 	if(delta > 0)
-		zoomingValue = 1 + 0.003 * delta;
+		zoomingValue = 1 + 0.005 * delta;
 	else if (delta < 0)
-		zoomingValue = 1 - 0.003 * -delta;
+		zoomingValue = 1 - 0.005 * -delta;
 	else 
 		zoomingValue = 1;
 	

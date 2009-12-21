@@ -220,29 +220,22 @@
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	
-	glDisable(GL_DEPTH_TEST);
 	//glDepthMask(GL_FALSE); 
 	
 	//glAlphaFunc( GL_EQUAL, 1.0f );
 	//glEnable( GL_ALPHA_TEST );
-	glEnable(GL_BLEND);
 
-	glEnable(GL_TEXTURE_2D);
 	
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
-	
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glTexCoordPointer(2, GL_FLOAT, 0, textureCoords);
-		
 	glDisableClientState(GL_COLOR_ARRAY);
     glColor4f(1.0, 1.0, 1.0, 1.0);      
-	
     glVertexPointer(3, GL_FLOAT, 0, textureCorners);
     glEnableClientState(GL_VERTEX_ARRAY);
 	
 	if(defaultTextureBool) {
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
 		glColor4f(1.0, 1.0, 1.0, alphaDefault);      
 		[defaultTexture drawInRect:CGRectMake(0,-192,512,512)];
 	}
@@ -315,11 +308,7 @@
 	}
 	
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-		
-	
-	glEnable(GL_DEPTH_TEST);
-	glDepthMask(GL_TRUE); 
-	
+			
 	glDisable(GL_TEXTURE_2D); 
 }
 
