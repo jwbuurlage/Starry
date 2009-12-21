@@ -64,9 +64,9 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = ACB7B0F910615ACD00CA447E /* Sterren */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Sterren */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Sterren */,
@@ -125,8 +125,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 283123796;
-			PBXWorkspaceStateSaveDate = 283123796;
+			PBXPerProjectTemplateStateSaveDate = 283125849;
+			PBXWorkspaceStateSaveDate = 283125849;
 		};
 		perUserProjectItems = {
 			AC080F3610D974910078DA4D /* PBXTextBookmark */ = AC080F3610D974910078DA4D /* PBXTextBookmark */;
@@ -182,6 +182,8 @@
 			AC38523010DFF62500C94722 /* PBXTextBookmark */ = AC38523010DFF62500C94722 /* PBXTextBookmark */;
 			AC4538A310CA86A000E7AC9F /* PBXTextBookmark */ = AC4538A310CA86A000E7AC9F /* PBXTextBookmark */;
 			AC4F895D109DF65700B8BD64 /* PBXBookmark */ = AC4F895D109DF65700B8BD64 /* PBXBookmark */;
+			AC555F3010E02D31009C52CB /* PBXTextBookmark */ = AC555F3010E02D31009C52CB /* PBXTextBookmark */;
+			AC555F3110E02D31009C52CB /* PBXTextBookmark */ = AC555F3110E02D31009C52CB /* PBXTextBookmark */;
 			AC57BE2210C96A8D00B0BD5C /* PBXTextBookmark */ = AC57BE2210C96A8D00B0BD5C /* PBXTextBookmark */;
 			AC69F2F310CEAEC800D9742A /* PBXBookmark */ = AC69F2F310CEAEC800D9742A /* PBXBookmark */;
 			AC69F2F410CEAEC800D9742A /* PBXBookmark */ = AC69F2F410CEAEC800D9742A /* PBXBookmark */;
@@ -210,8 +212,6 @@
 			ACA67FEB10E024E800722E50 /* PBXBookmark */ = ACA67FEB10E024E800722E50 /* PBXBookmark */;
 			ACA67FEC10E024E800722E50 /* PBXBookmark */ = ACA67FEC10E024E800722E50 /* PBXBookmark */;
 			ACA67FED10E024E800722E50 /* PBXTextBookmark */ = ACA67FED10E024E800722E50 /* PBXTextBookmark */;
-			ACA67FEE10E024E800722E50 /* PBXTextBookmark */ = ACA67FEE10E024E800722E50 /* PBXTextBookmark */;
-			ACA6802310E0283900722E50 /* PBXTextBookmark */ = ACA6802310E0283900722E50 /* PBXTextBookmark */;
 			ACABC16010D80B7700B002EA /* PBXTextBookmark */ = ACABC16010D80B7700B002EA /* PBXTextBookmark */;
 			ACB56B4110C41B150002842B /* PBXBookmark */ = ACB56B4110C41B150002842B /* PBXBookmark */;
 			ACB8F1A810CC77C100C0F87E /* PBXBookmark */ = ACB8F1A810CC77C100C0F87E /* PBXBookmark */;
@@ -877,6 +877,26 @@
 		isa = PBXBookmark;
 		fRef = AC2243AF109DB98F0049BF46 /* time.png */;
 	};
+	AC555F3010E02D31009C52CB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC89DDF810D035480083BFEA /* SRMessierInfo.m */;
+		name = "SRMessierInfo.m: 177";
+		rLen = 0;
+		rLoc = 8146;
+		rType = 0;
+		vrLen = 4878;
+		vrLoc = 289;
+	};
+	AC555F3110E02D31009C52CB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC89DDF810D035480083BFEA /* SRMessierInfo.m */;
+		name = "SRMessierInfo.m: 61";
+		rLen = 0;
+		rLoc = 3422;
+		rType = 0;
+		vrLen = 4840;
+		vrLoc = 289;
+	};
 	AC55F120109600990021D39C /* SRInterface.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1344, 1456}}";
@@ -1019,8 +1039,8 @@
 	AC89DDF810D035480083BFEA /* SRMessierInfo.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1573, 2535}}";
-			sepNavSelRange = "{8146, 0}";
-			sepNavVisRange = "{1205, 4613}";
+			sepNavSelRange = "{3422, 0}";
+			sepNavVisRange = "{289, 4840}";
 		};
 	};
 	AC89DE0510D039270083BFEA /* PBXTextBookmark */ = {
@@ -1111,11 +1131,6 @@
 		name = SRInterface.m;
 		path = /Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Classes/SRInterface.m;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1344, 9412}}";
-			sepNavSelRange = "{4673, 2410}";
-			sepNavVisRange = "{4211, 3047}";
-		};
 	};
 	AC9A0AF610DFC3770087E388 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1239,26 +1254,6 @@
 		rType = 0;
 		vrLen = 234;
 		vrLoc = 0;
-	};
-	ACA67FEE10E024E800722E50 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = AC89DDF810D035480083BFEA /* SRMessierInfo.m */;
-		name = "SRMessierInfo.m: 86";
-		rLen = 0;
-		rLoc = 4990;
-		rType = 0;
-		vrLen = 3264;
-		vrLoc = 2597;
-	};
-	ACA6802310E0283900722E50 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = AC89DDF810D035480083BFEA /* SRMessierInfo.m */;
-		name = "SRMessierInfo.m: 177";
-		rLen = 0;
-		rLoc = 8146;
-		rType = 0;
-		vrLen = 4613;
-		vrLoc = 1205;
 	};
 	ACA875EC109DD0A000465577 /* SRInterfaceElement.h */ = {
 		uiCtxt = {
