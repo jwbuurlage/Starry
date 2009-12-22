@@ -55,6 +55,9 @@
 		AC55F122109600990021D39C /* SRInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AC55F121109600990021D39C /* SRInterface.m */; };
 		AC57BD0E10C957DC00B0BD5C /* constellations.xml in Resources */ = {isa = PBXBuildFile; fileRef = AC57BD0D10C957DC00B0BD5C /* constellations.xml */; };
 		AC59B8BA1075075F00ABAE22 /* SRPlanetaryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */; };
+		AC603F6410E0CF790017951C /* M42.png in Resources */ = {isa = PBXBuildFile; fileRef = AC603F6110E0CF790017951C /* M42.png */; };
+		AC603F6510E0CF790017951C /* M43.png in Resources */ = {isa = PBXBuildFile; fileRef = AC603F6210E0CF790017951C /* M43.png */; };
+		AC603F6C10E0D5920017951C /* M78.png in Resources */ = {isa = PBXBuildFile; fileRef = AC603F6B10E0D5920017951C /* M78.png */; };
 		AC6636E110AB16C600D4FB1C /* horizon_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6636E010AB16C600D4FB1C /* horizon_bg.png */; };
 		AC6D777E10C56A1900442254 /* SRSpriteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D777D10C56A1900442254 /* SRSpriteManager.m */; };
 		AC6EE16110C09A63008EEC97 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6EE16010C09A63008EEC97 /* Default.png */; };
@@ -179,6 +182,9 @@
 		AC57BD0D10C957DC00B0BD5C /* constellations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = constellations.xml; sourceTree = "<group>"; };
 		AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlanetaryObject.h; sourceTree = "<group>"; };
 		AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRPlanetaryObject.m; sourceTree = "<group>"; };
+		AC603F6110E0CF790017951C /* M42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M42.png; path = Resources/messier/M42.png; sourceTree = "<group>"; };
+		AC603F6210E0CF790017951C /* M43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M43.png; path = Resources/messier/M43.png; sourceTree = "<group>"; };
+		AC603F6B10E0D5920017951C /* M78.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M78.png; path = Resources/messier/M78.png; sourceTree = "<group>"; };
 		AC6636E010AB16C600D4FB1C /* horizon_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = horizon_bg.png; path = Resources/horizon_bg.png; sourceTree = "<group>"; };
 		AC6D777C10C56A1900442254 /* SRSpriteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSpriteManager.h; sourceTree = "<group>"; };
 		AC6D777D10C56A1900442254 /* SRSpriteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSpriteManager.m; sourceTree = "<group>"; };
@@ -517,6 +523,9 @@
 		ACE708CE10D029FD003DE4BB /* Messier */ = {
 			isa = PBXGroup;
 			children = (
+				AC603F6110E0CF790017951C /* M42.png */,
+				AC603F6210E0CF790017951C /* M43.png */,
+				AC603F6B10E0D5920017951C /* M78.png */,
 				ACE708CF10D02A0B003DE4BB /* M1.png */,
 				ACC47C5A10D96CF3004854E5 /* M2.png */,
 				ACC47C5B10D96CF3004854E5 /* M3.png */,
@@ -633,6 +642,9 @@
 				AC38520710DFF35000C94722 /* phase_7.png in Resources */,
 				AC2973FB10E018F900160442 /* messierPictureBg.png in Resources */,
 				ACA67FE710E024AD00722E50 /* messierNameBg.png in Resources */,
+				AC603F6410E0CF790017951C /* M42.png in Resources */,
+				AC603F6510E0CF790017951C /* M43.png in Resources */,
+				AC603F6C10E0D5920017951C /* M78.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
