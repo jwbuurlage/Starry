@@ -110,6 +110,7 @@
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
 	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) - 1*((azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView)));
+	NSLog(@"Calculate azimuthFromX:%i andY:%i origiginal:%f delta:%f new:%f",deltaX,deltaY,deltaY / (rotationConstant/fieldOfView) ,-((azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView))),deltaAzimuth);
 	float result;
 	
 	if (deltaAzimuth > 0)
@@ -123,6 +124,7 @@
 -(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
 	float deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - 1*((altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView)));
+	NSLog(@"Calculate altitudeFromX:%i andY:%i origiginal:%f delta:%f new:%f",deltaX,deltaY,(-deltaX / (rotationConstant/fieldOfView)),-((altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView))),deltaAltitude);
 	float result;
 	if(deltaAltitude > 0) 
 		result = altitude + pow(abs(deltaAltitude),1.01);

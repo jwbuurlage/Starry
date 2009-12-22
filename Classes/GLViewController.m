@@ -183,7 +183,7 @@
 		int y = [aTouch locationInView:theView].y;
 		
 		// Aan de buitenste zeide is de destortion veel erger dan verder naar binnen.
-		if (40 < y && y < 440 && 30 < x && x < 290) {
+		//if (40 < y && y < 440 && 30 < x && x < 290) {
 			
 			//[objectManager clickedAtX:x Y:y];
 			
@@ -446,7 +446,7 @@
 				}
 					
 				}	
-			}
+			//}
 			
 			
 			
