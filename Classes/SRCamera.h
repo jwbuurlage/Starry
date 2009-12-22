@@ -63,7 +63,7 @@
 - (void)reenable;
 //- (void)RAAndDecForPoint:(CGPoint)point;
 
--(float)calculateAzimuthWithY:(int)deltaY;
--(float)calculateAltitudeWithX:(int)deltaX;
+-(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY;
+-(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY;
 
 @end
