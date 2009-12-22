@@ -120,7 +120,6 @@
 }
 
 -(void)render {
-	
 	//view resetten
     glLoadIdentity();
 		
@@ -175,7 +174,7 @@
 		[self loadPlanetPoints];
 		[[[interface timeModule] manager] setTotalInterval:0];
 		// FIXME: recalculate highlight for planet moved
-		//highlight = FALSE;
+		highlight = FALSE;
 	}
 		
 	

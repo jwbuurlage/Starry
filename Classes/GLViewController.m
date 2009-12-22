@@ -279,7 +279,8 @@
 			
 			if (sunD < (2 * (1/zoomingValue))) {
 				[[[renderer interface] theNameplate] setName:@"Zon" inConstellation:@"onze ster" showInfo:YES];
-				
+				[[renderer interface] setANameplate:TRUE];
+
 //<<<<<<< HEAD:Classes/GLViewController.m
 				Vertex3D position = sun.position;
 				//Vertex3D position = Vector3DMake(sun.position.x, sun.position.y-0.2, sun.position.z);
@@ -300,7 +301,8 @@
 			
 			if (moonD < (2 * (1/zoomingValue))) {
 				[[[renderer interface] theNameplate] setName:@"Maan" inConstellation:@"" showInfo:YES];
-				
+				[[renderer interface] setANameplate:TRUE];
+
 				//Vertex3D position = ;
 				Vertex3D position = Vector3DMake(moon.position.x, moon.position.y, moon.position.z);
 //>>>>>>> 5b467e71baa2e98bbb44915d597b1fbd5ff73140:Classes/GLViewController.m
@@ -331,7 +333,8 @@
 				if (closestD < (2 * (1/zoomingValue))) {
 					//NSLog(@"Delta of closest: %f",closestD);
 					[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
-					
+					[[renderer interface] setANameplate:TRUE];
+
 					Vertex3D position = closestPlanet.position;
 					
 					[renderer setHighlightPosition:position];
@@ -359,7 +362,8 @@
 					if(closestD < (5.1)) {
 						
 						[[[renderer interface] theNameplate] setName:closestMessier.name inConstellation:@"messier" showInfo:YES];
-						
+						[[renderer interface] setANameplate:TRUE];
+
 						[[[renderer interface] messierInfo] messierClicked:closestMessier];
 
 						
@@ -403,9 +407,11 @@
 						//NSLog(@"Delta of closest: %f",closestD);
 						if (closestStar.name == @"" || closestStar.name == @" ") {
 							[[[renderer interface] theNameplate] setName:@"Naamloze ster" inConstellation:closestStar.bayer showInfo:NO];
+							[[renderer interface] setANameplate:TRUE];
 						}
 						else {
 							[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:NO];
+							[[renderer interface] setANameplate:TRUE];
 						}
 						
 						
@@ -430,7 +436,7 @@
 							
 							[renderer setHighlight:FALSE];
 							[[[renderer interface] theNameplate] hide];
-							
+							[[renderer interface] setANameplate:TRUE];
 							/*SRStar * ster;
 							 for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
 							 ster.selected = NO;
@@ -448,35 +454,6 @@
 				}	
 			//}
 			
-			
-			
-			
-			/*
-			 Dit kopt niet 
-			 float alOm = acos(brZ);
-			 float fiOm = atan((brY)/(brX)); // klopt niet? hoe kan deze 2 parm nemen?
-			 
-			 NSLog(@"RA/DEC punt RA:%f DEC:%f",alOm*(180/M_PI),fiOm*(180/M_PI));*/
-			
-			//NSLog(@"Aangeklikte locatie voor sterren database x:%f y:%f z:%f",stX,stY,stZ);
-			
-			/*if(stX < 1.5 &&
-			 stX >= -1.5 &&
-			 stY < 1.5 &&
-			 stY >= -1.5 &&
-			 stZ <= 20 &&
-			 stZ > 18.0) {
-			 //Poolster aangeklikt
-			 if ([[[renderer interface] theNameplate] visible]) {
-			 [[[renderer interface] theNameplate] hide];
-			 // Iets van een timer
-			 //[[[renderer interface] theNameplate] setName:@"Polaris" inConstellation:@"Kleine beer" showInfo:NO];
-			 
-			 }
-			 else {
-			 [[[renderer interface] theNameplate] setName:@"Polaris" inConstellation:@"Kleine beer" showInfo:NO];
-			 }
-			 }*/
 			
 		}
 		

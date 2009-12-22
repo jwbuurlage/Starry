@@ -18,7 +18,7 @@
 
 @implementation SRInterface
 
-@synthesize timeModule,renderer,theNameplate, messierInfo, showingMessier;
+@synthesize timeModule,renderer,theNameplate, messierInfo, showingMessier, aNameplate;
 
 -(id)initWithRenderer:(SRRenderer*)theRenderer {
 	if(self = [super init]) {
@@ -148,7 +148,7 @@
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"nav_bg.png"]] 
 														  identifier:@"menu" 
 														   clickable:NO]];
-		 
+		  
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -55, 31, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"radar.png"]] 
 														  identifier:@"location" 
@@ -207,17 +207,16 @@
 	[modules addObject:settingsModule];
 }
 
--(void)stopMessier:(NSTimer*)theTimer {
-	showingMessier = FALSE;
-}
-
 -(void)renderInterface {
+	//we rekenen uit hoelang het per frame is om animaties smooth te laten verlopen
+	if (lastDrawTime) { timeElapsed = [NSDate timeIntervalSinceReferenceDate] - lastDrawTime; }
+    lastDrawTime = [NSDate timeIntervalSinceReferenceDate];
 	
-	if(stopShowingMessier) {
-		[messierInfo hide];
-		messierTimer = [[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(stopMessier:) userInfo:nil repeats:NO] retain];
-		stopShowingMessier = FALSE;
-	}
+	// -- animaties..
+	[self calculateAnimations];
+	
+	//NSLog(@"%f", timeElapsed);
+	
 	
 	glMatrixMode(GL_PROJECTION); 
 	glLoadIdentity();
@@ -346,6 +345,8 @@
 
 	if(showingMessier == TRUE) {
 		stopShowingMessier = TRUE;
+		[messierInfo hide];
+		aMessier = YES;
 		clicker = @"messier";
 		return TRUE;
 	}
@@ -388,15 +389,17 @@
 	}
 	}
 	
-	for (SRInterfaceElement* element in [theNameplate elements]) {
-		if(CGRectContainsPoint([element bounds], CGPointMake(point.y, point.x + [theNameplate yTranslate])) && !flag && [element clickable])  {
-			clicker = [element identifier];
-			isClicking = TRUE;
-			CGRect clicked = [element bounds];
-			clicked.origin.y -= [theNameplate yTranslate];
-			rectClicked = CGRectInset(clicked, -16, -16);
-			flag = TRUE;
-		}				
+	if([theNameplate visible] && [theNameplate info]) {
+		for (SRInterfaceElement* element in [theNameplate elements]) {
+			if(CGRectContainsPoint([element bounds], CGPointMake(point.y, point.x + [theNameplate yTranslate])) && !flag && [element clickable])  {
+				clicker = [element identifier];
+				isClicking = TRUE;
+				CGRect clicked = [element bounds];
+				clicked.origin.y -= [theNameplate yTranslate];
+				rectClicked = CGRectInset(clicked, -16, -16);
+				flag = TRUE;
+			}				
+		}
 	}
 	return flag;
 }
@@ -414,35 +417,41 @@
 			//show tijd crap
 			if([timeModule visible]) {
 				[timeModule hide];	
+				aModule = TRUE;
 			}
 			else {
 				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
 				[[UIElements objectAtIndex:2] setBounds:CGRectZero];
 				[self hideAllModules];
 				[timeModule show];
+				aModule = TRUE;
 			}
 		}
 		else if(clicker == @"location") {
 			//show tijd crap
 			if([locationModule visible]) {
 				[locationModule hide];	
+				aModule = TRUE;
 			}
 			else {
 				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
 				[[UIElements objectAtIndex:1] setBounds:CGRectZero];
 				[self hideAllModules];
 				[locationModule show];
+				aModule = TRUE;
 			}
 		}
 		else if(clicker == @"settings") {
 			if([settingsModule visible]) {
 				[settingsModule hide];	
+				aModule = TRUE;
 			}
 			else {
 				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
 				[[UIElements objectAtIndex:6] setBounds:CGRectZero];
 				[self hideAllModules];
 				[settingsModule show];
+				aModule = TRUE;
 			}
 		}
 		else if(clicker == @"search") {
@@ -529,29 +538,33 @@
 		}		
 		else if(clicker == @"info") {
 			[messierInfo show];
+			aMessier = YES;
 			showingMessier = YES;
 		}	
 		else if(clicker == @"icon") {	
 			if([timeModule visible]) {
 				[timeModule hide];	
 				[[UIElements objectAtIndex:2] setBounds:CGRectMake(62, -55, 31, 31)];
+				aModule = TRUE;
 			}
 			if([locationModule visible]) {
 				[locationModule hide];
 				[[UIElements objectAtIndex:1] setBounds:CGRectMake(12, -55, 31, 31)];
+				aModule = TRUE;
 			}
 			if([settingsModule visible]) {
 				[settingsModule hide];
-				[[UIElements objectAtIndex:6] setBounds:CGRectMake(392, -55, 31, 31)];	
+				[[UIElements objectAtIndex:6] setBounds:CGRectMake(392, -55, 31, 31)];
+				aModule = TRUE;
 			}
 			
 			hidingMenu = FALSE;
+			aMenu = TRUE;
 			menuVisible = TRUE;
-			menuTimer = [[NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(translateY:) userInfo:nil repeats:YES] retain];
 		}
 		
 		if(flagToggle) {
-			if(![posiTimer isValid] && ![negiTimer isValid]) {
+			if(!aInterface) {
 				if(xTranslate == 0) {
 					[self hideInterface]; 
 				}
@@ -564,55 +577,148 @@
 	}
 }
 
+-(void)calculateAnimations {
+	if(aMenu) {
+		if(hidingMenu) {
+			yTranslate += 7 * (timeElapsed / 0.05); 
+			
+			if(yTranslate >= 63) {
+				aMenu = FALSE;
+				menuVisible = NO;
+				yTranslate = 63;
+			}
+		}
+		else {
+			yTranslate -= 7 * (timeElapsed / 0.05); 
+			
+			if(yTranslate <= 0) {
+				aMenu = FALSE;
+				yTranslate = 0;
+				
+			}
+			
+		}
+	}
+	
+	if(aMessier) {
+		if([messierInfo hiding]) {
+			[messierInfo setAlphaValue:[messierInfo alphaValue] - ( 0.1f * (timeElapsed / 0.05) )];
+			[messierInfo setAlphaValueName:[messierInfo alphaValueName] - ( 0.1f * (timeElapsed / 0.05) )];
+			if([messierInfo alphaValue] <= 0.0f) {
+				aMessier = FALSE;
+				showingMessier = FALSE;
+				[messierInfo setHiding:FALSE];
+			}
+		}
+		else {
+			[messierInfo setAlphaValue:[messierInfo alphaValue] + ( 0.1f * (timeElapsed / 0.05) )];
+			[messierInfo setAlphaValueName:[messierInfo alphaValueName] + ( 0.1f * (timeElapsed / 0.05) )];
+			if([messierInfo alphaValueName] >= 1.0f) {
+				aMessier = FALSE;
+				[messierInfo setAlphaValue: 1.0f];
+				[messierInfo setAlphaValueName: 1.0f];
+			}
+		}	
+	}
+	
+	if(aModule) {
+		for (SRModule* module in modules) {
+			if([module visible]) {
+				if([module hiding]) {
+					[module setAlphaValue:[module alphaValue] - ( 0.1f * (timeElapsed / 0.05) ) ];
+					if([module alphaValue] <= 0.0f) {
+						aModule = FALSE;
+						[module setVisible:NO]; 
+						[module setHiding:NO];
+						[module setAlphaValue:0.0f];
+					}
+				}
+				else {
+					if([module xValueIcon] > 12) {
+						[module setXValueIcon:[module xValueIcon] - ((([module initialXValueIcon] - 12) / 10) * (timeElapsed / 0.05) )];
+					}
+					if([module xValueIcon] <= 12) {
+						[module setXValueIcon:12];	
+					}					
+					
+					[module setAlphaValue:[module alphaValue] + ( 0.1f * (timeElapsed / 0.05) ) ];
+					if([module alphaValue] >= 1.0f) {
+						[module setAlphaValue:1.0f];
+					}
+					
+					if([module alphaValue] == 1.0f && [module xValueIcon] == 12) {
+						aModule = FALSE;
+						[module setHiding:TRUE];
+					}
+				}
+			}
+		}
+	}
+	
+	if(aNameplate) {
+		if([theNameplate hiding]) {
+			[theNameplate setYTranslate:[theNameplate yTranslate] + ( 6 * (timeElapsed / 0.05) )]; }
+		else {
+			[theNameplate setYTranslate:[theNameplate yTranslate] - ( 6 * (timeElapsed / 0.05) )]; }
+		
+		
+		if([theNameplate yTranslate] <= 0) {
+			aNameplate = FALSE;
+			[theNameplate setYTranslate:0];
+		}
+		else if ([theNameplate yTranslate] >= 32) {
+			[theNameplate setYTranslate:32];
+			aNameplate = FALSE;
+			[theNameplate setHiding:TRUE];
+			[theNameplate setVisible:NO];
+		} 
+	}
+	
+	if(aInterface) {
+		if(interfaceDown) {
+			xTranslate += 7 * (timeElapsed / 0.05); }
+		else {
+			xTranslate -= 7 * (timeElapsed / 0.05); }
+		
+		if(xTranslate >= 63.0) {
+			aInterface = FALSE;
+			xTranslate = 63;
+		}
+		else if(xTranslate < 0.0) {
+			aInterface = FALSE;
+			xTranslate = 0;
+		}
+	}
+	
+	if(aFade) {
+		++frameCount;
+		if(frameCount > 5) {
+			alphaDefault -= 0.05 * (timeElapsed / 0.05);
+				if (alphaDefault <= 0.0) {
+					defaultTextureBool = FALSE;
+					aFade = FALSE;
+				}	
+		}
+	}
+}
+
 -(void)hideInterface {
 	//FIXME IMPLEMENT MET TIMEELAPSED IN DE DRAW SEQUENCE
-	posiTimer = [[NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(translate:) userInfo:nil repeats:YES] retain];
-	[negiTimer invalidate];
+	aInterface = TRUE;
+	interfaceDown = TRUE;
 }
 
 -(void)showInterface {
-	negiTimer = [[NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(translate:) userInfo:nil repeats:YES] retain];
-	[posiTimer invalidate];
+	aInterface = TRUE;
+	interfaceDown = FALSE;
 }
 
 -(void) hideAllModules {
 	hidingMenu = TRUE;
-	menuTimer = [[NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(translateY:) userInfo:nil repeats:YES] retain];
+	aMenu = TRUE;
 }
 
--(void)translate:(NSTimer*)theTimer {
-	if([theTimer isEqual:posiTimer]) {
-		xTranslate += 7; }
-	else {
-		xTranslate -= 7;
-	}
-	
-	if(xTranslate >= 63 || xTranslate <= 0) {
-		[theTimer invalidate];
-	}
-}
 
--(void)translateY:(NSTimer*)theTimer {
-	if(hidingMenu) {
-		yTranslate += 7; 
-
-		if(yTranslate >= 63) {
-			[theTimer invalidate];
-			menuVisible = NO;
-			yTranslate = 63;
-		}
-	}
-	else {
-		yTranslate -= 7; 
-		
-		if(yTranslate <= 0) {
-			[theTimer invalidate];
-			yTranslate = 0;
-		
-		}
-		
-	}
-}
 
 -(GLuint)textures {
 	return textures[1];
@@ -732,16 +838,8 @@
 }
 						  
 -(void)fadeDefaultTexture {
-	fadeTimer = [[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(fade:) userInfo:nil repeats:YES] retain];
-}
-
--(void)fade:(NSTimer*)theTimer {
-	alphaDefault -= 0.05;
-	if (alphaDefault <= 0.0) {
-		defaultTextureBool = FALSE;
-		[fadeTimer invalidate];
-		[defaultTexture release];
-	}
+	aFade = TRUE;
+	frameCount = 0;
 }
 
 

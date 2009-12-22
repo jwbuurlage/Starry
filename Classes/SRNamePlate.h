@@ -14,18 +14,17 @@
 
 @interface SRNamePlate : NSObject {
 	NSMutableArray* elements;
-	int yTranslate;
+	float yTranslate;
 	
 	BOOL visible;
 	BOOL info;
-	
-	NSTimer* posiTimer;
-	NSTimer* negiTimer;
-
+	BOOL hiding;
 }
 
-@property (readonly) int yTranslate;
-@property (readonly) BOOL visible;
+@property (nonatomic, assign) float yTranslate;
+@property (nonatomic, assign) BOOL hiding;
+@property (nonatomic, assign) BOOL visible;
+@property (readonly) BOOL info;
 @property (readonly) NSMutableArray* elements;
 
 -(void)draw;

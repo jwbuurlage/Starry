@@ -47,7 +47,7 @@
 	//NSLog(@"longitudePerihelion: %f", longitudePerihelion);
 	float obliquity = 23.45;
 	//NSLog(@"obliquity: %f", obliquity);
-	float eclipticLongitude = trueAnomaly + longitudePerihelion;
+	//float eclipticLongitude = trueAnomaly + longitudePerihelion;
 	//NSLog(@"eclipticLongitude: %f", eclipticLongitude);
 	float eclipticLongitudeSun = fmod(trueAnomaly + longitudePerihelion + 180, 360);
 	//NSLog(@"eclipticLongitudeSun: %f", eclipticLongitudeSun);
