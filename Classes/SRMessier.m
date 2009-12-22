@@ -11,6 +11,6 @@
 
 @implementation SRMessier
 
-@synthesize position, mag, name;
+@synthesize position, mag, name, declination, RA, constellation, type, distance;
 
 @end

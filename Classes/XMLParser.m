@@ -170,6 +170,24 @@
 		else if([elementName isEqualToString:@"name"]) {
 			[aMessier setName:currentElementValue];
 		}
+		else if([elementName isEqualToString:@"mag"]) {
+			[aMessier setMag:[currentElementValue floatValue]];
+		}
+		else if([elementName isEqualToString:@"constellation"]) {
+			[aMessier setConstellation:currentElementValue];
+		}		
+		else if([elementName isEqualToString:@"type"]) {
+			[aMessier setType:currentElementValue];
+		}
+		else if([elementName isEqualToString:@"ra"]) {
+			[aMessier setRA:currentElementValue];
+		}
+		else if([elementName isEqualToString:@"dec"]) {
+			[aMessier setDeclination:currentElementValue];
+		}
+		else if([elementName isEqualToString:@"distance"]) {
+			[aMessier setDistance:[currentElementValue floatValue]];
+		}
 		else if([elementName isEqualToString:@"x"]) {
 			aPoint.x = [currentElementValue floatValue];
 		}

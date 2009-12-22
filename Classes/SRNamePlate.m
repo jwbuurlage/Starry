@@ -45,17 +45,21 @@
 }
 
 -(void)draw {
+	
+	
 	glTranslatef(0, yTranslate, 0);
 	for (SRInterfaceElement* mElement in elements) {
 		if([mElement identifier] == @"text-transparent") {
 			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-			glColor4f(1.0f, 1.0f, 1.0f, 0.5f);
+			glColor4f(0.294f, 0.513f, 0.93f, 1.0f);
 			[[mElement texture] drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
 		else if([mElement identifier] == @"text") {
 			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			glColor4f(0.56f, 0.831f, 0.0f, 1.0f);
 			[[mElement texture] drawInRect:[mElement bounds]];
+			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
 		else if([mElement identifier] == @"info") {
 			if(info) {
@@ -82,7 +86,11 @@
 	hiding = TRUE;
 }
 
--(void)setName:(NSString*)name inConstellation:(NSString*)constellation showInfo:(BOOL)theInfo {
+-(void)setName:(NSString*)name inConstellation:(NSString*)constellation showInfo:(BOOL)theInfo {	
+	if(name == nil) {
+		name = @"Naamloos";
+	}
+	
 	[[[elements objectAtIndex:2] texture] release];
 	[[[elements objectAtIndex:3] texture] release];
 	[[elements objectAtIndex:2] setTexture:[[Texture2D alloc] initWithString:name dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]];

@@ -78,7 +78,7 @@
 															 clickable:NO]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(73, 100, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"5.3" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															   texture:nil
 															identifier:@"text-green" 
 															 clickable:NO]];
 		
@@ -123,6 +123,12 @@
 - (void)messierClicked:(SRMessier*)theMessier {
 	//[messierImage release];
 	//messierImage = ;
+	[[elements objectAtIndex:[elements count] - 9] setTexture:[[Texture2D alloc] initWithString:[theMessier constellation] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 8] setTexture:[[Texture2D alloc] initWithString:[theMessier type] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 7] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f kly",[theMessier distance]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 6] setTexture:[[Texture2D alloc] initWithString:[theMessier RA] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[theMessier declination] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f",[theMessier mag]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [theMessier name]]]]]; 
 	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theMessier name] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]]; 
 }

@@ -640,7 +640,7 @@
 				}
 				else {
 					if([module xValueIcon] > 12) {
-						[module setXValueIcon:[module xValueIcon] - ((([module initialXValueIcon] - 12) / 10) * (timeElapsed / 0.05) )];
+						[module setXValueIcon:[module xValueIcon] - ((([module initialXValueIcon] - 12) / 8) * (timeElapsed / 0.05) )];
 					}
 					if([module xValueIcon] <= 12) {
 						[module setXValueIcon:12];	
