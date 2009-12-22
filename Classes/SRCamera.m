@@ -107,15 +107,15 @@
 
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
-	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) - (azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView));
-	float result = fmod((azimuth + deltaAzimuth*1.2), 360);
+	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) - 1*((azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView)));
+	float result = fmod((azimuth + deltaAzimuth*1.7), 360);
 	return result;
 }
 
 -(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
-	float deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - (altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView));
-	float result = altitude + deltaAltitude*1.2;
+	float deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - 1*((altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView)));
+	float result = altitude + deltaAltitude*1.7;
 	return result;
 
 }
