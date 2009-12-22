@@ -95,8 +95,8 @@
 		accV = 0;
 	}
 	float deltaAzimuth,deltaAltitude;
-		deltaAzimuth = deltaY / (rotationConstant/fieldOfView) + (azimuth/360)*(abs(deltaX) / (rotationConstant/fieldOfView));
-		deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) + (altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView));
+		deltaAzimuth = deltaY / (rotationConstant/fieldOfView) - (azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView));
+		deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - (altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView));
 		azimuth += (deltaAzimuth*1.2);
 		azimuth = fmod(azimuth, 360); // Modulo 360
 		altitude += (deltaAltitude*1.2);
@@ -107,15 +107,15 @@
 
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
-	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) + (azimuth/360)*(abs(deltaX) / (rotationConstant/fieldOfView));
-	float result = fmod((azimuth + deltaAzimuth), 360);
+	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) - (azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView));
+	float result = fmod((azimuth + deltaAzimuth*1.2), 360);
 	return result;
 }
 
 -(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
-	float deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) + (altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView));
-	float result = altitude + deltaAltitude;
+	float deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - (altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView));
+	float result = altitude + deltaAltitude*1.2;
 	return result;
 
 }
