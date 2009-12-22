@@ -232,7 +232,7 @@
 		0.0, 25.0 * cos(23.44/180 * M_PI), 25.0 * sin(23.44/180 * M_PI),
 	};
 	
-	glColor4f(0.4f, 0.40f, 0.40f, 0.1f);
+	glColor4f(0.4f, 0.40f, 0.40f, 0.4f);
 	glVertexPointer(3, GL_FLOAT, 12, verticesEcliptic);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 }

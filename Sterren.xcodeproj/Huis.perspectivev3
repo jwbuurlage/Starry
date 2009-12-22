@@ -276,7 +276,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>30</integer>
+									<integer>27</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRTimeManager.m</string>
+								<string>SRRenderer.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRTimeManager.m</string>
+										<string>SRRenderer.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>AC86C90D10E17A9100028136</string>
+										<string>AC86C91A10E17CAD00028136</string>
 										<key>history</key>
 										<array>
 											<string>AC4F895D109DF65700B8BD64</string>
@@ -412,7 +412,6 @@
 											<string>ACA67FEB10E024E800722E50</string>
 											<string>ACA67FEC10E024E800722E50</string>
 											<string>AC603FC310E103970017951C</string>
-											<string>AC60407510E113210017951C</string>
 											<string>AC6040B310E116B20017951C</string>
 											<string>AC6040B410E116B20017951C</string>
 											<string>AC6040B510E116B20017951C</string>
@@ -428,7 +427,6 @@
 											<string>AC60418610E11FFF0017951C</string>
 											<string>AC86C70110E125BC00028136</string>
 											<string>AC86C70210E125BC00028136</string>
-											<string>AC86C70410E125BC00028136</string>
 											<string>AC86C70510E125BC00028136</string>
 											<string>AC86C70610E125BC00028136</string>
 											<string>AC86C70710E125BC00028136</string>
@@ -471,7 +469,9 @@
 											<string>AC86C8F410E1779C00028136</string>
 											<string>AC86C8F510E1779C00028136</string>
 											<string>AC86C90210E177BD00028136</string>
-											<string>AC86C90310E177BD00028136</string>
+											<string>AC86C91210E17C5500028136</string>
+											<string>AC86C91310E17C5500028136</string>
+											<string>AC86C91410E17C5500028136</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -789,7 +789,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>AC86C90E10E17A9100028136</string>
+		<string>AC86C91B10E17CAD00028136</string>
 		<string>AC86C71410E125BC00028136</string>
 		<string>AC86C71510E125BC00028136</string>
 		<string>/Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Sterren.xcodeproj</string>
