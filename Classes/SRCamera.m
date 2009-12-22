@@ -109,18 +109,18 @@
 
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
-	float adjustment = (azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView));
-	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) - 1*adjustment;
+	float adjustment = (altitude/180)*(-abs(deltaX) / (rotationConstant/fieldOfView));
+	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) + 1*adjustment;
 	
 	float result,resultAdjustment1,resultAdjustment2;
-	resultAdjustment1 = pow(1.35,adjustment-4)-0.2;
-	resultAdjustment2 = pow(1.35,(altitude/60)-5)-0.2;
+	resultAdjustment1 = pow(1.4,7*altitude/180)-1.197;
+	resultAdjustment2 = 0;
 	/*if(adjustment/2 > 1)
 		result = fmod(azimuth + deltaAzimuth*(adjustment/2), 360);
 	else*/
 		result = fmod(azimuth + deltaAzimuth*(1+resultAdjustment1+resultAdjustment2),360);
 	
-	NSLog(@"Calculate azimuthFromX:%i andY:%i origiginal:%f delta:%f new:%f resultadjust1:%f resultadjust2:%f ",deltaX,deltaY,deltaY / (rotationConstant/fieldOfView) ,adjustment,deltaAzimuth,resultAdjustment1,resultAdjustment2);
+	NSLog(@"Calculate azimuthFromX:%i andY:%i origiginal:%f delta:%f new:%f resultadjust1:%f resultadjust2:%f result:%f",deltaX,deltaY,deltaY / (rotationConstant/fieldOfView) ,adjustment,deltaAzimuth,resultAdjustment1,resultAdjustment2, result);
 	/*
 	if (deltaAzimuth > 0)
 		result = fmod((azimuth + pow(abs(deltaAzimuth),1.01)), 360);
@@ -132,15 +132,16 @@
 
 -(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
-	float adjustment = (altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView));
+	//float adjustment = (azimuth/360)*(abs(deltaY) / (rotationConstant/fieldOfView));
+	float adjustment = 0;
 	float deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - 1*adjustment;
 	
 	float result,resultAdjustment1,resultAdjustment2;
 	/*if(adjustment/2 > 1)
 		result = altitude + deltaAltitude*(adjustment/2);
 	else*/
-	resultAdjustment1 = pow(1.35,adjustment-4)-0.2;
-	resultAdjustment2 = pow(1.35,(azimuth/120)-5)-0.2;;
+	resultAdjustment1 = 0;
+	resultAdjustment2 = 0;
 		result = altitude + deltaAltitude*(1+resultAdjustment1+resultAdjustment2);
 	NSLog(@"Calculate altitudeFromX:%i andY:%i origiginal:%f delta:%f new:%f resultadust1:%f resultadjust2:%f",deltaX,deltaY,(-deltaX / (rotationConstant/fieldOfView)),adjustment,deltaAltitude,resultAdjustment1,resultAdjustment2);
 	/*if(deltaAltitude > 0) 
