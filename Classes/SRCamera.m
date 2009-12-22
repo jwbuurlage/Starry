@@ -113,8 +113,8 @@
 	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) - 1*adjustment;
 	
 	float result,resultAdjustment1,resultAdjustment2;
-	resultAdjustment1 = pow(1.43,adjustment-4);
-	resultAdjustment2 = 0;
+	resultAdjustment1 = pow(1.35,adjustment-4)-0.2;
+	resultAdjustment2 = pow(1.35,(altitude/60)-5)-0.2;
 	/*if(adjustment/2 > 1)
 		result = fmod(azimuth + deltaAzimuth*(adjustment/2), 360);
 	else*/
@@ -139,8 +139,8 @@
 	/*if(adjustment/2 > 1)
 		result = altitude + deltaAltitude*(adjustment/2);
 	else*/
-	resultAdjustment1 = pow(1.43,adjustment-4);
-	resultAdjustment2 = 0;
+	resultAdjustment1 = pow(1.35,adjustment-4)-0.2;
+	resultAdjustment2 = pow(1.35,(azimuth/120)-5)-0.2;;
 		result = altitude + deltaAltitude*(1+resultAdjustment1+resultAdjustment2);
 	NSLog(@"Calculate altitudeFromX:%i andY:%i origiginal:%f delta:%f new:%f resultadust1:%f resultadjust2:%f",deltaX,deltaY,(-deltaX / (rotationConstant/fieldOfView)),adjustment,deltaAltitude,resultAdjustment1,resultAdjustment2);
 	/*if(deltaAltitude > 0) 
