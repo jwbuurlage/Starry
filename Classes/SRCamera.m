@@ -109,27 +109,37 @@
 
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
-	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) - 1*((azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView)));
-	NSLog(@"Calculate azimuthFromX:%i andY:%i origiginal:%f delta:%f new:%f",deltaX,deltaY,deltaY / (rotationConstant/fieldOfView) ,-((azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView))),deltaAzimuth);
+	float adjustment = (azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView));
+	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) - 1*adjustment;
+	NSLog(@"Calculate azimuthFromX:%i andY:%i origiginal:%f delta:%f new:%f",deltaX,deltaY,deltaY / (rotationConstant/fieldOfView) ,adjustment,deltaAzimuth);
 	float result;
-	
+	if(adjustment/2 > 1)
+		result = fmod(azimuth + deltaAzimuth*(adjustment/2), 360);
+	else
+		result = fmod(azimuth + deltaAzimuth, 360);
+	/*
 	if (deltaAzimuth > 0)
 		result = fmod((azimuth + pow(abs(deltaAzimuth),1.01)), 360);
 	else 
 		result = fmod((azimuth - pow(abs(deltaAzimuth),1.01)), 360);
-
+	 */
 	return result;
 }
 
 -(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
-	float deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - 1*((altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView)));
+	float adjustment = (altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView));
+	float deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - 1*adjustment;
 	NSLog(@"Calculate altitudeFromX:%i andY:%i origiginal:%f delta:%f new:%f",deltaX,deltaY,(-deltaX / (rotationConstant/fieldOfView)),-((altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView))),deltaAltitude);
 	float result;
-	if(deltaAltitude > 0) 
-		result = altitude + pow(abs(deltaAltitude),1.01);
+	if(adjustment/2 > 1)
+		result = altitude + deltaAltitude*(adjustment/2);
+	else
+		result = altitude + deltaAltitude;
+	/*if(deltaAltitude > 0) 
+		result = altitude + abs(deltaAltitude),1.01);
 	else 
-		result = altitude - pow(abs(deltaAltitude),1.01);
+		result = altitude - pow(abs(deltaAltitude),1.01);*/
 	return result;
 
 }
