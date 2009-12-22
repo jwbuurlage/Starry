@@ -346,7 +346,8 @@
 
 	if(showingMessier == TRUE) {
 		stopShowingMessier = TRUE;
-		return FALSE;
+		clicker = @"messier";
+		return TRUE;
 	}
 	
 	//checken of het onder een UIElement valt
@@ -405,7 +406,7 @@
 	
 	// Als er een keyboard omhoog staat mag er niet nog een keer een keyboard omhoog komen.
 	// Als de click niet weggesleept is mag er door worden gegaan
-	if(![fieldTmp isFirstResponder] && result) {
+	if(![fieldTmp isFirstResponder] && result && clicker != @"messier") {
 		
 		BOOL flagToggle = FALSE;
 	
