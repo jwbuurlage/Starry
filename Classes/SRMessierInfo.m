@@ -17,7 +17,7 @@
 		interfaceBackground = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"messierInfoBg.png"]]; //139x320
 		pictureBackground = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"messierPictureBg.png"]]; //341x320
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(20, 214, 64, 32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 214, 64, 32) 
 																 texture:[[Texture2D alloc] initWithString:@"Info" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12] 
 															  identifier:@"text" 
 															   clickable:NO]];

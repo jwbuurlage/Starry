@@ -31,7 +31,7 @@ foreach($messier as $object) {
 		$xml .=  '<point><x>'.$x.'</x><y>'.$y.'</y><z>'.$z.'</z></point>';
         $xml .= '<mag>'.$messierArray[9].'</mag>';
 		$xml .= '<constellation>'.$messierArray[3].'</constellation>';
-		$xml .= '<distance>'.$messierArray[9].'</distance>';
+		$xml .= '<distance>'.$messierArray[11].'</distance>';
 		$xml .= '<type>'.$messierArray[4].'</type>';
 		$xml .= '<ra>'.$messierArray[5].' '.$messierArray[6]."'</ra>";
 		$xml .= '<dec>'.$messierArray[7].' '.$messierArray[8]."'</dec>";

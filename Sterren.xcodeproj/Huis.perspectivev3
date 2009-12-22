@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -281,14 +283,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>39</integer>
-									<integer>21</integer>
-									<integer>1</integer>
+									<integer>91</integer>
+									<integer>88</integer>
+									<integer>67</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 68}, {249, 934}}</string>
+							<string>{{0, 1284}, {249, 934}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,14 +318,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRMessierInfo.m</string>
+								<string>M78.png</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRMessierInfo.m</string>
+										<string>M78.png</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>AC86C78F10E152F300028136</string>
+										<string>AC86C88910E16BE600028136</string>
 										<key>history</key>
 										<array>
 											<string>AC4F895D109DF65700B8BD64</string>
@@ -382,10 +382,6 @@
 											<string>ACF937A210D7FD1D008A4845</string>
 											<string>ACF937A610D7FD1D008A4845</string>
 											<string>ACABC16010D80B7700B002EA</string>
-											<string>ACC47C6410D96D1D004854E5</string>
-											<string>ACC47C6610D96D1D004854E5</string>
-											<string>ACC47C6710D96D1D004854E5</string>
-											<string>ACC47C6810D96D1D004854E5</string>
 											<string>AC080FA410D984640078DA4D</string>
 											<string>AC080FAA10D9849B0078DA4D</string>
 											<string>AC080FBF10D986760078DA4D</string>
@@ -425,7 +421,6 @@
 											<string>AC29740910E0190600160442</string>
 											<string>ACA67FEB10E024E800722E50</string>
 											<string>ACA67FEC10E024E800722E50</string>
-											<string>AC603F7C10E0D71C0017951C</string>
 											<string>AC603FC310E103970017951C</string>
 											<string>AC60407510E113210017951C</string>
 											<string>AC6040B310E116B20017951C</string>
@@ -455,13 +450,34 @@
 											<string>AC86C72410E141A400028136</string>
 											<string>AC86C72510E141A400028136</string>
 											<string>AC86C75810E146BD00028136</string>
-											<string>AC86C76210E1495A00028136</string>
 											<string>AC86C76910E1499B00028136</string>
 											<string>AC86C76E10E149F100028136</string>
 											<string>AC86C76F10E149F100028136</string>
 											<string>AC86C77510E14A5700028136</string>
 											<string>AC86C77610E14A5700028136</string>
-											<string>AC86C77710E14A5700028136</string>
+											<string>AC86C7BA10E15D3B00028136</string>
+											<string>AC86C7BB10E15D3B00028136</string>
+											<string>AC86C7BC10E15D3B00028136</string>
+											<string>AC86C7BD10E15D3B00028136</string>
+											<string>AC86C7BE10E15D3B00028136</string>
+											<string>AC86C7BF10E15D3B00028136</string>
+											<string>AC86C7C010E15D3B00028136</string>
+											<string>AC86C7C110E15D3B00028136</string>
+											<string>AC86C7C210E15D3B00028136</string>
+											<string>AC86C7C310E15D3B00028136</string>
+											<string>AC86C7C410E15D3B00028136</string>
+											<string>AC86C7C510E15D3B00028136</string>
+											<string>AC86C7C610E15D3B00028136</string>
+											<string>AC86C7C910E15D3B00028136</string>
+											<string>AC86C7CA10E15D3B00028136</string>
+											<string>AC86C7CB10E15D3B00028136</string>
+											<string>AC86C7CC10E15D3B00028136</string>
+											<string>AC86C7CD10E15D3B00028136</string>
+											<string>AC86C7CE10E15D3B00028136</string>
+											<string>AC86C7CF10E15D3B00028136</string>
+											<string>AC86C88610E16BE600028136</string>
+											<string>AC86C88710E16BE600028136</string>
+											<string>AC86C88810E16BE600028136</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -779,7 +795,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>AC86C78E10E152D900028136</string>
+		<string>AC86C88A10E16BE600028136</string>
 		<string>AC86C71410E125BC00028136</string>
 		<string>AC86C71510E125BC00028136</string>
 		<string>/Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Sterren.xcodeproj</string>
