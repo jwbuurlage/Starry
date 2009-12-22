@@ -9,9 +9,9 @@
 	};
 	1D3623250D0F684500981E51 /* SterrenAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {961, 1178}}";
+			sepNavIntBoundsRect = "{{0, 0}, {961, 1212}}";
 			sepNavSelRange = "{598, 0}";
-			sepNavVisRange = "{208, 1135}";
+			sepNavVisRange = "{273, 1135}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -37,9 +37,9 @@
 	};
 	1F92F5EA0FDFF83200548BE8 /* GLViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {961, 8709}}";
+			sepNavIntBoundsRect = "{{0, 0}, {961, 8807}}";
 			sepNavSelRange = "{5028, 0}";
-			sepNavVisRange = "{4730, 788}";
+			sepNavVisRange = "{4425, 1301}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -381,6 +381,14 @@
 			76D7BC6910E0D14800F8806E /* PBXTextBookmark */ = 76D7BC6910E0D14800F8806E /* PBXTextBookmark */;
 			76D7BC6D10E0D16200F8806E /* PBXTextBookmark */ = 76D7BC6D10E0D16200F8806E /* PBXTextBookmark */;
 			76D7BC6E10E0D16200F8806E /* PBXTextBookmark */ = 76D7BC6E10E0D16200F8806E /* PBXTextBookmark */;
+			76D7BC7010E0D1C900F8806E /* PBXTextBookmark */ = 76D7BC7010E0D1C900F8806E /* PBXTextBookmark */;
+			76D7BC7310E0D24C00F8806E /* PBXTextBookmark */ = 76D7BC7310E0D24C00F8806E /* PBXTextBookmark */;
+			76D7BC7410E0D24C00F8806E /* PBXTextBookmark */ = 76D7BC7410E0D24C00F8806E /* PBXTextBookmark */;
+			76D7BC7510E0D24C00F8806E /* PBXTextBookmark */ = 76D7BC7510E0D24C00F8806E /* PBXTextBookmark */;
+			76D7BC7610E0D24C00F8806E /* PBXTextBookmark */ = 76D7BC7610E0D24C00F8806E /* PBXTextBookmark */;
+			76D7BC7710E0D24D00F8806E /* PBXTextBookmark */ = 76D7BC7710E0D24D00F8806E /* PBXTextBookmark */;
+			76D7BC7B10E0D28000F8806E /* PBXTextBookmark */ = 76D7BC7B10E0D28000F8806E /* PBXTextBookmark */;
+			76D7BC7F10E0D2BA00F8806E /* PBXTextBookmark */ = 76D7BC7F10E0D2BA00F8806E /* PBXTextBookmark */;
 			76D91DD210CEAE70003930BE = 76D91DD210CEAE70003930BE /* PBXTextBookmark */;
 		};
 		sourceControlManager = 76FBD280109DE49A005A0ADE /* Source Control */;
@@ -441,7 +449,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 182";
 		rLen = 0;
-		rLoc = 5026;
+		rLoc = 5178;
 		rType = 0;
 		vrLen = 1023;
 		vrLoc = 2707;
@@ -691,7 +699,7 @@
 		ignoreCount = 0;
 		lineNumber = 373;
 		location = Sterren;
-		modificationTime = 283169099.129417;
+		modificationTime = 283169410.507728;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -1165,7 +1173,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 178";
 		rLen = 0;
-		rLoc = 5026;
+		rLoc = 5178;
 		rType = 0;
 		vrLen = 977;
 		vrLoc = 2767;
@@ -1175,7 +1183,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 109";
 		rLen = 2;
-		rLoc = 3213;
+		rLoc = 3350;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 2259;
@@ -1185,7 +1193,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 109";
 		rLen = 2;
-		rLoc = 3213;
+		rLoc = 3350;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 2291;
@@ -1205,7 +1213,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 109";
 		rLen = 2;
-		rLoc = 3213;
+		rLoc = 3350;
 		rType = 0;
 		vrLen = 628;
 		vrLoc = 2537;
@@ -1235,7 +1243,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 109";
 		rLen = 2;
-		rLoc = 3213;
+		rLoc = 3350;
 		rType = 0;
 		vrLen = 1233;
 		vrLoc = 1901;
@@ -1465,7 +1473,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 168";
 		rLen = 0;
-		rLoc = 4704;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 3579;
@@ -1475,7 +1483,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 168";
 		rLen = 0;
-		rLoc = 4704;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 1069;
 		vrLoc = 3626;
@@ -1485,7 +1493,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 168";
 		rLen = 0;
-		rLoc = 4704;
+		rLoc = 4856;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1505,7 +1513,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 98";
 		rLen = 0;
-		rLoc = 2614;
+		rLoc = 2618;
 		rType = 0;
 		vrLen = 689;
 		vrLoc = 2266;
@@ -1608,7 +1616,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 972;
 		vrLoc = 2281;
@@ -1618,7 +1626,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 936;
 		vrLoc = 2317;
@@ -1638,7 +1646,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 2329;
@@ -1658,7 +1666,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 1024;
 		vrLoc = 2332;
@@ -1678,7 +1686,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 2388;
@@ -1698,7 +1706,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 893;
 		vrLoc = 2425;
@@ -1718,7 +1726,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 709;
 		vrLoc = 2581;
@@ -1738,7 +1746,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 759;
 		vrLoc = 2552;
@@ -1758,7 +1766,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 2551;
@@ -1778,7 +1786,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 709;
 		vrLoc = 2576;
@@ -1798,7 +1806,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 2367;
@@ -1818,7 +1826,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 2367;
@@ -1838,7 +1846,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 2517;
@@ -1858,7 +1866,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 1433;
 		vrLoc = 2517;
@@ -1878,7 +1886,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 1383;
 		vrLoc = 2401;
@@ -1898,7 +1906,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 2519;
@@ -1918,7 +1926,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 1040;
 		vrLoc = 2367;
@@ -1938,7 +1946,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 834;
 		vrLoc = 2483;
@@ -1958,7 +1966,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 1028;
 		vrLoc = 2502;
@@ -1978,7 +1986,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 2623;
@@ -1998,7 +2006,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 759;
 		vrLoc = 2753;
@@ -2018,7 +2026,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 2786;
@@ -2038,7 +2046,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 100";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 2832;
@@ -2058,7 +2066,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 918;
 		vrLoc = 2483;
@@ -2078,7 +2086,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 713;
 		vrLoc = 2643;
@@ -2098,7 +2106,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2613;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 2643;
@@ -2128,7 +2136,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3259;
+		rLoc = 3396;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 2995;
@@ -2169,7 +2177,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 110;
+		rLoc = 112;
 		rType = 1;
 	};
 	76D7BBF910E0CC5D00F8806E /* PBXTextBookmark */ = {
@@ -2177,7 +2185,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 111";
 		rLen = 0;
-		rLoc = 3140;
+		rLoc = 3262;
 		rType = 0;
 		vrLen = 897;
 		vrLoc = 2766;
@@ -2187,7 +2195,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 111";
 		rLen = 0;
-		rLoc = 3140;
+		rLoc = 3262;
 		rType = 0;
 		vrLen = 816;
 		vrLoc = 2847;
@@ -2207,7 +2215,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 111";
 		rLen = 0;
-		rLoc = 3140;
+		rLoc = 3262;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 2995;
@@ -2217,7 +2225,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 111";
 		rLen = 0;
-		rLoc = 3140;
+		rLoc = 3262;
 		rType = 0;
 		vrLen = 831;
 		vrLoc = 2847;
@@ -2227,7 +2235,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 111";
 		rLen = 0;
-		rLoc = 3140;
+		rLoc = 3262;
 		rType = 0;
 		vrLen = 685;
 		vrLoc = 2993;
@@ -2247,7 +2255,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 111";
 		rLen = 0;
-		rLoc = 3140;
+		rLoc = 3262;
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 2995;
@@ -2267,7 +2275,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 111";
 		rLen = 0;
-		rLoc = 3140;
+		rLoc = 3262;
 		rType = 0;
 		vrLen = 880;
 		vrLoc = 2733;
@@ -2287,7 +2295,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 111";
 		rLen = 0;
-		rLoc = 3140;
+		rLoc = 3262;
 		rType = 0;
 		vrLen = 869;
 		vrLoc = 2766;
@@ -2307,7 +2315,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 109";
 		rLen = 0;
-		rLoc = 3140;
+		rLoc = 3262;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 2483;
@@ -2327,7 +2335,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 114";
 		rLen = 0;
-		rLoc = 3274;
+		rLoc = 3411;
 		rType = 0;
 		vrLen = 486;
 		vrLoc = 2872;
@@ -2367,7 +2375,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 114";
 		rLen = 0;
-		rLoc = 3274;
+		rLoc = 3411;
 		rType = 0;
 		vrLen = 874;
 		vrLoc = 2483;
@@ -2377,7 +2385,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2491;
+		rLoc = 2495;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 2281;
@@ -2387,7 +2395,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2491;
+		rLoc = 2495;
 		rType = 0;
 		vrLen = 957;
 		vrLoc = 2317;
@@ -2407,7 +2415,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 99";
 		rLen = 0;
-		rLoc = 2491;
+		rLoc = 2495;
 		rType = 0;
 		vrLen = 904;
 		vrLoc = 2367;
@@ -2417,7 +2425,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 1211;
 		vrLoc = 2367;
@@ -2427,7 +2435,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 2615;
@@ -2447,7 +2455,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 2614;
@@ -2467,7 +2475,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 1088;
 		vrLoc = 2488;
@@ -2487,7 +2495,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 2615;
@@ -2507,7 +2515,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 944;
 		vrLoc = 2694;
@@ -2527,7 +2535,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 924;
 		vrLoc = 2729;
@@ -2547,7 +2555,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 845;
 		vrLoc = 2875;
@@ -2567,7 +2575,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 840;
 		vrLoc = 2878;
@@ -2587,7 +2595,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 886;
 		vrLoc = 2914;
@@ -2607,7 +2615,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 811;
 		vrLoc = 3010;
@@ -2627,7 +2635,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 643;
 		vrLoc = 3141;
@@ -2647,7 +2655,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 614;
 		vrLoc = 3214;
@@ -2667,7 +2675,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 630;
 		vrLoc = 3198;
@@ -2687,7 +2695,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 628;
 		vrLoc = 3196;
@@ -2707,7 +2715,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 116";
 		rLen = 0;
-		rLoc = 3312;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 635;
 		vrLoc = 3214;
@@ -2721,6 +2729,86 @@
 		rType = 0;
 		vrLen = 1516;
 		vrLoc = 1625;
+	};
+	76D7BC7010E0D1C900F8806E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 111";
+		rLen = 0;
+		rLoc = 3326;
+		rType = 0;
+		vrLen = 707;
+		vrLoc = 2875;
+	};
+	76D7BC7310E0D24C00F8806E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
+		name = "SterrenAppDelegate.m: 24";
+		rLen = 0;
+		rLoc = 598;
+		rType = 0;
+		vrLen = 1135;
+		vrLoc = 273;
+	};
+	76D7BC7410E0D24C00F8806E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 199";
+		rLen = 0;
+		rLoc = 5028;
+		rType = 0;
+		vrLen = 1301;
+		vrLoc = 4425;
+	};
+	76D7BC7510E0D24C00F8806E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 113";
+		rLen = 0;
+		rLoc = 3324;
+		rType = 0;
+		vrLen = 1510;
+		vrLoc = 2278;
+	};
+	76D7BC7610E0D24C00F8806E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 113";
+		rLen = 0;
+		rLoc = 3323;
+		rType = 0;
+		vrLen = 1541;
+		vrLoc = 2278;
+	};
+	76D7BC7710E0D24D00F8806E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 113";
+		rLen = 0;
+		rLoc = 3323;
+		rType = 0;
+		vrLen = 1538;
+		vrLoc = 2281;
+	};
+	76D7BC7B10E0D28000F8806E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 113";
+		rLen = 0;
+		rLoc = 3323;
+		rType = 0;
+		vrLen = 1530;
+		vrLoc = 2297;
+	};
+	76D7BC7F10E0D2BA00F8806E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 113";
+		rLen = 0;
+		rLoc = 3323;
+		rType = 0;
+		vrLen = 1574;
+		vrLoc = 2329;
 	};
 	76D91DD210CEAE70003930BE /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2985,9 +3073,9 @@
 	};
 	ACB7B11610615C1000CA447E /* SRCamera.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1076, 3183}}";
-			sepNavSelRange = "{926, 2}";
-			sepNavVisRange = "{1625, 1516}";
+			sepNavIntBoundsRect = "{{0, 0}, {1108, 3059}}";
+			sepNavSelRange = "{3323, 0}";
+			sepNavVisRange = "{2329, 1574}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};

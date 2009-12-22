@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>76D7BB6D10E0C38E00F8806E</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>SRCamera.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>76D7BB6E10E0C38E00F8806E</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>SRCamera.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>76D7BC6E10E0D16200F8806E</string>
-						<key>history</key>
-						<array>
-							<string>76D7BB6010E0BF3900F8806E</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {750, 777}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 60 750 818 0 0 1440 878 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>1318</integer>
@@ -369,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>76D7BC6D10E0D16200F8806E</string>
+										<string>76D7BC7F10E0D2BA00F8806E</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -426,12 +385,12 @@
 											<string>76D7BAF010E0AEE700F8806E</string>
 											<string>76D7BAF110E0AEE700F8806E</string>
 											<string>76D7BAF310E0AEE700F8806E</string>
-											<string>76D7BB1110E0B41100F8806E</string>
 											<string>76D7BB6710E0C38D00F8806E</string>
 											<string>76D7BC1B10E0CE3A00F8806E</string>
-											<string>76D7BC1C10E0CE3A00F8806E</string>
 											<string>76D7BC1D10E0CE3A00F8806E</string>
-											<string>76D7BC2310E0CE4600F8806E</string>
+											<string>76D7BC7310E0D24C00F8806E</string>
+											<string>76D7BC7410E0D24C00F8806E</string>
+											<string>76D7BC7510E0D24C00F8806E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -445,16 +404,16 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1010, 518}}</string>
+								<string>{{0, 0}, {1010, 740}}</string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>518pt</string>
+							<string>740pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>222pt</string>
+							<string>0pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -522,7 +481,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1010, 195}}</string>
+										<string>{{10, 27}, {1010, -27}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -752,10 +711,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>76D7BC6F10E0D16200F8806E</string>
+		<string>76D7BC8010E0D2BA00F8806E</string>
 		<string>76D7BB0C10E0B2BB00F8806E</string>
 		<string>76D7BB0010E0AEE800F8806E</string>
-		<string>76D7BB6D10E0C38E00F8806E</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
