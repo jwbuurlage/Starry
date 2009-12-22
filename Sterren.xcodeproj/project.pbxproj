@@ -165,6 +165,7 @@
 		AC86C87F10E16BCE00028136 /* M108.png in Resources */ = {isa = PBXBuildFile; fileRef = AC86C82710E16BCE00028136 /* M108.png */; };
 		AC86C88010E16BCE00028136 /* M109.png in Resources */ = {isa = PBXBuildFile; fileRef = AC86C82810E16BCE00028136 /* M109.png */; };
 		AC86C88110E16BCE00028136 /* M110.png in Resources */ = {isa = PBXBuildFile; fileRef = AC86C82910E16BCE00028136 /* M110.png */; };
+		AC86C8D810E1765A00028136 /* M37.png in Resources */ = {isa = PBXBuildFile; fileRef = AC86C8D710E1765A00028136 /* M37.png */; };
 		AC89DDF910D035480083BFEA /* SRMessierInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC89DDF810D035480083BFEA /* SRMessierInfo.m */; };
 		AC8A87F010C56FCE0015CDF5 /* latitude.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A87ED10C56FCE0015CDF5 /* latitude.png */; };
 		AC8A87F110C56FCE0015CDF5 /* location_off.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A87EE10C56FCE0015CDF5 /* location_off.png */; };
@@ -396,6 +397,7 @@
 		AC86C82710E16BCE00028136 /* M108.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M108.png; path = Resources/messier/M108.png; sourceTree = "<group>"; };
 		AC86C82810E16BCE00028136 /* M109.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M109.png; path = Resources/messier/M109.png; sourceTree = "<group>"; };
 		AC86C82910E16BCE00028136 /* M110.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M110.png; path = Resources/messier/M110.png; sourceTree = "<group>"; };
+		AC86C8D710E1765A00028136 /* M37.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M37.png; path = Resources/messier/M37.png; sourceTree = "<group>"; };
 		AC89DDF710D035480083BFEA /* SRMessierInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMessierInfo.h; sourceTree = "<group>"; };
 		AC89DDF810D035480083BFEA /* SRMessierInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRMessierInfo.m; sourceTree = "<group>"; };
 		AC8A87ED10C56FCE0015CDF5 /* latitude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = latitude.png; path = Resources/latitude.png; sourceTree = "<group>"; };
@@ -829,6 +831,7 @@
 				AC86C7A010E15BF900028136 /* M11.png */,
 				AC86C7A110E15BF900028136 /* M12.png */,
 				AC86C7A210E15BF900028136 /* M13.png */,
+				AC86C8D710E1765A00028136 /* M37.png */,
 				AC86C7A310E15BF900028136 /* M14.png */,
 				AC86C7A410E15BF900028136 /* M15.png */,
 				AC86C7A510E15BF900028136 /* M16.png */,
@@ -1053,6 +1056,7 @@
 				AC86C87F10E16BCE00028136 /* M108.png in Resources */,
 				AC86C88010E16BCE00028136 /* M109.png in Resources */,
 				AC86C88110E16BCE00028136 /* M110.png in Resources */,
+				AC86C8D810E1765A00028136 /* M37.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

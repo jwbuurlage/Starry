@@ -20,10 +20,7 @@
 
 @interface SRTimeManager : NSObject {
 	NSDate* simulatedDate;
-	NSDate* actualDate;
-	
-	NSTimer* timeTicker;
-	
+		
 	int totalInterval;
 	int speed;
 	float elapsed;
@@ -42,7 +39,7 @@
 -(NSString*)theTime;
 -(NSString*)theDate;
 -(int)speed;
--(void)tickOfTime:(NSTimer*)theTimer;
+-(void)tickOfTime:(NSTimeInterval)timeElapsed;
 -(void)fwd;
 -(void)rew;
 -(void)reset;

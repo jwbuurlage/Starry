@@ -177,7 +177,18 @@
 			[aMessier setConstellation:currentElementValue];
 		}		
 		else if([elementName isEqualToString:@"type"]) {
-			[aMessier setType:currentElementValue];
+			if([currentElementValue isEqualToString:@"1"]) { [aMessier setType:@"Open hoop"]; }
+			if([currentElementValue isEqualToString:@"2"]) { [aMessier setType:@"Bolhoop"]; }
+			if([currentElementValue isEqualToString:@"3"]) { [aMessier setType:@"Plan. nevel"]; }
+			if([currentElementValue isEqualToString:@"4"]) { [aMessier setType:@"Nevel"]; }
+			if([currentElementValue isEqualToString:@"5"]) { [aMessier setType:@"Spiraalstelsel"]; }
+			if([currentElementValue isEqualToString:@"6"]) { [aMessier setType:@"Ell. stelsel"]; }
+			if([currentElementValue isEqualToString:@"7"]) { [aMessier setType:@"Onr. stelsel"]; }
+			if([currentElementValue isEqualToString:@"8"]) { [aMessier setType:@"S0 stelsel"]; }
+			if([currentElementValue isEqualToString:@"9"]) { [aMessier setType:@"Supernova"]; }
+			if([currentElementValue isEqualToString:@"A"]) { [aMessier setType:@"Asterisme"]; }
+			if([currentElementValue isEqualToString:@"B"]) { [aMessier setType:@"Melkwegstuk"]; }
+			if([currentElementValue isEqualToString:@"C"]) { [aMessier setType:@"Dubbelster"]; }
 		}
 		else if([elementName isEqualToString:@"ra"]) {
 			[aMessier setRA:currentElementValue];

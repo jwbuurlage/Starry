@@ -214,7 +214,7 @@
 	
 	// -- animaties..
 	[self calculateAnimations];
-	
+	[[timeModule manager] tickOfTime:timeElapsed];
 	//NSLog(@"%f", timeElapsed);
 	
 	

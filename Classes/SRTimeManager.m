@@ -22,8 +22,6 @@
 	if(self = [super init]) {
 		//owner = theOwner;
 		simulatedDate = [[NSDate alloc] init];
-		actualDate = [[NSDate alloc] init];
-		timeTicker = [[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(tickOfTime:) userInfo:nil repeats:YES] retain];
 		speed = 1;
 	}
 	return self;
@@ -54,8 +52,6 @@
 	else if(speed >= 1) {
 		speed = speed * 5;
 	}
-
-	timeTicker = [[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(tickOfTime:) userInfo:nil repeats:YES] retain];
 }
 
 -(void)rew {
@@ -69,21 +65,17 @@
 	else if(speed > 1) {
 		speed = speed / 5;
 	}
-	timeTicker = [[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(tickOfTime:) userInfo:nil repeats:YES] retain];
 }
 
 -(void)playPause {
 	speed = 1;
-	timeTicker = [[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(tickOfTime:) userInfo:nil repeats:YES] retain];
 }
 
--(void)tickOfTime:(NSTimer*)theTimer {
-	NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:actualDate];
+-(void)tickOfTime:(NSTimeInterval)timeElapsed {
+	NSTimeInterval interval = timeElapsed;
 	NSTimeInterval simulatedInterval = [simulatedDate timeIntervalSinceNow];
 	[simulatedDate release];
 	simulatedDate = [[NSDate alloc] initWithTimeIntervalSinceNow:simulatedInterval + (interval * speed)];
-	[actualDate release];
-	actualDate = [[NSDate alloc] init];
 	
 	totalInterval += interval * speed;
 	//time interval sinds laatste
