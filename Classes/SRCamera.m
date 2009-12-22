@@ -34,6 +34,7 @@
 		rect = view.bounds; 
 		glFrustumf(-size, size, -size / (rect.size.width / rect.size.height), size / 
 				   (rect.size.width / rect.size.height), zNear, zFar); 
+		//glOrthof( 0, 320, 480, 0, 1, 0 );
 		glViewport(0, 0, rect.size.width, rect.size.height);  
 		
 		//NSLog(@"size: %f, width: %f, height:%f", size, rect.size.width, rect.size.height);
@@ -93,25 +94,52 @@
 		swipeVer = FALSE;
 		accV = 0;
 	}
-	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView);
-	float deltaAltitude = -deltaX / (rotationConstant/fieldOfView);
-	azimuth += (deltaAzimuth * 1.4);
-	azimuth = fmod(azimuth, 360); // Modulo 360
-	altitude += (deltaAltitude * 1.4);
+	float deltaAzimuth,deltaAltitude;
+		//deltaAzimuth = deltaY / (rotationConstant/fieldOfView) - (azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView));
+		//deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - (altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView));
+	deltaAzimuth = deltaY / (rotationConstant/fieldOfView);
+	deltaAltitude = (-deltaX / (rotationConstant/fieldOfView));
+		azimuth += (deltaAzimuth*1.2);
+		azimuth = fmod(azimuth, 360); // Modulo 360
+		altitude += (deltaAltitude*1.2);
 	//NSLog(@"Rotate Camera With X:%i Y:%i dAz:%f dAl:%f az:%f al:%f fov:%f",deltaX,deltaY,deltaAzimuth,deltaAltitude,azimuth,altitude,fieldOfView);
 }
 
 // Berekeningen voor camera locatie
 
--(float)calculateAzimuthWithY:(int)deltaY {
-	float deltaAzimuth = deltaY / (5.5850536/fieldOfView);
-	float result = fmod((azimuth + deltaAzimuth), 360);
+-(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
+	float rotationConstant = 5.5850536;
+	float adjustment = (azimuth/360)*(-abs(deltaX) / (rotationConstant/fieldOfView));
+	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) - 1*adjustment;
+	NSLog(@"Calculate azimuthFromX:%i andY:%i origiginal:%f delta:%f new:%f",deltaX,deltaY,deltaY / (rotationConstant/fieldOfView) ,adjustment,deltaAzimuth);
+	float result;
+	if(adjustment/2 > 1)
+		result = fmod(azimuth + deltaAzimuth*(adjustment/2), 360);
+	else
+		result = fmod(azimuth + deltaAzimuth, 360);
+	/*
+	if (deltaAzimuth > 0)
+		result = fmod((azimuth + pow(abs(deltaAzimuth),1.01)), 360);
+	else 
+		result = fmod((azimuth - pow(abs(deltaAzimuth),1.01)), 360);
+	 */
 	return result;
 }
 
--(float)calculateAltitudeWithX:(int)deltaX {
-	float deltaAltitude = -deltaX / (5.5850536/fieldOfView);
-	float result = altitude + deltaAltitude;
+-(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY {
+	float rotationConstant = 5.5850536;
+	float adjustment = (altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView));
+	float deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - 1*adjustment;
+	NSLog(@"Calculate altitudeFromX:%i andY:%i origiginal:%f delta:%f new:%f",deltaX,deltaY,(-deltaX / (rotationConstant/fieldOfView)),-((altitude/180)*(abs(deltaY) / (rotationConstant/fieldOfView))),deltaAltitude);
+	float result;
+	if(adjustment/2 > 1)
+		result = altitude + deltaAltitude*(adjustment/2);
+	else
+		result = altitude + deltaAltitude;
+	/*if(deltaAltitude > 0) 
+		result = altitude + abs(deltaAltitude),1.01);
+	else 
+		result = altitude - pow(abs(deltaAltitude),1.01);*/
 	return result;
 
 }

@@ -183,7 +183,7 @@
 		int y = [aTouch locationInView:theView].y;
 		
 		// Aan de buitenste zeide is de destortion veel erger dan verder naar binnen.
-		if (40 < y && y < 440 && 30 < x && x < 290) {
+		//if (40 < y && y < 440 && 30 < x && x < 290) {
 			
 			//[objectManager clickedAtX:x Y:y];
 			
@@ -196,11 +196,13 @@
 			//[camera rotateCameraWithX:dmX 
 			//						Y:dmY];
 			
-			float readRADeg = fmod([camera calculateAzimuthWithY:dmY],360);
+			float readDECDeg = fmod(90+[camera calculateAltitudeWithX:dmX Y:dmY],180);
+			
+			float readRADeg = fmod([camera calculateAzimuthWithX:dmX Y:dmY],360);
 			if (readRADeg < 0) {
 				readRADeg = readRADeg + 360;
 			}
-			float readDECDeg = fmod(90+[camera calculateAltitudeWithX:dmX],180);
+			
 			float readRARad = readRADeg * (M_PI/180);
 			float readDECRad = (readDECDeg * (M_PI/180));
 			//NSLog(@"RA/DEC punt RA:%f DEC:%f",azimuth,altitude);
@@ -444,7 +446,7 @@
 				}
 					
 				}	
-			}
+			//}
 			
 			
 			
