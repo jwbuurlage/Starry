@@ -39,13 +39,14 @@
 	//BOOL visible;
 }
 
-//@property (nonatomic, assign) BOOL visible;
+@property (nonatomic, assign) BOOL hiding;
+@property (nonatomic, assign) float alphaValue;
+@property (nonatomic, assign) float alphaValueName;
 
 //+ (SRMessierInfo*)shared;
 - (void)messierClicked:(SRMessier*)theMessier;
 - (void)draw;
 - (void)show; 
 - (void)hide; 
-- (void)alpha:(NSTimer*)theTimer;
 
 @end

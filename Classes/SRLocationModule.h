@@ -40,6 +40,8 @@
 -(id)initWithSRLocation:(SRLocation*)aLocation;
 -(void)updateDisplayedLocationData;
 
+-(void)toggleGPS;
+
 /*-(void)hideLongitude;
 -(void)showLongitude;
 -(void)hideLatitude;

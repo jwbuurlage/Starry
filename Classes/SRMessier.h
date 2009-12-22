@@ -14,6 +14,7 @@
 	float mag;
 	NSString* name;
 }
+
 @property (nonatomic, readwrite) Vertex3D position;
 @property (nonatomic, readwrite) float mag;
 @property (nonatomic, retain) NSString* name;

@@ -101,7 +101,7 @@
 	return self;
 }
 
-//@synthesize visible;
+@synthesize hiding, alphaValue, alphaValueName;
 
 /* + (SRMessierInfo*)shared {
 	if(!sharedMessier) {
@@ -113,37 +113,11 @@
 -(void)show {
 	alphaValue = 0.0f;
 	alphaValueName = -1.0f;
-	showTimer = [[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(alpha:) userInfo:nil repeats:YES] retain];
 	hiding = FALSE;
 }
 
 -(void)hide {
-	showTimer = [[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(alpha:) userInfo:nil repeats:YES] retain];
 	hiding = TRUE;
-}
-
-
--(void)alpha:(NSTimer*)theTimer {
-	if(hiding) {
-		alphaValue -= 0.1f;
-		alphaValueName -= 0.1f;
-		if(alphaValue <= 0.0f) {
-			[showTimer invalidate];
-			[showTimer release];
-			hiding = FALSE;
-		}
-	}
-	else {
-		alphaValue += 0.1f;
-		alphaValueName += 0.1f;
-		if(alphaValueName >= 1.0f) {
-			[showTimer invalidate];
-			[showTimer release];
-			alphaValue = 1.0f;
-			alphaValueName = 1.0f;
-		}
-	}
-	
 }
 
 - (void)messierClicked:(SRMessier*)theMessier {

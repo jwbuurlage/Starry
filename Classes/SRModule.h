@@ -23,38 +23,25 @@
 	NSMutableArray* elements;
 	BOOL visible; 
 	BOOL hiding;
-	int yTranslate;
-	
-	NSTimer* posiTimer;
-	NSTimer* negiTimer;
-	
-	NSTimer* iconTimer;
-	
+		
 	GLuint textures[9];
 	GLfloat textureCorners[150];
 	GLfloat textureCoords[100];
 	
-	int xValueIcon;
-	int initialXValueIcon;
-	
+	float xValueIcon;
+	float initialXValueIcon;
 	float alphaValue;
-	
-	NSTimer* showTimer;
-	NSTimer* alphaTimer;
 }
 
-@property (readonly) BOOL visible;
-@property (readonly) int yTranslate;
+@property (nonatomic, assign) BOOL visible;
+@property (nonatomic, assign) BOOL hiding;
+@property (nonatomic, assign) float alphaValue;
+@property (nonatomic, assign) float xValueIcon;
+@property (nonatomic, assign) float initialXValueIcon;
 @property (readonly) NSMutableArray* elements;
 
 -(void)hide;
 -(void)show;
 -(void)draw;
--(void)icon:(NSTimer*)theTimer;
--(void)show:(NSTimer*)theTimer;
--(void)alpha:(NSTimer*)theTimer;
--(void)loadTexture:(NSString *)name intoLocation:(GLuint)location;
--(void)loadTextureWithString:(NSString *)text intoLocation:(GLuint)location;
--(CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle;
 
 @end

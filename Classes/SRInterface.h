@@ -60,15 +60,10 @@
 	
 	BOOL hidingMenu;
 	
-	int xTranslate;
-	int yTranslate;
+	float xTranslate;
+	float yTranslate;
 	int count;
 	
-	NSTimer *posiTimer;
-	NSTimer *negiTimer;
-	NSTimer *fadeTimer;
-	NSTimer *menuTimer;
-	NSTimer *messierTimer;
 	UITextField *fieldTmp;
 	
 	NSString* currentlyEditingIdentifier;
@@ -76,8 +71,18 @@
 	Texture2D* defaultTexture;
 	BOOL defaultTextureBool;
 	
+	//animaties
+	NSTimeInterval timeElapsed;
+	NSTimeInterval lastDrawTime;
+	BOOL aMenu;
+	BOOL aMessier;
+	BOOL aModule;
+	BOOL aNameplate;
+	BOOL aInterface;
+	BOOL interfaceDown;
+	BOOL aFade;
 	float alphaDefault;
-	
+		
 	BOOL showingMessier;
 	BOOL menuVisible;
 }
@@ -87,6 +92,7 @@
 @property (readonly) SRNamePlate* theNameplate;
 @property (readonly) SRMessierInfo* messierInfo;
 @property (nonatomic, assign) BOOL showingMessier;
+@property (nonatomic, assign) BOOL aNameplate;
 
 -(id)initWithRenderer:(SRRenderer*)theRenderer;
 -(void)loadNameplate;
@@ -99,13 +105,13 @@
 -(void)hideInterface;
 -(void)showInterface;
 -(void)hideAllModules;
--(void)translate:(NSTimer*)theTimer;
 -(GLuint)textures;
 -(BOOL)UIElementAtPoint:(CGPoint)point;
 - (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle;
 -(void)bringUpTheKeyboardWithText:(NSString *)placeholder onLocation:(int)location andSendResultsTo:(id)delegate;
 -(void)fadeDefaultTexture;
 -(void)drawRedOverlay;
--(void)fade:(NSTimer*)theTimer;
+
+-(void)calculateAnimations;
 
 @end

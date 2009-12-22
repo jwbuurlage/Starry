@@ -130,12 +130,6 @@
 				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 			}
 			else {
-				if(xValueIcon > 12) {
-					xValueIcon -= (initialXValueIcon - 12) / 10;
-				}
-				if(xValueIcon < 12) {
-					xValueIcon = 12;	
-				}
 				[[elements objectAtIndex:0] setBounds:CGRectMake(xValueIcon, -55, 31, 31)];
 			}
 			

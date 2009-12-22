@@ -11,7 +11,7 @@
 
 @implementation SRNamePlate
 
-@synthesize yTranslate, visible, elements;
+@synthesize yTranslate, visible, hiding, info, elements;
 
 -(id)init {
 	if(self = [super self]) {
@@ -74,30 +74,12 @@
 }
 
 -(void)show {
-	posiTimer = [[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(translate:) userInfo:nil repeats:YES] retain];
 	visible = YES;
-	[negiTimer invalidate];
+	hiding = FALSE;
 }
 
 -(void)hide {
-	negiTimer = [[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(translate:) userInfo:nil repeats:YES] retain];
-	[posiTimer invalidate];
-}
-
--(void)translate:(NSTimer*)theTimer {
-	if([theTimer isEqual:posiTimer]) {
-		yTranslate -= 4; }
-	else {
-		yTranslate += 4;
-	}
-	
-	if(yTranslate <= 0) {
-		[theTimer invalidate];
-	}
-	else if (yTranslate == 32) {
-		[theTimer invalidate];
-		visible = NO;
-	}
+	hiding = TRUE;
 }
 
 -(void)setName:(NSString*)name inConstellation:(NSString*)constellation showInfo:(BOOL)theInfo {
