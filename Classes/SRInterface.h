@@ -82,9 +82,7 @@
 	BOOL interfaceDown;
 	BOOL aFade;
 	float alphaDefault;
-	
-	int frameCount;
-	
+		
 	BOOL showingMessier;
 	BOOL menuVisible;
 }

@@ -280,14 +280,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
-									<integer>5</integer>
+									<integer>45</integer>
+									<integer>43</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 14}, {249, 934}}</string>
+							<string>{{0, 10}, {249, 934}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -322,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRModule.h</string>
+								<string>XMLParser.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +330,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRModule.h</string>
+										<string>XMLParser.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>AC60413D10E11B4A0017951C</string>
+										<string>AC60419110E1210F0017951C</string>
 										<key>history</key>
 										<array>
 											<string>AC4F895D109DF65700B8BD64</string>
@@ -402,7 +402,6 @@
 											<string>ACC3816610DAB1A4009ED92E</string>
 											<string>AC9A0AF610DFC3770087E388</string>
 											<string>AC38505310DFD04F00C94722</string>
-											<string>AC3850BE10DFD4B100C94722</string>
 											<string>AC3850C410DFD4F300C94722</string>
 											<string>AC3851CF10DFEDCA00C94722</string>
 											<string>AC38521010DFF3D300C94722</string>
@@ -441,25 +440,27 @@
 											<string>AC60406C10E113210017951C</string>
 											<string>AC60406D10E113210017951C</string>
 											<string>AC60407510E113210017951C</string>
-											<string>AC6040B210E116B20017951C</string>
 											<string>AC6040B310E116B20017951C</string>
 											<string>AC6040B410E116B20017951C</string>
 											<string>AC6040B510E116B20017951C</string>
 											<string>AC6040B710E116B20017951C</string>
 											<string>AC6040D310E119700017951C</string>
 											<string>AC6040E110E119A50017951C</string>
-											<string>AC60410510E11A210017951C</string>
 											<string>AC60410610E11A210017951C</string>
 											<string>AC60412210E11A980017951C</string>
 											<string>AC60412310E11A980017951C</string>
 											<string>AC60412410E11A980017951C</string>
 											<string>AC60412510E11A980017951C</string>
 											<string>AC60412610E11A980017951C</string>
-											<string>AC60412710E11A980017951C</string>
-											<string>AC60412810E11A980017951C</string>
-											<string>AC60412910E11A980017951C</string>
-											<string>AC60413710E11AEB0017951C</string>
-											<string>AC60413810E11AEB0017951C</string>
+											<string>AC60415A10E11DBD0017951C</string>
+											<string>AC60415C10E11DBD0017951C</string>
+											<string>AC60416A10E11E8E0017951C</string>
+											<string>AC60416B10E11E8E0017951C</string>
+											<string>AC60418610E11FFF0017951C</string>
+											<string>AC60418B10E1210F0017951C</string>
+											<string>AC60418C10E1210F0017951C</string>
+											<string>AC60418E10E1210F0017951C</string>
+											<string>AC60418F10E1210F0017951C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

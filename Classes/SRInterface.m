@@ -578,6 +578,11 @@
 }
 
 -(void)calculateAnimations {
+	//als interval te groot is worden animaties onmiddelijk. Dit willen we voorkomen.
+	if(timeElapsed > 0.1) {
+		return;
+	}
+	
 	if(aMenu) {
 		if(hidingMenu) {
 			yTranslate += 7 * (timeElapsed / 0.05); 
@@ -659,17 +664,17 @@
 		if([theNameplate hiding]) {
 			[theNameplate setYTranslate:[theNameplate yTranslate] + ( 6 * (timeElapsed / 0.05) )]; }
 		else {
-			[theNameplate setYTranslate:[theNameplate yTranslate] - ( 6 * (timeElapsed / 0.05) )]; }
+			[theNameplate setYTranslate:[theNameplate yTranslate] - ( 6 * (timeElapsed / 0.05) )];  }
 		
 		
 		if([theNameplate yTranslate] <= 0) {
 			aNameplate = FALSE;
+			//[theNameplate setHiding:TRUE];
 			[theNameplate setYTranslate:0];
 		}
 		else if ([theNameplate yTranslate] >= 32) {
 			[theNameplate setYTranslate:32];
 			aNameplate = FALSE;
-			[theNameplate setHiding:TRUE];
 			[theNameplate setVisible:NO];
 		} 
 	}
@@ -691,14 +696,11 @@
 	}
 	
 	if(aFade) {
-		++frameCount;
-		if(frameCount > 5) {
-			alphaDefault -= 0.05 * (timeElapsed / 0.05);
-				if (alphaDefault <= 0.0) {
-					defaultTextureBool = FALSE;
-					aFade = FALSE;
-				}	
-		}
+		alphaDefault -= 0.05 * (timeElapsed / 0.05);
+		if (alphaDefault <= 0.0) {
+			defaultTextureBool = FALSE;
+			aFade = FALSE;
+		}	
 	}
 }
 
@@ -839,7 +841,6 @@
 						  
 -(void)fadeDefaultTexture {
 	aFade = TRUE;
-	frameCount = 0;
 }
 
 
