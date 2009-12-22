@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Project</string>
+	<string>Debug</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -301,8 +301,6 @@
 							<string>MainColumn</string>
 							<real>286</real>
 						</array>
-						<key>RubberWindowFrame</key>
-						<string>-2 39 1440 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -313,8 +311,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -332,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>76D7BCF610E0FDE500F8806E</string>
+										<string>76D7BD3710E1079B00F8806E</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -409,8 +405,6 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1132, 571}}</string>
-								<key>RubberWindowFrame</key>
-								<string>-2 39 1440 839 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -488,8 +482,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1132, 195}}</string>
-										<key>RubberWindowFrame</key>
-										<string>-2 39 1440 839 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -562,6 +554,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -573,6 +567,8 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1440, 351}}</string>
+						<key>RubberWindowFrame</key>
+						<string>-2 39 1440 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -647,7 +643,11 @@
 							</array>
 							<key>Frame</key>
 							<string>{{693, 0}, {747, 80}}</string>
+							<key>RubberWindowFrame</key>
+							<string>-2 39 1440 839 0 0 1440 878 </string>
 						</dict>
+						<key>RubberWindowFrame</key>
+						<string>-2 39 1440 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -711,7 +711,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>76D7BCF410E0FD8A00F8806E</string>
+		<string>76D7BD3810E1079B00F8806E</string>
 		<string>76D7BB0C10E0B2BB00F8806E</string>
 		<string>76D7BB0010E0AEE800F8806E</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
