@@ -64,7 +64,6 @@
 -(void)parseData;
 -(void)buildPlanetData;
 -(void)buildStarData;
--(void)buildConstellationData;
 -(void)buildMessierData;
 
 @end

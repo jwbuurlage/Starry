@@ -72,7 +72,6 @@
 		
 		glLoadIdentity(); 
 		[self loadStarPoints];
-		[self loadConstellations];
 		[self loadMessier];
 		
 	}
@@ -109,16 +108,6 @@
 	}	
 }
 
--(void)loadConstellations {
-	[objectManager buildConstellationData];
-	NSMutableArray * constellationPointsTmp = [objectManager constellationPoints];
-	constellationNum = [objectManager constellationNum];
-	for (int i=0; i < constellationNum; i++) {
-		constellationPoints[i] = [[constellationPointsTmp objectAtIndex:i] floatValue];
-		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
-	}
-}
-
 -(void)render {
 	//view resetten
     glLoadIdentity();
@@ -139,7 +128,7 @@
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 	
 	
-	//[self adjustViewToLocationAndTime:YES];
+	[self adjustViewToLocationAndTime:YES];
 
 	if([[appDelegate settingsManager] showConstellations]) {
 		[self drawConstellations]; 
@@ -159,7 +148,7 @@
 	[self drawPlanets];
 	[self drawMessier];
 
-	//[self adjustViewToLocationAndTime:NO];
+	[self adjustViewToLocationAndTime:NO];
 	
 	glDisable(GL_TEXTURE_2D);
 	glDisableClientState(GL_POINT_SIZE_ARRAY_OES);
@@ -218,11 +207,75 @@
 -(void)drawConstellations {
 	glLineWidth(2.0f);
 	
-	for(SRConstellation* aConstellation in [objectManager constellations]) {
-		float distance = (fabs([camera azimuth] - [aConstellation ra]) + fabs([camera altitude] - [aConstellation dec])) / 2;
 
+	float dmX = 0;
+	float dmY = 0;
+	
+	float readDECDeg = fmod(90+[camera calculateAltitudeWithX:dmX Y:dmY],180);
+	
+	float readRADeg = fmod([camera calculateAzimuthWithX:dmX Y:dmY],360);
+	if (readRADeg < 0) {
+		readRADeg = readRADeg + 360;
+	}
+	
+	float readRARad = readRADeg * (M_PI/180);
+	float readDECRad = (readDECDeg * (M_PI/180));
+	float brX = sin(readDECRad)*cos(readRARad);
+	float brY = sin(readDECRad)*sin(readRARad);
+	float brZ = cos(readDECRad);
+	
+	float rotationY = (90-[location latitude])*(M_PI/180);
+	float rotationZ1 = [location longitude]*(M_PI/180);
+	float rotationZ2 = [[[interface timeModule] manager] elapsed]*(M_PI/180);
+	
+	// voor goed voorbeeld: http://www.math.umn.edu/~nykamp/m2374/readings/matvecmultex/
+	// wikipedia rotatie matrix: http://en.wikipedia.org/wiki/Rotation_matrix
+	
+	float maX,maY,maZ;
+	
+	maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
+	maY = (0*brX+1*brY+0*brZ);
+	maZ = ((-sin(rotationY)*brX)+0*brY+cos(rotationY)*brZ);
+	
+	brX = maX;
+	brY = maY;
+	brZ = maZ;
+	
+	maX = (cos(rotationZ1)*brX+(-sin(rotationZ1)*brY)+0*brZ);
+	maY = (sin(rotationZ1)*brX+cos(rotationZ1)*brY+0*brZ);
+	maZ = (0*brX+0*brY+1*brZ);
+	
+	brX = maX;
+	brY = maY;
+	brZ = maZ;
+	
+	// Matrix vermenigvuldiging met draai om de  z-as (tijd)
+	maX = (cos(rotationZ2)*brX+(-sin(rotationZ2)*brY)+0*brZ);
+	maY = (sin(rotationZ2)*brX+cos(rotationZ2)*brY+0*brZ);
+	maZ = (0*brX+0*brY+1*brZ);
+	
+	brX = maX;
+	brY = maY;
+	brZ = maZ;
+	
+	float stX,stY,stZ;
+	stX = -20*brX;
+	stY = -20*brY;
+	stZ = -20*brZ;
+	
+	float apparentAzimuth = ((180/M_PI) * atan2(stY, stX)) + 180;
+	float apparentAltitude = 90 - ((180/M_PI) * (acos((stZ)/sqrt(pow(stX,2)+pow(stY,2)+pow(stZ,2)))));
+	
+	for(SRConstellation* aConstellation in [objectManager constellations]) {
+		float distance = (fabs(apparentAzimuth - ([aConstellation ra])) + fabs(apparentAltitude - [aConstellation dec])) / 2;
+		if(distance > 300) { distance = 360 - distance; }
 		if(distance < 30) { 
-			if(distance <= 11.0) { glColor4f(0.4f, 0.40f, 0.40f, 0.3f); } else { glColor4f(0.4f, 0.40f, 0.40f, 0.3f / (distance - 10)); }
+			if(distance <= 11.0) { glColor4f(0.4f, 0.40f, 0.40f, 0.3f); }
+			else { 
+				float factor = (distance - 10) / 3;
+				if(factor < 1) { factor = 1; }
+				glColor4f(0.4f, 0.40f, 0.40f, 0.3f / factor); 
+			}
 			[aConstellation draw];
 		}
 	}
