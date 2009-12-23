@@ -25,9 +25,9 @@
 	float longitude = [[appDelegate location] longitude];
 	float time = [[appDelegate timeManager] elapsed];
 	
-	float rotationY = (90-latitude)*(M_PI/180);
-	float rotationZ1 = longitude*(M_PI/180);
-	float rotationZ2 = time*(M_PI/180);
+	float rotationY = -(90-latitude)*(M_PI/180);
+	float rotationZ1 = -longitude*(M_PI/180);
+	float rotationZ2 = -time*(M_PI/180);
 	
 	float maX,maY,maZ;
 	
@@ -59,11 +59,11 @@
 	brZ = maZ;
 	
 	Vertex3D result;
-	result.x = brX;
-	result.y = brY;
-	result.z = brZ;
+	result.x = -brX;
+	result.y = -brY;
+	result.z = -brZ;
 	
-	NSLog(@"Geroteerde locatie M-object berekend x:%f y:%f z:%f",brX,brY,brZ);
+	NSLog(@"Geroteerde locatie M-object berekend x:%f y:%f z:%f",-brX/20,-brY/20,-brZ/20);
 	
 	return result;
 }

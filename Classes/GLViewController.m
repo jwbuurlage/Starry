@@ -367,7 +367,7 @@
 						[[[renderer interface] messierInfo] messierClicked:closestMessier];
 						
 						// Screen location test
-						//Vertex3D posTmp = [closestMessier myCurrentPosition];
+						Vertex3D posTmp = [closestMessier myCurrentPosition];
 						// Gaat alleen om de log in de method
 						
 
