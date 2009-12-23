@@ -139,7 +139,7 @@
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 	
 	
-	[self adjustViewToLocationAndTime:YES];
+	//[self adjustViewToLocationAndTime:YES];
 
 	if([[appDelegate settingsManager] showConstellations]) {
 		[self drawConstellations]; 
@@ -159,7 +159,7 @@
 	[self drawPlanets];
 	[self drawMessier];
 
-	[self adjustViewToLocationAndTime:NO];
+	//[self adjustViewToLocationAndTime:NO];
 	
 	glDisable(GL_TEXTURE_2D);
 	glDisableClientState(GL_POINT_SIZE_ARRAY_OES);
@@ -216,10 +216,16 @@
 }
 
 -(void)drawConstellations {
-	glLineWidth(1.0f);
-	glColor4f(0.4f, 0.40f, 0.40f, 0.3f);
-	glVertexPointer(3, GL_FLOAT, 12, constellationPoints);
-    glDrawArrays(GL_LINES, 0, constellationNum);
+	glLineWidth(2.0f);
+	
+	for(SRConstellation* aConstellation in [objectManager constellations]) {
+		float distance = (fabs([camera azimuth] - [aConstellation ra]) + fabs([camera altitude] - [aConstellation dec])) / 2;
+
+		if(distance < 30) { 
+			if(distance <= 11.0) { glColor4f(0.4f, 0.40f, 0.40f, 0.3f); } else { glColor4f(0.4f, 0.40f, 0.40f, 0.3f / (distance - 10)); }
+			[aConstellation draw];
+		}
+	}
 }
 
 -(void)drawEcliptic {
@@ -261,8 +267,8 @@
 }
 
 -(void)drawMessier {
-	glPointSize(8.0 * [camera zoomingValue]);
-	glColor4f(0.5f, 0.5f, 0.5f, 0.15f);
+	glPointSize(8.0);
+	glColor4f(0.2f, 0.2f, 0.2f, 0.6f);
 	glVertexPointer(3, GL_FLOAT, 12, messierPoints);
 	glBindTexture(GL_TEXTURE_2D, textures[10]);
     glDrawArrays(GL_POINTS, 0, messierNum);

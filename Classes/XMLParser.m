@@ -123,6 +123,8 @@
 			return;
 		
 		else if([elementName isEqualToString:@"constellation"]) {
+			[aConstellation calculateRADec];
+			[aConstellation makeArray];
 			[objectManager.constellations addObject:aConstellation];
 			
 			[aConstellation release];
@@ -143,6 +145,9 @@
 				aLine.end = aPoint;
 				start = TRUE;
 			}
+		}
+		else if([elementName isEqualToString:@"name"]) {
+			aConstellation.name = currentElementValue;
 		}
 		else if([elementName isEqualToString:@"x"]) {
 			aPoint.x = [currentElementValue floatValue];
