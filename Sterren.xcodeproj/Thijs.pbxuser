@@ -233,6 +233,15 @@
 			7643A6DC10E24618006B41D2 /* PBXTextBookmark */ = 7643A6DC10E24618006B41D2 /* PBXTextBookmark */;
 			7643A6DF10E2463F006B41D2 /* PBXTextBookmark */ = 7643A6DF10E2463F006B41D2 /* PBXTextBookmark */;
 			7643A6E210E2465F006B41D2 /* PBXTextBookmark */ = 7643A6E210E2465F006B41D2 /* PBXTextBookmark */;
+			7643A6E310E24A4D006B41D2 /* PBXTextBookmark */ = 7643A6E310E24A4D006B41D2 /* PBXTextBookmark */;
+			7643A6E410E24A4D006B41D2 /* PBXTextBookmark */ = 7643A6E410E24A4D006B41D2 /* PBXTextBookmark */;
+			7643A6F110E24BE0006B41D2 /* PBXTextBookmark */ = 7643A6F110E24BE0006B41D2 /* PBXTextBookmark */;
+			7643A6F210E24BE0006B41D2 /* PBXTextBookmark */ = 7643A6F210E24BE0006B41D2 /* PBXTextBookmark */;
+			7643A6F310E24BE0006B41D2 /* PBXTextBookmark */ = 7643A6F310E24BE0006B41D2 /* PBXTextBookmark */;
+			7643A6F410E24BE0006B41D2 /* PBXTextBookmark */ = 7643A6F410E24BE0006B41D2 /* PBXTextBookmark */;
+			7643A6F510E24BE0006B41D2 /* XCBuildMessageTextBookmark */ = 7643A6F510E24BE0006B41D2 /* XCBuildMessageTextBookmark */;
+			7643A6F610E24BE0006B41D2 /* PBXTextBookmark */ = 7643A6F610E24BE0006B41D2 /* PBXTextBookmark */;
+			7643A6F710E24BE0006B41D2 /* PBXTextBookmark */ = 7643A6F710E24BE0006B41D2 /* PBXTextBookmark */;
 			764457CF10C5B57500AB935D = 764457CF10C5B57500AB935D /* PBXTextBookmark */;
 			76475AFB10CC23E100A2C9E7 = 76475AFB10CC23E100A2C9E7 /* PBXTextBookmark */;
 			76475AFF10CC23E100A2C9E7 = 76475AFF10CC23E100A2C9E7 /* PBXTextBookmark */;
@@ -319,7 +328,7 @@
 		fRef = ACEC7CEF109B25A700149C80 /* SRStar.h */;
 		name = "SRStar.h: 41";
 		rLen = 0;
-		rLoc = 1072;
+		rLoc = 1070;
 		rType = 0;
 		vrLen = 1088;
 		vrLoc = 0;
@@ -618,7 +627,7 @@
 		fRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */;
 		name = "SRPlanetaryObject.m: 19";
 		rLen = 0;
-		rLoc = 502;
+		rLoc = 533;
 		rType = 0;
 		vrLen = 1437;
 		vrLoc = 1171;
@@ -1042,6 +1051,95 @@
 		vrLen = 857;
 		vrLoc = 499;
 	};
+	7643A6E310E24A4D006B41D2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 370";
+		rLen = 0;
+		rLoc = 10951;
+		rType = 0;
+		vrLen = 589;
+		vrLoc = 10671;
+	};
+	7643A6E410E24A4D006B41D2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACECC68D10CD9A8400CBE4AC /* SRMessier.m */;
+		name = "SRMessier.m: 66";
+		rLen = 0;
+		rLoc = 1667;
+		rType = 0;
+		vrLen = 552;
+		vrLoc = 197;
+	};
+	7643A6F110E24BE0006B41D2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACECC68D10CD9A8400CBE4AC /* SRMessier.m */;
+		name = "SRMessier.m: 17";
+		rLen = 1387;
+		rLoc = 308;
+		rType = 0;
+		vrLen = 1113;
+		vrLoc = 0;
+	};
+	7643A6F210E24BE0006B41D2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */;
+		name = "SRPlanetaryObject.h: 56";
+		rLen = 0;
+		rLoc = 1356;
+		rType = 0;
+		vrLen = 741;
+		vrLoc = 713;
+	};
+	7643A6F310E24BE0006B41D2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */;
+		name = "SRPlanetaryObject.m: 152";
+		rLen = 0;
+		rLoc = 4138;
+		rType = 0;
+		vrLen = 1048;
+		vrLoc = 3900;
+	};
+	7643A6F410E24BE0006B41D2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACEC7CF0109B25A700149C80 /* SRStar.m */;
+		name = "SRStar.m: 125";
+		rLen = 0;
+		rLoc = 2580;
+		rType = 0;
+		vrLen = 926;
+		vrLoc = 1989;
+	};
+	7643A6F510E24BE0006B41D2 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected ')' before 'Vertex3D'";
+		fRef = ACEC7CEF109B25A700149C80 /* SRStar.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 63;
+		rType = 1;
+	};
+	7643A6F610E24BE0006B41D2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACEC7CEF109B25A700149C80 /* SRStar.h */;
+		name = "SRStar.h: 15";
+		rLen = 0;
+		rLoc = 417;
+		rType = 0;
+		vrLen = 932;
+		vrLoc = 526;
+	};
+	7643A6F710E24BE0006B41D2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACEC7CEF109B25A700149C80 /* SRStar.h */;
+		name = "SRStar.h: 15";
+		rLen = 0;
+		rLoc = 417;
+		rType = 0;
+		vrLen = 836;
+		vrLoc = 622;
+	};
 	7644564F10C5837800AB935D /* SRSettingsModule.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1035, 606}}";
@@ -1258,7 +1356,7 @@
 		fRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */;
 		name = "SRPlanetaryObject.m: 19";
 		rLen = 0;
-		rLoc = 502;
+		rLoc = 533;
 		rType = 0;
 		vrLen = 1531;
 		vrLoc = 723;
@@ -1551,16 +1649,16 @@
 	};
 	AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 1094}}";
-			sepNavSelRange = "{403, 0}";
-			sepNavVisRange = "{594, 830}";
+			sepNavIntBoundsRect = "{{0, 0}, {1083, 1111}}";
+			sepNavSelRange = "{1356, 0}";
+			sepNavVisRange = "{713, 741}";
 		};
 	};
 	AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1172, 2249}}";
-			sepNavSelRange = "{502, 0}";
-			sepNavVisRange = "{1171, 1437}";
+			sepNavIntBoundsRect = "{{0, 0}, {1172, 3339}}";
+			sepNavSelRange = "{4138, 0}";
+			sepNavVisRange = "{3900, 1048}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -1671,16 +1769,16 @@
 	};
 	ACEC7CEF109B25A700149C80 /* SRStar.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 585}}";
-			sepNavSelRange = "{1072, 0}";
-			sepNavVisRange = "{0, 1088}";
+			sepNavIntBoundsRect = "{{0, 0}, {1083, 1110}}";
+			sepNavSelRange = "{417, 0}";
+			sepNavVisRange = "{622, 836}";
 		};
 	};
 	ACEC7CF0109B25A700149C80 /* SRStar.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1099, 1144}}";
-			sepNavSelRange = "{1154, 0}";
-			sepNavVisRange = "{1113, 569}";
+			sepNavIntBoundsRect = "{{0, 0}, {1083, 3076}}";
+			sepNavSelRange = "{2580, 0}";
+			sepNavVisRange = "{1989, 926}";
 		};
 	};
 	ACEC7CF1109B25A700149C80 /* SRSun.h */ = {
@@ -1706,9 +1804,9 @@
 	};
 	ACECC68D10CD9A8400CBE4AC /* SRMessier.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 1166}}";
-			sepNavSelRange = "{680, 0}";
-			sepNavVisRange = "{499, 857}";
+			sepNavIntBoundsRect = "{{0, 0}, {1391, 1200}}";
+			sepNavSelRange = "{1667, 0}";
+			sepNavVisRange = "{197, 552}";
 		};
 	};
 }

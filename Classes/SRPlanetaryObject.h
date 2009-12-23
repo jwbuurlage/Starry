@@ -53,6 +53,7 @@
 
 -(void)recalculatePosition:(NSDate*)theDate;
 -(void)setViewOrigin:(Vertex3D)origin;
+-(Vertex3D)myCurrentPosition;
 
 //getters
 /*

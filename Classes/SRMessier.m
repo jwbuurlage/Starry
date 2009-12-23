@@ -58,10 +58,7 @@
 	brY = maY;
 	brZ = maZ;
 	
-	Vertex3D result;
-	result.x = -brX;
-	result.y = -brY;
-	result.z = -brZ;
+	Vertex3D result = Vertex3DMake(-brX, -brY, -brZ);
 	
 	NSLog(@"Geroteerde locatie M-object berekend x:%f y:%f z:%f",-brX/20,-brY/20,-brZ/20);
 	

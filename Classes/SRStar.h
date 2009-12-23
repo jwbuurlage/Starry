@@ -12,7 +12,7 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "OpenGLCommon.h"
+#import "OpenGLCommon.h"
 
 typedef struct {
 	float red;
@@ -61,5 +61,6 @@ static inline StarColor StarColorMake(float inRed, float inGreen, float inBlue, 
 -(float)size;
 -(StarColor)color;
 -(float)alpha;
+-(Vertex3D)myCurrentPosition;
 
 @end
