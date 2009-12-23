@@ -454,13 +454,8 @@
 				aModule = TRUE;
 			}
 		}
-		else if(clicker == @"search") {
-			if([theNameplate visible]) {
-				[theNameplate hide];
-			}
-			else {
-				[theNameplate setName:@"Saturnus" inConstellation:@"Orion" showInfo:YES];
-			}
+		else if(clicker == @"searchfield" || clicker == @"search") {
+			[self bringUpTheKeyboardWithText:@"" onLocationX:9 Y:175 withColor:[UIColor blackColor] andSendResultsTo:self];
 		}
 		else if(clicker == @"arrow") {
 			flagToggle = YES;
@@ -484,7 +479,7 @@
 			NSNumber* aNumber = [[NSNumber alloc] initWithFloat:[locationModule latitude]];
 			currentlyEditingIdentifier = @"lat";
 			[locationModule setLatVisible:NO];
-			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocation:104 andSendResultsTo:self]; // 74 omdat dit ook de locatie is van de data
+			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocationX:0 Y:104 withColor:[UIColor whiteColor] andSendResultsTo:self]; // 74 omdat dit ook de locatie is van de data
 			//Waarom reset de interface zich naar alles ingeklapt?
 			
 			if([locationModule GPS]) {
@@ -497,7 +492,7 @@
 			NSNumber* aNumber = [[NSNumber alloc] initWithFloat:[locationModule longitude]];
 			currentlyEditingIdentifier = @"long";
 			[locationModule setLongVisible:NO];
-			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocation:224 andSendResultsTo:self]; // 174 omdat dit ook de locatie is van de data
+			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocationX:0 Y:224 withColor:[UIColor whiteColor] andSendResultsTo:self]; // 174 omdat dit ook de locatie is van de data
 			//Waarom reset de interface zich naar alles ingeklapt?
 			
 			if([locationModule GPS]) {
@@ -772,12 +767,12 @@
 	return rotatedImage;
 }
 
--(void)bringUpTheKeyboardWithText:(NSString *)placeholder onLocation:(int)location andSendResultsTo:(id)delegate {
+-(void)bringUpTheKeyboardWithText:(NSString *)placeholder onLocationX:(int)locX Y:(int)locY withColor:(UIColor*)color andSendResultsTo:(id)delegate {
 	//NSLog(@"Bring up the Keyboard");
 	
-	fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake(-27, (location+25), 80, 32)];
+	fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX-26), (locY+25), 80, 32)];
 	[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:11]];
-	[fieldTmp setTextColor:[UIColor whiteColor]];
+	[fieldTmp setTextColor:color];
 	[fieldTmp setTextAlignment:UITextAlignmentLeft];
 	[fieldTmp setDelegate:delegate];
 	[fieldTmp setText:placeholder];
@@ -785,7 +780,9 @@
 	[fieldTmp setAutocapitalizationType:UITextAutocapitalizationTypeNone];
 	[fieldTmp setReturnKeyType:UIReturnKeyDone];
 	[fieldTmp setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
-	[fieldTmp setKeyboardType:UIKeyboardTypeNumbersAndPunctuation]; // UIKeyboardTypeNumberPad werkt niet omdat deze geen '.' en 'return' knop heeft
+	if(color == [UIColor whiteColor]) {
+		[fieldTmp setKeyboardType:UIKeyboardTypeNumbersAndPunctuation]; // UIKeyboardTypeNumberPad werkt niet omdat deze geen '.' en 'return' knop heeft
+	}
 	
 	[fieldTmp setClearsOnBeginEditing:NO];
 	// Unhide de uiElementsView (Anders werkt de multitouch in glView niet)
