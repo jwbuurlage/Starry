@@ -207,13 +207,9 @@
 -(void)drawConstellations {
 	glLineWidth(2.0f);
 	
-
-	float dmX = 0;
-	float dmY = 0;
+	float readDECDeg = fmod(90+[camera altitude],180);
+	float readRADeg = fmod([camera azimuth],360);
 	
-	float readDECDeg = fmod(90+[camera calculateAltitudeWithX:dmX Y:dmY],180);
-	
-	float readRADeg = fmod([camera calculateAzimuthWithX:dmX Y:dmY],360);
 	if (readRADeg < 0) {
 		readRADeg = readRADeg + 360;
 	}
@@ -264,7 +260,7 @@
 	stZ = -20*brZ;
 	
 	float apparentAzimuth = ((180/M_PI) * atan2(stY, stX)) + 180;
-	float apparentAltitude = 90 - ((180/M_PI) * (acos((stZ)/sqrt(pow(stX,2)+pow(stY,2)+pow(stZ,2)))));
+	float apparentAltitude = 90 - ((180/M_PI) * (acos((stZ)/sqrt(pow(stX,2)+pow(stY,2)+pow(stZ,2))))); 
 	
 	for(SRConstellation* aConstellation in [objectManager constellations]) {
 		float distance = (fabs(apparentAzimuth - ([aConstellation ra])) + fabs(apparentAltitude - [aConstellation dec])) / 2;
@@ -275,7 +271,7 @@
 				float factor = (distance - 10) / 3;
 				if(factor < 1) { factor = 1; }
 				glColor4f(0.4f, 0.40f, 0.40f, 0.3f / factor); 
-			}
+			} 
 			[aConstellation draw];
 		}
 	}
