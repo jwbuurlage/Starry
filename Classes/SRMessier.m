@@ -7,6 +7,7 @@
 //
 
 #import "SRMessier.h"
+#import "SterrenAppDelegate.h"
 
 
 @implementation SRMessier
@@ -14,15 +15,19 @@
 @synthesize position, mag, name, declination, RA, constellation, type, distance;
 
 -(Vertex3D)myCurrentPosition {
-	float x = position.x;
-	float y = position.y;
-	float z = position.z;
 	
-	id appDelegate = [[UIApplication sharedApplication] delegate];
+	float brX = position.x;
+	float brY = position.y;
+	float brZ = position.z;
 	
-	float rotationY = (90-[[appDelegate location] latitude])*(M_PI/180);
-	float rotationZ1 = [[appDelegate location] longitude]*(M_PI/180);
-	float rotationZ2 = [[appDelegate timeManager] elapsed]*(M_PI/180);
+	SterrenAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+	float latitude = [[appDelegate location] latitude];
+	float longitude = [[appDelegate location] longitude];
+	float time = [[appDelegate timeManager] elapsed];
+	
+	float rotationY = (90-latitude)*(M_PI/180);
+	float rotationZ1 = longitude*(M_PI/180);
+	float rotationZ2 = time*(M_PI/180);
 	
 	float maX,maY,maZ;
 	
@@ -54,6 +59,12 @@
 	brZ = maZ;
 	
 	Vertex3D result;
+	result.x = brX;
+	result.y = brY;
+	result.z = brZ;
+	
+	NSLog(@"Geroteerde locatie M-object berekend x:%f y:%f z:%f",brX,brY,brZ);
+	
 	return result;
 }
 
