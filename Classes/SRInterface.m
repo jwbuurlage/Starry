@@ -824,6 +824,32 @@
 			//[locationModule updateDisplayedLocationData]; // Wordt al gedaan in setLongitude
 			[locationModule setLongVisible:YES];
 		}
+		else if (currentlyEditingIdentifier == @"search") {
+			SRMessier * aMessier;
+			SRMessier * foundMessier;
+			for(aMessier in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
+				if ([aMessier name] == aValue) {
+					foundMessier = aMessier;
+				}						
+			}
+			if(foundMessier) {
+				
+				[[self theNameplate] setName:foundMessier.name inConstellation:@"messier" showInfo:YES];
+				[self setANameplate:TRUE];
+				
+				[[self messierInfo] messierClicked:foundMessier];
+				
+				//Vertex3D posTmp = [closestMessier myCurrentPosition];
+				
+				Vertex3D position = foundMessier.position;
+				
+				//[renderer setHighlightPosition:position];
+				//[renderer setHighlightSize:32]; 
+				//[renderer setHighlight:TRUE];
+				
+				
+			}
+		}
 		
 		//[fieldTmp setText:@""];
 		[fieldTmp removeFromSuperview]; // Verwijder uit glView
