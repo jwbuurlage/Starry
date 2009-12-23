@@ -14,13 +14,26 @@
 
 #import <Foundation/Foundation.h>
 #import "SRConstellationLine.h"
+#import <OpenGLES/EAGL.h>
+#import <OpenGLES/ES1/gl.h>
+#import <OpenGLES/ES1/glext.h>
 
 @interface SRConstellation : NSObject {		
 	NSMutableArray* lines;
 	NSString* name;
+	float ra;
+	float dec;
+	
+	GLfloat constellationPoints[150];
 }
 	
+@property (readonly) float ra;
+@property (readonly) float dec;
 @property (nonatomic, retain) NSMutableArray *lines;
 @property (nonatomic, retain) NSString *name;
+
+-(void)calculateRADec;
+-(void)draw;
+-(void)makeArray;
 
 @end

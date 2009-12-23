@@ -53,6 +53,9 @@
 	GLfloat zoomingValue; 
 }
 
+@property (readonly) float altitude;
+@property (readonly) float azimuth;
+
 -(GLfloat)zoomingValue;
 - (id)initWithView:(GLView*)view;
 - (void)adjustView;
