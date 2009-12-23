@@ -29,4 +29,6 @@
 @property (nonatomic, retain) NSString* RA;
 @property (nonatomic, retain) NSString* type;
 
+-(Vertex3D)myCurrentPosition;
+
 @end

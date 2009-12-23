@@ -217,7 +217,7 @@
 			float brX = sin(readDECRad)*cos(readRARad);
 			float brY = sin(readDECRad)*sin(readRARad);
 			float brZ = cos(readDECRad);
-			//NSLog(@"Aangeklikte locatie op bol x:%f y:%f z:%f",brX,brY,brZ);
+			NSLog(@"Aangeklikte locatie op bol x:%f y:%f z:%f",brX,brY,brZ);
 			
 			
 			float rotationY = (90-[[renderer location] latitude])*(M_PI/180);
@@ -365,6 +365,11 @@
 						[[renderer interface] setANameplate:TRUE];
 
 						[[[renderer interface] messierInfo] messierClicked:closestMessier];
+						
+						// Screen location test
+						//Vertex3D posTmp = [closestMessier myCurrentPosition];
+						// Gaat alleen om de log in de method
+						
 
 						
 						Vertex3D position = closestMessier.position;

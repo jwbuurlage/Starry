@@ -455,6 +455,7 @@
 			}
 		}
 		else if(clicker == @"searchfield" || clicker == @"search") {
+			currentlyEditingIdentifier = @"search";
 			[self bringUpTheKeyboardWithText:@"" onLocationX:9 Y:175 withColor:[UIColor blackColor] andSendResultsTo:self];
 		}
 		else if(clicker == @"arrow") {
@@ -780,7 +781,7 @@
 	[fieldTmp setAutocapitalizationType:UITextAutocapitalizationTypeNone];
 	[fieldTmp setReturnKeyType:UIReturnKeyDone];
 	[fieldTmp setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
-	if(color == [UIColor whiteColor]) {
+	if	(currentlyEditingIdentifier == @"lat" || currentlyEditingIdentifier == @"long") {
 		[fieldTmp setKeyboardType:UIKeyboardTypeNumbersAndPunctuation]; // UIKeyboardTypeNumberPad werkt niet omdat deze geen '.' en 'return' knop heeft
 	}
 	
