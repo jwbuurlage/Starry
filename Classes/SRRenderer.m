@@ -216,9 +216,6 @@
 	
 	float readRARad = readRADeg * (M_PI/180);
 	float readDECRad = (readDECDeg * (M_PI/180));
-	float brX = sin(readDECRad)*cos(readRARad);
-	float brY = sin(readDECRad)*sin(readRARad);
-	float brZ = cos(readDECRad);
 	
 	float rotationY = (90-[location latitude])*(M_PI/180);
 	float rotationZ1 = [location longitude]*(M_PI/180);
@@ -227,37 +224,25 @@
 	// voor goed voorbeeld: http://www.math.umn.edu/~nykamp/m2374/readings/matvecmultex/
 	// wikipedia rotatie matrix: http://en.wikipedia.org/wiki/Rotation_matrix
 	
-	float maX,maY,maZ;
+	float maX,maY,maZ, brX, brY, brZ;
 	
-	maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
-	maY = (0*brX+1*brY+0*brZ);
-	maZ = ((-sin(rotationY)*brX)+0*brY+cos(rotationY)*brZ);
-	
-	brX = maX;
-	brY = maY;
-	brZ = maZ;
-	
-	maX = (cos(rotationZ1)*brX+(-sin(rotationZ1)*brY)+0*brZ);
-	maY = (sin(rotationZ1)*brX+cos(rotationZ1)*brY+0*brZ);
-	maZ = (0*brX+0*brY+1*brZ);
-	
+	maX = (cos(rotationZ1)*(cos(rotationY)*sin(readDECRad)*cos(readRARad)+0*sin(readDECRad)*sin(readRARad)+sin(rotationY)*cos(readDECRad))+(-sin(rotationZ1)*(0*sin(readDECRad)*cos(readRARad)+1*sin(readDECRad)*sin(readRARad)+0*cos(readDECRad)))+0*((-sin(rotationY)*sin(readDECRad)*cos(readRARad))+0*sin(readDECRad)*sin(readRARad)+cos(rotationY)*cos(readDECRad)));
+	maY = (sin(rotationZ1)*(cos(rotationY)*sin(readDECRad)*cos(readRARad)+0*sin(readDECRad)*sin(readRARad)+sin(rotationY)*cos(readDECRad))+cos(rotationZ1)*(0*sin(readDECRad)*cos(readRARad)+1*sin(readDECRad)*sin(readRARad)+0*cos(readDECRad))+0*((-sin(rotationY)*sin(readDECRad)*cos(readRARad))+0*sin(readDECRad)*sin(readRARad)+cos(rotationY)*cos(readDECRad)));
+	maZ = (0*(cos(rotationY)*sin(readDECRad)*cos(readRARad)+0*sin(readDECRad)*sin(readRARad)+sin(rotationY)*cos(readDECRad))+0*(0*sin(readDECRad)*cos(readRARad)+1*sin(readDECRad)*sin(readRARad)+0*cos(readDECRad))+1*((-sin(rotationY)*sin(readDECRad)*cos(readRARad))+0*sin(readDECRad)*sin(readRARad)+cos(rotationY)*cos(readDECRad)));
+
 	brX = maX;
 	brY = maY;
 	brZ = maZ;
 	
 	// Matrix vermenigvuldiging met draai om de  z-as (tijd)
-	maX = (cos(rotationZ2)*brX+(-sin(rotationZ2)*brY)+0*brZ);
-	maY = (sin(rotationZ2)*brX+cos(rotationZ2)*brY+0*brZ);
-	maZ = (0*brX+0*brY+1*brZ);
-	
-	brX = maX;
-	brY = maY;
-	brZ = maZ;
-	
+	maX = (cos(rotationZ2)*brX+(-sin(rotationZ2)*brY));
+	maY = (sin(rotationZ2)*brX+cos(rotationZ2)*brY);
+	maZ = brZ;
+		
 	float stX,stY,stZ;
-	stX = -20*brX;
-	stY = -20*brY;
-	stZ = -20*brZ;
+	stX = -20*maX;
+	stY = -20*maY;
+	stZ = -20*maZ;
 	
 	float apparentAzimuth = ((180/M_PI) * atan2(stY, stX)) + 180;
 	float apparentAltitude = 90 - ((180/M_PI) * (acos((stZ)/sqrt(pow(stX,2)+pow(stY,2)+pow(stZ,2))))); 
