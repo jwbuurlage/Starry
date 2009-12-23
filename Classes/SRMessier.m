@@ -13,4 +13,13 @@
 
 @synthesize position, mag, name, declination, RA, constellation, type, distance;
 
+-(Vertex3D)myCurrentPosition {
+	float x = position.x;
+	float y = position.y;
+	float z = position.z;
+	
+	Vertex3D result;
+	return result;
+}
+
 @end
