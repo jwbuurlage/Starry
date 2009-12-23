@@ -88,7 +88,6 @@
 -(void)adjustViewToLocationAndTime:(BOOL)status;
 -(void)loadStarPoints;
 -(void)loadPlanetPoints;
--(void)loadConstellations;
 -(void)loadMessier;
 
 @end
