@@ -108,7 +108,7 @@
 -(GLuint)textures;
 -(BOOL)UIElementAtPoint:(CGPoint)point;
 - (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle;
--(void)bringUpTheKeyboardWithText:(NSString *)placeholder onLocation:(int)location andSendResultsTo:(id)delegate;
+-(void)bringUpTheKeyboardWithText:(NSString *)placeholder onLocationX:(int)locX Y:(int)locY withColor:(UIColor*)color andSendResultsTo:(id)delegate;
 -(void)fadeDefaultTexture;
 -(void)drawRedOverlay;
 
