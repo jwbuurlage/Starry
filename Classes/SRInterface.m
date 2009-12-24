@@ -841,8 +841,8 @@
 				[[self messierInfo] messierClicked:foundMessier];
 				
 				Vertex3D posForCam = [foundMessier myCurrentPosition];
-				float azTmp = (180/M_PI)*atan(posForCam.y/posForCam.x);
-				float alTmp = (180/M_PI)*acos(posForCam.z)-90;
+				float azTmp = fmod((180/M_PI)*atan(-posForCam.y/-posForCam.x),360);
+				float alTmp = 90-(180/M_PI)*acos(-posForCam.z);
 				NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
 				
 				Vertex3D position = foundMessier.position;
