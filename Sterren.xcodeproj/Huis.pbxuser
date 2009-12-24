@@ -66,7 +66,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = ACB7B0F910615ACD00CA447E /* Sterren */;
-		activeSDKPreference = iphoneos3.1.2;
+		activeSDKPreference = iphonesimulator3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Sterren */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Sterren */,
@@ -536,6 +536,20 @@
 			ACCE97E810E3F9AD0089EF62 /* PBXTextBookmark */ = ACCE97E810E3F9AD0089EF62 /* PBXTextBookmark */;
 			ACCE97EA10E3FA3F0089EF62 /* PBXTextBookmark */ = ACCE97EA10E3FA3F0089EF62 /* PBXTextBookmark */;
 			ACCE97F010E3FA9F0089EF62 /* PBXTextBookmark */ = ACCE97F010E3FA9F0089EF62 /* PBXTextBookmark */;
+			ACCE97F510E3FB520089EF62 /* PBXTextBookmark */ = ACCE97F510E3FB520089EF62 /* PBXTextBookmark */;
+			ACCE97F610E3FB520089EF62 /* PBXTextBookmark */ = ACCE97F610E3FB520089EF62 /* PBXTextBookmark */;
+			ACCE97F710E3FB520089EF62 /* PBXTextBookmark */ = ACCE97F710E3FB520089EF62 /* PBXTextBookmark */;
+			ACCE97F810E3FB520089EF62 /* PBXTextBookmark */ = ACCE97F810E3FB520089EF62 /* PBXTextBookmark */;
+			ACCE97F910E3FB520089EF62 /* PBXTextBookmark */ = ACCE97F910E3FB520089EF62 /* PBXTextBookmark */;
+			ACCE97FA10E3FB520089EF62 /* PBXTextBookmark */ = ACCE97FA10E3FB520089EF62 /* PBXTextBookmark */;
+			ACCE97FD10E3FB680089EF62 /* PBXTextBookmark */ = ACCE97FD10E3FB680089EF62 /* PBXTextBookmark */;
+			ACCE980010E3FB970089EF62 /* PBXTextBookmark */ = ACCE980010E3FB970089EF62 /* PBXTextBookmark */;
+			ACCE980110E3FB970089EF62 /* PBXTextBookmark */ = ACCE980110E3FB970089EF62 /* PBXTextBookmark */;
+			ACCE980210E3FB970089EF62 /* PBXTextBookmark */ = ACCE980210E3FB970089EF62 /* PBXTextBookmark */;
+			ACCE980310E3FB970089EF62 /* PBXTextBookmark */ = ACCE980310E3FB970089EF62 /* PBXTextBookmark */;
+			ACCE980610E3FBB80089EF62 /* PBXTextBookmark */ = ACCE980610E3FBB80089EF62 /* PBXTextBookmark */;
+			ACCE980710E3FBB80089EF62 /* PBXTextBookmark */ = ACCE980710E3FBB80089EF62 /* PBXTextBookmark */;
+			ACCE980810E3FBB80089EF62 /* PBXTextBookmark */ = ACCE980810E3FBB80089EF62 /* PBXTextBookmark */;
 			ACE7089710D02405003DE4BB = ACE7089710D02405003DE4BB /* PBXTextBookmark */;
 			ACE708B610D024DA003DE4BB = ACE708B610D024DA003DE4BB /* PBXBookmark */;
 			ACECC37410E2512600AE6101 = ACECC37410E2512600AE6101 /* PBXTextBookmark */;
@@ -584,9 +598,9 @@
 	};
 	76179CF310CA61D500768180 /* SRObjectManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1344, 3380}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1344, 3627}}";
 			sepNavSelRange = "{5117, 0}";
-			sepNavVisRange = "{3791, 2727}";
+			sepNavVisRange = "{0, 2035}";
 		};
 	};
 	7644564F10C5837800AB935D /* SRSettingsModule.h */ = {
@@ -686,8 +700,8 @@
 	AC1BA73B10C0225D0084CF6F /* SRConstellation.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1370, 1170}}";
-			sepNavSelRange = "{837, 0}";
-			sepNavVisRange = "{614, 1876}";
+			sepNavSelRange = "{1607, 158}";
+			sepNavVisRange = "{466, 2014}";
 		};
 	};
 	AC24C98510BAE6420063DF87 /* SRTimeManager.h */ = {
@@ -930,16 +944,16 @@
 	};
 	AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1344, 858}}";
-			sepNavSelRange = "{960, 40}";
-			sepNavVisRange = "{0, 1105}";
+			sepNavIntBoundsRect = "{{0, 0}, {1344, 910}}";
+			sepNavSelRange = "{1003, 0}";
+			sepNavVisRange = "{0, 1487}";
 		};
 	};
 	AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1344, 2574}}";
-			sepNavSelRange = "{2966, 0}";
-			sepNavVisRange = "{3872, 1549}";
+			sepNavIntBoundsRect = "{{0, 0}, {1344, 2509}}";
+			sepNavSelRange = "{2852, 0}";
+			sepNavVisRange = "{2078, 2059}";
 		};
 	};
 	AC6040B710E116B20017951C /* PBXTextBookmark */ = {
@@ -999,7 +1013,7 @@
 		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
 		name = "SRSun.m: 50";
 		rLen = 0;
-		rLoc = 1828;
+		rLoc = 1987;
 		rType = 0;
 		vrLen = 2716;
 		vrLoc = 3;
@@ -1049,7 +1063,7 @@
 		fRef = AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */;
 		name = "SRPlanetaryObject.h: 41";
 		rLen = 40;
-		rLoc = 960;
+		rLoc = 1007;
 		rType = 0;
 		vrLen = 1105;
 		vrLoc = 0;
@@ -1239,7 +1253,7 @@
 		fRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */;
 		name = "SRPlanetaryObject.m: 107";
 		rLen = 0;
-		rLoc = 2966;
+		rLoc = 3183;
 		rType = 0;
 		vrLen = 1364;
 		vrLoc = 2606;
@@ -1313,9 +1327,9 @@
 	};
 	AC7AE68210BC49F500A63DFB /* Texture2D.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1344, 5668}}";
-			sepNavSelRange = "{9895, 0}";
-			sepNavVisRange = "{9213, 1306}";
+			sepNavIntBoundsRect = "{{0, 0}, {1344, 5694}}";
+			sepNavSelRange = "{8841, 0}";
+			sepNavVisRange = "{8087, 1700}";
 			sepNavWindowFrame = "{{19, 0}, {996, 1028}}";
 		};
 	};
@@ -1806,9 +1820,9 @@
 	};
 	ACB7B16B10615F4F00CA447E /* SRRenderer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1615, 6162}}";
-			sepNavSelRange = "{10729, 2}";
-			sepNavVisRange = "{0, 120}";
+			sepNavIntBoundsRect = "{{0, 0}, {2546, 6305}}";
+			sepNavSelRange = "{12220, 0}";
+			sepNavVisRange = "{10677, 1614}";
 			sepNavWindowFrame = "{{547, 0}, {996, 1028}}";
 		};
 	};
@@ -2233,7 +2247,7 @@
 		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
 		name = "SRSun.m: 50";
 		rLen = 0;
-		rLoc = 1828;
+		rLoc = 1987;
 		rType = 0;
 		vrLen = 2710;
 		vrLoc = 3;
@@ -2643,7 +2657,7 @@
 		fRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */;
 		name = "SRPlanetaryObject.m: 108";
 		rLen = 0;
-		rLoc = 2966;
+		rLoc = 3183;
 		rType = 0;
 		vrLen = 1501;
 		vrLoc = 3920;
@@ -2743,7 +2757,7 @@
 		fRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */;
 		name = "SRPlanetaryObject.m: 108";
 		rLen = 0;
-		rLoc = 2966;
+		rLoc = 3183;
 		rType = 0;
 		vrLen = 1549;
 		vrLoc = 3872;
@@ -2813,7 +2827,7 @@
 		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
 		name = "SRSun.m: 50";
 		rLen = 0;
-		rLoc = 1828;
+		rLoc = 1987;
 		rType = 0;
 		vrLen = 2714;
 		vrLoc = 0;
@@ -2971,7 +2985,7 @@
 		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
 		name = "SRSun.m: 50";
 		rLen = 0;
-		rLoc = 1828;
+		rLoc = 1987;
 		rType = 0;
 		vrLen = 2714;
 		vrLoc = 0;
@@ -2981,7 +2995,7 @@
 		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
 		name = "SRSun.m: 61";
 		rLen = 0;
-		rLoc = 2574;
+		rLoc = 2733;
 		rType = 0;
 		vrLen = 2714;
 		vrLoc = 0;
@@ -2991,7 +3005,7 @@
 		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
 		name = "SRSun.m: 59";
 		rLen = 0;
-		rLoc = 2458;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 2714;
 		vrLoc = 0;
@@ -3001,7 +3015,7 @@
 		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
 		name = "SRSun.m: 59";
 		rLen = 0;
-		rLoc = 2458;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 2714;
 		vrLoc = 0;
@@ -3061,7 +3075,7 @@
 		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
 		name = "SRSun.m: 59";
 		rLen = 0;
-		rLoc = 2458;
+		rLoc = 2617;
 		rType = 0;
 		vrLen = 2719;
 		vrLoc = 0;
@@ -3071,7 +3085,7 @@
 		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
 		name = "SRSun.m: 61";
 		rLen = 0;
-		rLoc = 2574;
+		rLoc = 2733;
 		rType = 0;
 		vrLen = 2714;
 		vrLoc = 0;
@@ -3081,7 +3095,7 @@
 		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
 		name = "SRSun.m: 61";
 		rLen = 0;
-		rLoc = 2574;
+		rLoc = 2733;
 		rType = 0;
 		vrLen = 2714;
 		vrLoc = 0;
@@ -3091,7 +3105,7 @@
 		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
 		name = "SRSun.m: 61";
 		rLen = 0;
-		rLoc = 2574;
+		rLoc = 2733;
 		rType = 0;
 		vrLen = 2714;
 		vrLoc = 0;
@@ -4556,7 +4570,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 461";
 		rLen = 0;
-		rLoc = 13859;
+		rLoc = 14012;
 		rType = 0;
 		vrLen = 1035;
 		vrLoc = 13144;
@@ -4651,6 +4665,146 @@
 		vrLen = 1876;
 		vrLoc = 614;
 	};
+	ACCE97F510E3FB520089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC1BA73B10C0225D0084CF6F /* SRConstellation.m */;
+		name = "SRConstellation.m: 55";
+		rLen = 158;
+		rLoc = 1607;
+		rType = 0;
+		vrLen = 2014;
+		vrLoc = 466;
+	};
+	ACCE97F610E3FB520089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 181";
+		rLen = 0;
+		rLoc = 5117;
+		rType = 0;
+		vrLen = 2035;
+		vrLoc = 0;
+	};
+	ACCE97F710E3FB520089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */;
+		name = "SRPlanetaryObject.h: 40";
+		rLen = 0;
+		rLoc = 1003;
+		rType = 0;
+		vrLen = 1487;
+		vrLoc = 0;
+	};
+	ACCE97F810E3FB520089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */;
+		name = "SRPlanetaryObject.m: 98";
+		rLen = 0;
+		rLoc = 2852;
+		rType = 0;
+		vrLen = 2059;
+		vrLoc = 2078;
+	};
+	ACCE97F910E3FB520089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 276";
+		rLen = 0;
+		rLoc = 9507;
+		rType = 0;
+		vrLen = 1772;
+		vrLoc = 8500;
+	};
+	ACCE97FA10E3FB520089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 386";
+		rLen = 0;
+		rLoc = 12186;
+		rType = 0;
+		vrLen = 1697;
+		vrLoc = 10459;
+	};
+	ACCE97FD10E3FB680089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 386";
+		rLen = 0;
+		rLoc = 12168;
+		rType = 0;
+		vrLen = 1731;
+		vrLoc = 10456;
+	};
+	ACCE980010E3FB970089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 390";
+		rLen = 0;
+		rLoc = 12220;
+		rType = 0;
+		vrLen = 1614;
+		vrLoc = 10677;
+	};
+	ACCE980110E3FB970089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACEC7CF1109B25A700149C80 /* SRSun.h */;
+		name = "SRSun.h: 8";
+		rLen = 0;
+		rLoc = 245;
+		rType = 0;
+		vrLen = 555;
+		vrLoc = 0;
+	};
+	ACCE980210E3FB970089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
+		name = "SRSun.m: 61";
+		rLen = 0;
+		rLoc = 2733;
+		rType = 0;
+		vrLen = 2714;
+		vrLoc = 0;
+	};
+	ACCE980310E3FB970089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
+		name = "SRSun.m: 21";
+		rLen = 0;
+		rLoc = 515;
+		rType = 0;
+		vrLen = 2872;
+		vrLoc = 0;
+	};
+	ACCE980610E3FBB80089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACEC7CF2109B25A700149C80 /* SRSun.m */;
+		name = "SRSun.m: 21";
+		rLen = 0;
+		rLoc = 515;
+		rType = 0;
+		vrLen = 2872;
+		vrLoc = 0;
+	};
+	ACCE980710E3FBB80089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC7AE68210BC49F500A63DFB /* Texture2D.m */;
+		name = "Texture2D.m: 310";
+		rLen = 0;
+		rLoc = 9895;
+		rType = 0;
+		vrLen = 1935;
+		vrLoc = 8989;
+	};
+	ACCE980810E3FBB80089EF62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC7AE68210BC49F500A63DFB /* Texture2D.m */;
+		name = "Texture2D.m: 270";
+		rLen = 0;
+		rLoc = 8841;
+		rType = 0;
+		vrLen = 1700;
+		vrLoc = 8087;
+	};
 	ACE7089710D02405003DE4BB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 76FBD51D108B227000E08E82 /* stars.xml */;
@@ -4686,16 +4840,16 @@
 	};
 	ACEC7CF1109B25A700149C80 /* SRSun.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1344, 915}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1344, 892}}";
 			sepNavSelRange = "{245, 0}";
 			sepNavVisRange = "{0, 555}";
 		};
 	};
 	ACEC7CF2109B25A700149C80 /* SRSun.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1344, 923}}";
-			sepNavSelRange = "{2574, 0}";
-			sepNavVisRange = "{0, 2714}";
+			sepNavIntBoundsRect = "{{0, 0}, {1344, 936}}";
+			sepNavSelRange = "{515, 0}";
+			sepNavVisRange = "{0, 2872}";
 		};
 	};
 	ACECC37410E2512600AE6101 /* PBXTextBookmark */ = {

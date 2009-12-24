@@ -267,7 +267,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 - (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions alignment:(UITextAlignment)alignment fontName:(NSString*)name fontSize:(CGFloat)size
 {
 	if(size == 1.0f) {
-		size = 11.0f;
+		size = 10.0f;
 		flipped = TRUE;
 	}
 	
