@@ -64,7 +64,7 @@
 		[self loadPlanetPoints];
 		
 		glEnable(GL_POINT_SMOOTH);
-		glEnable (GL_LINE_SMOOTH);
+		//glEnable (GL_LINE_SMOOTH);
 		glEnable(GL_ALPHA_TEST);
 		glAlphaFunc(GL_GREATER, 0.0f);
 		glMatrixMode(GL_MODELVIEW);
@@ -137,17 +137,16 @@
 	
 	glEnableClientState(GL_COLOR_ARRAY);
 	[self drawStars];
-	glDisableClientState(GL_COLOR_ARRAY);
 		
 	glEnable(GL_POINT_SPRITE_OES);
 	glTexEnvi(GL_POINT_SPRITE_OES, GL_COORD_REPLACE_OES, GL_TRUE);	
 	glEnable(GL_TEXTURE_2D);
+	glDisableClientState(GL_COLOR_ARRAY);
 	if(highlight) {
 		[self drawHighlight];
 	}
-	[self drawPlanets];
 	[self drawMessier];
-
+	[self drawPlanets];
 	[self adjustViewToLocationAndTime:NO];
 	
 	glDisable(GL_TEXTURE_2D);
@@ -205,7 +204,9 @@
 }
 
 -(void)drawConstellations {
-	glLineWidth(2.0f);
+	glLineWidth(1.0f);
+	
+	float constAlpha = 0.2f * pow([camera zoomingValue],-2);
 	
 	float readDECDeg = fmod(90+[camera altitude],180);
 	float readRADeg = fmod([camera azimuth],360);
@@ -250,20 +251,18 @@
 	if(apparentAzimuth < 180) {
 		apparentAzimuth += 360;
 	}
-	
-	NSLog(@"%f", apparentAzimuth);
-	
+		
 	for(SRConstellation* aConstellation in [objectManager constellations]) {
 		float dAzi = fabs(apparentAzimuth - [aConstellation ra]);
 		if(dAzi > 300) { dAzi = 360 - dAzi; }
 		
 		float distance = (dAzi + fabs(apparentAltitude - [aConstellation dec])) / 2;
 		if(distance < 30) { 
-			if(distance <= 11.0) { glColor4f(0.4f, 0.40f, 0.40f, 0.3f); }
+			if(distance <= 11.0) { glColor4f(0.6f, 0.6f, 0.6f, constAlpha); }
 			else { 
-				float factor = (distance - 10) / 3;
+				float factor = (distance - 10) / 4;
 				if(factor < 1) { factor = 1; }
-				glColor4f(0.4f, 0.40f, 0.40f, 0.3f / factor); 
+				glColor4f(0.6f, 0.6f, 0.6f, constAlpha / factor); 
 			} 
 			[aConstellation draw];
 		}
@@ -271,7 +270,7 @@
 }
 
 -(void)drawEcliptic {
-	glLineWidth(2.0);
+	glLineWidth(1.0);
 	
 	const GLfloat verticesEcliptic[] = {
 		-25.0, 0.0, 0.0,													
@@ -319,7 +318,8 @@
 
 -(void)drawPlanets {
 	glVertexPointer(3, GL_FLOAT, 32, planetPoints);
-	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+	glEnableClientState(GL_COLOR_ARRAY);
+    glColorPointer(4, GL_FLOAT, 32, &planetPoints[3]);
 	int i = 0;
 	GLfloat size = 0;
 	while(i < planetNum) {
@@ -369,7 +369,8 @@
 			glDrawArrays(GL_POINTS,i, 1);
 		}
 		++i;
-	}				
+	}			
+	glDisableClientState(GL_COLOR_ARRAY);
 }
 
 

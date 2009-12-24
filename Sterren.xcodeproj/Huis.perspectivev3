@@ -273,12 +273,14 @@
 								<string>ACB7B11110615AE000CA447E</string>
 								<string>AC1BA73710C021D00084CF6F</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>ACB56B3810C41A2C0002842B</string>
 								<string>1C77FABC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>43</integer>
+									<integer>20</integer>
+									<integer>4</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -319,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRRenderer.m</string>
+								<string>SRSun.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRRenderer.m</string>
+										<string>SRSun.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ACCE95CA10E3C88F0089EF62</string>
+										<string>ACCE969610E3D79A0089EF62</string>
 										<key>history</key>
 										<array>
 											<string>AC4F895D109DF65700B8BD64</string>
@@ -366,8 +368,6 @@
 											<string>ACECC6AE10CD9E9400CBE4AC</string>
 											<string>ACECC6AF10CD9E9400CBE4AC</string>
 											<string>AC69F2F310CEAEC800D9742A</string>
-											<string>AC69F2F410CEAEC800D9742A</string>
-											<string>AC69F2F510CEAEC800D9742A</string>
 											<string>ACE7089710D02405003DE4BB</string>
 											<string>ACE708B610D024DA003DE4BB</string>
 											<string>ACF9375810D7F0C5008A4845</string>
@@ -409,7 +409,6 @@
 											<string>AC60412410E11A980017951C</string>
 											<string>AC60415A10E11DBD0017951C</string>
 											<string>AC86C70110E125BC00028136</string>
-											<string>AC86C70210E125BC00028136</string>
 											<string>AC86C70510E125BC00028136</string>
 											<string>AC86C70610E125BC00028136</string>
 											<string>AC86C70710E125BC00028136</string>
@@ -418,7 +417,6 @@
 											<string>AC86C75810E146BD00028136</string>
 											<string>AC86C76910E1499B00028136</string>
 											<string>AC86C76F10E149F100028136</string>
-											<string>AC86C7BA10E15D3B00028136</string>
 											<string>AC86C7BB10E15D3B00028136</string>
 											<string>AC86C7BC10E15D3B00028136</string>
 											<string>AC86C7BD10E15D3B00028136</string>
@@ -442,8 +440,6 @@
 											<string>AC86C8F110E1779C00028136</string>
 											<string>AC86C8F410E1779C00028136</string>
 											<string>AC86C90210E177BD00028136</string>
-											<string>AC86C91210E17C5500028136</string>
-											<string>AC62F82210E22B6F003997BC</string>
 											<string>AC62F82310E22B6F003997BC</string>
 											<string>AC62F82410E22B6F003997BC</string>
 											<string>AC62F89910E231A5003997BC</string>
@@ -455,25 +451,31 @@
 											<string>AC62F8A310E231A5003997BC</string>
 											<string>AC62F8AD10E23250003997BC</string>
 											<string>AC62F8AF10E23250003997BC</string>
-											<string>AC62F8B110E23250003997BC</string>
 											<string>AC62F8B210E23250003997BC</string>
-											<string>AC62F96510E23D7B003997BC</string>
 											<string>AC62F96610E23D7B003997BC</string>
 											<string>AC62F98210E23F87003997BC</string>
 											<string>AC62F99210E24174003997BC</string>
 											<string>AC62F99310E24174003997BC</string>
-											<string>AC62F9A710E24243003997BC</string>
 											<string>ACECC37510E2512600AE6101</string>
 											<string>ACCE956E10E3C2CA0089EF62</string>
 											<string>ACCE95A110E3C6E30089EF62</string>
 											<string>ACCE95A210E3C6E30089EF62</string>
 											<string>ACCE95A910E3C7550089EF62</string>
 											<string>ACCE95AA10E3C7550089EF62</string>
-											<string>ACCE95AB10E3C7550089EF62</string>
-											<string>ACCE95AC10E3C7550089EF62</string>
-											<string>ACCE95AD10E3C7550089EF62</string>
 											<string>ACCE95AE10E3C7550089EF62</string>
-											<string>ACCE95AF10E3C7550089EF62</string>
+											<string>ACCE962610E3D1670089EF62</string>
+											<string>ACCE964E10E3D4EA0089EF62</string>
+											<string>ACCE966210E3D58C0089EF62</string>
+											<string>ACCE966310E3D58C0089EF62</string>
+											<string>ACCE966410E3D58C0089EF62</string>
+											<string>ACCE966510E3D58C0089EF62</string>
+											<string>ACCE967210E3D6600089EF62</string>
+											<string>ACCE967D10E3D6CC0089EF62</string>
+											<string>ACCE967E10E3D6CC0089EF62</string>
+											<string>ACCE968910E3D7490089EF62</string>
+											<string>ACCE968F10E3D7670089EF62</string>
+											<string>ACCE969010E3D7670089EF62</string>
+											<string>ACCE969110E3D7670089EF62</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -791,7 +793,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ACCE95CB10E3C88F0089EF62</string>
+		<string>ACCE969710E3D79A0089EF62</string>
 		<string>ACCE957210E3C2CA0089EF62</string>
 		<string>ACCE956910E3C1F50089EF62</string>
 		<string>/Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Sterren.xcodeproj</string>
