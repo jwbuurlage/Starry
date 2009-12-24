@@ -17,12 +17,17 @@
 #import <OpenGLES/EAGL.h>
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>
+#import "OpenGLCommon.h"
+#import "Texture2D.h"
 
 @interface SRConstellation : NSObject {		
 	NSMutableArray* lines;
 	NSString* name;
 	float ra;
 	float dec;
+	
+	Texture2D* nameTexture;
+	Vertex3D texturePosition;
 	
 	GLfloat constellationPoints[150];
 }
@@ -31,9 +36,11 @@
 @property (readonly) float dec;
 @property (nonatomic, retain) NSMutableArray *lines;
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) Texture2D *nameTexture;
 
 -(void)calculateRADec;
 -(void)draw;
+-(void)drawText;
 -(void)makeArray;
 
 @end

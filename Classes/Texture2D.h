@@ -80,6 +80,7 @@ Be aware that the content of the generated textures will be upside-down!
 	GLfloat	rectCoordinates[7];
 	
 	BOOL turned;
+	BOOL flipped;
 }
 - (id) initWithData:(const void*)data pixelFormat:(Texture2DPixelFormat)pixelFormat pixelsWide:(NSUInteger)width pixelsHigh:(NSUInteger)height contentSize:(CGSize)size;
 
@@ -104,7 +105,7 @@ These functions require GL_TEXTURE_2D and both GL_VERTEX_ARRAY and GL_TEXTURE_CO
 @interface Texture2D (Drawing)
 - (void) drawAtPoint:(CGPoint)point;
 - (void) drawInRect:(CGRect)rect;
-- (void) drawAtPoint:(CGPoint)point withZ:(float)z;
+- (void)drawAtVertex:(Vertex3D)theVertex;
 @end
 
 /*
@@ -122,4 +123,5 @@ Note that the generated textures are of type A8 - use the blending mode (GL_SRC_
 */
 @interface Texture2D (Text)
 - (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions alignment:(UITextAlignment)alignment fontName:(NSString*)name fontSize:(CGFloat)size;
+- (void) set3D:(BOOL)is3D;
 @end

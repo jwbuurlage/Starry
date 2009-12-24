@@ -17,7 +17,7 @@
 
 @implementation SRConstellation
 
-@synthesize lines, name, ra, dec;
+@synthesize lines, name, ra, dec, nameTexture;
 
 -(void)calculateRADec {
 	float RATemp, totRA, totDec;
@@ -47,11 +47,27 @@
 	dec = 90 - ((180/M_PI) * (totDec/([lines count] * 2)));
 	
 	NSLog(@"%@: .. RA: %f Dec: %f", name, ra, dec); 
+	
+	texturePosition = Vertex3DMake(20.0 * sin(totDec/([lines count] * 2)) * cos(totRA/([lines count] * 2)),
+								   20.0 * sin(totDec/([lines count] * 2)) * sin(totRA/([lines count] * 2)),
+								   20.0 * cos(totDec/([lines count] * 2)));
+	
+	nameTexture = [[Texture2D alloc] initWithString:name dimensions:CGSizeMake(64, 64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
 }
 
 -(void)draw {
 	glVertexPointer(3, GL_FLOAT, 12, constellationPoints);
 	glDrawArrays(GL_LINES, 0, [lines count] * 2);
+}
+
+-(void)drawText {
+	glEnable(GL_POINT_SPRITE_OES);
+	glEnable(GL_TEXTURE_2D);
+	
+	[nameTexture drawAtVertex:texturePosition];
+
+	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_POINT_SPRITE_OES);
 }
 
 -(void)makeArray {
@@ -66,6 +82,8 @@
 		constellationPoints[lineCount+5] = line.end.z;
 		lineCount += 6;
 	}
+	
+	
 }
 
 @end

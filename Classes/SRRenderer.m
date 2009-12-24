@@ -30,8 +30,6 @@
 		//[objectManager setRenderer:self];
 		interface = [[SRInterface alloc] initWithRenderer:self];
 		
-		
-		
 		glGenTextures(20, &textures[0]);
 		[interface loadTexture:@"horizon_bg.png" intoLocation:textures[0]];
 		[interface loadTextureWithString:@"Z" intoLocation:textures[1]];
@@ -147,17 +145,19 @@
 	}
 	[self drawMessier];
 	[self drawPlanets];
+	
+	
 	[self adjustViewToLocationAndTime:NO];
+	
 	
 	glDisable(GL_TEXTURE_2D);
 	glDisableClientState(GL_POINT_SIZE_ARRAY_OES);
 		
 	[self drawHorizon];	
-		
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 
 	[self drawCompass];
-		
+
 	if([[[interface timeModule] manager] totalInterval] > 1000 || [[[interface timeModule] manager] totalInterval] < -1000) {
 		[self loadPlanetPoints];
 		[[[interface timeModule] manager] setTotalInterval:0];
@@ -258,13 +258,23 @@
 		
 		float distance = (dAzi + fabs(apparentAltitude - [aConstellation dec])) / 2;
 		if(distance < 30) { 
-			if(distance <= 11.0) { glColor4f(0.6f, 0.6f, 0.6f, constAlpha); }
+			if(distance <= 11.0) { 
+				glColor4f(0.6f, 0.6f, 0.6f, constAlpha);
+				[aConstellation draw];
+				
+				glColor4f(1.0f, 1.0f, 1.0f, constAlpha * 2);
+				[aConstellation drawText];
+			}
 			else { 
 				float factor = (distance - 10) / 4;
 				if(factor < 1) { factor = 1; }
 				glColor4f(0.6f, 0.6f, 0.6f, constAlpha / factor); 
+				
+				[aConstellation draw];
+				
+				glColor4f(1.0f, 1.0f, 1.0f, (constAlpha / factor) * 2);
+				[aConstellation drawText];
 			} 
-			[aConstellation draw];
 		}
 	}
 }
