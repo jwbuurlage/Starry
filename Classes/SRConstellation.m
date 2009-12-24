@@ -20,11 +20,25 @@
 @synthesize lines, name, ra, dec;
 
 -(void)calculateRADec {
-	float totRA, totDec;
+	float RATemp, totRA, totDec;
 	
 	for(SRConstellationLine* aLine in lines) {
-		totRA += atan2(aLine.start.y, aLine.start.x);
-		totRA += atan2(aLine.end.y, aLine.end.x);
+		RATemp = 0;
+		
+		if(atan2(aLine.start.y, aLine.start.x) < 0) {
+			totRA += atan2(aLine.start.y, aLine.start.x) + (2*M_PI);
+		}
+		else {
+			totRA += atan2(aLine.start.y, aLine.start.x);
+		}
+		
+		if(atan2(aLine.end.y, aLine.end.x) < 0) {
+			totRA += atan2(aLine.end.y, aLine.end.x) + (2*M_PI);
+		}
+		else {
+			totRA += atan2(aLine.end.y, aLine.end.x);
+		}
+		
 		totDec += acos((aLine.start.z)/sqrt(pow(aLine.start.x,2)+pow(aLine.start.y,2)+pow(aLine.start.z,2))) + acos((aLine.end.z)/sqrt(pow(aLine.end.x,2)+pow(aLine.end.y,2)+pow(aLine.end.z,2)));
 	}
 	
