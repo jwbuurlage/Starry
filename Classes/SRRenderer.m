@@ -382,12 +382,16 @@
 	}			
 	glDisableClientState(GL_COLOR_ARRAY);
 	
-	for(SRPlanetaryObject* aPlanet in [objectManager planets]) {
-		glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-		[aPlanet draw];
+	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+
+	i = 1;
+	while(i < [[objectManager planets] count]) {
+		[[[objectManager planets] objectAtIndex:i] draw];
+		++i;
 	}
 	
 	[[objectManager sun] draw];
+	[[objectManager moon] draw];
 }
 
 
