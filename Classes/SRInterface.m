@@ -23,6 +23,7 @@
 -(id)initWithRenderer:(SRRenderer*)theRenderer {
 	if(self = [super init]) {
 		renderer = theRenderer;
+		camera = [theRenderer camera];
 		
 		appDelegate = [[UIApplication sharedApplication] delegate];
 		
@@ -823,6 +824,40 @@
 			[[locationModule locationManager] setLongitude:[aValue floatValue]];
 			//[locationModule updateDisplayedLocationData]; // Wordt al gedaan in setLongitude
 			[locationModule setLongVisible:YES];
+		}
+		else if (currentlyEditingIdentifier == @"search") {
+			SRMessier * aMessier;
+			SRMessier * foundMessier;
+			for(aMessier in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
+				if ([[aMessier name] isEqualToString:aValue]) {
+					foundMessier = aMessier;
+				}						
+			}
+			if(foundMessier) {
+				
+				[[self theNameplate] setName:foundMessier.name inConstellation:@"messier" showInfo:YES];
+				[self setANameplate:TRUE];
+				
+				[[self messierInfo] messierClicked:foundMessier];
+				
+				Vertex3D posForCam = [foundMessier myCurrentPosition];
+				float azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+				float alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+				NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+				
+				Vertex3D position = foundMessier.position;
+				
+				[renderer setHighlightPosition:position];
+				[renderer setHighlightSize:32]; 
+				[renderer setHighlight:TRUE];
+				
+				[camera setAzimuth:azTmp];
+				[camera setAltitude:alTmp];
+				[camera adjustView];
+				
+				
+				
+			}
 		}
 		
 		//[fieldTmp setText:@""];
