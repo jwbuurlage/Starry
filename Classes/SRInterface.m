@@ -23,6 +23,7 @@
 -(id)initWithRenderer:(SRRenderer*)theRenderer {
 	if(self = [super init]) {
 		renderer = theRenderer;
+		camera = [theRenderer camera];
 		
 		appDelegate = [[UIApplication sharedApplication] delegate];
 		
@@ -828,7 +829,7 @@
 			SRMessier * aMessier;
 			SRMessier * foundMessier;
 			for(aMessier in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
-				if ([aMessier name] == aValue) {
+				if ([[aMessier name] isEqualToString:aValue]) {
 					foundMessier = aMessier;
 				}						
 			}
@@ -839,13 +840,21 @@
 				
 				[[self messierInfo] messierClicked:foundMessier];
 				
-				//Vertex3D posTmp = [closestMessier myCurrentPosition];
+				Vertex3D posForCam = [foundMessier myCurrentPosition];
+				float azTmp = (180/M_PI)*atan(posForCam.y/posForCam.x);
+				float alTmp = (180/M_PI)*acos(posForCam.z)-90;
+				NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
 				
 				Vertex3D position = foundMessier.position;
 				
-				//[renderer setHighlightPosition:position];
-				//[renderer setHighlightSize:32]; 
-				//[renderer setHighlight:TRUE];
+				[renderer setHighlightPosition:position];
+				[renderer setHighlightSize:32]; 
+				[renderer setHighlight:TRUE];
+				
+				[camera setAzimuth:azTmp];
+				[camera setAltitude:alTmp];
+				[camera adjustView];
+				
 				
 				
 			}
