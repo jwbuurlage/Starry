@@ -356,7 +356,7 @@
 					glBindTexture(GL_TEXTURE_2D, textures[18]);
 					break;
 			}
-			
+
 			glDrawArrays(GL_POINTS,i, 1);
 		}
 		else {
