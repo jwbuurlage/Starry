@@ -29,11 +29,11 @@
 	Texture2D* nameTexture;
 	Vertex3D texturePosition;
 	
-	GLfloat constellationPoints[150];
+	GLfloat constellationPoints[200];
 }
 	
-@property (readonly) float ra;
-@property (readonly) float dec;
+@property (nonatomic, assign) float ra;
+@property (nonatomic, assign) float dec;
 @property (nonatomic, retain) NSMutableArray *lines;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) Texture2D *nameTexture;

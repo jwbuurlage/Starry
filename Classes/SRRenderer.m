@@ -463,8 +463,7 @@
 	};	
 	
 	glVertexPointer(3, GL_FLOAT, 12, verticesAlphaHorizon);
-	glColor4f(0.0, 0.0, 0.0, 0.8);
-	
+	glColor4f(0.0, 0.0, 0.0, 0.5);
 	glDrawArrays(GL_TRIANGLES, 0, 12);
 	
 	glVertexPointer(3, GL_FLOAT, 12, verticesHorizon);

@@ -325,10 +325,6 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	return self;
 }
 
-- (void) set3D:(BOOL)is3D {
-	
-}
-
 @end
 
 @implementation Texture2D (Drawing)

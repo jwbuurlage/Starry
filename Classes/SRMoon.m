@@ -15,7 +15,7 @@
 
 //http://www.astro.uu.nl/~strous/AA/en/reken/hemelpositie.html#2
 
--(void)init {
+-(id)init {
 	if(self = [super init]) {
 		nameTexture = [[Texture2D alloc] initWithString:@"Maan" dimensions:CGSizeMake(64, 64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
 	}

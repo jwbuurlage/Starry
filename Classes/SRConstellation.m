@@ -21,32 +21,55 @@
 
 -(void)calculateRADec {
 	float RATemp, totRA, totDec;
+	BOOL stayHigh;
+	int i = 0;
 	
 	for(SRConstellationLine* aLine in lines) {
-		RATemp = 0;
+		RATemp = atan2(aLine.start.y, aLine.start.x);
 		
-		if(atan2(aLine.start.y, aLine.start.x) < 0) {
-			totRA += atan2(aLine.start.y, aLine.start.x) + (2*M_PI);
-		}
-		else {
-			totRA += atan2(aLine.start.y, aLine.start.x);
+		if(i == 0) { if(RATemp > 0) { stayHigh = TRUE; } else { stayHigh = FALSE; } ++i; 		
+			if([name isEqualToString:@"UMa"] || [name isEqualToString:@"Peg"]) {
+				if(stayHigh) { NSLog(@"high");  } else { NSLog(@"low"); } 
+			}
 		}
 		
-		if(atan2(aLine.end.y, aLine.end.x) < 0) {
-			totRA += atan2(aLine.end.y, aLine.end.x) + (2*M_PI);
+		
+		if(stayHigh && RATemp < M_PI) {
+			RATemp += 2*M_PI;
 		}
-		else {
-			totRA += atan2(aLine.end.y, aLine.end.x);
+		else if (!stayHigh && RATemp > 0) {
+			RATemp -= 2*M_PI;
+		}
+		totRA += RATemp;
+		
+		if([name isEqualToString:@"UMa"] || [name isEqualToString:@"Peg"]) {
+			NSLog(@"%f",RATemp * (12/M_PI));
+		}
+		
+		RATemp = atan2(aLine.end.y, aLine.end.x);
+		if(stayHigh && RATemp < M_PI) {
+			RATemp += 2*M_PI;
+		}
+		else if (!stayHigh && RATemp > 0) {
+			RATemp -= 2*M_PI;
+		}
+		totRA += RATemp;
+		
+		if([name isEqualToString:@"UMa"] || [name isEqualToString:@"Peg"]) {
+			NSLog(@"%f",RATemp * (12/M_PI));
 		}
 		
 		totDec += acos((aLine.start.z)/sqrt(pow(aLine.start.x,2)+pow(aLine.start.y,2)+pow(aLine.start.z,2))) + acos((aLine.end.z)/sqrt(pow(aLine.end.x,2)+pow(aLine.end.y,2)+pow(aLine.end.z,2)));
 	}
 	
-	ra = ((180/M_PI) * ((totRA/([lines count] * 2)))) + 180;
-	//if(ra < 0) { ra += 24; }
+	ra = ((180/M_PI) * ((totRA/([lines count] * 2))));
+	if(ra > 360) { ra -= 360; }
+	if(ra < 0) { ra += 360; }	
 	dec = 90 - ((180/M_PI) * (totDec/([lines count] * 2)));
 	
 	NSLog(@"%@: .. RA: %f Dec: %f", name, ra, dec); 
+	
+	ra += 180;
 	
 	texturePosition = Vertex3DMake(20.0 * sin(totDec/([lines count] * 2)) * cos(totRA/([lines count] * 2)),
 								   20.0 * sin(totDec/([lines count] * 2)) * sin(totRA/([lines count] * 2)),
