@@ -95,7 +95,7 @@
 }
 
 -(void)draw {
-	[nameTexture drawAtVertex:position];
+	[nameTexture drawAtVertex:Vertex3DMake(position.x, position.y, position.z)];
 }
 
 -(void)setViewOrigin:(Vertex3D)origin {

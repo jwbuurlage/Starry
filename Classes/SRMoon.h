@@ -18,8 +18,10 @@
 }
 
 -(void)recalculatePosition:(NSDate*)theDate;
+-(void)draw;
 
 @property (readonly) Vertex3D position;
 @property (readonly) int phase;
+
 
 @end

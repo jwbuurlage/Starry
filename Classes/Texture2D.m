@@ -307,7 +307,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	 //NOTE: NSString draws in UIKit referential i.e. renders upside-down compared to CGBitmapContext referential
 	if(flipped) {
 		CGContextRotateCTM(context, M_PI / 2);
-		CGContextTranslateCTM(context, 0.0, -(dimensions.height / 2) + 12 );
+		CGContextTranslateCTM(context, 0.0, -(dimensions.height / 2) + 10 );
 	}
 	UIGraphicsPushContext(context);
 		/*CGRect rect = {0,0,64,64};
