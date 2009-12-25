@@ -32,7 +32,7 @@
 	//if(ra < 0) { ra += 24; }
 	dec = 90 - ((180/M_PI) * (totDec/([lines count] * 2)));
 	
-	NSLog(@"%@: .. RA: %f Dec: %f", name, ra, dec); 
+	//NSLog(@"%@: .. RA: %f Dec: %f", name, ra, dec); 
 }
 
 -(void)draw {
