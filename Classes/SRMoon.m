@@ -15,6 +15,13 @@
 
 //http://www.astro.uu.nl/~strous/AA/en/reken/hemelpositie.html#2
 
+-(id)init {
+	if(self = [super init]) {
+		nameTexture = [[Texture2D alloc] initWithString:@"Maan" dimensions:CGSizeMake(64, 64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
+	}
+	return self;
+}
+
 -(void)recalculatePosition:(NSDate*)theDate { 
 	NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 	NSDateComponents *weekdayComponents = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:theDate];
@@ -89,6 +96,10 @@
 		
 	[gregorian release];
 
+}
+
+-(void)draw {
+	[nameTexture drawAtVertex:position];
 }
 
 @end

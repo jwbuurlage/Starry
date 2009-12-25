@@ -57,7 +57,7 @@
 		}
 		else if([mElement identifier] == @"text") {
 			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-			glColor4f(0.56f, 0.831f, 0.0f, 1.0f);
+			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 			[[mElement texture] drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}

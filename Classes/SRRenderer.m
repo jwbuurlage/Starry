@@ -30,8 +30,6 @@
 		//[objectManager setRenderer:self];
 		interface = [[SRInterface alloc] initWithRenderer:self];
 		
-		
-		
 		glGenTextures(20, &textures[0]);
 		[interface loadTexture:@"horizon_bg.png" intoLocation:textures[0]];
 		[interface loadTextureWithString:@"Z" intoLocation:textures[1]];
@@ -64,7 +62,7 @@
 		[self loadPlanetPoints];
 		
 		glEnable(GL_POINT_SMOOTH);
-		glEnable (GL_LINE_SMOOTH);
+		//glEnable (GL_LINE_SMOOTH);
 		glEnable(GL_ALPHA_TEST);
 		glAlphaFunc(GL_GREATER, 0.0f);
 		glMatrixMode(GL_MODELVIEW);
@@ -137,28 +135,29 @@
 	
 	glEnableClientState(GL_COLOR_ARRAY);
 	[self drawStars];
-	glDisableClientState(GL_COLOR_ARRAY);
 		
 	glEnable(GL_POINT_SPRITE_OES);
 	glTexEnvi(GL_POINT_SPRITE_OES, GL_COORD_REPLACE_OES, GL_TRUE);	
 	glEnable(GL_TEXTURE_2D);
+	glDisableClientState(GL_COLOR_ARRAY);
 	if(highlight) {
 		[self drawHighlight];
 	}
-	[self drawPlanets];
 	[self drawMessier];
-
+	[self drawPlanets];
+	
+	
 	[self adjustViewToLocationAndTime:NO];
+	
 	
 	glDisable(GL_TEXTURE_2D);
 	glDisableClientState(GL_POINT_SIZE_ARRAY_OES);
 		
 	[self drawHorizon];	
-		
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 
 	[self drawCompass];
-		
+
 	if([[[interface timeModule] manager] totalInterval] > 1000 || [[[interface timeModule] manager] totalInterval] < -1000) {
 		[self loadPlanetPoints];
 		[[[interface timeModule] manager] setTotalInterval:0];
@@ -205,7 +204,9 @@
 }
 
 -(void)drawConstellations {
-	glLineWidth(2.0f);
+	glLineWidth(1.0f);
+	
+	float constAlpha = 0.2f * pow([camera zoomingValue],-2);
 	
 	float readDECDeg = fmod(90+[camera altitude],180);
 	float readRADeg = fmod([camera azimuth],360);
@@ -216,9 +217,6 @@
 	
 	float readRARad = readRADeg * (M_PI/180);
 	float readDECRad = (readDECDeg * (M_PI/180));
-	float brX = sin(readDECRad)*cos(readRARad);
-	float brY = sin(readDECRad)*sin(readRARad);
-	float brZ = cos(readDECRad);
 	
 	float rotationY = (90-[location latitude])*(M_PI/180);
 	float rotationZ1 = [location longitude]*(M_PI/180);
@@ -227,58 +225,62 @@
 	// voor goed voorbeeld: http://www.math.umn.edu/~nykamp/m2374/readings/matvecmultex/
 	// wikipedia rotatie matrix: http://en.wikipedia.org/wiki/Rotation_matrix
 	
-	float maX,maY,maZ;
+	float maX,maY,maZ, brX, brY, brZ;
 	
-	maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
-	maY = (0*brX+1*brY+0*brZ);
-	maZ = ((-sin(rotationY)*brX)+0*brY+cos(rotationY)*brZ);
-	
-	brX = maX;
-	brY = maY;
-	brZ = maZ;
-	
-	maX = (cos(rotationZ1)*brX+(-sin(rotationZ1)*brY)+0*brZ);
-	maY = (sin(rotationZ1)*brX+cos(rotationZ1)*brY+0*brZ);
-	maZ = (0*brX+0*brY+1*brZ);
-	
+	maX = (cos(rotationZ1)*(cos(rotationY)*sin(readDECRad)*cos(readRARad)+0*sin(readDECRad)*sin(readRARad)+sin(rotationY)*cos(readDECRad))+(-sin(rotationZ1)*(0*sin(readDECRad)*cos(readRARad)+1*sin(readDECRad)*sin(readRARad)+0*cos(readDECRad)))+0*((-sin(rotationY)*sin(readDECRad)*cos(readRARad))+0*sin(readDECRad)*sin(readRARad)+cos(rotationY)*cos(readDECRad)));
+	maY = (sin(rotationZ1)*(cos(rotationY)*sin(readDECRad)*cos(readRARad)+0*sin(readDECRad)*sin(readRARad)+sin(rotationY)*cos(readDECRad))+cos(rotationZ1)*(0*sin(readDECRad)*cos(readRARad)+1*sin(readDECRad)*sin(readRARad)+0*cos(readDECRad))+0*((-sin(rotationY)*sin(readDECRad)*cos(readRARad))+0*sin(readDECRad)*sin(readRARad)+cos(rotationY)*cos(readDECRad)));
+	maZ = (0*(cos(rotationY)*sin(readDECRad)*cos(readRARad)+0*sin(readDECRad)*sin(readRARad)+sin(rotationY)*cos(readDECRad))+0*(0*sin(readDECRad)*cos(readRARad)+1*sin(readDECRad)*sin(readRARad)+0*cos(readDECRad))+1*((-sin(rotationY)*sin(readDECRad)*cos(readRARad))+0*sin(readDECRad)*sin(readRARad)+cos(rotationY)*cos(readDECRad)));
+
 	brX = maX;
 	brY = maY;
 	brZ = maZ;
 	
 	// Matrix vermenigvuldiging met draai om de  z-as (tijd)
-	maX = (cos(rotationZ2)*brX+(-sin(rotationZ2)*brY)+0*brZ);
-	maY = (sin(rotationZ2)*brX+cos(rotationZ2)*brY+0*brZ);
-	maZ = (0*brX+0*brY+1*brZ);
-	
-	brX = maX;
-	brY = maY;
-	brZ = maZ;
-	
+	maX = (cos(rotationZ2)*brX+(-sin(rotationZ2)*brY));
+	maY = (sin(rotationZ2)*brX+cos(rotationZ2)*brY);
+	maZ = brZ;
+		
 	float stX,stY,stZ;
-	stX = -20*brX;
-	stY = -20*brY;
-	stZ = -20*brZ;
+	stX = -20*maX;
+	stY = -20*maY;
+	stZ = -20*maZ;
 	
 	float apparentAzimuth = ((180/M_PI) * atan2(stY, stX)) + 180;
 	float apparentAltitude = 90 - ((180/M_PI) * (acos((stZ)/sqrt(pow(stX,2)+pow(stY,2)+pow(stZ,2))))); 
 	
+	if(apparentAzimuth < 180) {
+		apparentAzimuth += 360;
+	}
+		
 	for(SRConstellation* aConstellation in [objectManager constellations]) {
-		float distance = (fabs(apparentAzimuth - ([aConstellation ra])) + fabs(apparentAltitude - [aConstellation dec])) / 2;
-		if(distance > 300) { distance = 360 - distance; }
+		float dAzi = fabs(apparentAzimuth - [aConstellation ra]);
+		if(dAzi > 300) { dAzi = 360 - dAzi; }
+		
+		float distance = (dAzi + fabs(apparentAltitude - [aConstellation dec])) / 2;
 		if(distance < 30) { 
-			if(distance <= 11.0) { glColor4f(0.4f, 0.40f, 0.40f, 0.3f); }
+			if(distance <= 11.0) { 
+				glColor4f(0.6f, 0.6f, 0.6f, constAlpha);
+				[aConstellation draw];
+				
+				glColor4f(1.0f, 1.0f, 1.0f, constAlpha * 2);
+				[aConstellation drawText];
+			}
 			else { 
-				float factor = (distance - 10) / 3;
+				float factor = (distance - 10) / 4;
 				if(factor < 1) { factor = 1; }
-				glColor4f(0.4f, 0.40f, 0.40f, 0.3f / factor); 
+				glColor4f(0.6f, 0.6f, 0.6f, constAlpha / factor); 
+				
+				[aConstellation draw];
+				
+				glColor4f(1.0f, 1.0f, 1.0f, (constAlpha / factor) * 2);
+				[aConstellation drawText];
 			} 
-			[aConstellation draw];
 		}
 	}
 }
 
 -(void)drawEcliptic {
-	glLineWidth(2.0);
+	glLineWidth(1.0);
 	
 	const GLfloat verticesEcliptic[] = {
 		-25.0, 0.0, 0.0,													
@@ -326,7 +328,8 @@
 
 -(void)drawPlanets {
 	glVertexPointer(3, GL_FLOAT, 32, planetPoints);
-	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+	glEnableClientState(GL_COLOR_ARRAY);
+    glColorPointer(4, GL_FLOAT, 32, &planetPoints[3]);
 	int i = 0;
 	GLfloat size = 0;
 	while(i < planetNum) {
@@ -363,7 +366,7 @@
 					glBindTexture(GL_TEXTURE_2D, textures[18]);
 					break;
 			}
-			
+
 			glDrawArrays(GL_POINTS,i, 1);
 		}
 		else {
@@ -376,7 +379,19 @@
 			glDrawArrays(GL_POINTS,i, 1);
 		}
 		++i;
-	}				
+	}			
+	glDisableClientState(GL_COLOR_ARRAY);
+	
+	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+
+	i = 1;
+	while(i < [[objectManager planets] count]) {
+		[[[objectManager planets] objectAtIndex:i] draw];
+		++i;
+	}
+	
+	[[objectManager sun] draw];
+	[[objectManager moon] draw];
 }
 
 
@@ -448,8 +463,7 @@
 	};	
 	
 	glVertexPointer(3, GL_FLOAT, 12, verticesAlphaHorizon);
-	glColor4f(0.0, 0.0, 0.0, 0.8);
-	
+	glColor4f(0.0, 0.0, 0.0, 0.5);
 	glDrawArrays(GL_TRIANGLES, 0, 12);
 	
 	glVertexPointer(3, GL_FLOAT, 12, verticesHorizon);

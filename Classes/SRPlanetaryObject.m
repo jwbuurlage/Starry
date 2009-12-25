@@ -38,6 +38,8 @@
         Mo = iMo;  
 		name = iName;
 		
+		nameTexture = [[Texture2D alloc] initWithString:name dimensions:CGSizeMake(64, 64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
+		
     }
     return self;
 }
@@ -90,6 +92,10 @@
 	position = Vertex3DMake(X,Y,Z);
 	
 	[gregorian release];
+}
+
+-(void)draw {
+	[nameTexture drawAtVertex:position];
 }
 
 -(void)setViewOrigin:(Vertex3D)origin {

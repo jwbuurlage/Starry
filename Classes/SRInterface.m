@@ -826,14 +826,17 @@
 			[locationModule setLongVisible:YES];
 		}
 		else if (currentlyEditingIdentifier == @"search") {
-			SRMessier * aMessier;
+			SRMessier * aMessierObject;
 			SRMessier * foundMessier;
-			for(aMessier in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
-				if ([[aMessier name] isEqualToString:aValue]) {
-					foundMessier = aMessier;
+			BOOL result = FALSE;
+			
+			for(aMessierObject in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
+				if ([[aMessierObject name] isEqualToString:aValue]) {
+					foundMessier = aMessierObject;
+					result = TRUE;
 				}						
 			}
-			if(foundMessier) {
+			if(result) {
 				
 				[[self theNameplate] setName:foundMessier.name inConstellation:@"messier" showInfo:YES];
 				[self setANameplate:TRUE];

@@ -266,6 +266,10 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 - (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions alignment:(UITextAlignment)alignment fontName:(NSString*)name fontSize:(CGFloat)size
 {
+	if(size == 1.0f) {
+		size = 10.0f;
+		flipped = TRUE;
+	}
 	
 	NSUInteger				width,
 							height,
@@ -299,11 +303,19 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	
 	CGContextSetGrayFillColor(context, 1.0, 1.0);
 	CGContextTranslateCTM(context, 0.0, height);
-	CGContextScaleCTM(context, 1.0, -1.0); //NOTE: NSString draws in UIKit referential i.e. renders upside-down compared to CGBitmapContext referential
+	CGContextScaleCTM(context, 1.0, -1.0);
+	 //NOTE: NSString draws in UIKit referential i.e. renders upside-down compared to CGBitmapContext referential
+	if(flipped) {
+		CGContextRotateCTM(context, M_PI / 2);
+		CGContextTranslateCTM(context, 0.0, -(dimensions.height / 2) + 12 );
+	}
 	UIGraphicsPushContext(context);
+		/*CGRect rect = {0,0,64,64};
+		CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 0.6);
+		CGContextFillEllipseInRect(context, rect);	*/		
 		[string drawInRect:CGRectMake(0, 0, dimensions.width, dimensions.height) withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
 	UIGraphicsPopContext();
-	
+
 	
 	self = [self initWithData:data pixelFormat:kTexture2DPixelFormat_A8 pixelsWide:width pixelsHigh:height contentSize:dimensions];
 	
@@ -312,7 +324,6 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	
 	return self;
 }
-
 
 @end
 
@@ -382,6 +393,18 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 	
 }
+
+-(void)drawAtVertex:(Vertex3D)theVertex {
+	//glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+	
+	glPointSize(_width * _maxS);
+	GLfloat		vertices[] = {	theVertex.x, theVertex.y, theVertex.z };
+	
+	glBindTexture(GL_TEXTURE_2D, _name);
+	glVertexPointer(3, GL_FLOAT, 0, vertices);
+	glDrawArrays(GL_POINTS, 0, 1);
+}
+
 
 
 

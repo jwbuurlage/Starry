@@ -205,6 +205,7 @@
 		ACC47C5F10D96CF3004854E5 /* M4.png in Resources */ = {isa = PBXBuildFile; fileRef = ACC47C5C10D96CF3004854E5 /* M4.png */; };
 		ACC4934C10CD6A8D00DC7967 /* SRMoon.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC4934B10CD6A8D00DC7967 /* SRMoon.m */; };
 		ACC493A210CD777600DC7967 /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = ACC493A110CD777600DC7967 /* moon.png */; };
+		ACCE96CB10E3EAFC0089EF62 /* Texture3D.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCE96CA10E3EAFC0089EF62 /* Texture3D.m */; };
 		ACE708D010D02A0B003DE4BB /* M1.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE708CF10D02A0B003DE4BB /* M1.png */; };
 		ACEC7CF3109B25A700149C80 /* SRStar.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF0109B25A700149C80 /* SRStar.m */; };
 		ACEC7CF4109B25A700149C80 /* SRSun.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF2109B25A700149C80 /* SRSun.m */; };
@@ -445,6 +446,8 @@
 		ACC4934A10CD6A8D00DC7967 /* SRMoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMoon.h; sourceTree = "<group>"; };
 		ACC4934B10CD6A8D00DC7967 /* SRMoon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRMoon.m; sourceTree = "<group>"; };
 		ACC493A110CD777600DC7967 /* moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moon.png; path = Resources/moon.png; sourceTree = "<group>"; };
+		ACCE96C910E3EAFC0089EF62 /* Texture3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture3D.h; sourceTree = "<group>"; };
+		ACCE96CA10E3EAFC0089EF62 /* Texture3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture3D.m; sourceTree = "<group>"; };
 		ACE708CF10D02A0B003DE4BB /* M1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M1.png; path = Resources/messier/M1.png; sourceTree = "<group>"; };
 		ACEC7CEF109B25A700149C80 /* SRStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStar.h; sourceTree = "<group>"; };
 		ACEC7CF0109B25A700149C80 /* SRStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStar.m; sourceTree = "<group>"; };
@@ -718,6 +721,8 @@
 				1F92F5EB0FDFF83200548BE8 /* OpenGLCommon.h */,
 				AC7AE68110BC49F500A63DFB /* Texture2D.h */,
 				AC7AE68210BC49F500A63DFB /* Texture2D.m */,
+				ACCE96C910E3EAFC0089EF62 /* Texture3D.h */,
+				ACCE96CA10E3EAFC0089EF62 /* Texture3D.m */,
 				28FD14FC0DC6FC130079059D /* GLView.h */,
 				28FD14FD0DC6FC130079059D /* GLView.m */,
 				1F92F5E90FDFF83200548BE8 /* GLViewController.h */,
@@ -1096,6 +1101,7 @@
 				ACC4934C10CD6A8D00DC7967 /* SRMoon.m in Sources */,
 				ACECC68E10CD9A8400CBE4AC /* SRMessier.m in Sources */,
 				AC89DDF910D035480083BFEA /* SRMessierInfo.m in Sources */,
+				ACCE96CB10E3EAFC0089EF62 /* Texture3D.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

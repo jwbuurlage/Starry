@@ -64,6 +64,8 @@
 	BOOL highlight;
 	Vertex3D highlightPosition;
 	float highlightSize;
+	
+	Texture2D* testTexture3D;
 }
 
 @property (readonly) SRInterface* interface;

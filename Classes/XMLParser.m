@@ -149,6 +149,12 @@
 		else if([elementName isEqualToString:@"name"]) {
 			aConstellation.name = currentElementValue;
 		}
+		else if([elementName isEqualToString:@"ra"]) {
+			aConstellation.ra = [currentElementValue floatValue];
+		}
+		else if([elementName isEqualToString:@"dec"]) {
+			aConstellation.dec = [currentElementValue floatValue];
+		}
 		else if([elementName isEqualToString:@"x"]) {
 			aPoint.x = [currentElementValue floatValue];
 		}

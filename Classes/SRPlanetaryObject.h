@@ -25,6 +25,7 @@
 
 #import <Foundation/Foundation.h>
 #import "OpenGLCommon.h"
+#import "Texture2D.h"
 
 @interface SRPlanetaryObject : NSObject {
 	//baan informatie
@@ -36,6 +37,7 @@
 	NSString* name;
 	
 	Vertex3D position;
+	Texture2D* nameTexture;
 }
 
 @property (readonly) Vertex3D position;
@@ -54,6 +56,7 @@
 -(void)recalculatePosition:(NSDate*)theDate;
 -(void)setViewOrigin:(Vertex3D)origin;
 -(Vertex3D)myCurrentPosition;
+-(void)draw;
 
 //getters
 /*
