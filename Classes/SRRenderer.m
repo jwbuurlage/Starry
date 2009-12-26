@@ -131,20 +131,20 @@
 	if([[appDelegate settingsManager] showConstellations]) {
 		[self drawConstellations]; 
 	}
-	[self drawEcliptic];
+	//[self drawEcliptic];
 	
 	glEnableClientState(GL_COLOR_ARRAY);
-	[self drawStars];
+	//[self drawStars];
 		
 	glEnable(GL_POINT_SPRITE_OES);
 	glTexEnvi(GL_POINT_SPRITE_OES, GL_COORD_REPLACE_OES, GL_TRUE);	
 	glEnable(GL_TEXTURE_2D);
 	glDisableClientState(GL_COLOR_ARRAY);
 	if(highlight) {
-		[self drawHighlight];
+	//	[self drawHighlight];
 	}
-	[self drawMessier];
-	[self drawPlanets];
+	//[self drawMessier];
+	//[self drawPlanets];
 	
 	
 	[self adjustViewToLocationAndTime:NO];

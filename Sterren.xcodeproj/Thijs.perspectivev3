@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Debug</string>
+	<string>Project</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>761E583C10E65D9F003B9CFE</string>
+						<string>761E584810E65FB0003B9CFE</string>
 						<key>history</key>
 						<array>
 							<string>763FA5F810E43DDB00C25454</string>
@@ -235,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>15 60 750 818 0 0 1440 878 </string>
+				<string>387 60 750 818 0 0 1440 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -327,7 +327,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 64}, {208, 780}}</string>
+							<string>{{0, 842}, {208, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -343,6 +343,8 @@
 							<string>MainColumn</string>
 							<real>208</real>
 						</array>
+						<key>RubberWindowFrame</key>
+						<string>0 39 1440 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -353,6 +355,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -370,7 +374,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>761E583B10E65D9F003B9CFE</string>
+										<string>761E584710E65FB0003B9CFE</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -438,7 +442,7 @@
 											<string>761E581910E65BD0003B9CFE</string>
 											<string>761E581A10E65BD0003B9CFE</string>
 											<string>761E582610E65CCD003B9CFE</string>
-											<string>761E583710E65D73003B9CFE</string>
+											<string>761E584610E65FAA003B9CFE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -453,6 +457,8 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1210, 793}}</string>
+								<key>RubberWindowFrame</key>
+								<string>0 39 1440 839 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -476,6 +482,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1210, -27}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 39 1440 839 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -602,8 +610,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -615,8 +621,6 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1440, 276}}</string>
-						<key>RubberWindowFrame</key>
-						<string>0 39 1440 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -691,11 +695,7 @@
 							</array>
 							<key>Frame</key>
 							<string>{{694, 0}, {746, 159}}</string>
-							<key>RubberWindowFrame</key>
-							<string>0 39 1440 839 0 0 1440 878 </string>
 						</dict>
-						<key>RubberWindowFrame</key>
-						<string>0 39 1440 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -759,6 +759,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>761E584910E65FB0003B9CFE</string>
+		<string>761E584A10E65FB0003B9CFE</string>
 		<string>769BDDB610E2A4F7007407B3</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
 	</array>
