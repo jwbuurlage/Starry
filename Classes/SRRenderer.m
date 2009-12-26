@@ -382,10 +382,10 @@
 	}			
 	glDisableClientState(GL_COLOR_ARRAY);
 	
-	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 
 	i = 1;
 	while(i < [[objectManager planets] count]) {
+		glColor4f(1.0f, 1.0f, 1.0f, 1.0f * pow([camera zoomingValue],-3));
 		[[[objectManager planets] objectAtIndex:i] draw];
 		++i;
 	}
