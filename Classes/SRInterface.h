@@ -88,8 +88,12 @@
 	BOOL aInterface;
 	BOOL interfaceDown;
 	
+	NSTimer* notFoundTimer;
+	Texture2D* foundText;
+	Texture2D* foundObjectText;
+	Texture2D* searchIcon;
+	BOOL searchResult;
 	
-		
 	BOOL showingMessier;
 	BOOL menuVisible;
 }
@@ -120,5 +124,6 @@
 -(void)drawRedOverlay;
 
 -(void)calculateAnimations;
+-(void)notFoundFade:(NSTimer*)theTimer;
 
 @end

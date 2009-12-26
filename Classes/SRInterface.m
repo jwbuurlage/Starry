@@ -48,6 +48,8 @@
 		notFoundTextureBool = FALSE;
 		alphaNotFound = 0.0f;
 		notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
+		foundText = [[Texture2D alloc] initWithString:@"Gevonden: " dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		foundObjectText = [[Texture2D alloc] initWithString:@"M31" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 		bFade = FALSE;
 	}
 	return self;
@@ -246,15 +248,6 @@
     glVertexPointer(3, GL_FLOAT, 0, textureCorners);
     glEnableClientState(GL_VERTEX_ARRAY);
 	
-	if(defaultTextureBool) {
-		glColor4f(1.0, 1.0, 1.0, alphaDefault);      
-		[defaultTexture drawInRect:CGRectMake(0,-192,512,512)];
-	}
-	if(notFoundTextureBool) {
-		glColor4f(1.0, 1.0, 1.0, alphaNotFound);      
-		[notFoundTexture drawInRect:CGRectMake(0,-192,512,512)];
-	}
-	
 	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
 
@@ -323,6 +316,22 @@
 		[self drawRedOverlay];
 	}
 
+	if(defaultTextureBool) {
+		glColor4f(1.0, 1.0, 1.0, alphaDefault);      
+		[defaultTexture drawInRect:CGRectMake(0,-192,512,512)];
+	}
+	if(notFoundTextureBool) {
+		glColor4f(1.0, 1.0, 1.0, alphaNotFound);      
+		[notFoundTexture drawInRect:CGRectMake(176,128,128,64)];
+		[searchIcon drawInRect:CGRectMake(220,150,39,39)];
+		glColor4f(0.5, 0.5, 0.5, alphaNotFound);      
+		[foundText drawInRect:CGRectMake(192,115,64,32)];
+		if(searchResult)
+			glColor4f(0.56f, 0.831f, 0.0f, alphaNotFound);
+		else 
+			glColor4f(1.0f, 0.2f, 0.2f, alphaNotFound);
+		[foundObjectText drawInRect:CGRectMake(256,115,64,32)];
+	}
 	
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 			
@@ -844,15 +853,28 @@
 		else if (currentlyEditingIdentifier == @"search") {
 			SRMessier * aMessierObject;
 			SRMessier * foundMessier;
-			BOOL result = FALSE;
+			searchResult = FALSE;
 			
 			for(aMessierObject in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
 				if ([[aMessierObject name] isEqualToString:aValue]) {
 					foundMessier = aMessierObject;
-					result = TRUE;
+					searchResult = TRUE;
 				}						
 			}
-			if(result) {
+			if(searchResult) {
+				if(searchIcon)
+					[searchIcon release];
+				searchIcon = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"searchYes.png"]];
+				
+				if(foundObjectText)
+					[foundObjectText release];
+				foundObjectText = [[Texture2D alloc] initWithString:foundMessier.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+
+				
+				notFoundTextureBool = TRUE;
+				alphaNotFound = 1.0f;
+				//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
+				notFoundTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notFoundFade:) userInfo:nil repeats:NO] retain];				
 				
 				[[self theNameplate] setName:foundMessier.name inConstellation:@"messier" showInfo:YES];
 				[self setANameplate:TRUE];
@@ -878,10 +900,18 @@
 				
 			}
 			else {
+				if(searchIcon)
+					[searchIcon release];
+				searchIcon = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"searchNo.png"]];
+				
+				if(foundObjectText)
+					[foundObjectText release];
+				foundObjectText = [[Texture2D alloc] initWithString:@"Niets" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];				
+				
 				notFoundTextureBool = TRUE;
 				alphaNotFound = 1.0f;
 				//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
-				bFade = TRUE;	
+				notFoundTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notFoundFade:) userInfo:nil repeats:NO] retain];
 			}
 		}
 		
@@ -899,6 +929,11 @@
 						  
 -(void)fadeDefaultTexture {
 	//aFade = TRUE;
+}
+
+-(void)notFoundFade:(NSTimer*)theTimer {
+	bFade = TRUE;
+	[notFoundTimer release];
 }
 
 
