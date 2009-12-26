@@ -202,24 +202,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>769BDDB610E2A4F7007407B3</string>
+				<string>761E586010E6617D003B9CFE</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>GLViewController.m</string>
+				<string>SRRenderer.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>769BDDB710E2A4F7007407B3</string>
+						<string>761E586110E6617D003B9CFE</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>GLViewController.m</string>
+						<string>SRRenderer.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>761E584810E65FB0003B9CFE</string>
+						<string>761E586210E6617D003B9CFE</string>
 						<key>history</key>
 						<array>
-							<string>763FA5F810E43DDB00C25454</string>
+							<string>761E585C10E66172003B9CFE</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -235,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>387 60 750 818 0 0 1440 878 </string>
+				<string>15 60 750 818 0 0 1440 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -271,6 +271,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -320,14 +322,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>37</integer>
-									<integer>21</integer>
+									<integer>43</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 842}, {208, 780}}</string>
+							<string>{{0, 307}, {208, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -355,14 +356,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRInterface.m</string>
+								<string>SRConstellation.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -370,11 +369,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRInterface.m</string>
+										<string>SRConstellation.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>761E584710E65FB0003B9CFE</string>
+										<string>761E585F10E6617D003B9CFE</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -433,16 +432,16 @@
 											<string>763FA55A10E3793100C25454</string>
 											<string>763FA57810E37AD200C25454</string>
 											<string>763FA58110E37AEA00C25454</string>
-											<string>761E581310E65BD0003B9CFE</string>
 											<string>761E581410E65BD0003B9CFE</string>
 											<string>761E581510E65BD0003B9CFE</string>
 											<string>761E581610E65BD0003B9CFE</string>
 											<string>761E581710E65BD0003B9CFE</string>
-											<string>761E581810E65BD0003B9CFE</string>
 											<string>761E581910E65BD0003B9CFE</string>
 											<string>761E581A10E65BD0003B9CFE</string>
 											<string>761E582610E65CCD003B9CFE</string>
-											<string>761E584610E65FAA003B9CFE</string>
+											<string>761E584D10E6601F003B9CFE</string>
+											<string>761E585D10E6617D003B9CFE</string>
+											<string>761E585E10E6617D003B9CFE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -759,10 +758,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>761E586310E6617D003B9CFE</string>
 		<string>761E584910E65FB0003B9CFE</string>
 		<string>761E584A10E65FB0003B9CFE</string>
-		<string>769BDDB610E2A4F7007407B3</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
+		<string>761E586010E6617D003B9CFE</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 39 1440 839 0 0 1440 878 </string>

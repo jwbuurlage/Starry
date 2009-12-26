@@ -55,7 +55,7 @@
 	if(ra < 0) { ra += 360; }	
 	dec = 90 - ((180/M_PI) * (totDec/([lines count] * 2)));
 	
-	NSLog(@"%@: .. RA: %f Dec: %f", name, ra, dec); 
+	//NSLog(@"%@: .. RA: %f Dec: %f", name, ra, dec); 
 	
 	ra += 180;
 	
