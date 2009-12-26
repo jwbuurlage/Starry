@@ -71,10 +71,12 @@
 	Texture2D* defaultTexture;
 	BOOL defaultTextureBool;
 	float alphaDefault;
+	BOOL aFade;
 	
 	Texture2D* notFoundTexture;
 	BOOL notFoundTextureBool;
 	float alphaNotFound;
+	BOOL bFade;
 	
 	//animaties
 	NSTimeInterval timeElapsed;
@@ -85,7 +87,7 @@
 	BOOL aNameplate;
 	BOOL aInterface;
 	BOOL interfaceDown;
-	BOOL aFade;
+	
 	
 		
 	BOOL showingMessier;

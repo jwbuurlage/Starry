@@ -42,11 +42,13 @@
 		alphaDefault = 1.0f;
 		yTranslate = 0.0f;
 		defaultTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"defaultTexture.png"]];
-		[self fadeDefaultTexture];
+		//[self fadeDefaultTexture];
+		aFade = TRUE;
 		
-		notFoundTextureBool = TRUE;
+		notFoundTextureBool = FALSE;
 		alphaNotFound = 0.0f;
 		notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
+		bFade = FALSE;
 	}
 	return self;
 }
@@ -706,6 +708,13 @@
 			aFade = FALSE;
 		}	
 	}
+	if(bFade) {
+		alphaNotFound -= 0.01 * (timeElapsed / 0.01);
+		if (alphaNotFound <= 0.0) {
+			notFoundTextureBool = FALSE;
+			bFade = FALSE;
+		}
+	}
 }
 
 -(void)hideInterface {
@@ -868,6 +877,12 @@
 				
 				
 			}
+			else {
+				notFoundTextureBool = TRUE;
+				alphaNotFound = 1.0f;
+				//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
+				bFade = TRUE;	
+			}
 		}
 		
 		//[fieldTmp setText:@""];
@@ -883,7 +898,7 @@
 }
 						  
 -(void)fadeDefaultTexture {
-	aFade = TRUE;
+	//aFade = TRUE;
 }
 
 
