@@ -48,7 +48,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// De locatie opslaan voor het geval de applicatie opnieuw opstart
-	//FIXME: OOK BRIGHTNESS e.d. doen
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	[prefs setFloat:	[location latitude]						forKey:@"lat"];
 	[prefs setFloat:	[location longitude]					forKey:@"long"];

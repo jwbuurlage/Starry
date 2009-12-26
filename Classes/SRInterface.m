@@ -43,6 +43,10 @@
 		yTranslate = 0.0f;
 		defaultTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"defaultTexture.png"]];
 		[self fadeDefaultTexture];
+		
+		notFoundTextureBool = TRUE;
+		alphaNotFound = 0.0f;
+		notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
 	}
 	return self;
 }
@@ -244,7 +248,10 @@
 		glColor4f(1.0, 1.0, 1.0, alphaDefault);      
 		[defaultTexture drawInRect:CGRectMake(0,-192,512,512)];
 	}
-	
+	if(notFoundTextureBool) {
+		glColor4f(1.0, 1.0, 1.0, alphaNotFound);      
+		[notFoundTexture drawInRect:CGRectMake(0,-192,512,512)];
+	}
 	
 	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 	glColor4f(1.0, 1.0, 1.0, 1.0);      

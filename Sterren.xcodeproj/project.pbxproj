@@ -19,6 +19,7 @@
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		76030C6C10CBBA260074B0CE /* SRSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76030C6B10CBBA260074B0CE /* SRSettingsManager.m */; };
 		76179CF410CA61D500768180 /* SRObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76179CF310CA61D500768180 /* SRObjectManager.m */; };
+		761E581010E65B03003B9CFE /* notFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 761E580F10E65B03003B9CFE /* notFound.png */; };
 		7644565110C5837800AB935D /* SRSettingsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7644565010C5837800AB935D /* SRSettingsModule.m */; };
 		765DA28A10A0B19300C4B16A /* SRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 765DA28910A0B19300C4B16A /* SRLocation.m */; };
 		765DA31510A0B97000C4B16A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765DA31410A0B97000C4B16A /* CoreLocation.framework */; };
@@ -239,6 +240,7 @@
 		76030C6B10CBBA260074B0CE /* SRSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSettingsManager.m; sourceTree = "<group>"; };
 		76179CF210CA61D500768180 /* SRObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRObjectManager.h; sourceTree = "<group>"; };
 		76179CF310CA61D500768180 /* SRObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRObjectManager.m; sourceTree = "<group>"; };
+		761E580F10E65B03003B9CFE /* notFound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notFound.png; path = Resources/notFound.png; sourceTree = "<group>"; };
 		7644564F10C5837800AB935D /* SRSettingsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSettingsModule.h; sourceTree = "<group>"; };
 		7644565010C5837800AB935D /* SRSettingsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSettingsModule.m; sourceTree = "<group>"; };
 		765DA28810A0B19300C4B16A /* SRLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLocation.h; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				761E580F10E65B03003B9CFE /* notFound.png */,
 				AC080F5710D97F010078DA4D /* nav_bg.png */,
 				ACC493A110CD777600DC7967 /* moon.png */,
 				AC8A87ED10C56FCE0015CDF5 /* latitude.png */,
@@ -1062,6 +1065,7 @@
 				AC86C88010E16BCE00028136 /* M109.png in Resources */,
 				AC86C88110E16BCE00028136 /* M110.png in Resources */,
 				AC86C8D810E1765A00028136 /* M37.png in Resources */,
+				761E581010E65B03003B9CFE /* notFound.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
