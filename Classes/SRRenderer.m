@@ -113,9 +113,7 @@
 	const GLfloat planetViewPoints[] = {
 		0, 0, 0,
 		0, 0, 0,	
-		[[[objectManager planets] objectAtIndex:1] positionHelio].x, 
-		[[[objectManager planets] objectAtIndex:1] positionHelio].y, 
-		[[[objectManager planets] objectAtIndex:1] positionHelio].z,
+		[[[objectManager planets] objectAtIndex:1] positionHelio].x, [[[objectManager planets] objectAtIndex:1] positionHelio].y, [[[objectManager planets] objectAtIndex:1] positionHelio].z,
 		[[[objectManager planets] objectAtIndex:2] positionHelio].x, 
 		[[[objectManager planets] objectAtIndex:2] positionHelio].y, 
 		[[[objectManager planets] objectAtIndex:2] positionHelio].z,
@@ -133,7 +131,7 @@
 		[[[objectManager planets] objectAtIndex:6] positionHelio].z,
 		[[[objectManager planets] objectAtIndex:7] positionHelio].x, 
 		[[[objectManager planets] objectAtIndex:7] positionHelio].y, 
-		[[[objectManager planets] objectAtIndex:7] positionHelio].z,	
+		[[[objectManager planets] objectAtIndex:7] positionHelio].z,
 		[[[objectManager planets] objectAtIndex:0] positionHelio].x, 
 		[[[objectManager planets] objectAtIndex:0] positionHelio].y, 
 		[[[objectManager planets] objectAtIndex:0] positionHelio].z,
@@ -145,7 +143,7 @@
     glColorPointer(4, GL_FLOAT, 32, &planetPoints[3]);
 	
 	GLfloat size = 0;
-	while(i < (planetNum + 1)) {
+	while(i <= 9) {
 		size = planetPoints[(i*8)+7];
 		glPointSize(size);
 		
@@ -154,9 +152,17 @@
 		}
 		else {
 			if (i == 0) { // Bij de zon laad de zon texture in
+				glPointSize(15.0f);
 				glBindTexture(GL_TEXTURE_2D, textures[5]);
 			}
 			else { // Bij planeten laad de planeet texture in
+				if(i == 9) { 
+					glPointSize(size * ([camera zoomingValue] / 3));
+				}
+				else {
+					glPointSize(size * pow([[[objectManager planets] objectAtIndex:i - 1] a], 1/1.5) * ([camera zoomingValue] / 3));
+				}
+
 				glBindTexture(GL_TEXTURE_2D, textures[7]);
 			}
 			glDrawArrays(GL_POINTS,i, 1);
@@ -168,7 +174,10 @@
 	
 	i = 0;
 	while(i < [[objectManager planets] count]) {
-		glColor4f(1.0f, 1.0f, 1.0f, 1.0f * pow([camera zoomingValue],-3));
+		float alpha = 2.5 * ([camera zoomingValue] - (1 / [[[objectManager planets] objectAtIndex:i] a]));
+
+		glColor4f(1.0f, 1.0f, 1.0f, alpha);
+		
 		[[[objectManager planets] objectAtIndex:i] drawHelio:YES];
 		++i;
 	}
@@ -196,10 +205,12 @@
 	glTexEnvi(GL_POINT_SPRITE_OES, GL_COORD_REPLACE_OES, GL_TRUE);	
 
 	if(planetView) {
+		glEnable(GL_DEPTH_TEST);
 		//[camera adjustView];
 		glEnable(GL_TEXTURE_2D);
 		glEnable(GL_POINT_SPRITE_OES);
 		[self renderPlanetView];
+		glDisable(GL_DEPTH_TEST);
 		[interface renderInterface];
 		
 		[self loadPlanetPoints];
@@ -244,7 +255,7 @@
 		[self loadPlanetPoints];
 		[[[interface timeModule] manager] setTotalInterval:0];
 		// FIXME: recalculate highlight for planet moved
-		highlight = FALSE;
+		highlight = FALSE;	
 	}
 		
 	
@@ -414,7 +425,7 @@
     glColorPointer(4, GL_FLOAT, 32, &planetPoints[3]);
 	int i = 0;
 	GLfloat size = 0;
-	while(i < planetNum) {
+	while(i <= 10) {
 		size = planetPoints[(i*8)+7] * [camera zoomingValue];
 		glPointSize(size);
 		

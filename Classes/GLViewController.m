@@ -90,6 +90,7 @@
 	if(touchCount == 1) {
 		UITouch *aTouch = [touches anyObject];
 		
+		if(![renderer planetView]) {
 		int x, y;
 		x = [aTouch locationInView:theView].x - [aTouch previousLocationInView:theView].x;
 		y = [aTouch locationInView:theView].y - [aTouch previousLocationInView:theView].y;
@@ -101,6 +102,7 @@
 		
 		dX += x;
 		dY += y;
+		}
 		
 		// Als er teveel wordt verschuift cancel de clicks
 		if ( -15 < dX < 15 || -15 < dY < 15) {
@@ -177,7 +179,7 @@
 		//NSLog(@"Clicked the interface");
 		[[renderer interface] touchEndedAndExecute:YES];	
 	}
-	else if(ScreenClick && dTouch < 4 && touchCount == 1) { // Het scherm mag niet lang aangeraakt worden vandaar dTouch < 4
+	else if(ScreenClick && dTouch < 4 && touchCount == 1 && ![renderer planetView]) { // Het scherm mag niet lang aangeraakt worden vandaar dTouch < 4
 		UITouch *aTouch = [touches anyObject];
 		int x = [aTouch locationInView:theView].x;
 		int y = [aTouch locationInView:theView].y;

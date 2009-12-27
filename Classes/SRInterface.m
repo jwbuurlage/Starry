@@ -233,7 +233,6 @@
 	[[timeModule manager] tickOfTime:timeElapsed];
 	//NSLog(@"%f", timeElapsed);
 	
-	
 	glMatrixMode(GL_PROJECTION); 
 	glLoadIdentity();
 	glRotatef(-90.0, 0.0, 0.0, 1.0); //x hor, y vert
@@ -492,6 +491,8 @@
 				[planetModule show];
 				aModule = TRUE;
 				[renderer setPlanetView:TRUE];
+				[camera setPlanetView:TRUE];
+				[camera resetZoomValue];
 			}
 		}
 		else if(clicker == @"searchfield" || clicker == @"search") {
@@ -594,10 +595,13 @@
 				aModule = TRUE;
 			}
 			if([planetModule visible]) {
-				[renderer setPlanetView:FALSE];
+				[camera setPlanetView:FALSE];
+				[camera resetZoomValue];
 				[planetModule hide];
+				[[timeModule manager] setSpeed:1];
 				[[UIElements objectAtIndex:3] setBounds:CGRectMake(112, -55, 31, 31)];
 				aModule = TRUE;
+				[renderer setPlanetView:FALSE];
 			}
 			
 			hidingMenu = FALSE;
