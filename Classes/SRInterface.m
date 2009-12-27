@@ -42,8 +42,10 @@
 		alphaDefault = 1.0f;
 		yTranslate = 0.0f;
 		defaultTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"defaultTexture.png"]];
-		//[self fadeDefaultTexture];
 		aFade = TRUE;
+		
+		xTranslate = 0;
+		[[[UIElements objectAtIndex:[UIElements count] - 1] texture] invertTexCoord];
 		
 		notFoundTextureBool = FALSE;
 		alphaNotFound = 0.0f;
@@ -727,7 +729,6 @@
 }
 
 -(void)hideInterface {
-	//FIXME IMPLEMENT MET TIMEELAPSED IN DE DRAW SEQUENCE
 	aInterface = TRUE;
 	interfaceDown = TRUE;
 }
