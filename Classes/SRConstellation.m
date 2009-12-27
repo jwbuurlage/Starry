@@ -63,7 +63,15 @@
 								   20.0 * sin(totDec/([lines count] * 2)) * sin(totRA/([lines count] * 2)),
 								   20.0 * cos(totDec/([lines count] * 2)));
 	
-	nameTexture = [[Texture2D alloc] initWithString:[name stringByReplacingOccurrencesOfString:@"-" withString:@" "] dimensions:CGSizeMake(64, 64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
+	float size;
+	
+	if ([[name stringByReplacingOccurrencesOfString:@"-" withString:@" "] sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width > 64 ) {
+		size = 128;
+	}
+	else {
+		size = 64;
+	}
+	nameTexture = [[Texture2D alloc] initWithString:[name stringByReplacingOccurrencesOfString:@"-" withString:@" "] dimensions:CGSizeMake(size, size) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
 }
 
 -(void)draw {

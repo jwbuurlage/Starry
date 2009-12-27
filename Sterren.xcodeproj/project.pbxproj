@@ -55,6 +55,14 @@
 		AC4F8957109DF46900B8BD64 /* click.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4F8956109DF46900B8BD64 /* click.png */; };
 		AC55F122109600990021D39C /* SRInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AC55F121109600990021D39C /* SRInterface.m */; };
 		AC57694010E7CF910031505E /* SRPlanetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC57693F10E7CF910031505E /* SRPlanetInfo.m */; };
+		AC5769BA10E7F0D30031505E /* Mars.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5769B810E7F0D30031505E /* Mars.png */; };
+		AC5769BB10E7F0D30031505E /* planetInfoBg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5769B910E7F0D30031505E /* planetInfoBg.png */; };
+		AC576A3B10E7F8C20031505E /* Jupiter.png in Resources */ = {isa = PBXBuildFile; fileRef = AC576A3510E7F8C20031505E /* Jupiter.png */; };
+		AC576A3C10E7F8C20031505E /* Mercurius.png in Resources */ = {isa = PBXBuildFile; fileRef = AC576A3610E7F8C20031505E /* Mercurius.png */; };
+		AC576A3D10E7F8C20031505E /* Neptunus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC576A3710E7F8C20031505E /* Neptunus.png */; };
+		AC576A3E10E7F8C20031505E /* Saturnus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC576A3810E7F8C20031505E /* Saturnus.png */; };
+		AC576A3F10E7F8C20031505E /* Uranus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC576A3910E7F8C20031505E /* Uranus.png */; };
+		AC576A4010E7F8C20031505E /* Venus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC576A3A10E7F8C20031505E /* Venus.png */; };
 		AC57BD0E10C957DC00B0BD5C /* constellations.xml in Resources */ = {isa = PBXBuildFile; fileRef = AC57BD0D10C957DC00B0BD5C /* constellations.xml */; };
 		AC59B8BA1075075F00ABAE22 /* SRPlanetaryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */; };
 		AC5B2F4A10E6C79500DE922B /* searchNo.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5B2F4810E6C79500DE922B /* searchNo.png */; };
@@ -185,13 +193,7 @@
 		AC8A8AA110C5A14C0015CDF5 /* SRSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8A8AA010C5A14C0015CDF5 /* SRSlider.m */; };
 		AC8A8AC110C5A4750015CDF5 /* brightness_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A8ABF10C5A4750015CDF5 /* brightness_minus.png */; };
 		AC8A8AC210C5A4750015CDF5 /* brightness_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A8AC010C5A4750015CDF5 /* brightness_plus.png */; };
-		AC97059010C5B4190048DB59 /* mars.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058910C5B4190048DB59 /* mars.png */; };
-		AC97059110C5B4190048DB59 /* mercury.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058A10C5B4190048DB59 /* mercury.png */; };
-		AC97059210C5B4190048DB59 /* neptune.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058B10C5B4190048DB59 /* neptune.png */; };
-		AC97059310C5B4190048DB59 /* saturn.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058C10C5B4190048DB59 /* saturn.png */; };
 		AC97059410C5B4190048DB59 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058D10C5B4190048DB59 /* sun.png */; };
-		AC97059510C5B4190048DB59 /* uranus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058E10C5B4190048DB59 /* uranus.png */; };
-		AC97059610C5B4190048DB59 /* venus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058F10C5B4190048DB59 /* venus.png */; };
 		AC9A924410C6EC0A00657268 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = AC9A924310C6EC0A00657268 /* planet.png */; };
 		AC9A926B10C6F1C500657268 /* SRConstellationLine.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9A926A10C6F1C500657268 /* SRConstellationLine.m */; };
 		ACA67FE710E024AD00722E50 /* messierNameBg.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA67FE610E024AD00722E50 /* messierNameBg.png */; };
@@ -199,7 +201,6 @@
 		ACA8757E109DC88900465577 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757B109DC88900465577 /* search.png */; };
 		ACA8757F109DC88900465577 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA8757C109DC88900465577 /* settings.png */; };
 		ACA875EE109DD0A000465577 /* SRInterfaceElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA875ED109DD0A000465577 /* SRInterfaceElement.m */; };
-		ACB56B3610C41A210002842B /* jupiter.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB56B3510C41A210002842B /* jupiter.png */; };
 		ACB7B11710615C1000CA447E /* SRCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB7B11610615C1000CA447E /* SRCamera.m */; };
 		ACB7B16C10615F4F00CA447E /* SRRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */; };
 		ACB8F19B10CC76F700C0F87E /* location_on.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8F19A10CC76F700C0F87E /* location_on.png */; };
@@ -292,6 +293,14 @@
 		AC55F121109600990021D39C /* SRInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInterface.m; sourceTree = "<group>"; };
 		AC57693E10E7CF910031505E /* SRPlanetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlanetInfo.h; sourceTree = "<group>"; };
 		AC57693F10E7CF910031505E /* SRPlanetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRPlanetInfo.m; sourceTree = "<group>"; };
+		AC5769B810E7F0D30031505E /* Mars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mars.png; path = Resources/planets/Mars.png; sourceTree = "<group>"; };
+		AC5769B910E7F0D30031505E /* planetInfoBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planetInfoBg.png; path = Resources/planets/planetInfoBg.png; sourceTree = "<group>"; };
+		AC576A3510E7F8C20031505E /* Jupiter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Jupiter.png; path = Resources/planets/Jupiter.png; sourceTree = "<group>"; };
+		AC576A3610E7F8C20031505E /* Mercurius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mercurius.png; path = Resources/planets/Mercurius.png; sourceTree = "<group>"; };
+		AC576A3710E7F8C20031505E /* Neptunus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Neptunus.png; path = Resources/planets/Neptunus.png; sourceTree = "<group>"; };
+		AC576A3810E7F8C20031505E /* Saturnus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Saturnus.png; path = Resources/planets/Saturnus.png; sourceTree = "<group>"; };
+		AC576A3910E7F8C20031505E /* Uranus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Uranus.png; path = Resources/planets/Uranus.png; sourceTree = "<group>"; };
+		AC576A3A10E7F8C20031505E /* Venus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Venus.png; path = Resources/planets/Venus.png; sourceTree = "<group>"; };
 		AC57BD0D10C957DC00B0BD5C /* constellations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = constellations.xml; sourceTree = "<group>"; };
 		AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlanetaryObject.h; sourceTree = "<group>"; };
 		AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRPlanetaryObject.m; sourceTree = "<group>"; };
@@ -430,13 +439,7 @@
 		AC8A8AA010C5A14C0015CDF5 /* SRSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSlider.m; sourceTree = "<group>"; };
 		AC8A8ABF10C5A4750015CDF5 /* brightness_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brightness_minus.png; path = Resources/brightness_minus.png; sourceTree = "<group>"; };
 		AC8A8AC010C5A4750015CDF5 /* brightness_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brightness_plus.png; path = Resources/brightness_plus.png; sourceTree = "<group>"; };
-		AC97058910C5B4190048DB59 /* mars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mars.png; path = Resources/Textures/mars.png; sourceTree = "<group>"; };
-		AC97058A10C5B4190048DB59 /* mercury.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mercury.png; path = Resources/Textures/mercury.png; sourceTree = "<group>"; };
-		AC97058B10C5B4190048DB59 /* neptune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = neptune.png; path = Resources/Textures/neptune.png; sourceTree = "<group>"; };
-		AC97058C10C5B4190048DB59 /* saturn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = saturn.png; path = Resources/Textures/saturn.png; sourceTree = "<group>"; };
 		AC97058D10C5B4190048DB59 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun.png; path = Resources/Textures/sun.png; sourceTree = "<group>"; };
-		AC97058E10C5B4190048DB59 /* uranus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uranus.png; path = Resources/Textures/uranus.png; sourceTree = "<group>"; };
-		AC97058F10C5B4190048DB59 /* venus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = venus.png; path = Resources/Textures/venus.png; sourceTree = "<group>"; };
 		AC9A924310C6EC0A00657268 /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet.png; path = Resources/planet.png; sourceTree = "<group>"; };
 		AC9A926910C6F1C500657268 /* SRConstellationLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRConstellationLine.h; sourceTree = "<group>"; };
 		AC9A926A10C6F1C500657268 /* SRConstellationLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRConstellationLine.m; sourceTree = "<group>"; };
@@ -446,7 +449,6 @@
 		ACA8757C109DC88900465577 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Resources/settings.png; sourceTree = "<group>"; };
 		ACA875EC109DD0A000465577 /* SRInterfaceElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRInterfaceElement.h; sourceTree = "<group>"; };
 		ACA875ED109DD0A000465577 /* SRInterfaceElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInterfaceElement.m; sourceTree = "<group>"; };
-		ACB56B3510C41A210002842B /* jupiter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jupiter.png; path = Resources/Textures/jupiter.png; sourceTree = "<group>"; };
 		ACB7B11510615C1000CA447E /* SRCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCamera.h; sourceTree = "<group>"; };
 		ACB7B11610615C1000CA447E /* SRCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCamera.m; sourceTree = "<group>"; };
 		ACB7B16A10615F4F00CA447E /* SRRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRenderer.h; sourceTree = "<group>"; };
@@ -560,8 +562,10 @@
 				ACA67FE610E024AD00722E50 /* messierNameBg.png */,
 				AC2973FA10E018F900160442 /* messierPictureBg.png */,
 				AC8A87EF10C56FCE0015CDF5 /* longitude.png */,
+				AC5769B910E7F0D30031505E /* planetInfoBg.png */,
 				AC8A89D010C5898B0015CDF5 /* info.png */,
 				AC8A89D110C5898B0015CDF5 /* nameplatebg.png */,
+				AC5769BD10E7F0DE0031505E /* PlanetBG */,
 				AC3851F710DFF34500C94722 /* Phases */,
 				ACECC6C610CDA19600CBE4AC /* messier.png */,
 				AC6EE16010C09A63008EEC97 /* Default.png */,
@@ -680,6 +684,20 @@
 			name = Phases;
 			sourceTree = "<group>";
 		};
+		AC5769BD10E7F0DE0031505E /* PlanetBG */ = {
+			isa = PBXGroup;
+			children = (
+				AC5769B810E7F0D30031505E /* Mars.png */,
+				AC576A3510E7F8C20031505E /* Jupiter.png */,
+				AC576A3610E7F8C20031505E /* Mercurius.png */,
+				AC576A3710E7F8C20031505E /* Neptunus.png */,
+				AC576A3810E7F8C20031505E /* Saturnus.png */,
+				AC576A3910E7F8C20031505E /* Uranus.png */,
+				AC576A3A10E7F8C20031505E /* Venus.png */,
+			);
+			name = PlanetBG;
+			sourceTree = "<group>";
+		};
 		AC8A8A6E10C59FBD0015CDF5 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,8 +714,6 @@
 			children = (
 				AC5B2FE710E7829E00DE922B /* SRHUD.h */,
 				AC5B2FE810E7829E00DE922B /* SRHUD.m */,
-				AC57693E10E7CF910031505E /* SRPlanetInfo.h */,
-				AC57693F10E7CF910031505E /* SRPlanetInfo.m */,
 				7644564F10C5837800AB935D /* SRSettingsModule.h */,
 				7644565010C5837800AB935D /* SRSettingsModule.m */,
 				AC8A8A9F10C5A14C0015CDF5 /* SRSlider.h */,
@@ -716,6 +732,8 @@
 				ACA875ED109DD0A000465577 /* SRInterfaceElement.m */,
 				AC55F120109600990021D39C /* SRInterface.h */,
 				AC55F121109600990021D39C /* SRInterface.m */,
+				AC57693E10E7CF910031505E /* SRPlanetInfo.h */,
+				AC57693F10E7CF910031505E /* SRPlanetInfo.m */,
 				AC89DDF710D035480083BFEA /* SRMessierInfo.h */,
 				AC89DDF810D035480083BFEA /* SRMessierInfo.m */,
 			);
@@ -725,15 +743,8 @@
 		ACB56B3810C41A2C0002842B /* Planets */ = {
 			isa = PBXGroup;
 			children = (
-				AC97058910C5B4190048DB59 /* mars.png */,
-				AC97058A10C5B4190048DB59 /* mercury.png */,
-				AC97058B10C5B4190048DB59 /* neptune.png */,
-				AC97058C10C5B4190048DB59 /* saturn.png */,
 				AC97058D10C5B4190048DB59 /* sun.png */,
 				AC9A924310C6EC0A00657268 /* planet.png */,
-				AC97058E10C5B4190048DB59 /* uranus.png */,
-				AC97058F10C5B4190048DB59 /* venus.png */,
-				ACB56B3510C41A210002842B /* jupiter.png */,
 			);
 			name = Planets;
 			sourceTree = "<group>";
@@ -930,7 +941,6 @@
 				AC24C9AC10BAEB2B0063DF87 /* play.png in Resources */,
 				AC24C9AD10BAEB2B0063DF87 /* rew.png in Resources */,
 				AC6EE16110C09A63008EEC97 /* Default.png in Resources */,
-				ACB56B3610C41A210002842B /* jupiter.png in Resources */,
 				AC8A87F010C56FCE0015CDF5 /* latitude.png in Resources */,
 				AC8A87F110C56FCE0015CDF5 /* location_off.png in Resources */,
 				AC8A87F210C56FCE0015CDF5 /* longitude.png in Resources */,
@@ -941,13 +951,7 @@
 				AC8A8A7210C59FC80015CDF5 /* red.png in Resources */,
 				AC8A8AC110C5A4750015CDF5 /* brightness_minus.png in Resources */,
 				AC8A8AC210C5A4750015CDF5 /* brightness_plus.png in Resources */,
-				AC97059010C5B4190048DB59 /* mars.png in Resources */,
-				AC97059110C5B4190048DB59 /* mercury.png in Resources */,
-				AC97059210C5B4190048DB59 /* neptune.png in Resources */,
-				AC97059310C5B4190048DB59 /* saturn.png in Resources */,
 				AC97059410C5B4190048DB59 /* sun.png in Resources */,
-				AC97059510C5B4190048DB59 /* uranus.png in Resources */,
-				AC97059610C5B4190048DB59 /* venus.png in Resources */,
 				AC9A924410C6EC0A00657268 /* planet.png in Resources */,
 				AC57BD0E10C957DC00B0BD5C /* constellations.xml in Resources */,
 				ACFAF6F510CBD02400A6AB77 /* highlight.png in Resources */,
@@ -1089,6 +1093,14 @@
 				761E581010E65B03003B9CFE /* notFound.png in Resources */,
 				AC5B2F4A10E6C79500DE922B /* searchNo.png in Resources */,
 				AC5B2F4B10E6C79500DE922B /* searchYes.png in Resources */,
+				AC5769BA10E7F0D30031505E /* Mars.png in Resources */,
+				AC5769BB10E7F0D30031505E /* planetInfoBg.png in Resources */,
+				AC576A3B10E7F8C20031505E /* Jupiter.png in Resources */,
+				AC576A3C10E7F8C20031505E /* Mercurius.png in Resources */,
+				AC576A3D10E7F8C20031505E /* Neptunus.png in Resources */,
+				AC576A3E10E7F8C20031505E /* Saturnus.png in Resources */,
+				AC576A3F10E7F8C20031505E /* Uranus.png in Resources */,
+				AC576A4010E7F8C20031505E /* Venus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

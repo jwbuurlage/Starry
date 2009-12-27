@@ -192,9 +192,9 @@
 		// Saturnus
 		[[planets objectAtIndex:5] position].x, [[planets objectAtIndex:5] position].y, [[planets objectAtIndex:5] position].z,	0.8, 0.5, 0.0, 1.0, 10.0,
 		// Uranus
-		[[planets objectAtIndex:6] position].x, [[planets objectAtIndex:6] position].y, [[planets objectAtIndex:6] position].z,	0.2, 0.2, 1.0, 1.0, 5.0,
+		[[planets objectAtIndex:6] position].x, [[planets objectAtIndex:6] position].y, [[planets objectAtIndex:6] position].z,	0.5, 0.5, 1.0, 1.0, 5.0,
 		// Neptunus
-		[[planets objectAtIndex:7] position].x, [[planets objectAtIndex:7] position].y, [[planets objectAtIndex:7] position].z,	0.5, 0.5, 1.0, 1.0, 5.0,
+		[[planets objectAtIndex:7] position].x, [[planets objectAtIndex:7] position].y, [[planets objectAtIndex:7] position].z,	0.2, 0.2, 1.0, 1.0, 5.0,
 		// Aaarde voor planetView
 		0.0, 0.0, 0.0,	0.4, 0.4, 1.0, 1.0, 10.0
 

@@ -19,10 +19,13 @@
 	BOOL visible;
 	BOOL info;
 	BOOL hiding;
+	
+	int selectedType; //0 - messier, 1 - planets
 }
 
 @property (nonatomic, assign) float yTranslate;
 @property (nonatomic, assign) BOOL hiding;
+@property (nonatomic, assign) int selectedType;
 @property (nonatomic, assign) BOOL visible;
 @property (readonly) BOOL info;
 @property (readonly) NSMutableArray* elements;

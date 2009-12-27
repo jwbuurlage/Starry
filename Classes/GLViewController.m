@@ -292,7 +292,7 @@
 //				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y, sun.position.z);
 				
 				[renderer setHighlightPosition:position];
-				[renderer setHighlightSize:80]; 
+				[renderer setHighlightSize:32]; 
 				[renderer setHighlight:TRUE];
 			}
 			else {			
@@ -311,7 +311,7 @@
 //>>>>>>> 5b467e71baa2e98bbb44915d597b1fbd5ff73140:Classes/GLViewController.m
 				
 				[renderer setHighlightPosition:position];
-				[renderer setHighlightSize:80]; 
+				[renderer setHighlightSize:32]; 
 				[renderer setHighlight:TRUE];
 			}
 			else {
@@ -334,14 +334,16 @@
 					}
 				}
 				if (closestD < (2 * (1/zoomingValue))) {
-					//NSLog(@"Delta of closest: %f",closestD);
+					[[[renderer interface] theNameplate] setSelectedType:1];					
 					[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
 					[[renderer interface] setANameplate:TRUE];
+					
+					[[[renderer interface] planetInfo] planetClicked:closestPlanet];
 
 					Vertex3D position = closestPlanet.position;
 					
 					[renderer setHighlightPosition:position];
-					[renderer setHighlightSize:64]; 
+					[renderer setHighlightSize:32]; 
 					[renderer setHighlight:TRUE];
 				}
 				else {
@@ -363,7 +365,7 @@
 					}
 					//FIXME waarom zo'n raar getal?
 					if(closestD < (5.1)) {
-						
+						[[[renderer interface] theNameplate] setSelectedType:0];
 						[[[renderer interface] theNameplate] setName:closestMessier.name inConstellation:@"messier" showInfo:YES];
 						[[renderer interface] setANameplate:TRUE];
 
