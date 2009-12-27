@@ -90,7 +90,8 @@
 	if(touchCount == 1) {
 		UITouch *aTouch = [touches anyObject];
 		
-		if(![renderer planetView]) {
+		if(
+		   ![renderer planetView]) {
 		int x, y;
 		x = [aTouch locationInView:theView].x - [aTouch previousLocationInView:theView].x;
 		y = [aTouch locationInView:theView].y - [aTouch previousLocationInView:theView].y;

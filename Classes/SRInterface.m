@@ -491,6 +491,8 @@
 				[planetModule show];
 				aModule = TRUE;
 				[renderer setPlanetView:TRUE];
+				[theNameplate hide];
+				aNameplate = TRUE;
 				[camera setPlanetView:TRUE];
 				[camera resetZoomValue];
 			}
