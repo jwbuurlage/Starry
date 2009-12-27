@@ -323,7 +323,7 @@
 	if(notFoundTextureBool) {
 		glColor4f(1.0, 1.0, 1.0, alphaNotFound);      
 		[notFoundTexture drawInRect:CGRectMake(176,128,128,64)];
-		[searchIcon drawInRect:CGRectMake(220,150,39,39)];
+		[searchIcon drawInRect:CGRectMake(220,147,39,39)];
 		glColor4f(0.5, 0.5, 0.5, alphaNotFound);      
 		[foundText drawInRect:CGRectMake(192,115,64,32)];
 		if(searchResult)
