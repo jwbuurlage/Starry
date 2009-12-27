@@ -884,23 +884,73 @@
 		}
 		else if (currentlyEditingIdentifier == @"search") {
 			SRMessier * aMessierObject;
+			SRPlanetaryObject* aPlanet;
 			SRMessier * foundMessier;
+			SRPlanetaryObject* foundPlanet;
 			searchResult = FALSE;
+			
+			int type; //0 = messier, 1 = planet
 			
 			for(aMessierObject in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
 				if ([[aMessierObject name] isEqualToString:aValue]) {
 					foundMessier = aMessierObject;
 					searchResult = TRUE;
+					type = 0;
 				}						
 			}
+			
+			for(aPlanet in [[[[UIApplication sharedApplication] delegate] objectManager] planets]) {	
+				if ([[aPlanet name] isEqualToString:aValue]) {
+					foundPlanet = aPlanet;
+					searchResult = TRUE;
+					type = 1;
+				}						
+			}
+			
+			
 			if(searchResult) {
 				if(searchIcon)
 					[searchIcon release];
 				searchIcon = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"searchYes.png"]];
 				
-				if(foundObjectText)
-					[foundObjectText release];
-				foundObjectText = [[Texture2D alloc] initWithString:foundMessier.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+				float azTmp, alTmp;
+				
+				if(type == 0) {
+					if(foundObjectText)
+						[foundObjectText release];
+						foundObjectText = [[Texture2D alloc] initWithString:foundMessier.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+						[[self theNameplate] setName:foundMessier.name inConstellation:@"messier" showInfo:YES];
+						[[self messierInfo] messierClicked:foundMessier];
+						Vertex3D posForCam = [foundMessier myCurrentPosition];
+						azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+						alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+						//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+						
+						Vertex3D position = foundMessier.position;
+						
+						[renderer setHighlightPosition:position];
+						[renderer setHighlightSize:32]; 
+						[renderer setHighlight:TRUE];
+				}
+				else if(type == 1) {
+					if(foundObjectText)
+						[foundObjectText release];
+					foundObjectText = [[Texture2D alloc] initWithString:foundPlanet.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+					
+					[[self theNameplate] setName:foundPlanet.name inConstellation:@"" showInfo:YES];
+					//[[self messierInfo] messierClicked:foundPlanet];
+					Vertex3D posForCam = [foundPlanet myCurrentPosition];
+					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+					
+					NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+					
+					Vertex3D position = foundPlanet.position;
+					
+					[renderer setHighlightPosition:position];
+					[renderer setHighlightSize:32]; 
+					[renderer setHighlight:TRUE];
+				}
 
 				
 				notFoundTextureBool = TRUE;
@@ -908,28 +958,11 @@
 				//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
 				notFoundTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notFoundFade:) userInfo:nil repeats:NO] retain];				
 				
-				[[self theNameplate] setName:foundMessier.name inConstellation:@"messier" showInfo:YES];
 				[self setANameplate:TRUE];
-				
-				[[self messierInfo] messierClicked:foundMessier];
-				
-				Vertex3D posForCam = [foundMessier myCurrentPosition];
-				float azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
-				float alTmp = 90-(180/M_PI)*acos(-posForCam.z);
-				//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
-				
-				Vertex3D position = foundMessier.position;
-				
-				[renderer setHighlightPosition:position];
-				[renderer setHighlightSize:32]; 
-				[renderer setHighlight:TRUE];
 				
 				[camera setAzimuth:azTmp];
 				[camera setAltitude:alTmp];
-				[camera adjustView];
-				
-				
-				
+				[camera adjustView];				
 			}
 			else {
 				if(searchIcon)
