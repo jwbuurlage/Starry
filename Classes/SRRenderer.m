@@ -340,16 +340,20 @@
 	
 	float apparentAzimuth = ((180/M_PI) * atan2(stY, stX)) + 180;
 	float apparentAltitude = 90 - ((180/M_PI) * (acos((stZ)/sqrt(pow(stX,2)+pow(stY,2)+pow(stZ,2))))); 
-	
+
+
 	if(apparentAzimuth < 180) {
 		apparentAzimuth += 360;
 	}
+
 		
 	for(SRConstellation* aConstellation in [objectManager constellations]) {
 		float dAzi = fabs(apparentAzimuth - [aConstellation ra]);
 		if(dAzi > 300) { dAzi = 360 - dAzi; }
 		
 		float distance = (dAzi + fabs(apparentAltitude - [aConstellation dec])) / 2;
+
+
 		if(distance < 30) { 
 			if(distance <= 11.0) { 
 				glColor4f(0.6f, 0.6f, 0.6f, constAlpha);

@@ -66,7 +66,7 @@
 	float size;
 	
 	if ([[name stringByReplacingOccurrencesOfString:@"-" withString:@" "] sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width > 64 ) {
-		size = 128;
+		size = 64;
 	}
 	else {
 		size = 64;

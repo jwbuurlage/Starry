@@ -14,11 +14,7 @@
 -(id)init {
 	if(self = [super init]) {
 		elements = [[NSMutableArray alloc] init];
-		
-		
-
-
-		
+				
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 202, 128, 32) 
 															   texture:[[Texture2D alloc] initWithString:@"Planeet Info" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12] 
 															identifier:@"text" 

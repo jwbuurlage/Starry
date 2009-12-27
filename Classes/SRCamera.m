@@ -72,8 +72,8 @@
 		}
 	}
 		
-	if(altitude > 90) { altitude = 90; }
-	else if (altitude < -90) { altitude = -90; }
+	if(altitude > 89.9) { altitude = 89.9; }
+	else if (altitude < -89.9) { altitude = -89.9; }
 	if(azimuth < 0) { azimuth += 360; }
 	if(azimuth > 360) { fmod(azimuth, 360); }
 	
