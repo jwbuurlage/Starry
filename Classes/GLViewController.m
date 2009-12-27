@@ -332,7 +332,7 @@
 				}
 				if (closestD < (2 * (1/zoomingValue))) {
 					//NSLog(@"Delta of closest: %f",closestD);
-					[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
+					[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:NO];
 					[[renderer interface] setANameplate:TRUE];
 
 					Vertex3D position = closestPlanet.position;
