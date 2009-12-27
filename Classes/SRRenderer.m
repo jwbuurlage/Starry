@@ -17,7 +17,7 @@
 
 @implementation SRRenderer
 
-@synthesize interface,location,myOwner,camera,highlight,highlightPosition,highlightSize;
+@synthesize interface,location,myOwner,camera,highlight,planetView,highlightPosition,highlightSize;
 
 -(id)setupWithOwner:(GLViewController*)theOwner {
 	if(self = [super init]) {
@@ -106,6 +106,76 @@
 	}	
 }
 
+-(void)renderPlanetView {
+	glRotatef(90.0f, 0.0, 1.0, 0.0);
+	glTranslatef(0.0f, 0.0f, -20.0f);
+
+	const GLfloat planetViewPoints[] = {
+		0, 0, 0,
+		0, 0, 0,	
+		[[[objectManager planets] objectAtIndex:1] positionHelio].x, 
+		[[[objectManager planets] objectAtIndex:1] positionHelio].y, 
+		[[[objectManager planets] objectAtIndex:1] positionHelio].z,
+		[[[objectManager planets] objectAtIndex:2] positionHelio].x, 
+		[[[objectManager planets] objectAtIndex:2] positionHelio].y, 
+		[[[objectManager planets] objectAtIndex:2] positionHelio].z,
+		[[[objectManager planets] objectAtIndex:3] positionHelio].x, 
+		[[[objectManager planets] objectAtIndex:3] positionHelio].y, 
+		[[[objectManager planets] objectAtIndex:3] positionHelio].z,
+		[[[objectManager planets] objectAtIndex:4] positionHelio].x, 
+		[[[objectManager planets] objectAtIndex:4] positionHelio].y, 
+		[[[objectManager planets] objectAtIndex:4] positionHelio].z,
+		[[[objectManager planets] objectAtIndex:5] positionHelio].x, 
+		[[[objectManager planets] objectAtIndex:5] positionHelio].y, 
+		[[[objectManager planets] objectAtIndex:5] positionHelio].z,
+		[[[objectManager planets] objectAtIndex:6] positionHelio].x, 
+		[[[objectManager planets] objectAtIndex:6] positionHelio].y, 
+		[[[objectManager planets] objectAtIndex:6] positionHelio].z,
+		[[[objectManager planets] objectAtIndex:7] positionHelio].x, 
+		[[[objectManager planets] objectAtIndex:7] positionHelio].y, 
+		[[[objectManager planets] objectAtIndex:7] positionHelio].z,	
+		[[[objectManager planets] objectAtIndex:0] positionHelio].x, 
+		[[[objectManager planets] objectAtIndex:0] positionHelio].y, 
+		[[[objectManager planets] objectAtIndex:0] positionHelio].z,
+	};
+	int i = 0;
+	
+	glVertexPointer(3, GL_FLOAT, 12, planetViewPoints);
+	glEnableClientState(GL_COLOR_ARRAY);
+    glColorPointer(4, GL_FLOAT, 32, &planetPoints[3]);
+	
+	GLfloat size = 0;
+	while(i < (planetNum + 1)) {
+		size = planetPoints[(i*8)+7];
+		glPointSize(size);
+		
+		if (i == 1) { // maan
+		
+		}
+		else {
+			if (i == 0) { // Bij de zon laad de zon texture in
+				glBindTexture(GL_TEXTURE_2D, textures[5]);
+			}
+			else { // Bij planeten laad de planeet texture in
+				glBindTexture(GL_TEXTURE_2D, textures[7]);
+			}
+			glDrawArrays(GL_POINTS,i, 1);
+		}
+		++i;
+	}			
+	glDisableClientState(GL_COLOR_ARRAY);
+	
+	
+	i = 0;
+	while(i < [[objectManager planets] count]) {
+		glColor4f(1.0f, 1.0f, 1.0f, 1.0f * pow([camera zoomingValue],-3));
+		[[[objectManager planets] objectAtIndex:i] drawHelio:YES];
+		++i;
+	}
+	
+	[[objectManager sun] drawHelio:YES];
+}
+
 -(void)render {
 	//view resetten
     glLoadIdentity();
@@ -116,7 +186,6 @@
 	glRotatef(-90.0, 1.0, 0.0, 0.0); //daarom is hij min -> z staat nu naar boven toe ( - --> + )
 	
 	//camera positie callen
-	[camera adjustView];
 	
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
@@ -124,8 +193,22 @@
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+	glTexEnvi(GL_POINT_SPRITE_OES, GL_COORD_REPLACE_OES, GL_TRUE);	
+
+	if(planetView) {
+		//[camera adjustView];
+		glEnable(GL_TEXTURE_2D);
+		glEnable(GL_POINT_SPRITE_OES);
+		[self renderPlanetView];
+		[interface renderInterface];
+		
+		[self loadPlanetPoints];
+		
+		[camera reenable]; 
+		return;
+	}
 	
-	
+	[camera adjustView];
 	[self adjustViewToLocationAndTime:YES];
 
 	if([[appDelegate settingsManager] showConstellations]) {
@@ -137,7 +220,6 @@
 	[self drawStars];
 		
 	glEnable(GL_POINT_SPRITE_OES);
-	glTexEnvi(GL_POINT_SPRITE_OES, GL_COORD_REPLACE_OES, GL_TRUE);	
 	glEnable(GL_TEXTURE_2D);
 	glDisableClientState(GL_COLOR_ARRAY);
 	if(highlight) {
@@ -168,8 +250,7 @@
 	
 	[interface renderInterface];
 	
-	[camera reenable];
-
+	[camera reenable]; 
 }
 
 -(void)adjustViewToLocationAndTime:(BOOL)status {
@@ -193,8 +274,9 @@
 	GLfloat size = 0;
 	while(i <= starNum) {
 		if(starPoints[(i*8)+7] != 0) {
-			if((starPoints[(i*8)+7] * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor]) > 1.0) {
+			if((starPoints[(i*8)+7] * pow([camera zoomingValue], 1.5) * [[appDelegate settingsManager] brightnessFactor]) > 1.0) {
 				size = starPoints[(i*8)+7] * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+				if(size > 8) { size = 8; }
 				glPointSize(size);
 			glDrawArrays(GL_POINTS, i, 1);
 			}
@@ -386,11 +468,11 @@
 	i = 1;
 	while(i < [[objectManager planets] count]) {
 		glColor4f(1.0f, 1.0f, 1.0f, 1.0f * pow([camera zoomingValue],-3));
-		[[[objectManager planets] objectAtIndex:i] draw];
+		[[[objectManager planets] objectAtIndex:i] drawHelio:NO];
 		++i;
 	}
 	
-	[[objectManager sun] draw];
+	[[objectManager sun] drawHelio:NO];
 	[[objectManager moon] draw];
 }
 

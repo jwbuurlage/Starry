@@ -172,7 +172,7 @@
 	for (planet in planets) {
 		[planet recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
 		if (planet.a != 1) {  //slordig hooorr
-			[planet setViewOrigin:[[planets objectAtIndex:0] position]];
+			[planet setViewOrigin:[[planets objectAtIndex:0] positionHelio]];
 		}
 	}
 	
@@ -194,10 +194,13 @@
 		// Uranus
 		[[planets objectAtIndex:6] position].x, [[planets objectAtIndex:6] position].y, [[planets objectAtIndex:6] position].z,	0.2, 0.2, 1.0, 1.0, 5.0,
 		// Neptunus
-		[[planets objectAtIndex:7] position].x, [[planets objectAtIndex:7] position].y, [[planets objectAtIndex:7] position].z,	0.5, 0.5, 1.0, 1.0, 5.0
+		[[planets objectAtIndex:7] position].x, [[planets objectAtIndex:7] position].y, [[planets objectAtIndex:7] position].z,	0.5, 0.5, 1.0, 1.0, 10.0,
+		// Aaarde voor planetView
+		0.0, 0.0, 0.0,	0.0, 0.0, 1.0, 1.0, 5.0
+
 	};
 	
-	planetNum = 9;
+	planetNum = 10;
 	
 	if (planetPoints) {
 		[planetPoints release];

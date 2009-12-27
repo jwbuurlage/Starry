@@ -214,6 +214,11 @@
 	locationModule = [[SRLocationModule alloc] initWithSRLocation:[renderer location]];
 	[modules addObject:locationModule];
 	
+	//planets
+	planetModule = [[SRPlanetModule alloc] init];
+	[modules addObject:planetModule];
+	
+	//settings
 	settingsModule = [[SRSettingsModule alloc] init];
 	[modules addObject:settingsModule];
 }
@@ -475,6 +480,20 @@
 				aModule = TRUE;
 			}
 		}
+		else if(clicker == @"planet") {
+			if([planetModule visible]) {
+				[planetModule hide];	
+				aModule = TRUE;
+			}
+			else {
+				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
+				[[UIElements objectAtIndex:3] setBounds:CGRectZero];
+				[self hideAllModules];
+				[planetModule show];
+				aModule = TRUE;
+				[renderer setPlanetView:TRUE];
+			}
+		}
 		else if(clicker == @"searchfield" || clicker == @"search") {
 			currentlyEditingIdentifier = @"search";
 			[self bringUpTheKeyboardWithText:@"" onLocationX:9 Y:175 withColor:[UIColor blackColor] andSendResultsTo:self];
@@ -572,6 +591,12 @@
 			if([settingsModule visible]) {
 				[settingsModule hide];
 				[[UIElements objectAtIndex:6] setBounds:CGRectMake(392, -55, 31, 31)];
+				aModule = TRUE;
+			}
+			if([planetModule visible]) {
+				[renderer setPlanetView:FALSE];
+				[planetModule hide];
+				[[UIElements objectAtIndex:3] setBounds:CGRectMake(112, -55, 31, 31)];
 				aModule = TRUE;
 			}
 			

@@ -25,6 +25,7 @@
 #import "SRInterface.h"
 #import "SRLocation.h"
 #import "SRObjectManager.h"
+#import "SRHUD.h"
 
 @class GLViewController;
 
@@ -65,7 +66,11 @@
 	Vertex3D highlightPosition;
 	float highlightSize;
 	
+	SRHUD* sharedHUD;
+	
 	Texture2D* testTexture3D;
+	
+	BOOL planetView;
 }
 
 @property (readonly) SRInterface* interface;
@@ -73,6 +78,7 @@
 @property (readonly) GLViewController* myOwner;
 @property (readonly) SRCamera* camera;
 @property (assign) BOOL highlight;
+@property (assign) BOOL planetView;
 @property (assign) Vertex3D highlightPosition;
 @property (assign) float highlightSize;
 

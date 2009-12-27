@@ -48,13 +48,13 @@
 -(float)size {
 	float size;
 	if([mag floatValue] < 1) {
-		size = 6.0;
-	}
-	else if([mag floatValue] < 2) {
 		size = 5.0;
 	}
+	else if([mag floatValue] < 2) {
+		size = 4.0;
+	}
 	else if([mag floatValue] < 3) {
-		size = 3.5;
+		size = 3.0;
 	}
 	else if([mag floatValue] < 4) {
 		size = 2.0;
@@ -107,13 +107,13 @@
 		alpha = 0.7;
 	}
 	else if([mag floatValue] < 3) {
-		alpha = 0.6;
-	}
-	else if([mag floatValue] < 4) {
 		alpha = 0.5;
 	}
-	else {
+	else if([mag floatValue] < 4) {
 		alpha = 0.4;
+	}
+	else {
+		alpha = 0.3;
 	}
 	return alpha;
 }

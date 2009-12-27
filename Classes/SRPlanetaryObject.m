@@ -17,7 +17,7 @@
 
 @implementation SRPlanetaryObject
 
-@synthesize position, a, name, selected;
+@synthesize position, positionHelio, a, name, selected;
 
 
 -(id)initWitha:(float)ia		
@@ -89,20 +89,21 @@
 	
 	//NSLog(@"(X,Y,Z): (%f,%f,%f)",X,Y,Z);
 	
-	position = Vertex3DMake(X,Y,Z);
+	positionHelio = Vertex3DMake(X,Y,Z);
 	
 	[gregorian release];
 }
 
--(void)draw {
-	[nameTexture drawAtVertex:Vertex3DMake(position.x, position.y, position.z)];
+-(void)drawHelio:(BOOL)helio {
+	if(helio) { [nameTexture drawAtVertex:Vertex3DMake(positionHelio.x, positionHelio.y, positionHelio.z)]; }
+	else { [nameTexture drawAtVertex:Vertex3DMake(position.x, position.y, position.z)]; }
 }
 
 -(void)setViewOrigin:(Vertex3D)origin {
 	float x,y,z; 
-	x = position.x - origin.x;
-	y = position.y - origin.y;
-	z = position.z - origin.z;
+	x = positionHelio.x - origin.x;
+	y = positionHelio.y - origin.y;
+	z = positionHelio.z - origin.z;
 	
 	//NSLog(@"(x,y,z): (%f,%f,%f)",x,y,z);
 	
@@ -147,7 +148,6 @@
 -(float)sprite {
 	
 } */
-
 
 -(Vertex3D)myCurrentPosition {
 	

@@ -20,6 +20,7 @@
 #import "SRLocation.h"
 #import "SRLocationModule.h"
 #import "SRSettingsModule.h"
+#import "SRPlanetModule.h"
 #import "SRNamePlate.h"
 #import "Texture2D.h"
 #import "SRMessierInfo.h"
@@ -36,6 +37,7 @@
 	SRTimeModule* timeModule;
 	SRLocationModule* locationModule;
 	SRSettingsModule* settingsModule;
+	SRPlanetModule* planetModule;
 	
 	SRNamePlate* theNameplate;
 	SRMessierInfo* messierInfo;
