@@ -123,6 +123,7 @@
 	//[messierImage release];
 	//messierImage = ;
 	planetImage = [[Texture2D alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [thePlanet name]]]]; 
+	NSLog(@"%@", [NSString stringWithFormat:@"%@.png", [thePlanet name]]);
 	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:thePlanet.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]]; 
 	[[elements objectAtIndex:[elements count] - 1] setBounds:CGRectMake(311 - [thePlanet.name sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width / 2, 18,64,32)];
 }
