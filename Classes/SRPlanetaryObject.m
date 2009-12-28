@@ -17,7 +17,7 @@
 
 @implementation SRPlanetaryObject
 
-@synthesize position, a, name, selected;
+@synthesize position, positionHelio, a, name, selected;
 
 
 -(id)initWitha:(float)ia		
@@ -89,20 +89,21 @@
 	
 	//NSLog(@"(X,Y,Z): (%f,%f,%f)",X,Y,Z);
 	
-	position = Vertex3DMake(X,Y,Z);
+	positionHelio = Vertex3DMake(X,Y,Z);
 	
 	[gregorian release];
 }
 
--(void)draw {
-	[nameTexture drawAtVertex:Vertex3DMake(position.x, position.y, position.z)];
+-(void)drawHelio:(BOOL)helio {
+	if(helio) { [nameTexture drawAtVertex:Vertex3DMake(positionHelio.x, positionHelio.y, positionHelio.z)]; }
+	else { [nameTexture drawAtVertex:Vertex3DMake(position.x, position.y, position.z)]; }
 }
 
 -(void)setViewOrigin:(Vertex3D)origin {
 	float x,y,z; 
-	x = position.x - origin.x;
-	y = position.y - origin.y;
-	z = position.z - origin.z;
+	x = positionHelio.x - origin.x;
+	y = positionHelio.y - origin.y;
+	z = positionHelio.z - origin.z;
 	
 	//NSLog(@"(x,y,z): (%f,%f,%f)",x,y,z);
 	
@@ -148,7 +149,6 @@
 	
 } */
 
-
 -(Vertex3D)myCurrentPosition {
 	
 	float brX = position.x;
@@ -193,9 +193,9 @@
 	brY = maY;
 	brZ = maZ;
 	
-	Vertex3D result = Vertex3DMake(-brX, -brY, -brZ);
+	Vertex3D result = Vertex3DMake(-brX/15, -brY/15, -brZ/15);
 	
-	NSLog(@"Geroteerde locatie planeet berekend x:%f y:%f z:%f",-brX/15,-brY/15,-brZ/15);
+	NSLog(@"Geroteerde locatie planeet berekend x:%f y:%f z:%f",brX/15,brY/15,brZ/15);
 	
 	return result;
 }

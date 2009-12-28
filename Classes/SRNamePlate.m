@@ -11,10 +11,12 @@
 
 @implementation SRNamePlate
 
-@synthesize yTranslate, visible, hiding, info, elements;
+@synthesize yTranslate, visible, hiding, info, elements, selectedType;
 
 -(id)init {
 	if(self = [super self]) {
+		selectedType = 0;
+		
 		elements = [[NSMutableArray alloc] init];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150, 288, 256, 32)

@@ -17,7 +17,7 @@
 
 @implementation SRCamera
 
-@synthesize azimuth, altitude;
+@synthesize azimuth, altitude, planetView;
 
 - (id)initWithView:(GLView*)view
 {
@@ -72,8 +72,8 @@
 		}
 	}
 		
-	if(altitude > 90) { altitude = 90; }
-	else if (altitude < -90) { altitude = -90; }
+	if(altitude > 89.9) { altitude = 89.9; }
+	else if (altitude < -89.9) { altitude = -89.9; }
 	if(azimuth < 0) { azimuth += 360; }
 	if(azimuth > 360) { fmod(azimuth, 360); }
 	
@@ -181,8 +181,15 @@
 	if (zoomingValue > 0) {
 		
 		newFieldofView = fieldOfView * zoomingValue;
-		if(newFieldofView > 0.3 && newFieldofView < 1.0) {
-			fieldOfView = newFieldofView;
+		if(!planetView) {
+			if(newFieldofView > 0.3 && newFieldofView < 1.0) {
+				fieldOfView = newFieldofView;
+			}
+		}
+		else {
+			if(newFieldofView > 0.2 && newFieldofView < 2.4) {
+				fieldOfView = newFieldofView;
+			}
 		}
 		//NSLog(@"field of view: %f zoomingvalue : %f delta : %i",fieldOfView,zoomingValue,delta);
 	}
@@ -218,5 +225,9 @@
 	float RA = ( ((point.y - 240) / 240) * (fieldOfView * (180/M_PI) ) ) + azimuth;
 
 }*/
+
+-(void)resetZoomValue {
+	fieldOfView = 0.3 * M_PI;
+}
 
 @end

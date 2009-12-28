@@ -90,6 +90,8 @@
 	if(touchCount == 1) {
 		UITouch *aTouch = [touches anyObject];
 		
+		if(
+		   ![renderer planetView]) {
 		int x, y;
 		x = [aTouch locationInView:theView].x - [aTouch previousLocationInView:theView].x;
 		y = [aTouch locationInView:theView].y - [aTouch previousLocationInView:theView].y;
@@ -101,6 +103,7 @@
 		
 		dX += x;
 		dY += y;
+		}
 		
 		// Als er teveel wordt verschuift cancel de clicks
 		if ( -15 < dX < 15 || -15 < dY < 15) {
@@ -177,7 +180,7 @@
 		//NSLog(@"Clicked the interface");
 		[[renderer interface] touchEndedAndExecute:YES];	
 	}
-	else if(ScreenClick && dTouch < 4 && touchCount == 1) { // Het scherm mag niet lang aangeraakt worden vandaar dTouch < 4
+	else if(ScreenClick && dTouch < 4 && touchCount == 1 && ![renderer planetView]) { // Het scherm mag niet lang aangeraakt worden vandaar dTouch < 4
 		UITouch *aTouch = [touches anyObject];
 		int x = [aTouch locationInView:theView].x;
 		int y = [aTouch locationInView:theView].y;
@@ -289,7 +292,7 @@
 //				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y, sun.position.z);
 				
 				[renderer setHighlightPosition:position];
-				[renderer setHighlightSize:80]; 
+				[renderer setHighlightSize:32]; 
 				[renderer setHighlight:TRUE];
 			}
 			else {			
@@ -308,7 +311,7 @@
 //>>>>>>> 5b467e71baa2e98bbb44915d597b1fbd5ff73140:Classes/GLViewController.m
 				
 				[renderer setHighlightPosition:position];
-				[renderer setHighlightSize:80]; 
+				[renderer setHighlightSize:32]; 
 				[renderer setHighlight:TRUE];
 			}
 			else {
@@ -331,14 +334,21 @@
 					}
 				}
 				if (closestD < (2 * (1/zoomingValue))) {
+//<<<<<<< HEAD:Classes/GLViewController.m
 					//NSLog(@"Delta of closest: %f",closestD);
-					[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:NO];
+
+//=======
+					[[[renderer interface] theNameplate] setSelectedType:1];					
+					[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
+//>>>>>>> 432905627afb0f19ea3c87fa64b8b3ac63459d04:Classes/GLViewController.m
 					[[renderer interface] setANameplate:TRUE];
+					
+					[[[renderer interface] planetInfo] planetClicked:closestPlanet];
 
 					Vertex3D position = closestPlanet.position;
 					
 					[renderer setHighlightPosition:position];
-					[renderer setHighlightSize:64]; 
+					[renderer setHighlightSize:32]; 
 					[renderer setHighlight:TRUE];
 				}
 				else {
@@ -360,7 +370,7 @@
 					}
 					//FIXME waarom zo'n raar getal?
 					if(closestD < (5.1)) {
-						
+						[[[renderer interface] theNameplate] setSelectedType:0];
 						[[[renderer interface] theNameplate] setName:closestMessier.name inConstellation:@"messier" showInfo:YES];
 						[[renderer interface] setANameplate:TRUE];
 

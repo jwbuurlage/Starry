@@ -20,9 +20,12 @@
 #import "SRLocation.h"
 #import "SRLocationModule.h"
 #import "SRSettingsModule.h"
+#import "SRPlanetModule.h"
 #import "SRNamePlate.h"
 #import "Texture2D.h"
 #import "SRMessierInfo.h"
+#import "SRPlanetInfo.h"
+
 //#import "SterrenAppDelegate.h"
 
 @class SRRenderer;
@@ -36,9 +39,11 @@
 	SRTimeModule* timeModule;
 	SRLocationModule* locationModule;
 	SRSettingsModule* settingsModule;
+	SRPlanetModule* planetModule;
 	
 	SRNamePlate* theNameplate;
 	SRMessierInfo* messierInfo;
+	SRPlanetInfo* planetInfo;
 	
 	SRLocation* locationData;
 		/* We moeten de data van SRLocation naar SRLocationModule krijgen, dit is de volgens mij de kortste route */
@@ -55,9 +60,7 @@
 	//klik support
 	BOOL isClicking;
 	CGRect rectClicked;
-	
-	BOOL stopShowingMessier;
-	
+		
 	BOOL hidingMenu;
 	
 	float xTranslate;
@@ -83,13 +86,21 @@
 	NSTimeInterval lastDrawTime;
 	BOOL aMenu;
 	BOOL aMessier;
+	BOOL aPlanet;
 	BOOL aModule;
 	BOOL aNameplate;
 	BOOL aInterface;
 	BOOL interfaceDown;
 	
+	NSTimer* notFoundTimer;
+	Texture2D* foundText;
+	Texture2D* foundObjectText;
+	NSString* foundTextString;
+	NSString* foundObjectTextString;
+	Texture2D* searchIcon;
+	BOOL searchResult;
 	
-		
+	BOOL showingPlanet;
 	BOOL showingMessier;
 	BOOL menuVisible;
 }
@@ -98,6 +109,7 @@
 @property (readonly) SRRenderer* renderer;
 @property (readonly) SRNamePlate* theNameplate;
 @property (readonly) SRMessierInfo* messierInfo;
+@property (readonly) SRPlanetInfo* planetInfo;
 @property (nonatomic, assign) BOOL showingMessier;
 @property (nonatomic, assign) BOOL aNameplate;
 
@@ -120,5 +132,6 @@
 -(void)drawRedOverlay;
 
 -(void)calculateAnimations;
+-(void)notFoundFade:(NSTimer*)theTimer;
 
 @end

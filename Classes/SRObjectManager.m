@@ -172,32 +172,35 @@
 	for (planet in planets) {
 		[planet recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
 		if (planet.a != 1) {  //slordig hooorr
-			[planet setViewOrigin:[[planets objectAtIndex:0] position]];
+			[planet setViewOrigin:[[planets objectAtIndex:0] positionHelio]];
 		}
 	}
 	
 	const GLfloat planetPointsTmp[] = {
 		// de Zon
-		[sun position].x, [sun position].y, [sun position].z,																	1.0, 1.0, 0.0, 1.0, 25.0,
+		[sun position].x, [sun position].y, [sun position].z,																	1.0, 1.0, 0.0, 1.0, 20.0,
 		//de maan
-		[moon position].x, [moon position].y, [moon position].z,																1.0, 1.0, 1.0, 1.0, 25.0,		
+		[moon position].x, [moon position].y, [moon position].z,																1.0, 1.0, 1.0, 1.0, 20.0,		
 		// Jupiter
 		[[planets objectAtIndex:1] position].x, [[planets objectAtIndex:1] position].y, [[planets objectAtIndex:1] position].z,	1.0, 0.5, 0.0, 1.0, 10.0,
-		// Mars
-		[[planets objectAtIndex:4] position].x, [[planets objectAtIndex:4] position].y, [[planets objectAtIndex:4] position].z,	1.0, 0.0, 0.0, 1.0, 10.0,
 		// Mercurius
 		[[planets objectAtIndex:2] position].x, [[planets objectAtIndex:2] position].y, [[planets objectAtIndex:2] position].z,	0.7, 0.7, 0.7, 1.0, 10.0,
 		// Venus
 		[[planets objectAtIndex:3] position].x, [[planets objectAtIndex:3] position].y, [[planets objectAtIndex:3] position].z,	0.5, 1.0, 0.5, 1.0, 10.0,
-		//Saturnus
+		// Mars
+		[[planets objectAtIndex:4] position].x, [[planets objectAtIndex:4] position].y, [[planets objectAtIndex:4] position].z,	1.0, 0.0, 0.0, 1.0, 10.0,
+		// Saturnus
 		[[planets objectAtIndex:5] position].x, [[planets objectAtIndex:5] position].y, [[planets objectAtIndex:5] position].z,	0.8, 0.5, 0.0, 1.0, 10.0,
 		// Uranus
-		[[planets objectAtIndex:6] position].x, [[planets objectAtIndex:6] position].y, [[planets objectAtIndex:6] position].z,	0.2, 0.2, 1.0, 1.0, 5.0,
+		[[planets objectAtIndex:6] position].x, [[planets objectAtIndex:6] position].y, [[planets objectAtIndex:6] position].z,	0.5, 0.5, 1.0, 1.0, 5.0,
 		// Neptunus
-		[[planets objectAtIndex:7] position].x, [[planets objectAtIndex:7] position].y, [[planets objectAtIndex:7] position].z,	0.5, 0.5, 1.0, 1.0, 5.0
+		[[planets objectAtIndex:7] position].x, [[planets objectAtIndex:7] position].y, [[planets objectAtIndex:7] position].z,	0.2, 0.2, 1.0, 1.0, 5.0,
+		// Aaarde voor planetView
+		0.0, 0.0, 0.0,	0.4, 0.4, 1.0, 1.0, 10.0
+
 	};
 	
-	planetNum = 9;
+	planetNum = 10;
 	
 	if (planetPoints) {
 		[planetPoints release];

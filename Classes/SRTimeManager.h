@@ -32,6 +32,7 @@
 
 @property (readonly) NSDate* simulatedDate;
 @property (assign) int totalInterval;
+@property (assign) int speed;
 @property (assign) SRTimeModule *moduleInstance;
 @property (readonly) float elapsed;
 

@@ -18,7 +18,7 @@
 
 @implementation SRInterface
 
-@synthesize timeModule,renderer,theNameplate, messierInfo, showingMessier, aNameplate;
+@synthesize timeModule,renderer,theNameplate, messierInfo, planetInfo, showingMessier, aNameplate;
 
 -(id)initWithRenderer:(SRRenderer*)theRenderer {
 	if(self = [super init]) {
@@ -29,7 +29,6 @@
 		
 		menuVisible = TRUE;
 		
-		stopShowingMessier = FALSE;
 		
 		[self loadMenu];
 		[self loadModules];
@@ -37,17 +36,23 @@
 		[self loadTexture:@"click.png" intoLocation:textures[[UIElements count]]];
 		
 		messierInfo = [[SRMessierInfo alloc] init];
+		planetInfo = [[SRPlanetInfo alloc] init];
 		
 		defaultTextureBool = TRUE;
 		alphaDefault = 1.0f;
 		yTranslate = 0.0f;
 		defaultTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"defaultTexture.png"]];
-		//[self fadeDefaultTexture];
 		aFade = TRUE;
+		
+		xTranslate = 0;
+		[[[UIElements objectAtIndex:[UIElements count] - 1] texture] invertTexCoord];
 		
 		notFoundTextureBool = FALSE;
 		alphaNotFound = 0.0f;
 		notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
+		foundTextString = [[NSString alloc] initWithString:@"Gevonden:"];
+		foundText = [[Texture2D alloc] initWithString:foundTextString dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		foundObjectText = [[Texture2D alloc] initWithString:@"M31" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 		bFade = FALSE;
 	}
 	return self;
@@ -210,6 +215,11 @@
 	locationModule = [[SRLocationModule alloc] initWithSRLocation:[renderer location]];
 	[modules addObject:locationModule];
 	
+	//planets
+	planetModule = [[SRPlanetModule alloc] init];
+	[modules addObject:planetModule];
+	
+	//settings
 	settingsModule = [[SRSettingsModule alloc] init];
 	[modules addObject:settingsModule];
 }
@@ -223,7 +233,6 @@
 	[self calculateAnimations];
 	[[timeModule manager] tickOfTime:timeElapsed];
 	//NSLog(@"%f", timeElapsed);
-	
 	
 	glMatrixMode(GL_PROJECTION); 
 	glLoadIdentity();
@@ -245,15 +254,6 @@
     glColor4f(1.0, 1.0, 1.0, 1.0);      
     glVertexPointer(3, GL_FLOAT, 0, textureCorners);
     glEnableClientState(GL_VERTEX_ARRAY);
-	
-	if(defaultTextureBool) {
-		glColor4f(1.0, 1.0, 1.0, alphaDefault);      
-		[defaultTexture drawInRect:CGRectMake(0,-192,512,512)];
-	}
-	if(notFoundTextureBool) {
-		glColor4f(1.0, 1.0, 1.0, alphaNotFound);      
-		[notFoundTexture drawInRect:CGRectMake(0,-192,512,512)];
-	}
 	
 	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
@@ -318,11 +318,34 @@
 		[messierInfo draw];
 	}
 	
+	if(showingPlanet) {
+		[planetInfo draw];
+	}
 	
 	if([[appDelegate settingsManager] showRedOverlay]) {
 		[self drawRedOverlay];
 	}
 
+	if(defaultTextureBool) {
+		glColor4f(1.0, 1.0, 1.0, alphaDefault);      
+		[defaultTexture drawInRect:CGRectMake(0,-192,512,512)];
+	}
+	if(notFoundTextureBool) {
+		glColor4f(1.0, 1.0, 1.0, alphaNotFound);      
+		[notFoundTexture drawInRect:CGRectMake(176,68,128,64)];
+		[searchIcon drawInRect:CGRectMake(220,87,39,39)];
+		glColor4f(0.5, 0.5, 0.5, alphaNotFound);   
+		
+		float combinedwidth = [foundTextString sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width + 
+							  [foundObjectTextString sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width + 5;
+		
+		[foundText drawInRect:CGRectMake(240 - combinedwidth / 2,55,64,32)];
+		if(searchResult)
+			glColor4f(0.56f, 0.831f, 0.0f, alphaNotFound);
+		else 
+			glColor4f(1.0f, 0.2f, 0.2f, alphaNotFound);
+		[foundObjectText drawInRect:CGRectMake(240 - combinedwidth / 2 + [foundTextString sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width + 2,55,64,32)];
+	}
 	
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 			
@@ -354,10 +377,16 @@
 	BOOL flag = FALSE;
 
 	if(showingMessier == TRUE) {
-		stopShowingMessier = TRUE;
 		[messierInfo hide];
 		aMessier = YES;
-		clicker = @"messier";
+		clicker = @"messierinfo";
+		return TRUE;
+	}
+	
+	if(showingPlanet == TRUE) {
+		[planetInfo hide];
+		aPlanet = YES;
+		clicker = @"planetinfo";
 		return TRUE;
 	}
 	
@@ -419,7 +448,7 @@
 	
 	// Als er een keyboard omhoog staat mag er niet nog een keer een keyboard omhoog komen.
 	// Als de click niet weggesleept is mag er door worden gegaan
-	if(![fieldTmp isFirstResponder] && result && clicker != @"messier") {
+	if(![fieldTmp isFirstResponder] && result && clicker != @"messierinfo" && clicker != @"planetinfo") {
 		
 		BOOL flagToggle = FALSE;
 	
@@ -462,6 +491,24 @@
 				[self hideAllModules];
 				[settingsModule show];
 				aModule = TRUE;
+			}
+		}
+		else if(clicker == @"planet") {
+			if([planetModule visible]) {
+				[planetModule hide];	
+				aModule = TRUE;
+			}
+			else {
+				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
+				[[UIElements objectAtIndex:3] setBounds:CGRectZero];
+				[self hideAllModules];
+				[planetModule show];
+				aModule = TRUE;
+				[renderer setPlanetView:TRUE];
+				[theNameplate hide];
+				aNameplate = TRUE;
+				[camera setPlanetView:TRUE];
+				[camera resetZoomValue];
 			}
 		}
 		else if(clicker == @"searchfield" || clicker == @"search") {
@@ -543,9 +590,16 @@
 			}
 		}		
 		else if(clicker == @"info") {
-			[messierInfo show];
-			aMessier = YES;
-			showingMessier = YES;
+			if([theNameplate selectedType] == 0) {
+				[messierInfo show];
+				aMessier = YES;
+				showingMessier = YES;
+			}
+			else if([theNameplate selectedType] == 1) {
+				[planetInfo show];
+				aPlanet = YES;
+				showingPlanet = YES;				
+			}
 		}	
 		else if(clicker == @"icon") {	
 			if([timeModule visible]) {
@@ -562,6 +616,15 @@
 				[settingsModule hide];
 				[[UIElements objectAtIndex:6] setBounds:CGRectMake(392, -55, 31, 31)];
 				aModule = TRUE;
+			}
+			if([planetModule visible]) {
+				[camera setPlanetView:FALSE];
+				[camera resetZoomValue];
+				[planetModule hide];
+				[[timeModule manager] setSpeed:1];
+				[[UIElements objectAtIndex:3] setBounds:CGRectMake(112, -55, 31, 31)];
+				aModule = TRUE;
+				[renderer setPlanetView:FALSE];
 			}
 			
 			hidingMenu = FALSE;
@@ -631,6 +694,28 @@
 			}
 		}	
 	}
+	
+	if(aPlanet) {
+		if([planetInfo hiding]) {
+			[planetInfo setAlphaValue:[planetInfo alphaValue] - ( 0.1f * (timeElapsed / 0.05) )];
+			[planetInfo setAlphaValueName:[planetInfo alphaValueName] - ( 0.1f * (timeElapsed / 0.05) )];
+			if([planetInfo alphaValue] <= 0.0f) {
+				aPlanet = FALSE;
+				showingPlanet = FALSE;
+				[planetInfo setHiding:FALSE];
+			}
+		}
+		else {
+			[planetInfo setAlphaValue:[planetInfo alphaValue] + ( 0.1f * (timeElapsed / 0.05) )];
+			[planetInfo setAlphaValueName:[planetInfo alphaValueName] + ( 0.1f * (timeElapsed / 0.05) )];
+			if([planetInfo alphaValueName] >= 1.0f) {
+				aPlanet = FALSE;
+				[planetInfo setAlphaValue: 1.0f];
+				[planetInfo setAlphaValueName: 1.0f];
+			}
+		}	
+	}
+	
 	
 	if(aModule) {
 		for (SRModule* module in modules) {
@@ -718,7 +803,6 @@
 }
 
 -(void)hideInterface {
-	//FIXME IMPLEMENT MET TIMEELAPSED IN DE DRAW SEQUENCE
 	aInterface = TRUE;
 	interfaceDown = TRUE;
 }
@@ -843,45 +927,105 @@
 		}
 		else if (currentlyEditingIdentifier == @"search") {
 			SRMessier * aMessierObject;
+			SRPlanetaryObject* aPlanet;
 			SRMessier * foundMessier;
-			BOOL result = FALSE;
+			SRPlanetaryObject* foundPlanet;
+			searchResult = FALSE;
+			
+			int type; //0 = messier, 1 = planet
 			
 			for(aMessierObject in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
 				if ([[aMessierObject name] isEqualToString:aValue]) {
 					foundMessier = aMessierObject;
-					result = TRUE;
+					searchResult = TRUE;
+					type = 0;
 				}						
 			}
-			if(result) {
-				
-				[[self theNameplate] setName:foundMessier.name inConstellation:@"messier" showInfo:YES];
-				[self setANameplate:TRUE];
-				
-				[[self messierInfo] messierClicked:foundMessier];
-				
-				Vertex3D posForCam = [foundMessier myCurrentPosition];
-				float azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
-				float alTmp = 90-(180/M_PI)*acos(-posForCam.z);
-				//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
-				
-				Vertex3D position = foundMessier.position;
-				
-				[renderer setHighlightPosition:position];
-				[renderer setHighlightSize:32]; 
-				[renderer setHighlight:TRUE];
-				
-				[camera setAzimuth:azTmp];
-				[camera setAltitude:alTmp];
-				[camera adjustView];
-				
-				
-				
+			
+			for(aPlanet in [[[[UIApplication sharedApplication] delegate] objectManager] planets]) {	
+				if ([[aPlanet name] isEqualToString:aValue]) {
+					foundPlanet = aPlanet;
+					searchResult = TRUE;
+					type = 1;
+				}						
 			}
-			else {
+			
+			
+			if(searchResult) {
+				if(searchIcon)
+					[searchIcon release];
+				searchIcon = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"searchYes.png"]];
+				
+				float azTmp, alTmp;
+				
+				if(type == 0) {
+					if(foundObjectText)
+						foundObjectTextString = foundMessier.name;
+						[foundObjectText release];
+						foundObjectText = [[Texture2D alloc] initWithString:foundMessier.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+						[theNameplate setName:foundMessier.name inConstellation:@"messier" showInfo:YES];
+						[messierInfo messierClicked:foundMessier];
+						[theNameplate setSelectedType:0];
+						Vertex3D posForCam = [foundMessier myCurrentPosition];
+						azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+						alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+						//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+						
+						Vertex3D position = foundMessier.position;
+						
+						[renderer setHighlightPosition:position];
+						[renderer setHighlightSize:32]; 
+						[renderer setHighlight:TRUE];
+				}
+				else if(type == 1) {
+					foundObjectTextString = foundPlanet.name;
+
+					if(foundObjectText)
+						[foundObjectText release];
+					foundObjectText = [[Texture2D alloc] initWithString:foundPlanet.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+					
+					[theNameplate setName:foundPlanet.name inConstellation:@"planeet" showInfo:YES];
+					[planetInfo planetClicked:foundPlanet];
+					[theNameplate setSelectedType:1];
+					Vertex3D posForCam = [foundPlanet myCurrentPosition];
+					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+					
+					NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+					
+					Vertex3D position = foundPlanet.position;
+					
+					[renderer setHighlightPosition:position];
+					[renderer setHighlightSize:32]; 
+					[renderer setHighlight:TRUE];
+				}
+
+				
 				notFoundTextureBool = TRUE;
 				alphaNotFound = 1.0f;
 				//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
-				bFade = TRUE;	
+				notFoundTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notFoundFade:) userInfo:nil repeats:NO] retain];				
+				
+				[self setANameplate:TRUE];
+				
+				[camera setAzimuth:azTmp];
+				[camera setAltitude:alTmp];
+				[camera adjustView];				
+			}
+			else {
+				if(searchIcon)
+					[searchIcon release];
+				searchIcon = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"searchNo.png"]];
+				
+				if(foundObjectText)
+					[foundObjectText release];
+				foundObjectTextString = [[NSString alloc] initWithString:@"Niets"];
+				foundObjectText = [[Texture2D alloc] initWithString:@"Niets" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];				
+				
+				notFoundTextureBool = TRUE;
+				alphaNotFound = 1.0f;
+				//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
+				notFoundTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notFoundFade:) userInfo:nil repeats:NO] retain];
 			}
 		}
 		
@@ -899,6 +1043,11 @@
 						  
 -(void)fadeDefaultTexture {
 	//aFade = TRUE;
+}
+
+-(void)notFoundFade:(NSTimer*)theTimer {
+	bFade = TRUE;
+	[notFoundTimer release];
 }
 
 

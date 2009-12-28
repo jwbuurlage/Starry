@@ -68,4 +68,9 @@
 	[gregorian release];	
 }
 
+-(Vertex3D)positionHelio { 
+	return Vertex3DMake(0,0,0);
+}
+
+
 @end

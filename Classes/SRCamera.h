@@ -46,6 +46,7 @@
 	
 	BOOL swipeHor;
 	BOOL swipeVer;
+	BOOL planetView;
 	
 	int hSteps;
 	int vSteps;
@@ -53,6 +54,7 @@
 	GLfloat zoomingValue; 
 }
 
+@property (readwrite) BOOL planetView;
 @property (readwrite) float altitude;
 @property (readwrite) float azimuth;
 
@@ -64,6 +66,7 @@
 - (void)initiateHorizontalSwipeWithX:(int)theX;
 - (void)initiateVerticalSwipeWithY:(int)theY;
 - (void)reenable;
+- (void)resetZoomValue;
 //- (void)RAAndDecForPoint:(CGPoint)point;
 
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY;

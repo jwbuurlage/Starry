@@ -37,10 +37,12 @@
 	NSString* name;
 	
 	Vertex3D position;
+	Vertex3D positionHelio;
 	Texture2D* nameTexture;
 }
 
 @property (readonly) Vertex3D position;
+@property (readonly) Vertex3D positionHelio;
 @property (readonly) float a;
 @property (readonly) NSString* name;
 @property (readwrite) BOOL selected;
@@ -56,7 +58,8 @@
 -(void)recalculatePosition:(NSDate*)theDate;
 -(void)setViewOrigin:(Vertex3D)origin;
 -(Vertex3D)myCurrentPosition;
--(void)draw;
+-(void)drawHelio:(BOOL)helio;
+-(Vertex3D)heliocentricPosition:(NSDate*)theDate;
 
 //getters
 /*
