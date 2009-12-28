@@ -281,7 +281,7 @@
 			sunD = sqrt(xd*xd + yd*yd + zd*zd);
 			
 			if (sunD < (2 * (1/zoomingValue))) {
-				[[[renderer interface] theNameplate] setName:@"Zon" inConstellation:@"onze ster" showInfo:YES];
+				[[[renderer interface] theNameplate] setName:@"Zon" inConstellation:@"onze ster" showInfo:NO];
 				[[renderer interface] setANameplate:TRUE];
 
 //<<<<<<< HEAD:Classes/GLViewController.m
@@ -303,7 +303,7 @@
 			moonD = sqrt(xd*xd + yd*yd + zd*zd);
 			
 			if (moonD < (2 * (1/zoomingValue))) {
-				[[[renderer interface] theNameplate] setName:@"Maan" inConstellation:@"" showInfo:YES];
+				[[[renderer interface] theNameplate] setName:@"Maan" inConstellation:@"" showInfo:NO];
 				[[renderer interface] setANameplate:TRUE];
 
 				//Vertex3D position = ;

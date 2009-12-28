@@ -37,9 +37,9 @@
 	};
 	1F92F5EA0FDFF83200548BE8 /* GLViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1161, 8209}}";
-			sepNavSelRange = "{5251, 543}";
-			sepNavVisRange = "{5109, 1229}";
+			sepNavIntBoundsRect = "{{0, 0}, {1161, 8308}}";
+			sepNavSelRange = "{8544, 0}";
+			sepNavVisRange = "{8061, 1153}";
 			sepNavWindowFrame = "{{387, 4}, {750, 874}}";
 		};
 	};
@@ -343,6 +343,11 @@
 			76C8048310E92BEE0082435B /* PBXTextBookmark */ = 76C8048310E92BEE0082435B /* PBXTextBookmark */;
 			76C8048410E92C1C0082435B /* PBXTextBookmark */ = 76C8048410E92C1C0082435B /* PBXTextBookmark */;
 			76C8048510E92C1C0082435B /* PBXTextBookmark */ = 76C8048510E92C1C0082435B /* PBXTextBookmark */;
+			76C8048610E92D850082435B /* PBXTextBookmark */ = 76C8048610E92D850082435B /* PBXTextBookmark */;
+			76C8048710E92DA70082435B /* PBXTextBookmark */ = 76C8048710E92DA70082435B /* PBXTextBookmark */;
+			76C8048810E92DA70082435B /* PBXTextBookmark */ = 76C8048810E92DA70082435B /* PBXTextBookmark */;
+			76C8048910E92DA70082435B /* PBXTextBookmark */ = 76C8048910E92DA70082435B /* PBXTextBookmark */;
+			76C8048A10E92DA70082435B /* PBXTextBookmark */ = 76C8048A10E92DA70082435B /* PBXTextBookmark */;
 			76D1C22E10CDB2A2005BC919 = 76D1C22E10CDB2A2005BC919 /* PBXTextBookmark */;
 			76D7BAF110E0AEE700F8806E = 76D7BAF110E0AEE700F8806E /* PBXTextBookmark */;
 			76D7BAF310E0AEE700F8806E = 76D7BAF310E0AEE700F8806E /* PBXTextBookmark */;
@@ -943,7 +948,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 337";
 		rLen = 0;
-		rLoc = 9628;
+		rLoc = 9626;
 		rType = 0;
 		vrLen = 786;
 		vrLoc = 9322;
@@ -953,7 +958,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 337";
 		rLen = 0;
-		rLoc = 9628;
+		rLoc = 9626;
 		rType = 0;
 		vrLen = 1717;
 		vrLoc = 9216;
@@ -994,7 +999,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 337";
 		rLen = 0;
-		rLoc = 9628;
+		rLoc = 9626;
 		rType = 0;
 		vrLen = 1143;
 		vrLoc = 1007;
@@ -1094,7 +1099,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 337";
 		rLen = 0;
-		rLoc = 9628;
+		rLoc = 9626;
 		rType = 0;
 		vrLen = 1703;
 		vrLoc = 9216;
@@ -1114,7 +1119,7 @@
 		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
 		name = "GLViewController.m: 337";
 		rLen = 0;
-		rLoc = 9628;
+		rLoc = 9626;
 		rType = 0;
 		vrLen = 1618;
 		vrLoc = 10031;
@@ -2368,6 +2373,56 @@
 		vrLen = 1951;
 		vrLoc = 3935;
 	};
+	76C8048610E92D850082435B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC1BA73B10C0225D0084CF6F /* SRConstellation.m */;
+		name = "SRConstellation.m: 111";
+		rLen = 0;
+		rLoc = 3021;
+		rType = 0;
+		vrLen = 640;
+		vrLoc = 2892;
+	};
+	76C8048710E92DA70082435B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC1BA73B10C0225D0084CF6F /* SRConstellation.m */;
+		name = "SRConstellation.m: 111";
+		rLen = 0;
+		rLoc = 3021;
+		rType = 0;
+		vrLen = 982;
+		vrLoc = 2692;
+	};
+	76C8048810E92DA70082435B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 209";
+		rLen = 543;
+		rLoc = 5251;
+		rType = 0;
+		vrLen = 1207;
+		vrLoc = 5109;
+	};
+	76C8048910E92DA70082435B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 306";
+		rLen = 0;
+		rLoc = 8544;
+		rType = 0;
+		vrLen = 1153;
+		vrLoc = 8061;
+	};
+	76C8048A10E92DA70082435B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 123";
+		rLen = 0;
+		rLoc = 4633;
+		rType = 0;
+		vrLen = 1951;
+		vrLoc = 3935;
+	};
 	76D1C22E10CDB2A2005BC919 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = AC9A926910C6F1C500657268 /* SRConstellationLine.h */;
@@ -2523,9 +2578,9 @@
 	};
 	AC1BA73B10C0225D0084CF6F /* SRConstellation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1804, 2754}}";
-			sepNavSelRange = "{3070, 0}";
-			sepNavVisRange = "{2727, 837}";
+			sepNavIntBoundsRect = "{{0, 0}, {1804, 2702}}";
+			sepNavSelRange = "{3021, 0}";
+			sepNavVisRange = "{2692, 982}";
 			sepNavWindowFrame = "{{15, 75}, {1039, 798}}";
 		};
 	};
