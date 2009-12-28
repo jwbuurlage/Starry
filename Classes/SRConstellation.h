@@ -43,4 +43,6 @@
 -(void)drawText;
 -(void)makeArray;
 
+-(Vertex3D)myCurrentPosition;
+
 @end

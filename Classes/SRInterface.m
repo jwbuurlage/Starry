@@ -929,8 +929,10 @@
 			SRMessier * aMessierObject;
 			SRPlanetaryObject* bPlanet; // aPlanet is een ivar
 			SRStar* aStar;
+			SRConstellation* aConstellation;
 			SRMessier * foundMessier;
 			SRStar * foundStar;
+			SRConstellation* foundConstellation;
 			SRPlanetaryObject* foundPlanet;
 			searchResult = FALSE;
 			
@@ -960,6 +962,13 @@
 				}						
 			}
 			
+			for(aConstellation in [[appDelegate objectManager] constellations]) {	
+				if ([[[aConstellation name] lowercaseString] hasPrefix:[aValue lowercaseString]]) {
+					foundConstellation = aConstellation;
+					searchResult = TRUE;
+					type = 3;
+				}						
+			}
 			
 			if(searchResult) {
 				if(searchIcon)
@@ -986,6 +995,8 @@
 						[renderer setHighlightPosition:position];
 						[renderer setHighlightSize:32]; 
 						[renderer setHighlight:TRUE];
+					
+						[self setANameplate:TRUE];
 				}
 				else if(type == 1) { //Planeet
 					foundObjectTextString = foundPlanet.name;
@@ -1008,6 +1019,8 @@
 					[renderer setHighlightPosition:position];
 					[renderer setHighlightSize:32]; 
 					[renderer setHighlight:TRUE];
+					
+					[self setANameplate:TRUE];
 				}
 				else if(type == 2) { // Ster
 					if(foundObjectText)
@@ -1028,6 +1041,25 @@
 					[renderer setHighlightPosition:position];
 					[renderer setHighlightSize:32]; 
 					[renderer setHighlight:TRUE];
+					
+					[self setANameplate:TRUE];
+				}
+				else if(type == 3) { // Constellation
+					if(foundObjectText)
+						foundObjectTextString = foundConstellation.name;
+					[foundObjectText release];
+					foundObjectText = [[Texture2D alloc] initWithString:foundConstellation.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+					
+					//Vertex3D posForCam = [foundStar myCurrentPosition];
+					Vertex3D posForCam = [foundConstellation myCurrentPosition];
+					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+					
+					
+					//azTmp = foundConstellation.ra;
+					//alTmp = foundConstellation.dec;
+					NSLog(@"Sterrenbeeld resultaat: azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+					
 				}
 
 				
@@ -1036,7 +1068,7 @@
 				//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
 				notFoundTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notFoundFade:) userInfo:nil repeats:NO] retain];				
 				
-				[self setANameplate:TRUE];
+				
 				
 				[camera setAzimuth:azTmp];
 				[camera setAltitude:alTmp];
