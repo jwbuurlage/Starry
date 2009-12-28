@@ -162,7 +162,7 @@
 	brY = maY;
 	brZ = maZ;
 	
-	Vertex3D result = Vertex3DMake(-brX, -brY, -brZ);
+	Vertex3D result = Vertex3DMake(-brX/20, -brY/20, -brZ/20);
 	
 	NSLog(@"Geroteerde locatie ster berekend x:%f y:%f z:%f",-brX/20,-brY/20,-brZ/20);
 	

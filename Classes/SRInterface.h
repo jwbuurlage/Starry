@@ -86,7 +86,7 @@
 	NSTimeInterval lastDrawTime;
 	BOOL aMenu;
 	BOOL aMessier;
-	BOOL aPlanet;
+	BOOL aPlanet; // in search code was er een conflict, nu daar bPlanet
 	BOOL aModule;
 	BOOL aNameplate;
 	BOOL aInterface;

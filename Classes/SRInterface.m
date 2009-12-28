@@ -927,26 +927,36 @@
 		}
 		else if (currentlyEditingIdentifier == @"search") {
 			SRMessier * aMessierObject;
-			SRPlanetaryObject* aPlanet;
+			SRPlanetaryObject* bPlanet; // aPlanet is een ivar
+			SRStar* aStar;
 			SRMessier * foundMessier;
+			SRStar * foundStar;
 			SRPlanetaryObject* foundPlanet;
 			searchResult = FALSE;
 			
 			int type; //0 = messier, 1 = planet
 			
-			for(aMessierObject in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
-				if ([[aMessierObject name] isEqualToString:aValue]) {
+			for(aMessierObject in [[appDelegate objectManager] messier]) {	
+				if ([[[aMessierObject name] lowercaseString] hasPrefix:[aValue lowercaseString]]) {
 					foundMessier = aMessierObject;
 					searchResult = TRUE;
 					type = 0;
 				}						
 			}
 			
-			for(aPlanet in [[[[UIApplication sharedApplication] delegate] objectManager] planets]) {	
-				if ([[aPlanet name] isEqualToString:aValue]) {
-					foundPlanet = aPlanet;
+			for(bPlanet in [[appDelegate objectManager] planets]) {	
+				if ([[[bPlanet name] lowercaseString] hasPrefix:[aValue lowercaseString]]) {
+					foundPlanet = bPlanet;
 					searchResult = TRUE;
 					type = 1;
+				}						
+			}
+			
+			for(aStar in [[appDelegate objectManager] stars]) {	
+				if ([[[aStar name] lowercaseString] hasPrefix:[aValue lowercaseString]]) {
+					foundStar = aStar;
+					searchResult = TRUE;
+					type = 2;
 				}						
 			}
 			
@@ -958,14 +968,14 @@
 				
 				float azTmp, alTmp;
 				
-				if(type == 0) {
+				if(type == 0) { // Messier
 					if(foundObjectText)
 						foundObjectTextString = foundMessier.name;
 						[foundObjectText release];
 						foundObjectText = [[Texture2D alloc] initWithString:foundMessier.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 						[theNameplate setName:foundMessier.name inConstellation:@"messier" showInfo:YES];
 						[messierInfo messierClicked:foundMessier];
-						[theNameplate setSelectedType:0];
+						[theNameplate setSelectedType:type];
 						Vertex3D posForCam = [foundMessier myCurrentPosition];
 						azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
 						alTmp = 90-(180/M_PI)*acos(-posForCam.z);
@@ -977,7 +987,7 @@
 						[renderer setHighlightSize:32]; 
 						[renderer setHighlight:TRUE];
 				}
-				else if(type == 1) {
+				else if(type == 1) { //Planeet
 					foundObjectTextString = foundPlanet.name;
 
 					if(foundObjectText)
@@ -986,7 +996,7 @@
 					
 					[theNameplate setName:foundPlanet.name inConstellation:@"planeet" showInfo:YES];
 					[planetInfo planetClicked:foundPlanet];
-					[theNameplate setSelectedType:1];
+					[theNameplate setSelectedType:type];
 					Vertex3D posForCam = [foundPlanet myCurrentPosition];
 					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
 					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
@@ -994,6 +1004,26 @@
 					NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
 					
 					Vertex3D position = foundPlanet.position;
+					
+					[renderer setHighlightPosition:position];
+					[renderer setHighlightSize:32]; 
+					[renderer setHighlight:TRUE];
+				}
+				else if(type == 2) { // Ster
+					if(foundObjectText)
+						foundObjectTextString = foundStar.name;
+					[foundObjectText release];
+					foundObjectText = [[Texture2D alloc] initWithString:foundStar.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+					[theNameplate setName:foundStar.name inConstellation:foundStar.bayer showInfo:NO];
+					//[messierInfo messierClicked:foundStar];
+					[theNameplate setSelectedType:type];
+					
+					Vertex3D posForCam = [foundStar myCurrentPosition];
+					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+					
+					Vertex3D position = Vertex3DMake([foundStar.x floatValue],[foundStar.y floatValue],[foundStar.z floatValue]);
 					
 					[renderer setHighlightPosition:position];
 					[renderer setHighlightSize:32]; 
