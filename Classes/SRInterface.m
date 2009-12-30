@@ -934,20 +934,36 @@
 			SRStar * foundStar;
 			SRConstellation* foundConstellation;
 			SRPlanetaryObject* foundPlanet;
+			SRSun* foundSun;
+			SRMoon* foundMoon;
 			searchResult = FALSE;
 			
-			int type; //0 = messier, 1 = planet
+			BOOL found = FALSE;
 			
-			for(aMessierObject in [[appDelegate objectManager] messier]) {	
-				if ([[[aMessierObject name] lowercaseString] hasPrefix:[aValue lowercaseString]]) {
+			int type; //0 = messier, 1 = planet, 2 = ster, 3 = sterrenbeeld, 4 = zon, 5 = maan
+			
+			for(aMessierObject in [[appDelegate objectManager] messier]) {
+				if ([[[aMessierObject name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+					foundMessier = aMessierObject;
+					searchResult = TRUE;
+					type = 0;
+					found = TRUE;
+				}
+				else if ([[[aMessierObject name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
 					foundMessier = aMessierObject;
 					searchResult = TRUE;
 					type = 0;
 				}						
 			}
 			
-			for(bPlanet in [[appDelegate objectManager] planets]) {	
-				if ([[[bPlanet name] lowercaseString] hasPrefix:[aValue lowercaseString]]) {
+			for(bPlanet in [[appDelegate objectManager] planets]) {
+				if ([[[bPlanet name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+					foundPlanet = bPlanet;
+					searchResult = TRUE;
+					type = 1;
+					found = TRUE;
+				}
+				else if ([[[bPlanet name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
 					foundPlanet = bPlanet;
 					searchResult = TRUE;
 					type = 1;
@@ -955,19 +971,45 @@
 			}
 			
 			for(aStar in [[appDelegate objectManager] stars]) {	
-				if ([[[aStar name] lowercaseString] hasPrefix:[aValue lowercaseString]]) {
+				if ([[[aStar name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+					foundStar = aStar;
+					searchResult = TRUE;
+					type = 2;
+					found = TRUE;
+				}
+				else if ([[[aStar name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
 					foundStar = aStar;
 					searchResult = TRUE;
 					type = 2;
 				}						
 			}
 			
-			for(aConstellation in [[appDelegate objectManager] constellations]) {	
-				if ([[[aConstellation name] lowercaseString] hasPrefix:[aValue lowercaseString]]) {
+			for(aConstellation in [[appDelegate objectManager] constellations]) {
+				if ([[[aConstellation name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+					foundConstellation = aConstellation;
+					searchResult = TRUE;
+					type = 3;
+					found = TRUE;
+				}
+				if ([[[aConstellation name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
 					foundConstellation = aConstellation;
 					searchResult = TRUE;
 					type = 3;
 				}						
+			}
+			
+			if ([[[NSString stringWithString:@"Zon"] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+				foundSun = [[appDelegate objectManager] sun];
+				searchResult = TRUE;
+				type = 4;
+				found = TRUE;
+			}
+			
+			if ([[[NSString stringWithString:@"Maan"] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+				foundMoon = [[appDelegate objectManager] moon];
+				searchResult = TRUE;
+				type = 5;
+				found = TRUE;
 			}
 			
 			if(searchResult) {
@@ -1012,7 +1054,7 @@
 					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
 					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
 					
-					NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
 					
 					Vertex3D position = foundPlanet.position;
 					
@@ -1059,6 +1101,33 @@
 					//azTmp = foundConstellation.ra;
 					//alTmp = foundConstellation.dec;
 					NSLog(@"Sterrenbeeld resultaat: azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+					
+				}
+				else if(type == 4) {
+					foundObjectTextString = [NSString stringWithString:@"Zon"];
+					
+					if(foundObjectText)
+						[foundObjectText release];
+					foundObjectText = [[Texture2D alloc] initWithString:@"Zon" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+					
+					[theNameplate setName:@"Zon" inConstellation:@"onze ster" showInfo:YES];
+					[planetInfo planetClicked:foundSun];
+					[theNameplate setSelectedType:type];
+					Vertex3D posForCam = [foundSun myCurrentPosition];
+					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+					
+					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+					
+					Vertex3D position = foundSun.position;
+					
+					[renderer setHighlightPosition:position];
+					[renderer setHighlightSize:32]; 
+					[renderer setHighlight:TRUE];
+					
+					[self setANameplate:TRUE];
+				}
+				else if (type == 5) {
 					
 				}
 
