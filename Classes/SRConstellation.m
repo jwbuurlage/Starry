@@ -109,7 +109,7 @@
 -(Vertex3D)myCurrentPosition {
 	
 	float readRARad = fmod(ra,360) * (M_PI/180);
-	float readDECRad = (-dec-90) * (M_PI/180);
+	float readDECRad = (90 - dec) * (M_PI/180);
 	NSLog(@"Sterrenbeeld positie, to transform = ra:%f dec:%f",fmod(ra,360),dec);
 	
 	float brX = sin(readDECRad)*cos(readRARad);
@@ -156,7 +156,7 @@
 	brY = maY;
 	brZ = maZ;
 	
-	Vertex3D result = Vertex3DMake(brX, brY, brZ);
+	Vertex3D result = Vertex3DMake(-brX, brY, brZ);
 	
 	NSLog(@"Resultaat x:%f y:%f z:%f",brX,-brY,-brZ);
 	
