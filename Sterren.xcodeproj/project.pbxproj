@@ -25,6 +25,7 @@
 		765DA31510A0B97000C4B16A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765DA31410A0B97000C4B16A /* CoreLocation.framework */; };
 		76B2988510BD9EBB00EEDA5D /* SRLocationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */; };
 		76B7CC59108B235100F87C68 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B7CC58108B235100F87C68 /* XMLParser.m */; };
+		76D7294310EBD8F80018EB62 /* SRStarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7294210EBD8F80018EB62 /* SRStarInfo.m */; };
 		76FBD51E108B227000E08E82 /* stars.xml in Resources */ = {isa = PBXBuildFile; fileRef = 76FBD51D108B227000E08E82 /* stars.xml */; };
 		AC045E33109E062B0066EAA6 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = AC045E32109E062B0066EAA6 /* menu.png */; };
 		AC080F5810D97F010078DA4D /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC080F5710D97F010078DA4D /* nav_bg.png */; };
@@ -256,6 +257,8 @@
 		76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLocationModule.m; sourceTree = "<group>"; };
 		76B7CC57108B235100F87C68 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		76B7CC58108B235100F87C68 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		76D7294110EBD8F80018EB62 /* SRStarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStarInfo.h; sourceTree = "<group>"; };
+		76D7294210EBD8F80018EB62 /* SRStarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStarInfo.m; sourceTree = "<group>"; };
 		76FBD51D108B227000E08E82 /* stars.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = stars.xml; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Sterren-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sterren-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		AC045E32109E062B0066EAA6 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = Resources/menu.png; sourceTree = "<group>"; };
@@ -732,6 +735,8 @@
 				ACA875ED109DD0A000465577 /* SRInterfaceElement.m */,
 				AC55F120109600990021D39C /* SRInterface.h */,
 				AC55F121109600990021D39C /* SRInterface.m */,
+				76D7294110EBD8F80018EB62 /* SRStarInfo.h */,
+				76D7294210EBD8F80018EB62 /* SRStarInfo.m */,
 				AC57693E10E7CF910031505E /* SRPlanetInfo.h */,
 				AC57693F10E7CF910031505E /* SRPlanetInfo.m */,
 				AC89DDF710D035480083BFEA /* SRMessierInfo.h */,
@@ -1144,6 +1149,7 @@
 				AC5B2FE910E7829E00DE922B /* SRHUD.m in Sources */,
 				AC5B303C10E78A4F00DE922B /* SRPlanetModule.m in Sources */,
 				AC57694010E7CF910031505E /* SRPlanetInfo.m in Sources */,
+				76D7294310EBD8F80018EB62 /* SRStarInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

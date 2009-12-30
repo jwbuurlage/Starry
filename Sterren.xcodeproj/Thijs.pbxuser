@@ -627,7 +627,7 @@
 	};
 	7644564F10C5837800AB935D /* SRSettingsModule.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1035, 606}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1161, 500}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 288}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
@@ -675,9 +675,9 @@
 		fRef = AC8A89B610C588D60015CDF5 /* SRNamePlate.m */;
 		name = "SRNamePlate.m: 110";
 		rLen = 0;
-		rLoc = 3558;
+		rLoc = 3249;
 		rType = 0;
-		vrLen = 1500;
+		vrLen = 1147;
 		vrLoc = 2102;
 	};
 	76475B4310CC264000A2C9E7 /* PBXTextBookmark */ = {
@@ -1169,6 +1169,13 @@
 		path = "asm __dyld__dyld_start  0x2fe01028";
 		sourceTree = "<group>";
 	};
+	76D7294110EBD8F80018EB62 /* SRStarInfo.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1161, 738}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 221}";
+		};
+	};
 	76D7BAF110E0AEE700F8806E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 76D7BAF210E0AEE700F8806E /* StelMainGraphicsView.cpp */;
@@ -1366,17 +1373,31 @@
 	};
 	AC55F120109600990021D39C /* SRInterface.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1161, 2554}}";
-			sepNavSelRange = "{2007, 0}";
-			sepNavVisRange = "{1751, 635}";
+			sepNavIntBoundsRect = "{{0, 0}, {1161, 2486}}";
+			sepNavSelRange = "{2251, 0}";
+			sepNavVisRange = "{1618, 1053}";
 		};
 	};
 	AC55F121109600990021D39C /* SRInterface.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1391, 19872}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1588, 19209}}";
 			sepNavSelRange = "{29969, 0}";
-			sepNavVisRange = "{29944, 730}";
+			sepNavVisRange = "{36070, 1081}";
 			sepNavWindowFrame = "{{15, 80}, {1039, 798}}";
+		};
+	};
+	AC57693E10E7CF910031505E /* SRPlanetInfo.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1161, 808}}";
+			sepNavSelRange = "{0, 929}";
+			sepNavVisRange = "{0, 893}";
+		};
+	};
+	AC57693F10E7CF910031505E /* SRPlanetInfo.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1796, 2690}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{4772, 1733}";
 		};
 	};
 	AC57BD0D10C957DC00B0BD5C /* constellations.xml */ = {
@@ -1399,6 +1420,20 @@
 			sepNavSelRange = "{4751, 0}";
 			sepNavVisRange = "{4483, 931}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
+		};
+	};
+	AC5B2FE710E7829E00DE922B /* SRHUD.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1161, 500}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 439}";
+		};
+	};
+	AC5B2FE810E7829E00DE922B /* SRHUD.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1161, 1200}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{870, 1259}";
 		};
 	};
 	AC6D777C10C56A1900442254 /* SRSpriteManager.h */ = {
@@ -1441,9 +1476,9 @@
 	};
 	AC8A89B610C588D60015CDF5 /* SRNamePlate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1349, 1508}}";
-			sepNavSelRange = "{3558, 0}";
-			sepNavVisRange = "{2102, 1500}";
+			sepNavIntBoundsRect = "{{0, 0}, {1540, 1829}}";
+			sepNavSelRange = "{3249, 0}";
+			sepNavVisRange = "{2286, 963}";
 		};
 	};
 	AC9A926910C6F1C500657268 /* SRConstellationLine.h */ = {
