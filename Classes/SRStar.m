@@ -169,4 +169,8 @@
 	return result;
 }
 
+-(Vertex3D)position {
+	return Vertex3DMake([x floatValue],[y floatValue],[z floatValue]);
+}
+
 @end

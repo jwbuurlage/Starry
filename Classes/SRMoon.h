@@ -19,6 +19,7 @@
 
 -(void)recalculatePosition:(NSDate*)theDate;
 -(void)draw;
+-(Vertex3D)myCurrentPosition;
 
 @property (readonly) Vertex3D position;
 @property (readonly) int phase;

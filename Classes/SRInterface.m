@@ -1128,7 +1128,28 @@
 					[self setANameplate:TRUE];
 				}
 				else if (type == 5) {
+					foundObjectTextString = [NSString stringWithString:@"Maan"];
 					
+					if(foundObjectText)
+						[foundObjectText release];
+					foundObjectText = [[Texture2D alloc] initWithString:@"Maan" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+					
+					[theNameplate setName:@"Maan" inConstellation:@"" showInfo:YES];
+					//[planetInfo planetClicked:foundMoon];
+					[theNameplate setSelectedType:type];
+					Vertex3D posForCam = [foundMoon myCurrentPosition];
+					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+					
+					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+					
+					Vertex3D position = foundMoon.position;
+					
+					[renderer setHighlightPosition:position];
+					[renderer setHighlightSize:32]; 
+					[renderer setHighlight:TRUE];
+					
+					[self setANameplate:TRUE];
 				}
 
 				

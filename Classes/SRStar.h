@@ -62,5 +62,6 @@ static inline StarColor StarColorMake(float inRed, float inGreen, float inBlue, 
 -(StarColor)color;
 -(float)alpha;
 -(Vertex3D)myCurrentPosition;
+-(Vertex3D)position;
 
 @end
