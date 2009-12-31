@@ -234,7 +234,7 @@
 	glEnable(GL_TEXTURE_2D);
 	glDisableClientState(GL_COLOR_ARRAY);
 	if(highlight) {
-		[self drawHighlight];
+	[self drawHighlight];
 	}
 	[self drawMessier];
 	[self drawPlanets];
