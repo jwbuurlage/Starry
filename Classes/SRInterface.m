@@ -18,7 +18,7 @@
 
 @implementation SRInterface
 
-@synthesize timeModule,renderer,theNameplate, messierInfo, planetInfo, showingMessier, aNameplate;
+@synthesize timeModule,renderer,theNameplate, messierInfo, planetInfo, starInfo,showingMessier, aNameplate;
 
 -(id)initWithRenderer:(SRRenderer*)theRenderer {
 	if(self = [super init]) {
@@ -37,6 +37,7 @@
 		
 		messierInfo = [[SRMessierInfo alloc] init];
 		planetInfo = [[SRPlanetInfo alloc] init];
+		starInfo = [[SRStarInfo alloc] init];
 		
 		defaultTextureBool = TRUE;
 		alphaDefault = 1.0f;
@@ -322,6 +323,10 @@
 		[planetInfo draw];
 	}
 	
+	if(showingStar) {
+		[starInfo draw];
+	}	
+	
 	if([[appDelegate settingsManager] showRedOverlay]) {
 		[self drawRedOverlay];
 	}
@@ -390,6 +395,13 @@
 		return TRUE;
 	}
 	
+	if(showingStar == TRUE) {
+		[starInfo hide];
+		curStar = YES;
+		clicker = @"starinfo";
+		return TRUE;
+	}
+	
 	//checken of het onder een UIElement valt
 	for (SRInterfaceElement* element in UIElements) {		
 		if([element identifier] == @"arrow") {
@@ -448,7 +460,7 @@
 	
 	// Als er een keyboard omhoog staat mag er niet nog een keer een keyboard omhoog komen.
 	// Als de click niet weggesleept is mag er door worden gegaan
-	if(![fieldTmp isFirstResponder] && result && clicker != @"messierinfo" && clicker != @"planetinfo") {
+	if(![fieldTmp isFirstResponder] && result && clicker != @"messierinfo" && clicker != @"planetinfo" && clicker != @"starinfo") {
 		
 		BOOL flagToggle = FALSE;
 	
@@ -600,6 +612,11 @@
 				aPlanet = YES;
 				showingPlanet = YES;				
 			}
+			else if([theNameplate selectedType] == 2) {
+				[starInfo show];
+				curStar = YES;
+				showingStar = YES;
+			}
 		}	
 		else if(clicker == @"icon") {	
 			if([timeModule visible]) {
@@ -712,6 +729,27 @@
 				aPlanet = FALSE;
 				[planetInfo setAlphaValue: 1.0f];
 				[planetInfo setAlphaValueName: 1.0f];
+			}
+		}	
+	}
+	
+	if(curStar) {
+		if([starInfo hiding]) {
+			[starInfo setAlphaValue:[starInfo alphaValue] - ( 0.1f * (timeElapsed / 0.05) )];
+			[starInfo setAlphaValueName:[starInfo alphaValueName] - ( 0.1f * (timeElapsed / 0.05) )];
+			if([starInfo alphaValue] <= 0.0f) {
+				curStar = FALSE;
+				showingStar = FALSE;
+				[starInfo setHiding:FALSE];
+			}
+		}
+		else {
+			[starInfo setAlphaValue:[starInfo alphaValue] + ( 0.1f * (timeElapsed / 0.05) )];
+			[starInfo setAlphaValueName:[starInfo alphaValueName] + ( 0.1f * (timeElapsed / 0.05) )];
+			if([starInfo alphaValueName] >= 1.0f) {
+				curStar = FALSE;
+				[starInfo setAlphaValue: 1.0f];
+				[starInfo setAlphaValueName: 1.0f];
 			}
 		}	
 	}
@@ -1069,7 +1107,8 @@
 						foundObjectTextString = foundStar.name;
 					[foundObjectText release];
 					foundObjectText = [[Texture2D alloc] initWithString:foundStar.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
-					[theNameplate setName:foundStar.name inConstellation:foundStar.bayer showInfo:NO];
+					[theNameplate setName:foundStar.name inConstellation:foundStar.bayer showInfo:YES];
+					[starInfo starClicked:foundStar];
 					//[messierInfo messierClicked:foundStar];
 					[theNameplate setSelectedType:type];
 					

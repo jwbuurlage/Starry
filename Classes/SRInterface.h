@@ -25,6 +25,7 @@
 #import "Texture2D.h"
 #import "SRMessierInfo.h"
 #import "SRPlanetInfo.h"
+#import "SRStarInfo.h"
 
 //#import "SterrenAppDelegate.h"
 
@@ -44,6 +45,7 @@
 	SRNamePlate* theNameplate;
 	SRMessierInfo* messierInfo;
 	SRPlanetInfo* planetInfo;
+	SRStarInfo* starInfo;
 	
 	SRLocation* locationData;
 		/* We moeten de data van SRLocation naar SRLocationModule krijgen, dit is de volgens mij de kortste route */
@@ -87,6 +89,7 @@
 	BOOL aMenu;
 	BOOL aMessier;
 	BOOL aPlanet; // in search code was er een conflict, nu daar bPlanet
+	BOOL curStar; // aStar was al gebruikt als gewone var
 	BOOL aModule;
 	BOOL aNameplate;
 	BOOL aInterface;
@@ -101,6 +104,7 @@
 	BOOL searchResult;
 	
 	BOOL showingPlanet;
+	BOOL showingStar;
 	BOOL showingMessier;
 	BOOL menuVisible;
 }
@@ -110,6 +114,7 @@
 @property (readonly) SRNamePlate* theNameplate;
 @property (readonly) SRMessierInfo* messierInfo;
 @property (readonly) SRPlanetInfo* planetInfo;
+@property (readonly) SRStarInfo* starInfo;
 @property (nonatomic, assign) BOOL showingMessier;
 @property (nonatomic, assign) BOOL aNameplate;
 
