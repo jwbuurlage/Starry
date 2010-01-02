@@ -102,12 +102,13 @@
 	int seconds = [secondsNumber intValue];
 	
 	if (azTmp < 0) {
-		degrees = -degrees;
-		minutes = -minutes;
-		seconds = -seconds;
+		degrees = 360+degrees;
+		minutes = 360+minutes;
+		seconds = 360+seconds;
 	}
-	
-	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[theStar bayer] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	NSString* constellation = [[theStar bayer] substringWithRange:NSMakeRange([[theStar bayer] length]-3, 3)];
+	;
+	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:constellation dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i\"%i'",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[[elements objectAtIndex:[elements count] - 2] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f°",alTmp] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theStar mag] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
@@ -116,7 +117,7 @@
 }
 
 - (void)draw {	
-	glTranslatef(245,-15,0);
+	glTranslatef(245,-18,0);
 	glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 	[interfaceBackground drawInRect:CGRectMake(20, 0, 200, 320)];
 	for (SRInterfaceElement* mElement in elements) {
@@ -139,7 +140,7 @@
 	}
 	
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-	glTranslatef(-245,15,0);
+	glTranslatef(-245,18,0);
 }
 
 
