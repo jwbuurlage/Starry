@@ -284,7 +284,7 @@
 	int i = 0;
 	GLfloat size = 0;
 	while(i <= starNum) {
-		if(starPoints[(i*8)+7] != 0) {
+		if(starPoints[(i*8)+7] != 0) { // Is die niet een beetje zinloos
 			if((starPoints[(i*8)+7] * pow([camera zoomingValue], 1.5) * [[appDelegate settingsManager] brightnessFactor]) > 1.0) {
 				size = starPoints[(i*8)+7] * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
 				if(size > 8) { size = 8; }

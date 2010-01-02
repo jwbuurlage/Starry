@@ -217,29 +217,29 @@
 	starNum = 0;
 	GLfloat starPointsTmp[[stars count]*8];
 	int matrixStartPos;
-	float size;
-	float alpha;
+	//float size;
+	//float alpha;
 	SRStar * star;
 	
 	for(star in stars) {
 		//NSLog(@"Loading star %@",star.name);
 		if(star.name != @"Sol") {
 			
-			size = [star size];
-			alpha = [star alpha];
+			//size = [star size];
+			//alpha = [star alpha];
 			
 			//starColor color = ;
-			
-			matrixStartPos = starNum * 8;
-			starPointsTmp[matrixStartPos] = [star.x floatValue];
-			starPointsTmp[matrixStartPos+1] = [star.y floatValue];
-			starPointsTmp[matrixStartPos+2] = [star.z floatValue];
-			starPointsTmp[matrixStartPos+3] = [star color].red;
-			starPointsTmp[matrixStartPos+4] = [star color].green;
-			starPointsTmp[matrixStartPos+5] = [star color].blue;
-			starPointsTmp[matrixStartPos+6] = [star alpha];
-			starPointsTmp[matrixStartPos+7] = size;
-			starNum++;
+				
+				matrixStartPos = starNum * 8;
+				starPointsTmp[matrixStartPos] = [star.x floatValue];
+				starPointsTmp[matrixStartPos+1] = [star.y floatValue];
+				starPointsTmp[matrixStartPos+2] = [star.z floatValue];
+				starPointsTmp[matrixStartPos+3] = [star color].red;
+				starPointsTmp[matrixStartPos+4] = [star color].green;
+				starPointsTmp[matrixStartPos+5] = [star color].blue;
+				starPointsTmp[matrixStartPos+6] = [star alpha];
+				starPointsTmp[matrixStartPos+7] = [star size];
+				starNum++;
 		}
 	}
 	
