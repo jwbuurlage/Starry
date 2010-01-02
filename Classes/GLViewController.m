@@ -423,12 +423,12 @@
 						[[[renderer interface] theNameplate] setSelectedType:2];
 						if (closestStar.name == @"" || closestStar.name == @" ") {
 							[[[renderer interface] theNameplate] setName:@"Naamloze ster" inConstellation:closestStar.bayer showInfo:YES];
-							[[renderer interface] setANameplate:TRUE];
 						}
 						else {
 							[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:YES];
-							[[renderer interface] setANameplate:TRUE];
 						}
+						[[renderer interface] setANameplate:TRUE];
+						[[[renderer interface] starInfo] starClicked:closestStar];
 						
 						
 						Vertex3D position = Vector3DMake([closestStar.x floatValue], [closestStar.y floatValue], [closestStar.z floatValue]);

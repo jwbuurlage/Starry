@@ -7,6 +7,7 @@
 //
 
 #import "SRStarInfo.h"
+#import "OpenGLCommon.h"
 
 
 @implementation SRStarInfo
@@ -86,11 +87,16 @@
 }
 
 - (void)starClicked:(SRStar*)theStar {
-	//[messierImage release];
-	//messierImage = ;
-	//NSLog(@"%@", [NSString stringWithFormat:@"%@.png", [theStar name]]);
-	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:theStar.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]]; 
-	[[elements objectAtIndex:[elements count] - 1] setBounds:CGRectMake(311 - [theStar.name sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width / 2, 18,64,32)];
+	Vertex3D posForCam = [theStar myCurrentPosition];
+	float azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+	float alTmp = 90-(180/M_PI)*acos(-posForCam.z); 
+	NSLog(@"test %f",azTmp);
+	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[theStar bayer] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f",azTmp] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 2] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f",alTmp] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theStar mag] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	
+	
 }
 
 - (void)draw {	

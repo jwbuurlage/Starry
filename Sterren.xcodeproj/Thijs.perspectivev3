@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>769733F210EF75C40057E29F</string>
+						<string>7697341710EF79750057E29F</string>
 						<key>history</key>
 						<array>
 							<string>76F447AF10ED26A6003BC841</string>
@@ -328,7 +328,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 523}, {208, 780}}</string>
+							<string>{{0, 144}, {208, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -371,7 +371,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>769733F110EF75C40057E29F</string>
+										<string>7697341610EF79750057E29F</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -426,7 +426,6 @@
 											<string>76C8040010E9241C0082435B</string>
 											<string>76D7292710EBD48C0018EB62</string>
 											<string>76D7292810EBD48C0018EB62</string>
-											<string>76D7292B10EBD48C0018EB62</string>
 											<string>76D7294810EBDA7B0018EB62</string>
 											<string>76D7294910EBDA7B0018EB62</string>
 											<string>76D7294A10EBDA7B0018EB62</string>
@@ -441,11 +440,7 @@
 											<string>76F4478910ED24D4003BC841</string>
 											<string>76F4479B10ED2521003BC841</string>
 											<string>76F4479C10ED2521003BC841</string>
-											<string>76F447A910ED25E2003BC841</string>
-											<string>769733B410EF6B670057E29F</string>
-											<string>769733B510EF6B670057E29F</string>
 											<string>769733BF10EF6CBF0057E29F</string>
-											<string>769733C010EF6CBF0057E29F</string>
 											<string>769733D010EF73870057E29F</string>
 											<string>769733D110EF73870057E29F</string>
 											<string>769733D210EF73870057E29F</string>
@@ -454,8 +449,15 @@
 											<string>769733D510EF73870057E29F</string>
 											<string>769733D610EF73870057E29F</string>
 											<string>769733D710EF73870057E29F</string>
-											<string>769733D810EF73870057E29F</string>
-											<string>769733D910EF73870057E29F</string>
+											<string>769733F810EF784E0057E29F</string>
+											<string>769733F910EF784E0057E29F</string>
+											<string>769733FA10EF784E0057E29F</string>
+											<string>769733FB10EF784E0057E29F</string>
+											<string>769733FC10EF784E0057E29F</string>
+											<string>7697341110EF79750057E29F</string>
+											<string>7697341210EF79750057E29F</string>
+											<string>7697341310EF79750057E29F</string>
+											<string>7697341410EF79750057E29F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -619,6 +621,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
