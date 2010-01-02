@@ -23,6 +23,7 @@
 		7644565110C5837800AB935D /* SRSettingsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7644565010C5837800AB935D /* SRSettingsModule.m */; };
 		765DA28A10A0B19300C4B16A /* SRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 765DA28910A0B19300C4B16A /* SRLocation.m */; };
 		765DA31510A0B97000C4B16A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765DA31410A0B97000C4B16A /* CoreLocation.framework */; };
+		769733CD10EF73670057E29F /* starInfoBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 769733CC10EF73670057E29F /* starInfoBg.png */; };
 		76B2988510BD9EBB00EEDA5D /* SRLocationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */; };
 		76B7CC59108B235100F87C68 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B7CC58108B235100F87C68 /* XMLParser.m */; };
 		76D7294310EBD8F80018EB62 /* SRStarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7294210EBD8F80018EB62 /* SRStarInfo.m */; };
@@ -253,6 +254,7 @@
 		765DA28810A0B19300C4B16A /* SRLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLocation.h; sourceTree = "<group>"; };
 		765DA28910A0B19300C4B16A /* SRLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLocation.m; sourceTree = "<group>"; };
 		765DA31410A0B97000C4B16A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		769733CC10EF73670057E29F /* starInfoBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = starInfoBg.png; path = Resources/starInfoBg.png; sourceTree = "<group>"; };
 		76B2988310BD9EBB00EEDA5D /* SRLocationModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLocationModule.h; sourceTree = "<group>"; };
 		76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLocationModule.m; sourceTree = "<group>"; };
 		76B7CC57108B235100F87C68 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
@@ -554,6 +556,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				769733CC10EF73670057E29F /* starInfoBg.png */,
 				761E580F10E65B03003B9CFE /* notFound.png */,
 				AC080F5710D97F010078DA4D /* nav_bg.png */,
 				ACC493A110CD777600DC7967 /* moon.png */,
@@ -1106,6 +1109,7 @@
 				ACBF30B210E8057F00CE5FBA /* Saturnus.png in Resources */,
 				ACBF30B310E8057F00CE5FBA /* Uranus.png in Resources */,
 				ACBF30B410E8057F00CE5FBA /* Venus.png in Resources */,
+				769733CD10EF73670057E29F /* starInfoBg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
