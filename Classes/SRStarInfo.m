@@ -91,9 +91,25 @@
 	float azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
 	float alTmp = 90-(180/M_PI)*acos(-posForCam.z); 
 	NSLog(@"test %f",azTmp);
+	
+	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:azTmp];
+	int degrees = [coordinateNumber intValue];
+	float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
+	NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];
+	int minutes = [minutesNumber intValue];
+	float secondsF = ([minutesNumber floatValue] - [minutesNumber intValue])*60;
+	NSNumber * secondsNumber = [[NSNumber alloc] initWithFloat:secondsF];
+	int seconds = [secondsNumber intValue];
+	
+	if (azTmp < 0) {
+		degrees = -degrees;
+		minutes = -minutes;
+		seconds = -seconds;
+	}
+	
 	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[theStar bayer] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
-	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f",azTmp] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
-	[[elements objectAtIndex:[elements count] - 2] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f",alTmp] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i\"%i'",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 2] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f°",alTmp] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theStar mag] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	
 	
