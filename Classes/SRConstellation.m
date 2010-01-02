@@ -110,13 +110,13 @@
 	
 	float readRARad = fmod(ra,360) * (M_PI/180);
 	float readDECRad = (90 + dec) * (M_PI/180);
-	NSLog(@"Sterrenbeeld positie, to transform = ra:%f dec:%f",fmod(ra,360),dec);
+	//NSLog(@"Sterrenbeeld positie, to transform = ra:%f dec:%f",fmod(ra,360),dec);
 	
 	float brX = sin(readDECRad)*cos(readRARad);
 	float brY = sin(readDECRad)*sin(readRARad);
 	float brZ = cos(readDECRad);
 	
-	NSLog(@"vooraf x:%f y:%f z:%f",brX,brY,brZ);
+	//NSLog(@"vooraf x:%f y:%f z:%f",brX,brY,brZ);
 	
 	SterrenAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
 	float latitude = [[appDelegate location] latitude];
@@ -158,7 +158,7 @@
 	
 	Vertex3D result = Vertex3DMake(brX, brY, brZ);
 	
-	NSLog(@"Resultaat x:%f y:%f z:%f",-brX,-brY,-brZ);
+	//NSLog(@"Resultaat x:%f y:%f z:%f",-brX,-brY,-brZ);
 	
 	return result;
 }
