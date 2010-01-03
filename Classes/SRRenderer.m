@@ -228,7 +228,7 @@
 	[self drawEcliptic];
 	
 	glEnableClientState(GL_COLOR_ARRAY);
-	//[self drawStars];
+	[self drawStars];
 		
 	glEnable(GL_POINT_SPRITE_OES);
 	glEnable(GL_TEXTURE_2D);
@@ -300,46 +300,32 @@
 	glVertexPointer(3, GL_FLOAT, 32, starPoints);
     glColorPointer(4, GL_FLOAT, 32, &starPoints[3]);
 	NSMutableArray * starSizeNum = [objectManager starSizeNum];
-	int i = 0;
-	GLfloat size = 4;
-	while(i <= starNum) {
-		//if(starPoints[(i*8)+7] != 0) { // Is die niet een beetje zinloos
-			//NSLog(@"loop num %i",[[starSizeNum objectAtIndex:1] intValue]);
-			if (i == 0) {
-				size = 4 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-				if(size > 8) { size = 8; }
-				glPointSize(size);
-				glDrawArrays(GL_POINTS, 0, [[starSizeNum objectAtIndex:1] intValue]);
-				i = [[starSizeNum objectAtIndex:1] intValue];
-			}
-			else if (i == [[starSizeNum objectAtIndex:1] intValue]) {
-				size = 3 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-				if(size > 8) { size = 8; }
-				glPointSize(size);
-			}
-			else if(i == [[starSizeNum objectAtIndex:2] intValue]) {
-				size = 2 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-				if(size > 8) { size = 8; }
-				glPointSize(size);
-			}
-			else if(i == [[starSizeNum objectAtIndex:3] intValue]) {
-				//NSLog(@"test3 %i",i);
-				size = 0.8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-				if(size > 8) { size = 8; }
-				if(size < 1) { i == starNum; }
-				glPointSize(size);
-			}
-			else if(i == [[starSizeNum objectAtIndex:4] intValue]) {
-				size = 0.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-				if(size > 8) { size = 8; }
-				if(size < 1) { i == starNum; }
-				glPointSize(size);
-			}
-				
-			
-		//}
-		++i;
-	}
+	GLfloat size;
+	
+	size = 4 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	if(size > 8) { size = 8; }
+	glPointSize(size);
+	glDrawArrays(GL_POINTS, 0, [[starSizeNum objectAtIndex:0] intValue]);
+	
+	size = 3 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	if(size > 8) { size = 8; }
+	glPointSize(size);
+	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue], [[starSizeNum objectAtIndex:1] intValue]);
+	
+	size = 2 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	if(size > 8) { size = 8; }
+	glPointSize(size);
+	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue], [[starSizeNum objectAtIndex:2] intValue]);
+
+	size = 0.8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	if(size > 8) { size = 8; }
+	glPointSize(size);
+	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue], [[starSizeNum objectAtIndex:3] intValue]);
+
+	size = 0.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	if(size > 8) { size = 8; }
+	glPointSize(size);
+	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue] + [[starSizeNum objectAtIndex:3] intValue], [[starSizeNum objectAtIndex:4] intValue]);
 }
 
 -(void)drawConstellations {
