@@ -23,6 +23,7 @@
 		7644565110C5837800AB935D /* SRSettingsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7644565010C5837800AB935D /* SRSettingsModule.m */; };
 		765DA28A10A0B19300C4B16A /* SRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 765DA28910A0B19300C4B16A /* SRLocation.m */; };
 		765DA31510A0B97000C4B16A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765DA31410A0B97000C4B16A /* CoreLocation.framework */; };
+		767820EC10F10CD3001ADE6D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 767820EA10F10CD3001ADE6D /* Localizable.strings */; };
 		769733CD10EF73670057E29F /* starInfoBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 769733CC10EF73670057E29F /* starInfoBg.png */; };
 		76B2988510BD9EBB00EEDA5D /* SRLocationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */; };
 		76B7CC59108B235100F87C68 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B7CC58108B235100F87C68 /* XMLParser.m */; };
@@ -254,6 +255,8 @@
 		765DA28810A0B19300C4B16A /* SRLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLocation.h; sourceTree = "<group>"; };
 		765DA28910A0B19300C4B16A /* SRLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLocation.m; sourceTree = "<group>"; };
 		765DA31410A0B97000C4B16A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		767820EB10F10CD3001ADE6D /* nl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		767820EF10F10CEC001ADE6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		769733CC10EF73670057E29F /* starInfoBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = starInfoBg.png; path = Resources/starInfoBg.png; sourceTree = "<group>"; };
 		76B2988310BD9EBB00EEDA5D /* SRLocationModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLocationModule.h; sourceTree = "<group>"; };
 		76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLocationModule.m; sourceTree = "<group>"; };
@@ -556,6 +559,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				767820EA10F10CD3001ADE6D /* Localizable.strings */,
 				769733CC10EF73670057E29F /* starInfoBg.png */,
 				761E580F10E65B03003B9CFE /* notFound.png */,
 				AC080F5710D97F010078DA4D /* nav_bg.png */,
@@ -919,6 +923,14 @@
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Sterren" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				nl,
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1110,6 +1122,7 @@
 				ACBF30B310E8057F00CE5FBA /* Uranus.png in Resources */,
 				ACBF30B410E8057F00CE5FBA /* Venus.png in Resources */,
 				769733CD10EF73670057E29F /* starInfoBg.png in Resources */,
+				767820EC10F10CD3001ADE6D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1158,6 +1171,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		767820EA10F10CD3001ADE6D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				767820EB10F10CD3001ADE6D /* nl */,
+				767820EF10F10CEC001ADE6D /* en */,
+			);
+			name = Localizable.strings;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
