@@ -171,9 +171,9 @@
 	//NSLog(@"Zooming");
 		
 	if(delta > 0)
-		zoomingValue = 1 + 0.010 * delta;
+		zoomingValue = 1 + 0.0075 * delta;
 	else if (delta < 0)
-		zoomingValue = 1 - 0.010 * -delta;
+		zoomingValue = 1 - 0.0075 * -delta;
 	else 
 		zoomingValue = 1;
 	
