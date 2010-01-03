@@ -30,6 +30,7 @@
 	NSMutableArray * stars;
 	NSMutableArray * starPoints;
 	int starNum;
+	NSMutableArray* starSizeNum;
 	
 	NSMutableArray * constellations;
 	NSMutableArray * constellationPoints;
@@ -49,6 +50,7 @@
 
 @property (nonatomic, retain) NSMutableArray *stars;
 @property (readonly) NSMutableArray *starPoints;
+@property (readonly) NSMutableArray *starSizeNum;
 @property (readonly) int starNum;
 
 @property (nonatomic, retain) NSMutableArray *constellations;

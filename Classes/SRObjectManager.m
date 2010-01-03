@@ -14,7 +14,7 @@
 
 @synthesize constellations,constellationNum,constellationPoints,
 			planets,planetNum,planetPoints,
-			stars,starNum,starPoints,
+			stars,starNum,starPoints,starSizeNum,
 			sun, moon,
 			messier,messierNum,messierPoints;
 
@@ -217,9 +217,11 @@
 	starNum = 0;
 	GLfloat starPointsTmp[[stars count]*8];
 	int matrixStartPos;
+	int starSizeNumTmp[6] = { 0, 0, 0, 0, 0, 0 };
 	//float size;
 	//float alpha;
 	SRStar * star;
+	starSizeNum = [[NSMutableArray alloc] init];
 	
 	for(star in stars) {
 		//NSLog(@"Loading star %@",star.name);
@@ -238,7 +240,24 @@
 				starPointsTmp[matrixStartPos+4] = [star color].green;
 				starPointsTmp[matrixStartPos+5] = [star color].blue;
 				starPointsTmp[matrixStartPos+6] = [star alpha];
-				starPointsTmp[matrixStartPos+7] = [star size];
+				//starPointsTmp[matrixStartPos+7] = [star size];
+				starPointsTmp[matrixStartPos+7] = 0;
+			
+				if([[star mag] floatValue] < 2) {
+					++starSizeNumTmp[0];
+				}
+				else if ([[star mag] floatValue] < 3) {
+					starSizeNumTmp[1] += 1;
+				}
+				else if ([[star mag] floatValue] < 4) {
+					starSizeNumTmp[2] += 1;
+				}
+				else if ([[star mag] floatValue] < 4.5) {
+					starSizeNumTmp[3] += 1;
+				}
+				else if ([[star mag] floatValue] < 5) {
+					starSizeNumTmp[4] += 1;
+				}
 				starNum++;
 		}
 	}
@@ -252,6 +271,13 @@
 		[starPoints addObject:[NSNumber numberWithFloat:starPointsTmp[i]]];
 		//NSLog(@"%i", i);
 	}
+	
+	for (int i=0; i < 5; i++) {
+		[starSizeNum addObject:[NSNumber numberWithInt:starSizeNumTmp[i]]];
+		NSLog(@"inladen in array:%i,%i",starSizeNumTmp[i],i);
+	}
+	 
+
 }
 
 -(void)buildMessierData {
