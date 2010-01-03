@@ -171,9 +171,9 @@
 	//NSLog(@"Zooming");
 		
 	if(delta > 0)
-		zoomingValue = 1 + 0.005 * delta;
+		zoomingValue = 1 + 0.010 * delta;
 	else if (delta < 0)
-		zoomingValue = 1 - 0.005 * -delta;
+		zoomingValue = 1 - 0.010 * -delta;
 	else 
 		zoomingValue = 1;
 	
@@ -182,7 +182,7 @@
 		
 		newFieldofView = fieldOfView * zoomingValue;
 		if(!planetView) {
-			if(newFieldofView > 0.3 && newFieldofView < 1.0) {
+			if(newFieldofView > 0.1 && newFieldofView < 1.0) {
 				fieldOfView = newFieldofView;
 			}
 		}

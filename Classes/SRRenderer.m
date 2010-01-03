@@ -379,11 +379,11 @@
 			else { 
 				float factor = (distance - 10) / 4;
 				if(factor < 1) { factor = 1; }
-				glColor4f(0.6f, 0.6f, 0.6f, constAlpha / factor); 
+				glColor4f(0.4f, 0.6f, 0.6f, constAlpha / factor); 
 				
 				[aConstellation draw];
 				
-				glColor4f(1.0f, 1.0f, 1.0f, (constAlpha / factor) * 2);
+				glColor4f(0.4f, 0.6f, 0.6f, (constAlpha / factor) * 4);
 				[aConstellation drawText];
 			} 
 		}
