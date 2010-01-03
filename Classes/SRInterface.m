@@ -326,10 +326,6 @@
 	if(showingStar) {
 		[starInfo draw];
 	}	
-	
-	if([[appDelegate settingsManager] showRedOverlay]) {
-		[self drawRedOverlay];
-	}
 
 	if(defaultTextureBool) {
 		glColor4f(1.0, 1.0, 1.0, alphaDefault);      
@@ -350,6 +346,10 @@
 		else 
 			glColor4f(1.0f, 0.2f, 0.2f, alphaNotFound);
 		[foundObjectText drawInRect:CGRectMake(240 - combinedwidth / 2 + [foundTextString sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width + 2,55,64,32)];
+	}
+	
+	if([[appDelegate settingsManager] showRedOverlay]) {
+		[self drawRedOverlay];
 	}
 	
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);

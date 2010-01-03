@@ -277,25 +277,6 @@
 	}
 }
 
-/*-(void)drawStars {
-	glVertexPointer(3, GL_FLOAT, 32, starPoints);
-    glColorPointer(4, GL_FLOAT, 32, &starPoints[3]);
-	
-	int i = 0;
-	GLfloat size = 0;
-	while(i <= starNum) {
-		if(starPoints[(i*8)+7] != 0) { // Is die niet een beetje zinloos
-			if((starPoints[(i*8)+7] * pow([camera zoomingValue], 1.5) * [[appDelegate settingsManager] brightnessFactor]) > 1.0) {
-				size = starPoints[(i*8)+7] * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-				if(size > 8) { size = 8; }
-				glPointSize(size);
-			glDrawArrays(GL_POINTS, i, 1);
-			}
-		}
-		++i;
-	}
-}*/
-
 -(void)drawStars {
 	glVertexPointer(3, GL_FLOAT, 32, starPoints);
     glColorPointer(4, GL_FLOAT, 32, &starPoints[3]);
@@ -319,11 +300,13 @@
 
 	size = 0.8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
 	if(size > 8) { size = 8; }
+	if(size < 1) { return; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue], [[starSizeNum objectAtIndex:3] intValue]);
 
 	size = 0.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
 	if(size > 8) { size = 8; }
+	if(size < 1) { return; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue] + [[starSizeNum objectAtIndex:3] intValue], [[starSizeNum objectAtIndex:4] intValue]);
 }
@@ -384,7 +367,6 @@
 		if(dAzi > 300) { dAzi = 360 - dAzi; }
 		
 		float distance = (dAzi + fabs(apparentAltitude - [aConstellation dec])) / 2;
-
 
 		if(distance < 30) { 
 			if(distance <= 11.0) { 
