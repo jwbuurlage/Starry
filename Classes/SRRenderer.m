@@ -284,31 +284,37 @@
 	GLfloat size;
 	
 	size = 4 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 8) { size = 8; }
+	if(size > 5) { size = 5; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, 0, [[starSizeNum objectAtIndex:0] intValue]);
 	
 	size = 3 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 8) { size = 8; }
+	if(size > 5) { size = 5; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue], [[starSizeNum objectAtIndex:1] intValue]);
 	
 	size = 2 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 8) { size = 8; }
+	if(size > 5) { size = 5; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue], [[starSizeNum objectAtIndex:2] intValue]);
 
 	size = 0.8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 8) { size = 8; }
+	if(size > 5) { size = 5; }
 	if(size < 1) { return; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue], [[starSizeNum objectAtIndex:3] intValue]);
 
 	size = 0.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 8) { size = 8; }
+	if(size > 5) { size = 5; }
 	if(size < 1) { return; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue] + [[starSizeNum objectAtIndex:3] intValue], [[starSizeNum objectAtIndex:4] intValue]);
+
+	size = 0.4 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	if(size > 5) { size = 5; }
+	if(size < 1) { return; }
+	glPointSize(size);
+	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue] + [[starSizeNum objectAtIndex:3] intValue] + [[starSizeNum objectAtIndex:4] intValue], [[starSizeNum objectAtIndex:5] intValue]);	
 }
 
 -(void)drawConstellations {
@@ -444,7 +450,7 @@
 	int i = 0;
 	GLfloat size = 0;
 	while(i <= 10) {
-		size = planetPoints[(i*8)+7] * [camera zoomingValue];
+		size = planetPoints[(i*8)+7];
 		glPointSize(size);
 		
 		if (i == 1) { // maan
@@ -494,6 +500,7 @@
 	glDisableClientState(GL_COLOR_ARRAY);
 	
 
+	if(drawPlanetLabels) {
 	i = 1;
 	while(i < [[objectManager planets] count]) {
 		glColor4f(1.0f, 1.0f, 1.0f, 1.0f * pow([camera zoomingValue],-3));
@@ -502,7 +509,7 @@
 	}
 	
 	[[objectManager sun] drawHelio:NO];
-	[[objectManager moon] draw];
+		[[objectManager moon] draw]; }
 }
 
 

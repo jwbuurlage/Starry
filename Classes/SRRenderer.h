@@ -71,6 +71,7 @@
 	Texture2D* testTexture3D;
 	
 	BOOL planetView;
+	BOOL drawPlanetLabels;
 }
 
 @property (readonly) SRInterface* interface;
