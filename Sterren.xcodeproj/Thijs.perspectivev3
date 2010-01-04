@@ -279,14 +279,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>43</integer>
+									<integer>29</integer>
 									<integer>21</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 184}, {208, 780}}</string>
+							<string>{{0, 77}, {208, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRStarInfo.m</string>
+								<string>SRNamePlate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRStarInfo.m</string>
+										<string>SRNamePlate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>76EE55C410F25925006EA065</string>
+										<string>76EE55D810F25A3C006EA065</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -408,9 +408,7 @@
 											<string>76EE552E10F2462F006EA065</string>
 											<string>76EE553D10F246DE006EA065</string>
 											<string>76EE553E10F246DE006EA065</string>
-											<string>76EE553F10F246DE006EA065</string>
 											<string>76EE557510F250CE006EA065</string>
-											<string>76EE557610F250CE006EA065</string>
 											<string>76EE559910F256AF006EA065</string>
 											<string>76EE55B510F257AD006EA065</string>
 											<string>76EE55BB10F25924006EA065</string>
@@ -420,7 +418,10 @@
 											<string>76EE55BF10F25924006EA065</string>
 											<string>76EE55C010F25924006EA065</string>
 											<string>76EE55C110F25924006EA065</string>
-											<string>76EE55C210F25924006EA065</string>
+											<string>76EE55CA10F259F1006EA065</string>
+											<string>76EE55D410F25A3B006EA065</string>
+											<string>76EE55D510F25A3B006EA065</string>
+											<string>76EE55D610F25A3B006EA065</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -741,7 +742,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>76EE55C510F25925006EA065</string>
+		<string>76EE55D910F25A3C006EA065</string>
 		<string>76EE54C810F23C08006EA065</string>
 		<string>76EE54BE10F23BEE006EA065</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>

@@ -421,12 +421,12 @@
 					if (closestD < (1.5 * (1/zoomingValue))) {
 						//NSLog(@"Delta of closest: %f",closestD);
 						[[[renderer interface] theNameplate] setSelectedType:2];
-						if (closestStar.name == @"" || closestStar.name == @" ") {
+						/*if (closestStar.name == @"" || closestStar.name == @" ") {
 							[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Nameless star", @"") inConstellation:closestStar.bayer showInfo:YES];
-						}
-						else {
+						}*/
+						//else {
 							[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:closestStar.bayer showInfo:YES];
-						}
+						//}
 						[[renderer interface] setANameplate:TRUE];
 						[[[renderer interface] starInfo] starClicked:closestStar];
 						

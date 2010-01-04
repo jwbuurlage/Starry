@@ -89,7 +89,7 @@
 }
 
 -(void)setName:(NSString*)name inConstellation:(NSString*)constellation showInfo:(BOOL)theInfo {	
-	if(name == nil) {
+	if(name == nil || [name isEqualToString:@""] || [name isEqualToString:@" "]) {
 		name = NSLocalizedString(@"Nameless",@"");
 	}
 	
