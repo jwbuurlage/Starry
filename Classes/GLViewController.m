@@ -425,7 +425,7 @@
 							[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Nameless star", @"") inConstellation:closestStar.bayer showInfo:YES];
 						}
 						else {
-							[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:YES];
+							[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:closestStar.bayer showInfo:YES];
 						}
 						[[renderer interface] setANameplate:TRUE];
 						[[[renderer interface] starInfo] starClicked:closestStar];

@@ -72,7 +72,9 @@
 	else {
 		size = 64;
 	}
-	nameTexture = [[Texture2D alloc] initWithString:[name stringByReplacingOccurrencesOfString:@"-" withString:@" "] dimensions:CGSizeMake(size, size) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
+	//nameTexture = [[Texture2D alloc] initWithString:[name stringByReplacingOccurrencesOfString:@"-" withString:@" "] dimensions:CGSizeMake(size, size) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
+	nameTexture = [[Texture2D alloc] initWithString:NSLocalizedString(name,@"") dimensions:CGSizeMake(size, size) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
+
 }
 
 -(void)draw {
