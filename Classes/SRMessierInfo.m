@@ -134,6 +134,7 @@
 		
 		interfaceBackground = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planetInfoBg.png"]]; //139x320
 		background = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"messierBack.png"]];
+		pictureForeground = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"messierForeground.png"]];
 	}
 	return self;
 }
@@ -226,8 +227,10 @@
 
 - (void)draw {
 	glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
+	
 	[background drawInRect:CGRectMake(0, 0, 480, 320)]; 
 	[messierImage drawInRect:CGRectMake(158, 46, 301, 232)]; 
+	[pictureForeground drawInRect:CGRectMake(158, 46, 301, 232)];
 	[interfaceBackground drawInRect:CGRectMake(20, 0, 200, 320)];
 	//[interfaceBackground drawInRect:CGRectMake(0, 0, 139, 320)];
 	//[pictureBackground drawInRect:CGRectMake(139, 0, 341, 320)];

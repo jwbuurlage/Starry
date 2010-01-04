@@ -26,6 +26,7 @@
 	Texture2D* interfaceBackground;
 	Texture2D* background;
 	Texture2D* pictureBackground;
+	Texture2D* pictureForeground;
 	//text...
 	
 	float alphaValue;
