@@ -400,6 +400,10 @@
 			76EE558310F25507006EA065 /* PBXTextBookmark */ = 76EE558310F25507006EA065 /* PBXTextBookmark */;
 			76EE558510F25507006EA065 /* PBXTextBookmark */ = 76EE558510F25507006EA065 /* PBXTextBookmark */;
 			76EE558710F25520006EA065 /* PBXTextBookmark */ = 76EE558710F25520006EA065 /* PBXTextBookmark */;
+			76EE558910F2556C006EA065 /* PBXTextBookmark */ = 76EE558910F2556C006EA065 /* PBXTextBookmark */;
+			76EE558A10F2556C006EA065 /* PBXTextBookmark */ = 76EE558A10F2556C006EA065 /* PBXTextBookmark */;
+			76EE558B10F2556C006EA065 /* PBXTextBookmark */ = 76EE558B10F2556C006EA065 /* PBXTextBookmark */;
+			76EE558C10F2560F006EA065 /* PBXTextBookmark */ = 76EE558C10F2560F006EA065 /* PBXTextBookmark */;
 			76F4474610ECEEB5003BC841 = 76F4474610ECEEB5003BC841 /* PBXTextBookmark */;
 			76F4478710ED24D4003BC841 = 76F4478710ED24D4003BC841 /* PBXTextBookmark */;
 			76F4479C10ED2521003BC841 = 76F4479C10ED2521003BC841 /* PBXTextBookmark */;
@@ -2489,7 +2493,7 @@
 		fRef = AC57BD0D10C957DC00B0BD5C /* constellations.xml */;
 		name = "constellations.xml: 1";
 		rLen = 0;
-		rLoc = 115708;
+		rLoc = 115694;
 		rType = 0;
 		vrLen = 115708;
 		vrLoc = 0;
@@ -2499,7 +2503,7 @@
 		fRef = AC57BD0D10C957DC00B0BD5C /* constellations.xml */;
 		name = "constellations.xml: 1";
 		rLen = 0;
-		rLoc = 115708;
+		rLoc = 115694;
 		rType = 0;
 		vrLen = 115708;
 		vrLoc = 0;
@@ -2509,7 +2513,7 @@
 		fRef = AC57BD0D10C957DC00B0BD5C /* constellations.xml */;
 		name = "constellations.xml: 1";
 		rLen = 0;
-		rLoc = 115708;
+		rLoc = 115694;
 		rType = 0;
 		vrLen = 115708;
 		vrLoc = 0;
@@ -2521,7 +2525,7 @@
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 116091;
+		vrLen = 115708;
 		vrLoc = 0;
 	};
 	76EE556B10F24FC5006EA065 /* PBXTextBookmark */ = {
@@ -2529,7 +2533,7 @@
 		fRef = AC57BD0D10C957DC00B0BD5C /* constellations.xml */;
 		name = "constellations.xml: 1";
 		rLen = 0;
-		rLoc = 115708;
+		rLoc = 115694;
 		rType = 0;
 		vrLen = 115708;
 		vrLoc = 0;
@@ -2642,6 +2646,46 @@
 		rType = 0;
 		vrLen = 1163;
 		vrLoc = 1768;
+	};
+	76EE558910F2556C006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC1BA73B10C0225D0084CF6F /* SRConstellation.m */;
+		name = "SRConstellation.m: 76";
+		rLen = 0;
+		rLoc = 2327;
+		rType = 0;
+		vrLen = 1163;
+		vrLoc = 1768;
+	};
+	76EE558A10F2556C006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC57BD0D10C957DC00B0BD5C /* constellations.xml */;
+		name = "constellations.xml: 1";
+		rLen = 0;
+		rLoc = 115694;
+		rType = 0;
+		vrLen = 115708;
+		vrLoc = 0;
+	};
+	76EE558B10F2556C006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC57BD0D10C957DC00B0BD5C /* constellations.xml */;
+		name = "constellations.xml: 1";
+		rLen = 0;
+		rLoc = 74945;
+		rType = 0;
+		vrLen = 115697;
+		vrLoc = 0;
+	};
+	76EE558C10F2560F006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC57BD0D10C957DC00B0BD5C /* constellations.xml */;
+		name = "constellations.xml: 1";
+		rLen = 0;
+		rLoc = 115694;
+		rType = 0;
+		vrLen = 115694;
+		vrLoc = 0;
 	};
 	76F4474610ECEEB5003BC841 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2838,9 +2882,9 @@
 	};
 	AC57BD0D10C957DC00B0BD5C /* constellations.xml */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {925676, 670}}";
-			sepNavSelRange = "{115708, 0}";
-			sepNavVisRange = "{0, 115708}";
+			sepNavIntBoundsRect = "{{0, 0}, {925564, 590}}";
+			sepNavSelRange = "{115694, 0}";
+			sepNavVisRange = "{0, 115694}";
 			sepNavWindowFrame = "{{38, 54}, {1039, 798}}";
 		};
 	};
