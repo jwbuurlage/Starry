@@ -17,12 +17,12 @@
 	if([super init]) {
 		NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 		
-		brightnessFactor = [prefs floatForKey:@"brightness"];
+		brightnessFactor = [prefs floatForKey:@"SRbrightness"];
 		if(brightnessFactor <= 0) {
 			brightnessFactor = 1.0;
 		}
-		showConstellations = [prefs boolForKey:@"showConstellations"];
-		showRedOverlay = [prefs boolForKey:@"showRedOverlay"];
+		showConstellations = [prefs boolForKey:@"SRshowConstellations"];
+		showRedOverlay = [prefs boolForKey:@"SRshowRedOverlay"];
 		
 	}
 	return self;

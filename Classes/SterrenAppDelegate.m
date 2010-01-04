@@ -49,12 +49,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// De locatie opslaan voor het geval de applicatie opnieuw opstart
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-	[prefs setFloat:	[location latitude]						forKey:@"lat"];
-	[prefs setFloat:	[location longitude]					forKey:@"long"];
-	[prefs setBool:		[location staticValues]					forKey:@"staticCoordinates"];
-	[prefs setBool:		[settingsManager showRedOverlay]		forKey:@"showRedOverlay"];
-	[prefs setBool:		[settingsManager showConstellations]	forKey:@"showConstellations"];
-	[prefs setFloat:	[settingsManager brightnessFactor]		forKey:@"brightness"];
+	[prefs setFloat:	[location latitude]						forKey:@"SRlat"];
+	[prefs setFloat:	[location longitude]					forKey:@"SRlong"];
+	[prefs setBool:		[location staticValues]					forKey:@"SRstaticCoordinates"];
+	[prefs setBool:		[settingsManager showRedOverlay]		forKey:@"SRshowRedOverlay"];
+	[prefs setBool:		[settingsManager showConstellations]	forKey:@"SRshowConstellations"];
+	[prefs setFloat:	[settingsManager brightnessFactor]		forKey:@"SRbrightness"];
 	[prefs synchronize];
 }
 

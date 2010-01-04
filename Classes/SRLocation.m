@@ -27,11 +27,11 @@
 		
 		// Locatie opvragen van vorige keer
 		NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-		staticValues = [prefs boolForKey:@"staticCoordinates"];
+		staticValues = [prefs boolForKey:@"SRstaticCoordinates"];
 		
 		if (staticValues) {
-			longitude = [prefs floatForKey:@"long"];
-			latitude = [prefs floatForKey:@"lat"];
+			longitude = [prefs floatForKey:@"SRlong"];
+			latitude = [prefs floatForKey:@"SRlat"];
 		}
 		else {
 			[self useGPSValues];
