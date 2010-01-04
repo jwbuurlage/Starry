@@ -14,77 +14,112 @@
 	if(self = [super init]) {
 		elements = [[NSMutableArray alloc] init];
 		
-		interfaceBackground = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"messierInfoBg.png"]]; //139x320
-		pictureBackground = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"messierPictureBg.png"]]; //341x320
+		/*interfaceBackground = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"messierInfoBg.png"]]; //139x320
+		 pictureBackground = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"messierPictureBg.png"]]; //341x320
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 214, 64, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"Informatie" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12] 
+		 identifier:@"text" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 175, 128, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"Sterrenbeeld:" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		 identifier:@"text-transparent" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 160, 64, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"Type:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		 identifier:@"text-transparent" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 145, 64, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"Afstand:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		 identifier:@"text-transparent" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 130, 128, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"RA:" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		 identifier:@"text-transparent" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 115, 64, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"Declinatie:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		 identifier:@"text-transparent" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 100, 64, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"Magnitude:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		 identifier:@"text-transparent" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(85, 175, 128, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		 identifier:@"text-blue" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(45, 160, 128, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		 identifier:@"text-blue" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(60, 145, 64, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		 identifier:@"text-green" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(35, 130, 128, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		 identifier:@"text-blue" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70, 115, 64, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		 identifier:@"text-blue" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(73, 100, 64, 32) 
+		 texture:nil
+		 identifier:@"text-green" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(158, 46, 301, 232)  //301 x 232
+		 texture:nil
+		 identifier:@"picture" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(260, 25, 102, 34) 
+		 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"messierNameBg.png"]] //102x34
+		 identifier:@"nameplate" 
+		 clickable:NO]];
+		 
+		 [elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(300, 18, 64, 32) 
+		 texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12] 
+		 identifier:@"nameplate" 
+		 clickable:NO]];*/
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 214, 64, 32) 
-																 texture:[[Texture2D alloc] initWithString:@"Informatie" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12] 
-															  identifier:@"text" 
-															   clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 175, 128, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Sterrenbeeld:" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
-															identifier:@"text-transparent" 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 202, 128, 32) 
+															   texture:[[Texture2D alloc] initWithString:@"Messier Informatie" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12] 
+															identifier:@"text" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 160, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Type:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
-															identifier:@"text-transparent" 
-															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 145, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Afstand:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
-															identifier:@"text-transparent" 
-															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 130, 128, 32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 175, 128, 32) 
 															   texture:[[Texture2D alloc] initWithString:@"RA:" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 115, 64, 32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 160, 64, 32) 
 															   texture:[[Texture2D alloc] initWithString:@"Declinatie:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 100, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Magnitude:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
-															identifier:@"text-transparent" 
-															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(85, 175, 128, 32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(60, 175, 128, 32) 
 															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-blue" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(45, 160, 128, 32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(95, 160, 64, 32) 
 															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-blue" 
-															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(60, 145, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
-															identifier:@"text-green" 
-															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(35, 130, 128, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
-															identifier:@"text-blue" 
-															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70, 115, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
-															identifier:@"text-blue" 
-															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(73, 100, 64, 32) 
-															   texture:nil
-															identifier:@"text-green" 
-															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(158, 46, 301, 232)  //301 x 232
-															   texture:nil
-															identifier:@"picture" 
 															 clickable:NO]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(260, 25, 102, 34) 
@@ -97,6 +132,7 @@
 															identifier:@"nameplate" 
 															 clickable:NO]];
 		
+		interfaceBackground = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planetInfoBg.png"]]; //139x320
 	}
 	return self;
 }
@@ -104,11 +140,11 @@
 @synthesize hiding, alphaValue, alphaValueName;
 
 /* + (SRMessierInfo*)shared {
-	if(!sharedMessier) {
-		sharedMessier = [[SRMessierInfo alloc] init];
-	}
-	return sharedMessier;
-} */
+ if(!sharedMessier) {
+ sharedMessier = [[SRMessierInfo alloc] init];
+ }
+ return sharedMessier;
+ } */
 
 -(void)show {
 	alphaValue = 0.0f;
@@ -123,9 +159,9 @@
 - (void)messierClicked:(SRMessier*)theMessier {
 	//[messierImage release];
 	//messierImage = ;
-	[[elements objectAtIndex:[elements count] - 9] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString([theMessier constellation],@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
-	[[elements objectAtIndex:[elements count] - 8] setTexture:[[Texture2D alloc] initWithString:[theMessier type] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
-	[[elements objectAtIndex:[elements count] - 7] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f kly",[theMessier distance]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	//[[elements objectAtIndex:[elements count] - 9] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString([theMessier constellation],@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	//[[elements objectAtIndex:[elements count] - 8] setTexture:[[Texture2D alloc] initWithString:[theMessier type] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	//[[elements objectAtIndex:[elements count] - 7] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f kly",[theMessier distance]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	
 	Vertex3D posForCam = [theMessier myCurrentPosition];
 	float azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
@@ -149,7 +185,7 @@
 	
 	degrees = degrees * 60 / 360; // Uuren er van maken
 	
-	[[elements objectAtIndex:[elements count] - 6] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %i' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %i' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber release];
 	[minutesNumber release];
 	[secondsNumber release];
@@ -167,23 +203,32 @@
 		minutes2 = -minutes2;
 		seconds2 = -seconds2;
 	}
-	[[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber2 release];
 	[minutesNumber2 release];
 	[secondsNumber2 release];
 	
 	/*[[elements objectAtIndex:[elements count] - 6] setTexture:[[Texture2D alloc] initWithString:[theMessier RA] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
-	[[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[theMessier declination] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
-	*/[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f",[theMessier mag]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
-	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [theMessier name]]]]]; 
-	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theMessier name] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]]; 
+	 [[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[theMessier declination] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	 [[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f",[theMessier mag]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	 [[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [theMessier name]]]]]; 
+	 [[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theMessier name] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]]; 
+	 [[elements objectAtIndex:[elements count] - 1] setBounds:CGRectMake(311 - [theMessier.name sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width / 2, 18,64,32)];
+	 */
+	UIImage* planetImageTmp = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [theMessier name]]];
+	messierImage = [[Texture2D alloc] initWithImage:planetImageTmp]; 
+	NSLog(@"%@,", [NSString stringWithFormat:@"%@.png", [theMessier name]]);
+	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:theMessier.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]]; 
 	[[elements objectAtIndex:[elements count] - 1] setBounds:CGRectMake(311 - [theMessier.name sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width / 2, 18,64,32)];
+	[planetImageTmp release];
 }
 
 - (void)draw {
 	glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
-	[interfaceBackground drawInRect:CGRectMake(0, 0, 139, 320)];
-	[pictureBackground drawInRect:CGRectMake(139, 0, 341, 320)];
+	[messierImage drawInRect:CGRectMake(0, 0, 480, 320)]; 
+	[interfaceBackground drawInRect:CGRectMake(20, 0, 200, 320)];
+	//[interfaceBackground drawInRect:CGRectMake(0, 0, 139, 320)];
+	//[pictureBackground drawInRect:CGRectMake(139, 0, 341, 320)];
 	
 	for (SRInterfaceElement* mElement in elements) {
 		if([mElement identifier] == @"text-transparent") {

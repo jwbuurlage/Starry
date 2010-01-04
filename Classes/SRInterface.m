@@ -1064,7 +1064,7 @@
 						foundObjectText = [[Texture2D alloc] initWithString:foundMessier.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 						[theNameplate setName:foundMessier.name inConstellation:@"messier" showInfo:YES];
 						[messierInfo messierClicked:foundMessier];
-						[theNameplate setSelectedType:type];
+						[theNameplate setSelectedType:0];
 						Vertex3D posForCam = [foundMessier myCurrentPosition];
 						azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
 						alTmp = 90-(180/M_PI)*acos(-posForCam.z);
