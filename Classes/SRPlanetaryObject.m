@@ -55,7 +55,6 @@
 	float d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730530;
 	//d = d - 2451545;
 	//test
-	//NSLog(@"d: %f",d);
 	
 	float n = (M_PI / 180) * (0.9856076686/(a*sqrt(a)));
 	float meanAnomaly = ((M_PI / 180) * Mo) + n*(d);
@@ -79,7 +78,8 @@
 	//NSLog(@"trueAnomaly: %f", fmod(trueAnomaly * (180 / M_PI), 360));
 
 	float distance = a*(1 - pow(e,2))/(1 + e*cos(trueAnomaly));
-	//NSLog(@"Distance: %f",distance);
+	if([name isEqualToString:@"Aarde"]) 
+		NSLog(@"Distance: %f",distance);
 	
 	//graden --> Rad
 	float X,Y,Z;
@@ -87,7 +87,6 @@
 	Y = distance * (sin(o)*cos(w + trueAnomaly) + cos(o)*cos(i)*sin(w + trueAnomaly));
 	Z = distance * (sin(i) * sin(w + trueAnomaly));
 	
-	//NSLog(@"(X,Y,Z): (%f,%f,%f)",X,Y,Z);
 	
 	positionHelio = Vertex3DMake(X,Y,Z);
 	
@@ -105,7 +104,7 @@
 	y = positionHelio.y - origin.y;
 	z = positionHelio.z - origin.z;
 	
-	//NSLog(@"(x,y,z): (%f,%f,%f)",x,y,z);
+		NSLog(@"%@: (x,y,z): (%f,%f,%f)",name,x,y,z);
 	
 	float obliquity = 23.4397 * (M_PI / 180);
 	
@@ -130,6 +129,8 @@
 	z = 15.0f * cos(declination);
 	
 	position = Vertex3DMake(x, y, z);
+	
+
 	//NSLog(@"(x,y,z): (%f,%f,%f)",x,y,z);
 }
 
