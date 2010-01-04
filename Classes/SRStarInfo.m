@@ -94,7 +94,7 @@
 	
 
 	NSString* constellation = [[theStar bayer] substringWithRange:NSMakeRange([[theStar bayer] length]-3, 3)];
-	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:constellation dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
+	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(constellation,@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
 	
 	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:azTmp];
 	int degrees = [coordinateNumber intValue];
@@ -110,7 +110,8 @@
 		minutes = 60+minutes;
 		seconds = 60+seconds;
 	}
-	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i\"%i'",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	degrees = degrees * 60 / 360; // Uuren er van maken
+	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %i' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber release];
 	[minutesNumber release];
 	[secondsNumber release];
@@ -128,7 +129,7 @@
 		minutes2 = -minutes2;
 		seconds2 = -seconds2;
 	}
-	[[elements objectAtIndex:[elements count] - 2] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i\"%i'",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 2] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber2 release];
 	[minutesNumber2 release];
 	[secondsNumber2 release];
