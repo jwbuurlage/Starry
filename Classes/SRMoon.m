@@ -18,7 +18,7 @@
 
 -(id)init {
 	if(self = [super init]) {
-		nameTexture = [[Texture2D alloc] initWithString:@"Maan" dimensions:CGSizeMake(64, 64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
+		nameTexture = [[Texture2D alloc] initWithString:NSLocalizedString(@"Moon",@"") dimensions:CGSizeMake(64, 64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
 	}
 	return self;
 }

@@ -281,7 +281,7 @@
 			sunD = sqrt(xd*xd + yd*yd + zd*zd);
 			
 			if (sunD < (2 * (1/zoomingValue))) {
-				[[[renderer interface] theNameplate] setName:@"Zon" inConstellation:@"onze ster" showInfo:NO];
+				[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Sun", @"") inConstellation:NSLocalizedString(@"Our star", @"") showInfo:NO];
 				[[renderer interface] setANameplate:TRUE];
 
 //<<<<<<< HEAD:Classes/GLViewController.m
@@ -303,7 +303,7 @@
 			moonD = sqrt(xd*xd + yd*yd + zd*zd);
 			
 			if (moonD < (2 * (1/zoomingValue))) {
-				[[[renderer interface] theNameplate] setName:@"Maan" inConstellation:@"" showInfo:NO];
+				[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Moon", @"") inConstellation:@"" showInfo:NO];
 				[[renderer interface] setANameplate:TRUE];
 
 				//Vertex3D position = ;
@@ -339,7 +339,7 @@
 
 //=======
 					[[[renderer interface] theNameplate] setSelectedType:1];					
-					[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:@"planeet" showInfo:YES];
+					[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:NSLocalizedString(@"planet", @"") showInfo:YES];
 //>>>>>>> 432905627afb0f19ea3c87fa64b8b3ac63459d04:Classes/GLViewController.m
 					[[renderer interface] setANameplate:TRUE];
 					
@@ -371,7 +371,7 @@
 					//FIXME waarom zo'n raar getal?
 					if(closestD < (5.1)) {
 						[[[renderer interface] theNameplate] setSelectedType:0];
-						[[[renderer interface] theNameplate] setName:closestMessier.name inConstellation:@"messier" showInfo:YES];
+						[[[renderer interface] theNameplate] setName:closestMessier.name inConstellation:NSLocalizedString(@"messier", @"") showInfo:YES];
 						[[renderer interface] setANameplate:TRUE];
 
 						[[[renderer interface] messierInfo] messierClicked:closestMessier];
@@ -422,7 +422,7 @@
 						//NSLog(@"Delta of closest: %f",closestD);
 						[[[renderer interface] theNameplate] setSelectedType:2];
 						if (closestStar.name == @"" || closestStar.name == @" ") {
-							[[[renderer interface] theNameplate] setName:@"Naamloze ster" inConstellation:closestStar.bayer showInfo:YES];
+							[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Nameless star", @"") inConstellation:closestStar.bayer showInfo:YES];
 						}
 						else {
 							[[[renderer interface] theNameplate] setName:closestStar.name inConstellation:closestStar.bayer showInfo:YES];

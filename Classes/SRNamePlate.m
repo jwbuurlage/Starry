@@ -90,7 +90,7 @@
 
 -(void)setName:(NSString*)name inConstellation:(NSString*)constellation showInfo:(BOOL)theInfo {	
 	if(name == nil) {
-		name = @"Naamloos";
+		name = NSLocalizedString(@"Nameless",@"");
 	}
 	
 	[[[elements objectAtIndex:2] texture] release];

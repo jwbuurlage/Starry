@@ -18,7 +18,7 @@
 @implementation SRSun
 -(id)init {
 	if(self = [super init]) {
-		name = [NSString stringWithString:@"Zon"];
+		name = [NSString stringWithString:NSLocalizedString(@"Sun",@"")];
 		nameTexture = [[Texture2D alloc] initWithString:name dimensions:CGSizeMake(64, 64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0];
 	}
 	return self;
