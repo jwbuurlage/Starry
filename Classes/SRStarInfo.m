@@ -94,7 +94,7 @@
 	
 
 	NSString* constellation = [[theStar bayer] substringWithRange:NSMakeRange([[theStar bayer] length]-3, 3)];
-	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:constellation dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
+	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(constellation,@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
 	
 	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:azTmp];
 	int degrees = [coordinateNumber intValue];

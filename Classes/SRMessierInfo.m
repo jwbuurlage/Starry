@@ -123,7 +123,7 @@
 - (void)messierClicked:(SRMessier*)theMessier {
 	//[messierImage release];
 	//messierImage = ;
-	[[elements objectAtIndex:[elements count] - 9] setTexture:[[Texture2D alloc] initWithString:[theMessier constellation] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 9] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString([theMessier constellation],@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[[elements objectAtIndex:[elements count] - 8] setTexture:[[Texture2D alloc] initWithString:[theMessier type] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[[elements objectAtIndex:[elements count] - 7] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f kly",[theMessier distance]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	
