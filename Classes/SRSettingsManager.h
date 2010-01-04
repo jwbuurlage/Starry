@@ -10,12 +10,12 @@
 
 
 @interface SRSettingsManager : NSObject {
-	float brightnessFactor;
+	double brightnessFactor;
 	BOOL showConstellations;
 	BOOL showRedOverlay;
 }
 
-@property (nonatomic,readwrite) float brightnessFactor;
+@property (nonatomic,readwrite) double brightnessFactor;
 @property (nonatomic,readwrite) BOOL showConstellations;
 @property (nonatomic,readwrite) BOOL showRedOverlay;
 

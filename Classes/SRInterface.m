@@ -583,12 +583,12 @@
 			}
 		}
 		else if(clicker == @"brightness_plus") {
-			float brightness = [[appDelegate settingsManager] brightnessFactor];
+			double brightness = [[appDelegate settingsManager] brightnessFactor];
 			brightness += 0.1;
 			[[appDelegate settingsManager] setBrightnessFactor:brightness];
 		}
 		else if(clicker == @"brightness_minus") {
-			float brightness = [[appDelegate settingsManager] brightnessFactor];
+			double brightness = [[appDelegate settingsManager] brightnessFactor];
 			brightness -= 0.1;
 			[[appDelegate settingsManager] setBrightnessFactor:brightness];
 		}		
