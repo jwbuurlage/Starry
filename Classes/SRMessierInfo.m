@@ -130,7 +130,7 @@
 	Vertex3D posForCam = [theMessier myCurrentPosition];
 	float azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
 	float alTmp = 90-(180/M_PI)*acos(-posForCam.z); 
-	NSLog(@"test %f",azTmp);
+	//NSLog(@"test %f",azTmp);
 	
 	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:azTmp];
 	int degrees = [coordinateNumber intValue];
@@ -146,7 +146,10 @@
 		minutes = 60+minutes;
 		seconds = 60+seconds;
 	}
-	[[elements objectAtIndex:[elements count] - 6] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i\"%i'",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	
+	degrees = degrees * 60 / 360; // Uuren er van maken
+	
+	[[elements objectAtIndex:[elements count] - 6] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %i' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber release];
 	[minutesNumber release];
 	[secondsNumber release];
@@ -164,7 +167,7 @@
 		minutes2 = -minutes2;
 		seconds2 = -seconds2;
 	}
-	[[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i\"%i'",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber2 release];
 	[minutesNumber2 release];
 	[secondsNumber2 release];

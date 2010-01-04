@@ -67,7 +67,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 76FBD269109DE495005A0ADE /* Sterren */;
-		activeSDKPreference = iphoneos3.1.2;
+		activeSDKPreference = iphonesimulator3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Sterren */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Sterren */,
@@ -431,6 +431,16 @@
 			76EE55B510F257AD006EA065 /* PBXTextBookmark */ = 76EE55B510F257AD006EA065 /* PBXTextBookmark */;
 			76EE55B610F257AD006EA065 /* PBXTextBookmark */ = 76EE55B610F257AD006EA065 /* PBXTextBookmark */;
 			76EE55B710F257AD006EA065 /* PBXTextBookmark */ = 76EE55B710F257AD006EA065 /* PBXTextBookmark */;
+			76EE55BB10F25924006EA065 /* PBXTextBookmark */ = 76EE55BB10F25924006EA065 /* PBXTextBookmark */;
+			76EE55BC10F25924006EA065 /* PBXTextBookmark */ = 76EE55BC10F25924006EA065 /* PBXTextBookmark */;
+			76EE55BD10F25924006EA065 /* PBXTextBookmark */ = 76EE55BD10F25924006EA065 /* PBXTextBookmark */;
+			76EE55BE10F25924006EA065 /* PBXTextBookmark */ = 76EE55BE10F25924006EA065 /* PBXTextBookmark */;
+			76EE55BF10F25924006EA065 /* PBXTextBookmark */ = 76EE55BF10F25924006EA065 /* PBXTextBookmark */;
+			76EE55C010F25924006EA065 /* PBXTextBookmark */ = 76EE55C010F25924006EA065 /* PBXTextBookmark */;
+			76EE55C110F25924006EA065 /* PBXTextBookmark */ = 76EE55C110F25924006EA065 /* PBXTextBookmark */;
+			76EE55C210F25924006EA065 /* PBXTextBookmark */ = 76EE55C210F25924006EA065 /* PBXTextBookmark */;
+			76EE55C310F25924006EA065 /* PBXTextBookmark */ = 76EE55C310F25924006EA065 /* PBXTextBookmark */;
+			76EE55C410F25925006EA065 /* PBXTextBookmark */ = 76EE55C410F25925006EA065 /* PBXTextBookmark */;
 			76F4474610ECEEB5003BC841 = 76F4474610ECEEB5003BC841 /* PBXTextBookmark */;
 			76F4478710ED24D4003BC841 = 76F4478710ED24D4003BC841 /* PBXTextBookmark */;
 			76F4479C10ED2521003BC841 = 76F4479C10ED2521003BC841 /* PBXTextBookmark */;
@@ -1017,9 +1027,9 @@
 	};
 	76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1932, 3643}}";
-			sepNavSelRange = "{1596, 35}";
-			sepNavVisRange = "{1371, 1229}";
+			sepNavIntBoundsRect = "{{0, 0}, {2076, 3756}}";
+			sepNavSelRange = "{4772, 0}";
+			sepNavVisRange = "{4636, 1423}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -1201,7 +1211,7 @@
 		fRef = AC57693F10E7CF910031505E /* SRPlanetInfo.m */;
 		name = "SRPlanetInfo.m: 127";
 		rLen = 0;
-		rLoc = 5893;
+		rLoc = 5957;
 		rType = 0;
 		vrLen = 2228;
 		vrLoc = 4209;
@@ -1265,9 +1275,9 @@
 	};
 	76D7294210EBD8F80018EB62 /* SRStarInfo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2172, 2781}}";
-			sepNavSelRange = "{4248, 36}";
-			sepNavVisRange = "{3799, 1747}";
+			sepNavIntBoundsRect = "{{0, 0}, {2204, 2883}}";
+			sepNavSelRange = "{6121, 0}";
+			sepNavVisRange = "{4912, 1689}";
 		};
 	};
 	76D7BAF110E0AEE700F8806E /* PBXTextBookmark */ = {
@@ -3005,6 +3015,106 @@
 		vrLen = 551;
 		vrLoc = 287;
 	};
+	76EE55BB10F25924006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 767820EF10F10CEC001ADE6D /* en */;
+		name = "Localizable.strings: 35";
+		rLen = 0;
+		rLoc = 547;
+		rType = 0;
+		vrLen = 551;
+		vrLoc = 287;
+	};
+	76EE55BC10F25924006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC1BA73B10C0225D0084CF6F /* SRConstellation.m */;
+		name = "SRConstellation.m: 76";
+		rLen = 27;
+		rLoc = 2300;
+		rType = 0;
+		vrLen = 1112;
+		vrLoc = 1768;
+	};
+	76EE55BD10F25924006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACEC7CF0109B25A700149C80 /* SRStar.m */;
+		name = "SRStar.m: 50";
+		rLen = 16;
+		rLoc = 1172;
+		rType = 0;
+		vrLen = 787;
+		vrLoc = 3178;
+	};
+	76EE55BE10F25924006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */;
+		name = "SRLocationModule.m: 123";
+		rLen = 0;
+		rLoc = 4772;
+		rType = 0;
+		vrLen = 1423;
+		vrLoc = 4636;
+	};
+	76EE55BF10F25924006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC57693E10E7CF910031505E /* SRPlanetInfo.h */;
+		name = "SRPlanetInfo.h: 19";
+		rLen = 10;
+		rLoc = 366;
+		rType = 0;
+		vrLen = 707;
+		vrLoc = 38;
+	};
+	76EE55C010F25924006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC57693F10E7CF910031505E /* SRPlanetInfo.m */;
+		name = "SRPlanetInfo.m: 101";
+		rLen = 51;
+		rLoc = 3946;
+		rType = 0;
+		vrLen = 1698;
+		vrLoc = 3133;
+	};
+	76EE55C110F25924006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC89DDF810D035480083BFEA /* SRMessierInfo.m */;
+		name = "SRMessierInfo.m: 170";
+		rLen = 0;
+		rLoc = 8727;
+		rType = 0;
+		vrLen = 1728;
+		vrLoc = 7188;
+	};
+	76EE55C210F25924006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76D7294210EBD8F80018EB62 /* SRStarInfo.m */;
+		name = "SRStarInfo.m: 97";
+		rLen = 36;
+		rLoc = 4248;
+		rType = 0;
+		vrLen = 1747;
+		vrLoc = 3799;
+	};
+	76EE55C310F25924006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76D7294210EBD8F80018EB62 /* SRStarInfo.m */;
+		name = "SRStarInfo.m: 132";
+		rLen = 0;
+		rLoc = 6121;
+		rType = 0;
+		vrLen = 1709;
+		vrLoc = 4892;
+	};
+	76EE55C410F25925006EA065 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76D7294210EBD8F80018EB62 /* SRStarInfo.m */;
+		name = "SRStarInfo.m: 132";
+		rLen = 0;
+		rLoc = 6121;
+		rType = 0;
+		vrLen = 1689;
+		vrLoc = 4912;
+	};
 	76F4474610ECEEB5003BC841 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = ACC4934B10CD6A8D00DC7967 /* SRMoon.m */;
@@ -3186,16 +3296,16 @@
 	};
 	AC57693E10E7CF910031505E /* SRPlanetInfo.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1161, 825}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1161, 808}}";
 			sepNavSelRange = "{366, 10}";
-			sepNavVisRange = "{38, 885}";
+			sepNavVisRange = "{38, 707}";
 		};
 	};
 	AC57693F10E7CF910031505E /* SRPlanetInfo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2188, 2764}}";
-			sepNavSelRange = "{5404, 0}";
-			sepNavVisRange = "{4615, 1458}";
+			sepNavIntBoundsRect = "{{0, 0}, {2196, 2843}}";
+			sepNavSelRange = "{3946, 51}";
+			sepNavVisRange = "{3133, 1698}";
 		};
 	};
 	AC57BD0D10C957DC00B0BD5C /* constellations.xml */ = {
@@ -3285,9 +3395,9 @@
 	};
 	AC89DDF810D035480083BFEA /* SRMessierInfo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2172, 3903}}";
+			sepNavIntBoundsRect = "{{0, 0}, {2204, 3766}}";
 			sepNavSelRange = "{6213, 0}";
-			sepNavVisRange = "{5928, 1979}";
+			sepNavVisRange = "{6985, 928}";
 		};
 	};
 	AC8A87ED10C56FCE0015CDF5 /* latitude.png */ = {
@@ -3392,7 +3502,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1161, 2980}}";
 			sepNavSelRange = "{1172, 16}";
-			sepNavVisRange = "{785, 887}";
+			sepNavVisRange = "{3178, 787}";
 		};
 	};
 	ACEC7CF1109B25A700149C80 /* SRSun.h */ = {
