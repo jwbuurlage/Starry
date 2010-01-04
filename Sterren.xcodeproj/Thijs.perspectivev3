@@ -267,6 +267,7 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>ACA875E7109DD08C00465577</string>
 								<string>AC1BA73710C021D00084CF6F</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>767820EA10F10CD3001ADE6D</string>
@@ -276,14 +277,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>26</integer>
-									<integer>24</integer>
-									<integer>23</integer>
-									<integer>0</integer>
+									<integer>100</integer>
+									<integer>98</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 73}, {208, 780}}</string>
+							<string>{{0, 1039}, {208, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -314,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Localizable.strings</string>
+								<string>SRPlanetModule.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,11 +321,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Localizable.strings</string>
+										<string>SRPlanetModule.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>76EE54F210F23EC7006EA065</string>
+										<string>76EE551E10F2428E006EA065</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -348,7 +347,6 @@
 											<string>7617A28310CAEF5800768180</string>
 											<string>7617A28410CAEF5800768180</string>
 											<string>76475AFB10CC23E100A2C9E7</string>
-											<string>76475AFF10CC23E100A2C9E7</string>
 											<string>76D91DD210CEAE70003930BE</string>
 											<string>766C2A5910D3D08200CE7696</string>
 											<string>766C2A5A10D3D08200CE7696</string>
@@ -373,8 +371,6 @@
 											<string>769733D410EF73870057E29F</string>
 											<string>769733F910EF784E0057E29F</string>
 											<string>7697341110EF79750057E29F</string>
-											<string>7697342710EF7B150057E29F</string>
-											<string>7697342810EF7B150057E29F</string>
 											<string>7697346A10EF84C90057E29F</string>
 											<string>7697346B10EF84C90057E29F</string>
 											<string>7697347D10EF85FC0057E29F</string>
@@ -386,7 +382,6 @@
 											<string>76CF14FC10EFB3B3006EA567</string>
 											<string>76CF14FD10EFB3B3006EA567</string>
 											<string>76CF14FE10EFB3B3006EA567</string>
-											<string>76CF14FF10EFB3B3006EA567</string>
 											<string>76CF150010EFB3B3006EA567</string>
 											<string>76CF150110EFB3B3006EA567</string>
 											<string>76CF150210EFB3B3006EA567</string>
@@ -403,20 +398,24 @@
 											<string>7636E5AE10F0F2250025DEEE</string>
 											<string>7636E62A10F0F9C30025DEEE</string>
 											<string>7636E62B10F0F9C30025DEEE</string>
-											<string>7636E64E10F0FD6B0025DEEE</string>
 											<string>7636E64F10F0FD6B0025DEEE</string>
 											<string>7636E65B10F0FDFD0025DEEE</string>
 											<string>76EE54C310F23C07006EA065</string>
 											<string>76EE54DF10F23DEE006EA065</string>
-											<string>76EE54E010F23DEE006EA065</string>
 											<string>76EE54E110F23DEE006EA065</string>
 											<string>76EE54E210F23DEE006EA065</string>
-											<string>76EE54E310F23DEE006EA065</string>
 											<string>76EE54E410F23DEE006EA065</string>
-											<string>76EE54E510F23DEE006EA065</string>
 											<string>76EE54E610F23DEE006EA065</string>
-											<string>76EE54E710F23DEE006EA065</string>
-											<string>76EE54EF10F23E8F006EA065</string>
+											<string>76EE54FC10F2413C006EA065</string>
+											<string>76EE54FD10F2413C006EA065</string>
+											<string>76EE54FE10F2413C006EA065</string>
+											<string>76EE550810F241A3006EA065</string>
+											<string>76EE550D10F24243006EA065</string>
+											<string>76EE550E10F24243006EA065</string>
+											<string>76EE550F10F24243006EA065</string>
+											<string>76EE551010F24243006EA065</string>
+											<string>76EE551C10F2428E006EA065</string>
+											<string>76EE551910F2427A006EA065</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -737,7 +736,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>76EE54F310F23EC7006EA065</string>
+		<string>76EE551F10F2428E006EA065</string>
 		<string>76EE54C810F23C08006EA065</string>
 		<string>76EE54BE10F23BEE006EA065</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>

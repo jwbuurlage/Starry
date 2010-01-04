@@ -50,7 +50,7 @@
 															 clickable:YES]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(52, -60, 64,32) 
-															   texture:[[Texture2D alloc] initWithString:@"SNELHEID:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
+															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Speed", @"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent"
 															 clickable:NO]];
 		
@@ -60,7 +60,7 @@
 															 clickable:NO]];		
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(65, -75, 64,32) 
-															   texture:[[Texture2D alloc] initWithString:@"DATUM:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
+															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Date", @"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		

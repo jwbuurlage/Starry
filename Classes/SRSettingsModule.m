@@ -36,7 +36,7 @@
 															 clickable:YES]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150,-58, 80,32) 
-															   texture:[[Texture2D alloc] initWithString:@"HELDERHEID" dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
+															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Brightness", @"") dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		

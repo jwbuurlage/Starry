@@ -32,10 +32,10 @@
 		
 		glGenTextures(20, &textures[0]);
 		[interface loadTexture:@"horizon_bg.png" intoLocation:textures[0]];
-		[interface loadTextureWithString:@"Z" intoLocation:textures[1]];
-		[interface loadTextureWithString:@"W" intoLocation:textures[2]];		
-		[interface loadTextureWithString:@"N" intoLocation:textures[3]];
-		[interface loadTextureWithString:@"O" intoLocation:textures[4]];
+		[interface loadTextureWithString:NSLocalizedString(@"comS", @"") intoLocation:textures[1]];
+		[interface loadTextureWithString:NSLocalizedString(@"comW", @"") intoLocation:textures[2]];		
+		[interface loadTextureWithString:NSLocalizedString(@"comN", @"") intoLocation:textures[3]];
+		[interface loadTextureWithString:NSLocalizedString(@"comE", @"") intoLocation:textures[4]];
 		
 		//Dit moet anders, via loadPlanetData misschien
 		// Waarom laad je planet 6 keer in? :-S dat kan makkelijk 1 keer zijn

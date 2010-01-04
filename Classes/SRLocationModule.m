@@ -49,11 +49,11 @@
 															 clickable:YES]];	
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(104,-60, 80,32) 
-															   texture:[[Texture2D alloc] initWithString:@"BREEDTEGRAAD" dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
+															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Latitude", @"") dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent"
 															 clickable:NO]];
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(224,-60, 80,32) 
-															   texture:[[Texture2D alloc] initWithString:@"LENGTEGRAAD" dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
+															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Longitude", @"") dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(104,-72, 80,32) 
@@ -111,10 +111,10 @@
 				int seconds = [secondsNumber intValue];
 				NSString * northOrSouth;
 				if (latitude >= 0) {
-					northOrSouth = @"NB";
+					northOrSouth = NSLocalizedString(@"locN", @"");
 				}
 				else {
-					northOrSouth = @"ZB";
+					northOrSouth = NSLocalizedString(@"locS", @"");
 					degrees = -degrees;
 					minutes = -minutes;
 					seconds = -seconds;
@@ -149,10 +149,10 @@
 				int seconds = [secondsNumber intValue];
 				NSString * westOrEast;
 				if (longitude >= 0) {
-					westOrEast = @"WL";
+					westOrEast = NSLocalizedString(@"locW", @"");
 				}
 				else {
-					westOrEast = @"OL";
+					westOrEast = NSLocalizedString(@"locE", @"");
 					degrees = -degrees;
 					minutes = -minutes;
 					seconds = -seconds;
