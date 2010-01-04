@@ -24,6 +24,7 @@
 	Texture2D* messierImage;
 	Texture2D* messierText;
 	Texture2D* interfaceBackground;
+	Texture2D* background;
 	Texture2D* pictureBackground;
 	//text...
 	

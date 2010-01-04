@@ -133,6 +133,7 @@
 															 clickable:NO]];
 		
 		interfaceBackground = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planetInfoBg.png"]]; //139x320
+		background = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"messierBack.png"]];
 	}
 	return self;
 }
@@ -215,17 +216,18 @@
 	 [[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theMessier name] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]]; 
 	 [[elements objectAtIndex:[elements count] - 1] setBounds:CGRectMake(311 - [theMessier.name sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width / 2, 18,64,32)];
 	 */
-	UIImage* planetImageTmp = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [theMessier name]]];
-	messierImage = [[Texture2D alloc] initWithImage:planetImageTmp]; 
-	NSLog(@"%@,", [NSString stringWithFormat:@"%@.png", [theMessier name]]);
+	UIImage* messierImageTmp = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [theMessier name]]];
+	messierImage = [[Texture2D alloc] initWithImage:messierImageTmp]; 
+	//NSLog(@"%@,", [NSString stringWithFormat:@"%@.png", [theMessier name]]);
 	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:theMessier.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]]; 
 	[[elements objectAtIndex:[elements count] - 1] setBounds:CGRectMake(311 - [theMessier.name sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width / 2, 18,64,32)];
-	[planetImageTmp release];
+	[messierImageTmp release];
 }
 
 - (void)draw {
 	glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
-	[messierImage drawInRect:CGRectMake(0, 0, 480, 320)]; 
+	[background drawInRect:CGRectMake(0, 0, 480, 320)]; 
+	[messierImage drawInRect:CGRectMake(158, 46, 301, 232)]; 
 	[interfaceBackground drawInRect:CGRectMake(20, 0, 200, 320)];
 	//[interfaceBackground drawInRect:CGRectMake(0, 0, 139, 320)];
 	//[pictureBackground drawInRect:CGRectMake(139, 0, 341, 320)];
