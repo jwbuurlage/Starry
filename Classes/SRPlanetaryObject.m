@@ -78,8 +78,6 @@
 	//NSLog(@"trueAnomaly: %f", fmod(trueAnomaly * (180 / M_PI), 360));
 
 	float distance = a*(1 - pow(e,2))/(1 + e*cos(trueAnomaly));
-	if([name isEqualToString:@"Aarde"]) 
-		NSLog(@"Distance: %f",distance);
 	
 	//graden --> Rad
 	float X,Y,Z;
@@ -104,7 +102,6 @@
 	y = positionHelio.y - origin.y;
 	z = positionHelio.z - origin.z;
 	
-		NSLog(@"%@: (x,y,z): (%f,%f,%f)",name,x,y,z);
 	
 	float obliquity = 23.4397 * (M_PI / 180);
 	

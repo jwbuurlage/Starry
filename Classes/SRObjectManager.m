@@ -216,7 +216,7 @@
 -(void)buildStarData {
 	NSLog(@"Star count: %i",[stars count]);
 
-	starNum = 0;
+	/* starNum = 0;
 	GLfloat starPointsTmp[[stars count]*8];
 	int matrixStartPos;
 	int starSizeNumTmp[6] = { 0, 0, 0, 0, 0, 0 };
@@ -280,7 +280,7 @@
 		[starSizeNum addObject:[NSNumber numberWithInt:starSizeNumTmp[i]]];
 		NSLog(@"inladen in array:%i,%i",starSizeNumTmp[i],i);
 	}
-	 
+	  */
 
 }
 

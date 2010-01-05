@@ -50,7 +50,8 @@
 		
 	GLfloat planetPoints[64];
 	GLfloat stringPoints[56];
-	GLfloat starPoints[15000];
+	GLfloat starPoints[120000];
+	NSMutableArray* starSizeNum;
 	GLfloat constellationPoints[15000];
 	GLfloat messierPoints[1500];
 	int planetNum;

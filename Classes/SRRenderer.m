@@ -98,12 +98,55 @@
 
 -(void)loadStarPoints {
 	[objectManager buildStarData];
-	NSMutableArray * starPointsTmp = [objectManager starPoints];
-	starNum = [objectManager starNum];
-	for (int i=0; i < starNum*8; i++) {
-		starPoints[i] = [[starPointsTmp objectAtIndex:i] floatValue];
-		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
-	}	
+	
+	starNum = 0;
+	int matrixStartPos;
+	int starSizeNumTmp[6] = { 0, 0, 0, 0, 0, 0 };
+	//float size;
+	//float alpha;
+	SRStar * star;
+	
+	for(star in [objectManager stars]) {
+		if(star.name != @"Sol") {
+			matrixStartPos = starNum * 8;
+			starPoints[matrixStartPos] = [star.x floatValue];
+			starPoints[matrixStartPos+1] = [star.y floatValue];
+			starPoints[matrixStartPos+2] = [star.z floatValue];
+			starPoints[matrixStartPos+3] = [star color].red;
+			starPoints[matrixStartPos+4] = [star color].green;
+			starPoints[matrixStartPos+5] = [star color].blue;
+			starPoints[matrixStartPos+6] = [star alpha];
+			//starPointsTmp[matrixStartPos+7] = [star size];
+			starPoints[matrixStartPos+7] = 0;
+			
+			if([[star mag] floatValue] < 2) {
+				++starSizeNumTmp[0];
+			}
+			else if ([[star mag] floatValue] < 3) {
+				starSizeNumTmp[1] += 1;
+			}
+			else if ([[star mag] floatValue] < 4) {
+				starSizeNumTmp[2] += 1;
+			}
+			else if ([[star mag] floatValue] < 4.5) {
+				starSizeNumTmp[3] += 1;
+			}
+			else if ([[star mag] floatValue] < 5) {
+				starSizeNumTmp[4] += 1;
+			}
+			else if ([[star mag] floatValue] < 7) {
+				starSizeNumTmp[5] += 1;
+			}
+			starNum++;
+		}
+	}
+		
+	starSizeNum = [[NSMutableArray alloc] init];
+	for (int i=0; i < 6; i++) {
+		[starSizeNum addObject:[NSNumber numberWithInt:starSizeNumTmp[i]]];
+	} 
+	
+	starNum = [[objectManager stars] count];
 }
 
 -(void)renderPlanetView {
@@ -280,7 +323,7 @@
 -(void)drawStars {
 	glVertexPointer(3, GL_FLOAT, 32, starPoints);
     glColorPointer(4, GL_FLOAT, 32, &starPoints[3]);
-	NSMutableArray * starSizeNum = [objectManager starSizeNum];
+	//NSMutableArray * starSizeNum = [objectManager starSizeNum];
 	GLfloat size;
 	
 	size = 4 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
