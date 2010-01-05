@@ -16,7 +16,7 @@ if(!$select) {
 }
 
 
-$query = mysql_query("SELECT ProperName,bayerFlamsteed,RA,XDec,Distance,Mag,ColorIndex FROM hyg WHERE Mag < 6 ORDER BY Mag");
+$query = mysql_query("SELECT ProperName,bayerFlamsteed,RA,XDec,Distance,Mag,ColorIndex FROM hyg WHERE Mag < 5 ORDER BY Mag");
 $i=0;
 
 while($fetch = mysql_fetch_object($query)) {
