@@ -191,15 +191,15 @@
 			//[objectManager clickedAtX:x Y:y];
 			
 			// Tenopzichte van het midden uitrekenen iPhone screen (480*320)
-			int dmX = -x+160;
-			int dmY = -y+240;
+			int deltaX = -x+160;
+			int deltaY = -y+240;
 			
 			
 			// Voor het testen zoom de camera daar heen
 			//[camera rotateCameraWithX:dmX 
 			//						Y:dmY];
 			
-			float readDECDeg = fmod(90+[camera calculateAltitudeWithX:dmX Y:dmY],180);
+			/*float readDECDeg = fmod(90+[camera calculateAltitudeWithX:dmX Y:dmY],180);
 			
 			float readRADeg = fmod([camera calculateAzimuthWithX:dmX Y:dmY],360);
 			if (readRADeg < 0) {
@@ -220,7 +220,59 @@
 			float brX = sin(readDECRad)*cos(readRARad);
 			float brY = sin(readDECRad)*sin(readRARad);
 			float brZ = cos(readDECRad);
-			NSLog(@"Aangeklikte locatie op bol x:%f y:%f z:%f",brX,brY,brZ);
+			NSLog(@"Aangeklikte locatie op bol x:%f y:%f z:%f",brX,brY,brZ);*/
+		
+		float fieldOfView = [camera fieldOfView];
+		float altitude = [camera altitude];
+		float azimuth = [camera azimuth];
+		
+		float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
+		float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/480;
+		//float standardHeight = 0.8910065242;
+		//float radPerPixel = (0.3*M_PI)/320;
+		// Coordinaten in het vlak
+		float fiX = deltaX * radPerPixel;
+		float fiY = deltaY * radPerPixel;
+		float fiZ = -standardHeight;
+		// Bereken straal hulp-bol
+		float dSphere1 = sqrtf(powf(fiX,2) + powf(fiY,2) + powf(fiZ,2));
+		NSLog(@"fiX:%f y:%f z:%f rHulp-Bol:%f",fiX,fiY,fiZ,dSphere1);
+		// Bereken coordinaten die de bol raken
+		float coX = fiX / dSphere1;
+		float coY = fiY / dSphere1;
+		float coZ = fiZ / dSphere1;
+		//float dSphere2 = sqrtf(powf(coX,2) + powf(coY,2) + powf(coZ,2));
+		NSLog(@"coX:%f y:%f z:%f",coX,coY,coZ);
+		
+		float rotationY1 = (altitude-90)*(M_PI/180);
+		float rotationZ = azimuth*(M_PI/180);
+		
+		float brX = coX;
+		float brY = coY;
+		float brZ = coZ;
+		
+		/*float brX = 0;
+		 float brY = 0;
+		 float brZ = -1;*/
+		
+		float maX,maY,maZ;
+		
+		maX = (cos(rotationY1)*brX+0*brY+sin(rotationY1)*brZ);
+		maY = (0*brX+1*brY+0*brZ);
+		maZ = ((-sin(rotationY1)*brX)+0*brY+cos(rotationY1)*brZ);
+		
+		brX = maX;
+		brY = maY;
+		brZ = maZ;
+		
+		maX = (cos(rotationZ)*brX+(-sin(rotationZ)*brY)+0*brZ);
+		maY = (sin(rotationZ)*brX+cos(rotationZ)*brY+0*brZ);
+		maZ = (0*brX+0*brY+1*brZ);
+		
+		brX = maX;
+		brY = maY;
+		brZ = maZ;
+		
 			
 			
 			float rotationY = (90-[[renderer location] latitude])*(M_PI/180);
@@ -231,7 +283,7 @@
 			// voor goed voorbeeld: http://www.math.umn.edu/~nykamp/m2374/readings/matvecmultex/
 			// wikipedia rotatie matrix: http://en.wikipedia.org/wiki/Rotation_matrix
 			
-			float maX,maY,maZ;
+			//float maX,maY,maZ;
 			
 			// Matrix vermenigvuldiging met draai om de y-as (locatie)
 			maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);

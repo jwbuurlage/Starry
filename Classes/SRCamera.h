@@ -57,6 +57,7 @@
 @property (readwrite) BOOL planetView;
 @property (readwrite) float altitude;
 @property (readwrite) float azimuth;
+@property (readonly) float fieldOfView;
 
 -(GLfloat)zoomingValue;
 - (id)initWithView:(GLView*)view;

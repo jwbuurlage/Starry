@@ -17,7 +17,7 @@
 
 @implementation SRCamera
 
-@synthesize azimuth, altitude, planetView;
+@synthesize azimuth, altitude, planetView, fieldOfView;
 
 - (id)initWithView:(GLView*)view
 {
@@ -113,55 +113,8 @@
 // Berekeningen voor camera locatie
 
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
-	//Hoogte van het vlak
-	//float standardHeight = 0.760459656;
-	float standardHeight = cos(0.5*(sqrt(pow((fieldOfView*480)/320,2)+pow((fieldOfView*480)/320,2))));
-	float radPerPixel = ((fieldOfView*480)/320)/480;
-	//float standardHeight = 0.8910065242;
-	//float radPerPixel = (0.3*M_PI)/320;
-	// Coordinaten in het vlak
-	float fiX = deltaX * radPerPixel;
-	float fiY = deltaY * radPerPixel;
-	float fiZ = -standardHeight;
-	// Bereken straal hulp-bol
-	float dSphere1 = sqrt(pow(fiX,2) + pow(fiY,2) + pow(fiZ,2));
-	// Bereken coordinaten die de bol raken
-	float coX = fiX / dSphere1;
-	float coY = fiY / dSphere1;
-	float coZ = fiZ / dSphere1;
-	float dSphere2 = sqrt(pow(coX,2) + pow(coY,2) + pow(coZ,2));
-	NSLog(@"coX:%f y:%f z:%f rHulp-Bol:%f rBol:%f",coX,coY,coZ,dSphere1,dSphere2);
 	
-	float rotationY = (altitude-90)*(M_PI/180);
-	float rotationZ = azimuth*(M_PI/180);
-	
-	float brX = coX;
-	float brY = coY;
-	float brZ = coZ;
-	
-	/*float brX = 0;
-	float brY = 0;
-	float brZ = -1;*/
-	
-	float maX,maY,maZ;
-	
-	maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
-	maY = (0*brX+1*brY+0*brZ);
-	maZ = ((-sin(rotationY)*brX)+0*brY+cos(rotationY)*brZ);
-	
-	brX = maX;
-	brY = maY;
-	brZ = maZ;
-	
-	maX = (cos(rotationZ)*brX+(-sin(rotationZ)*brY)+0*brZ);
-	maY = (sin(rotationZ)*brX+cos(rotationZ)*brY+0*brZ);
-	maZ = (0*brX+0*brY+1*brZ);
-	
-	brX = maX;
-	brY = maY;
-	brZ = maZ;
-	
-	NSLog(@"brX:%f y:%f z:%f",brX,brY,brZ);
+	//NSLog(@"brX:%f y:%f z:%f",brX,brY,brZ);
 	
 	float rotationConstant = 5.5850536;
 	/*float adjustment = (altitude/180)*(-abs(deltaX) / (rotationConstant/fieldOfView));
