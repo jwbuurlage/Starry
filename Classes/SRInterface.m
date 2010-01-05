@@ -54,6 +54,12 @@
 		foundTextString = [[NSString alloc] initWithString:@"Gevonden:"];
 		foundText = [[Texture2D alloc] initWithString:foundTextString dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 		foundObjectText = [[Texture2D alloc] initWithString:@"M31" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		
+		//position overlay
+		positionOverlay = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"positionOverlay.png"]];
+		pORALabel = [[Texture2D alloc] initWithString:@"Azi:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		pODecLabel = [[Texture2D alloc] initWithString:@"Alt:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		
 		bFade = FALSE;
 	}
 	return self;
@@ -225,6 +231,23 @@
 	[modules addObject:settingsModule];
 }
 
+-(void)drawPositionOverlay {
+	float alpha = (( [camera zoomingValue] / 4 ) - 1.0) / 2;
+	if(alpha > 0.0f) {
+		glColor4f(1.0f, 1.0f, 1.0f, alpha);
+		[positionOverlay drawInRect:CGRectMake(0,0,480,320)];
+		[pORALabel drawInRect:CGRectMake(200, 58, 64, 32)];
+		[pODecLabel drawInRect:CGRectMake(200, 43, 64, 32)];
+		
+		pORAValueLabel = [[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%f", 360 - [camera azimuth]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		pODecValueLabel = [[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%f", [camera altitude]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		
+		glColor4f(0.294f, 0.513f, 0.93f, alpha);
+		[pORAValueLabel drawInRect:CGRectMake(225, 58, 64, 32)];
+		[pODecValueLabel drawInRect:CGRectMake(225, 43, 64, 32)];
+	}
+}
+
 -(void)renderInterface {
 	//we rekenen uit hoelang het per frame is om animaties smooth te laten verlopen
 	if (lastDrawTime) { timeElapsed = [NSDate timeIntervalSinceReferenceDate] - lastDrawTime; }
@@ -241,13 +264,7 @@
 	glOrthof(0.0, 480, 0.0, 320, -1.0, 1.0); //projectie opzetten
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	
-	//glDepthMask(GL_FALSE); 
-	
-	//glAlphaFunc( GL_EQUAL, 1.0f );
-	//glEnable( GL_ALPHA_TEST );
-
-	
+		
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glTexCoordPointer(2, GL_FLOAT, 0, textureCoords);
@@ -347,6 +364,8 @@
 			glColor4f(1.0f, 0.2f, 0.2f, alphaNotFound);
 		[foundObjectText drawInRect:CGRectMake(240 - combinedwidth / 2 + [foundTextString sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width + 2,55,64,32)];
 	}
+	
+	[self drawPositionOverlay];
 	
 	if([[appDelegate settingsManager] showRedOverlay]) {
 		[self drawRedOverlay];

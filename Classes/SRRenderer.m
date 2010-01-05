@@ -332,29 +332,29 @@
 	glDrawArrays(GL_POINTS, 0, [[starSizeNum objectAtIndex:0] intValue]);
 	
 	size = 3 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 5) { size = 5; }
+	if(size > 4) { size = 4; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue], [[starSizeNum objectAtIndex:1] intValue]);
 	
 	size = 2 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 5) { size = 5; }
+	if(size > 3) { size = 3; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue], [[starSizeNum objectAtIndex:2] intValue]);
 
 	size = 0.8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 5) { size = 5; }
+	if(size > 3) { size = 3; }
 	if(size < 1) { return; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue], [[starSizeNum objectAtIndex:3] intValue]);
 
 	size = 0.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 5) { size = 5; }
+	if(size > 3) { size = 3; }
 	if(size < 1) { return; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue] + [[starSizeNum objectAtIndex:3] intValue], [[starSizeNum objectAtIndex:4] intValue]);
 
 	size = 0.4 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 5) { size = 5; }
+	if(size > 3) { size = 3; }
 	if(size < 1) { return; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue] + [[starSizeNum objectAtIndex:3] intValue] + [[starSizeNum objectAtIndex:4] intValue], [[starSizeNum objectAtIndex:5] intValue]);	
@@ -455,9 +455,7 @@
 }
 
 -(void)drawHighlight {	
-	if(highlight) {
-		
-		
+	if(highlight) {		
 		const GLfloat points[] = {
 			highlightPosition.x, highlightPosition.y, highlightPosition.z
 		};

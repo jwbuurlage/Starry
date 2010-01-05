@@ -103,6 +103,13 @@
 	Texture2D* searchIcon;
 	BOOL searchResult;
 	
+	//position overlay
+	Texture2D* positionOverlay;
+	Texture2D* pORALabel;
+	Texture2D* pODecLabel;
+	Texture2D* pORAValueLabel;
+	Texture2D* pODecValueLabel;
+	
 	BOOL showingPlanet;
 	BOOL showingStar;
 	BOOL showingMessier;
@@ -138,5 +145,7 @@
 
 -(void)calculateAnimations;
 -(void)notFoundFade:(NSTimer*)theTimer;
+
+-(void)drawPositionOverlay;
 
 @end
