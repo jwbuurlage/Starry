@@ -278,12 +278,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>101</integer>
-									<integer>100</integer>
+									<integer>27</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1056}, {208, 780}}</string>
+							<string>{{0, 373}, {208, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -326,7 +327,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>76F1516D10F3A6FC00F12C00</string>
+										<string>76F151B610F3AF8900F12C00</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -419,7 +420,7 @@
 											<string>76F1511F10F39D0F00F12C00</string>
 											<string>76F1513310F39EDB00F12C00</string>
 											<string>76F1513410F39EDB00F12C00</string>
-											<string>76F1516310F3A64600F12C00</string>
+											<string>76F151A210F3AAE000F12C00</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -583,8 +584,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -740,7 +739,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>76F1516E10F3A6FC00F12C00</string>
+		<string>76F151B510F3AED900F12C00</string>
 		<string>76F1513A10F39EDB00F12C00</string>
 		<string>76F1512D10F39D1100F12C00</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>

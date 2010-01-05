@@ -36,6 +36,7 @@
 		rect = view.bounds; 
 		glFrustumf(-size, size, -size / (rect.size.width / rect.size.height), size / 
 				   (rect.size.width / rect.size.height), zNear, zFar); 
+		NSLog(@"width:%f height:%f",rect.size.width ,rect.size.height);
 		//glOrthof( 0, 320, 480, 0, 1, 0 );
 		glViewport(0, 0, rect.size.width, rect.size.height);  
 		
@@ -113,13 +114,14 @@
 
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
 	//Hoogte van het vlak
-	float standardHeight = 0.760459656;
-	float radPerPixel = 0.002945243113;
+	//float standardHeight = 0.760459656;
+	float standardHeight = cos(0.5*((fieldOfView*480)/320));
+	float radPerPixel = (fieldOfView*480)/320)/480;
 	//float standardHeight = 0.8910065242;
 	//float radPerPixel = (0.3*M_PI)/320;
 	// Coordinaten in het vlak
-	float fiX = deltaX * radPerPixel;
-	float fiY = deltaY * radPerPixel;
+	float fiX = deltaY * radPerPixel;
+	float fiY = deltaX * radPerPixel;
 	float fiZ = standardHeight;
 	// Bereken straal hulp-bol
 	float dSphereFi = sqrt(pow(fiX,2) + pow(fiY,2) + pow(fiZ,2));
