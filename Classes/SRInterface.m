@@ -29,7 +29,6 @@
 		
 		menuVisible = TRUE;
 		
-		
 		[self loadMenu];
 		[self loadModules];
 		[self loadNameplate];
@@ -153,7 +152,6 @@
 	
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	//glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_BLEND);	//werkt niet goed! 
 }
 
 -(void)loadMenu {
@@ -239,13 +237,47 @@
 		[pORALabel drawInRect:CGRectMake(200, 58, 64, 32)];
 		[pODecLabel drawInRect:CGRectMake(200, 43, 64, 32)];
 		
-		pORAValueLabel = [[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%f", 360 - [camera azimuth]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
-		pODecValueLabel = [[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%f", [camera altitude]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		
+		NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:360 - [camera azimuth]];
+		int degrees = [coordinateNumber intValue];
+		float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
+		NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];
+		int minutes = [minutesNumber intValue];
+		float secondsF = ([minutesNumber floatValue] - [minutesNumber intValue])*60;
+		NSNumber * secondsNumber = [[NSNumber alloc] initWithFloat:secondsF];
+		int seconds = [secondsNumber intValue];
+				
+		degrees = degrees * 24 / 360; // Uuren er van maken
+		
+		pORAValueLabel = [[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%ih %i' %i''",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]; 
+		[coordinateNumber release];
+		[minutesNumber release];
+		[secondsNumber release];
+		
+		NSNumber * coordinateNumber2 = [[NSNumber alloc] initWithFloat:[camera altitude]];
+		int degrees2 = [coordinateNumber2 intValue];
+		float minutesF2 = ([coordinateNumber2 floatValue] - [coordinateNumber2 intValue]) * 60;
+		NSNumber * minutesNumber2 = [[NSNumber alloc] initWithFloat:minutesF2];
+		int minutes2 = [minutesNumber2 intValue];
+		float secondsF2 = ([minutesNumber2 floatValue] - [minutesNumber2 intValue])*60;
+		NSNumber * secondsNumber2 = [[NSNumber alloc] initWithFloat:secondsF2];
+		int seconds2 = [secondsNumber2 intValue];
+		
+		if ([camera altitude] < 0) {
+			minutes2 = -minutes2;
+			seconds2 = -seconds2;
+		}
+		pODecValueLabel = [[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%i° %i' %i''",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		[coordinateNumber2 release];
+		[minutesNumber2 release];
+		[secondsNumber2 release];
+		
 		
 		glColor4f(0.294f, 0.513f, 0.93f, alpha);
-		[pORAValueLabel drawInRect:CGRectMake(225, 58, 64, 32)];
+		[pORAValueLabel drawInRect:CGRectMake(225, 58, 128, 32)];
 		[pODecValueLabel drawInRect:CGRectMake(225, 43, 64, 32)];
 	}
+	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 }
 
 -(void)renderInterface {

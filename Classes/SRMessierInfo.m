@@ -23,7 +23,7 @@
 															   clickable:NO]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, 175, 128, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Sterrenbeeld:" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															   texture:[[Texture2D alloc] initWithString:@"S.bld:" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
@@ -52,7 +52,7 @@
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(85, 175, 128, 32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(45, 175, 128, 32) 
 															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-blue" 
 															 clickable:NO]];
@@ -123,7 +123,12 @@
 - (void)messierClicked:(SRMessier*)theMessier {
 	//[messierImage release];
 	//messierImage = ;
-	[[elements objectAtIndex:[elements count] - 9] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString([theMessier constellation],@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	NSString* name = NSLocalizedString([theMessier constellation],@"");
+	if([name length] > 12) {
+		name = [[name substringToIndex:12] stringByAppendingFormat:@".."];
+	}
+	
+	[[elements objectAtIndex:[elements count] - 9] setTexture:[[Texture2D alloc] initWithString:name dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[[elements objectAtIndex:[elements count] - 8] setTexture:[[Texture2D alloc] initWithString:[theMessier type] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[[elements objectAtIndex:[elements count] - 7] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f kly",[theMessier distance]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	
@@ -147,7 +152,7 @@
 		seconds = 60+seconds;
 	}
 	
-	degrees = degrees * 60 / 360; // Uuren er van maken
+	degrees = degrees * 24 / 360; // Uuren er van maken
 	
 	[[elements objectAtIndex:[elements count] - 6] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %i' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber release];

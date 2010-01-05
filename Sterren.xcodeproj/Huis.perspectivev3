@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>AC8AFC0110F3A42C00517901</string>
+						<string>AC8AFC4A10F3A77600517901</string>
 						<key>history</key>
 						<array>
 							<string>AC8AFB1910F3962800517901</string>
@@ -320,14 +320,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>41</integer>
+									<integer>47</integer>
 									<integer>21</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 178}, {249, 934}}</string>
+							<string>{{0, 109}, {249, 934}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -362,7 +362,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRInterface.m</string>
+								<string>SRMessierInfo.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -370,11 +370,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRInterface.m</string>
+										<string>SRMessierInfo.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>AC8AFC0010F3A42C00517901</string>
+										<string>AC8AFC4910F3A77600517901</string>
 										<key>history</key>
 										<array>
 											<string>AC1EE9CC10F2A5B500EAE5C4</string>
@@ -390,7 +390,9 @@
 											<string>AC8AFBD010F3A0E500517901</string>
 											<string>AC8AFBFD10F3A42C00517901</string>
 											<string>AC8AFBFE10F3A42C00517901</string>
-											<string>AC8AFBFF10F3A42C00517901</string>
+											<string>AC8AFC2210F3A61800517901</string>
+											<string>AC8AFC2A10F3A68800517901</string>
+											<string>AC8AFC2B10F3A68800517901</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -708,6 +710,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>AC8AFC4B10F3A77600517901</string>
 		<string>AC8AFA6A10F390BC00517901</string>
 		<string>AC8AFA5F10F3908700517901</string>
 		<string>AC8AFB1710F3962800517901</string>
