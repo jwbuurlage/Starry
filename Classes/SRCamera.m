@@ -115,21 +115,22 @@
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
 	//Hoogte van het vlak
 	//float standardHeight = 0.760459656;
-	float standardHeight = cos(0.5*((fieldOfView*480)/320));
-	float radPerPixel = (fieldOfView*480)/320)/480;
+	float standardHeight = cos(0.5*(sqrt(pow((fieldOfView*480)/320,2)+pow((fieldOfView*480)/320,2))));
+	float radPerPixel = ((fieldOfView*480)/320)/480;
 	//float standardHeight = 0.8910065242;
 	//float radPerPixel = (0.3*M_PI)/320;
 	// Coordinaten in het vlak
-	float fiX = deltaY * radPerPixel;
-	float fiY = deltaX * radPerPixel;
-	float fiZ = standardHeight;
+	float fiX = deltaX * radPerPixel;
+	float fiY = deltaY * radPerPixel;
+	float fiZ = -standardHeight;
 	// Bereken straal hulp-bol
-	float dSphereFi = sqrt(pow(fiX,2) + pow(fiY,2) + pow(fiZ,2));
+	float dSphere1 = sqrt(pow(fiX,2) + pow(fiY,2) + pow(fiZ,2));
 	// Bereken coordinaten die de bol raken
-	float coX = fiX / dSphereFi;
-	float coY = fiY / dSphereFi;
-	float coZ = fiZ / dSphereFi;
-	NSLog(@"coX:%f y:%f z:%f rHulp-Bol:%f",coX,coY,coZ,dSphereFi);
+	float coX = fiX / dSphere1;
+	float coY = fiY / dSphere1;
+	float coZ = fiZ / dSphere1;
+	float dSphere2 = sqrt(pow(coX,2) + pow(coY,2) + pow(coZ,2));
+	NSLog(@"coX:%f y:%f z:%f rHulp-Bol:%f rBol:%f",coX,coY,coZ,dSphere1,dSphere2);
 	
 	float rotationY = (altitude-90)*(M_PI/180);
 	float rotationZ = azimuth*(M_PI/180);
@@ -137,6 +138,10 @@
 	float brX = coX;
 	float brY = coY;
 	float brZ = coZ;
+	
+	/*float brX = 0;
+	float brY = 0;
+	float brZ = -1;*/
 	
 	float maX,maY,maZ;
 	

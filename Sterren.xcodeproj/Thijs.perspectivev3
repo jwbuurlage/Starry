@@ -327,7 +327,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>76F151B610F3AF8900F12C00</string>
+										<string>76F151E810F3BA4500F12C00</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -420,7 +420,7 @@
 											<string>76F1511F10F39D0F00F12C00</string>
 											<string>76F1513310F39EDB00F12C00</string>
 											<string>76F1513410F39EDB00F12C00</string>
-											<string>76F151A210F3AAE000F12C00</string>
+											<string>76F151BC10F3B01700F12C00</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -584,6 +584,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -739,7 +741,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>76F151B510F3AED900F12C00</string>
+		<string>76F151E910F3BA4500F12C00</string>
 		<string>76F1513A10F39EDB00F12C00</string>
 		<string>76F1512D10F39D1100F12C00</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
