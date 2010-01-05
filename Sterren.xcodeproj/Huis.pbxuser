@@ -358,6 +358,7 @@
 			AC8AFC6F10F3D33A00517901 /* PBXTextBookmark */ = AC8AFC6F10F3D33A00517901 /* PBXTextBookmark */;
 			AC8AFC7110F3D33A00517901 /* PBXTextBookmark */ = AC8AFC7110F3D33A00517901 /* PBXTextBookmark */;
 			AC8AFC7310F3D33A00517901 /* PBXTextBookmark */ = AC8AFC7310F3D33A00517901 /* PBXTextBookmark */;
+			AC8AFC7810F3D40500517901 /* PBXTextBookmark */ = AC8AFC7810F3D40500517901 /* PBXTextBookmark */;
 		};
 		sourceControlManager = ACB7B10E10615AD200CA447E /* Source Control */;
 		userBuildSettings = {
@@ -3059,7 +3060,7 @@
 		isa = PBXTextBookmark;
 		fRef = AC8AFC7210F3D33A00517901 /* sterren.php */;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775809;
 		rType = 0;
 	};
 	AC8AFC7210F3D33A00517901 /* sterren.php */ = {
@@ -3068,13 +3069,18 @@
 		name = sterren.php;
 		path = /Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Other/sterren.php;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1344, 915}}";
+			sepNavSelRange = "{413, 0}";
+			sepNavVisRange = "{0, 1516}";
+		};
 	};
 	AC8AFC7310F3D33A00517901 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = AC8AFC7410F3D33A00517901 /* sterren.php */;
 		name = "sterren.php: 19";
 		rLen = 0;
-		rLoc = 411;
+		rLoc = 413;
 		rType = 0;
 		vrLen = 1514;
 		vrLoc = 0;
@@ -3084,6 +3090,16 @@
 		name = sterren.php;
 		path = /Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Other/sterren.php;
 		sourceTree = "<absolute>";
+	};
+	AC8AFC7810F3D40500517901 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC8AFC7210F3D33A00517901 /* sterren.php */;
+		name = "sterren.php: 19";
+		rLen = 0;
+		rLoc = 413;
+		rType = 0;
+		vrLen = 1516;
+		vrLoc = 0;
 	};
 	AC97058D10C5B4190048DB59 /* sun.png */ = {
 		uiCtxt = {
