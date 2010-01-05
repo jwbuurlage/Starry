@@ -277,6 +277,7 @@
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
 
 	[theNameplate draw];
+	[self drawPositionOverlay];
 	
 	glTranslatef(0, xTranslate, 0);
 	
@@ -364,9 +365,7 @@
 			glColor4f(1.0f, 0.2f, 0.2f, alphaNotFound);
 		[foundObjectText drawInRect:CGRectMake(240 - combinedwidth / 2 + [foundTextString sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width + 2,55,64,32)];
 	}
-	
-	[self drawPositionOverlay];
-	
+		
 	if([[appDelegate settingsManager] showRedOverlay]) {
 		[self drawRedOverlay];
 	}

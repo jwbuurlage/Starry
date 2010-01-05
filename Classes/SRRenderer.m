@@ -460,13 +460,8 @@
 			highlightPosition.x, highlightPosition.y, highlightPosition.z
 		};
 		
-		glPointSize(highlightSize * [camera zoomingValue]);
-		if((highlightSize * [camera zoomingValue]) < 50) {
-			glBindTexture(GL_TEXTURE_2D, textures[9]);
-		}
-		else {
-			glBindTexture(GL_TEXTURE_2D, textures[8]);
-		}
+		glPointSize(highlightSize);
+		glBindTexture(GL_TEXTURE_2D, textures[8]);
 		
 		glColor4f(0.5f,0.5f,0.5f,0.75f);
 		glVertexPointer(3, GL_FLOAT, 12, points);
