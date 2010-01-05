@@ -112,19 +112,64 @@
 // Berekeningen voor camera locatie
 
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
+	//Hoogte van het vlak
+	float standardHeight = 0.760459656;
+	float radPerPixel = 0.002945243113;
+	//float standardHeight = 0.8910065242;
+	//float radPerPixel = (0.3*M_PI)/320;
+	// Coordinaten in het vlak
+	float fiX = deltaX * radPerPixel;
+	float fiY = deltaY * radPerPixel;
+	float fiZ = standardHeight;
+	// Bereken straal hulp-bol
+	float dSphereFi = sqrt(pow(fiX,2) + pow(fiY,2) + pow(fiZ,2));
+	// Bereken coordinaten die de bol raken
+	float coX = fiX / dSphereFi;
+	float coY = fiY / dSphereFi;
+	float coZ = fiZ / dSphereFi;
+	NSLog(@"coX:%f y:%f z:%f rHulp-Bol:%f",coX,coY,coZ,dSphereFi);
+	
+	float rotationY = (altitude-90)*(M_PI/180);
+	float rotationZ = azimuth*(M_PI/180);
+	
+	float brX = coX;
+	float brY = coY;
+	float brZ = coZ;
+	
+	float maX,maY,maZ;
+	
+	maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
+	maY = (0*brX+1*brY+0*brZ);
+	maZ = ((-sin(rotationY)*brX)+0*brY+cos(rotationY)*brZ);
+	
+	brX = maX;
+	brY = maY;
+	brZ = maZ;
+	
+	maX = (cos(rotationZ)*brX+(-sin(rotationZ)*brY)+0*brZ);
+	maY = (sin(rotationZ)*brX+cos(rotationZ)*brY+0*brZ);
+	maZ = (0*brX+0*brY+1*brZ);
+	
+	brX = maX;
+	brY = maY;
+	brZ = maZ;
+	
+	NSLog(@"brX:%f y:%f z:%f",brX,brY,brZ);
+	
 	float rotationConstant = 5.5850536;
-	float adjustment = (altitude/180)*(-abs(deltaX) / (rotationConstant/fieldOfView));
+	/*float adjustment = (altitude/180)*(-abs(deltaX) / (rotationConstant/fieldOfView));
 	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) + 1*adjustment;
 	
 	float result,resultAdjustment1,resultAdjustment2;
 	resultAdjustment1 = pow(1.4,7*altitude/180)-1.197;
-	resultAdjustment2 = 0;
+	resultAdjustment2 = 0;*/
 	/*if(adjustment/2 > 1)
 		result = fmod(azimuth + deltaAzimuth*(adjustment/2), 360);
 	else*/
-		result = fmod(azimuth + deltaAzimuth*(1+resultAdjustment1+resultAdjustment2),360);
+		//result = fmod(azimuth + deltaAzimuth*(1+resultAdjustment1+resultAdjustment2),360);
+	float result = azimuth + ( deltaY / (rotationConstant/fieldOfView));
 	
-	NSLog(@"Calculate azimuthFromX:%i andY:%i origiginal:%f delta:%f new:%f resultadjust1:%f resultadjust2:%f result:%f",deltaX,deltaY,deltaY / (rotationConstant/fieldOfView) ,adjustment,deltaAzimuth,resultAdjustment1,resultAdjustment2, result);
+	//NSLog(@"Calculate azimuthFromX:%i andY:%i origiginal:%f delta:%f new:%f resultadjust1:%f resultadjust2:%f result:%f",deltaX,deltaY,deltaY / (rotationConstant/fieldOfView) ,adjustment,deltaAzimuth,resultAdjustment1,resultAdjustment2, result);
 	/*
 	if (deltaAzimuth > 0)
 		result = fmod((azimuth + pow(abs(deltaAzimuth),1.01)), 360);
@@ -137,17 +182,18 @@
 -(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
 	//float adjustment = (azimuth/360)*(abs(deltaY) / (rotationConstant/fieldOfView));
-	float adjustment = 0;
+	/*float adjustment = 0;
 	float deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - 1*adjustment;
 	
-	float result,resultAdjustment1,resultAdjustment2;
+	float result,resultAdjustment1,resultAdjustment2;*/
 	/*if(adjustment/2 > 1)
 		result = altitude + deltaAltitude*(adjustment/2);
 	else*/
-	resultAdjustment1 = 0;
-	resultAdjustment2 = 0;
-		result = altitude + deltaAltitude*(1+resultAdjustment1+resultAdjustment2);
-	NSLog(@"Calculate altitudeFromX:%i andY:%i origiginal:%f delta:%f new:%f resultadust1:%f resultadjust2:%f",deltaX,deltaY,(-deltaX / (rotationConstant/fieldOfView)),adjustment,deltaAltitude,resultAdjustment1,resultAdjustment2);
+	//resultAdjustment1 = 0;
+	//resultAdjustment2 = 0;
+		//result = altitude + deltaAltitude*(1+resultAdjustment1+resultAdjustment2);
+	float result = altitude + ( -deltaX / (rotationConstant/fieldOfView) );
+	//NSLog(@"Calculate altitudeFromX:%i andY:%i origiginal:%f delta:%f new:%f resultadust1:%f resultadjust2:%f",deltaX,deltaY,(-deltaX / (rotationConstant/fieldOfView)),adjustment,deltaAltitude,resultAdjustment1,resultAdjustment2);
 	/*if(deltaAltitude > 0) 
 		result = altitude + abs(deltaAltitude),1.01);
 	else 
