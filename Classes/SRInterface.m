@@ -29,7 +29,6 @@
 		
 		menuVisible = TRUE;
 		
-		
 		[self loadMenu];
 		[self loadModules];
 		[self loadNameplate];
@@ -54,6 +53,12 @@
 		foundTextString = [[NSString alloc] initWithString:@"Gevonden:"];
 		foundText = [[Texture2D alloc] initWithString:foundTextString dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 		foundObjectText = [[Texture2D alloc] initWithString:@"M31" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		
+		//position overlay
+		positionOverlay = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"positionOverlay.png"]];
+		pORALabel = [[Texture2D alloc] initWithString:@"Azi:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		pODecLabel = [[Texture2D alloc] initWithString:@"Alt:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		
 		bFade = FALSE;
 	}
 	return self;
@@ -147,7 +152,6 @@
 	
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	//glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_BLEND);	//werkt niet goed! 
 }
 
 -(void)loadMenu {
@@ -225,6 +229,57 @@
 	[modules addObject:settingsModule];
 }
 
+-(void)drawPositionOverlay {
+	float alpha = (( [camera zoomingValue] / 4 ) - 1.0) / 2;
+	if(alpha > 0.0f) {
+		glColor4f(1.0f, 1.0f, 1.0f, alpha);
+		[positionOverlay drawInRect:CGRectMake(0,0,480,320)];
+		[pORALabel drawInRect:CGRectMake(200, 58, 64, 32)];
+		[pODecLabel drawInRect:CGRectMake(200, 43, 64, 32)];
+		
+		
+		NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:360 - [camera azimuth]];
+		int degrees = [coordinateNumber intValue];
+		float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
+		NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];
+		int minutes = [minutesNumber intValue];
+		float secondsF = ([minutesNumber floatValue] - [minutesNumber intValue])*60;
+		NSNumber * secondsNumber = [[NSNumber alloc] initWithFloat:secondsF];
+		int seconds = [secondsNumber intValue];
+				
+		degrees = degrees * 24 / 360; // Uuren er van maken
+		
+		pORAValueLabel = [[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%ih %i' %i''",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]; 
+		[coordinateNumber release];
+		[minutesNumber release];
+		[secondsNumber release];
+		
+		NSNumber * coordinateNumber2 = [[NSNumber alloc] initWithFloat:[camera altitude]];
+		int degrees2 = [coordinateNumber2 intValue];
+		float minutesF2 = ([coordinateNumber2 floatValue] - [coordinateNumber2 intValue]) * 60;
+		NSNumber * minutesNumber2 = [[NSNumber alloc] initWithFloat:minutesF2];
+		int minutes2 = [minutesNumber2 intValue];
+		float secondsF2 = ([minutesNumber2 floatValue] - [minutesNumber2 intValue])*60;
+		NSNumber * secondsNumber2 = [[NSNumber alloc] initWithFloat:secondsF2];
+		int seconds2 = [secondsNumber2 intValue];
+		
+		if ([camera altitude] < 0) {
+			minutes2 = -minutes2;
+			seconds2 = -seconds2;
+		}
+		pODecValueLabel = [[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%i° %i' %i''",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		[coordinateNumber2 release];
+		[minutesNumber2 release];
+		[secondsNumber2 release];
+		
+		
+		glColor4f(0.294f, 0.513f, 0.93f, alpha);
+		[pORAValueLabel drawInRect:CGRectMake(225, 58, 128, 32)];
+		[pODecValueLabel drawInRect:CGRectMake(225, 43, 64, 32)];
+	}
+	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+}
+
 -(void)renderInterface {
 	//we rekenen uit hoelang het per frame is om animaties smooth te laten verlopen
 	if (lastDrawTime) { timeElapsed = [NSDate timeIntervalSinceReferenceDate] - lastDrawTime; }
@@ -241,13 +296,7 @@
 	glOrthof(0.0, 480, 0.0, 320, -1.0, 1.0); //projectie opzetten
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	
-	//glDepthMask(GL_FALSE); 
-	
-	//glAlphaFunc( GL_EQUAL, 1.0f );
-	//glEnable( GL_ALPHA_TEST );
-
-	
+		
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glTexCoordPointer(2, GL_FLOAT, 0, textureCoords);
@@ -260,6 +309,7 @@
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
 
 	[theNameplate draw];
+	[self drawPositionOverlay];
 	
 	glTranslatef(0, xTranslate, 0);
 	
@@ -347,7 +397,7 @@
 			glColor4f(1.0f, 0.2f, 0.2f, alphaNotFound);
 		[foundObjectText drawInRect:CGRectMake(240 - combinedwidth / 2 + [foundTextString sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width + 2,55,64,32)];
 	}
-	
+		
 	if([[appDelegate settingsManager] showRedOverlay]) {
 		[self drawRedOverlay];
 	}

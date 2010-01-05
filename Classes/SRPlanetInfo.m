@@ -98,7 +98,7 @@
 		seconds = 60+seconds;
 	}
 	
-	degrees = degrees * 60 / 360; // Uuren er van maken
+	degrees = degrees * 24 / 360; // Uuren er van maken
 	
 	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %i\' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber release];

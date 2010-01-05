@@ -214,7 +214,9 @@
 }
 
 -(void)buildStarData {
-	starNum = 0;
+	NSLog(@"Star count: %i",[stars count]);
+
+	/* starNum = 0;
 	GLfloat starPointsTmp[[stars count]*8];
 	int matrixStartPos;
 	int starSizeNumTmp[6] = { 0, 0, 0, 0, 0, 0 };
@@ -224,7 +226,6 @@
 	starSizeNum = [[NSMutableArray alloc] init];
 	
 	for(star in stars) {
-		//NSLog(@"Loading star %@",star.name);
 		if(star.name != @"Sol") {
 			
 			//size = [star size];
@@ -258,6 +259,9 @@
 				else if ([[star mag] floatValue] < 5) {
 					starSizeNumTmp[4] += 1;
 				}
+				else if ([[star mag] floatValue] < 7) {
+					starSizeNumTmp[5] += 1;
+				}
 				starNum++;
 		}
 	}
@@ -272,11 +276,11 @@
 		//NSLog(@"%i", i);
 	}
 	
-	for (int i=0; i < 5; i++) {
+	for (int i=0; i < 6; i++) {
 		[starSizeNum addObject:[NSNumber numberWithInt:starSizeNumTmp[i]]];
 		NSLog(@"inladen in array:%i,%i",starSizeNumTmp[i],i);
 	}
-	 
+	  */
 
 }
 

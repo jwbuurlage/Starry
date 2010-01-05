@@ -191,6 +191,7 @@
 		AC8A8AA110C5A14C0015CDF5 /* SRSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8A8AA010C5A14C0015CDF5 /* SRSlider.m */; };
 		AC8A8AC110C5A4750015CDF5 /* brightness_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A8ABF10C5A4750015CDF5 /* brightness_minus.png */; };
 		AC8A8AC210C5A4750015CDF5 /* brightness_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A8AC010C5A4750015CDF5 /* brightness_plus.png */; };
+		AC8AFB7B10F39D3C00517901 /* positionOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8AFB7A10F39D3C00517901 /* positionOverlay.png */; };
 		AC97059410C5B4190048DB59 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058D10C5B4190048DB59 /* sun.png */; };
 		AC9A924410C6EC0A00657268 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = AC9A924310C6EC0A00657268 /* planet.png */; };
 		AC9A926B10C6F1C500657268 /* SRConstellationLine.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9A926A10C6F1C500657268 /* SRConstellationLine.m */; };
@@ -444,6 +445,7 @@
 		AC8A8AA010C5A14C0015CDF5 /* SRSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSlider.m; sourceTree = "<group>"; };
 		AC8A8ABF10C5A4750015CDF5 /* brightness_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brightness_minus.png; path = Resources/brightness_minus.png; sourceTree = "<group>"; };
 		AC8A8AC010C5A4750015CDF5 /* brightness_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brightness_plus.png; path = Resources/brightness_plus.png; sourceTree = "<group>"; };
+		AC8AFB7A10F39D3C00517901 /* positionOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = positionOverlay.png; path = Resources/positionOverlay.png; sourceTree = "<group>"; };
 		AC97058D10C5B4190048DB59 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun.png; path = Resources/Textures/sun.png; sourceTree = "<group>"; };
 		AC9A924310C6EC0A00657268 /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet.png; path = Resources/planet.png; sourceTree = "<group>"; };
 		AC9A926910C6F1C500657268 /* SRConstellationLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRConstellationLine.h; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 				AC080F5710D97F010078DA4D /* nav_bg.png */,
 				ACC493A110CD777600DC7967 /* moon.png */,
 				AC8A87ED10C56FCE0015CDF5 /* latitude.png */,
+				AC8AFB7A10F39D3C00517901 /* positionOverlay.png */,
 				AC8A89FB10C5986E0015CDF5 /* defaultTexture.png */,
 				AC8A87EE10C56FCE0015CDF5 /* location_off.png */,
 				ACB8F19A10CC76F700C0F87E /* location_on.png */,
@@ -1131,6 +1134,7 @@
 				767820EC10F10CD3001ADE6D /* Localizable.strings in Resources */,
 				7695E62310F29F540064FFD9 /* messierBack.png in Resources */,
 				7695E64110F2A3350064FFD9 /* messierForeground.png in Resources */,
+				AC8AFB7B10F39D3C00517901 /* positionOverlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
