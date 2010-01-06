@@ -279,14 +279,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>47</integer>
-									<integer>21</integer>
+									<integer>51</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 214}, {208, 780}}</string>
+							<string>{{0, 360}, {208, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRMessierInfo.m</string>
+								<string>SRRenderer.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +324,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRMessierInfo.m</string>
+										<string>SRRenderer.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>76F1526110F3CBF400F12C00</string>
+										<string>76F1528610F3F53600F12C00</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -381,7 +380,6 @@
 											<string>76CF150110EFB3B3006EA567</string>
 											<string>76CF150210EFB3B3006EA567</string>
 											<string>76CF153E10EFBF7F006EA567</string>
-											<string>76CF154E10EFC182006EA567</string>
 											<string>7636E5A910F0F2250025DEEE</string>
 											<string>7636E62A10F0F9C30025DEEE</string>
 											<string>7636E65B10F0FDFD0025DEEE</string>
@@ -397,7 +395,6 @@
 											<string>76EE552A10F2462F006EA065</string>
 											<string>76EE552B10F2462F006EA065</string>
 											<string>76EE552C10F2462F006EA065</string>
-											<string>76EE552D10F2462F006EA065</string>
 											<string>76EE552E10F2462F006EA065</string>
 											<string>76EE553D10F246DE006EA065</string>
 											<string>76EE553E10F246DE006EA065</string>
@@ -410,7 +407,6 @@
 											<string>76EE55BF10F25924006EA065</string>
 											<string>76EE55D510F25A3B006EA065</string>
 											<string>76EE55E310F25B1B006EA065</string>
-											<string>76EE55F810F25FF5006EA065</string>
 											<string>7695E5D210F2981D0064FFD9</string>
 											<string>7695E5F210F299EF0064FFD9</string>
 											<string>7695E62D10F29FB20064FFD9</string>
@@ -422,7 +418,10 @@
 											<string>76F1524210F3C99F00F12C00</string>
 											<string>76F1524310F3C99F00F12C00</string>
 											<string>76F1525E10F3CBF400F12C00</string>
-											<string>76F1525F10F3CBF400F12C00</string>
+											<string>76F1526D10F3CD3900F12C00</string>
+											<string>76F1527E10F3D3A300F12C00</string>
+											<string>76F1527F10F3D3A300F12C00</string>
+											<string>76F1528010F3D3A300F12C00</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -743,7 +742,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>76F1526210F3CBF400F12C00</string>
+		<string>76F1527910F3CD7B00F12C00</string>
 		<string>76F1526310F3CBF400F12C00</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
 	</array>
