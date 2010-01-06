@@ -489,8 +489,34 @@
 							[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Nameless star", @"") inConstellation:closestStar.bayer showInfo:YES];
 						}*/
 						//else {
-							[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:closestStar.bayer showInfo:YES];
+						@try {
+						NSString* constellationStr = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-3, 3)];
+						NSString* greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 3)];
+						NSString* greekStr = [[NSString alloc] init];
+						if([greekStrTmp isEqualToString:@"Alp"])
+							greekStr = @"α";
+						else if([greekStrTmp isEqualToString:@"Bet"])
+							greekStr = @"β";
+						else if([greekStrTmp isEqualToString:@"Gam"])
+							greekStr = @"γ";
+						else if([greekStrTmp isEqualToString:@"Del"])
+							greekStr = @"δ";
+						else if([greekStrTmp isEqualToString:@"Eps"])
+							greekStr = @"ε";
+						else
+							greekStr = @"err";
+						NSString* numberStr = [[closestStar bayer] substringWithRange:NSMakeRange(0, [[closestStar bayer] length]-6)];
+						
+							[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:[NSString stringWithFormat:@"%@ %@ %@",numberStr,greekStr,constellationStr] showInfo:YES];
 						//}
+						//[greekStrTmp release];
+						//[numberStr release];
+						//[constellationStr release];
+						//[greekStr release];
+						}
+						@catch(NSException * exception) {
+							[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:@"err" showInfo:YES];
+						}
 						[[renderer interface] setANameplate:TRUE];
 						[[[renderer interface] starInfo] starClicked:closestStar];
 						
@@ -518,6 +544,9 @@
 						if ([[[renderer interface] theNameplate] visible]) {
 							
 							[renderer setHighlight:FALSE];
+							[renderer setSelectedStar:nil];
+							[renderer setPlanetHighlighted:FALSE];
+							[renderer setSelectedPlanet:nil];
 							[[[renderer interface] theNameplate] hide];
 							[[renderer interface] setANameplate:TRUE];
 							/*SRStar * ster;
