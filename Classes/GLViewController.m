@@ -175,6 +175,15 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	
 	NSUInteger touchCount = [touches count]; // Voor kliken mag maar 1 touch gebruikt worden
+	UITouch *touch = [[event allTouches] anyObject];
+	
+	BOOL tappedTwice = NO;
+	if ([touch tapCount] == 2) {
+		tappedTwice = YES;
+		NSLog(@"Tapped twice");
+		[camera zoomCameraIn];
+	}
+	else if ([touch tapCount] == 1 && !tappedTwice) {
 	
 	if(UIClick && touchCount == 1) {
 		//NSLog(@"Clicked the interface");
@@ -616,6 +625,7 @@
 			//[camera RAAndDecForPoint:[aTouch previousLocationInView:theView]];
 		}
 	}
+		}
 }
 
 @end
