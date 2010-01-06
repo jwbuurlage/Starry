@@ -224,6 +224,7 @@
 		ACD3BA4C10F50C1E007CD4C7 /* add_list.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BA4B10F50C1E007CD4C7 /* add_list.png */; };
 		ACD3BA6A10F50EEC007CD4C7 /* SRListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD3BA6910F50EEC007CD4C7 /* SRListManager.m */; };
 		ACD3BB5D10F52AAD007CD4C7 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BB5C10F52AAD007CD4C7 /* pause.png */; };
+		ACD3BBAC10F53199007CD4C7 /* positionOverlayIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BBAB10F53199007CD4C7 /* positionOverlayIcon.png */; };
 		ACE708D010D02A0B003DE4BB /* M1.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE708CF10D02A0B003DE4BB /* M1.png */; };
 		ACEC7CF3109B25A700149C80 /* SRStar.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF0109B25A700149C80 /* SRStar.m */; };
 		ACEC7CF4109B25A700149C80 /* SRSun.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF2109B25A700149C80 /* SRSun.m */; };
@@ -490,6 +491,7 @@
 		ACD3BA6810F50EEC007CD4C7 /* SRListManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRListManager.h; sourceTree = "<group>"; };
 		ACD3BA6910F50EEC007CD4C7 /* SRListManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRListManager.m; sourceTree = "<group>"; };
 		ACD3BB5C10F52AAD007CD4C7 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = Resources/pause.png; sourceTree = "<group>"; };
+		ACD3BBAB10F53199007CD4C7 /* positionOverlayIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = positionOverlayIcon.png; path = Resources/positionOverlayIcon.png; sourceTree = "<group>"; };
 		ACE708CF10D02A0B003DE4BB /* M1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M1.png; path = Resources/messier/M1.png; sourceTree = "<group>"; };
 		ACEC7CEF109B25A700149C80 /* SRStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStar.h; sourceTree = "<group>"; };
 		ACEC7CF0109B25A700149C80 /* SRStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStar.m; sourceTree = "<group>"; };
@@ -739,6 +741,7 @@
 				AC8A8ABF10C5A4750015CDF5 /* brightness_minus.png */,
 				ACD3B9E910F4FF1B007CD4C7 /* planetLabel.png */,
 				AC8A8AC010C5A4750015CDF5 /* brightness_plus.png */,
+				ACD3BBAB10F53199007CD4C7 /* positionOverlayIcon.png */,
 				AC8A8A6F10C59FC80015CDF5 /* constellation.png */,
 				AC8A8A7010C59FC80015CDF5 /* red.png */,
 			);
@@ -1156,6 +1159,7 @@
 				ACD3BA1C10F509C7007CD4C7 /* close.png in Resources */,
 				ACD3BA4C10F50C1E007CD4C7 /* add_list.png in Resources */,
 				ACD3BB5D10F52AAD007CD4C7 /* pause.png in Resources */,
+				ACD3BBAC10F53199007CD4C7 /* positionOverlayIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

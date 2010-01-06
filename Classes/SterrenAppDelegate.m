@@ -63,6 +63,7 @@
 	[prefs setBool:		[settingsManager showRedOverlay]		forKey:@"SRshowRedOverlay"];
 	[prefs setBool:		[settingsManager showConstellations]	forKey:@"SRshowConstellations"];
 	[prefs setBool:		[settingsManager showPlanetLabels]		forKey:@"SRshowPlanetLabels"];
+	[prefs setBool:		[settingsManager showPositionOverlay]		forKey:@"SRshowPositionOverlay"];
 	[prefs setFloat:	[settingsManager brightnessFactor]		forKey:@"SRbrightness"];
 	[prefs synchronize];
 }

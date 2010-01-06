@@ -282,7 +282,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>17</integer>
+									<integer>9</integer>
 									<integer>5</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -324,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRTimeModule.m</string>
+								<string>SRSettingsModule.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRTimeModule.m</string>
+										<string>SRSettingsModule.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ACD3BB8D10F52DC8007CD4C7</string>
+										<string>ACD3BBA910F5316F007CD4C7</string>
 										<key>history</key>
 										<array>
 											<string>AC1EE9CC10F2A5B500EAE5C4</string>
@@ -356,15 +356,10 @@
 											<string>ACD3B9F610F50044007CD4C7</string>
 											<string>ACD3B9FB10F50044007CD4C7</string>
 											<string>ACD3B9FC10F50044007CD4C7</string>
-											<string>ACD3B9FD10F50044007CD4C7</string>
-											<string>ACD3B9FF10F50044007CD4C7</string>
-											<string>ACD3BA0010F50044007CD4C7</string>
-											<string>ACD3BA1310F5083C007CD4C7</string>
 											<string>ACD3BA2F10F50ADF007CD4C7</string>
 											<string>ACD3BA3010F50ADF007CD4C7</string>
 											<string>ACD3BA3110F50ADF007CD4C7</string>
 											<string>ACD3BA4510F50B52007CD4C7</string>
-											<string>ACD3BA4610F50B52007CD4C7</string>
 											<string>ACD3BA4710F50B52007CD4C7</string>
 											<string>ACD3BA5010F50C43007CD4C7</string>
 											<string>ACD3BA7D10F511E9007CD4C7</string>
@@ -372,7 +367,6 @@
 											<string>ACD3BA7F10F511E9007CD4C7</string>
 											<string>ACD3BA9D10F51675007CD4C7</string>
 											<string>ACD3BA9E10F51675007CD4C7</string>
-											<string>ACD3BAE910F51E4D007CD4C7</string>
 											<string>ACD3BAEA10F51E4D007CD4C7</string>
 											<string>ACD3BAEF10F51E4D007CD4C7</string>
 											<string>ACD3BAF710F51EFE007CD4C7</string>
@@ -387,13 +381,20 @@
 											<string>ACD3BB7910F52D31007CD4C7</string>
 											<string>ACD3BB7A10F52D31007CD4C7</string>
 											<string>ACD3BB8010F52D8F007CD4C7</string>
-											<string>ACD3BB8610F52DC8007CD4C7</string>
 											<string>ACD3BB8710F52DC8007CD4C7</string>
 											<string>ACD3BB8810F52DC8007CD4C7</string>
 											<string>ACD3BB8910F52DC8007CD4C7</string>
-											<string>ACD3BB8A10F52DC8007CD4C7</string>
 											<string>ACD3BB8B10F52DC8007CD4C7</string>
-											<string>ACD3BB8C10F52DC8007CD4C7</string>
+											<string>ACD3BB9010F52E98007CD4C7</string>
+											<string>ACD3BB9110F52E98007CD4C7</string>
+											<string>ACD3BB9210F52E98007CD4C7</string>
+											<string>ACD3BB9B10F5307E007CD4C7</string>
+											<string>ACD3BB9D10F5307E007CD4C7</string>
+											<string>ACD3BB9E10F5307E007CD4C7</string>
+											<string>ACD3BB9F10F5307E007CD4C7</string>
+											<string>ACD3BBA010F5307E007CD4C7</string>
+											<string>ACD3BBA710F5316F007CD4C7</string>
+											<string>ACD3BBA810F5316F007CD4C7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -711,6 +712,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>ACD3BBAA10F5316F007CD4C7</string>
 		<string>ACD3BA0610F50044007CD4C7</string>
 		<string>ACD3B9DF10F4F984007CD4C7</string>
 		<string>/Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Sterren.xcodeproj</string>

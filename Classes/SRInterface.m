@@ -315,7 +315,7 @@
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
 
 	[theNameplate draw];
-	if(![renderer planetView]) {
+	if(![renderer planetView] && [[appDelegate settingsManager] showPositionOverlay]) {
 		[self drawPositionOverlay];
 	}
 	
@@ -665,6 +665,16 @@
 				[[appDelegate settingsManager] setShowPlanetLabels:TRUE];
 			}
 		}		
+		else if(clicker == @"position_overlay") {
+			BOOL showPositionOverlay = [[appDelegate settingsManager] showPositionOverlay];
+			if(showPositionOverlay) {
+				[[appDelegate settingsManager] setShowPositionOverlay:FALSE];
+			}
+			else {
+				[[appDelegate settingsManager] setShowPositionOverlay:TRUE];
+			}
+		}		
+		
 		else if(clicker == @"constellations") {
 			BOOL constellations = [[appDelegate settingsManager] showConstellations];
 			if(constellations) {
