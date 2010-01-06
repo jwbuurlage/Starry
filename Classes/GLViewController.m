@@ -236,13 +236,13 @@
 		float fiZ = -standardHeight;
 		// Bereken straal hulp-bol
 		float dSphere1 = sqrtf(powf(fiX,2) + powf(fiY,2) + powf(fiZ,2));
-		NSLog(@"fiX:%f y:%f z:%f rHulp-Bol:%f",fiX,fiY,fiZ,dSphere1);
+		//NSLog(@"fiX:%f y:%f z:%f rHulp-Bol:%f",fiX,fiY,fiZ,dSphere1);
 		// Bereken coordinaten die de bol raken
 		float coX = fiX / dSphere1;
 		float coY = fiY / dSphere1;
 		float coZ = fiZ / dSphere1;
 		//float dSphere2 = sqrtf(powf(coX,2) + powf(coY,2) + powf(coZ,2));
-		NSLog(@"coX:%f y:%f z:%f",coX,coY,coZ);
+		//NSLog(@"coX:%f y:%f z:%f",coX,coY,coZ);
 		
 		float rotationY1 = (altitude-90)*(M_PI/180);
 		float rotationZ = azimuth*(M_PI/180);
@@ -490,6 +490,10 @@
 						}*/
 						//else {
 						@try {
+							if([[closestStar bayer] isEqualToString:@""] || [[closestStar bayer] isEqualToString:@" "]) {
+								[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:@"" showInfo:YES];
+							}
+							else {
 						NSString* constellationStr = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-3, 3)];
 						NSString* greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 3)];
 						NSString* greekStr = [[NSString alloc] init];
@@ -515,8 +519,10 @@
 							greekStr = @"κ";
 						else if([greekStrTmp isEqualToString:@"Lam"])
 							greekStr = @"λ";
-						else
+						else {
+							NSLog(@"Griekse letter: %@",greekStrTmp);
 							greekStr = @"err";
+						}
 						NSString* numberStr = [[closestStar bayer] substringWithRange:NSMakeRange(0, [[closestStar bayer] length]-6)];
 						
 							[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:[NSString stringWithFormat:@"%@ %@ %@",numberStr,greekStr,constellationStr] showInfo:YES];
@@ -525,6 +531,7 @@
 						//[numberStr release];
 						//[constellationStr release];
 						//[greekStr release];
+							}
 						}
 						@catch(NSException * exception) {
 							[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:@"" showInfo:YES];
