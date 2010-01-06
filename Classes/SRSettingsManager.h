@@ -13,10 +13,12 @@
 	double brightnessFactor;
 	BOOL showConstellations;
 	BOOL showRedOverlay;
+	BOOL showPlanetLabels;
 }
 
 @property (nonatomic,readwrite) double brightnessFactor;
 @property (nonatomic,readwrite) BOOL showConstellations;
+@property (nonatomic,readwrite) BOOL showPlanetLabels;
 @property (nonatomic,readwrite) BOOL showRedOverlay;
 
 @end

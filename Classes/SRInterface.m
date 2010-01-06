@@ -642,6 +642,15 @@
 			brightness -= 0.1;
 			[[appDelegate settingsManager] setBrightnessFactor:brightness];
 		}		
+		else if(clicker == @"planet_labels") {
+			BOOL planetLabels = [[appDelegate settingsManager] showPlanetLabels];
+			if(planetLabels) {
+				[[appDelegate settingsManager] setShowPlanetLabels:FALSE];
+			}
+			else {
+				[[appDelegate settingsManager] setShowPlanetLabels:TRUE];
+			}
+		}		
 		else if(clicker == @"constellations") {
 			BOOL constellations = [[appDelegate settingsManager] showConstellations];
 			if(constellations) {

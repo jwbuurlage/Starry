@@ -56,8 +56,10 @@
 															identifier:@"red" 
 															 clickable:YES]];		
 		
-		
-		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(296, -55, 32, 32)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planetLabel.png"]] 
+															identifier:@"planet_labels" 
+															 clickable:YES]];
 	}
 	return self;
 }

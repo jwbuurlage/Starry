@@ -11,7 +11,7 @@
 
 @implementation SRSettingsManager
 
-@synthesize brightnessFactor,showRedOverlay,showConstellations;
+@synthesize brightnessFactor,showRedOverlay,showConstellations, showPlanetLabels;
 
 -(id)init {
 	if([super init]) {
@@ -23,7 +23,7 @@
 		}
 		showConstellations = [prefs boolForKey:@"SRshowConstellations"];
 		showRedOverlay = [prefs boolForKey:@"SRshowRedOverlay"];
-		
+		showPlanetLabels = [prefs boolForKey:@"SRshowPlanetLabels"];
 	}
 	return self;
 }

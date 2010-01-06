@@ -62,6 +62,7 @@
 	[prefs setBool:		[location staticValues]					forKey:@"SRstaticCoordinates"];
 	[prefs setBool:		[settingsManager showRedOverlay]		forKey:@"SRshowRedOverlay"];
 	[prefs setBool:		[settingsManager showConstellations]	forKey:@"SRshowConstellations"];
+	[prefs setBool:		[settingsManager showPlanetLabels]		forKey:@"SRshowPlanetLabels"];
 	[prefs setFloat:	[settingsManager brightnessFactor]		forKey:@"SRbrightness"];
 	[prefs synchronize];
 }

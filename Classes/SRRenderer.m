@@ -541,7 +541,7 @@
 	glDisableClientState(GL_COLOR_ARRAY);
 	
 
-	if(drawPlanetLabels) {
+	if([[appDelegate settingsManager] showPlanetLabels]) {
 	i = 1;
 	while(i < [[objectManager planets] count]) {
 		glColor4f(1.0f, 1.0f, 1.0f, 1.0f * pow([camera zoomingValue],-3));
