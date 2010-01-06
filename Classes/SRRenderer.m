@@ -465,8 +465,8 @@
 			highlightPosition.x, highlightPosition.y, highlightPosition.z
 		};
 		
-		glPointSize(64.0f);
-		glBindTexture(GL_TEXTURE_2D, textures[8]);
+		glPointSize(32.0f);
+		glBindTexture(GL_TEXTURE_2D, textures[9]);
 		
 		glColor4f(0.5f,0.5f,0.5f,0.75f);
 		glVertexPointer(3, GL_FLOAT, 12, points);
