@@ -227,7 +227,16 @@
 		float azimuth = [camera azimuth];
 		
 		float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
-		float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/480;
+		float radPerPixel;
+		
+		//FIXME: Fout in deze berekening voor volledig ingezoomd
+		if(fieldOfView > 0.75) {
+			radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/480;
+		}
+		else {
+			radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/320;
+		}
+		//float radPerPixel = sinf(0.5*(fieldOfView*480)/320)/480;
 		//float standardHeight = 0.8910065242;
 		//float radPerPixel = (0.3*M_PI)/320;
 		// Coordinaten in het vlak

@@ -279,14 +279,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>41</integer>
-									<integer>21</integer>
+									<integer>68</integer>
+									<integer>58</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 101}, {208, 780}}</string>
+							<string>{{0, 664}, {208, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRInterface.m</string>
+								<string>GLViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRInterface.m</string>
+										<string>GLViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7607999910F4F1F500772DE8</string>
+										<string>760799E910F4F66E00772DE8</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -356,7 +356,6 @@
 											<string>761E581610E65BD0003B9CFE</string>
 											<string>761E581910E65BD0003B9CFE</string>
 											<string>76D7292710EBD48C0018EB62</string>
-											<string>76F4479C10ED2521003BC841</string>
 											<string>769733D010EF73870057E29F</string>
 											<string>769733D110EF73870057E29F</string>
 											<string>769733D210EF73870057E29F</string>
@@ -399,7 +398,6 @@
 											<string>7662D8A310F4CAF4005B9AE2</string>
 											<string>7662D8A410F4CAF4005B9AE2</string>
 											<string>7662D8A510F4CAF4005B9AE2</string>
-											<string>7662D8D610F4D024005B9AE2</string>
 											<string>7662D8E310F4D07C005B9AE2</string>
 											<string>7662D8EC10F4D0E3005B9AE2</string>
 											<string>7662D8F910F4D48B005B9AE2</string>
@@ -419,10 +417,12 @@
 											<string>7607998910F4EFD500772DE8</string>
 											<string>7607998A10F4EFD500772DE8</string>
 											<string>7607999310F4F1F400772DE8</string>
-											<string>7607999410F4F1F400772DE8</string>
 											<string>7607999510F4F1F400772DE8</string>
 											<string>7607999610F4F1F400772DE8</string>
-											<string>7607999710F4F1F400772DE8</string>
+											<string>760799BA10F4F3DC00772DE8</string>
+											<string>760799C410F4F43B00772DE8</string>
+											<string>760799C510F4F43B00772DE8</string>
+											<string>760799C610F4F43B00772DE8</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -586,8 +586,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -600,7 +598,7 @@
 						<key>Frame</key>
 						<string>{{0, 0}, {1131, 226}}</string>
 						<key>RubberWindowFrame</key>
-						<string>2 39 1131 839 0 0 1440 878 </string>
+						<string>1 39 1131 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -676,10 +674,10 @@
 							<key>Frame</key>
 							<string>{{545, 0}, {586, 185}}</string>
 							<key>RubberWindowFrame</key>
-							<string>2 39 1131 839 0 0 1440 878 </string>
+							<string>1 39 1131 839 0 0 1440 878 </string>
 						</dict>
 						<key>RubberWindowFrame</key>
-						<string>2 39 1131 839 0 0 1440 878 </string>
+						<string>1 39 1131 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -743,13 +741,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>7607999A10F4F1F500772DE8</string>
+		<string>760799E810F4F61D00772DE8</string>
 		<string>7607998010F4EC3200772DE8</string>
 		<string>7607997410F4EB6800772DE8</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>2 39 1131 839 0 0 1440 878 </string>
+	<string>1 39 1131 839 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
