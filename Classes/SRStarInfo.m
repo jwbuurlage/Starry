@@ -192,6 +192,46 @@
 	[minutesNumber4 release];
 	[secondsNumber4 release];
 	
+	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(azTmp)];
+	int degrees = [coordinateNumber intValue];
+	float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
+	NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];
+	int minutes = [minutesNumber intValue];
+	float secondsF = ([minutesNumber floatValue] - [minutesNumber intValue])*60;
+	NSNumber * secondsNumber = [[NSNumber alloc] initWithFloat:secondsF];
+	int seconds = [secondsNumber intValue];
+	
+	if (azTmp < 0) {
+		degrees = 360+degrees;
+		minutes = 60+minutes;
+		seconds = 60+seconds;
+	}
+	//degrees = degrees ; // Uuren er van maken
+	[[[elements objectAtIndex:[elements count] - 3] texture] release];
+	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[coordinateNumber release];
+	[minutesNumber release];
+	[secondsNumber release];
+	
+	NSNumber * coordinateNumber2 = [[NSNumber alloc] initWithFloat:alTmp];
+	int degrees2 = [coordinateNumber2 intValue];
+	float minutesF2 = ([coordinateNumber2 floatValue] - [coordinateNumber2 intValue]) * 60;
+	NSNumber * minutesNumber2 = [[NSNumber alloc] initWithFloat:minutesF2];
+	int minutes2 = [minutesNumber2 intValue];
+	float secondsF2 = ([minutesNumber2 floatValue] - [minutesNumber2 intValue])*60;
+	NSNumber * secondsNumber2 = [[NSNumber alloc] initWithFloat:secondsF2];
+	int seconds2 = [secondsNumber2 intValue];
+	
+	if (alTmp < 0) {
+		minutes2 = -minutes2;
+		seconds2 = -seconds2;
+	}
+	[[[elements objectAtIndex:[elements count] - 2] texture] release];
+	[[elements objectAtIndex:[elements count] - 2] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[coordinateNumber2 release];
+	[minutesNumber2 release];
+	[secondsNumber2 release];
+	
 	[[[elements objectAtIndex:[elements count] - 1] texture] release];
 	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theStar mag] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	
