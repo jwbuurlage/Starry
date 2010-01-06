@@ -28,4 +28,10 @@
 	return self;
 }
 
+- (void) dealloc {
+	[texture release];
+	[identifier release];
+	[super dealloc];
+}
+
 @end

@@ -101,6 +101,8 @@
 	sT = fmod(sT, 360);
 	elapsed = sT; // in graden
 	
+	//[dJ release];
+	
 	return elapsed;
 }
 

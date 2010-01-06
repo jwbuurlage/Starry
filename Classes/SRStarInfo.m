@@ -211,6 +211,7 @@
 		seconds = 60+seconds;
 	}
 	//degrees = degrees ; // Uuren er van maken
+	[[[elements objectAtIndex:[elements count] - 3] texture] release];
 	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber release];
 	[minutesNumber release];
@@ -229,6 +230,7 @@
 		minutes2 = -minutes2;
 		seconds2 = -seconds2;
 	}
+	[[[elements objectAtIndex:[elements count] - 2] texture] release];
 	[[elements objectAtIndex:[elements count] - 2] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber2 release];
 	[minutesNumber2 release];
