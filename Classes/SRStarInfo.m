@@ -134,7 +134,7 @@
 	
 	float raTmp = (180/M_PI)*atan2f([theStar.y floatValue]/20,[theStar.x floatValue]/20);
 	//NSLog(@"test raTmp %f",raTmp);
-	float decTmp = 90-(180/M_PI)*acosf(-[theStar.z floatValue]/20); 
+	float decTmp = 90-(180/M_PI)*acosf([theStar.z floatValue]/20); 
 	//NSLog(@"test decTmp %f",decTmp);
 	
 
@@ -192,7 +192,7 @@
 	[minutesNumber4 release];
 	[secondsNumber4 release];
 	
-	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(azTmp)];
+	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(360-azTmp)];
 	int degrees = [coordinateNumber intValue];
 	float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
 	NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];
@@ -243,7 +243,7 @@
 	float azTmp = (180/M_PI)*atan2f(posForCam.y,posForCam.x);
 	float alTmp = 90-(180/M_PI)*acosf(-posForCam.z); 
 	
-	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(azTmp)];
+	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(360-azTmp)];
 	int degrees = [coordinateNumber intValue];
 	float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
 	NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];

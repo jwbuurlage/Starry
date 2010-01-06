@@ -280,12 +280,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>140</integer>
-									<integer>138</integer>
+									<integer>45</integer>
+									<integer>21</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1719}, {208, 780}}</string>
+							<string>{{0, 606}, {208, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,7 +318,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRInterface.m</string>
+								<string>SRPlanetInfo.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +326,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRInterface.m</string>
+										<string>SRPlanetInfo.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>76A2B2F010F527E700C8A726</string>
+										<string>76A2B31410F52CAA00C8A726</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -407,9 +409,6 @@
 											<string>76A2B1D710F50F9C00C8A726</string>
 											<string>76A2B1D810F50F9C00C8A726</string>
 											<string>76A2B21610F516EF00C8A726</string>
-											<string>76A2B21710F516EF00C8A726</string>
-											<string>76A2B23C10F5181100C8A726</string>
-											<string>76A2B29D10F51FD900C8A726</string>
 											<string>76A2B29E10F51FD900C8A726</string>
 											<string>76A2B2A810F5206500C8A726</string>
 											<string>76A2B2AF10F522A400C8A726</string>
@@ -417,8 +416,11 @@
 											<string>76A2B2BF10F523B300C8A726</string>
 											<string>76A2B2C610F523D100C8A726</string>
 											<string>76A2B2E510F5265800C8A726</string>
-											<string>76A2B2EB10F5279600C8A726</string>
-											<string>76A2B2EC10F5279600C8A726</string>
+											<string>76A2B30310F52B4A00C8A726</string>
+											<string>76A2B30410F52B4A00C8A726</string>
+											<string>76A2B31010F52CA700C8A726</string>
+											<string>76A2B31110F52CA700C8A726</string>
+											<string>76A2B31210F52CA700C8A726</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -582,6 +584,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -737,7 +741,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>76A2B2EF10F5279700C8A726</string>
+		<string>76A2B31510F52CAA00C8A726</string>
 		<string>76A2B24110F5181200C8A726</string>
 		<string>76A2B23810F5179600C8A726</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
