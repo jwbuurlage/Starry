@@ -20,7 +20,7 @@ $query = mysql_query("SELECT ProperName,bayerFlamsteed,Hip,Gliese,HR,HD,RA,XDec,
 $i=0;
 
 while($fetch = mysql_fetch_object($query)) {
-	
+	if($fetch->ProperName != "Sol") {
 	$ra = (M_PI/12)*preg_replace('/\s+/','',$fetch->RA);
 	
 	$dec = deg2rad(preg_replace('/\s+/','',$fetch->XDec));
@@ -57,6 +57,7 @@ while($fetch = mysql_fetch_object($query)) {
 	}
 		$xml .= '<x>'.$x.'</x><y>'.$y.'</y><z>'.$z.'</z><mag>'.preg_replace('/\s+/','',$fetch->Mag).'</mag><ci>'.preg_replace('/\s+/','',$fetch->ColorIndex).'</ci></star>';
 	$i++;
+	}
 }
 $xml .= '</stars>';
 
