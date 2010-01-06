@@ -486,6 +486,7 @@
 						Vertex3D position = Vector3DMake([closestStar.x floatValue], [closestStar.y floatValue], [closestStar.z floatValue]);
 						
 						[renderer setHighlightPosition:position];
+						[renderer setSelectedStar:closestStar];
 						[renderer setHighlightSize:32]; 
 						[renderer setHighlight:TRUE];
 						

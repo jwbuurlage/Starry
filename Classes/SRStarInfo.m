@@ -186,6 +186,16 @@
 	[minutesNumber4 release];
 	[secondsNumber4 release];
 	
+	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theStar mag] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	
+	
+}
+
+- (void)starUpdate:(SRStar*)theStar {
+	Vertex3D posForCam = [theStar myCurrentPosition];
+	float azTmp = (180/M_PI)*atan2f(posForCam.y,posForCam.x);
+	float alTmp = 90-(180/M_PI)*acosf(-posForCam.z); 
+	
 	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(azTmp)];
 	int degrees = [coordinateNumber intValue];
 	float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
@@ -223,10 +233,6 @@
 	[coordinateNumber2 release];
 	[minutesNumber2 release];
 	[secondsNumber2 release];
-	
-	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theStar mag] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
-	
-	
 }
 
 - (void)draw {	

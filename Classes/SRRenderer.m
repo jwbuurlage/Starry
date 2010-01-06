@@ -17,7 +17,7 @@
 
 @implementation SRRenderer
 
-@synthesize interface,location,myOwner,camera,highlight,planetView,highlightPosition,highlightSize;
+@synthesize interface,location,myOwner,camera,highlight,planetView,highlightPosition,highlightSize,selectedStar;
 
 -(id)setupWithOwner:(GLViewController*)theOwner {
 	if(self = [super init]) {
@@ -229,6 +229,8 @@
 }
 
 -(void)render {
+	if(selectedStar)
+		[[interface starInfo] starUpdate:selectedStar];
 	//view resetten
     glLoadIdentity();
 		

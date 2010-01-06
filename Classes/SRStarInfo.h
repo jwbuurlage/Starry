@@ -41,6 +41,7 @@
 
 //+ (SRMessierInfo*)shared;
 - (void)starClicked:(SRStar*)theStar;
+- (void)starUpdate:(SRStar*)theStar;
 - (void)draw;
 - (void)show; 
 - (void)hide; 
