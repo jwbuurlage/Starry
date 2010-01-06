@@ -183,7 +183,6 @@
 		NSLog(@"Tapped twice");
 		[camera zoomCameraIn];
 	}
-	else if ([touch tapCount] == 1 && !tappedTwice) {
 	
 	if(UIClick && touchCount == 1) {
 		//NSLog(@"Clicked the interface");
@@ -625,7 +624,7 @@
 			//[camera RAAndDecForPoint:[aTouch previousLocationInView:theView]];
 		}
 	}
-		}
+		
 }
 
 @end
