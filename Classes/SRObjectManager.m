@@ -86,7 +86,7 @@
 											   w:288.064
 											   o:174.873
 											  Mo:357.529
-											name:NSLocalizedString(@"Earth", @"")];
+											name:@"Earth"];
 		[planets addObject:earth];
 		[earth release];
 	
@@ -96,7 +96,7 @@
 												 w:273.867
 												 o:100.464
 												Mo:20.020
-											  name:NSLocalizedString(@"Jupiter", @"")];
+											  name:@"Jupiter"];
 		[planets addObject:jupiter];
 		[jupiter release];
 		
@@ -106,7 +106,7 @@
 												 w:29.125
 												 o:48.331
 												Mo:174.795
-											  name:NSLocalizedString(@"Mercury", @"")];
+											  name:@"Mercury"];
 		[planets addObject:mercury];
 		[mercury release];
 	
@@ -116,7 +116,7 @@
 											   w:54.884
 											   o:76.680
 											  Mo:50.416
-											name:NSLocalizedString(@"Venus", @"")];
+											name:@"Venus"];
 		[planets addObject:venus];
 		[venus release];
 	
@@ -126,7 +126,7 @@
 											  w:286.502
 											  o:49.558
 											 Mo:19.373
-										   name:NSLocalizedString(@"Mars", @"")];
+										   name:@"Mars"];
 		[planets addObject:mars];
 		[mars release];
 	
@@ -136,7 +136,7 @@
 												w:339.391
 												o:113.666
 											   Mo:317.021
-											 name:NSLocalizedString(@"Saturn", @"")];
+											 name:@"Saturn"];
 		[planets addObject:saturn];
 		[saturn release];
 	
@@ -146,7 +146,7 @@
 												w:98.999
 												o:74.006
 											   Mo:141.050
-											 name:NSLocalizedString(@"Uranus", @"")];
+											 name:@"Uranus"];
 		[planets addObject:uranus];
 		[uranus release];
 	
@@ -156,7 +156,7 @@
 												 w:276.340
 												 o:131.784
 												Mo:256.225
-											  name:NSLocalizedString(@"Neptune", @"")];
+											  name:@"Neptune"];
 	
 		[planets addObject:neptune];
 		[neptune release];

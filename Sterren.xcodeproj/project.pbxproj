@@ -205,9 +205,9 @@
 		ACB8F19B10CC76F700C0F87E /* location_on.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8F19A10CC76F700C0F87E /* location_on.png */; };
 		ACBF30AE10E8057F00CE5FBA /* Jupiter.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBF30A710E8057F00CE5FBA /* Jupiter.png */; };
 		ACBF30AF10E8057F00CE5FBA /* Mars.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBF30A810E8057F00CE5FBA /* Mars.png */; };
-		ACBF30B010E8057F00CE5FBA /* Mercurius.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBF30A910E8057F00CE5FBA /* Mercurius.png */; };
-		ACBF30B110E8057F00CE5FBA /* Neptunus.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBF30AA10E8057F00CE5FBA /* Neptunus.png */; };
-		ACBF30B210E8057F00CE5FBA /* Saturnus.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBF30AB10E8057F00CE5FBA /* Saturnus.png */; };
+		ACBF30B010E8057F00CE5FBA /* Mercury.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBF30A910E8057F00CE5FBA /* Mercury.png */; };
+		ACBF30B110E8057F00CE5FBA /* Neptune.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBF30AA10E8057F00CE5FBA /* Neptune.png */; };
+		ACBF30B210E8057F00CE5FBA /* Saturn.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBF30AB10E8057F00CE5FBA /* Saturn.png */; };
 		ACBF30B310E8057F00CE5FBA /* Uranus.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBF30AC10E8057F00CE5FBA /* Uranus.png */; };
 		ACBF30B410E8057F00CE5FBA /* Venus.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBF30AD10E8057F00CE5FBA /* Venus.png */; };
 		ACC380D310DA959D009ED92E /* indicator_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = ACC380D210DA959D009ED92E /* indicator_overlay.png */; };
@@ -463,9 +463,9 @@
 		ACB8F19A10CC76F700C0F87E /* location_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location_on.png; path = Resources/location_on.png; sourceTree = "<group>"; };
 		ACBF30A710E8057F00CE5FBA /* Jupiter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Jupiter.png; path = Resources/planets/Jupiter.png; sourceTree = "<group>"; };
 		ACBF30A810E8057F00CE5FBA /* Mars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mars.png; path = Resources/planets/Mars.png; sourceTree = "<group>"; };
-		ACBF30A910E8057F00CE5FBA /* Mercurius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mercurius.png; path = Resources/planets/Mercurius.png; sourceTree = "<group>"; };
-		ACBF30AA10E8057F00CE5FBA /* Neptunus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Neptunus.png; path = Resources/planets/Neptunus.png; sourceTree = "<group>"; };
-		ACBF30AB10E8057F00CE5FBA /* Saturnus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Saturnus.png; path = Resources/planets/Saturnus.png; sourceTree = "<group>"; };
+		ACBF30A910E8057F00CE5FBA /* Mercury.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mercury.png; path = Resources/planets/Mercury.png; sourceTree = "<group>"; };
+		ACBF30AA10E8057F00CE5FBA /* Neptune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Neptune.png; path = Resources/planets/Neptune.png; sourceTree = "<group>"; };
+		ACBF30AB10E8057F00CE5FBA /* Saturn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Saturn.png; path = Resources/planets/Saturn.png; sourceTree = "<group>"; };
 		ACBF30AC10E8057F00CE5FBA /* Uranus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Uranus.png; path = Resources/planets/Uranus.png; sourceTree = "<group>"; };
 		ACBF30AD10E8057F00CE5FBA /* Venus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Venus.png; path = Resources/planets/Venus.png; sourceTree = "<group>"; };
 		ACC380D210DA959D009ED92E /* indicator_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = indicator_overlay.png; path = Resources/indicator_overlay.png; sourceTree = "<group>"; };
@@ -708,9 +708,9 @@
 			children = (
 				ACBF30A710E8057F00CE5FBA /* Jupiter.png */,
 				ACBF30A810E8057F00CE5FBA /* Mars.png */,
-				ACBF30A910E8057F00CE5FBA /* Mercurius.png */,
-				ACBF30AA10E8057F00CE5FBA /* Neptunus.png */,
-				ACBF30AB10E8057F00CE5FBA /* Saturnus.png */,
+				ACBF30A910E8057F00CE5FBA /* Mercury.png */,
+				ACBF30AA10E8057F00CE5FBA /* Neptune.png */,
+				ACBF30AB10E8057F00CE5FBA /* Saturn.png */,
 				ACBF30AC10E8057F00CE5FBA /* Uranus.png */,
 				ACBF30AD10E8057F00CE5FBA /* Venus.png */,
 			);
@@ -1125,9 +1125,9 @@
 				AC5769BB10E7F0D30031505E /* planetInfoBg.png in Resources */,
 				ACBF30AE10E8057F00CE5FBA /* Jupiter.png in Resources */,
 				ACBF30AF10E8057F00CE5FBA /* Mars.png in Resources */,
-				ACBF30B010E8057F00CE5FBA /* Mercurius.png in Resources */,
-				ACBF30B110E8057F00CE5FBA /* Neptunus.png in Resources */,
-				ACBF30B210E8057F00CE5FBA /* Saturnus.png in Resources */,
+				ACBF30B010E8057F00CE5FBA /* Mercury.png in Resources */,
+				ACBF30B110E8057F00CE5FBA /* Neptune.png in Resources */,
+				ACBF30B210E8057F00CE5FBA /* Saturn.png in Resources */,
 				ACBF30B310E8057F00CE5FBA /* Uranus.png in Resources */,
 				ACBF30B410E8057F00CE5FBA /* Venus.png in Resources */,
 				769733CD10EF73670057E29F /* starInfoBg.png in Resources */,

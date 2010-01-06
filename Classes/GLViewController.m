@@ -402,13 +402,8 @@
 					}
 				}
 				if (closestD < (2 * (1/zoomingValue))) {
-//<<<<<<< HEAD:Classes/GLViewController.m
-					//NSLog(@"Delta of closest: %f",closestD);
-
-//=======
 					[[[renderer interface] theNameplate] setSelectedType:1];					
-					[[[renderer interface] theNameplate] setName:closestPlanet.name inConstellation:NSLocalizedString(@"planet", @"") showInfo:YES];
-//>>>>>>> 432905627afb0f19ea3c87fa64b8b3ac63459d04:Classes/GLViewController.m
+					[[[renderer interface] theNameplate] setName:NSLocalizedString(closestPlanet.name, @"") inConstellation:NSLocalizedString(@"planet", @"") showInfo:YES];
 					[[renderer interface] setANameplate:TRUE];
 					
 					[[[renderer interface] planetInfo] planetClicked:closestPlanet];

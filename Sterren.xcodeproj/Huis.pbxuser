@@ -66,7 +66,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = ACB7B0F910615ACD00CA447E /* Sterren */;
-		activeSDKPreference = iphoneos3.1.2;
+		activeSDKPreference = iphonesimulator3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Sterren */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Sterren */,
@@ -124,16 +124,16 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 284416523;
-			PBXWorkspaceStateSaveDate = 284416523;
+			PBXPerProjectTemplateStateSaveDate = 284490090;
+			PBXWorkspaceStateSaveDate = 284490090;
 		};
 		perUserProjectItems = {
 			AC1EE9CC10F2A5B500EAE5C4 = AC1EE9CC10F2A5B500EAE5C4 /* PBXTextBookmark */;
 			AC1EE9CE10F2A5B500EAE5C4 = AC1EE9CE10F2A5B500EAE5C4 /* PBXTextBookmark */;
 			AC1EEA0C10F2A8A700EAE5C4 = AC1EEA0C10F2A8A700EAE5C4 /* PBXTextBookmark */;
-			AC8331E210F3DA0C006F4161 /* PBXTextBookmark */ = AC8331E210F3DA0C006F4161 /* PBXTextBookmark */;
-			AC8331E810F3DA91006F4161 /* PBXTextBookmark */ = AC8331E810F3DA91006F4161 /* PBXTextBookmark */;
-			AC8331F610F3DAAB006F4161 /* PBXTextBookmark */ = AC8331F610F3DAAB006F4161 /* PBXTextBookmark */;
+			AC8331E210F3DA0C006F4161 = AC8331E210F3DA0C006F4161 /* PBXTextBookmark */;
+			AC8331E810F3DA91006F4161 = AC8331E810F3DA91006F4161 /* PBXTextBookmark */;
+			AC8331F610F3DAAB006F4161 = AC8331F610F3DAAB006F4161 /* PBXTextBookmark */;
 			AC8AFB1310F3962800517901 = AC8AFB1310F3962800517901 /* PBXTextBookmark */;
 			AC8AFB4C10F397B800517901 = AC8AFB4C10F397B800517901 /* PBXTextBookmark */;
 			AC8AFB8310F39DAC00517901 = AC8AFB8310F39DAC00517901 /* PBXBookmark */;
@@ -156,6 +156,7 @@
 			AC91614810F3D92800A14635 = AC91614810F3D92800A14635 /* PBXTextBookmark */;
 			AC91614910F3D92800A14635 = AC91614910F3D92800A14635 /* PBXTextBookmark */;
 			AC91615410F3D98000A14635 = AC91615410F3D98000A14635 /* PBXTextBookmark */;
+			ACD3B9D410F4F984007CD4C7 /* PBXTextBookmark */ = ACD3B9D410F4F984007CD4C7 /* PBXTextBookmark */;
 		};
 		sourceControlManager = ACB7B10E10615AD200CA447E /* Source Control */;
 		userBuildSettings = {
@@ -227,9 +228,9 @@
 	};
 	767820EB10F10CD3001ADE6D /* nl */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1344, 1898}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1344, 2002}}";
 			sepNavSelRange = "{354, 0}";
-			sepNavVisRange = "{27, 707}";
+			sepNavVisRange = "{0, 1220}";
 		};
 	};
 	767820EF10F10CEC001ADE6D /* en */ = {
@@ -414,9 +415,9 @@
 	};
 	AC57693F10E7CF910031505E /* SRPlanetInfo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1930, 2054}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1930, 2041}}";
 			sepNavSelRange = "{3968, 0}";
-			sepNavVisRange = "{2939, 3198}";
+			sepNavVisRange = "{2939, 3135}";
 		};
 	};
 	AC57BD0D10C957DC00B0BD5C /* constellations.xml */ = {
@@ -922,9 +923,9 @@
 	};
 	ACB7B16B10615F4F00CA447E /* SRRenderer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2028, 8333}}";
-			sepNavSelRange = "{10505, 0}";
-			sepNavVisRange = "{9642, 2966}";
+			sepNavIntBoundsRect = "{{0, 0}, {2546, 8008}}";
+			sepNavSelRange = "{1174, 0}";
+			sepNavVisRange = "{0, 2907}";
 			sepNavWindowFrame = "{{547, 0}, {996, 1028}}";
 		};
 	};
@@ -960,6 +961,16 @@
 			sepNavSelRange = "{195, 0}";
 			sepNavVisRange = "{0, 201}";
 		};
+	};
+	ACD3B9D410F4F984007CD4C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 324";
+		rLen = 0;
+		rLoc = 10505;
+		rType = 0;
+		vrLen = 1882;
+		vrLoc = 7106;
 	};
 	ACE708CF10D02A0B003DE4BB /* M1.png */ = {
 		uiCtxt = {
