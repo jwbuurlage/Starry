@@ -166,4 +166,8 @@
 	return result;
 }
 
+-(NSString*)localizedName {
+	return NSLocalizedString(name, @"");
+}
+
 @end

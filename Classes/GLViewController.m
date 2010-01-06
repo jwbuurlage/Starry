@@ -490,7 +490,7 @@
 						}*/
 						//else {
 						@try {
-							if([[closestStar bayer] isEqualToString:@""] || [[closestStar bayer] isEqualToString:@" "]) {
+							if([[closestStar bayer] isEqualToString:@""] || [[closestStar bayer] isEqualToString:@" "] || ![closestStar bayer]) {
 								[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:@"" showInfo:YES];
 							}
 							else {

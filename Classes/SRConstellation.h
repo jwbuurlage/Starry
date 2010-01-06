@@ -44,5 +44,6 @@
 -(void)makeArray;
 
 -(Vertex3D)myCurrentPosition;
+-(NSString*)localizedName;
 
 @end
