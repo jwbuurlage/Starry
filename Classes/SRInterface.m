@@ -238,7 +238,7 @@
 		[pODecLabel drawInRect:CGRectMake(200, 43, 64, 32)];
 		
 		
-		NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:360 - [camera azimuth]];
+		NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(360 - [camera azimuth]) / 15];
 		int degrees = [coordinateNumber intValue];
 		float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
 		NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];
@@ -247,9 +247,13 @@
 		NSNumber * secondsNumber = [[NSNumber alloc] initWithFloat:secondsF];
 		int seconds = [secondsNumber intValue];
 				
-		degrees = degrees * 24 / 360; // Uuren er van maken
+		/* degrees = degrees * 24 / 360; // Uuren er van maken
+		minutes = minutes / 15;
+		seconds = seconds / 15; */
 		
-		pORAValueLabel = [[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%ih %i' %i''",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]; 
+		if(pORAValueLabel) 
+			[pORAValueLabel release];
+		pORAValueLabel = [[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%ih %im %is''",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]; 
 		[coordinateNumber release];
 		[minutesNumber release];
 		[secondsNumber release];
@@ -267,6 +271,8 @@
 			minutes2 = -minutes2;
 			seconds2 = -seconds2;
 		}
+		if(pODecValueLabel) 
+			[pODecValueLabel release];
 		pODecValueLabel = [[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%i° %i' %i''",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 		[coordinateNumber2 release];
 		[minutesNumber2 release];
