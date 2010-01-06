@@ -315,7 +315,9 @@
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
 
 	[theNameplate draw];
-	[self drawPositionOverlay];
+	if(![renderer planetView]) {
+		[self drawPositionOverlay];
+	}
 	
 	glTranslatef(0, xTranslate, 0);
 	
@@ -389,7 +391,7 @@
 	}
 	if(notFoundTextureBool) {
 		glColor4f(1.0, 1.0, 1.0, alphaNotFound);      
-		[notFoundTexture drawInRect:CGRectMake(176,68,128,64)];
+		[notFoundTexture drawInRect:CGRectMake(160,68,160,64)];
 		[searchIcon drawInRect:CGRectMake(220,87,39,39)];
 		glColor4f(0.5, 0.5, 0.5, alphaNotFound);   
 		
@@ -1194,10 +1196,24 @@
 					[self setANameplate:TRUE];
 				}
 				else if(type == 2) { // Ster
-					if(foundObjectText)
-						foundObjectTextString = foundStar.name;
-					[foundObjectText release];
-					foundObjectText = [[Texture2D alloc] initWithString:foundStar.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+					if(foundObjectTextString) 
+						[foundObjectTextString release];
+					if (foundObjectText) 
+						[foundObjectText release];
+					
+					
+					NSString* name = [[NSString alloc] initWithString:foundStar.name];
+					if([name length] > 12) {
+						foundObjectTextString = [[NSString alloc] initWithString:[[name substringToIndex:10] stringByAppendingFormat:@".."]];
+						foundObjectText = [[Texture2D alloc] initWithString:foundObjectTextString dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+						[name release];
+					}
+					else {
+						foundObjectText = [[Texture2D alloc] initWithString:name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+						foundObjectTextString = [[NSString alloc] initWithString:name];
+						[name release];
+					}
+					
 					@try {
 						if([[foundStar bayer] isEqualToString:@""] || [[foundStar bayer] isEqualToString:@" "] || ![foundStar bayer]) {
 							[theNameplate setName:NSLocalizedString(foundStar.name, @"") inConstellation:@"" showInfo:YES];
@@ -1266,11 +1282,23 @@
 					[self setANameplate:TRUE];
 				}
 				else if(type == 3) { // Constellation
-					if(foundObjectText)
-						foundObjectTextString = [foundConstellation localizedName];
-					[foundObjectText release];
-					foundObjectText = [[Texture2D alloc] initWithString:[foundConstellation localizedName] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+					if(foundObjectTextString) 
+						[foundObjectTextString release];
+					if (foundObjectText) 
+						[foundObjectText release];
 					
+					NSString* name = [[NSString alloc] initWithString:[foundConstellation localizedName]];
+					if([name length] > 12) {
+						foundObjectTextString = [[NSString alloc] initWithString:[[name substringToIndex:9] stringByAppendingFormat:@".."]];
+						foundObjectText = [[Texture2D alloc] initWithString:foundObjectTextString dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+						[name release];
+					}
+					else {
+						foundObjectText = [[Texture2D alloc] initWithString:name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+						foundObjectTextString = [[NSString alloc] initWithString:name];
+						[name release];
+					}
+										
 					//Vertex3D posForCam = [foundStar myCurrentPosition];
 					Vertex3D posForCam = [foundConstellation myCurrentPosition];
 					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);

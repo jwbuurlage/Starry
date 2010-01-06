@@ -335,16 +335,13 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ACD3BADE10F51CBB007CD4C7</string>
+										<string>ACD3BB5410F52886007CD4C7</string>
 										<key>history</key>
 										<array>
 											<string>AC1EE9CC10F2A5B500EAE5C4</string>
 											<string>AC8AFB1310F3962800517901</string>
 											<string>AC8AFB8310F39DAC00517901</string>
 											<string>AC8AFB8F10F39E6B00517901</string>
-											<string>AC8AFBFE10F3A42C00517901</string>
-											<string>AC8AFC2B10F3A68800517901</string>
-											<string>AC8AFC6D10F3D33A00517901</string>
 											<string>AC8AFC6F10F3D33A00517901</string>
 											<string>AC8AFC8210F3D7D600517901</string>
 											<string>AC8AFC8310F3D7D600517901</string>
@@ -354,12 +351,9 @@
 											<string>ACD3B9EF10F50044007CD4C7</string>
 											<string>ACD3B9F010F50044007CD4C7</string>
 											<string>ACD3B9F110F50044007CD4C7</string>
-											<string>ACD3B9F210F50044007CD4C7</string>
 											<string>ACD3B9F410F50044007CD4C7</string>
 											<string>ACD3B9F510F50044007CD4C7</string>
 											<string>ACD3B9F610F50044007CD4C7</string>
-											<string>ACD3B9F910F50044007CD4C7</string>
-											<string>ACD3B9FA10F50044007CD4C7</string>
 											<string>ACD3B9FB10F50044007CD4C7</string>
 											<string>ACD3B9FC10F50044007CD4C7</string>
 											<string>ACD3B9FD10F50044007CD4C7</string>
@@ -369,7 +363,6 @@
 											<string>ACD3BA2F10F50ADF007CD4C7</string>
 											<string>ACD3BA3010F50ADF007CD4C7</string>
 											<string>ACD3BA3110F50ADF007CD4C7</string>
-											<string>ACD3BA3210F50ADF007CD4C7</string>
 											<string>ACD3BA4510F50B52007CD4C7</string>
 											<string>ACD3BA4610F50B52007CD4C7</string>
 											<string>ACD3BA4710F50B52007CD4C7</string>
@@ -377,13 +370,24 @@
 											<string>ACD3BA7D10F511E9007CD4C7</string>
 											<string>ACD3BA7E10F511E9007CD4C7</string>
 											<string>ACD3BA7F10F511E9007CD4C7</string>
-											<string>ACD3BA8410F513CA007CD4C7</string>
-											<string>ACD3BA8B10F5145A007CD4C7</string>
-											<string>ACD3BA9710F515FA007CD4C7</string>
 											<string>ACD3BA9D10F51675007CD4C7</string>
 											<string>ACD3BA9E10F51675007CD4C7</string>
-											<string>ACD3BAC010F51ACC007CD4C7</string>
-											<string>ACD3BAC910F51B54007CD4C7</string>
+											<string>ACD3BAE710F51E4D007CD4C7</string>
+											<string>ACD3BAE810F51E4D007CD4C7</string>
+											<string>ACD3BAE910F51E4D007CD4C7</string>
+											<string>ACD3BAEA10F51E4D007CD4C7</string>
+											<string>ACD3BAEB10F51E4D007CD4C7</string>
+											<string>ACD3BAEC10F51E4D007CD4C7</string>
+											<string>ACD3BAEE10F51E4D007CD4C7</string>
+											<string>ACD3BAEF10F51E4D007CD4C7</string>
+											<string>ACD3BAF710F51EFE007CD4C7</string>
+											<string>ACD3BAFE10F5203A007CD4C7</string>
+											<string>ACD3BB3110F524DB007CD4C7</string>
+											<string>ACD3BB3210F524DB007CD4C7</string>
+											<string>ACD3BB3310F524DB007CD4C7</string>
+											<string>ACD3BB4D10F52822007CD4C7</string>
+											<string>ACD3BB4E10F52822007CD4C7</string>
+											<string>ACD3BB4F10F52822007CD4C7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -562,12 +566,12 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {1676, 0}}</string>
+						<string>{{0, 0}, {1676, 284}}</string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
 					<key>Proportion</key>
-					<string>0pt</string>
+					<string>284pt</string>
 				</dict>
 				<dict>
 					<key>ContentConfiguration</key>
@@ -586,8 +590,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {818, 496}}</string>
-									<string>{{818, 0}, {858, 496}}</string>
+									<string>{{0, 0}, {818, 347}}</string>
+									<string>{{818, 0}, {858, 347}}</string>
 								</array>
 							</dict>
 							<key>VerticalSplitView</key>
@@ -602,8 +606,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {1676, 496}}</string>
-									<string>{{0, 496}, {1676, 451}}</string>
+									<string>{{0, 0}, {1676, 347}}</string>
+									<string>{{0, 347}, {1676, 316}}</string>
 								</array>
 							</dict>
 						</dict>
@@ -623,7 +627,7 @@
 						<key>DebugSTDIOWindowFrame</key>
 						<string>{{200, 200}, {500, 300}}</string>
 						<key>Frame</key>
-						<string>{{0, 5}, {1676, 947}}</string>
+						<string>{{0, 289}, {1676, 663}}</string>
 						<key>PBXDebugSessionStackFrameViewKey</key>
 						<dict>
 							<key>DebugVariablesTableConfiguration</key>
@@ -636,13 +640,13 @@
 								<real>628</real>
 							</array>
 							<key>Frame</key>
-							<string>{{818, 0}, {858, 496}}</string>
+							<string>{{818, 0}, {858, 347}}</string>
 						</dict>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
 					<key>Proportion</key>
-					<string>947pt</string>
+					<string>663pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
