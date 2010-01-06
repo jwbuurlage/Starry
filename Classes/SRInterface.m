@@ -677,6 +677,15 @@
 				showingStar = YES;
 			}
 		}	
+		else if(clicker == @"close_nameplate") {
+			[renderer setHighlight:FALSE];
+			[renderer setSelectedStar:nil];
+			[renderer setPlanetHighlighted:FALSE];
+			[renderer setSelectedPlanet:nil];
+			[theNameplate hide];
+			aNameplate = TRUE;
+			
+		}
 		else if(clicker == @"icon") {	
 			if([timeModule visible]) {
 				[timeModule hide];	

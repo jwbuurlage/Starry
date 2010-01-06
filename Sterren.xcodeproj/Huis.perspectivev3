@@ -282,7 +282,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>29</integer>
+									<integer>21</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -305,7 +306,7 @@
 							<real>249</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>4 35 1676 993 0 0 1680 1028 </string>
+						<string>0 35 1676 993 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -323,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRRenderer.m</string>
+								<string>SRNamePlate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRRenderer.m</string>
+										<string>SRNamePlate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ACD3BA0C10F5005A007CD4C7</string>
+										<string>ACD3BA6610F50EE1007CD4C7</string>
 										<key>history</key>
 										<array>
 											<string>AC1EE9CC10F2A5B500EAE5C4</string>
@@ -360,19 +361,26 @@
 											<string>ACD3B9F410F50044007CD4C7</string>
 											<string>ACD3B9F510F50044007CD4C7</string>
 											<string>ACD3B9F610F50044007CD4C7</string>
-											<string>ACD3B9F710F50044007CD4C7</string>
 											<string>ACD3B9F810F50044007CD4C7</string>
 											<string>ACD3B9F910F50044007CD4C7</string>
 											<string>ACD3B9FA10F50044007CD4C7</string>
 											<string>ACD3B9FB10F50044007CD4C7</string>
 											<string>ACD3B9FC10F50044007CD4C7</string>
 											<string>ACD3B9FD10F50044007CD4C7</string>
-											<string>ACD3B9FE10F50044007CD4C7</string>
 											<string>ACD3B9FF10F50044007CD4C7</string>
 											<string>ACD3BA0010F50044007CD4C7</string>
-											<string>ACD3BA0110F50044007CD4C7</string>
-											<string>ACD3BA0210F50044007CD4C7</string>
-											<string>ACD3BA0310F50044007CD4C7</string>
+											<string>ACD3BA1210F5083C007CD4C7</string>
+											<string>ACD3BA1310F5083C007CD4C7</string>
+											<string>ACD3BA2F10F50ADF007CD4C7</string>
+											<string>ACD3BA3010F50ADF007CD4C7</string>
+											<string>ACD3BA3110F50ADF007CD4C7</string>
+											<string>ACD3BA3210F50ADF007CD4C7</string>
+											<string>ACD3BA4510F50B52007CD4C7</string>
+											<string>ACD3BA4610F50B52007CD4C7</string>
+											<string>ACD3BA4710F50B52007CD4C7</string>
+											<string>ACD3BA4F10F50C43007CD4C7</string>
+											<string>ACD3BA5010F50C43007CD4C7</string>
+											<string>ACD3BA5110F50C43007CD4C7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -388,7 +396,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1405, 947}}</string>
 								<key>RubberWindowFrame</key>
-								<string>4 35 1676 993 0 0 1680 1028 </string>
+								<string>0 35 1676 993 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -413,7 +421,7 @@
 										<key>Frame</key>
 										<string>{{10, 27}, {1405, -27}}</string>
 										<key>RubberWindowFrame</key>
-										<string>4 35 1676 993 0 0 1680 1028 </string>
+										<string>0 35 1676 993 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -551,12 +559,12 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {1676, 280}}</string>
+						<string>{{0, 0}, {1676, 0}}</string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
 					<key>Proportion</key>
-					<string>280pt</string>
+					<string>0pt</string>
 				</dict>
 				<dict>
 					<key>ContentConfiguration</key>
@@ -575,8 +583,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {818, 349}}</string>
-									<string>{{818, 0}, {858, 349}}</string>
+									<string>{{0, 0}, {818, 496}}</string>
+									<string>{{818, 0}, {858, 496}}</string>
 								</array>
 							</dict>
 							<key>VerticalSplitView</key>
@@ -591,8 +599,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {1676, 349}}</string>
-									<string>{{0, 349}, {1676, 318}}</string>
+									<string>{{0, 0}, {1676, 496}}</string>
+									<string>{{0, 496}, {1676, 451}}</string>
 								</array>
 							</dict>
 						</dict>
@@ -612,7 +620,7 @@
 						<key>DebugSTDIOWindowFrame</key>
 						<string>{{200, 200}, {500, 300}}</string>
 						<key>Frame</key>
-						<string>{{0, 285}, {1676, 667}}</string>
+						<string>{{0, 5}, {1676, 947}}</string>
 						<key>PBXDebugSessionStackFrameViewKey</key>
 						<dict>
 							<key>DebugVariablesTableConfiguration</key>
@@ -625,13 +633,13 @@
 								<real>628</real>
 							</array>
 							<key>Frame</key>
-							<string>{{818, 0}, {858, 349}}</string>
+							<string>{{818, 0}, {858, 496}}</string>
 						</dict>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
 					<key>Proportion</key>
-					<string>667pt</string>
+					<string>947pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -690,13 +698,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ACD3BA0D10F5005A007CD4C7</string>
+		<string>ACD3BA6710F50EE1007CD4C7</string>
 		<string>ACD3BA0610F50044007CD4C7</string>
 		<string>ACD3B9DF10F4F984007CD4C7</string>
 		<string>/Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>4 35 1676 993 0 0 1680 1028 </string>
+	<string>0 35 1676 993 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
