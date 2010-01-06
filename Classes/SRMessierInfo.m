@@ -144,7 +144,7 @@
 	//[messierImage release];
 	//messierImage = ;
 	NSString* name = NSLocalizedString([theMessier constellation],@"");
-	if([name length] > 12) {
+	if([name length] > 10) {
 		name = [[name substringToIndex:10] stringByAppendingFormat:@".."];
 	}
 	

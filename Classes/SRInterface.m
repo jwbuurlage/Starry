@@ -50,9 +50,9 @@
 		notFoundTextureBool = FALSE;
 		alphaNotFound = 0.0f;
 		notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
-		foundTextString = [[NSString alloc] initWithString:@"Gevonden:"];
+		foundTextString = [[NSString alloc] initWithString:NSLocalizedString(@"Found:",@"")];
 		foundText = [[Texture2D alloc] initWithString:foundTextString dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
-		foundObjectText = [[Texture2D alloc] initWithString:@"M31" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+		foundObjectText = [[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 		
 		//position overlay
 		positionOverlay = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"positionOverlay.png"]];
@@ -1115,14 +1115,14 @@
 				}	
 			}
 			
-			if ([[[NSString stringWithString:@"Zon"] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+			if ([[[NSString stringWithString:NSLocalizedString(@"Sun",@"")] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
 				foundSun = [[appDelegate objectManager] sun];
 				searchResult = TRUE;
 				type = 4;
 				found = TRUE;
 			}
 			
-			if ([[[NSString stringWithString:@"Maan"] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+			if ([[[NSString stringWithString:NSLocalizedString(@"Moon",@"")] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
 				foundMoon = [[appDelegate objectManager] moon];
 				searchResult = TRUE;
 				type = 5;
@@ -1141,7 +1141,7 @@
 						foundObjectTextString = foundMessier.name;
 					[foundObjectText release];
 					foundObjectText = [[Texture2D alloc] initWithString:foundMessier.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
-					[theNameplate setName:foundMessier.name inConstellation:@"messier" showInfo:YES];
+					[theNameplate setName:foundMessier.name inConstellation:NSLocalizedString(@"messier",@"") showInfo:YES];
 					[messierInfo messierClicked:foundMessier];
 					[theNameplate setSelectedType:0];
 					Vertex3D posForCam = [foundMessier myCurrentPosition];
@@ -1167,7 +1167,7 @@
 						[foundObjectText release];
 					foundObjectText = [[Texture2D alloc] initWithString:foundPlanet.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 					
-					[theNameplate setName:foundPlanet.name inConstellation:@"planeet" showInfo:YES];
+					[theNameplate setName:foundPlanet.name inConstellation:NSLocalizedString(@"planet",@"") showInfo:YES];
 					[planetInfo planetClicked:foundPlanet];
 					[theNameplate setSelectedType:type];
 					Vertex3D posForCam = [foundPlanet myCurrentPosition];
@@ -1277,13 +1277,13 @@
 					
 				}
 				else if(type == 4) {
-					foundObjectTextString = [NSString stringWithString:@"Zon"];
+					foundObjectTextString = [NSString stringWithString:NSLocalizedString(@"Sun",@"")];
 					
 					if(foundObjectText)
 						[foundObjectText release];
-					foundObjectText = [[Texture2D alloc] initWithString:@"Zon" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+					foundObjectText = [[Texture2D alloc] initWithString:NSLocalizedString(@"Sun",@"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 					
-					[theNameplate setName:@"Zon" inConstellation:@"onze ster" showInfo:YES];
+					[theNameplate setName:NSLocalizedString(@"Sun",@"") inConstellation:NSLocalizedString(@"our star",@"") showInfo:YES];
 					[planetInfo planetClicked:foundSun];
 					[theNameplate setSelectedType:type];
 					Vertex3D posForCam = [foundSun myCurrentPosition];
@@ -1304,13 +1304,13 @@
 					[self setANameplate:TRUE];
 				}
 				else if (type == 5) {
-					foundObjectTextString = [NSString stringWithString:@"Maan"];
+					foundObjectTextString = [NSString stringWithString:NSLocalizedString(@"Moon",@"")];
 					
 					if(foundObjectText)
 						[foundObjectText release];
-					foundObjectText = [[Texture2D alloc] initWithString:@"Maan" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+					foundObjectText = [[Texture2D alloc] initWithString:NSLocalizedString(@"Moon",@"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 					
-					[theNameplate setName:@"Maan" inConstellation:@"" showInfo:YES];
+					[theNameplate setName:NSLocalizedString(@"Moon",@"") inConstellation:@"" showInfo:YES];
 					//[planetInfo planetClicked:foundMoon];
 					[theNameplate setSelectedType:type];
 					Vertex3D posForCam = [foundMoon myCurrentPosition];
@@ -1350,8 +1350,8 @@
 				
 				if(foundObjectText)
 					[foundObjectText release];
-				foundObjectTextString = [[NSString alloc] initWithString:@"Niets"];
-				foundObjectText = [[Texture2D alloc] initWithString:@"Niets" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];				
+				foundObjectTextString = [[NSString alloc] initWithString:NSLocalizedString(@"Nothing",@"")];
+				foundObjectText = [[Texture2D alloc] initWithString:NSLocalizedString(@"Nothing",@"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];				
 				
 				notFoundTextureBool = TRUE;
 				alphaNotFound = 1.0f;
