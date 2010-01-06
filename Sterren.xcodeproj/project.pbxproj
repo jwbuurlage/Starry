@@ -223,6 +223,7 @@
 		ACD3BA1C10F509C7007CD4C7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BA1B10F509C7007CD4C7 /* close.png */; };
 		ACD3BA4C10F50C1E007CD4C7 /* add_list.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BA4B10F50C1E007CD4C7 /* add_list.png */; };
 		ACD3BA6A10F50EEC007CD4C7 /* SRListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD3BA6910F50EEC007CD4C7 /* SRListManager.m */; };
+		ACD3BB5D10F52AAD007CD4C7 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BB5C10F52AAD007CD4C7 /* pause.png */; };
 		ACE708D010D02A0B003DE4BB /* M1.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE708CF10D02A0B003DE4BB /* M1.png */; };
 		ACEC7CF3109B25A700149C80 /* SRStar.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF0109B25A700149C80 /* SRStar.m */; };
 		ACEC7CF4109B25A700149C80 /* SRSun.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF2109B25A700149C80 /* SRSun.m */; };
@@ -488,6 +489,7 @@
 		ACD3BA4B10F50C1E007CD4C7 /* add_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_list.png; path = Resources/add_list.png; sourceTree = "<group>"; };
 		ACD3BA6810F50EEC007CD4C7 /* SRListManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRListManager.h; sourceTree = "<group>"; };
 		ACD3BA6910F50EEC007CD4C7 /* SRListManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRListManager.m; sourceTree = "<group>"; };
+		ACD3BB5C10F52AAD007CD4C7 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = Resources/pause.png; sourceTree = "<group>"; };
 		ACE708CF10D02A0B003DE4BB /* M1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M1.png; path = Resources/messier/M1.png; sourceTree = "<group>"; };
 		ACEC7CEF109B25A700149C80 /* SRStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStar.h; sourceTree = "<group>"; };
 		ACEC7CF0109B25A700149C80 /* SRStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStar.m; sourceTree = "<group>"; };
@@ -696,6 +698,7 @@
 				AC24C9A610BAEB2B0063DF87 /* fwd.png */,
 				ACC3810710DA9902009ED92E /* stop.png */,
 				AC24C9A810BAEB2B0063DF87 /* play.png */,
+				ACD3BB5C10F52AAD007CD4C7 /* pause.png */,
 				AC24C9A910BAEB2B0063DF87 /* rew.png */,
 			);
 			name = Time;
@@ -1152,6 +1155,7 @@
 				ACD3B9EA10F4FF1B007CD4C7 /* planetLabel.png in Resources */,
 				ACD3BA1C10F509C7007CD4C7 /* close.png in Resources */,
 				ACD3BA4C10F50C1E007CD4C7 /* add_list.png in Resources */,
+				ACD3BB5D10F52AAD007CD4C7 /* pause.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

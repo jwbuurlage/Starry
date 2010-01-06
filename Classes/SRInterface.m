@@ -592,6 +592,12 @@
 		// Knoppen voor de tijd module
 		else if(clicker == @"playpause") {
 			[[timeModule manager] playPause];
+			if([[timeModule manager] playing]) {
+				[timeModule switchPlay:TRUE];
+			}
+			else {
+				[timeModule switchPlay:FALSE];
+			}
 		}
 		else if(clicker == @"stop") {
 			[[timeModule manager] reset];

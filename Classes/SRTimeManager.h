@@ -23,11 +23,14 @@
 		
 	int totalInterval;
 	int speed;
+	int speedPause;
 	float elapsed;
 	
 	SRTimeModule* moduleInstance;
 	
 	NSCalendar* gregorian;
+	
+	BOOL playing;
 }
 
 @property (readonly) NSDate* simulatedDate;
@@ -35,6 +38,7 @@
 @property (assign) int speed;
 @property (assign) SRTimeModule *moduleInstance;
 @property (readonly) float elapsed;
+@property (readonly) BOOL playing;
 
 -(id)init;
 -(NSString*)theTime;

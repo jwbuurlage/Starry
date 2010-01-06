@@ -16,13 +16,14 @@
 
 @implementation SRTimeManager
 
-@synthesize simulatedDate, totalInterval, moduleInstance, speed;
+@synthesize simulatedDate, totalInterval, moduleInstance, speed, elapsed, playing;
 
 -(id)init {
 	if(self = [super init]) {
 		//owner = theOwner;
 		simulatedDate = [[NSDate alloc] init];
 		speed = 1;
+		playing = TRUE;
 	}
 	return self;
 }
@@ -42,33 +43,45 @@
 }
 
 -(void)fwd {
-	if(speed == -1) {
-		speed = 1;
-		speed = speed * 5;
-	}
-	else if(speed < 0) {
-		speed = speed / 5;
-	}
-	else if(speed >= 1) {
-		speed = speed * 5;
+	if(playing) {
+		if(speed == -1) {
+			speed = 1;
+			speed = speed * 5;
+		}
+		else if(speed < 0) {
+			speed = speed / 5;
+		}
+		else if(speed >= 1) {
+			speed = speed * 5;
+		}
 	}
 }
 
 -(void)rew {
-	if(speed == 1) {
-		speed = -1;
-		speed = speed * 5;
-	}
-	else if(speed <= -1) {
-		speed = speed * 5;
-	}
-	else if(speed > 1) {
-		speed = speed / 5;
+	if(playing) {
+		if(speed == 1) {
+			speed = -1;
+			speed = speed * 5;
+		}
+		else if(speed <= -1) {
+			speed = speed * 5;
+		}
+		else if(speed > 1) {
+			speed = speed / 5;
+		}
 	}
 }
 
 -(void)playPause {
-	speed = 1;
+	if(playing) {
+		speedPause = speed;
+		speed = 0;
+		playing = FALSE;
+	}
+	else {
+		speed = speedPause;
+		playing = TRUE;
+	}
 }
 
 -(void)tickOfTime:(NSTimeInterval)timeElapsed {
@@ -109,7 +122,9 @@
 -(void)reset {
 	[simulatedDate release];
 	simulatedDate = [[NSDate alloc] init];
+	if(playing) {
 	speed = 1;
+	}
 	totalInterval = 10001;
 }
 

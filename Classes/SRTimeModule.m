@@ -33,7 +33,7 @@
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"calendar.png"]] 
 															identifier:@"icon" 
 															 clickable:YES]];
-		
+				
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(178, -60, 137, 40)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"controls_bg.png"]] 
 															identifier:@"controls_bg" 
@@ -50,7 +50,7 @@
 															 clickable:YES]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(245, -55, 32, 32)
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"play.png"]] 
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]] 
 															identifier:@"playpause" 
 															 clickable:YES]];
 		
@@ -119,7 +119,13 @@
 			
 		}
 		else if([mElement identifier] == @"speed") {
-			Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ix",[manager speed]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
+			Texture2D* texture;
+			if([manager speed] != 0) {
+				texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ix",[manager speed]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
+			}
+			else {
+				texture = [[Texture2D alloc] initWithString:@"-" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
+			}
 			glColor4f(0.56f, 0.831f, 0.0f, alphaValue);
 			[texture drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
@@ -145,5 +151,13 @@
 	}
 }
 
+-(void)switchPlay:(BOOL)aFlag {
+	if(aFlag) {
+		[[elements objectAtIndex:4] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]]];	
+	}
+	else {
+		[[elements objectAtIndex:4] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"play.png"]]];	
+	}
+}
 
 @end

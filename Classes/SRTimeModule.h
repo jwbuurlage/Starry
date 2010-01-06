@@ -23,4 +23,6 @@
 
 @property (readonly) SRTimeManager* manager;
 
+-(void)switchPlay:(BOOL)aFlag;
+
 @end
