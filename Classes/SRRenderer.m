@@ -17,7 +17,7 @@
 
 @implementation SRRenderer
 
-@synthesize interface,location,myOwner,camera,highlight,planetView,highlightPosition,highlightSize,selectedStar;
+@synthesize interface,location,myOwner,camera,highlight,planetView,highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted;
 
 -(id)setupWithOwner:(GLViewController*)theOwner {
 	if(self = [super init]) {
@@ -280,7 +280,7 @@
 	glEnable(GL_TEXTURE_2D);
 	glDisableClientState(GL_COLOR_ARRAY);
 	if(highlight) {
-	[self drawHighlight];
+		[self drawHighlight];
 	}
 	[self drawMessier];
 	[self drawPlanets];
@@ -301,7 +301,9 @@
 		[self loadPlanetPoints];
 		[[[interface timeModule] manager] setTotalInterval:0];
 		// FIXME: recalculate highlight for planet moved
-		highlight = FALSE;	
+		if(planetHighlighted) {
+			[self setHighlightPosition:selectedPlanet.position];
+		}
 	}
 		
 	

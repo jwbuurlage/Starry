@@ -49,6 +49,7 @@
 	SRPlanetaryObject *neptune;
 	
 	SRStar * selectedStar;
+	SRPlanetaryObject * selectedPlanet;
 		
 	GLfloat planetPoints[64];
 	GLfloat stringPoints[56];
@@ -66,6 +67,7 @@
 	
 	//highlight
 	BOOL highlight;
+	BOOL planetHighlighted;
 	Vertex3D highlightPosition;
 	float highlightSize;
 	
@@ -82,7 +84,9 @@
 @property (readonly) GLViewController* myOwner;
 @property (readonly) SRCamera* camera;
 @property (assign) BOOL highlight;
+@property (assign) BOOL planetHighlighted;
 @property (assign) SRStar* selectedStar;
+@property (assign) SRPlanetaryObject* selectedPlanet;
 @property (assign) BOOL planetView;
 @property (assign) Vertex3D highlightPosition;
 @property (assign) float highlightSize;
