@@ -460,7 +460,7 @@
 			highlightPosition.x, highlightPosition.y, highlightPosition.z
 		};
 		
-		glPointSize(highlightSize);
+		glPointSize(64.0f);
 		glBindTexture(GL_TEXTURE_2D, textures[8]);
 		
 		glColor4f(0.5f,0.5f,0.5f,0.75f);

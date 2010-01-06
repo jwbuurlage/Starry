@@ -22,7 +22,7 @@
 															 clickable:NO]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 195, 128, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Sterrenbeeld:" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															   texture:[[Texture2D alloc] initWithString:@"S.bld:" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
@@ -32,35 +32,56 @@
 															 clickable:NO]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 165, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Declinatie:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															   texture:[[Texture2D alloc] initWithString:@"Dec:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 150, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Magnitude:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 150, 128, 32) 
+															   texture:[[Texture2D alloc] initWithString:@"Azi:" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(110, 195, 128, 32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 135, 64, 32) 
+															   texture:[[Texture2D alloc] initWithString:@"Alt:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															identifier:@"text-transparent" 
+															 clickable:NO]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 120, 64, 32) 
+															   texture:[[Texture2D alloc] initWithString:@"Mag:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															identifier:@"text-transparent" 
+															 clickable:NO]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(80, 195, 128, 32) 
 															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-blue" 
 															 clickable:NO]];
 		
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(60, 180, 128, 32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(80, 180, 128, 32) 
+															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															identifier:@"text-green" 
+															 clickable:NO]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(80, 165, 128, 32) 
 															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-blue" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(95, 165, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
-															identifier:@"text-blue" 
-															 clickable:NO]];
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(80, 150, 128, 32) 
+															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															identifier:@"text-green" 
+															 clickable:NO]]; 
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(98, 150, 64, 32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(80, 135, 128, 32) 
+															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															identifier:@"text-blue" 
+															 clickable:NO]]; 
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(80, 120, 64, 32) 
 															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-green" 
 															 clickable:NO]]; 
+		
 		interfaceBackground = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"starInfoBg.png"]];
 		
 	}
@@ -88,15 +109,56 @@
 
 - (void)starClicked:(SRStar*)theStar {
 	Vertex3D posForCam = [theStar myCurrentPosition];
-	float azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
-	float alTmp = 90-(180/M_PI)*acos(-posForCam.z); 
-	//NSLog(@"test %f",azTmp);
+	float azTmp = (180/M_PI)*atan2f(posForCam.y,posForCam.x);
+	float alTmp = 90-(180/M_PI)*acosf(-posForCam.z); 
+	
+	float raTmp = (180/M_PI)*atan2f([theStar.y floatValue]/20,[theStar.x floatValue]/20);
+	float decTmp = 90-(180/M_PI)*acosf(-[theStar.z floatValue]/20); 
+	NSLog(@"test %f",decTmp);
 	
 
 	NSString* constellation = [[theStar bayer] substringWithRange:NSMakeRange([[theStar bayer] length]-3, 3)];
-	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(constellation,@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
+	[[elements objectAtIndex:[elements count] - 6] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(constellation,@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
 	
-	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:azTmp];
+	NSNumber * coordinateNumber3 = [[NSNumber alloc] initWithFloat:(raTmp*24/360)];
+	int degrees3 = [coordinateNumber3 intValue];
+	float minutesF3 = ([coordinateNumber3 floatValue] - [coordinateNumber3 intValue]) * 60;
+	NSNumber * minutesNumber3 = [[NSNumber alloc] initWithFloat:minutesF3];
+	int minutes3 = [minutesNumber3 intValue];
+	float secondsF3 = ([minutesNumber3 floatValue] - [minutesNumber3 intValue])*60;
+	NSNumber * secondsNumber3 = [[NSNumber alloc] initWithFloat:secondsF3];
+	int seconds3 = [secondsNumber3 intValue];
+	
+	if (azTmp < 0) {
+		degrees3 = 24+degrees3;
+		minutes3 = 60+minutes3;
+		seconds3 = 60+seconds3;
+	}
+	//degrees = degrees ; // Uuren er van maken
+	[[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %im %is",degrees3,minutes3,seconds3] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[coordinateNumber3 release];
+	[minutesNumber3 release];
+	[secondsNumber3 release];
+	
+	NSNumber * coordinateNumber4 = [[NSNumber alloc] initWithFloat:decTmp];
+	int degrees4 = [coordinateNumber4 intValue];
+	float minutesF4 = ([coordinateNumber4 floatValue] - [coordinateNumber4 intValue]) * 60;
+	NSNumber * minutesNumber4 = [[NSNumber alloc] initWithFloat:minutesF4];
+	int minutes4 = [minutesNumber4 intValue];
+	float secondsF4 = ([minutesNumber4 floatValue] - [minutesNumber4 intValue])*60;
+	NSNumber * secondsNumber4 = [[NSNumber alloc] initWithFloat:secondsF4];
+	int seconds4 = [secondsNumber4 intValue];
+	
+	if (alTmp < 0) {
+		minutes4 = -minutes4;
+		seconds4 = -seconds4;
+	}
+	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees4,minutes4,seconds4] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[coordinateNumber4 release];
+	[minutesNumber4 release];
+	[secondsNumber4 release];
+	
+	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(azTmp*24/360)];
 	int degrees = [coordinateNumber intValue];
 	float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
 	NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];
@@ -106,12 +168,12 @@
 	int seconds = [secondsNumber intValue];
 	
 	if (azTmp < 0) {
-		degrees = 360+degrees;
+		degrees = 24+degrees;
 		minutes = 60+minutes;
 		seconds = 60+seconds;
 	}
-	degrees = degrees * 60 / 360; // Uuren er van maken
-	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %i' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	//degrees = degrees ; // Uuren er van maken
+	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %im %is",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber release];
 	[minutesNumber release];
 	[secondsNumber release];
@@ -129,7 +191,7 @@
 		minutes2 = -minutes2;
 		seconds2 = -seconds2;
 	}
-	[[elements objectAtIndex:[elements count] - 2] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 2] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber2 release];
 	[minutesNumber2 release];
 	[secondsNumber2 release];
