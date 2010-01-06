@@ -503,6 +503,18 @@
 							greekStr = @"δ";
 						else if([greekStrTmp isEqualToString:@"Eps"])
 							greekStr = @"ε";
+						else if([greekStrTmp isEqualToString:@"Zet"])
+							greekStr = @"ζ";
+						else if([greekStrTmp isEqualToString:@"Eta"])
+							greekStr = @"η";
+						else if([greekStrTmp isEqualToString:@"The"])
+							greekStr = @"θ";
+						else if([greekStrTmp isEqualToString:@"Iot"])
+							greekStr = @"ι";
+						else if([greekStrTmp isEqualToString:@"Kap"])
+							greekStr = @"κ";
+						else if([greekStrTmp isEqualToString:@"Lam"])
+							greekStr = @"λ";
 						else
 							greekStr = @"err";
 						NSString* numberStr = [[closestStar bayer] substringWithRange:NSMakeRange(0, [[closestStar bayer] length]-6)];
@@ -515,7 +527,7 @@
 						//[greekStr release];
 						}
 						@catch(NSException * exception) {
-							[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:@"err" showInfo:YES];
+							[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:@"" showInfo:YES];
 						}
 						[[renderer interface] setANameplate:TRUE];
 						[[[renderer interface] starInfo] starClicked:closestStar];
