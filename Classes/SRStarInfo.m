@@ -17,12 +17,12 @@
 		elements = [[NSMutableArray alloc] init];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 222, 128, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Ster Informatie" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12] 
+															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Star Details", @"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12] 
 															identifier:@"text" 
 															 clickable:NO]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 195, 128, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"S.bld" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Const.", @"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
@@ -133,8 +133,9 @@
 	float alTmp = 90-(180/M_PI)*acosf(-posForCam.z); 
 	
 	float raTmp = (180/M_PI)*atan2f([theStar.y floatValue]/20,[theStar.x floatValue]/20);
+	//NSLog(@"test raTmp %f",raTmp);
 	float decTmp = 90-(180/M_PI)*acosf(-[theStar.z floatValue]/20); 
-	NSLog(@"test %f",decTmp);
+	//NSLog(@"test decTmp %f",decTmp);
 	
 
 	NSString* constellation = [[theStar bayer] substringWithRange:NSMakeRange([[theStar bayer] length]-3, 3)];
@@ -156,7 +157,7 @@
 	NSNumber * secondsNumber3 = [[NSNumber alloc] initWithFloat:secondsF3];
 	int seconds3 = [secondsNumber3 intValue];
 	
-	if (azTmp < 0) {
+	if (raTmp < 0) {
 		degrees3 = 24+degrees3;
 		minutes3 = 60+minutes3;
 		seconds3 = 60+seconds3;
@@ -176,7 +177,7 @@
 	NSNumber * secondsNumber4 = [[NSNumber alloc] initWithFloat:secondsF4];
 	int seconds4 = [secondsNumber4 intValue];
 	
-	if (alTmp < 0) {
+	if (decTmp < 0) {
 		minutes4 = -minutes4;
 		seconds4 = -seconds4;
 	}
@@ -185,7 +186,7 @@
 	[minutesNumber4 release];
 	[secondsNumber4 release];
 	
-	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(azTmp*24/360)];
+	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(azTmp)];
 	int degrees = [coordinateNumber intValue];
 	float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
 	NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];
@@ -195,12 +196,12 @@
 	int seconds = [secondsNumber intValue];
 	
 	if (azTmp < 0) {
-		degrees = 24+degrees;
+		degrees = 360+degrees;
 		minutes = 60+minutes;
 		seconds = 60+seconds;
 	}
 	//degrees = degrees ; // Uuren er van maken
-	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %im %is",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber release];
 	[minutesNumber release];
 	[secondsNumber release];
