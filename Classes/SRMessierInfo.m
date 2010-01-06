@@ -48,12 +48,12 @@
 															 clickable:NO]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(17, 115, 128, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Alt" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															   texture:[[Texture2D alloc] initWithString:@"Azi" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(17, 100, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Azi" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															   texture:[[Texture2D alloc] initWithString:@"Alt" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
@@ -204,7 +204,7 @@
 	float alTmp = 90-(180/M_PI)*acos(-posForCam.z); 
 	//NSLog(@"test %f",azTmp);
 	
-	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:360-azTmp];
+	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:-azTmp];
 	int degrees = [coordinateNumber intValue];
 	float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
 	NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];
@@ -213,11 +213,11 @@
 	NSNumber * secondsNumber = [[NSNumber alloc] initWithFloat:secondsF];
 	int seconds = [secondsNumber intValue];
 	
-	if (azTmp < 0) {
-		degrees = 360+degrees;
-		minutes = 60+minutes;
-		seconds = 60+seconds;
-	}
+	//if (azTmp < 0) {
+	//	degrees = 360+degrees;
+	//	minutes = 60+minutes;
+	//	seconds = 60+seconds;
+	//}
 	
 	[[[elements objectAtIndex:[elements count] - 6] texture] release];
 	[[elements objectAtIndex:[elements count] - 6] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
