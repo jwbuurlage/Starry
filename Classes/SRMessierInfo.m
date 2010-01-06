@@ -155,6 +155,50 @@
 	[[[elements objectAtIndex:[elements count] - 9] texture] release];
 	[[elements objectAtIndex:[elements count] - 9] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f kly",[theMessier distance]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	
+	float raTmp = (180/M_PI)*atan2f(theMessier.position.y/20,theMessier.position.x/20);
+	float decTmp = 90-(180/M_PI)*acosf(-theMessier.position.z/20);
+	
+	NSNumber * coordinateNumber3 = [[NSNumber alloc] initWithFloat:(raTmp*24/360)];
+	int degrees3 = [coordinateNumber3 intValue];
+	float minutesF3 = ([coordinateNumber3 floatValue] - [coordinateNumber3 intValue]) * 60;
+	NSNumber * minutesNumber3 = [[NSNumber alloc] initWithFloat:minutesF3];
+	int minutes3 = [minutesNumber3 intValue];
+	float secondsF3 = ([minutesNumber3 floatValue] - [minutesNumber3 intValue])*60;
+	NSNumber * secondsNumber3 = [[NSNumber alloc] initWithFloat:secondsF3];
+	int seconds3 = [secondsNumber3 intValue];
+	
+	if (raTmp < 0) {
+		degrees3 = 24+degrees3;
+		minutes3 = 60+minutes3;
+		seconds3 = 60+seconds3;
+	}
+	//degrees = degrees ; // Uuren er van maken
+	[[[elements objectAtIndex:[elements count] - 8] texture] release];
+	[[elements objectAtIndex:[elements count] - 8] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %im %is",degrees3,minutes3,seconds3] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[coordinateNumber3 release];
+	[minutesNumber3 release];
+	[secondsNumber3 release];
+	
+	NSNumber * coordinateNumber4 = [[NSNumber alloc] initWithFloat:decTmp];
+	int degrees4 = [coordinateNumber4 intValue];
+	float minutesF4 = ([coordinateNumber4 floatValue] - [coordinateNumber4 intValue]) * 60;
+	NSNumber * minutesNumber4 = [[NSNumber alloc] initWithFloat:minutesF4];
+	int minutes4 = [minutesNumber4 intValue];
+	float secondsF4 = ([minutesNumber4 floatValue] - [minutesNumber4 intValue])*60;
+	NSNumber * secondsNumber4 = [[NSNumber alloc] initWithFloat:secondsF4];
+	int seconds4 = [secondsNumber4 intValue];
+	
+	if (decTmp < 0) {
+		minutes4 = -minutes4;
+		seconds4 = -seconds4;
+	}
+	
+	[[[elements objectAtIndex:[elements count] - 7] texture] release];
+	[[elements objectAtIndex:[elements count] - 7] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees4,minutes4,seconds4] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[coordinateNumber4 release];
+	[minutesNumber4 release];
+	[secondsNumber4 release];
+	
 	Vertex3D posForCam = [theMessier myCurrentPosition];
 	float azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
 	float alTmp = 90-(180/M_PI)*acos(-posForCam.z); 
