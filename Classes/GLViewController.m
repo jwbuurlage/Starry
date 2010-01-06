@@ -423,9 +423,9 @@
 					SRMessier * aMessier;
 					SRMessier * closestMessier;
 					for(aMessier in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
-						xd = aMessier.position.x-plX;
-						yd = aMessier.position.y-plY;
-						zd = aMessier.position.z-plZ;
+						xd = aMessier.position.x-stX;
+						yd = aMessier.position.y-stY;
+						zd = aMessier.position.z-stZ;
 						messierD = sqrt(xd*xd + yd*yd + zd*zd);
 						if (messierD < closestD) {
 							closestD = messierD;
@@ -435,7 +435,7 @@
 						}						
 					}
 					//FIXME waarom zo'n raar getal?
-					if(closestD < (5.1)) {
+					if(closestD < (2 * (1/zoomingValue))) {
 						[[[renderer interface] theNameplate] setSelectedType:0];
 						[[[renderer interface] theNameplate] setName:closestMessier.name inConstellation:NSLocalizedString(@"messier", @"") showInfo:YES];
 						[[renderer interface] setANameplate:TRUE];
