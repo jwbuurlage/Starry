@@ -32,6 +32,61 @@
 }
 
 -(BOOL)visibleWithZoom:(float)zoomf {
+	/*
+	 if([[star mag] floatValue] < 2) {
+	 ++starSizeNumTmp[0];
+	 }
+	 else if ([[star mag] floatValue] < 3) {
+	 starSizeNumTmp[1] += 1;
+	 }
+	 else if ([[star mag] floatValue] < 4) {
+	 starSizeNumTmp[2] += 1;
+	 }
+	 else if ([[star mag] floatValue] < 4.5) {
+	 starSizeNumTmp[3] += 1;
+	 }
+	 else if ([[star mag] floatValue] < 5) {
+	 starSizeNumTmp[4] += 1;
+	 }
+	 else if ([[star mag] floatValue] < 7) {
+	 starSizeNumTmp[5] += 1;
+	 }
+	 */
+	
+	/*
+	 
+	 size = 4 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	 if(size > 5) { size = 5; }
+	 glPointSize(size);
+	 glDrawArrays(GL_POINTS, 0, [[starSizeNum objectAtIndex:0] intValue]);
+	 
+	 size = 3 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	 if(size > 4) { size = 4; }
+	 glPointSize(size);
+	 glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue], [[starSizeNum objectAtIndex:1] intValue]);
+	 
+	 size = 2 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	 if(size > 3) { size = 3; }
+	 glPointSize(size);
+	 glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue], [[starSizeNum objectAtIndex:2] intValue]);
+	 
+	 size = 0.8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	 if(size > 3) { size = 3; }
+	 if(size < 1) { return; }
+	 glPointSize(size);
+	 glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue], [[starSizeNum objectAtIndex:3] intValue]);
+	 
+	 size = 0.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	 if(size > 3) { size = 3; }
+	 if(size < 1) { return; }
+	 glPointSize(size);
+	 glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue] + [[starSizeNum objectAtIndex:3] intValue], [[starSizeNum objectAtIndex:4] intValue]);
+	 
+	 size = 0.4 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	 if(size > 3) { size = 3; }
+	 if(size < 1) { return; }
+	 */
+	
 	float size = [self size];
 	id appDelegate = [[UIApplication sharedApplication] delegate]; 
 	//float zoomf = [[[[appDelegate glView] delegate] camera] zoomingValue]; 
@@ -47,10 +102,7 @@
 
 -(float)size {
 	float size;
-	if([mag floatValue] < 1) {
-		size = 5.0;
-	}
-	else if([mag floatValue] < 2) {
+	if([mag floatValue] < 3) {
 		size = 4.0;
 	}
 	else if([mag floatValue] < 3) {
@@ -59,8 +111,14 @@
 	else if([mag floatValue] < 4) {
 		size = 2.0;
 	}
+	else if([mag floatValue] < 4.5) {
+		size = 0.8;
+	}
+	else if([mag floatValue] < 5) {
+		size = 0.5;
+	}
 	else {
-		size = 0.9;
+		size = 0.4;
 	}
 	return size;
 }

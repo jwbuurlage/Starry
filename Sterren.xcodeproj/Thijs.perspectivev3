@@ -279,14 +279,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>43</integer>
-									<integer>21</integer>
+									<integer>16</integer>
+									<integer>4</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 204}, {208, 780}}</string>
+							<string>{{0, 208}, {208, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRStarInfo.m</string>
+								<string>SRStar.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRStarInfo.m</string>
+										<string>SRStar.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7607997E10F4EC3200772DE8</string>
+										<string>7607998D10F4EFD600772DE8</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -412,17 +412,17 @@
 											<string>7662D93410F4DB62005B9AE2</string>
 											<string>7662D93F10F4DD30005B9AE2</string>
 											<string>7662D9A110F4E3EC005B9AE2</string>
-											<string>7607995210F4E9B600772DE8</string>
 											<string>7607995310F4E9B600772DE8</string>
 											<string>7607995510F4E9B600772DE8</string>
 											<string>7607996C10F4EB6700772DE8</string>
 											<string>7607996D10F4EB6700772DE8</string>
 											<string>7607996E10F4EB6700772DE8</string>
-											<string>7607996F10F4EB6700772DE8</string>
 											<string>7607997910F4EC3200772DE8</string>
-											<string>7607997A10F4EC3200772DE8</string>
 											<string>7607997B10F4EC3200772DE8</string>
-											<string>7607997C10F4EC3200772DE8</string>
+											<string>7607998810F4EFD500772DE8</string>
+											<string>7607998910F4EFD500772DE8</string>
+											<string>7607998A10F4EFD500772DE8</string>
+											<string>7607998B10F4EFD500772DE8</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -743,7 +743,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>7607997F10F4EC3200772DE8</string>
+		<string>7607998E10F4EFD600772DE8</string>
 		<string>7607998010F4EC3200772DE8</string>
 		<string>7607997410F4EB6800772DE8</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
