@@ -83,7 +83,7 @@
 	float alTmp = 90-(180/M_PI)*acos(-posForCam.z); 
 	//NSLog(@"test %f",azTmp);
 	
-	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:azTmp];
+	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:360-azTmp];
 	int degrees = [coordinateNumber intValue];
 	float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
 	NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];

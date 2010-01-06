@@ -156,7 +156,7 @@
 	[[elements objectAtIndex:[elements count] - 9] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.1f kly",[theMessier distance]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	
 	float raTmp = (180/M_PI)*atan2f(theMessier.position.y/20,theMessier.position.x/20);
-	float decTmp = 90-(180/M_PI)*acosf(-theMessier.position.z/20);
+	float decTmp = 90-(180/M_PI)*acosf(theMessier.position.z/20);
 	
 	NSNumber * coordinateNumber3 = [[NSNumber alloc] initWithFloat:(raTmp*24/360)];
 	int degrees3 = [coordinateNumber3 intValue];
@@ -204,7 +204,7 @@
 	float alTmp = 90-(180/M_PI)*acos(-posForCam.z); 
 	//NSLog(@"test %f",azTmp);
 	
-	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:azTmp];
+	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:360-azTmp];
 	int degrees = [coordinateNumber intValue];
 	float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
 	NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];
