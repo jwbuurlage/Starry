@@ -214,7 +214,7 @@
 }
 
 -(void)buildStarData {
-	NSLog(@"Star count: %i",[stars count]);
+	//NSLog(@"Star count: %i",[stars count]);
 
 	/* starNum = 0;
 	GLfloat starPointsTmp[[stars count]*8];

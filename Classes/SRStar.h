@@ -36,6 +36,8 @@ static inline StarColor StarColorMake(float inRed, float inGreen, float inBlue, 
 	int starID;
 	NSString *name;
 	NSString *bayer;
+	NSString *gliese;
+	NSString *hip;
 	NSString * x;
 	NSString * y;
 	NSString * z;
@@ -50,6 +52,8 @@ static inline StarColor StarColorMake(float inRed, float inGreen, float inBlue, 
 @property (nonatomic, readwrite) int starID;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * bayer;
+@property (nonatomic, retain) NSString * gliese;
+@property (nonatomic, retain) NSString * hip;
 @property (nonatomic, retain) NSString * x;
 @property (nonatomic, retain) NSString * y;
 @property (nonatomic, retain) NSString * z;

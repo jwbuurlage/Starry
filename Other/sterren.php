@@ -16,7 +16,7 @@ if(!$select) {
 }
 
 
-$query = mysql_query("SELECT ProperName,bayerFlamsteed,Hip,Gliese,HR,HD,RA,XDec,Distance,Mag,ColorIndex FROM hyg WHERE Mag < 5.3 ORDER BY Mag");
+$query = mysql_query("SELECT ProperName,bayerFlamsteed,Hip,Gliese,HR,HD,RA,XDec,Distance,Mag,ColorIndex FROM hyg WHERE Mag < 5.2 ORDER BY Mag");
 $i=0;
 
 while($fetch = mysql_fetch_object($query)) {
@@ -42,6 +42,18 @@ while($fetch = mysql_fetch_object($query)) {
 	}
 	else {
 		$xml .= '<bayer />';
+	}
+	if(preg_replace('/\s+/','',$fetch->Hip) != "" && preg_replace('/\s+/','',$fetch->Hip) != "-" ) {
+		$xml .= '<hip>'.preg_replace('/\s+/','',$fetch->Hip).'</hip>';
+	}
+	else {
+		$xml .= '<hip />';
+	}
+	if(preg_replace('/\s+/','',$fetch->Gliese) != "" && preg_replace('/\s+/','',$fetch->Gliese) != "-" ) {
+		$xml .= '<gliese>'.preg_replace('/\s+/','',$fetch->Gliese).'</gliese>';
+	}
+	else {
+		$xml .= '<gliese />';
 	}
 		$xml .= '<x>'.$x.'</x><y>'.$y.'</y><z>'.$z.'</z><mag>'.preg_replace('/\s+/','',$fetch->Mag).'</mag><ci>'.preg_replace('/\s+/','',$fetch->ColorIndex).'</ci></star>';
 	$i++;
