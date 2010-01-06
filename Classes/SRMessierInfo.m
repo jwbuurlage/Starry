@@ -92,8 +92,8 @@
 															identifier:@"text-blue" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(55, 100, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(55, 100, 128, 32) 
+															   texture:[[Texture2D alloc] initWithString:@"err" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-blue" 
 															 clickable:NO]];
 		
@@ -239,7 +239,7 @@
 		seconds2 = -seconds2;
 	}
 	[[[elements objectAtIndex:[elements count] - 5] texture] release];
-	[[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber2 release];
 	[minutesNumber2 release];
 	[secondsNumber2 release];
