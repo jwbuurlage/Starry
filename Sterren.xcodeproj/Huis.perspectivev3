@@ -281,7 +281,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>27</integer>
+									<integer>25</integer>
 									<integer>5</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -323,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRStarInfo.m</string>
+								<string>SRInterface.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRStarInfo.m</string>
+										<string>SRInterface.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ACD3BAAC10F51706007CD4C7</string>
+										<string>ACD3BADE10F51CBB007CD4C7</string>
 										<key>history</key>
 										<array>
 											<string>AC1EE9CC10F2A5B500EAE5C4</string>
@@ -373,7 +373,6 @@
 											<string>ACD3BA4510F50B52007CD4C7</string>
 											<string>ACD3BA4610F50B52007CD4C7</string>
 											<string>ACD3BA4710F50B52007CD4C7</string>
-											<string>ACD3BA4F10F50C43007CD4C7</string>
 											<string>ACD3BA5010F50C43007CD4C7</string>
 											<string>ACD3BA7D10F511E9007CD4C7</string>
 											<string>ACD3BA7E10F511E9007CD4C7</string>
@@ -383,7 +382,8 @@
 											<string>ACD3BA9710F515FA007CD4C7</string>
 											<string>ACD3BA9D10F51675007CD4C7</string>
 											<string>ACD3BA9E10F51675007CD4C7</string>
-											<string>ACD3BA9F10F51675007CD4C7</string>
+											<string>ACD3BAC010F51ACC007CD4C7</string>
+											<string>ACD3BAC910F51B54007CD4C7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -701,7 +701,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ACD3BAAD10F51706007CD4C7</string>
 		<string>ACD3BA0610F50044007CD4C7</string>
 		<string>ACD3B9DF10F4F984007CD4C7</string>
 		<string>/Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Sterren.xcodeproj</string>
