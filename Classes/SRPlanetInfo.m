@@ -16,17 +16,17 @@
 		elements = [[NSMutableArray alloc] init];
 				
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 202, 128, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Planeet Informatie" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12] 
+															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Planet Details", @"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12] 
 															identifier:@"text" 
 															 clickable:NO]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 175, 128, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"RA:" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															   texture:[[Texture2D alloc] initWithString:@"Azi:" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(38, 160, 64, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"Declinatie:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															   texture:[[Texture2D alloc] initWithString:@"Alt:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
@@ -98,9 +98,8 @@
 		seconds = 60+seconds;
 	}
 	
-	degrees = degrees * 24 / 360; // Uuren er van maken
-	
-	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %i\' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[[elements objectAtIndex:[elements count] - 4] texture] release];
+	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i\' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber release];
 	[minutesNumber release];
 	[secondsNumber release];
@@ -118,6 +117,7 @@
 		minutes2 = -minutes2;
 		seconds2 = -seconds2;
 	}
+	[[[elements objectAtIndex:[elements count] - 3] texture] release];
 	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber2 release];
 	[minutesNumber2 release];
@@ -125,6 +125,7 @@
 	UIImage* planetImageTmp = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [thePlanet name]]];
 	planetImage = [[Texture2D alloc] initWithImage:planetImageTmp]; 
 	NSLog(@"%@,", [NSString stringWithFormat:@"%@.png", [thePlanet name]]);
+	[[[elements objectAtIndex:[elements count] - 1] texture] release];
 	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(thePlanet.name, @"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]]; 
 	[[elements objectAtIndex:[elements count] - 1] setBounds:CGRectMake(311 - [NSLocalizedString(thePlanet.name, @"")  sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width / 2, 18,64,32)];
 	[planetImageTmp release];

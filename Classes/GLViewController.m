@@ -342,7 +342,7 @@
 			zd = sun.position.z-plZ;
 			sunD = sqrt(xd*xd + yd*yd + zd*zd);
 			
-			if (sunD < (2 * (1/zoomingValue))) {
+			if (sunD < (1.5 * (1/zoomingValue))) {
 				[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Sun", @"") inConstellation:NSLocalizedString(@"Our star", @"") showInfo:NO];
 				[[renderer interface] setANameplate:TRUE];
 
@@ -367,7 +367,7 @@
 			zd = moon.position.z-plZ;
 			moonD = sqrt(xd*xd + yd*yd + zd*zd);
 			
-			if (moonD < (2 * (1/zoomingValue))) {
+			if (moonD < (1.5 * (1/zoomingValue))) {
 				[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Moon", @"") inConstellation:@"" showInfo:NO];
 				[[renderer interface] setANameplate:TRUE];
 
@@ -401,7 +401,7 @@
 						//NSLog(@"Closest planet:%@",planet.name);
 					}
 				}
-				if (closestD < (2 * (1/zoomingValue))) {
+				if (closestD < (1.5 * (1/zoomingValue))) {
 					[[[renderer interface] theNameplate] setSelectedType:1];					
 					[[[renderer interface] theNameplate] setName:NSLocalizedString(closestPlanet.name, @"") inConstellation:NSLocalizedString(@"planet", @"") showInfo:YES];
 					[[renderer interface] setANameplate:TRUE];
@@ -423,9 +423,9 @@
 					SRMessier * aMessier;
 					SRMessier * closestMessier;
 					for(aMessier in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
-						xd = aMessier.position.x-plX;
-						yd = aMessier.position.y-plY;
-						zd = aMessier.position.z-plZ;
+						xd = aMessier.position.x-stX;
+						yd = aMessier.position.y-stY;
+						zd = aMessier.position.z-stZ;
 						messierD = sqrt(xd*xd + yd*yd + zd*zd);
 						if (messierD < closestD) {
 							closestD = messierD;
@@ -435,7 +435,7 @@
 						}						
 					}
 					//FIXME waarom zo'n raar getal?
-					if(closestD < (5.1)) {
+					if(closestD < (1.5 * (1/zoomingValue))) {
 						[[[renderer interface] theNameplate] setSelectedType:0];
 						[[[renderer interface] theNameplate] setName:closestMessier.name inConstellation:NSLocalizedString(@"messier", @"") showInfo:YES];
 						[[renderer interface] setANameplate:TRUE];

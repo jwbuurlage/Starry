@@ -139,11 +139,14 @@
 	
 
 	NSString* constellation = [[theStar bayer] substringWithRange:NSMakeRange([[theStar bayer] length]-3, 3)];
+	[[[elements objectAtIndex:[elements count] - 8] texture] release];
 	[[elements objectAtIndex:[elements count] - 8] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(constellation,@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
 	
+	[[[elements objectAtIndex:[elements count] - 7] texture] release];
 	//NSString* hip = [[theStar bayer] substringWithRange:NSMakeRange( length]-3, 3)];
 	[[elements objectAtIndex:[elements count] - 7] setTexture:[[Texture2D alloc] initWithString:[theStar hip] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
 	
+	[[[elements objectAtIndex:[elements count] - 6] texture] release];
 	//NSString* constellation = [[theStar bayer] substringWithRange:NSMakeRange([[theStar bayer] length]-3, 3)];
 	[[elements objectAtIndex:[elements count] - 6] setTexture:[[Texture2D alloc] initWithString:[theStar gliese] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
 	
@@ -163,6 +166,7 @@
 		seconds3 = 60+seconds3;
 	}
 	//degrees = degrees ; // Uuren er van maken
+	[[[elements objectAtIndex:[elements count] - 5] texture] release];
 	[[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ih %im %is",degrees3,minutes3,seconds3] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber3 release];
 	[minutesNumber3 release];
@@ -181,11 +185,14 @@
 		minutes4 = -minutes4;
 		seconds4 = -seconds4;
 	}
+	
+	[[[elements objectAtIndex:[elements count] - 4] texture] release];
 	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees4,minutes4,seconds4] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber4 release];
 	[minutesNumber4 release];
 	[secondsNumber4 release];
 	
+	[[[elements objectAtIndex:[elements count] - 1] texture] release];
 	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theStar mag] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	
 	
