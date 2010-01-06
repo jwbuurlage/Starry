@@ -19,17 +19,18 @@
 		
 		elements = [[NSMutableArray alloc] init];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150, 288, 256, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(112, 288, 256, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"nameplatebg.png"]] 
 															identifier:@"nameplate" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(290, 289, 32, 32)
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(335, 293, 25, 25)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"info.png"]] 
 															identifier:@"info" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(160,281, 128,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150,281, 128,32) 
 															   texture:nil
 															identifier:@"text" 
 															 clickable:NO]];
@@ -38,6 +39,16 @@
 															   texture:nil
 															identifier:@"text-transparent" 
 															 clickable:NO]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(117, 289, 32, 32)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"close.png"]] 
+															identifier:@"close_nameplate" 
+															 clickable:YES]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(313, 293, 25, 25)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"add_list.png"]] 
+															identifier:@"add_list" 
+															 clickable:YES]];
 		
 		yTranslate = 32;
 		visible = NO;
@@ -97,7 +108,7 @@
 	[[[elements objectAtIndex:3] texture] release];
 	[[elements objectAtIndex:2] setTexture:[[Texture2D alloc] initWithString:name dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]];
 	[[elements objectAtIndex:3] setTexture:[[Texture2D alloc] initWithString:constellation dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9]];
-	[[elements objectAtIndex:3] setBounds:CGRectMake([name sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width + 165, 278, 128,32)];
+	[[elements objectAtIndex:3] setBounds:CGRectMake([name sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width + 155, 278, 128,32)];
 	info = theInfo;
 	if (![self visible]) {
 		[self show];

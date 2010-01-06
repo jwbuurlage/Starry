@@ -220,6 +220,9 @@
 		ACC493A210CD777600DC7967 /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = ACC493A110CD777600DC7967 /* moon.png */; };
 		ACCE96CB10E3EAFC0089EF62 /* Texture3D.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCE96CA10E3EAFC0089EF62 /* Texture3D.m */; };
 		ACD3B9EA10F4FF1B007CD4C7 /* planetLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3B9E910F4FF1B007CD4C7 /* planetLabel.png */; };
+		ACD3BA1C10F509C7007CD4C7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BA1B10F509C7007CD4C7 /* close.png */; };
+		ACD3BA4C10F50C1E007CD4C7 /* add_list.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BA4B10F50C1E007CD4C7 /* add_list.png */; };
+		ACD3BA6A10F50EEC007CD4C7 /* SRListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD3BA6910F50EEC007CD4C7 /* SRListManager.m */; };
 		ACE708D010D02A0B003DE4BB /* M1.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE708CF10D02A0B003DE4BB /* M1.png */; };
 		ACEC7CF3109B25A700149C80 /* SRStar.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF0109B25A700149C80 /* SRStar.m */; };
 		ACEC7CF4109B25A700149C80 /* SRSun.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF2109B25A700149C80 /* SRSun.m */; };
@@ -481,6 +484,10 @@
 		ACCE96C910E3EAFC0089EF62 /* Texture3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture3D.h; sourceTree = "<group>"; };
 		ACCE96CA10E3EAFC0089EF62 /* Texture3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture3D.m; sourceTree = "<group>"; };
 		ACD3B9E910F4FF1B007CD4C7 /* planetLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planetLabel.png; path = Resources/planetLabel.png; sourceTree = "<group>"; };
+		ACD3BA1B10F509C7007CD4C7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = Resources/close.png; sourceTree = "<group>"; };
+		ACD3BA4B10F50C1E007CD4C7 /* add_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_list.png; path = Resources/add_list.png; sourceTree = "<group>"; };
+		ACD3BA6810F50EEC007CD4C7 /* SRListManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRListManager.h; sourceTree = "<group>"; };
+		ACD3BA6910F50EEC007CD4C7 /* SRListManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRListManager.m; sourceTree = "<group>"; };
 		ACE708CF10D02A0B003DE4BB /* M1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M1.png; path = Resources/messier/M1.png; sourceTree = "<group>"; };
 		ACEC7CEF109B25A700149C80 /* SRStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStar.h; sourceTree = "<group>"; };
 		ACEC7CF0109B25A700149C80 /* SRStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStar.m; sourceTree = "<group>"; };
@@ -527,6 +534,8 @@
 				ACB7B11610615C1000CA447E /* SRCamera.m */,
 				AC24C98510BAE6420063DF87 /* SRTimeManager.h */,
 				AC24C98610BAE6420063DF87 /* SRTimeManager.m */,
+				ACD3BA6810F50EEC007CD4C7 /* SRListManager.h */,
+				ACD3BA6910F50EEC007CD4C7 /* SRListManager.m */,
 				AC6D777C10C56A1900442254 /* SRSpriteManager.h */,
 				AC6D777D10C56A1900442254 /* SRSpriteManager.m */,
 				ACB7B11110615AE000CA447E /* OpenGL */,
@@ -585,6 +594,8 @@
 				AC8A87EF10C56FCE0015CDF5 /* longitude.png */,
 				AC5769B910E7F0D30031505E /* planetInfoBg.png */,
 				AC8A89D010C5898B0015CDF5 /* info.png */,
+				ACD3BA1B10F509C7007CD4C7 /* close.png */,
+				ACD3BA4B10F50C1E007CD4C7 /* add_list.png */,
 				AC8A89D110C5898B0015CDF5 /* nameplatebg.png */,
 				AC5769BD10E7F0DE0031505E /* PlanetBG */,
 				AC3851F710DFF34500C94722 /* Phases */,
@@ -1139,6 +1150,8 @@
 				7695E64110F2A3350064FFD9 /* messierForeground.png in Resources */,
 				AC8AFB7B10F39D3C00517901 /* positionOverlay.png in Resources */,
 				ACD3B9EA10F4FF1B007CD4C7 /* planetLabel.png in Resources */,
+				ACD3BA1C10F509C7007CD4C7 /* close.png in Resources */,
+				ACD3BA4C10F50C1E007CD4C7 /* add_list.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1183,6 +1196,7 @@
 				AC5B303C10E78A4F00DE922B /* SRPlanetModule.m in Sources */,
 				AC57694010E7CF910031505E /* SRPlanetInfo.m in Sources */,
 				76D7294310EBD8F80018EB62 /* SRStarInfo.m in Sources */,
+				ACD3BA6A10F50EEC007CD4C7 /* SRListManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
