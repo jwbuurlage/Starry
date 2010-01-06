@@ -226,6 +226,18 @@
 	glLoadIdentity();	
 }
 
+-(void)zoomCameraIn {
+	if(fieldOfView > 0.2) {
+		fieldOfView = fieldOfView - 0.2;
+	}
+	else if(fieldOfView > 0.1) {
+		fieldOfView = fieldOfView - 0.1;
+	}
+	else {
+		[self resetZoomValue];
+	}
+}
+
 /*- (void)RAAndDecForPoint:(CGPoint)point {
 	//test
 	float RA = ( ((point.y - 240) / 240) * (fieldOfView * (180/M_PI) ) ) + azimuth;
