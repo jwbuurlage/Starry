@@ -229,8 +229,9 @@
 }
 
 -(void)render {
-	if(selectedStar)
+	if(selectedStar && ![[interface starInfo] hiding])
 		[[interface starInfo] starUpdate:selectedStar];
+	
 	//view resetten
     glLoadIdentity();
 		
