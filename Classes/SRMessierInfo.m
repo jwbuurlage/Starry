@@ -23,7 +23,7 @@
 															 clickable:NO]];
 		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(17, 190, 128, 32) 
-															   texture:[[Texture2D alloc] initWithString:@"S.bld" dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Const.",@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
