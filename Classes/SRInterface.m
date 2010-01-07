@@ -1065,7 +1065,7 @@
 		[slider setValue:[[appDelegate settingsManager] brightnessFactor]];
 	}
 	if ([method isEqualToString:@"up"]) {
-		[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 63)];
+		//[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 63)];
 		[slider setAlpha:0];
 	}
 	else {
