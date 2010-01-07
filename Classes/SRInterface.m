@@ -927,14 +927,18 @@
 		if(xTranslate >= 63.0) {
 			aInterface = FALSE;
 			xTranslate = 63;
-			if (slider)
+			if (slider) {
 				[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 0)];
+				sliderVisible = YES;
+			}
 		}
 		else if(xTranslate < 0.0) {
 			aInterface = FALSE;
 			xTranslate = 0;
-			if (slider)
+			if (slider) {
 				[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 63)];
+				sliderVisible = NO;
+			}
 		}
 	}
 	
