@@ -25,17 +25,17 @@
 															identifier:@"icon" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-55, 32,32)
+		/*[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-55, 32,32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"brightness_minus.png"]] 
 															identifier:@"brightness_minus" 
-															 clickable:YES]];		
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(110,-55, 32,32)
+															 clickable:NO]];		
+		*/	
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-55, 32,32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"brightness_plus.png"]] 
 															identifier:@"brightness_plus" 
-															 clickable:YES]];
+															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150,-58, 80,32) 
+		/*[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150,-58, 80,32) 
 															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Brightness", @"") dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
@@ -43,7 +43,7 @@
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150,-69, 80,32) 
 															   texture:nil 
 															identifier:@"brightness_value" 
-															 clickable:NO]];
+															 clickable:NO]];*/
 		
 		//laad elements in - sla op in textures
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(376, -55, 32, 32)
@@ -107,8 +107,15 @@
 			[[mElement texture] drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
-	}	
+	}
 	
+	
+	
+}
+
+-(void)hide {
+	[super hide];
+	//[[[[UIApplication sharedApplication] delegate] settingsManager]
 }
 
 @end

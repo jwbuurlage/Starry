@@ -73,7 +73,7 @@
 	//Text opzetten
 	UIFont* font;	
 	CGRect rect = {0,0,32,32};
-		
+	
 	UIGraphicsBeginImageContext(rect.size);
 	
 	
@@ -82,7 +82,7 @@
 	
 	CGContextSetRGBFillColor(ctx, 0.0, 0.0, 0.0, 0.6);
     CGContextFillEllipseInRect(ctx, rect);
-
+	
 	[[UIColor lightGrayColor] setFill];
 	font = [UIFont boldSystemFontOfSize:20];
 	CGPoint point = CGPointMake((rect.size.width / 2) - ([text sizeWithFont:font].width / 2), (rect.size.height / 2) - ([text sizeWithFont:font].height / 2));
@@ -97,7 +97,7 @@
 	
 	NSInteger texWidth = CGImageGetWidth(textureImage);
     NSInteger texHeight = CGImageGetHeight(textureImage);
-		
+	
 	GLubyte *textureData = (GLubyte *)malloc(texWidth * texHeight * 4);
 	
 	CGContextRef textureContext = CGBitmapContextCreate(textureData,
@@ -159,18 +159,18 @@
 	UIElements = [[NSMutableArray alloc] init];
 	
 	//main menu met knoppen
-
+	
 	
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63) 
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"nav_bg.png"]] 
 														  identifier:@"menu" 
 														   clickable:NO]];
-		  
+	
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -55, 31, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"radar.png"]] 
 														  identifier:@"location" 
 														   clickable:YES]];
-	  
+	
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(62, -55, 31, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"calendar.png"]]
 														  identifier:@"time" 
@@ -185,12 +185,12 @@
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"search.png"]] 
 														  identifier:@"searchfield" 
 														   clickable:YES]];
-	   
+	
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(345, -55, 31, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"searchicon.png"]] 
 														  identifier:@"search" 
 														   clickable:NO]];
-	 
+	
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(392, -55, 31, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"gears.png"]] 
 														  identifier:@"settings" 
@@ -201,11 +201,6 @@
 														  identifier:@"menu_overlay" 
 														   clickable:NO]];		
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(176, -65, 128, 32) 
-															 texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Search", @"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
-														  identifier:@"search_text" 
-														   clickable:NO]];		
-		
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(440, 8, 32, 32)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]] 
 														  identifier:@"arrow" 
@@ -251,10 +246,10 @@
 		float secondsF = ([minutesNumber floatValue] - [minutesNumber intValue])*60;
 		NSNumber * secondsNumber = [[NSNumber alloc] initWithFloat:secondsF];
 		int seconds = [secondsNumber intValue];
-				
+		
 		/* degrees = degrees * 24 / 360; // Uuren er van maken
-		minutes = minutes / 15;
-		seconds = seconds / 15; */
+		 minutes = minutes / 15;
+		 seconds = seconds / 15; */
 		
 		if(pORAValueLabel) 
 			[pORAValueLabel release];
@@ -307,7 +302,7 @@
 	glOrthof(0.0, 480, 0.0, 320, -1.0, 1.0); //projectie opzetten
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-		
+	
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glTexCoordPointer(2, GL_FLOAT, 0, textureCoords);
@@ -318,7 +313,7 @@
 	
 	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 	glColor4f(1.0, 1.0, 1.0, 1.0);      
-
+	
 	[theNameplate draw];
 	if(![renderer planetView] && [[appDelegate settingsManager] showPositionOverlay]) {
 		[self drawPositionOverlay];
@@ -339,16 +334,9 @@
 			[[element texture] drawInRect:[element bounds]];
 		}
 		else if (menuVisible) {
-			if([element identifier] == @"search_text" && ![currentlyEditingIdentifier isEqual:@"search"]) {
-				glColor4f(0.2f, 0.2f, 0.2f, 1.0f);
-				[[element texture] drawInRect:[element bounds]];
-				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-			}
-			else {
-				glTranslatef(0, -yTranslate, 0);
-				[[element texture] drawInRect:[element bounds]];
-				glTranslatef(0, yTranslate, 0);
-			}
+			glTranslatef(0, -yTranslate, 0);
+			[[element texture] drawInRect:[element bounds]];
+			glTranslatef(0, yTranslate, 0);
 		}
 		
 		++i;
@@ -362,7 +350,7 @@
 	
 	glTranslatef(0, -xTranslate, 0);
 	
-
+	
 	if(isClicking) {
 		GLfloat touchCorners[] = {
 			rectClicked.origin.x, rectClicked.origin.y + rectClicked.size.height, 0,
@@ -396,7 +384,7 @@
 	if(showingStar) {
 		[starInfo draw];
 	}	
-
+	
 	if(defaultTextureBool) {
 		glColor4f(1.0, 1.0, 1.0, alphaDefault);      
 		[defaultTexture drawInRect:CGRectMake(0,-192,512,512)];
@@ -408,7 +396,7 @@
 		glColor4f(0.5, 0.5, 0.5, alphaNotFound);   
 		
 		float combinedwidth = [foundTextString sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width + 
-							  [foundObjectTextString sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width + 5;
+		[foundObjectTextString sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width + 5;
 		
 		[foundText drawInRect:CGRectMake(240 - combinedwidth / 2,55,64,32)];
 		if(searchResult)
@@ -417,13 +405,13 @@
 			glColor4f(1.0f, 0.2f, 0.2f, alphaNotFound);
 		[foundObjectText drawInRect:CGRectMake(240 - combinedwidth / 2 + [foundTextString sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]].width + 2,55,64,32)];
 	}
-		
+	
 	if([[appDelegate settingsManager] showRedOverlay]) {
 		[self drawRedOverlay];
 	}
 	
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-			
+	
 	glDisable(GL_TEXTURE_2D); 
 }
 
@@ -450,7 +438,7 @@
 -(BOOL)UIElementAtPoint:(CGPoint)point {
 	
 	BOOL flag = FALSE;
-
+	
 	if(showingMessier == TRUE) {
 		[messierInfo hide];
 		aMessier = YES;
@@ -494,20 +482,20 @@
 	}
 	
 	if(!menuVisible) {
-	for (SRModule* module in modules) {
-		if([module visible]) {
-			for (SRInterfaceElement* element in [module elements]) {
-				if(CGRectContainsPoint([element bounds], CGPointMake(point.y, point.x - xTranslate)) && !flag && [element clickable])  {
-					clicker = [element identifier];
-					isClicking = TRUE;
-					CGRect clicked = [element bounds];
-					clicked.origin.y += xTranslate;
-					rectClicked = CGRectInset(clicked, -16, -16);
-					flag = TRUE;
-				}				
+		for (SRModule* module in modules) {
+			if([module visible]) {
+				for (SRInterfaceElement* element in [module elements]) {
+					if(CGRectContainsPoint([element bounds], CGPointMake(point.y, point.x - xTranslate)) && !flag && [element clickable])  {
+						clicker = [element identifier];
+						isClicking = TRUE;
+						CGRect clicked = [element bounds];
+						clicked.origin.y += xTranslate;
+						rectClicked = CGRectInset(clicked, -16, -16);
+						flag = TRUE;
+					}				
+				}
 			}
 		}
-	}
 	}
 	
 	if([theNameplate visible] && [theNameplate info]) {
@@ -533,7 +521,7 @@
 	if(![fieldTmp isFirstResponder] && result && clicker != @"messierinfo" && clicker != @"planetinfo" && clicker != @"starinfo") {
 		
 		BOOL flagToggle = FALSE;
-	
+		
 		if(clicker == @"time") {
 			//show tijd crap
 			if([timeModule visible]) {
@@ -565,6 +553,7 @@
 		else if(clicker == @"settings") {
 			if([settingsModule visible]) {
 				[settingsModule hide];	
+				[self hideSliderWith:@"fade"];
 				aModule = TRUE;
 			}
 			else {
@@ -572,6 +561,7 @@
 				[[UIElements objectAtIndex:6] setBounds:CGRectZero];
 				[self hideAllModules];
 				[settingsModule show];
+				[self showSliderWith:@"fade"];
 				aModule = TRUE;
 			}
 		}
@@ -598,7 +588,16 @@
 			[self bringUpTheKeyboardWithText:@"" onLocationX:9 Y:175 withColor:[UIColor blackColor] andSendResultsTo:self];
 		}
 		else if(clicker == @"arrow") {
+			BOOL sliderHide = NO;
+			if(sliderVisible) {
+				[self hideSliderWith:@"down"];
+				sliderHide = YES;
+			}
 			flagToggle = YES;
+			if (slider && !sliderHide) {
+				[self showSliderWith:@"up"];
+				//NSLog(@"Show");
+			}
 			[[[UIElements objectAtIndex:[UIElements count] - 1] texture] invertTexCoord];
 		}
 		// Knoppen voor de tijd module
@@ -658,16 +657,16 @@
 				[[appDelegate settingsManager] setShowRedOverlay:FALSE];
 			}
 		}
-		else if(clicker == @"brightness_plus") {
-			double brightness = [[appDelegate settingsManager] brightnessFactor];
-			brightness += 0.1;
-			[[appDelegate settingsManager] setBrightnessFactor:brightness];
-		}
-		else if(clicker == @"brightness_minus") {
-			double brightness = [[appDelegate settingsManager] brightnessFactor];
-			brightness -= 0.1;
-			[[appDelegate settingsManager] setBrightnessFactor:brightness];
-		}		
+		/*else if(clicker == @"brightness_plus") {
+		 double brightness = [[appDelegate settingsManager] brightnessFactor];
+		 brightness += 0.1;
+		 [[appDelegate settingsManager] setBrightnessFactor:brightness];
+		 }
+		 else if(clicker == @"brightness_minus") {
+		 double brightness = [[appDelegate settingsManager] brightnessFactor];
+		 brightness -= 0.1;
+		 [[appDelegate settingsManager] setBrightnessFactor:brightness];
+		 }*/		
 		else if(clicker == @"planet_labels") {
 			BOOL planetLabels = [[appDelegate settingsManager] showPlanetLabels];
 			if(planetLabels) {
@@ -735,6 +734,7 @@
 			}
 			if([settingsModule visible]) {
 				[settingsModule hide];
+				[self hideSliderWith:@"fade"];
 				[[UIElements objectAtIndex:6] setBounds:CGRectMake(392, -55, 31, 31)];
 				aModule = TRUE;
 			}
@@ -957,6 +957,7 @@
 -(void) hideAllModules {
 	hidingMenu = TRUE;
 	aMenu = TRUE;
+	//[self hideSlider];
 }
 
 
@@ -1014,6 +1015,8 @@
 -(void)bringUpTheKeyboardWithText:(NSString *)placeholder onLocationX:(int)locX Y:(int)locY withColor:(UIColor*)color andSendResultsTo:(id)delegate {
 	//NSLog(@"Bring up the Keyboard");
 	
+	if(fieldTmp)
+		[fieldTmp release];
 	fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX-26), (locY+25), 80, 32)];
 	[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:11]];
 	[fieldTmp setTextColor:color];
@@ -1042,7 +1045,79 @@
 	[UIView commitAnimations];
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {	
+-(void)showSliderWith:(NSString*)method{
+	//NSLog(@"Bring up the Keyboard");
+	BOOL justCreated = NO;
+	if (!slider) {
+		slider = [[UISlider alloc] initWithFrame:CGRectMake(-32, 168, 125, 23)];
+		justCreated = YES;
+		[slider setMinimumValue:0.5];
+		[slider setMaximumValue:3];
+		[slider addTarget:self action:@selector(sliderChanged) forControlEvents:UIControlEventValueChanged];
+		[slider setValue:[[appDelegate settingsManager] brightnessFactor]];
+	}
+	if (![method isEqualToString:@"up"]) {
+		[slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
+		[slider setAlpha:0];
+	}
+	//[slider becomeFirstResponder];
+	
+	[[appDelegate uiElementsView] setHidden:NO];
+ 	if (justCreated) {
+		[[appDelegate uiElementsView] addSubview:slider];
+	}
+	
+	[UIView beginAnimations:nil context:NULL];
+	if ([method isEqualToString:@"up"]) {
+		[UIView setAnimationDuration:0.50];
+		[slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
+	}
+	else {
+		[UIView setAnimationDuration:0.3];
+	}
+	[slider setAlpha:1];
+	[UIView commitAnimations];
+	sliderVisible = YES;
+	
+}
+
+-(void)hideSliderWith:(NSString*)method {
+	if(slider && sliderVisible) {
+		NSLog(@"Hide slider");
+		[slider setAlpha:1];
+		[UIView beginAnimations:nil context:NULL];
+		if([method isEqualToString:@"fade"]) {
+			
+			[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
+			[slider setAlpha:0];
+			
+		}
+		else if ([method isEqualToString:@"down"]) {
+			[UIView setAnimationDuration:0.50]; // 0.3 lijkt even snel te zijn als het keyboard.
+			[slider setTransform:CGAffineTransformTranslate([slider transform], 0, 63)];
+			[slider setAlpha:0];
+		}
+		else {
+			[UIView setAnimationDuration:0.3];
+			[slider setAlpha:0];
+		}
+		[UIView commitAnimations];
+		//[slider removeFromSuperview];
+		//[slider release];
+		//[[appDelegate uiElementsView] setHidden:YES];
+	}
+	sliderVisible = NO;
+}
+
+-(void)sliderChanged {
+	if(slider) {
+		[[appDelegate settingsManager] setBrightnessFactor:[slider value]];
+	}
+}
+
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
 	if(textField == fieldTmp) {
 		// Hide de uiElementsView
 		[[appDelegate uiElementsView] setHidden:YES];
@@ -1054,7 +1129,6 @@
 		[UIView commitAnimations];
 		
 		NSString *aValue = [[NSString alloc] initWithString:[fieldTmp text]];
-		[[UIElements objectAtIndex:[UIElements count] - 2] setTexture:[[Texture2D alloc] initWithString:aValue dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0]];
 		
 		if	(currentlyEditingIdentifier == @"lat") {
 			[[locationModule locationManager] useStaticValues];
@@ -1185,9 +1259,9 @@
 					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
 					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
 					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
-						
+					
 					Vertex3D position = foundMessier.position;
-						
+					
 					[renderer setHighlightPosition:position];
 					[renderer setSelectedStar:nil];
 					[renderer setPlanetHighlighted:FALSE];
@@ -1199,7 +1273,7 @@
 				}
 				else if(type == 1) { //Planeet
 					foundObjectTextString = foundPlanet.name;
-
+					
 					if(foundObjectText)
 						[foundObjectText release];
 					foundObjectText = [[Texture2D alloc] initWithString:foundPlanet.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
@@ -1299,7 +1373,7 @@
 					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
 					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
 					
-					Vertex3D position = Vertex3DMake([foundStar position].x,[foundStar position].y,[foundStar position].z);
+					Vertex3D position = Vertex3DMake([foundStar.x floatValue],[foundStar.y floatValue],[foundStar.z floatValue]);
 					
 					[renderer setHighlightPosition:position];
 					[renderer setSelectedStar:foundStar];
@@ -1327,7 +1401,7 @@
 						foundObjectTextString = [[NSString alloc] initWithString:name];
 						[name release];
 					}
-										
+					
 					//Vertex3D posForCam = [foundStar myCurrentPosition];
 					Vertex3D posForCam = [foundConstellation myCurrentPosition];
 					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
@@ -1393,7 +1467,7 @@
 					
 					[self setANameplate:TRUE];
 				}
-
+				
 				
 				notFoundTextureBool = TRUE;
 				alphaNotFound = 1.0f;
@@ -1428,15 +1502,13 @@
 		//[fieldTmp release]; /* FIXME Werkt niet als ik fieldTmp hier release maar anders hebben we een leak */
 		[aValue release];
 	}
-	
-	currentlyEditingIdentifier = nil;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return NO;
 }
-						  
+
 -(void)fadeDefaultTexture {
 	//aFade = TRUE;
 }
