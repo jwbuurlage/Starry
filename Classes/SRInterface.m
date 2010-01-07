@@ -1083,7 +1083,7 @@
 
 -(void)hideSliderWith:(NSString*)method {
 	if(slider && sliderVisible) {
-	NSLog(@"Hide slider");
+	//NSLog(@"Hide slider");
 	[slider setAlpha:1];
 	[UIView beginAnimations:nil context:NULL];
 	if([method isEqualToString:@"fade"]) {
