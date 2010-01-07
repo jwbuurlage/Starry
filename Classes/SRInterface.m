@@ -201,6 +201,11 @@
 														  identifier:@"menu_overlay" 
 														   clickable:NO]];		
 	
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(176, -65, 128, 32) 
+							                                 texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Search", @"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+							                                identifier:@"search_text" 
+							                                 clickable:NO]];    
+	
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(440, 8, 32, 32)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]] 
 														  identifier:@"arrow" 
@@ -334,8 +339,15 @@
 			[[element texture] drawInRect:[element bounds]];
 		}
 		else if (menuVisible) {
-			glTranslatef(0, -yTranslate, 0);
-			[[element texture] drawInRect:[element bounds]];
+			      glTranslatef(0, -yTranslate, 0);
+			if([element identifier] == @"search_text" && ![currentlyEditingIdentifier isEqual:@"search"]) {
+				glColor4f(0.2f, 0.2f, 0.2f, 1.0f);
+				[[element texture] drawInRect:[element bounds]];
+				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+			}
+			else {
+				[[element texture] drawInRect:[element bounds]];
+			}		
 			glTranslatef(0, yTranslate, 0);
 		}
 		
@@ -441,7 +453,8 @@
 	
 	if(showingMessier == TRUE) {
 		[messierInfo hide];
-		[self showSliderWith:@"fade"];
+		if([settingsModule visible]) 
+			[self showSliderWith:@"fade"];
 		aMessier = YES;
 		clicker = @"messierinfo";
 		return TRUE;
@@ -449,7 +462,8 @@
 	
 	if(showingPlanet == TRUE) {
 		[planetInfo hide];
-		[self showSliderWith:@"fade"];
+		if([settingsModule visible]) 
+			[self showSliderWith:@"fade"];
 		aPlanet = YES;
 		clicker = @"planetinfo";
 		return TRUE;
@@ -700,13 +714,15 @@
 		else if(clicker == @"info") {
 			if([theNameplate selectedType] == 0) {
 				[messierInfo show];
-				[self hideSliderWith:@"fade"];
+				if([settingsModule visible]) 
+					[self hideSliderWith:@"fade"];
 				aMessier = YES;
 				showingMessier = YES;
 			}
 			else if([theNameplate selectedType] == 1) {
 				[planetInfo show];
-				[self hideSliderWith:@"fade"];
+				if([settingsModule visible]) 
+					[self hideSliderWith:@"fade"];
 				aPlanet = YES;
 				showingPlanet = YES;				
 			}
@@ -1165,6 +1181,9 @@
 			[locationModule setLongVisible:YES];
 		}
 		else if (currentlyEditingIdentifier == @"search") {
+			currentlyEditingIdentifier = nil;
+			[[UIElements objectAtIndex:[UIElements count] - 2] setTexture:[[Texture2D alloc] initWithString:aValue dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0]];
+			
 			SRMessier * aMessierObject;
 			SRPlanetaryObject* bPlanet; // aPlanet is een ivar
 			SRStar* aStar;
