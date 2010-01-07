@@ -113,4 +113,9 @@
 	
 }
 
+-(void)hide {
+	[super hide];
+	//[[[[UIApplication sharedApplication] delegate] settingsManager]
+}
+
 @end

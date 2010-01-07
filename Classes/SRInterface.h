@@ -70,7 +70,8 @@
 	int count;
 	
 	UITextField *fieldTmp;
-	UISlider *sliderTmp;
+	UISlider *slider;
+	BOOL *sliderVisible;
 	
 	NSString* currentlyEditingIdentifier;
 	
@@ -149,6 +150,7 @@
 
 -(void)drawPositionOverlay;
 
--(void)bringUpSlider;
+-(void)showSliderWith:(NSString*)method;
+-(void)hideSliderWith:(NSString*)method;
 
 @end

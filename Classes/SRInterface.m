@@ -553,6 +553,7 @@
 		else if(clicker == @"settings") {
 			if([settingsModule visible]) {
 				[settingsModule hide];	
+				[self hideSliderWith:@"fade"];
 				aModule = TRUE;
 			}
 			else {
@@ -560,7 +561,7 @@
 				[[UIElements objectAtIndex:6] setBounds:CGRectZero];
 				[self hideAllModules];
 				[settingsModule show];
-				[self bringUpSlider];
+				[self showSliderWith:@"fade"];
 				aModule = TRUE;
 			}
 		}
@@ -587,7 +588,16 @@
 			[self bringUpTheKeyboardWithText:@"" onLocationX:9 Y:175 withColor:[UIColor blackColor] andSendResultsTo:self];
 		}
 		else if(clicker == @"arrow") {
+			BOOL sliderHide = NO;
+			if(sliderVisible) {
+				[self hideSliderWith:@"down"];
+				sliderHide = YES;
+			}
 			flagToggle = YES;
+			if (slider && !sliderHide) {
+				[self showSliderWith:@"up"];
+				//NSLog(@"Show");
+			}
 			[[[UIElements objectAtIndex:[UIElements count] - 1] texture] invertTexCoord];
 		}
 		// Knoppen voor de tijd module
@@ -724,6 +734,7 @@
 			}
 			if([settingsModule visible]) {
 				[settingsModule hide];
+				[self hideSliderWith:@"fade"];
 				[[UIElements objectAtIndex:6] setBounds:CGRectMake(392, -55, 31, 31)];
 				aModule = TRUE;
 			}
@@ -946,6 +957,7 @@
 -(void) hideAllModules {
 	hidingMenu = TRUE;
 	aMenu = TRUE;
+	//[self hideSlider];
 }
 
 
@@ -1033,24 +1045,61 @@
 	[UIView commitAnimations];
 }
 
--(void)bringUpSlider{
+-(void)showSliderWith:(NSString*)method{
 	//NSLog(@"Bring up the Keyboard");
+	BOOL justCreated = NO;
+	if (!slider) {
+		slider = [[UISlider alloc] initWithFrame:CGRectMake(-32, 168, 125, 23)];
+		justCreated = YES;
+	}
+	if (![method isEqualToString:@"up"]) {
+		[slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
+		[slider setAlpha:0];
+	}
+	//[slider becomeFirstResponder];
 	
-	
-	sliderTmp = [[UISlider alloc] initWithFrame:CGRectMake(-32, 168, 125, 23)];
-	[sliderTmp setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
-	[sliderTmp becomeFirstResponder];
-	[sliderTmp setAlpha:0];
 	[[appDelegate uiElementsView] setHidden:NO];
-	// We moeten de view toevoegen aan de glView
- 	[[appDelegate uiElementsView] addSubview:sliderTmp];
+ 	if (justCreated) {
+		[[appDelegate uiElementsView] addSubview:slider];
+	}
 	
 	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
-	[sliderTmp setAlpha:1];
-	//[sliderTmp setOpaque:NO];
+	 // 0.3 lijkt even snel te zijn als het keyboard.
+	if ([method isEqualToString:@"up"]) {
+		[UIView setAnimationDuration:0.55];
+		[slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
+	}
+	else {
+		[UIView setAnimationDuration:0.3];
+	}
+	[slider setAlpha:1];
 	[UIView commitAnimations];
+	sliderVisible = YES;
 	
+}
+
+-(void)hideSliderWith:(NSString*)method {
+	if(slider && sliderVisible) {
+	NSLog(@"Hide slider");
+	[slider setAlpha:1];
+	if([method isEqualToString:@"fade"]) {
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
+		[slider setAlpha:0];
+		[UIView commitAnimations];
+	}
+	else if ([method isEqualToString:@"down"]) {
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:0.26]; // 0.3 lijkt even snel te zijn als het keyboard.
+		[slider setTransform:CGAffineTransformTranslate([slider transform], 0, 37)];
+		[slider setAlpha:0];
+		[UIView commitAnimations];
+	}
+	//[slider removeFromSuperview];
+	//[slider release];
+	//[[appDelegate uiElementsView] setHidden:YES];
+	}
+	sliderVisible = NO;
 }
 
 
