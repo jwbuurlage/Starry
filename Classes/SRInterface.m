@@ -1066,7 +1066,7 @@
 	[UIView beginAnimations:nil context:NULL];
 	 // 0.3 lijkt even snel te zijn als het keyboard.
 	if ([method isEqualToString:@"up"]) {
-		[UIView setAnimationDuration:0.55];
+		[UIView setAnimationDuration:0.50];
 		[slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
 	}
 	else {
@@ -1090,11 +1090,15 @@
 	}
 	else if ([method isEqualToString:@"down"]) {
 		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationDuration:0.26]; // 0.3 lijkt even snel te zijn als het keyboard.
-		[slider setTransform:CGAffineTransformTranslate([slider transform], 0, 37)];
+		[UIView setAnimationDuration:0.50]; // 0.3 lijkt even snel te zijn als het keyboard.
+		[slider setTransform:CGAffineTransformTranslate([slider transform], 0, 63)];
 		[slider setAlpha:0];
 		[UIView commitAnimations];
 	}
+	else {
+		[slider setAlpha:0];
+	}
+	[[appDelegate uiElementsView] setHidden:YES];
 	//[slider removeFromSuperview];
 	//[slider release];
 	//[[appDelegate uiElementsView] setHidden:YES];
