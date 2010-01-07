@@ -560,6 +560,7 @@
 				[[UIElements objectAtIndex:6] setBounds:CGRectZero];
 				[self hideAllModules];
 				[settingsModule show];
+				[self bringUpSlider];
 				aModule = TRUE;
 			}
 		}
@@ -1002,6 +1003,8 @@
 -(void)bringUpTheKeyboardWithText:(NSString *)placeholder onLocationX:(int)locX Y:(int)locY withColor:(UIColor*)color andSendResultsTo:(id)delegate {
 	//NSLog(@"Bring up the Keyboard");
 	
+	if(fieldTmp)
+		[fieldTmp release];
 	fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX-26), (locY+25), 80, 32)];
 	[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:11]];
 	[fieldTmp setTextColor:color];
@@ -1029,6 +1032,28 @@
 	[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(160 , 0)];
 	[UIView commitAnimations];
 }
+
+-(void)bringUpSlider{
+	//NSLog(@"Bring up the Keyboard");
+	
+	
+	sliderTmp = [[UISlider alloc] initWithFrame:CGRectMake(-32, 168, 125, 23)];
+	[sliderTmp setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
+	[sliderTmp becomeFirstResponder];
+	[sliderTmp setAlpha:0];
+	[[appDelegate uiElementsView] setHidden:NO];
+	// We moeten de view toevoegen aan de glView
+ 	[[appDelegate uiElementsView] addSubview:sliderTmp];
+	
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
+	[sliderTmp setAlpha:1];
+	//[sliderTmp setOpaque:NO];
+	[UIView commitAnimations];
+	
+}
+
+
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
 	if(textField == fieldTmp) {
