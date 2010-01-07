@@ -27,6 +27,7 @@
 		camera = [theOwner camera];
 		location = [appDelegate location];
 		objectManager = [appDelegate objectManager];
+		
 		//[objectManager setRenderer:self];
 		interface = [[SRInterface alloc] initWithRenderer:self];
 		
@@ -59,7 +60,6 @@
 		//FIXME: verplaats naar app delegate		
 		glClearColor(0.0, 0.05, 0.08, 1.0);
 
-		[self loadPlanetPoints];
 		
 		glEnable(GL_POINT_SMOOTH);
 		//glEnable (GL_LINE_SMOOTH);
@@ -69,11 +69,18 @@
 		glEnable(GL_VERTEX_ARRAY);
 		
 		glLoadIdentity(); 
-		[self loadStarPoints];
-		[self loadMessier];
 		
+
+		[self performSelector:@selector(loadData:) withObject:self afterDelay:0.0];
 	}
 	return self;
+}
+
+-(void)loadData:(id)aSender {
+	[objectManager parseData];
+	[self loadPlanetPoints];		
+	[self loadStarPoints];
+	[self loadMessier];
 }
 
 -(void)loadPlanetPoints {

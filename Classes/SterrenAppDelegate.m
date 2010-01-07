@@ -37,7 +37,6 @@
 	location = [[SRLocation alloc] init];
 	timeManager = [[SRTimeManager alloc] init];
 	settingsManager = [[SRSettingsManager alloc] init];
-	[objectManager parseData];
 	
 	// Loading screen annimation;
 	glView.animationInterval = 1.0 / kRenderingFrequency;
