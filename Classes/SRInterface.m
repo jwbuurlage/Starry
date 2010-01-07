@@ -590,7 +590,7 @@
 		else if(clicker == @"arrow") {
 			BOOL sliderHide = NO;
 			if(sliderVisible) {
-				[self hideSliderWith:@"down"];
+				[self hideSliderWith:@"fade"];
 				sliderHide = YES;
 			}
 			flagToggle = YES;
@@ -914,9 +914,17 @@
 	
 	if(aInterface) {
 		if(interfaceDown) {
-			xTranslate += 7 * (timeElapsed / 0.05); }
+			xTranslate += 7 * (timeElapsed / 0.05); 
+			if (slider) {
+				[slider setTransform:CGAffineTransformTranslate([slider transform], 0, -7 * (timeElapsed / 0.05))];
+			}
+		}
 		else {
-			xTranslate -= 7 * (timeElapsed / 0.05); }
+			xTranslate -= 7 * (timeElapsed / 0.05);
+			if (slider) {
+				[slider setTransform:CGAffineTransformTranslate([slider transform], 0, 7 * (timeElapsed / 0.05))];
+			}
+		}
 		
 		if(xTranslate >= 63.0) {
 			aInterface = FALSE;
@@ -1056,7 +1064,11 @@
 		[slider addTarget:self action:@selector(sliderChanged) forControlEvents:UIControlEventValueChanged];
 		[slider setValue:[[appDelegate settingsManager] brightnessFactor]];
 	}
-	if (![method isEqualToString:@"up"]) {
+	if ([method isEqualToString:@"up"]) {
+		[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 63)];
+		[slider setAlpha:0];
+	}
+	else {
 		[slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
 		[slider setAlpha:0];
 	}
@@ -1068,13 +1080,13 @@
 	}
 	
 	[UIView beginAnimations:nil context:NULL];
-	if ([method isEqualToString:@"up"]) {
+	/*if ([method isEqualToString:@"up"]) {
 		[UIView setAnimationDuration:0.50];
 		[slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
 	}
-	else {
+	else {*/
 		[UIView setAnimationDuration:0.3];
-	}
+	//}
 	[slider setAlpha:1];
 	[UIView commitAnimations];
 	sliderVisible = YES;
@@ -1092,11 +1104,11 @@
 		[slider setAlpha:0];
 		
 	}
-	else if ([method isEqualToString:@"down"]) {
+	/*else if ([method isEqualToString:@"down"]) {
 		[UIView setAnimationDuration:0.50]; // 0.3 lijkt even snel te zijn als het keyboard.
 		[slider setTransform:CGAffineTransformTranslate([slider transform], 0, 63)];
 		[slider setAlpha:0];
-	}
+	}*/
 	else {
 		[UIView setAnimationDuration:0.3];
 		[slider setAlpha:0];
