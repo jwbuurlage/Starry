@@ -657,7 +657,7 @@
 				[[appDelegate settingsManager] setShowRedOverlay:FALSE];
 			}
 		}
-		else if(clicker == @"brightness_plus") {
+		/*else if(clicker == @"brightness_plus") {
 			double brightness = [[appDelegate settingsManager] brightnessFactor];
 			brightness += 0.1;
 			[[appDelegate settingsManager] setBrightnessFactor:brightness];
@@ -666,7 +666,7 @@
 			double brightness = [[appDelegate settingsManager] brightnessFactor];
 			brightness -= 0.1;
 			[[appDelegate settingsManager] setBrightnessFactor:brightness];
-		}		
+		}*/		
 		else if(clicker == @"planet_labels") {
 			BOOL planetLabels = [[appDelegate settingsManager] showPlanetLabels];
 			if(planetLabels) {
@@ -1051,6 +1051,10 @@
 	if (!slider) {
 		slider = [[UISlider alloc] initWithFrame:CGRectMake(-32, 168, 125, 23)];
 		justCreated = YES;
+		[slider setMinimumValue:0.5];
+		[slider setMaximumValue:3];
+		[slider addTarget:self action:@selector(sliderChanged) forControlEvents:UIControlEventValueChanged];
+		[slider setValue:[[appDelegate settingsManager] brightnessFactor]];
 	}
 	if (![method isEqualToString:@"up"]) {
 		[slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
@@ -1064,7 +1068,6 @@
 	}
 	
 	[UIView beginAnimations:nil context:NULL];
-	 // 0.3 lijkt even snel te zijn als het keyboard.
 	if ([method isEqualToString:@"up"]) {
 		[UIView setAnimationDuration:0.50];
 		[slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
@@ -1082,28 +1085,34 @@
 	if(slider && sliderVisible) {
 	NSLog(@"Hide slider");
 	[slider setAlpha:1];
+	[UIView beginAnimations:nil context:NULL];
 	if([method isEqualToString:@"fade"]) {
-		[UIView beginAnimations:nil context:NULL];
+		
 		[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
 		[slider setAlpha:0];
-		[UIView commitAnimations];
+		
 	}
 	else if ([method isEqualToString:@"down"]) {
-		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.50]; // 0.3 lijkt even snel te zijn als het keyboard.
 		[slider setTransform:CGAffineTransformTranslate([slider transform], 0, 63)];
 		[slider setAlpha:0];
-		[UIView commitAnimations];
 	}
 	else {
+		[UIView setAnimationDuration:0.3];
 		[slider setAlpha:0];
 	}
-	[[appDelegate uiElementsView] setHidden:YES];
+	[UIView commitAnimations];
 	//[slider removeFromSuperview];
 	//[slider release];
 	//[[appDelegate uiElementsView] setHidden:YES];
 	}
 	sliderVisible = NO;
+}
+
+-(void)sliderChanged {
+	if(slider) {
+		[[appDelegate settingsManager] setBrightnessFactor:[slider value]];
+	}
 }
 
 

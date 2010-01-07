@@ -152,5 +152,7 @@
 
 -(void)showSliderWith:(NSString*)method;
 -(void)hideSliderWith:(NSString*)method;
+-(void)sliderChanged;
+
 
 @end
