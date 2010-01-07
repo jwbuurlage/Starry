@@ -175,6 +175,9 @@
 		[[[objectManager planets] objectAtIndex:7] positionHelio].x, 
 		[[[objectManager planets] objectAtIndex:7] positionHelio].y, 
 		[[[objectManager planets] objectAtIndex:7] positionHelio].z,
+		[[[objectManager planets] objectAtIndex:8] positionHelio].x, 
+		[[[objectManager planets] objectAtIndex:8] positionHelio].y, 
+		[[[objectManager planets] objectAtIndex:8] positionHelio].z,
 		[[[objectManager planets] objectAtIndex:0] positionHelio].x, 
 		[[[objectManager planets] objectAtIndex:0] positionHelio].y, 
 		[[[objectManager planets] objectAtIndex:0] positionHelio].z,
@@ -186,7 +189,7 @@
     glColorPointer(4, GL_FLOAT, 32, &planetPoints[3]);
 	
 	GLfloat size = 0;
-	while(i <= 9) {
+	while(i <= 10) {
 		size = planetPoints[(i*8)+7];
 		glPointSize(size);
 		
@@ -199,7 +202,7 @@
 				glBindTexture(GL_TEXTURE_2D, textures[5]);
 			}
 			else { // Bij planeten laad de planeet texture in
-				if(i == 9) { 
+				if(i == 10) { 
 					glPointSize(size * ([camera zoomingValue] / 3));
 				}
 				else {

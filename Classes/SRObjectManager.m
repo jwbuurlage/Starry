@@ -160,8 +160,17 @@
 	
 		[planets addObject:neptune];
 		[neptune release];
-	
-		//
+		
+		SRPlanetaryObject *pluto = [[SRPlanetaryObject alloc] initWitha:39.543		
+																		e:0.2490		
+																		i:17.140
+																		w:113.768
+																		o:110.307
+																	   Mo:14.882
+																	 name:@"Pluto"];
+		
+		[planets addObject:pluto];
+		[pluto release];
 	}
 	
 	[sun recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
@@ -195,12 +204,14 @@
 		[[planets objectAtIndex:6] position].x, [[planets objectAtIndex:6] position].y, [[planets objectAtIndex:6] position].z,	0.5, 0.5, 1.0, 1.0, 5.0,
 		// Neptunus
 		[[planets objectAtIndex:7] position].x, [[planets objectAtIndex:7] position].y, [[planets objectAtIndex:7] position].z,	0.2, 0.2, 1.0, 1.0, 5.0,
+		//Pluto
+		[[planets objectAtIndex:8] position].x, [[planets objectAtIndex:8] position].y, [[planets objectAtIndex:8] position].z,	0.4, 0.2, 0.2, 1.0, 4.0,
 		// Aaarde voor planetView
 		0.0, 0.0, 0.0,	0.4, 0.4, 1.0, 1.0, 10.0
 
 	};
 	
-	planetNum = 10;
+	planetNum = 11;
 	
 	if (planetPoints) {
 		[planetPoints release];
