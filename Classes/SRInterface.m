@@ -915,24 +915,26 @@
 	if(aInterface) {
 		if(interfaceDown) {
 			xTranslate += 7 * (timeElapsed / 0.05); 
-			if (slider) {
+			if (slider)
 				[slider setTransform:CGAffineTransformTranslate([slider transform], 0, -7 * (timeElapsed / 0.05))];
-			}
 		}
 		else {
 			xTranslate -= 7 * (timeElapsed / 0.05);
-			if (slider) {
+			if (slider)
 				[slider setTransform:CGAffineTransformTranslate([slider transform], 0, 7 * (timeElapsed / 0.05))];
-			}
 		}
 		
 		if(xTranslate >= 63.0) {
 			aInterface = FALSE;
 			xTranslate = 63;
+			if (slider)
+				[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 0)];
 		}
 		else if(xTranslate < 0.0) {
 			aInterface = FALSE;
 			xTranslate = 0;
+			if (slider)
+				[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 63)];
 		}
 	}
 	
