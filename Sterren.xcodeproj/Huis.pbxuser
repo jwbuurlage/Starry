@@ -145,6 +145,16 @@
 			ACB60BB810F6697A00FD2097 /* PBXTextBookmark */ = ACB60BB810F6697A00FD2097 /* PBXTextBookmark */;
 			ACB60BBC10F6699B00FD2097 /* PBXTextBookmark */ = ACB60BBC10F6699B00FD2097 /* PBXTextBookmark */;
 			ACB60BBF10F669AB00FD2097 /* PBXTextBookmark */ = ACB60BBF10F669AB00FD2097 /* PBXTextBookmark */;
+			ACB60BC810F66B2F00FD2097 /* PBXTextBookmark */ = ACB60BC810F66B2F00FD2097 /* PBXTextBookmark */;
+			ACB60BC910F66B2F00FD2097 /* XCBuildMessageTextBookmark */ = ACB60BC910F66B2F00FD2097 /* XCBuildMessageTextBookmark */;
+			ACB60BCA10F66B2F00FD2097 /* PBXTextBookmark */ = ACB60BCA10F66B2F00FD2097 /* PBXTextBookmark */;
+			ACB60BCE10F66B5000FD2097 /* PBXTextBookmark */ = ACB60BCE10F66B5000FD2097 /* PBXTextBookmark */;
+			ACB60BCF10F66B5800FD2097 /* PBXTextBookmark */ = ACB60BCF10F66B5800FD2097 /* PBXTextBookmark */;
+			ACB60BD110F66B5800FD2097 /* PBXTextBookmark */ = ACB60BD110F66B5800FD2097 /* PBXTextBookmark */;
+			ACB60BD210F66B6900FD2097 /* PBXTextBookmark */ = ACB60BD210F66B6900FD2097 /* PBXTextBookmark */;
+			ACB60BD310F66B6900FD2097 /* PBXTextBookmark */ = ACB60BD310F66B6900FD2097 /* PBXTextBookmark */;
+			ACB60BD410F66B6900FD2097 /* PBXTextBookmark */ = ACB60BD410F66B6900FD2097 /* PBXTextBookmark */;
+			ACB60BD510F66B6900FD2097 /* PBXTextBookmark */ = ACB60BD510F66B6900FD2097 /* PBXTextBookmark */;
 			ACD34E9F10F5336400EBEBBF = ACD34E9F10F5336400EBEBBF /* PBXTextBookmark */;
 			ACD34EA510F5338400EBEBBF = ACD34EA510F5338400EBEBBF /* PBXTextBookmark */;
 			ACD34EA910F6497000EBEBBF = ACD34EA910F6497000EBEBBF /* PBXTextBookmark */;
@@ -326,14 +336,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1344, 936}}";
 			sepNavSelRange = "{629, 0}";
-			sepNavVisRange = "{470, 1192}";
+			sepNavVisRange = "{470, 1187}";
 		};
 	};
 	76179CF310CA61D500768180 /* SRObjectManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1615, 3926}}";
-			sepNavSelRange = "{7202, 0}";
-			sepNavVisRange = "{6686, 557}";
+			sepNavIntBoundsRect = "{{0, 0}, {1344, 4056}}";
+			sepNavSelRange = "{1166, 0}";
+			sepNavVisRange = "{512, 1634}";
 		};
 	};
 	7644564F10C5837800AB935D /* SRSettingsModule.h */ = {
@@ -526,9 +536,9 @@
 	};
 	AC55F121109600990021D39C /* SRInterface.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1510, 20007}}";
-			sepNavSelRange = "{34720, 0}";
-			sepNavVisRange = "{18003, 1394}";
+			sepNavIntBoundsRect = "{{0, 0}, {1615, 19548}}";
+			sepNavSelRange = "{45826, 0}";
+			sepNavVisRange = "{45408, 790}";
 			sepNavWindowFrame = "{{19, 0}, {996, 1028}}";
 		};
 	};
@@ -889,6 +899,110 @@
 		vrLen = 2222;
 		vrLoc = 1829;
 	};
+	ACB60BC810F66B2F00FD2097 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 77";
+		rLen = 0;
+		rLoc = 3007;
+		rType = 0;
+		vrLen = 2262;
+		vrLoc = 1829;
+	};
+	ACB60BC910F66B2F00FD2097 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Request for member 'x' in something not a structure or union";
+		fRef = AC55F121109600990021D39C /* SRInterface.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 1375;
+		rType = 1;
+	};
+	ACB60BCA10F66B2F00FD2097 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC55F121109600990021D39C /* SRInterface.m */;
+		name = "SRInterface.m: 1376";
+		rLen = 0;
+		rLoc = 45826;
+		rType = 0;
+		vrLen = 1980;
+		vrLoc = 45186;
+	};
+	ACB60BCE10F66B5000FD2097 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC55F121109600990021D39C /* SRInterface.m */;
+		name = "SRInterface.m: 1376";
+		rLen = 0;
+		rLoc = 45826;
+		rType = 0;
+		vrLen = 1980;
+		vrLoc = 45186;
+	};
+	ACB60BCF10F66B5800FD2097 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB60BD010F66B5800FD2097 /* asm __dyld__dyld_start  0x2fe01028 */;
+		name = "asm __dyld__dyld_start  0x2fe01028: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 0;
+	};
+	ACB60BD010F66B5800FD2097 /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	ACB60BD110F66B5800FD2097 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC55F121109600990021D39C /* SRInterface.m */;
+		name = "SRInterface.m: 1376";
+		rLen = 0;
+		rLoc = 45826;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 45408;
+	};
+	ACB60BD210F66B6900FD2097 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC55F121109600990021D39C /* SRInterface.m */;
+		name = "SRInterface.m: 1376";
+		rLen = 0;
+		rLoc = 45826;
+		rType = 0;
+		vrLen = 1603;
+		vrLoc = 33197;
+	};
+	ACB60BD310F66B6900FD2097 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF210CA61D500768180 /* SRObjectManager.h */;
+		name = "SRObjectManager.h: 31";
+		rLen = 0;
+		rLoc = 629;
+		rType = 0;
+		vrLen = 1187;
+		vrLoc = 470;
+	};
+	ACB60BD410F66B6900FD2097 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 228";
+		rLen = 0;
+		rLoc = 7202;
+		rType = 0;
+		vrLen = 1284;
+		vrLoc = 6914;
+	};
+	ACB60BD510F66B6900FD2097 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76179CF310CA61D500768180 /* SRObjectManager.m */;
+		name = "SRObjectManager.m: 46";
+		rLen = 0;
+		rLoc = 1166;
+		rType = 0;
+		vrLen = 1634;
+		vrLoc = 512;
+	};
 	ACB7B0F910615ACD00CA447E /* Sterren */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -960,8 +1074,8 @@
 	ACB7B16B10615F4F00CA447E /* SRRenderer.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1344, 8294}}";
-			sepNavSelRange = "{2986, 0}";
-			sepNavVisRange = "{1829, 2222}";
+			sepNavSelRange = "{3007, 0}";
+			sepNavVisRange = "{1829, 2262}";
 			sepNavWindowFrame = "{{547, 0}, {996, 1028}}";
 		};
 	};
@@ -1003,7 +1117,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1178";
 		rLen = 0;
-		rLoc = 39520;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2152;
 		vrLoc = 37750;
@@ -1013,7 +1127,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1178";
 		rLen = 0;
-		rLoc = 39520;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2152;
 		vrLoc = 37750;
@@ -1023,7 +1137,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1189";
 		rLen = 0;
-		rLoc = 39877;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2941;
 		vrLoc = 37750;
@@ -1191,7 +1305,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1289";
 		rLen = 0;
-		rLoc = 44366;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2154;
 		vrLoc = 42580;
@@ -1349,7 +1463,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1289";
 		rLen = 0;
-		rLoc = 44366;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2062;
 		vrLoc = 42580;
@@ -1359,7 +1473,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 207";
 		rLen = 0;
-		rLoc = 8342;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2086;
 		vrLoc = 17724;
@@ -1411,7 +1525,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 518";
 		rLen = 0;
-		rLoc = 18507;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 856;
 		vrLoc = 17724;
@@ -1420,8 +1534,8 @@
 		isa = PBXTextBookmark;
 		comments = "Expected ']' before ';' token";
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
-		rLen = 1;
-		rLoc = 204;
+		rLen = 0;
+		rLoc = 202;
 		rType = 1;
 	};
 	ACD34F1A10F65B2900EBEBBF /* PBXTextBookmark */ = {
@@ -1429,7 +1543,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 205";
 		rLen = 0;
-		rLoc = 8263;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2012;
 		vrLoc = 6885;
@@ -1439,7 +1553,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 205";
 		rLen = 0;
-		rLoc = 8149;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2013;
 		vrLoc = 6885;
@@ -1449,7 +1563,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 205";
 		rLen = 0;
-		rLoc = 8149;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2013;
 		vrLoc = 6885;
@@ -1527,7 +1641,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 205";
 		rLen = 0;
-		rLoc = 8149;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2062;
 		vrLoc = 6883;
@@ -1537,7 +1651,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 204";
 		rLen = 0;
-		rLoc = 8069;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1962;
 		vrLoc = 6983;
@@ -1547,7 +1661,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 204";
 		rLen = 0;
-		rLoc = 8053;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1903;
 		vrLoc = 7077;
@@ -1557,7 +1671,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 204";
 		rLen = 0;
-		rLoc = 8060;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2015;
 		vrLoc = 6883;
@@ -1567,7 +1681,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 343";
 		rLen = 0;
-		rLoc = 13328;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1062;
 		vrLoc = 12534;
@@ -1577,7 +1691,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 205";
 		rLen = 0;
-		rLoc = 8156;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2138;
 		vrLoc = 6615;
@@ -1587,7 +1701,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 204";
 		rLen = 0;
-		rLoc = 8060;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1013;
 		vrLoc = 13305;
@@ -1597,7 +1711,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 343";
 		rLen = 0;
-		rLoc = 13325;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 12814;
@@ -1607,7 +1721,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 204";
 		rLen = 0;
-		rLoc = 8060;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2040;
 		vrLoc = 6849;
@@ -1617,7 +1731,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 204";
 		rLen = 0;
-		rLoc = 8055;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2062;
 		vrLoc = 6885;
@@ -1627,7 +1741,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 204";
 		rLen = 0;
-		rLoc = 8055;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1905;
 		vrLoc = 7077;
@@ -1637,7 +1751,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 204";
 		rLen = 0;
-		rLoc = 8060;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1842;
 		vrLoc = 7154;
@@ -1647,7 +1761,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 204";
 		rLen = 0;
-		rLoc = 8060;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1925;
 		vrLoc = 7159;
@@ -1657,7 +1771,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 205";
 		rLen = 0;
-		rLoc = 8163;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1951;
 		vrLoc = 7159;
@@ -1707,7 +1821,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 205";
 		rLen = 0;
-		rLoc = 8163;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1854;
 		vrLoc = 7256;
@@ -1717,7 +1831,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 342";
 		rLen = 0;
-		rLoc = 13284;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1270;
 		vrLoc = 12826;
@@ -1737,7 +1851,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1046";
 		rLen = 0;
-		rLoc = 33977;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1770;
 		vrLoc = 33809;
@@ -1747,7 +1861,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1048";
 		rLen = 0;
-		rLoc = 34007;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1758;
 		vrLoc = 34365;
@@ -1757,7 +1871,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1425";
 		rLen = 0;
-		rLoc = 49526;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1645;
 		vrLoc = 48405;
@@ -1767,7 +1881,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1425";
 		rLen = 0;
-		rLoc = 49526;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1621;
 		vrLoc = 48436;
@@ -1777,7 +1891,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1425";
 		rLen = 0;
-		rLoc = 49526;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1631;
 		vrLoc = 48405;
@@ -1787,7 +1901,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1057";
 		rLen = 0;
-		rLoc = 34720;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1394;
 		vrLoc = 18003;
@@ -1797,7 +1911,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1057";
 		rLen = 0;
-		rLoc = 34720;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1394;
 		vrLoc = 18003;
@@ -2389,7 +2503,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 318";
 		rLen = 0;
-		rLoc = 12752;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 1395;
 		vrLoc = 11556;
@@ -2399,7 +2513,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1178";
 		rLen = 0;
-		rLoc = 39520;
+		rLoc = 7965;
 		rType = 0;
 		vrLen = 2109;
 		vrLoc = 37750;

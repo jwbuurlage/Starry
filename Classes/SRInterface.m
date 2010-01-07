@@ -1373,7 +1373,7 @@
 					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
 					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
 					
-					Vertex3D position = Vertex3DMake([foundStar.x floatValue],[foundStar.y floatValue],[foundStar.z floatValue]);
+					Vertex3D position = foundStar.position;
 					
 					[renderer setHighlightPosition:position];
 					[renderer setSelectedStar:foundStar];

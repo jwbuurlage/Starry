@@ -284,7 +284,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>51</integer>
+									<integer>41</integer>
+									<integer>21</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -307,7 +308,7 @@
 							<real>249</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>4 35 1676 993 0 0 1680 1028 </string>
+						<string>3 35 1676 993 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -325,7 +326,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRRenderer.m</string>
+								<string>SRInterface.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -333,11 +334,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRRenderer.m</string>
+										<string>SRInterface.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ACB60BBF10F669AB00FD2097</string>
+										<string>ACB60BCA10F66B2F00FD2097</string>
 										<key>history</key>
 										<array>
 											<string>AC1EE9CC10F2A5B500EAE5C4</string>
@@ -394,7 +395,6 @@
 											<string>ACD34F2810F65B9600EBEBBF</string>
 											<string>ACD34F2910F65B9600EBEBBF</string>
 											<string>ACD34F5E10F65DC000EBEBBF</string>
-											<string>ACD34F6D10F65F6000EBEBBF</string>
 											<string>ACD34F6F10F65F6000EBEBBF</string>
 											<string>ACD34F7010F65F6000EBEBBF</string>
 											<string>ACD34F7410F65FEA00EBEBBF</string>
@@ -404,7 +404,8 @@
 											<string>ACB60BA410F6691000FD2097</string>
 											<string>ACB60BA510F6691000FD2097</string>
 											<string>ACB60BA610F6691000FD2097</string>
-											<string>ACD34F0C10F65AC000EBEBBF</string>
+											<string>ACB60BC810F66B2F00FD2097</string>
+											<string>ACB60BC910F66B2F00FD2097</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -418,18 +419,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1405, 947}}</string>
+								<string>{{0, 0}, {1405, 663}}</string>
 								<key>RubberWindowFrame</key>
-								<string>4 35 1676 993 0 0 1680 1028 </string>
+								<string>3 35 1676 993 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>947pt</string>
+							<string>663pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>0pt</string>
+							<string>284pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -444,8 +445,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1405, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>4 35 1676 993 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -500,6 +499,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1405, 257}}</string>
+										<key>RubberWindowFrame</key>
+										<string>3 35 1676 993 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -722,12 +723,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ACB60BC010F669AB00FD2097</string>
+		<string>ACB60BCB10F66B2F00FD2097</string>
+		<string>ACB60BCC10F66B2F00FD2097</string>
 		<string>ACB60BB210F6691000FD2097</string>
 		<string>/Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>4 35 1676 993 0 0 1680 1028 </string>
+	<string>3 35 1676 993 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
