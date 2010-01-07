@@ -219,6 +219,7 @@
 		ACC4934C10CD6A8D00DC7967 /* SRMoon.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC4934B10CD6A8D00DC7967 /* SRMoon.m */; };
 		ACC493A210CD777600DC7967 /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = ACC493A110CD777600DC7967 /* moon.png */; };
 		ACCE96CB10E3EAFC0089EF62 /* Texture3D.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCE96CA10E3EAFC0089EF62 /* Texture3D.m */; };
+		ACD34EBB10F64EB400EBEBBF /* Pluto.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD34EBA10F64EB400EBEBBF /* Pluto.png */; };
 		ACD3B9EA10F4FF1B007CD4C7 /* planetLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3B9E910F4FF1B007CD4C7 /* planetLabel.png */; };
 		ACD3BA1C10F509C7007CD4C7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BA1B10F509C7007CD4C7 /* close.png */; };
 		ACD3BA4C10F50C1E007CD4C7 /* add_list.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BA4B10F50C1E007CD4C7 /* add_list.png */; };
@@ -485,6 +486,7 @@
 		ACC493A110CD777600DC7967 /* moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moon.png; path = Resources/moon.png; sourceTree = "<group>"; };
 		ACCE96C910E3EAFC0089EF62 /* Texture3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture3D.h; sourceTree = "<group>"; };
 		ACCE96CA10E3EAFC0089EF62 /* Texture3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture3D.m; sourceTree = "<group>"; };
+		ACD34EBA10F64EB400EBEBBF /* Pluto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pluto.png; path = Resources/planets/Pluto.png; sourceTree = "<group>"; };
 		ACD3B9E910F4FF1B007CD4C7 /* planetLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planetLabel.png; path = Resources/planetLabel.png; sourceTree = "<group>"; };
 		ACD3BA1B10F509C7007CD4C7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = Resources/close.png; sourceTree = "<group>"; };
 		ACD3BA4B10F50C1E007CD4C7 /* add_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_list.png; path = Resources/add_list.png; sourceTree = "<group>"; };
@@ -726,6 +728,7 @@
 			children = (
 				ACBF30A710E8057F00CE5FBA /* Jupiter.png */,
 				ACBF30A810E8057F00CE5FBA /* Mars.png */,
+				ACD34EBA10F64EB400EBEBBF /* Pluto.png */,
 				ACBF30A910E8057F00CE5FBA /* Mercury.png */,
 				ACBF30AA10E8057F00CE5FBA /* Neptune.png */,
 				ACBF30AB10E8057F00CE5FBA /* Saturn.png */,
@@ -1160,6 +1163,7 @@
 				ACD3BA4C10F50C1E007CD4C7 /* add_list.png in Resources */,
 				ACD3BB5D10F52AAD007CD4C7 /* pause.png in Resources */,
 				ACD3BBAC10F53199007CD4C7 /* positionOverlayIcon.png in Resources */,
+				ACD34EBB10F64EB400EBEBBF /* Pluto.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
