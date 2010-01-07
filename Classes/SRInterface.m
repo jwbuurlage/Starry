@@ -441,6 +441,7 @@
 	
 	if(showingMessier == TRUE) {
 		[messierInfo hide];
+		[self showSliderWith:@"fade"];
 		aMessier = YES;
 		clicker = @"messierinfo";
 		return TRUE;
@@ -448,6 +449,7 @@
 	
 	if(showingPlanet == TRUE) {
 		[planetInfo hide];
+		[self showSliderWith:@"fade"];
 		aPlanet = YES;
 		clicker = @"planetinfo";
 		return TRUE;
@@ -589,12 +591,12 @@
 		}
 		else if(clicker == @"arrow") {
 			BOOL sliderHide = NO;
-			if(sliderVisible) {
+			if(sliderVisible && [settingsModule visible]) {
 				[self hideSliderWith:@"down"];
 				sliderHide = YES;
 			}
 			flagToggle = YES;
-			if (slider && !sliderHide) {
+			if (slider && !sliderHide && [settingsModule visible]) {
 				[self showSliderWith:@"up"];
 				//NSLog(@"Show");
 			}
@@ -698,11 +700,13 @@
 		else if(clicker == @"info") {
 			if([theNameplate selectedType] == 0) {
 				[messierInfo show];
+				[self hideSliderWith:@"fade"];
 				aMessier = YES;
 				showingMessier = YES;
 			}
 			else if([theNameplate selectedType] == 1) {
 				[planetInfo show];
+				[self hideSliderWith:@"fade"];
 				aPlanet = YES;
 				showingPlanet = YES;				
 			}
@@ -914,17 +918,31 @@
 	
 	if(aInterface) {
 		if(interfaceDown) {
-			xTranslate += 7 * (timeElapsed / 0.05); }
+			xTranslate += 7 * (timeElapsed / 0.05); 
+			if (slider)
+				[slider setTransform:CGAffineTransformTranslate([slider transform], 0, -7 * (timeElapsed / 0.05))];
+		}
 		else {
-			xTranslate -= 7 * (timeElapsed / 0.05); }
+			xTranslate -= 7 * (timeElapsed / 0.05);
+			if (slider)
+				[slider setTransform:CGAffineTransformTranslate([slider transform], 0, 7 * (timeElapsed / 0.05))];
+		}
 		
 		if(xTranslate >= 63.0) {
 			aInterface = FALSE;
 			xTranslate = 63;
+			if (slider) {
+				[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 0)];
+				//sliderVisible = YES;
+			}
 		}
 		else if(xTranslate < 0.0) {
 			aInterface = FALSE;
 			xTranslate = 0;
+			if (slider) {
+				[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 63)];
+				//sliderVisible = NO;
+			}
 		}
 	}
 	
@@ -1049,14 +1067,23 @@
 	//NSLog(@"Bring up the Keyboard");
 	BOOL justCreated = NO;
 	if (!slider) {
-		slider = [[UISlider alloc] initWithFrame:CGRectMake(-32, 168, 125, 23)];
+		slider = [[UISlider alloc] initWithFrame:CGRectMake(-9, 148, 80, 23)];
+		[slider setThumbImage:[UIImage imageNamed:@"slider_normal.png"] forState:UIControlStateNormal];
+		[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted.png"] forState:UIControlStateHighlighted];
+		[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max.png"] forState:UIControlStateNormal];
+		[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min.png"] forState:UIControlStateNormal];
+		
 		justCreated = YES;
 		[slider setMinimumValue:0.5];
 		[slider setMaximumValue:3];
 		[slider addTarget:self action:@selector(sliderChanged) forControlEvents:UIControlEventValueChanged];
 		[slider setValue:[[appDelegate settingsManager] brightnessFactor]];
 	}
-	if (![method isEqualToString:@"up"]) {
+	if ([method isEqualToString:@"up"]) {
+		//[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 63)];
+		[slider setAlpha:0];
+	}
+	else {
 		[slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
 		[slider setAlpha:0];
 	}
@@ -1068,13 +1095,13 @@
 	}
 	
 	[UIView beginAnimations:nil context:NULL];
-	if ([method isEqualToString:@"up"]) {
-		[UIView setAnimationDuration:0.50];
-		[slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
-	}
-	else {
-		[UIView setAnimationDuration:0.3];
-	}
+	/*if ([method isEqualToString:@"up"]) {
+	 [UIView setAnimationDuration:0.50];
+	 [slider setTransform:CGAffineTransformMakeRotation(M_PI / 2.0)];
+	 }
+	 else {*/
+	[UIView setAnimationDuration:0.3];
+	//}
 	[slider setAlpha:1];
 	[UIView commitAnimations];
 	sliderVisible = YES;
@@ -1083,21 +1110,16 @@
 
 -(void)hideSliderWith:(NSString*)method {
 	if(slider && sliderVisible) {
-		NSLog(@"Hide slider");
+		//NSLog(@"Hide slider");
 		[slider setAlpha:1];
 		[UIView beginAnimations:nil context:NULL];
 		if([method isEqualToString:@"fade"]) {
 			
-			[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
+			[UIView setAnimationDuration:0.3];
 			[slider setAlpha:0];
 			
 		}
 		else if ([method isEqualToString:@"down"]) {
-			[UIView setAnimationDuration:0.50]; // 0.3 lijkt even snel te zijn als het keyboard.
-			[slider setTransform:CGAffineTransformTranslate([slider transform], 0, 63)];
-			[slider setAlpha:0];
-		}
-		else {
 			[UIView setAnimationDuration:0.3];
 			[slider setAlpha:0];
 		}
@@ -1351,7 +1373,7 @@
 								NSLog(@"Griekse letter: %@",greekStrTmp);
 								greekStr = @"err";
 							}
-							NSString* numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length]-6)];
+							NSString* numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length] - 6)];
 							
 							[theNameplate setName:NSLocalizedString(foundStar.name, @"") inConstellation:[NSString stringWithFormat:@"%@ %@ %@",numberStr,greekStr,constellationStr] showInfo:YES];
 							//}

@@ -275,6 +275,7 @@
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>767820EA10F10CD3001ADE6D</string>
+								<string>ACB60BED10F67A3000FD2097</string>
 								<string>AC5769BD10E7F0DE0031505E</string>
 								<string>AC8A8A6E10C59FBD0015CDF5</string>
 								<string>ACB56B3810C41A2C0002842B</string>
@@ -284,14 +285,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>41</integer>
-									<integer>21</integer>
+									<integer>51</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 377}, {249, 934}}</string>
+							<string>{{0, 664}, {249, 934}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -326,7 +326,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRInterface.m</string>
+								<string>SRRenderer.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,15 +334,14 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRInterface.m</string>
+										<string>SRRenderer.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>ACB60BCA10F66B2F00FD2097</string>
+										<string>ACB60C1F10F67E9600FD2097</string>
 										<key>history</key>
 										<array>
 											<string>AC1EE9CC10F2A5B500EAE5C4</string>
-											<string>AC8AFB1310F3962800517901</string>
 											<string>AC8AFB8310F39DAC00517901</string>
 											<string>AC8AFC6F10F3D33A00517901</string>
 											<string>AC8AFC8210F3D7D600517901</string>
@@ -388,12 +387,10 @@
 											<string>ACD34EDD10F6596500EBEBBF</string>
 											<string>ACD34EE110F6596500EBEBBF</string>
 											<string>ACD34EE810F6597500EBEBBF</string>
-											<string>ACD34F0910F65AC000EBEBBF</string>
 											<string>ACD34F0A10F65AC000EBEBBF</string>
 											<string>ACD34F0B10F65AC000EBEBBF</string>
 											<string>ACD34F2610F65B9600EBEBBF</string>
 											<string>ACD34F2810F65B9600EBEBBF</string>
-											<string>ACD34F2910F65B9600EBEBBF</string>
 											<string>ACD34F5E10F65DC000EBEBBF</string>
 											<string>ACD34F6F10F65F6000EBEBBF</string>
 											<string>ACD34F7010F65F6000EBEBBF</string>
@@ -404,8 +401,12 @@
 											<string>ACB60BA410F6691000FD2097</string>
 											<string>ACB60BA510F6691000FD2097</string>
 											<string>ACB60BA610F6691000FD2097</string>
-											<string>ACB60BC810F66B2F00FD2097</string>
-											<string>ACB60BC910F66B2F00FD2097</string>
+											<string>ACB60BD310F66B6900FD2097</string>
+											<string>ACB60BD810F6753800FD2097</string>
+											<string>ACB60BE410F6776500FD2097</string>
+											<string>ACB60BFA10F67B0D00FD2097</string>
+											<string>ACB60C1D10F67E9600FD2097</string>
+											<string>ACB60C1E10F67E9600FD2097</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -419,18 +420,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1405, 663}}</string>
+								<string>{{0, 0}, {1405, 947}}</string>
 								<key>RubberWindowFrame</key>
 								<string>3 35 1676 993 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>663pt</string>
+							<string>947pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>284pt</string>
+							<string>0pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -498,7 +499,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1405, 257}}</string>
+										<string>{{10, 27}, {1405, -27}}</string>
 										<key>RubberWindowFrame</key>
 										<string>3 35 1676 993 0 0 1680 1028 </string>
 									</dict>
@@ -723,7 +724,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>ACB60BCB10F66B2F00FD2097</string>
 		<string>ACB60BCC10F66B2F00FD2097</string>
 		<string>ACB60BB210F6691000FD2097</string>
 		<string>/Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Sterren.xcodeproj</string>
