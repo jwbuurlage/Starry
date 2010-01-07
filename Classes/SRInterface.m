@@ -589,12 +589,12 @@
 		}
 		else if(clicker == @"arrow") {
 			BOOL sliderHide = NO;
-			if(sliderVisible) {
-				[self hideSliderWith:@"fade"];
+			if(sliderVisible && [settingsModule visible]) {
+				[self hideSliderWith:@"down"];
 				sliderHide = YES;
 			}
 			flagToggle = YES;
-			if (slider && !sliderHide) {
+			if (slider && !sliderHide && [settingsModule visible]) {
 				[self showSliderWith:@"up"];
 				//NSLog(@"Show");
 			}
@@ -929,7 +929,7 @@
 			xTranslate = 63;
 			if (slider) {
 				[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 0)];
-				sliderVisible = YES;
+				//sliderVisible = YES;
 			}
 		}
 		else if(xTranslate < 0.0) {
@@ -937,7 +937,7 @@
 			xTranslate = 0;
 			if (slider) {
 				[slider setTransform:CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI / 2.0), 0, 63)];
-				sliderVisible = NO;
+				//sliderVisible = NO;
 			}
 		}
 	}
@@ -1106,16 +1106,11 @@
 	[UIView beginAnimations:nil context:NULL];
 	if([method isEqualToString:@"fade"]) {
 		
-		[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
+		[UIView setAnimationDuration:0.3];
 		[slider setAlpha:0];
 		
 	}
-	/*else if ([method isEqualToString:@"down"]) {
-		[UIView setAnimationDuration:0.50]; // 0.3 lijkt even snel te zijn als het keyboard.
-		[slider setTransform:CGAffineTransformTranslate([slider transform], 0, 63)];
-		[slider setAlpha:0];
-	}*/
-	else {
+	else if ([method isEqualToString:@"down"]) {
 		[UIView setAnimationDuration:0.3];
 		[slider setAlpha:0];
 	}
