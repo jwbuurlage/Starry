@@ -8,6 +8,9 @@
 
 "WelcomeKey" = "Welkom nederlander!";
 
+//Search
+"Search" = "zoeken";
+
 // Location
 "Latitude" = "BREEDTEGRAAD";
 "Longitude" = "LENGTEGRAAD";
@@ -24,7 +27,7 @@
 "Date" = "DATUM";
 "Speed" = "SNELHEID";
 
-// Compas
+// Compass
 "comW" = "W";
 "comE" = "O";
 "comN" = "N";
@@ -34,6 +37,20 @@
 "Nameless star" = "Naamloze ster";
 "Nameless" = "Naamloos";
 "Polaris" = "Pool ster";
+
+//Messier typen
+"MT_1" = "Open hoop";
+"MT_2" = "Bolhoop";
+"MT_3" = "Plan. nevel";
+"MT_4" = "Nevel";
+"MT_5" = "Spiraalstelsel";
+"MT_6" = "Ell. stelsel";
+"MT_7" = "Onr. stelsel";
+"MT_8" = "S0 stelsel";
+"MT_9" = "Supernova";
+"MT_A" = "Asterisme";
+"MT_B" = "Melkwegstuk";
+"MT_C" = "Dubbelster";
 
 // Planeten namen
 "planet" = "planeet";

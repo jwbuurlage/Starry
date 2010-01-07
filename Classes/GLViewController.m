@@ -478,9 +478,9 @@
 						
 						
 						// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
-						xd = [[star x] floatValue]-stX;
-						yd = [[star y] floatValue]-stY;
-						zd = [[star z] floatValue]-stZ;
+						xd = [star position].x - stX;
+						yd = [star position].y -stY;
+						zd = [star position].z -stZ;
 						starD = sqrt(xd*xd + yd*yd + zd*zd);
 						
 						if ([star visibleWithZoom:zoomingValue]) {
@@ -553,7 +553,7 @@
 						[[[renderer interface] starInfo] starClicked:closestStar];
 						
 						
-						Vertex3D position = Vector3DMake([closestStar.x floatValue], [closestStar.y floatValue], [closestStar.z floatValue]);
+						Vertex3D position = Vector3DMake([closestStar position].x, [closestStar position].y, [closestStar position].z);
 						
 						[renderer setHighlightPosition:position];
 						[renderer setSelectedStar:closestStar];

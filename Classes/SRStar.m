@@ -17,16 +17,16 @@
 
 @implementation SRStar
 
-@synthesize name,bayer,x,y,z,mag,starID,ci,selected,hip,gliese;
+@synthesize name,bayer,position,mag,starID,ci,selected,hip,gliese;
 
 - (void) dealloc {
 	[name release];
 	[bayer release];
-	[x release];
+	/* [x release];
 	[y release];
-	[z release];
-	[mag release];
-	[ci release];
+	[z release]; */
+	//[mag release];
+	//[ci release];
 	//[starID release];
 	[super dealloc];
 }
@@ -102,19 +102,19 @@
 
 -(float)size {
 	float size;
-	if([mag floatValue] < 3) {
+	if(mag < 3) {
 		size = 4.0;
 	}
-	else if([mag floatValue] < 3) {
+	else if(mag < 3) {
 		size = 3.0;
 	}
-	else if([mag floatValue] < 4) {
+	else if(mag < 4) {
 		size = 2.0;
 	}
-	else if([mag floatValue] < 4.5) {
+	else if(mag < 4.5) {
 		size = 0.8;
 	}
-	else if([mag floatValue] < 5) {
+	else if(mag < 5) {
 		size = 0.5;
 	}
 	else {
@@ -128,23 +128,23 @@
 	//http://domeofthesky.com/clicks/bv.html
 	//color index: lager: blauwer, hoger: roder
 	StarColor color;
-	if([ci floatValue] > 1.2) {
+	if(ci > 1.2) {
 		//rood
 		color = StarColorMake(1.0f, 0.7f, 0.7f, [self alpha]);
 	}
-	else if([ci floatValue] > 0.7) {
+	else if(ci > 0.7) {
 		//oranje
 		color = StarColorMake(1.0, 0.8f, 0.7f, [self alpha]);
 	}
-	else if([ci floatValue] > 0.5) {
+	else if(ci > 0.5) {
 		//geel
 		color = StarColorMake(1.0f, 1.0f, 0.7f, [self alpha]);
 	}
-	else if([ci floatValue] > 0.25) {
+	else if(ci > 0.25) {
 		//geelachtig
 		color = StarColorMake(1.0f, 1.0f, 0.8f, [self alpha]);
 	}
-	else if([ci floatValue] > 0.0) {
+	else if(ci > 0.0) {
 		//wit
 		color = StarColorMake(1.0f, 1.0f, 1.0f, [self alpha]);
 	}
@@ -158,16 +158,16 @@
 
 -(float)alpha {
 	float alpha;
-	if([mag floatValue] < 1) {
+	if(mag < 1) {
 		alpha = 1.0;
 	}
-	else if([mag floatValue] < 2) {
+	else if(mag < 2) {
 		alpha = 0.7;
 	}
-	else if([mag floatValue] < 3) {
+	else if(mag  < 3) {
 		alpha = 0.5;
 	}
-	else if([mag floatValue] < 4) {
+	else if(mag  < 4) {
 		alpha = 0.4;
 	}
 	else {
@@ -178,9 +178,9 @@
 
 -(Vertex3D)myCurrentPosition {
 	
-	float brX = [x floatValue];
-	float brY = [y floatValue];
-	float brZ = [z floatValue];
+	float brX = position.x;
+	float brY = position.y;
+	float brZ = position.z;
 	
 	SterrenAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
 	float latitude = [[appDelegate location] latitude];
@@ -228,7 +228,7 @@
 }
 
 -(Vertex3D)position {
-	return Vertex3DMake([x floatValue],[y floatValue],[z floatValue]);
+	return position;
 }
 
 @end

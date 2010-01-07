@@ -200,6 +200,11 @@
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"indicator_overlay.png"]] 
 														  identifier:@"menu_overlay" 
 														   clickable:NO]];		
+	
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(176, -65, 128, 32) 
+															 texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Search", @"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+														  identifier:@"search_text" 
+														   clickable:NO]];		
 		
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(440, 8, 32, 32)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]] 
@@ -334,9 +339,16 @@
 			[[element texture] drawInRect:[element bounds]];
 		}
 		else if (menuVisible) {
-			glTranslatef(0, -yTranslate, 0);
-			[[element texture] drawInRect:[element bounds]];
-			glTranslatef(0, yTranslate, 0);
+			if([element identifier] == @"search_text" && ![currentlyEditingIdentifier isEqual:@"search"]) {
+				glColor4f(0.2f, 0.2f, 0.2f, 1.0f);
+				[[element texture] drawInRect:[element bounds]];
+				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+			}
+			else {
+				glTranslatef(0, -yTranslate, 0);
+				[[element texture] drawInRect:[element bounds]];
+				glTranslatef(0, yTranslate, 0);
+			}
 		}
 		
 		++i;
@@ -1030,7 +1042,7 @@
 	[UIView commitAnimations];
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
+- (void)textFieldDidEndEditing:(UITextField *)textField {	
 	if(textField == fieldTmp) {
 		// Hide de uiElementsView
 		[[appDelegate uiElementsView] setHidden:YES];
@@ -1042,6 +1054,7 @@
 		[UIView commitAnimations];
 		
 		NSString *aValue = [[NSString alloc] initWithString:[fieldTmp text]];
+		[[UIElements objectAtIndex:[UIElements count] - 2] setTexture:[[Texture2D alloc] initWithString:aValue dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0]];
 		
 		if	(currentlyEditingIdentifier == @"lat") {
 			[[locationModule locationManager] useStaticValues];
@@ -1286,7 +1299,7 @@
 					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
 					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
 					
-					Vertex3D position = Vertex3DMake([foundStar.x floatValue],[foundStar.y floatValue],[foundStar.z floatValue]);
+					Vertex3D position = Vertex3DMake([foundStar position].x,[foundStar position].y,[foundStar position].z);
 					
 					[renderer setHighlightPosition:position];
 					[renderer setSelectedStar:foundStar];
@@ -1415,6 +1428,8 @@
 		//[fieldTmp release]; /* FIXME Werkt niet als ik fieldTmp hier release maar anders hebben we een leak */
 		[aValue release];
 	}
+	
+	currentlyEditingIdentifier = nil;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

@@ -114,9 +114,26 @@
 			[aStar release];
 			aStar = nil;
 		}
+		else if([elementName isEqualToString:@"x"]) {
+			aPoint.x = [currentElementValue floatValue];
+		}
+		else if([elementName isEqualToString:@"y"]) {
+			aPoint.y = [currentElementValue floatValue];
+		}		
+		else if([elementName isEqualToString:@"z"]) {
+			aPoint.z = [currentElementValue floatValue];
+			[aStar setPosition:aPoint];
+		}	
+		else if([elementName isEqualToString:@"mag"]) {
+			[aStar setMag:[currentElementValue floatValue]];
+		}			
+		else if([elementName isEqualToString:@"ci"]) {
+			[aStar setCi:[currentElementValue floatValue]];
+		}	
 		else {
 			[aStar setValue:currentElementValue forKey:elementName];
 		}
+		
 	}
 	else if (constellations) {
 		if([elementName isEqualToString:@"constellations"])
@@ -188,18 +205,18 @@
 			[aMessier setConstellation:currentElementValue];
 		}		
 		else if([elementName isEqualToString:@"type"]) {
-			if([currentElementValue isEqualToString:@"1"]) { [aMessier setType:@"Open hoop"]; }
-			if([currentElementValue isEqualToString:@"2"]) { [aMessier setType:@"Bolhoop"]; }
-			if([currentElementValue isEqualToString:@"3"]) { [aMessier setType:@"Plan. nevel"]; }
-			if([currentElementValue isEqualToString:@"4"]) { [aMessier setType:@"Nevel"]; }
-			if([currentElementValue isEqualToString:@"5"]) { [aMessier setType:@"Spiraalstelsel"]; }
-			if([currentElementValue isEqualToString:@"6"]) { [aMessier setType:@"Ell. stelsel"]; }
-			if([currentElementValue isEqualToString:@"7"]) { [aMessier setType:@"Onr. stelsel"]; }
-			if([currentElementValue isEqualToString:@"8"]) { [aMessier setType:@"S0 stelsel"]; }
-			if([currentElementValue isEqualToString:@"9"]) { [aMessier setType:@"Supernova"]; }
-			if([currentElementValue isEqualToString:@"A"]) { [aMessier setType:@"Asterisme"]; }
-			if([currentElementValue isEqualToString:@"B"]) { [aMessier setType:@"Melkwegstuk"]; }
-			if([currentElementValue isEqualToString:@"C"]) { [aMessier setType:@"Dubbelster"]; }
+			if([currentElementValue isEqualToString:@"1"]) { [aMessier setType:@"MT_1"]; }
+			if([currentElementValue isEqualToString:@"2"]) { [aMessier setType:@"MT_2"]; }
+			if([currentElementValue isEqualToString:@"3"]) { [aMessier setType:@"MT_3"]; }
+			if([currentElementValue isEqualToString:@"4"]) { [aMessier setType:@"MT_4"]; }
+			if([currentElementValue isEqualToString:@"5"]) { [aMessier setType:@"MT_5"]; }
+			if([currentElementValue isEqualToString:@"6"]) { [aMessier setType:@"MT_6"]; }
+			if([currentElementValue isEqualToString:@"7"]) { [aMessier setType:@"MT_7"]; }
+			if([currentElementValue isEqualToString:@"8"]) { [aMessier setType:@"MT_8"]; }
+			if([currentElementValue isEqualToString:@"9"]) { [aMessier setType:@"MT_9"]; }
+			if([currentElementValue isEqualToString:@"A"]) { [aMessier setType:@"MT_A"]; }
+			if([currentElementValue isEqualToString:@"B"]) { [aMessier setType:@"MT_B"]; }
+			if([currentElementValue isEqualToString:@"C"]) { [aMessier setType:@"MT_C"]; }
 		}
 		else if([elementName isEqualToString:@"ra"]) {
 			[aMessier setRA:currentElementValue];

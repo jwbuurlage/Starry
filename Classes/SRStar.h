@@ -38,11 +38,15 @@ static inline StarColor StarColorMake(float inRed, float inGreen, float inBlue, 
 	NSString *bayer;
 	NSString *gliese;
 	NSString *hip;
-	NSString * x;
+	/* NSString * x;
 	NSString * y;
 	NSString * z;
 	NSString * mag;
-	NSString * ci;
+	NSString * ci; */
+	Vertex3D position;
+	float mag;
+	float ci;
+	
 	BOOL selected;
 	
 }
@@ -54,12 +58,15 @@ static inline StarColor StarColorMake(float inRed, float inGreen, float inBlue, 
 @property (nonatomic, retain) NSString * bayer;
 @property (nonatomic, retain) NSString * gliese;
 @property (nonatomic, retain) NSString * hip;
-@property (nonatomic, retain) NSString * x;
+/*@property (nonatomic, retain) NSString * x;
 @property (nonatomic, retain) NSString * y;
 @property (nonatomic, retain) NSString * z;
 @property (nonatomic, retain) NSString * ci;
-@property (nonatomic, retain) NSString * mag;
+@property (nonatomic, retain) NSString * mag;*/
 @property (nonatomic, readwrite) BOOL selected;
+@property (nonatomic, readwrite) Vertex3D position;
+@property (nonatomic, readwrite) float mag;
+@property (nonatomic, readwrite) float ci;
 
 -(BOOL)visibleWithZoom:(float)zoomf;
 -(float)size;

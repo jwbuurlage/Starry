@@ -109,9 +109,9 @@
 	for(star in [objectManager stars]) {
 		if(star.name != @"Sol") {
 			matrixStartPos = starNum * 8;
-			starPoints[matrixStartPos] = [star.x floatValue];
-			starPoints[matrixStartPos+1] = [star.y floatValue];
-			starPoints[matrixStartPos+2] = [star.z floatValue];
+			starPoints[matrixStartPos] = [star position].x;
+			starPoints[matrixStartPos+1] = [star position].y;
+			starPoints[matrixStartPos+2] = [star position].z;
 			starPoints[matrixStartPos+3] = [star color].red;
 			starPoints[matrixStartPos+4] = [star color].green;
 			starPoints[matrixStartPos+5] = [star color].blue;
@@ -119,22 +119,22 @@
 			//starPointsTmp[matrixStartPos+7] = [star size];
 			starPoints[matrixStartPos+7] = 0;
 			
-			if([[star mag] floatValue] < 2) {
+			if([star mag] < 2) {
 				++starSizeNumTmp[0];
 			}
-			else if ([[star mag] floatValue] < 3) {
+			else if ([star mag] < 3) {
 				starSizeNumTmp[1] += 1;
 			}
-			else if ([[star mag] floatValue] < 4) {
+			else if ([star mag] < 4) {
 				starSizeNumTmp[2] += 1;
 			}
-			else if ([[star mag] floatValue] < 4.5) {
+			else if ([star mag] < 4.5) {
 				starSizeNumTmp[3] += 1;
 			}
-			else if ([[star mag] floatValue] < 5) {
+			else if ([star mag] < 5) {
 				starSizeNumTmp[4] += 1;
 			}
-			else if ([[star mag] floatValue] < 7) {
+			else if ([star mag] < 7) {
 				starSizeNumTmp[5] += 1;
 			}
 			starNum++;

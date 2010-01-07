@@ -132,9 +132,9 @@
 	float azTmp = (180/M_PI)*atan2f(posForCam.y,posForCam.x);
 	float alTmp = 90-(180/M_PI)*acosf(-posForCam.z); 
 	
-	float raTmp = (180/M_PI)*atan2f([theStar.y floatValue]/20,[theStar.x floatValue]/20);
+	float raTmp = (180/M_PI)*atan2f([theStar position].y/20,[theStar position].x/20);
 	//NSLog(@"test raTmp %f",raTmp);
-	float decTmp = 90-(180/M_PI)*acosf([theStar.z floatValue]/20); 
+	float decTmp = 90-(180/M_PI)*acosf([theStar position].z/20); 
 	//NSLog(@"test decTmp %f",decTmp);
 	
 
@@ -233,7 +233,7 @@
 	[secondsNumber2 release];
 	
 	[[[elements objectAtIndex:[elements count] - 1] texture] release];
-	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[theStar mag] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%f",[theStar mag]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	
 	
 }

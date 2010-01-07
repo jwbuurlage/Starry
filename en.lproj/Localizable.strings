@@ -8,6 +8,9 @@
 
 "WelcomeKey" = "Welcome american!";
 
+//Search
+"Search" = "search";
+
 // Location
 "Latitude" = "LATITUDE";
 "Longitude" = "LONGITUDE";
@@ -24,7 +27,7 @@
 "Date" = "DATE";
 "Speed" = "SPEED";
 
-// Compas
+// Compass
 "comW" = "W";
 "comE" = "E";
 "comN" = "N";
@@ -33,6 +36,20 @@
 // Sterren namen
 "Nameless star" = "Nameless star";
 "Nameless" = "No name";
+
+//Messier typen
+"MT_1" = "Open cluster";
+"MT_2" = "Glob.. cluster";
+"MT_3" = "Plan. nebula";
+"MT_4" = "Nebula";
+"MT_5" = "Spiral Galaxy";
+"MT_6" = "Ell. galaxy";
+"MT_7" = "Irr. galaxy";
+"MT_8" = "S0 galaxy";
+"MT_9" = "Supernova";
+"MT_A" = "Asterism";
+"MT_B" = "Patch of the MW";
+"MT_C" = "Binary star";
 
 // Planeten namen
 "planet" = "planet";
