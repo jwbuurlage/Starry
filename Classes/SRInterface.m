@@ -967,6 +967,7 @@
 		if (alphaDefault <= 0.0) {
 			defaultTextureBool = FALSE;
 			aFade = FALSE;
+			NSLog(@"Application finished loading");
 		}	
 	}
 	if(bFade) {

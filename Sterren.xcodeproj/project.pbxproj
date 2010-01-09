@@ -25,6 +25,7 @@
 		761B454310F896F80018894A /* AQXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 761B454110F896F80018894A /* AQXMLParserDelegate.m */; };
 		761B459710F8A0970018894A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 761B459610F8A0970018894A /* libxml2.dylib */; };
 		761B45A510F8A0F90018894A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 761B45A410F8A0F90018894A /* CFNetwork.framework */; };
+		761B466C10F8B9E30018894A /* SRXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 761B466B10F8B9E30018894A /* SRXMLParserDelegate.m */; };
 		761E581010E65B03003B9CFE /* notFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 761E580F10E65B03003B9CFE /* notFound.png */; };
 		7644565110C5837800AB935D /* SRSettingsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7644565010C5837800AB935D /* SRSettingsModule.m */; };
 		765DA28A10A0B19300C4B16A /* SRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 765DA28910A0B19300C4B16A /* SRLocation.m */; };
@@ -278,6 +279,8 @@
 		761B459610F8A0970018894A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		761B45A410F8A0F90018894A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		761B45F310F8B1270018894A /* iPhoneNonatomic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneNonatomic.h; sourceTree = "<group>"; };
+		761B466A10F8B9E30018894A /* SRXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXMLParserDelegate.h; sourceTree = "<group>"; };
+		761B466B10F8B9E30018894A /* SRXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXMLParserDelegate.m; sourceTree = "<group>"; };
 		761E580F10E65B03003B9CFE /* notFound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notFound.png; path = Resources/notFound.png; sourceTree = "<group>"; };
 		7644564F10C5837800AB935D /* SRSettingsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSettingsModule.h; sourceTree = "<group>"; };
 		7644565010C5837800AB935D /* SRSettingsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSettingsModule.m; sourceTree = "<group>"; };
@@ -701,6 +704,8 @@
 				761B453F10F896F80018894A /* AQXMLParser.m */,
 				761B454010F896F80018894A /* AQXMLParserDelegate.h */,
 				761B454110F896F80018894A /* AQXMLParserDelegate.m */,
+				761B466A10F8B9E30018894A /* SRXMLParserDelegate.h */,
+				761B466B10F8B9E30018894A /* SRXMLParserDelegate.m */,
 				76B7CC57108B235100F87C68 /* XMLParser.h */,
 				76B7CC58108B235100F87C68 /* XMLParser.m */,
 				1D3623240D0F684500981E51 /* SterrenAppDelegate.h */,
@@ -1257,6 +1262,7 @@
 				ACD3BA6A10F50EEC007CD4C7 /* SRListManager.m in Sources */,
 				761B454210F896F80018894A /* AQXMLParser.m in Sources */,
 				761B454310F896F80018894A /* AQXMLParserDelegate.m in Sources */,
+				761B466C10F8B9E30018894A /* SRXMLParserDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1304,8 +1310,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Sterren_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "Sterren-Info.plist";
 				PRODUCT_NAME = Sterren;
+				USER_HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2 /usr/include/libxml2";
 			};
 			name = Debug;
 		};
@@ -1317,8 +1328,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Sterren_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "Sterren-Info.plist";
 				PRODUCT_NAME = Sterren;
+				USER_HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2 /usr/include/libxml2";
 			};
 			name = Release;
 		};

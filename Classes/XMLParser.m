@@ -33,24 +33,24 @@
 	return self;
 }
 
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
+- (void)parser:(AQXMLParser *)parser didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName
 	attributes:(NSDictionary *)attributeDict {
 	
 	
 	if([elementName isEqualToString:@"stars"]) { // Hoofd tag gevonden, Array initializen
 		stars = TRUE;
-		NSLog(@"Init stars");
+		NSLog(@"Start sterren-pars");
 		//objectManager.stars = [[NSMutableArray alloc] init];
 	}
 	else if([elementName isEqualToString:@"constellations"]) {
 		constellations = TRUE;
-		NSLog(@"Init const");
+		NSLog(@"Start constellations-pars");
 		//objectManager.constellations = [[NSMutableArray alloc] init];
 	}
 	else if([elementName isEqualToString:@"messier"]) {
 		messier = TRUE;
-		NSLog(@"Init mess");
+		NSLog(@"Start messier-pars");
 		//objectManager.constellations = [[NSMutableArray alloc] init];
 	}
 	
@@ -87,7 +87,7 @@
 	//NSLog(@"Processing Element: %@", elementName);
 }
 
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+- (void)parser:(AQXMLParser *)parser foundCharacters:(NSString *)string {
 	
 	//NSLog(@"test parser2");
 	
@@ -100,7 +100,7 @@
 	
 }
 
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
+- (void)parser:(AQXMLParser *)parser didEndElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 	
 	//NSLog(@"test parser3");

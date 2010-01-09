@@ -9,6 +9,7 @@
 #import "SRObjectManager.h"
 #import "XMLParser.h"
 #import "AQXMLParser.h"
+#import "SRXMLParserDelegate.h"
 
 
 @implementation SRObjectManager
@@ -35,12 +36,15 @@
 -(void)parseData {
 	NSData * data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"stars" ofType: @"xml"]];
 	AQXMLParser *xmlParser = [[AQXMLParser alloc] initWithData:data];
+	AQXMLParser *xmlParser2 = [[AQXMLParser alloc] initWithData:data];
 	XMLParser *parser = [[XMLParser alloc] initXMLParser];
+	SRXMLParserDelegate *parser2 = [[SRXMLParserDelegate alloc] init];
 	[xmlParser setDelegate:parser];
+	[xmlParser2 setDelegate:parser2];
 	BOOL success = [xmlParser parse];
 	
 	if(success) {
-		NSLog(@"Sterren Parse completed");
+		NSLog(@"Sterren-parse completed");
 	}
 	else {
 		NSLog(@"Sterren Parse error");
@@ -53,7 +57,7 @@
 	success = [xmlParserConstellations parse];
 	
 	if(success) {
-		NSLog(@"Constellations Parse completed");
+		NSLog(@"Constellations-parse completed");
 	}
 	else {
 		NSLog(@"Constellations Parse error"); 
@@ -66,7 +70,7 @@
 	success = [xmlParserMessier parse];
 	
 	if(success) {
-		NSLog(@"Messier Parse completed");
+		NSLog(@"Messier-parse completed");
 	}
 	else {
 		NSLog(@"Messier Parse error"); 
@@ -226,7 +230,7 @@
 }
 
 -(void)buildStarData {
-	NSLog(@"Star count: %i",[stars count]);
+	//NSLog(@"Star count: %i",[stars count]);
 
 	/* starNum = 0;
 	GLfloat starPointsTmp[[stars count]*8];
