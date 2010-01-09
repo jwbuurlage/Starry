@@ -35,13 +35,14 @@
 
 -(void)parseData {
 	NSData * data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"stars" ofType: @"xml"]];
-	AQXMLParser *xmlParser = [[AQXMLParser alloc] initWithData:data];
+	//AQXMLParser *xmlParser = [[AQXMLParser alloc] initWithData:data];
 	AQXMLParser *xmlParser2 = [[AQXMLParser alloc] initWithData:data];
-	XMLParser *parser = [[XMLParser alloc] initXMLParser];
+	//XMLParser *parser = [[XMLParser alloc] initXMLParser];
 	SRXMLParserDelegate *parser2 = [[SRXMLParserDelegate alloc] init];
-	[xmlParser setDelegate:parser];
+	//[xmlParser setDelegate:parser];
 	[xmlParser2 setDelegate:parser2];
-	BOOL success = [xmlParser parse];
+	//BOOL success = [xmlParser parse];
+	BOOL success = [xmlParser2 parse];
 	
 	if(success) {
 		NSLog(@"Sterren-parse completed");
