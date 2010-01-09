@@ -226,7 +226,28 @@
 	glLoadIdentity();	
 }
 
--(void)zoomCameraIn {
+-(void)zoomCameraWithX:(int)deltaX andY:(int)deltaY {
+	
+	float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
+	float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
+	
+	float fiX = deltaX * radPerPixel;
+	float fiY = deltaY * radPerPixel;
+	float fiZ = -standardHeight;
+	
+	float dSphere1 = sqrtf(powf(fiX,2) + powf(fiY,2) + powf(fiZ,2));
+
+	float coX = fiX / dSphere1;
+	float coY = fiY / dSphere1;
+	float coZ = fiZ / dSphere1;
+	
+	float coRA = acosf(coZ);
+	float coDEC = atan2f(coY,coX);
+	
+	float newFieldofView = fieldOfView - 0.3;
+	float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))));
+	float newRadPerPixel = sinf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))))/(320+(newFieldOfView*160));
+	
 	if(fieldOfView > 0.2) {
 		fieldOfView = fieldOfView - 0.2;
 	}

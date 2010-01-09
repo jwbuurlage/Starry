@@ -64,7 +64,7 @@
 - (void)adjustView;
 - (void)rotateCameraWithX:(int)deltaX Y:(int)deltaY;
 - (void)zoomCameraWithDelta:(int)delta centerX:(int)cx centerY:(int)cy;
-- (void)zoomCameraIn;
+- (void)zoomCameraWithX:(int)deltaX andY:(int)deltaY;
 - (void)initiateHorizontalSwipeWithX:(int)theX;
 - (void)initiateVerticalSwipeWithY:(int)theY;
 - (void)reenable;

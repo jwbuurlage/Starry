@@ -181,7 +181,10 @@
 	if ([touch tapCount] == 2) {
 		tappedTwice = YES;
 		NSLog(@"Tapped twice");
-		[camera zoomCameraIn];
+		UITouch *aTouch = [touches anyObject];
+		int x = [aTouch locationInView:theView].x;
+		int y = [aTouch locationInView:theView].y;
+		[camera zoomCameraWithX:x andY:y];
 	}
 	
 	if(UIClick && touchCount == 1) {
