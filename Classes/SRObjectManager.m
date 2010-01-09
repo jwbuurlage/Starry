@@ -8,6 +8,7 @@
 
 #import "SRObjectManager.h"
 #import "XMLParser.h"
+#import "AQXMLParser.h"
 
 
 @implementation SRObjectManager
@@ -33,7 +34,7 @@
 
 -(void)parseData {
 	NSData * data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"stars" ofType: @"xml"]];
-	NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:data];
+	AQXMLParser *xmlParser = [[AQXMLParser alloc] initWithData:data];
 	XMLParser *parser = [[XMLParser alloc] initXMLParser];
 	[xmlParser setDelegate:parser];
 	BOOL success = [xmlParser parse];
@@ -46,7 +47,7 @@
 	}
 	
 	NSData * dataConstellations = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"constellations" ofType: @"xml"]];
-	NSXMLParser *xmlParserConstellations = [[NSXMLParser alloc] initWithData:dataConstellations];
+	AQXMLParser *xmlParserConstellations = [[AQXMLParser alloc] initWithData:dataConstellations];
 	XMLParser *parserConstellations = [[XMLParser alloc] initXMLParser];
 	[xmlParserConstellations setDelegate:parserConstellations];
 	success = [xmlParserConstellations parse];
@@ -59,7 +60,7 @@
 	}
 	
 	NSData * dataMessier = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"messier" ofType: @"xml"]];
-	NSXMLParser *xmlParserMessier = [[NSXMLParser alloc] initWithData:dataMessier];
+	AQXMLParser *xmlParserMessier = [[AQXMLParser alloc] initWithData:dataMessier];
 	XMLParser *parserMessier = [[XMLParser alloc] initXMLParser];
 	[xmlParserMessier setDelegate:parserMessier];
 	success = [xmlParserMessier parse];
