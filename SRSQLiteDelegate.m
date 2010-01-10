@@ -22,32 +22,35 @@
 	sqlite3 *database;
 	SRObjectManager* objectManager = [[[UIApplication sharedApplication] delegate] objectManager];
 	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-		const char *sqlStatement = "select * from hyg";
+		const char *sqlStatement = "select * from hyg order by mag";
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
 				// Read the data from the result row
-				NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 5)];
-				NSString *bayer = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 4)];
-				NSString *gliese = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 3)];
-				NSString *hip = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
 				int ID = sqlite3_column_int(compiledStatement, 0);
+				NSString *hip = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
+				NSString *gliese = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 3)];
+				NSString *bayer = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 4)];
+				NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 5)];
 				float ra = sqlite3_column_double(compiledStatement, 6);
 				float dec = sqlite3_column_double(compiledStatement, 7);
-				
-				float ci = sqlite3_column_double(compiledStatement, 10);
 				float mag = sqlite3_column_double(compiledStatement, 9);
+				float ci = sqlite3_column_double(compiledStatement, 10);
 				
-				//if([name isEqualToString:@"Polaris"]) {
-					NSLog(@"id:%i ra:%f dec:%f ci:%f mag:%f",ID,ra,dec,ci,mag);
+				
+				
+				//if([name isEqualToString:@"Sirus"]) {
+				///	NSLog(@"id:%i ra:%f dec:%f ci:%f mag:%f",ID,ra,dec,ci,mag);
 				//}
 				
 				ra = ra*(M_PI/12);
 				dec = (90-dec)*(M_PI/180);
 				
-				float x = 20*sinf(dec)*cosf(ra);
-				float y = 20*sinf(dec)*sinf(ra);
-				float z = 20*cosf(dec);
+				NSLog(@"id:%i ra:%f dec:%f ci:%f mag:%f",ID,ra,dec,ci,mag);
+				
+				float x = 20*sin(dec)*cos(ra);
+				float y = 20*sin(dec)*sin(ra);
+				float z = 20*cos(dec);
 				
 				SRStar *star = [[SRStar alloc] init];
 				
