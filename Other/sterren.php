@@ -3,7 +3,7 @@ $xml = '<?xml version="1.0" ?><stars>';
 $host = 'localhost';
 $user = 'root';
 $pass = 'root';
-$db = 'hyg';
+$db = 'sterren';
 
 $connect = mysql_connect($host, $user, $pass);
 if(!$connect) {
