@@ -10,6 +10,7 @@
 #import "XMLParser.h"
 #import "AQXMLParser.h"
 #import "SRXMLParserDelegate.h"
+#import "SRSQLiteDelegate.h"
 
 
 @implementation SRObjectManager
@@ -34,7 +35,7 @@
 }
 
 -(void)parseData {
-	NSData * data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"stars" ofType: @"xml"]];
+	/*NSData * data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"stars" ofType: @"xml"]];
 	//AQXMLParser *xmlParser = [[AQXMLParser alloc] initWithData:data];
 	AQXMLParser *xmlParser2 = [[AQXMLParser alloc] initWithData:data];
 	//XMLParser *parser = [[XMLParser alloc] initXMLParser];
@@ -49,13 +50,16 @@
 	}
 	else {
 		NSLog(@"Sterren Parse error");
-	}
+	}*/
+	SRSQLiteDelegate * sqlLoader = [[SRSQLiteDelegate alloc] init];
+	[sqlLoader checkAndCreateDatabase];
+	[sqlLoader readStarsFromDatabase];
 	
 	NSData * dataConstellations = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"constellations" ofType: @"xml"]];
 	AQXMLParser *xmlParserConstellations = [[AQXMLParser alloc] initWithData:dataConstellations];
 	XMLParser *parserConstellations = [[XMLParser alloc] initXMLParser];
 	[xmlParserConstellations setDelegate:parserConstellations];
-	success = [xmlParserConstellations parse];
+	BOOL success = [xmlParserConstellations parse];
 	
 	if(success) {
 		NSLog(@"Constellations-parse completed");

@@ -37,6 +37,9 @@
 		76B2988510BD9EBB00EEDA5D /* SRLocationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */; };
 		76B7CC59108B235100F87C68 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B7CC58108B235100F87C68 /* XMLParser.m */; };
 		76D7294310EBD8F80018EB62 /* SRStarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7294210EBD8F80018EB62 /* SRStarInfo.m */; };
+		76E6933810FA31BD00924A41 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6933710FA31BD00924A41 /* libsqlite3.0.dylib */; };
+		76E6933D10FA31E400924A41 /* SRSQLiteDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6933C10FA31E400924A41 /* SRSQLiteDelegate.m */; };
+		76E6935110FA367100924A41 /* database.db in Resources */ = {isa = PBXBuildFile; fileRef = 76E6935010FA367100924A41 /* database.db */; };
 		76FBD51E108B227000E08E82 /* stars.xml in Resources */ = {isa = PBXBuildFile; fileRef = 76FBD51D108B227000E08E82 /* stars.xml */; };
 		AC045E33109E062B0066EAA6 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = AC045E32109E062B0066EAA6 /* menu.png */; };
 		AC080F5810D97F010078DA4D /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC080F5710D97F010078DA4D /* nav_bg.png */; };
@@ -298,6 +301,10 @@
 		76B7CC58108B235100F87C68 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		76D7294110EBD8F80018EB62 /* SRStarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStarInfo.h; sourceTree = "<group>"; };
 		76D7294210EBD8F80018EB62 /* SRStarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStarInfo.m; sourceTree = "<group>"; };
+		76E6933710FA31BD00924A41 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		76E6933B10FA31E400924A41 /* SRSQLiteDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRSQLiteDelegate.h; path = ../SRSQLiteDelegate.h; sourceTree = "<group>"; };
+		76E6933C10FA31E400924A41 /* SRSQLiteDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRSQLiteDelegate.m; path = ../SRSQLiteDelegate.m; sourceTree = "<group>"; };
+		76E6935010FA367100924A41 /* database.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.db; sourceTree = "<group>"; };
 		76FBD51D108B227000E08E82 /* stars.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = stars.xml; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Sterren-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sterren-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		AC045E32109E062B0066EAA6 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = Resources/menu.png; sourceTree = "<group>"; };
@@ -545,6 +552,7 @@
 				765DA31510A0B97000C4B16A /* CoreLocation.framework in Frameworks */,
 				761B459710F8A0970018894A /* libxml2.dylib in Frameworks */,
 				761B45A510F8A0F90018894A /* CFNetwork.framework in Frameworks */,
+				76E6933810FA31BD00924A41 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +601,7 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				761B459610F8A0970018894A /* libxml2.dylib */,
+				76E6933710FA31BD00924A41 /* libsqlite3.0.dylib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -609,6 +618,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				76E6935010FA367100924A41 /* database.db */,
 				761B451A10F896290018894A /* Default.png */,
 				767820EA10F10CD3001ADE6D /* Localizable.strings */,
 				761B451C10F8962A0018894A /* defaultTexture.png */,
@@ -700,6 +710,8 @@
 		AC1BA73710C021D00084CF6F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				76E6933B10FA31E400924A41 /* SRSQLiteDelegate.h */,
+				76E6933C10FA31E400924A41 /* SRSQLiteDelegate.m */,
 				761B453E10F896F80018894A /* AQXMLParser.h */,
 				761B453F10F896F80018894A /* AQXMLParser.m */,
 				761B454010F896F80018894A /* AQXMLParserDelegate.h */,
@@ -1215,6 +1227,7 @@
 				ACB60BFE10F67B2100FD2097 /* slider_min.png in Resources */,
 				761B451E10F8962A0018894A /* Default.png in Resources */,
 				761B451F10F8962A0018894A /* defaultTexture.png in Resources */,
+				76E6935110FA367100924A41 /* database.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1263,6 +1276,7 @@
 				761B454210F896F80018894A /* AQXMLParser.m in Sources */,
 				761B454310F896F80018894A /* AQXMLParserDelegate.m in Sources */,
 				761B466C10F8B9E30018894A /* SRXMLParserDelegate.m in Sources */,
+				76E6933D10FA31E400924A41 /* SRSQLiteDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
