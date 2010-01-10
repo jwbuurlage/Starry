@@ -25,7 +25,7 @@
 															 clickable:NO]];
 		
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(335, 281, 25, 50)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(335, 281, 32, 50)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"info.png"]] 
 															identifier:@"info" 
 															 clickable:YES]];
@@ -79,6 +79,8 @@
 				CGRect myRect = [mElement bounds];
 				myRect.size.height = 25;
 				myRect.origin.y = myRect.origin.y + 12;
+				myRect.size.width = 25;
+				myRect.origin.x = myRect.origin.x + 0;
 			glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 			[[mElement texture] drawInRect:myRect];
 			}
