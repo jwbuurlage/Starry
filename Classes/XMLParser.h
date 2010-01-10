@@ -15,11 +15,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SRObjectManager.h";
-#import "AQXMLParserDelegate.h";
+//#import "AQXMLParserDelegate.h";
 
 @class SterrenAppDelegate, SRStar;
 
-@interface XMLParser : AQXMLParserDelegate {
+@interface XMLParser : NSObject {
 	
 	NSMutableString *currentElementValue;
 	
