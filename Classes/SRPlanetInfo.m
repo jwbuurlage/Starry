@@ -122,7 +122,7 @@
 	[coordinateNumber2 release];
 	[minutesNumber2 release];
 	[secondsNumber2 release];
-	UIImage* planetImageTmp = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [thePlanet name]]];
+	UIImage* planetImageTmp = [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", [thePlanet name]]]];
 	planetImage = [[Texture2D alloc] initWithImage:planetImageTmp]; 
 	NSLog(@"%@,", [NSString stringWithFormat:@"%@.png", [thePlanet name]]);
 	[[[elements objectAtIndex:[elements count] - 1] texture] release];

@@ -77,8 +77,8 @@
 }
 
 -(void)loadData:(id)aSender {
+	[self loadPlanetPoints];
 	[objectManager parseData];
-	[self loadPlanetPoints];		
 	[self loadStarPoints];
 	[self loadMessier];
 }
@@ -114,7 +114,7 @@
 	SRStar * star;
 	
 	for(star in [objectManager stars]) {
-		if(star.name != @"Sol") {
+		if(![star.name isEqualToString:@"Sol"]) {
 			matrixStartPos = starNum * 8;
 			starPoints[matrixStartPos] = [star position].x;
 			starPoints[matrixStartPos+1] = [star position].y;

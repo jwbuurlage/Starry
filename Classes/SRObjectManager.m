@@ -8,8 +8,8 @@
 
 #import "SRObjectManager.h"
 #import "XMLParser.h"
-#import "AQXMLParser.h"
-#import "SRXMLParserDelegate.h"
+//#import "AQXMLParser.h"
+//#import "SRXMLParserDelegate.h"
 #import "SRSQLiteDelegate.h"
 
 
@@ -56,10 +56,13 @@
 	[sqlLoader readStarsFromDatabase];
 	
 	NSData * dataConstellations = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"constellations" ofType: @"xml"]];
-	AQXMLParser *xmlParserConstellations = [[AQXMLParser alloc] initWithData:dataConstellations];
+	NSXMLParser *xmlParserConstellations = [[NSXMLParser alloc] initWithData:dataConstellations];
 	XMLParser *parserConstellations = [[XMLParser alloc] initXMLParser];
 	[xmlParserConstellations setDelegate:parserConstellations];
 	BOOL success = [xmlParserConstellations parse];
+	[xmlParserConstellations release];
+	[parserConstellations release];
+	
 	
 	if(success) {
 		NSLog(@"Constellations-parse completed");
@@ -69,10 +72,12 @@
 	}
 	
 	NSData * dataMessier = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"messier" ofType: @"xml"]];
-	AQXMLParser *xmlParserMessier = [[AQXMLParser alloc] initWithData:dataMessier];
+	NSXMLParser *xmlParserMessier = [[NSXMLParser alloc] initWithData:dataMessier];
 	XMLParser *parserMessier = [[XMLParser alloc] initXMLParser];
 	[xmlParserMessier setDelegate:parserMessier];
 	success = [xmlParserMessier parse];
+	[xmlParserMessier release];
+	[parserMessier release];
 	
 	if(success) {
 		NSLog(@"Messier-parse completed");

@@ -33,7 +33,7 @@
 	return self;
 }
 
-- (void)parser:(AQXMLParser *)parser didStartElement:(NSString *)elementName
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName
 	attributes:(NSDictionary *)attributeDict {
 	
@@ -87,7 +87,7 @@
 	//NSLog(@"Processing Element: %@", elementName);
 }
 
-- (void)parser:(AQXMLParser *)parser foundCharacters:(NSString *)string {
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
 	
 	//NSLog(@"test parser2");
 	
@@ -100,7 +100,7 @@
 	
 }
 
-- (void)parser:(AQXMLParser *)parser didEndElement:(NSString *)elementName
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 	
 	//NSLog(@"test parser3");
