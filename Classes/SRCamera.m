@@ -117,7 +117,7 @@
 			else
 				altitude = altitude - (deltaDEC * (180/M_PI));
 			azimuth = azimuth + (deltaRA * (180/M_PI));
-			NSLog(@"ra:%f dec:%f nra:%f ora:%f",deltaRA,deltaDEC,cnRA,coRA);
+			NSLog(@"ra:%f dec:%f nra:%f ora:%f co:%f cn:%f",deltaRA,deltaDEC,cnRA,coRA,coX,ncX);
 			fieldOfView = newFieldOfView;
 		}
 		
