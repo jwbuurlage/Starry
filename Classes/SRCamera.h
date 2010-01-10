@@ -46,8 +46,13 @@
 	
 	BOOL swipeHor;
 	BOOL swipeVer;
+	BOOL tapZoom;
 	BOOL planetView;
 	
+	float zoomDeltaX;
+	float zoomDeltaY;
+	
+	int tSteps;
 	int hSteps;
 	int vSteps;
 	

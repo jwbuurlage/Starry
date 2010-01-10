@@ -72,6 +72,60 @@
 			swipeVer = FALSE;
 		}
 	}
+	if(tapZoom) {
+		if(tSteps == 0) { tSteps = 50; }
+		
+		float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
+		float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
+		
+		float fiX = zoomDeltaX * radPerPixel;
+		float fiY = zoomDeltaY * radPerPixel;
+		float fiZ = -standardHeight;
+		
+		float dSphere1 = sqrtf(powf(fiX,2) + powf(fiY,2) + powf(fiZ,2));
+		
+		float coX = fiX / dSphere1;
+		float coY = fiY / dSphere1;
+		float coZ = fiZ / dSphere1;
+		
+		float coRA = atan2f(coY,coX);
+		float coDEC = acosf(coZ);
+		
+		float newFieldOfView = fieldOfView - (0.3/50);
+		float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))));
+		float newRadPerPixel = sinf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))))/(320+(newFieldOfView*160));
+		
+		float nfX = zoomDeltaX * newRadPerPixel;
+		float nfY = zoomDeltaY * newRadPerPixel;
+		float nfZ = -newStandardHeight;
+		
+		float dSphere2 = sqrtf(powf(nfX,2) + powf(nfY,2) + powf(nfZ,2));
+		
+		float ncX = nfX / dSphere2;
+		float ncY = nfY / dSphere2;
+		float ncZ = nfZ / dSphere2;
+		
+		float cnRA = atan2f(ncY,ncX);
+		float cnDEC = acosf(ncZ);
+		
+		float deltaRA = coRA - cnRA;
+		float deltaDEC = coDEC - cnDEC;
+		
+		if(newFieldOfView > 0.1) {
+			if (zoomDeltaX > 0)
+				altitude = altitude + (deltaDEC * (180/M_PI));
+			else
+				altitude = altitude - (deltaDEC * (180/M_PI));
+			azimuth = azimuth + (deltaRA * (180/M_PI));
+			NSLog(@"ra:%f dec:%f nra:%f ora:%f",deltaRA,deltaDEC,cnRA,coRA);
+			fieldOfView = newFieldOfView;
+		}
+		
+		--tSteps;
+		if(tSteps == 0) {
+			tapZoom = FALSE;
+		}
+	}
 		
 	if(altitude > 89.9) { altitude = 89.9; }
 	else if (altitude < -89.9) { altitude = -89.9; }
@@ -228,35 +282,11 @@
 
 -(void)zoomCameraWithX:(int)deltaX andY:(int)deltaY {
 	
-	float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
-	float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
 	
-	float fiX = deltaX * radPerPixel;
-	float fiY = deltaY * radPerPixel;
-	float fiZ = -standardHeight;
+	tapZoom = TRUE;
+	zoomDeltaX = deltaX;
+	zoomDeltaY = deltaY;
 	
-	float dSphere1 = sqrtf(powf(fiX,2) + powf(fiY,2) + powf(fiZ,2));
-
-	float coX = fiX / dSphere1;
-	float coY = fiY / dSphere1;
-	float coZ = fiZ / dSphere1;
-	
-	float coRA = acosf(coZ);
-	float coDEC = atan2f(coY,coX);
-	
-	float newFieldofView = fieldOfView - 0.3;
-	float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))));
-	float newRadPerPixel = sinf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))))/(320+(newFieldOfView*160));
-	
-	if(fieldOfView > 0.2) {
-		fieldOfView = fieldOfView - 0.2;
-	}
-	else if(fieldOfView > 0.1) {
-		fieldOfView = fieldOfView - 0.1;
-	}
-	else {
-		[self resetZoomValue];
-	}
 }
 
 /*- (void)RAAndDecForPoint:(CGPoint)point {

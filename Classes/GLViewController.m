@@ -184,7 +184,9 @@
 		UITouch *aTouch = [touches anyObject];
 		int x = [aTouch locationInView:theView].x;
 		int y = [aTouch locationInView:theView].y;
-		[camera zoomCameraWithX:x andY:y];
+		int deltaX = -x+160;
+		int deltaY = -y+240;
+		[camera zoomCameraWithX:deltaX andY:deltaY];
 	}
 	
 	if(UIClick && touchCount == 1) {
@@ -246,7 +248,7 @@
 		//}
 		//else {
 		//	radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/320;
-			NSLog(@"fieldofview:%f",fieldOfView);
+			//NSLog(@"fieldofview:%f",fieldOfView);
 		//}
 		//float radPerPixel = sinf(0.5*(fieldOfView*480)/320)/480;
 		//float standardHeight = 0.8910065242;
