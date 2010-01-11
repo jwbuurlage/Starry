@@ -628,12 +628,15 @@
 		}
 		else if(clicker == @"stop") {
 			[[timeModule manager] reset];
+			[timeModule switchPlay:FALSE];
 		}
 		else if(clicker == @"fwd") {
 			[[timeModule manager] fwd];
+			[timeModule switchPlay:TRUE];
 		}
 		else if(clicker == @"rew") {
 			[[timeModule manager] rew];
+			[timeModule switchPlay:TRUE];
 		}
 		// Knoppen voor de locatie module
 		else if(clicker == @"lat-edit" || clicker == @"lat") {

@@ -55,6 +55,16 @@
 			speed = speed * 5;
 		}
 	}
+	else {
+		if(speedPause > 0) {
+			speed = speedPause;
+			playing = TRUE;
+		}
+		else {
+			speed = 5;
+			playing = TRUE;
+		}
+	}
 }
 
 -(void)rew {
@@ -70,6 +80,16 @@
 			speed = speed / 5;
 		}
 	}
+	else {
+		if(speedPause < 0) {
+			speed = speedPause;
+			playing = TRUE;
+		}
+		else {
+			speed = -5;
+			playing = TRUE;
+		}
+	}
 }
 
 -(void)playPause {
@@ -79,7 +99,7 @@
 		playing = FALSE;
 	}
 	else {
-		speed = speedPause;
+		speed = 1;
 		playing = TRUE;
 	}
 }
@@ -122,9 +142,11 @@
 -(void)reset {
 	[simulatedDate release];
 	simulatedDate = [[NSDate alloc] init];
-	if(playing) {
-	speed = 1;
-	}
+	/*if(playing) {
+		speed = 1;
+	}*/
+	playing = FALSE;
+	speed = 0;
 	totalInterval = 10001;
 }
 
