@@ -40,6 +40,11 @@
 															identifier:@"text-blue" 
 															 clickable:NO]];
 		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, 0, 480, 320)
+															   texture:nil
+															identifier:@"picture" 
+															 clickable:NO]];
+		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(260, 25, 102, 34) 
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"messierNameBg.png"]] //102x34
 															identifier:@"nameplate" 
@@ -98,8 +103,8 @@
 	//	seconds = 60+seconds;
 	//}
 	
-	[[[elements objectAtIndex:[elements count] - 4] texture] release];
-	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i\' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[[elements objectAtIndex:[elements count] - 5] texture] release];
+	[[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i\' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber release];
 	[minutesNumber release];
 	[secondsNumber release];
@@ -117,23 +122,25 @@
 		minutes2 = -minutes2;
 		seconds2 = -seconds2;
 	}
-	[[[elements objectAtIndex:[elements count] - 3] texture] release];
-	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[[elements objectAtIndex:[elements count] - 4] texture] release];
+	[[elements objectAtIndex:[elements count] - 4] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees2,minutes2,seconds2] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber2 release];
 	[minutesNumber2 release];
 	[secondsNumber2 release];
-	UIImage* planetImageTmp = [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", [thePlanet name]]]];
+	/*UIImage* planetImageTmp = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [thePlanet name]]];
 	planetImage = [[Texture2D alloc] initWithImage:planetImageTmp]; 
-	NSLog(@"%@,", [NSString stringWithFormat:@"%@.png", [thePlanet name]]);
+	NSLog(@"%@,", [NSString stringWithFormat:@"%@.png", [thePlanet name]]);*/
+	[[[elements objectAtIndex:[elements count] - 3] texture] release];
+	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [thePlanet name]]]]]; 
 	[[[elements objectAtIndex:[elements count] - 1] texture] release];
 	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(thePlanet.name, @"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]]; 
 	[[elements objectAtIndex:[elements count] - 1] setBounds:CGRectMake(311 - [NSLocalizedString(thePlanet.name, @"")  sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width / 2, 18,64,32)];
-	[planetImageTmp release];
+	//[planetImageTmp release];
 }
 
 - (void)draw {	
 	glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
-	[planetImage drawInRect:CGRectMake(0, 0, 480, 320)]; 
+	[[[elements objectAtIndex:[elements count] - 3] texture] drawInRect:CGRectMake(0, 0, 480, 320)]; 
 	[interfaceBackground drawInRect:CGRectMake(20, 0, 200, 320)];
 	for (SRInterfaceElement* mElement in elements) {
 		if([mElement identifier] == @"text-transparent") {
@@ -148,9 +155,11 @@
 			glColor4f(0.56f, 0.831f, 0.0f, alphaValue);
 			[[mElement texture] drawInRect:[mElement bounds]];
 		}
-		else if([mElement identifier] == @"nameplate" || [mElement identifier] == @"picture") {
+		else if([mElement identifier] == @"nameplate") {
 			glColor4f(1.0f, 1.0f, 1.0f, alphaValueName);
 			[[mElement texture] drawInRect:[mElement bounds]];
+		}
+		else if ([mElement identifier] == @"picture") {
 		}
 		else {
 			glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
