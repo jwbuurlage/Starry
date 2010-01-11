@@ -87,7 +87,6 @@
 		float coY = fiY / dSphere1;
 		float coZ = fiZ / dSphere1;
 		
-		float coRA = atan2f(coY,coX);
 		float coDEC = acosf(coZ);
 		
 		float newFieldOfView = fieldOfView - (0.3/50);
@@ -103,13 +102,43 @@
 		float ncX = nfX / dSphere2;
 		float ncY = nfY / dSphere2;
 		float ncZ = nfZ / dSphere2;
-		
-		float cnRA = atan2f(ncY,ncX);
+
 		float cnDEC = acosf(ncZ);
 		
+		float standardHeight2 = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
+		float radPerPixel2 = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
+		
+		float fiX2 = zoomDeltaY * radPerPixel2;
+		float fiY2 = zoomDeltaX * radPerPixel2;
+		float fiZ2 = -standardHeight2;
+		
+		float dSphere12 = sqrtf(powf(fiX2,2) + powf(fiY2,2) + powf(fiZ2,2));
+		
+		float coX2 = fiX2 / dSphere12;
+		float coY2 = fiY2 / dSphere12;
+		float coZ2 = fiZ2 / dSphere12;
+		
+		float coDEC2 = acosf(coZ2);
+		
+		float newFieldOfView2 = fieldOfView - (0.3/50);
+		float newStandardHeight2 = cosf(0.5*(sqrtf(powf((newFieldOfView2*480)/320,2)+powf((newFieldOfView2*480)/320,2))));
+		float newRadPerPixel2 = sinf(0.5*(sqrtf(powf((newFieldOfView2*480)/320,2)+powf((newFieldOfView2*480)/320,2))))/(320+(newFieldOfView2*160));
+		
+		float nfX2 = zoomDeltaY * newRadPerPixel2;
+		float nfY2 = zoomDeltaX * newRadPerPixel2;
+		float nfZ2 = -newStandardHeight2;
+		
+		float dSphere22 = sqrtf(powf(nfX2,2) + powf(nfY2,2) + powf(nfZ2,2));
+		
+		float ncX2 = nfX2 / dSphere22;
+		float ncY2 = nfY2 / dSphere22;
+		float ncZ2 = nfZ2 / dSphere22;
+		
+		float cnDEC2 = acosf(ncZ2);
 		
 		
-		float deltaRA = coRA - cnRA;
+		
+		float deltaRA = coDEC2 - cnDEC2;
 		float deltaDEC = coDEC - cnDEC;
 		
 		if(newFieldOfView > 0.1) {
@@ -118,7 +147,7 @@
 			else
 				altitude = altitude - (deltaDEC * (180/M_PI));
 			azimuth = azimuth + (deltaRA * (180/M_PI));
-			NSLog(@"ra:%f dec:%f nra:%f ora:%f co:%f cn:%f",deltaRA,deltaDEC,cnRA,coRA,coX,ncX);
+			//NSLog(@"ra:%f dec:%f nra:%f ora:%f co:%f cn:%f",deltaRA,deltaDEC,cnRA,coRA,coX,ncX);
 			fieldOfView = newFieldOfView;
 		}
 		

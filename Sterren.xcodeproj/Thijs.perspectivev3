@@ -283,14 +283,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>68</integer>
-									<integer>58</integer>
+									<integer>51</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 599}, {237, 759}}</string>
+							<string>{{0, 630}, {237, 765}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -300,14 +299,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {254, 777}}</string>
+						<string>{{0, 0}, {254, 783}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>237</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>19 51 1211 818 0 0 1440 878 </string>
+						<string>71 39 1265 824 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -325,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7644572810C5A54000AB935D</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>GLViewController.m</string>
+								<string>SRCamera.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -333,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7644572910C5A54000AB935D</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>GLViewController.m</string>
+										<string>SRCamera.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>76C3998C10FB5EC800D63213</string>
+										<string>76C3999A10FB717200D63213</string>
 										<key>history</key>
 										<array>
 											<string>764457CF10C5B57500AB935D</string>
@@ -434,8 +433,8 @@
 											<string>76C3997710FB5E1400D63213</string>
 											<string>76C3997810FB5E1400D63213</string>
 											<string>76C3997910FB5E1400D63213</string>
-											<string>76C3998A10FB5EC800D63213</string>
-											<string>76C3998B10FB5EC800D63213</string>
+											<string>76C3999810FB717200D63213</string>
+											<string>76C3999910FB717200D63213</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -449,14 +448,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {952, 631}}</string>
+								<string>{{0, 0}, {1006, 637}}</string>
 								<key>RubberWindowFrame</key>
-								<string>19 51 1211 818 0 0 1440 878 </string>
+								<string>71 39 1265 824 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>631pt</string>
+							<string>637pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
@@ -528,9 +527,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {952, 114}}</string>
+										<string>{{10, 27}, {1006, 114}}</string>
 										<key>RubberWindowFrame</key>
-										<string>19 51 1211 818 0 0 1440 878 </string>
+										<string>71 39 1265 824 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -539,7 +538,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>952pt</string>
+					<string>1006pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -752,12 +751,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>76C3998D10FB5EC800D63213</string>
+		<string>76C3999B10FB717200D63213</string>
+		<string>76C3999C10FB717200D63213</string>
 		<string>76C3998E10FB5EC800D63213</string>
 		<string>/Users/Thijs/Desktop/Sterren/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>19 51 1211 818 0 0 1440 878 </string>
+	<string>71 39 1265 824 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

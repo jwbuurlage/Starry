@@ -37,9 +37,9 @@
 	};
 	1F92F5EA0FDFF83200548BE8 /* GLViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1608, 8827}}";
-			sepNavSelRange = "{22026, 0}";
-			sepNavVisRange = "{21481, 828}";
+			sepNavIntBoundsRect = "{{0, 0}, {1608, 8931}}";
+			sepNavSelRange = "{9395, 0}";
+			sepNavVisRange = "{10249, 1706}";
 			sepNavWindowFrame = "{{387, 4}, {750, 874}}";
 		};
 	};
@@ -67,7 +67,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 76FBD269109DE495005A0ADE /* Sterren */;
-		activeSDKPreference = iphoneos3.1.2;
+		activeSDKPreference = iphonesimulator3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Sterren */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Sterren */,
@@ -253,6 +253,9 @@
 			76C3998A10FB5EC800D63213 /* PBXTextBookmark */ = 76C3998A10FB5EC800D63213 /* PBXTextBookmark */;
 			76C3998B10FB5EC800D63213 /* PBXTextBookmark */ = 76C3998B10FB5EC800D63213 /* PBXTextBookmark */;
 			76C3998C10FB5EC800D63213 /* PBXTextBookmark */ = 76C3998C10FB5EC800D63213 /* PBXTextBookmark */;
+			76C3999810FB717200D63213 /* PBXTextBookmark */ = 76C3999810FB717200D63213 /* PBXTextBookmark */;
+			76C3999910FB717200D63213 /* PBXTextBookmark */ = 76C3999910FB717200D63213 /* PBXTextBookmark */;
+			76C3999A10FB717200D63213 /* PBXTextBookmark */ = 76C3999A10FB717200D63213 /* PBXTextBookmark */;
 			76CF14DC10EFAE41006EA567 = 76CF14DC10EFAE41006EA567 /* PBXTextBookmark */;
 			76CF150110EFB3B3006EA567 = 76CF150110EFB3B3006EA567 /* PBXBookmark */;
 			76CF150210EFB3B3006EA567 = 76CF150210EFB3B3006EA567 /* PBXBookmark */;
@@ -989,7 +992,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 86";
 		rLen = 0;
-		rLoc = 2492;
+		rLoc = 2460;
 		rType = 0;
 		vrLen = 1404;
 		vrLoc = 1767;
@@ -1054,6 +1057,36 @@
 		vrLen = 828;
 		vrLoc = 21481;
 	};
+	76C3999810FB717200D63213 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F92F5EA0FDFF83200548BE8 /* GLViewController.m */;
+		name = "GLViewController.m: 337";
+		rLen = 0;
+		rLoc = 9395;
+		rType = 0;
+		vrLen = 1706;
+		vrLoc = 10249;
+	};
+	76C3999910FB717200D63213 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 54";
+		rLen = 0;
+		rLoc = 1429;
+		rType = 0;
+		vrLen = 1208;
+		vrLoc = 1253;
+	};
+	76C3999A10FB717200D63213 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
+		name = "SRCamera.m: 150";
+		rLen = 0;
+		rLoc = 4618;
+		rType = 0;
+		vrLen = 1020;
+		vrLoc = 4188;
+	};
 	76CF14DC10EFAE41006EA567 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = ACECC68C10CD9A8400CBE4AC /* SRMessier.h */;
@@ -1097,7 +1130,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 95";
 		rLen = 0;
-		rLoc = 3672;
+		rLoc = 4827;
 		rType = 0;
 		vrLen = 1455;
 		vrLoc = 1569;
@@ -1717,9 +1750,9 @@
 	};
 	ACB7B11610615C1000CA447E /* SRCamera.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1013, 3965}}";
-			sepNavSelRange = "{1429, 0}";
-			sepNavVisRange = "{1253, 1268}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 4329}}";
+			sepNavSelRange = "{4618, 0}";
+			sepNavVisRange = "{4188, 1020}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
