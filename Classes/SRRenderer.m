@@ -113,6 +113,8 @@
 	//float alpha;
 	SRStar * star;
 	
+	//NSLog(@"Starcount: %i", [[objectManager stars] count]);
+	
 	for(star in [objectManager stars]) {
 		if(![star.name isEqualToString:@"Sol"]) {
 			matrixStartPos = starNum * 8;
