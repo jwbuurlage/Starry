@@ -92,17 +92,17 @@
 		
 		if(
 		   ![renderer planetView]) {
-		int x, y;
-		x = [aTouch locationInView:theView].x - [aTouch previousLocationInView:theView].x;
-		y = [aTouch locationInView:theView].y - [aTouch previousLocationInView:theView].y;
-		
-		if (UIClick == NO) {
-			[camera rotateCameraWithX:x 
-									Y:y];
-		}
-		
-		dX += x;
-		dY += y;
+			int x, y;
+			x = [aTouch locationInView:theView].x - [aTouch previousLocationInView:theView].x;
+			y = [aTouch locationInView:theView].y - [aTouch previousLocationInView:theView].y;
+			
+			if (UIClick == NO) {
+				[camera rotateCameraWithX:x 
+										Y:y];
+			}
+			
+			dX += x;
+			dY += y;
 		}
 		
 		// Als er teveel wordt verschuift cancel de clicks
@@ -200,40 +200,40 @@
 		
 		// Aan de buitenste zeide is de destortion veel erger dan verder naar binnen.
 		//if (40 < y && y < 440 && 30 < x && x < 290) {
-			
-			//[objectManager clickedAtX:x Y:y];
-			
-			// Tenopzichte van het midden uitrekenen iPhone screen (480*320)
-			int deltaX = -x+160;
-			int deltaY = -y+240;
-			
-			
-			// Voor het testen zoom de camera daar heen
-			//[camera rotateCameraWithX:dmX 
-			//						Y:dmY];
-			
-			/*float readDECDeg = fmod(90+[camera calculateAltitudeWithX:dmX Y:dmY],180);
-			
-			float readRADeg = fmod([camera calculateAzimuthWithX:dmX Y:dmY],360);
-			if (readRADeg < 0) {
-				readRADeg = readRADeg + 360;
-			}
-			
-			float readRARad = readRADeg * (M_PI/180);
-			float readDECRad = (readDECDeg * (M_PI/180));
-			//NSLog(@"RA/DEC punt RA:%f DEC:%f",azimuth,altitude);
-			
-			// Uit de php
-			//$x = 20*sin($dec)*cos($ra);
-			//$y = 20*sin($dec)*sin($ra);
-			//$z = 20*cos($dec);
-			//NSLog(@"Aangeklikt punt in graden RA:%f DEC:%f",readRADeg,readDECDeg);
-			//NSLog(@"Aangeklikt punt in radialen RA:%f DEC:%f",readRARad,readDECRad);
-			
-			float brX = sin(readDECRad)*cos(readRARad);
-			float brY = sin(readDECRad)*sin(readRARad);
-			float brZ = cos(readDECRad);
-			NSLog(@"Aangeklikte locatie op bol x:%f y:%f z:%f",brX,brY,brZ);*/
+		
+		//[objectManager clickedAtX:x Y:y];
+		
+		// Tenopzichte van het midden uitrekenen iPhone screen (480*320)
+		int deltaX = -x+160;
+		int deltaY = -y+240;
+		
+		
+		// Voor het testen zoom de camera daar heen
+		//[camera rotateCameraWithX:dmX 
+		//						Y:dmY];
+		
+		/*float readDECDeg = fmod(90+[camera calculateAltitudeWithX:dmX Y:dmY],180);
+		 
+		 float readRADeg = fmod([camera calculateAzimuthWithX:dmX Y:dmY],360);
+		 if (readRADeg < 0) {
+		 readRADeg = readRADeg + 360;
+		 }
+		 
+		 float readRARad = readRADeg * (M_PI/180);
+		 float readDECRad = (readDECDeg * (M_PI/180));
+		 //NSLog(@"RA/DEC punt RA:%f DEC:%f",azimuth,altitude);
+		 
+		 // Uit de php
+		 //$x = 20*sin($dec)*cos($ra);
+		 //$y = 20*sin($dec)*sin($ra);
+		 //$z = 20*cos($dec);
+		 //NSLog(@"Aangeklikt punt in graden RA:%f DEC:%f",readRADeg,readDECDeg);
+		 //NSLog(@"Aangeklikt punt in radialen RA:%f DEC:%f",readRARad,readDECRad);
+		 
+		 float brX = sin(readDECRad)*cos(readRARad);
+		 float brY = sin(readDECRad)*sin(readRARad);
+		 float brZ = cos(readDECRad);
+		 NSLog(@"Aangeklikte locatie op bol x:%f y:%f z:%f",brX,brY,brZ);*/
 		
 		float fieldOfView = [camera fieldOfView];
 		float altitude = [camera altitude];
@@ -244,11 +244,11 @@
 		
 		//FIXME: Fout in deze berekening voor volledig ingezoomd
 		//if(fieldOfView > 0.75) {
-			radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
+		radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
 		//}
 		//else {
 		//	radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/320;
-			//NSLog(@"fieldofview:%f",fieldOfView);
+		//NSLog(@"fieldofview:%f",fieldOfView);
 		//}
 		//float radPerPixel = sinf(0.5*(fieldOfView*480)/320)/480;
 		//float standardHeight = 0.8910065242;
@@ -296,84 +296,84 @@
 		brY = maY;
 		brZ = maZ;
 		
+		
+		
+		float rotationY = (90-[[renderer location] latitude])*(M_PI/180);
+		float rotationZ1 = [[renderer location] longitude]*(M_PI/180);
+		float rotationZ2 = [[[[renderer interface] timeModule] manager] elapsed]*(M_PI/180);
+		//float rotationZ2 = rotationZ1 + rotationZ3;
+		
+		// voor goed voorbeeld: http://www.math.umn.edu/~nykamp/m2374/readings/matvecmultex/
+		// wikipedia rotatie matrix: http://en.wikipedia.org/wiki/Rotation_matrix
+		
+		//float maX,maY,maZ;
+		
+		// Matrix vermenigvuldiging met draai om de y-as (locatie)
+		maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
+		maY = (0*brX+1*brY+0*brZ);
+		maZ = ((-sin(rotationY)*brX)+0*brY+cos(rotationY)*brZ);
+		
+		brX = maX;
+		brY = maY;
+		brZ = maZ;
+		
+		// Matrix vermenigvuldiging met draai om de  z-as (locatie)
+		maX = (cos(rotationZ1)*brX+(-sin(rotationZ1)*brY)+0*brZ);
+		maY = (sin(rotationZ1)*brX+cos(rotationZ1)*brY+0*brZ);
+		maZ = (0*brX+0*brY+1*brZ);
+		
+		brX = maX;
+		brY = maY;
+		brZ = maZ;
+		
+		// Matrix vermenigvuldiging met draai om de  z-as (tijd)
+		maX = (cos(rotationZ2)*brX+(-sin(rotationZ2)*brY)+0*brZ);
+		maY = (sin(rotationZ2)*brX+cos(rotationZ2)*brY+0*brZ);
+		maZ = (0*brX+0*brY+1*brZ);
+		
+		brX = maX;
+		brY = maY;
+		brZ = maZ;
+		
+		float stX,stY,stZ,plX,plY,plZ;
+		stX = -20*brX;
+		stY = -20*brY;
+		stZ = -20*brZ;
+		
+		plX = -15*brX;
+		plY = -15*brY;
+		plZ = -15*brZ;
+		
+		
+		
+		float zoomingValue = [camera zoomingValue];
+		float xd,yd,zd,sunD,moonD;
+		
+		SRSun * sun = [[[[UIApplication sharedApplication] delegate] objectManager] sun];
+		xd = sun.position.x-plX;
+		yd = sun.position.y-plY;
+		zd = sun.position.z-plZ;
+		sunD = sqrt(xd*xd + yd*yd + zd*zd);
+		
+		if (sunD < (1.5 * (1/zoomingValue))) {
+			[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Sun", @"") inConstellation:NSLocalizedString(@"Our star", @"") showInfo:NO];
+			[[renderer interface] setANameplate:TRUE];
 			
+			//<<<<<<< HEAD:Classes/GLViewController.m
+			Vertex3D position = sun.position;
+			//Vertex3D position = Vector3DMake(sun.position.x, sun.position.y-0.2, sun.position.z);
+			//=======
+			//Vertex3D position = ;
+			//				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y, sun.position.z);
 			
-			float rotationY = (90-[[renderer location] latitude])*(M_PI/180);
-			float rotationZ1 = [[renderer location] longitude]*(M_PI/180);
-			float rotationZ2 = [[[[renderer interface] timeModule] manager] elapsed]*(M_PI/180);
-			//float rotationZ2 = rotationZ1 + rotationZ3;
-			
-			// voor goed voorbeeld: http://www.math.umn.edu/~nykamp/m2374/readings/matvecmultex/
-			// wikipedia rotatie matrix: http://en.wikipedia.org/wiki/Rotation_matrix
-			
-			//float maX,maY,maZ;
-			
-			// Matrix vermenigvuldiging met draai om de y-as (locatie)
-			maX = (cos(rotationY)*brX+0*brY+sin(rotationY)*brZ);
-			maY = (0*brX+1*brY+0*brZ);
-			maZ = ((-sin(rotationY)*brX)+0*brY+cos(rotationY)*brZ);
-			
-			brX = maX;
-			brY = maY;
-			brZ = maZ;
-			
-			// Matrix vermenigvuldiging met draai om de  z-as (locatie)
-			maX = (cos(rotationZ1)*brX+(-sin(rotationZ1)*brY)+0*brZ);
-			maY = (sin(rotationZ1)*brX+cos(rotationZ1)*brY+0*brZ);
-			maZ = (0*brX+0*brY+1*brZ);
-			
-			brX = maX;
-			brY = maY;
-			brZ = maZ;
-			
-			// Matrix vermenigvuldiging met draai om de  z-as (tijd)
-			maX = (cos(rotationZ2)*brX+(-sin(rotationZ2)*brY)+0*brZ);
-			maY = (sin(rotationZ2)*brX+cos(rotationZ2)*brY+0*brZ);
-			maZ = (0*brX+0*brY+1*brZ);
-			
-			brX = maX;
-			brY = maY;
-			brZ = maZ;
-			
-			float stX,stY,stZ,plX,plY,plZ;
-			stX = -20*brX;
-			stY = -20*brY;
-			stZ = -20*brZ;
-			
-			plX = -15*brX;
-			plY = -15*brY;
-			plZ = -15*brZ;
-			
-			
-			
-			float zoomingValue = [camera zoomingValue];
-			float xd,yd,zd,sunD,moonD;
-			
-			SRSun * sun = [[[[UIApplication sharedApplication] delegate] objectManager] sun];
-			xd = sun.position.x-plX;
-			yd = sun.position.y-plY;
-			zd = sun.position.z-plZ;
-			sunD = sqrt(xd*xd + yd*yd + zd*zd);
-			
-			if (sunD < (1.5 * (1/zoomingValue))) {
-				[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Sun", @"") inConstellation:NSLocalizedString(@"Our star", @"") showInfo:NO];
-				[[renderer interface] setANameplate:TRUE];
-
-//<<<<<<< HEAD:Classes/GLViewController.m
-				Vertex3D position = sun.position;
-				//Vertex3D position = Vector3DMake(sun.position.x, sun.position.y-0.2, sun.position.z);
-//=======
-				//Vertex3D position = ;
-//				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y, sun.position.z);
-				
-				[renderer setHighlightPosition:position];
-				[renderer setSelectedStar:nil];
-				[renderer setPlanetHighlighted:TRUE];
-				[renderer setSelectedPlanet:sun];
-				[renderer setHighlightSize:32]; 
-				[renderer setHighlight:TRUE];
-			}
-			else {			
+			[renderer setHighlightPosition:position];
+			[renderer setSelectedStar:nil];
+			[renderer setPlanetHighlighted:TRUE];
+			[renderer setSelectedPlanet:sun];
+			[renderer setHighlightSize:32]; 
+			[renderer setHighlight:TRUE];
+		}
+		else {			
 			SRMoon * moon = [[[[UIApplication sharedApplication] delegate] objectManager] moon];
 			xd = moon.position.x-plX;
 			yd = moon.position.y-plY;
@@ -383,10 +383,10 @@
 			if (moonD < (1.5 * (1/zoomingValue))) {
 				[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Moon", @"") inConstellation:@"" showInfo:NO];
 				[[renderer interface] setANameplate:TRUE];
-
+				
 				//Vertex3D position = ;
 				Vertex3D position = Vector3DMake(moon.position.x, moon.position.y, moon.position.z);
-//>>>>>>> 5b467e71baa2e98bbb44915d597b1fbd5ff73140:Classes/GLViewController.m
+				//>>>>>>> 5b467e71baa2e98bbb44915d597b1fbd5ff73140:Classes/GLViewController.m
 				
 				[renderer setHighlightPosition:position];
 				[renderer setSelectedStar:nil];
@@ -420,7 +420,7 @@
 					[[renderer interface] setANameplate:TRUE];
 					
 					[[[renderer interface] planetInfo] planetClicked:closestPlanet];
-
+					
 					Vertex3D position = closestPlanet.position;
 					
 					[renderer setHighlightPosition:position];
@@ -452,14 +452,14 @@
 						[[[renderer interface] theNameplate] setSelectedType:0];
 						[[[renderer interface] theNameplate] setName:closestMessier.name inConstellation:NSLocalizedString(@"messier", @"") showInfo:YES];
 						[[renderer interface] setANameplate:TRUE];
-
+						
 						[[[renderer interface] messierInfo] messierClicked:closestMessier];
 						
 						// Screen location test
 						Vertex3D posTmp = [closestMessier myCurrentPosition];
 						// Gaat alleen om de log in de method
 						
-
+						
 						
 						Vertex3D position = closestMessier.position;
 						
@@ -470,137 +470,184 @@
 						[renderer setHighlightSize:32]; 
 						[renderer setHighlight:TRUE];
 						
-
+						
 					}
 					else {
-					
-					SRStar * star;
-					SRStar * closestStar;
-					float starD;
-					closestD = 20; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
-					
-					for(star in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
 						
+						SRStar * star;
+						SRStar * closestStar;
+						float starD;
+						closestD = 20; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
 						
-						// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
-						xd = [star position].x - stX;
-						yd = [star position].y -stY;
-						zd = [star position].z -stZ;
-						starD = sqrt(xd*xd + yd*yd + zd*zd);
-						
-						if ([star visibleWithZoom:zoomingValue]) {
-							if (starD < closestD) {
-								
-								closestD = starD;
-								closestStar = star;
+						for(star in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
+							
+							
+							// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm
+							xd = [star position].x - stX;
+							yd = [star position].y -stY;
+							zd = [star position].z -stZ;
+							starD = sqrt(xd*xd + yd*yd + zd*zd);
+							
+							if ([star visibleWithZoom:zoomingValue]) {
+								if (starD < closestD) {
+									
+									closestD = starD;
+									closestStar = star;
+									
+								}
 								
 							}
 							
 						}
 						
-					}
-					
-					if (closestD < (1.5 * (1/zoomingValue))) {
-						//NSLog(@"Delta of closest: %f",closestD);
-						[[[renderer interface] theNameplate] setSelectedType:2];
-						/*if (closestStar.name == @"" || closestStar.name == @" ") {
-							[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Nameless star", @"") inConstellation:closestStar.bayer showInfo:YES];
-						}*/
-						//else {
-						@try {
-							if([[closestStar bayer] isEqualToString:@""] || [[closestStar bayer] isEqualToString:@" "] || ![closestStar bayer]) {
+						if (closestD < (1.5 * (1/zoomingValue))) {
+							//NSLog(@"Delta of closest: %f",closestD);
+							[[[renderer interface] theNameplate] setSelectedType:2];
+							/*if (closestStar.name == @"" || closestStar.name == @" ") {
+							 [[[renderer interface] theNameplate] setName:NSLocalizedString(@"Nameless star", @"") inConstellation:closestStar.bayer showInfo:YES];
+							 }*/
+							//else {
+							@try {
+								if([[closestStar bayer] isEqualToString:@""] || [[closestStar bayer] isEqualToString:@" "] || ![closestStar bayer]) {
+									[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:@"" showInfo:YES];
+								}
+								else {
+									NSString* constellationStr = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-3, 3)];
+									NSString* greekStrTmp;
+									NSString* numberStr;
+									NSString* numberStr2;
+									char first;
+									if(![[NSScanner scannerWithString:[[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-4, 1)]] scanInt:nil]) {
+										numberStr2 = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-4, 1)];
+										greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-7, 3)];
+										first = [greekStrTmp characterAtIndex:2];
+										if(isupper(first)) {
+											greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 2)];
+										}
+										numberStr = [[closestStar bayer] substringWithRange:NSMakeRange(0, [[closestStar bayer] length]-7)];
+									}
+									else {
+										numberStr2 = [NSString stringWithString:@""];
+										greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 3)];
+										first = [greekStrTmp characterAtIndex:2];
+										if(isupper(first)) {
+											greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 2)];
+										}
+										numberStr = [[closestStar bayer] substringWithRange:NSMakeRange(0, [[closestStar bayer] length]-6)];
+									}
+									NSString* greekStr = [[NSString alloc] init];
+									if([greekStrTmp isEqualToString:@"Alp"])
+										greekStr = @"α";
+									else if([greekStrTmp isEqualToString:@"Bet"])
+										greekStr = @"β";
+									else if([greekStrTmp isEqualToString:@"Gam"])
+										greekStr = @"γ";
+									else if([greekStrTmp isEqualToString:@"Del"])
+										greekStr = @"δ";
+									else if([greekStrTmp isEqualToString:@"Eps"])
+										greekStr = @"ε";
+									else if([greekStrTmp isEqualToString:@"Zet"])
+										greekStr = @"ζ";
+									else if([greekStrTmp isEqualToString:@"Eta"])
+										greekStr = @"η";
+									else if([greekStrTmp isEqualToString:@"The"])
+										greekStr = @"θ";
+									else if([greekStrTmp isEqualToString:@"Iot"])
+										greekStr = @"ι";
+									else if([greekStrTmp isEqualToString:@"Kap"])
+										greekStr = @"κ";
+									else if([greekStrTmp isEqualToString:@"Lam"])
+										greekStr = @"λ";
+									else if([greekStrTmp isEqualToString:@"Mu"])
+										greekStr = @"μ";
+									else if([greekStrTmp isEqualToString:@"Nu"])
+										greekStr = @"ν";
+									else if([greekStrTmp isEqualToString:@"Xi"])
+										greekStr = @"ξ";
+									else if([greekStrTmp isEqualToString:@"Omi"])
+										greekStr = @"ο";
+									else if([greekStrTmp isEqualToString:@"Pi"])
+										greekStr = @"π";
+									else if([greekStrTmp isEqualToString:@"Rho"])
+										greekStr = @"ρ";
+									else if([greekStrTmp isEqualToString:@"Sig"])
+										greekStr = @"σ";
+									else if([greekStrTmp isEqualToString:@"Tau"])
+										greekStr = @"τ";
+									else if([greekStrTmp isEqualToString:@"Ups"])
+										greekStr = @"υ";
+									else if([greekStrTmp isEqualToString:@"Phi"])
+										greekStr = @"φ";
+									else if([greekStrTmp isEqualToString:@"Chi"])
+										greekStr = @"χ";
+									else if([greekStrTmp isEqualToString:@"Psi"])
+										greekStr = @"ψ";
+									else if([greekStrTmp isEqualToString:@"Ome"])
+										greekStr = @"ω";
+									else {
+										NSLog(@"Griekse letter: %@",greekStrTmp);
+										greekStr = @"";
+									}
+									
+									
+									[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:[NSString stringWithFormat:@"%@ %@ %@",numberStr,greekStr,constellationStr] showInfo:YES];
+									//}
+									//[greekStrTmp release];
+									//[numberStr release];
+									//[constellationStr release];
+									//[greekStr release];
+								}
+							}
+							@catch(NSException * exception) {
 								[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:@"" showInfo:YES];
 							}
-							else {
-						NSString* constellationStr = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-3, 3)];
-						NSString* greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 3)];
-						NSString* greekStr = [[NSString alloc] init];
-						if([greekStrTmp isEqualToString:@"Alp"])
-							greekStr = @"α";
-						else if([greekStrTmp isEqualToString:@"Bet"])
-							greekStr = @"β";
-						else if([greekStrTmp isEqualToString:@"Gam"])
-							greekStr = @"γ";
-						else if([greekStrTmp isEqualToString:@"Del"])
-							greekStr = @"δ";
-						else if([greekStrTmp isEqualToString:@"Eps"])
-							greekStr = @"ε";
-						else if([greekStrTmp isEqualToString:@"Zet"])
-							greekStr = @"ζ";
-						else if([greekStrTmp isEqualToString:@"Eta"])
-							greekStr = @"η";
-						else if([greekStrTmp isEqualToString:@"The"])
-							greekStr = @"θ";
-						else if([greekStrTmp isEqualToString:@"Iot"])
-							greekStr = @"ι";
-						else if([greekStrTmp isEqualToString:@"Kap"])
-							greekStr = @"κ";
-						else if([greekStrTmp isEqualToString:@"Lam"])
-							greekStr = @"λ";
-						else {
-							NSLog(@"Griekse letter: %@",greekStrTmp);
-							greekStr = @"err";
-						}
-						NSString* numberStr = [[closestStar bayer] substringWithRange:NSMakeRange(0, [[closestStar bayer] length]-6)];
-						
-							[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:[NSString stringWithFormat:@"%@ %@ %@",numberStr,greekStr,constellationStr] showInfo:YES];
-						//}
-						//[greekStrTmp release];
-						//[numberStr release];
-						//[constellationStr release];
-						//[greekStr release];
-							}
-						}
-						@catch(NSException * exception) {
-							[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:@"" showInfo:YES];
-						}
-						[[renderer interface] setANameplate:TRUE];
-						[[[renderer interface] starInfo] starClicked:closestStar];
-						
-						
-						Vertex3D position = Vector3DMake([closestStar position].x, [closestStar position].y, [closestStar position].z);
-						
-						[renderer setHighlightPosition:position];
-						[renderer setSelectedStar:closestStar];
-						[renderer setPlanetHighlighted:FALSE];
-						[renderer setSelectedPlanet:nil];
-						[renderer setHighlightSize:32]; 
-						[renderer setHighlight:TRUE];
-						
-						// CPU intensieve method
-						// Dit moet anders bijvoorbeeld met een selector texture op de x,y,z locatie in de renderer
-						/*SRStar * ster;
-						 for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
-						 ster.selected = NO;
-						 }
-						 closestStar.selected = YES;
-						 [[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
-						 [renderer loadStarPoints];*/
-					}
-					else {
-						if ([[[renderer interface] theNameplate] visible]) {
+							[[renderer interface] setANameplate:TRUE];
+							[[[renderer interface] starInfo] starClicked:closestStar];
 							
-							[renderer setHighlight:FALSE];
-							[renderer setSelectedStar:nil];
+							
+							Vertex3D position = Vector3DMake([closestStar position].x, [closestStar position].y, [closestStar position].z);
+							
+							[renderer setHighlightPosition:position];
+							[renderer setSelectedStar:closestStar];
 							[renderer setPlanetHighlighted:FALSE];
 							[renderer setSelectedPlanet:nil];
-							[[[renderer interface] theNameplate] hide];
-							[[renderer interface] setANameplate:TRUE];
+							[renderer setHighlightSize:32]; 
+							[renderer setHighlight:TRUE];
+							
+							// CPU intensieve method
+							// Dit moet anders bijvoorbeeld met een selector texture op de x,y,z locatie in de renderer
 							/*SRStar * ster;
 							 for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
 							 ster.selected = NO;
 							 }
+							 closestStar.selected = YES;
 							 [[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
 							 [renderer loadStarPoints];*/
-							
-							
 						}
-					}
+						else {
+							if ([[[renderer interface] theNameplate] visible]) {
+								
+								[renderer setHighlight:FALSE];
+								[renderer setSelectedStar:nil];
+								[renderer setPlanetHighlighted:FALSE];
+								[renderer setSelectedPlanet:nil];
+								[[[renderer interface] theNameplate] hide];
+								[[renderer interface] setANameplate:TRUE];
+								/*SRStar * ster;
+								 for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
+								 ster.selected = NO;
+								 }
+								 [[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
+								 [renderer loadStarPoints];*/
+								
+								
+							}
+						}
 					}
 					
 				}
-					
-				}	
+				
+			}	
 			//}
 			
 			
@@ -629,7 +676,7 @@
 			//[camera RAAndDecForPoint:[aTouch previousLocationInView:theView]];
 		}
 	}
-		
+	
 }
 
 @end

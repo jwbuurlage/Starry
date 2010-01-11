@@ -1364,8 +1364,29 @@
 							[theNameplate setName:NSLocalizedString(foundStar.name, @"") inConstellation:@"" showInfo:YES];
 						}
 						else {
-							NSString* constellationStr = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-3, 3)];
-							NSString* greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-6, 3)];
+							NSString* constellationStr = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-3, 3)];
+							NSString* greekStrTmp;
+							NSString* numberStr;
+							NSString* numberStr2;
+							char first;
+							if(![[NSScanner scannerWithString:[[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-4, 1)]] scanInt:nil]) {
+								numberStr2 = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-4, 1)];
+								greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-7, 3)];
+								first = [greekStrTmp characterAtIndex:2];
+								if(isupper(first)) {
+									greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 2)];
+								}
+								numberStr = [[closestStar bayer] substringWithRange:NSMakeRange(0, [[closestStar bayer] length]-7)];
+							}
+							else {
+								numberStr2 = [NSString stringWithString:@""];
+								greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 3)];
+								first = [greekStrTmp characterAtIndex:2];
+								if(isupper(first)) {
+									greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 2)];
+								}
+								numberStr = [[closestStar bayer] substringWithRange:NSMakeRange(0, [[closestStar bayer] length]-6)];
+							}
 							NSString* greekStr = [[NSString alloc] init];
 							if([greekStrTmp isEqualToString:@"Alp"])
 								greekStr = @"α";
@@ -1389,11 +1410,37 @@
 								greekStr = @"κ";
 							else if([greekStrTmp isEqualToString:@"Lam"])
 								greekStr = @"λ";
+							else if([greekStrTmp isEqualToString:@"Mu"])
+								greekStr = @"μ";
+							else if([greekStrTmp isEqualToString:@"Nu"])
+								greekStr = @"ν";
+							else if([greekStrTmp isEqualToString:@"Xi"])
+								greekStr = @"ξ";
+							else if([greekStrTmp isEqualToString:@"Omi"])
+								greekStr = @"ο";
+							else if([greekStrTmp isEqualToString:@"Pi"])
+								greekStr = @"π";
+							else if([greekStrTmp isEqualToString:@"Rho"])
+								greekStr = @"ρ";
+							else if([greekStrTmp isEqualToString:@"Sig"])
+								greekStr = @"σ";
+							else if([greekStrTmp isEqualToString:@"Tau"])
+								greekStr = @"τ";
+							else if([greekStrTmp isEqualToString:@"Ups"])
+								greekStr = @"υ";
+							else if([greekStrTmp isEqualToString:@"Phi"])
+								greekStr = @"φ";
+							else if([greekStrTmp isEqualToString:@"Chi"])
+								greekStr = @"χ";
+							else if([greekStrTmp isEqualToString:@"Psi"])
+								greekStr = @"ψ";
+							else if([greekStrTmp isEqualToString:@"Ome"])
+								greekStr = @"ω";
 							else {
 								NSLog(@"Griekse letter: %@",greekStrTmp);
-								greekStr = @"err";
+								greekStr = @"";
 							}
-							NSString* numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length] - 6)];
+							//NSString* numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length] - 6)];
 							
 							[theNameplate setName:NSLocalizedString(foundStar.name, @"") inConstellation:[NSString stringWithFormat:@"%@ %@ %@",numberStr,greekStr,constellationStr] showInfo:YES];
 							//}
