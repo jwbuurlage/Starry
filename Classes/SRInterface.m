@@ -1364,28 +1364,28 @@
 							[theNameplate setName:NSLocalizedString(foundStar.name, @"") inConstellation:@"" showInfo:YES];
 						}
 						else {
-							NSString* constellationStr = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-3, 3)];
+							NSString* constellationStr = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-3, 3)];
 							NSString* greekStrTmp;
 							NSString* numberStr;
 							NSString* numberStr2;
 							char first;
-							if(![[NSScanner scannerWithString:[[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-4, 1)]] scanInt:nil]) {
-								numberStr2 = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-4, 1)];
-								greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-7, 3)];
+							if(![[NSScanner scannerWithString:[[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-4, 1)]] scanInt:nil]) {
+								numberStr2 = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-4, 1)];
+								greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-7, 3)];
 								first = [greekStrTmp characterAtIndex:2];
 								if(isupper(first)) {
-									greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 2)];
+									greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-6, 2)];
 								}
-								numberStr = [[closestStar bayer] substringWithRange:NSMakeRange(0, [[closestStar bayer] length]-7)];
+								numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length]-7)];
 							}
 							else {
 								numberStr2 = [NSString stringWithString:@""];
-								greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 3)];
+								greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-6, 3)];
 								first = [greekStrTmp characterAtIndex:2];
 								if(isupper(first)) {
-									greekStrTmp = [[closestStar bayer] substringWithRange:NSMakeRange([[closestStar bayer] length]-6, 2)];
+									greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-6, 2)];
 								}
-								numberStr = [[closestStar bayer] substringWithRange:NSMakeRange(0, [[closestStar bayer] length]-6)];
+								numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length]-6)];
 							}
 							NSString* greekStr = [[NSString alloc] init];
 							if([greekStrTmp isEqualToString:@"Alp"])

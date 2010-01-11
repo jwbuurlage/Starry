@@ -108,6 +108,8 @@
 		float cnRA = atan2f(ncY,ncX);
 		float cnDEC = acosf(ncZ);
 		
+		
+		
 		float deltaRA = coRA - cnRA;
 		float deltaDEC = coDEC - cnDEC;
 		

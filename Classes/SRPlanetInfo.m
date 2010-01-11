@@ -97,11 +97,9 @@
 	NSNumber * secondsNumber = [[NSNumber alloc] initWithFloat:secondsF];
 	int seconds = [secondsNumber intValue];
 	
-	//if (azTmp < 0) {
-	//	degrees = 360+degrees;
-	//	minutes = 60+minutes;
-	//	seconds = 60+seconds;
-	//}
+	if (degrees > 360) {
+		degrees -= 360;
+	}
 	
 	[[[elements objectAtIndex:[elements count] - 5] texture] release];
 	[[elements objectAtIndex:[elements count] - 5] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i\' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 

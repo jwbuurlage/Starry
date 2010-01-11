@@ -243,7 +243,7 @@
 	float azTmp = (180/M_PI)*atan2f(posForCam.y,posForCam.x);
 	float alTmp = 90-(180/M_PI)*acosf(-posForCam.z); 
 	
-	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(-azTmp)];
+	NSNumber * coordinateNumber = [[NSNumber alloc] initWithFloat:(360-azTmp)];
 	int degrees = [coordinateNumber intValue];
 	float minutesF = ([coordinateNumber floatValue] - [coordinateNumber intValue]) * 60;
 	NSNumber * minutesNumber = [[NSNumber alloc] initWithFloat:minutesF];
@@ -252,12 +252,10 @@
 	NSNumber * secondsNumber = [[NSNumber alloc] initWithFloat:secondsF];
 	int seconds = [secondsNumber intValue];
 	
-	//if (azTmp < 0) {
-	//	degrees = 360+degrees;
-	//	minutes = 60+minutes;
-	//	seconds = 60+seconds;
-	//}
-	//degrees = degrees ; // Uuren er van maken
+	if (degrees > 360) {
+		degrees -= 360;
+	}
+	
 	[[[elements objectAtIndex:[elements count] - 3] texture] release];
 	[[elements objectAtIndex:[elements count] - 3] setTexture:[[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i° %i' %i\"",degrees,minutes,seconds] dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	[coordinateNumber release];
