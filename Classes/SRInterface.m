@@ -341,7 +341,7 @@
 		else if (menuVisible) {
 			      glTranslatef(0, -yTranslate, 0);
 			if([element identifier] == @"search_text" && ![currentlyEditingIdentifier isEqual:@"search"]) {
-				glColor4f(0.2f, 0.2f, 0.2f, 1.0f);
+				glColor4f(0.5f, 0.5f, 0.5f, 1.0f);
 				[[element texture] drawInRect:[element bounds]];
 				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 			}
@@ -453,7 +453,7 @@
 	
 	if(showingMessier == TRUE) {
 		[messierInfo hide];
-		if([settingsModule visible]) 
+		if([settingsModule visible] && yTranslate == 0) 
 			[self showSliderWith:@"fade"];
 		aMessier = YES;
 		clicker = @"messierinfo";
@@ -462,7 +462,7 @@
 	
 	if(showingPlanet == TRUE) {
 		[planetInfo hide];
-		if([settingsModule visible]) 
+		if([settingsModule visible] && yTranslate == 0) 
 			[self showSliderWith:@"fade"];
 		aPlanet = YES;
 		clicker = @"planetinfo";
