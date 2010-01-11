@@ -53,8 +53,8 @@
 	float zoomDeltaY;
 	
 	int tSteps;
-	int hSteps;
-	int vSteps;
+	float hSteps;
+	float vSteps;
 	
 	GLfloat zoomingValue; 
 }
@@ -78,5 +78,7 @@
 
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY;
 -(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY;
+
+- (void)doAnimations:(float)timeElapsed;
 
 @end

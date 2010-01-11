@@ -295,7 +295,7 @@
 	//we rekenen uit hoelang het per frame is om animaties smooth te laten verlopen
 	if (lastDrawTime) { timeElapsed = [NSDate timeIntervalSinceReferenceDate] - lastDrawTime; }
     lastDrawTime = [NSDate timeIntervalSinceReferenceDate];
-	
+
 	// -- animaties..
 	[self calculateAnimations];
 	[[timeModule manager] tickOfTime:timeElapsed];

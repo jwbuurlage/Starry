@@ -233,7 +233,7 @@
 	[secondsNumber2 release];
 	
 	[[[elements objectAtIndex:[elements count] - 1] texture] release];
-	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%f",[theStar mag]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
+	[[elements objectAtIndex:[elements count] - 1] setTexture:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"%.2f",[theStar mag]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]]; 
 	
 	
 }

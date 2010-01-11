@@ -77,6 +77,9 @@
 	
 	BOOL planetView;
 	BOOL drawPlanetLabels;
+	
+	NSTimeInterval lastDrawTime;
+	float timeElapsed;
 }
 
 @property (readonly) SRInterface* interface;

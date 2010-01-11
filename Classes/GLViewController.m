@@ -664,11 +664,11 @@
 		x = [aTouch locationInView:theView].x - [aTouch previousLocationInView:theView].x;
 		y = [aTouch locationInView:theView].y - [aTouch previousLocationInView:theView].y;
 		
-		if(x > 8 || x < -8) {
+		if(x > 5 || x < -5) {
 			//NSLog(@"swipe horizontal");
 			[camera initiateHorizontalSwipeWithX:x];
 		}
-		else if(y > 8 || y < -8) {
+		if(y > 5 || y < -5) {
 			[camera initiateVerticalSwipeWithY:y];
 		}
 		else {

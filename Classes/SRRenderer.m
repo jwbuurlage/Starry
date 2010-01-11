@@ -239,6 +239,11 @@
 }
 
 -(void)render {
+	if (lastDrawTime) { timeElapsed = [NSDate timeIntervalSinceReferenceDate] - lastDrawTime; }
+    lastDrawTime = [NSDate timeIntervalSinceReferenceDate];
+	
+	[camera doAnimations:timeElapsed];
+	
 	if(selectedStar && ![[interface starInfo] hiding])
 		[[interface starInfo] starUpdate:selectedStar];
 	

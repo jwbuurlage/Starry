@@ -46,30 +46,29 @@
 	return self;
 }
 
-- (void)adjustView {
+- (void)doAnimations:(float)timeElapsed {
+	if(swipeHor && swipeVer) { NSLog(@"test"); }
+	
 	if(swipeHor) {
-		//afremmen in 50 stappen
-		if(hSteps == 0) { hSteps = 50; }
-		
-		hSpeed = accH * hSteps * 0.010;
+		if(hSteps == 0) { hSteps = 20; }
+		hSteps -= (timeElapsed / 0.075);
+		hSpeed = accH * 0.010 * hSteps;
 		altitude -= hSpeed / (4/fieldOfView); // voor het zomen is de / (4/fieldOfView) nodig
 		
-		--hSteps;
-		if(hSteps == 0) {
+		if(hSteps <= 0.0) {
 			swipeHor = FALSE;
+			hSteps = 0;
 		}
-		
-		//NSLog(@"%i", hSteps);
 	}
 	if(swipeVer) {
-		if(vSteps == 0) { vSteps = 50; }
-		
+		if(vSteps == 0) { vSteps = 20; }
+		vSteps -= (timeElapsed / 0.075);
 		vSpeed = accV * vSteps * 0.010;
 		azimuth += vSpeed / (4/fieldOfView); // voor het zomen is de / (4/fieldOfView) nodig
 		
-		--vSteps;
-		if(vSteps == 0) {
+		if(vSteps <= 0.0) {
 			swipeVer = FALSE;
+			vSteps = 0;
 		}
 	}
 	if(tapZoom) {
@@ -128,7 +127,10 @@
 			tapZoom = FALSE;
 		}
 	}
-		
+	
+}
+
+- (void)adjustView {		
 	if(altitude > 89.9) { altitude = 89.9; }
 	else if (altitude < -89.9) { altitude = -89.9; }
 	if(azimuth < 0) { azimuth += 360; }
