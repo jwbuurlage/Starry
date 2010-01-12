@@ -23,7 +23,7 @@
 		
 		locationManager = aLocation;
 		
-		initialXValueIcon = 12;
+		initialXValueIcon = 10;
 		
 		[locationManager makeAwareOfInterface:self];
 		

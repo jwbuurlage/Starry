@@ -63,6 +63,9 @@
 	
 	//NSLog(@"X: %f, Y: %f, Z: %F", X,Y,Z);
 	
+	ra = RASun;
+	dec = DecSun;
+	
 	position = Vertex3DMake(X, Y, Z);
 	
 	[gregorian release];	
@@ -72,5 +75,17 @@
 	return Vertex3DMake(0,0,0);
 }
 
+-(float)height:(float)latitude lon:(float)longitude elapsed:(float)elapsed {
+	
+	float p = (M_PI / 180) * latitude;
+	float H = ((M_PI / 180) * elapsed) + ((M_PI / 180) * longitude) - ra;
+	float d = dec;
+	
+	float height = ((180 / M_PI) * asin(sin(p) * sin(d) + (cos(p) * cos(d) * cos(H) ) ));    	
+	
+	NSLog(@"%f", height);
+	
+	return height;
+}
 
 @end

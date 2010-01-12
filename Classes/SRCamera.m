@@ -52,7 +52,7 @@
 	if(swipeHor) {
 		if(hSteps == 0) { hSteps = 20; }
 		hSteps -= (timeElapsed / 0.075);
-		hSpeed = accH * 0.010 * hSteps;
+		hSpeed = accH * 0.020 * hSteps;
 		altitude -= hSpeed / (4/fieldOfView); // voor het zomen is de / (4/fieldOfView) nodig
 		
 		if(hSteps <= 0.0) {
@@ -63,7 +63,7 @@
 	if(swipeVer) {
 		if(vSteps == 0) { vSteps = 20; }
 		vSteps -= (timeElapsed / 0.075);
-		vSpeed = accV * vSteps * 0.010;
+		vSpeed = accV * vSteps * 0.020;
 		azimuth += vSpeed / (4/fieldOfView); // voor het zomen is de / (4/fieldOfView) nodig
 		
 		if(vSteps <= 0.0) {

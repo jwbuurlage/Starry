@@ -14,7 +14,7 @@
 -(id)init {
 	if(self = [super init]) {
 		
-		initialXValueIcon = 112;
+		initialXValueIcon = 106;
 		
 		elements = [[NSMutableArray alloc] init];
 		
