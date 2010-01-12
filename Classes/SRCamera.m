@@ -47,7 +47,7 @@
 }
 
 - (void)doAnimations:(float)timeElapsed {
-	if(swipeHor && swipeVer) { NSLog(@"test"); }
+	//if(swipeHor && swipeVer) { NSLog(@"test"); }
 	
 	if(swipeHor) {
 		if(hSteps == 0) { hSteps = 20; }
@@ -72,7 +72,7 @@
 		}
 	}
 	if(tapZoom) {
-		if(tSteps == 0) { tSteps = 50; }
+		if(tSteps == 0) { tSteps = 30; }
 		
 	 
 	 //NSLog(@"deltax:%i deltay:%i",deltaX,deltaY);
@@ -108,7 +108,7 @@
 	 float RA1 = atan2f(Y6,X6);
 	 float DEC1 = acosf(Z6);
 	 
-	 float newFieldOfView = fieldOfView - (0.3/50);
+	 float newFieldOfView = fieldOfView - (0.3/30);
 	 float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))));
 	 float newRadPerPixel = sinf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))))/(320+(newFieldOfView*160));
 	 
@@ -140,13 +140,14 @@
 	
 	float deltaRA = RA1 - RA2;
 	float deltaDEC = DEC1 - DEC2;
+		if(newFieldOfView > 0.1) {
+			azimuth += (deltaRA)*(180/M_PI);
+			altitude += (deltaDEC)*(180/M_PI);
 	
-	azimuth += (deltaRA)*(180/M_PI);
-	altitude += (deltaDEC)*(180/M_PI);
+			//NSLog(@"ra:%f dec:%f RA1:%f RA2:%f DEC1:%f DEC2:%f",azimuth,altitude,RA1,-RA2,DEC1,-DEC2);
 	
-	NSLog(@"ra:%f dec:%f RA1:%f RA2:%f DEC1:%f DEC2:%f",azimuth,altitude,RA1,-RA2,DEC1,-DEC2);
-	
-	fieldOfView = newFieldOfView;
+			fieldOfView = newFieldOfView;
+		}
 		
 		--tSteps;
 		if(tSteps == 0) {

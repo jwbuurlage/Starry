@@ -67,7 +67,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 76FBD269109DE495005A0ADE /* Sterren */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Sterren */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Sterren */,
@@ -702,7 +702,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 80";
 		rLen = 0;
-		rLoc = 1952;
+		rLoc = 1954;
 		rType = 0;
 		vrLen = 1368;
 		vrLoc = 2969;
@@ -1057,7 +1057,7 @@
 		fRef = 76E6933C10FA31E400924A41 /* SRSQLiteDelegate.m */;
 		name = "SRSQLiteDelegate.m: 44";
 		rLen = 92;
-		rLoc = 1840;
+		rLoc = 1851;
 		rType = 0;
 		vrLen = 1884;
 		vrLoc = 195;
@@ -1255,9 +1255,9 @@
 	};
 	76E6933C10FA31E400924A41 /* SRSQLiteDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {957, 871}}";
-			sepNavSelRange = "{1840, 92}";
-			sepNavVisRange = "{195, 1884}";
+			sepNavIntBoundsRect = "{{0, 0}, {985, 845}}";
+			sepNavSelRange = "{837, 0}";
+			sepNavVisRange = "{176, 1934}";
 		};
 	};
 	76EE54C310F23C07006EA065 /* PBXTextBookmark */ = {
@@ -1373,7 +1373,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 434";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 773;
 		vrLoc = 12087;
@@ -1383,7 +1383,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 434";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 773;
 		vrLoc = 12087;
@@ -1393,7 +1393,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 434";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 861;
 		vrLoc = 11996;
@@ -1403,7 +1403,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 434";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 816;
 		vrLoc = 12043;
@@ -1413,7 +1413,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 438";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 919;
 		vrLoc = 11711;
@@ -1423,7 +1423,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 404";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 10827;
@@ -1433,7 +1433,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 407";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1319;
 		vrLoc = 10758;
@@ -1443,7 +1443,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 404";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1156;
 		vrLoc = 11075;
@@ -1454,7 +1454,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 329;
+		rLoc = 330;
 		rType = 1;
 	};
 	76F8704810FD10CF0079B266 /* PBXTextBookmark */ = {
@@ -1462,7 +1462,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 403";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1034;
 		vrLoc = 11325;
@@ -1472,7 +1472,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 403";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1253;
 		vrLoc = 11188;
@@ -1482,7 +1482,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 403";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1253;
 		vrLoc = 11188;
@@ -1492,7 +1492,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 403";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1169;
 		vrLoc = 11325;
@@ -1502,7 +1502,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 403";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 775;
 		vrLoc = 0;
@@ -1512,7 +1512,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 415";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1404;
 		vrLoc = 10975;
@@ -1522,7 +1522,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 415";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1404;
 		vrLoc = 10975;
@@ -1532,7 +1532,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 415";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1177;
 		vrLoc = 10975;
@@ -1542,7 +1542,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 406";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1390;
 		vrLoc = 10890;
@@ -1552,7 +1552,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 406";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1390;
 		vrLoc = 10890;
@@ -1562,7 +1562,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 406";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1182;
 		vrLoc = 10975;
@@ -1572,7 +1572,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 398";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1283;
 		vrLoc = 10890;
@@ -1582,7 +1582,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 399";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1262;
 		vrLoc = 10890;
@@ -1592,7 +1592,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 438";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 859;
 		vrLoc = 12131;
@@ -1602,7 +1602,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 434";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1107;
 		vrLoc = 11648;
@@ -1612,7 +1612,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 434";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1107;
 		vrLoc = 11648;
@@ -1622,7 +1622,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 434";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1107;
 		vrLoc = 11648;
@@ -1632,7 +1632,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 407";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 856;
 		vrLoc = 11591;
@@ -1652,7 +1652,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 407";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1066;
 		vrLoc = 11506;
@@ -1662,7 +1662,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 442";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 12250;
@@ -1672,7 +1672,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 442";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 598;
 		vrLoc = 12250;
@@ -1682,7 +1682,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 442";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 868;
 		vrLoc = 12117;
@@ -1692,7 +1692,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 442";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 868;
 		vrLoc = 12117;
@@ -1702,7 +1702,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 442";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 12117;
@@ -1712,7 +1712,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 442";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 860;
 		vrLoc = 12014;
@@ -1722,7 +1722,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 442";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 860;
 		vrLoc = 12014;
@@ -1732,7 +1732,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 442";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 860;
 		vrLoc = 12014;
@@ -1742,7 +1742,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 447";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 12014;
@@ -1752,7 +1752,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 445";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 923;
 		vrLoc = 11968;
@@ -1762,7 +1762,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 445";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 945;
 		vrLoc = 11968;
@@ -1772,7 +1772,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 445";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 11968;
@@ -1782,7 +1782,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 445";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 11968;
@@ -1792,7 +1792,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 445";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 953;
 		vrLoc = 11948;
@@ -1802,7 +1802,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 445";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 953;
 		vrLoc = 11950;
@@ -1812,7 +1812,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 445";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 11948;
@@ -1822,7 +1822,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 445";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 930;
 		vrLoc = 11946;
@@ -1832,7 +1832,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 440";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 632;
 		vrLoc = 12449;
@@ -1842,7 +1842,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 407";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1052;
 		vrLoc = 11677;
@@ -1852,7 +1852,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 440";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 851;
 		vrLoc = 12224;
@@ -1892,7 +1892,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 390";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1033;
 		vrLoc = 11803;
@@ -1902,7 +1902,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 364";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1320;
 		vrLoc = 10340;
@@ -1912,7 +1912,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 364";
 		rLen = 0;
-		rLoc = 9283;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1320;
 		vrLoc = 10340;
@@ -1931,7 +1931,7 @@
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
 		name = "SRCamera.m: 78";
 		rLen = 0;
-		rLoc = 1957;
+		rLoc = 1959;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 1466;
@@ -2243,9 +2243,9 @@
 	};
 	ACB7B11610615C1000CA447E /* SRCamera.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {957, 4511}}";
-			sepNavSelRange = "{1957, 0}";
-			sepNavVisRange = "{1466, 1221}";
+			sepNavIntBoundsRect = "{{0, 0}, {992, 4537}}";
+			sepNavSelRange = "{2909, 0}";
+			sepNavVisRange = "{2085, 1416}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
