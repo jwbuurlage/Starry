@@ -71,129 +71,88 @@
 			vSteps = 0;
 		}
 	}
-	/*if(tapZoom) {
+	if(tapZoom) {
 		if(tSteps == 0) { tSteps = 50; }
 		
-		float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
-		float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
-		
-		float fiX = zoomDeltaX * radPerPixel;
-		float fiY = zoomDeltaY * radPerPixel;
-		float fiZ = -standardHeight;
-		
-		float dSphere1 = sqrtf(powf(fiX,2) + powf(fiY,2) + powf(fiZ,2));
-		
-		float brX = fiX / dSphere1;
-		float brY = fiY / dSphere1;
-		float brZ = fiZ / dSphere1;
-		
-		float maX,maY,maZ;
-		
-		/*float rotationY1 = (altitude-90)*(M_PI/180);
-		float rotationZ = azimuth*(M_PI/180);
-
-		
-		
-		maX = (cosf(rotationY1)*brX+0*brY+sinf(rotationY1)*brZ);
-		maY = (0*brX+1*brY+0*brZ);
-		maZ = ((-sinf(rotationY1)*brX)+0*brY+cosf(rotationY1)*brZ);
-		
-		brX = maX;
-		brY = maY;
-		brZ = maZ;
-		
-		maX = (cosf(rotationZ)*brX+(-sinf(rotationZ)*brY)+0*brZ);
-		maY = (sinf(rotationZ)*brX+cosf(rotationZ)*brY+0*brZ);
-		maZ = (0*brX+0*brY+1*brZ);
-		
-		brX = maX;
-		brY = maY;
-		brZ = maZ;
-		
-		float RA1 = atan2f(brX,brY);
-		float DEC1 = acosf(brZ);
-		
-		float newFieldOfView = fieldOfView - (0.3/50);
-		float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))));
-		float newRadPerPixel = sinf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))))/(320+(newFieldOfView*160));
-		
-		float nfX = zoomDeltaX * newRadPerPixel;
-		float nfY = zoomDeltaY * newRadPerPixel;
-		float nfZ = -newStandardHeight;
-		
-		float dSphere2 = sqrtf(powf(nfX,2) + powf(nfY,2) + powf(nfZ,2));
-		
-		brX = nfX / dSphere2;
-		brY = nfY / dSphere2;
-		brZ = nfZ / dSphere2;
-		
-		/*maX = (cosf(rotationY1)*brX+0*brY+sinf(rotationY1)*brZ);
-		maY = (0*brX+1*brY+0*brZ);
-		maZ = ((-sinf(rotationY1)*brX)+0*brY+cosf(rotationY1)*brZ);
-		
-		brX = maX;
-		brY = maY;
-		brZ = maZ;
-		
-		maX = (cosf(rotationZ)*brX+(-sinf(rotationZ)*brY)+0*brZ);
-		maY = (sinf(rotationZ)*brX+cosf(rotationZ)*brY+0*brZ);
-		maZ = (0*brX+0*brY+1*brZ);
-		
-		brX = maX;
-		brY = maY;
-		brZ = maZ;
-		
-		float RA2 = -atan2f(brY,brX);
-		float DEC2 = -acosf(brZ);
-		
-		brX = sin(altitude*(M_PI/180))*cos(azimuth*(M_PI/180));
-		brY = sin(altitude*(M_PI/180))*sin(azimuth*(M_PI/180));
-		brZ = cos(altitude*(M_PI/180));
-		
-		maX = (cosf(DEC1)*brX+0*brY+sinf(DEC1)*brZ);
-		maY = (0*brX+1*brY+0*brZ);
-		maZ = ((-sinf(DEC1)*brX)+0*brY+cosf(DEC1)*brZ);
-		
-		brX = maX;
-		brY = maY;
-		brZ = maZ;
-		
-		maX = (cosf(RA1)*brX+(-sinf(RA1)*brY)+0*brZ);
-		maY = (sinf(RA1)*brX+cosf(RA1)*brY+0*brZ);
-		maZ = (0*brX+0*brY+1*brZ);
-		
-		brX = maX;
-		brY = maY;
-		brZ = maZ;
-		
-		maX = (cosf(RA2)*brX+0*brY+sinf(RA2)*brZ);
-		maY = (0*brX+1*brY+0*brZ);
-		maZ = ((-sinf(RA2)*brX)+0*brY+cosf(RA2)*brZ);
-		
-		brX = maX;
-		brY = maY;
-		brZ = maZ;
-		
-		maX = (cosf(DEC2)*brX+(-sinf(DEC2)*brY)+0*brZ);
-		maY = (sinf(DEC2)*brX+cosf(DEC2)*brY+0*brZ);
-		maZ = (0*brX+0*brY+1*brZ);
-		
-		brX = maX;
-		brY = maY;
-		brZ = maZ;
-		
-		if(newFieldOfView > 0.1) {
-			altitude = acosf(brZ)*(180/M_PI)-90;
-			azimuth = atan2f(brY,brX)*(180/M_PI);
-			NSLog(@"dec:%f ra:%f coRA:%f cnRA:%f",altitude,azimuth,RA1,-RA2);
-			fieldOfView = newFieldOfView;
-		}
+	 
+	 //NSLog(@"deltax:%i deltay:%i",deltaX,deltaY);
+	 
+	 float DEC3 = (altitude-90)*(M_PI/180);
+	 float RA3 = azimuth*(M_PI/180);
+	 
+	 float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
+	 float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
+	 
+	 float X1 = zoomDeltaX * radPerPixel;
+	 float Y1 = zoomDeltaY * radPerPixel;
+	 float Z1 = -standardHeight;
+	 
+	 float dSphere1 = sqrtf(powf(X1,2) + powf(Y1,2) + powf(Z1,2));
+	 
+	 float X2 = X1 / dSphere1;
+	 float Y2 = Y1 / dSphere1;
+	 float Z2 = Z1 / dSphere1;
+	 
+	 float X6 = cosf(DEC3)*X2+sinf(DEC3)*Z2;
+	 float Y6 = Y2;
+	 float Z6 = -sinf(DEC3)*X2+cosf(DEC3)*Z2;
+	 
+	 X2 = X6;
+	 Y2 = Y6;
+	 Z2 = Z6;
+	 
+	 X6 = cosf(RA3)*X2-sinf(RA3)*Y2;
+	 Y6= sinf(RA3)*X2+cosf(RA3)*Y2;
+	 Z6 = Z2;
+	 
+	 float RA1 = atan2f(Y6,X6);
+	 float DEC1 = acosf(Z6);
+	 
+	 float newFieldOfView = fieldOfView - (0.3/50);
+	 float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))));
+	 float newRadPerPixel = sinf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))))/(320+(newFieldOfView*160));
+	 
+	 float X3 = zoomDeltaX * newRadPerPixel;
+	 float Y3 = zoomDeltaY * newRadPerPixel;
+	 float Z3 = -newStandardHeight;
+	 
+	 float dSphere2 = sqrtf(powf(X3,2) + powf(Y3,2) + powf(Z3,2));
+	 
+	 float X4 = X3 / dSphere2;
+	 float Y4 = Y3 / dSphere2;
+	 float Z4 = Z3 / dSphere2;
+	 
+	 float X5 = cosf(DEC3)*X4+sinf(DEC3)*Z4;
+	 float Y5 = Y4;
+	 float Z5 = -sinf(DEC3)*X4+cosf(DEC3)*Z4;
+	 
+	 X4 = X5;
+	 Y4 = Y5;
+	 Z4 = Z5;
+	 
+	 X5 = cosf(RA3)*X4-sinf(RA3)*Y4;
+	 Y5 = sinf(RA3)*X4+cosf(RA3)*Y4;
+	 Z5 = Z4;
+	 
+	 float RA2 = atan2f(Y5,X5);
+	 float DEC2 = acosf(Z5);
+	 
+	
+	float deltaRA = RA1 - RA2;
+	float deltaDEC = DEC1 - DEC2;
+	
+	azimuth += (deltaRA)*(180/M_PI);
+	altitude += (deltaDEC)*(180/M_PI);
+	
+	NSLog(@"ra:%f dec:%f RA1:%f RA2:%f DEC1:%f DEC2:%f",azimuth,altitude,RA1,-RA2,DEC1,-DEC2);
+	
+	fieldOfView = newFieldOfView;
 		
 		--tSteps;
 		if(tSteps == 0) {
 			tapZoom = FALSE;
 		}
-	}*/
+	}
 	
 }
 
@@ -354,122 +313,9 @@
 -(void)zoomCameraWithX:(int)deltaX andY:(int)deltaY {
 	
 	
-	//tapZoom = TRUE;
+	tapZoom = TRUE;
 	zoomDeltaX = deltaX;
 	zoomDeltaY = deltaY;
-	
-	NSLog(@"deltax:%i deltay:%i",deltaX,deltaY);
-	
-	float DEC3 = (altitude-90)*(M_PI/180);
-	float RA3 = azimuth*(M_PI/180);
-	
-	float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
-	float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
-	
-	float X1 = zoomDeltaX * radPerPixel;
-	float Y1 = zoomDeltaY * radPerPixel;
-	float Z1 = -standardHeight;
-	
-	float dSphere1 = sqrtf(powf(X1,2) + powf(Y1,2) + powf(Z1,2));
-	
-	float X2 = X1 / dSphere1;
-	float Y2 = Y1 / dSphere1;
-	float Z2 = Z1 / dSphere1;
-	
-	float X6 = cosf(DEC3)*X2+sinf(DEC3)*Z2;
-	float Y6 = Y2;
-	float Z6 = -sinf(DEC3)*X2+cosf(DEC3)*Z2;
-	
-	X2 = X6;
-	Y2 = Y6;
-	Z2 = Z6;
-	
-	X6 = cosf(RA3)*X2-sinf(RA3)*Y2;
-	Y6= sinf(RA3)*X2+cosf(RA3)*Y2;
-	Z6 = Z2;
-	
-	float RA1 = atan2f(Y6,X6);
-	float DEC1 = acosf(Z6);
-	
-	float newFieldOfView = fieldOfView - (0.1);
-	float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))));
-	float newRadPerPixel = sinf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))))/(320+(newFieldOfView*160));
-	
-	float X3 = zoomDeltaX * newRadPerPixel;
-	float Y3 = zoomDeltaY * newRadPerPixel;
-	float Z3 = -newStandardHeight;
-	
-	float dSphere2 = sqrtf(powf(X3,2) + powf(Y3,2) + powf(Z3,2));
-	
-	float X4 = X3 / dSphere2;
-	float Y4 = Y3 / dSphere2;
-	float Z4 = Z3 / dSphere2;
-	
-	float X5 = cosf(DEC3)*X4+sinf(DEC3)*Z4;
-	float Y5 = Y4;
-	float Z5 = -sinf(DEC3)*X4+cosf(DEC3)*Z4;
-	
-	X4 = X5;
-	Y4 = Y5;
-	Z4 = Z5;
-	
-	X5 = cosf(RA3)*X4-sinf(RA3)*Y4;
-	Y5 = sinf(RA3)*X4+cosf(RA3)*Y4;
-	Z5 = Z4;
-	
-	float RA2 = atan2f(Y5,X5);
-	float DEC2 = acosf(Z5);
-	
-	/*float useAzimuth = azimuth;
-	float useAltitude = altitude;
-	NSLog(@"usera:%f dec:%f",useAzimuth,useAltitude);
-	
-	float brX = sinf(useAltitude*(M_PI/180))*cosf(useAzimuth*(M_PI/180));
-	float brY = sinf(useAltitude*(M_PI/180))*sinf(useAzimuth*(M_PI/180));
-	float brZ = cosf(useAltitude*(M_PI/180));
-	
-	float maX,maY,maZ;
-/*	maX = (cosf(DEC1)*brX+0*brY+sinf(DEC1)*brZ);
-	maY = (0*brX+1*brY+0*brZ);
-	maZ = ((-sinf(DEC1)*brX)+0*brY+cosf(DEC1)*brZ);
-	
-	brX = maX;
-	brY = maY;
-	brZ = maZ;
-	
-	maX = (cosf(RA1)*brX+(-sinf(RA1)*brY)+0*brZ);
-	maY = (sinf(RA1)*brX+cosf(RA1)*brY+0*brZ);
-	maZ = (0*brX+0*brY+1*brZ);
-	
-	brX = maX;
-	brY = maY;
-	brZ = maZ;
-	
-	maX = (cosf(RA2)*brX+(-sinf(RA2)*brY)+0*brZ);
-	maY = (sinf(RA2)*brX+cosf(RA2)*brY+0*brZ);
-	maZ = (0*brX+0*brY+1*brZ);
-	
-	brX = maX;
-	brY = maY;
-	brZ = maZ;
-	
-	maX = (cosf(DEC2)*brX+0*brY+sinf(DEC2)*brZ);
-	maY = (0*brX+1*brY+0*brZ);
-	maZ = ((-sinf(DEC2)*brX)+0*brY+cosf(DEC2)*brZ);
-	
-	brX = maX;
-	brY = maY;
-	brZ = maZ;*/
-	
-	float deltaRA = RA1 - RA2;
-	float deltaDEC = DEC1 - DEC2;
-	
-	azimuth += (deltaRA)*(180/M_PI);
-	altitude += (deltaDEC)*(180/M_PI);
-	
-	NSLog(@"ra:%f dec:%f RA1:%f RA2:%f DEC1:%f DEC2:%f",azimuth,altitude,RA1,-RA2,DEC1,-DEC2);
-	
-	fieldOfView = newFieldOfView;
 	
 	
 	
