@@ -83,11 +83,35 @@
 		
 		float dSphere1 = sqrtf(powf(fiX,2) + powf(fiY,2) + powf(fiZ,2));
 		
-		float coX = fiX / dSphere1;
-		float coY = fiY / dSphere1;
-		float coZ = fiZ / dSphere1;
+		float brX = fiX / dSphere1;
+		float brY = fiY / dSphere1;
+		float brZ = fiZ / dSphere1;
 		
-		float coDEC = acosf(coZ);
+		float maX,maY,maZ;
+		
+		/*float rotationY1 = (altitude-90)*(M_PI/180);
+		float rotationZ = azimuth*(M_PI/180);
+
+		
+		
+		maX = (cosf(rotationY1)*brX+0*brY+sinf(rotationY1)*brZ);
+		maY = (0*brX+1*brY+0*brZ);
+		maZ = ((-sinf(rotationY1)*brX)+0*brY+cosf(rotationY1)*brZ);
+		
+		brX = maX;
+		brY = maY;
+		brZ = maZ;
+		
+		maX = (cosf(rotationZ)*brX+(-sinf(rotationZ)*brY)+0*brZ);
+		maY = (sinf(rotationZ)*brX+cosf(rotationZ)*brY+0*brZ);
+		maZ = (0*brX+0*brY+1*brZ);
+		
+		brX = maX;
+		brY = maY;
+		brZ = maZ;*/
+		
+		float RA1 = atan2f(brX,brY);
+		float DEC1 = acosf(brZ);
 		
 		float newFieldOfView = fieldOfView - (0.3/50);
 		float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))));
@@ -99,55 +123,69 @@
 		
 		float dSphere2 = sqrtf(powf(nfX,2) + powf(nfY,2) + powf(nfZ,2));
 		
-		float ncX = nfX / dSphere2;
-		float ncY = nfY / dSphere2;
-		float ncZ = nfZ / dSphere2;
-
-		float cnDEC = acosf(ncZ);
+		brX = nfX / dSphere2;
+		brY = nfY / dSphere2;
+		brZ = nfZ / dSphere2;
 		
-		float standardHeight2 = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
-		float radPerPixel2 = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
+		/*maX = (cosf(rotationY1)*brX+0*brY+sinf(rotationY1)*brZ);
+		maY = (0*brX+1*brY+0*brZ);
+		maZ = ((-sinf(rotationY1)*brX)+0*brY+cosf(rotationY1)*brZ);
 		
-		float fiX2 = zoomDeltaY * radPerPixel2;
-		float fiY2 = zoomDeltaX * radPerPixel2;
-		float fiZ2 = -standardHeight2;
+		brX = maX;
+		brY = maY;
+		brZ = maZ;
 		
-		float dSphere12 = sqrtf(powf(fiX2,2) + powf(fiY2,2) + powf(fiZ2,2));
+		maX = (cosf(rotationZ)*brX+(-sinf(rotationZ)*brY)+0*brZ);
+		maY = (sinf(rotationZ)*brX+cosf(rotationZ)*brY+0*brZ);
+		maZ = (0*brX+0*brY+1*brZ);
 		
-		float coX2 = fiX2 / dSphere12;
-		float coY2 = fiY2 / dSphere12;
-		float coZ2 = fiZ2 / dSphere12;
+		brX = maX;
+		brY = maY;
+		brZ = maZ;*/
 		
-		float coDEC2 = acosf(coZ2);
+		float RA2 = -atan2f(brY,brX);
+		float DEC2 = -acosf(brZ);
 		
-		float newFieldOfView2 = fieldOfView - (0.3/50);
-		float newStandardHeight2 = cosf(0.5*(sqrtf(powf((newFieldOfView2*480)/320,2)+powf((newFieldOfView2*480)/320,2))));
-		float newRadPerPixel2 = sinf(0.5*(sqrtf(powf((newFieldOfView2*480)/320,2)+powf((newFieldOfView2*480)/320,2))))/(320+(newFieldOfView2*160));
+		brX = sin(altitude*(M_PI/180))*cos(azimuth*(M_PI/180));
+		brY = sin(altitude*(M_PI/180))*sin(azimuth*(M_PI/180));
+		brZ = cos(altitude*(M_PI/180));
 		
-		float nfX2 = zoomDeltaY * newRadPerPixel2;
-		float nfY2 = zoomDeltaX * newRadPerPixel2;
-		float nfZ2 = -newStandardHeight2;
+		maX = (cosf(DEC1)*brX+0*brY+sinf(DEC1)*brZ);
+		maY = (0*brX+1*brY+0*brZ);
+		maZ = ((-sinf(DEC1)*brX)+0*brY+cosf(DEC1)*brZ);
 		
-		float dSphere22 = sqrtf(powf(nfX2,2) + powf(nfY2,2) + powf(nfZ2,2));
+		brX = maX;
+		brY = maY;
+		brZ = maZ;
 		
-		float ncX2 = nfX2 / dSphere22;
-		float ncY2 = nfY2 / dSphere22;
-		float ncZ2 = nfZ2 / dSphere22;
+		maX = (cosf(RA1)*brX+(-sinf(RA1)*brY)+0*brZ);
+		maY = (sinf(RA1)*brX+cosf(RA1)*brY+0*brZ);
+		maZ = (0*brX+0*brY+1*brZ);
 		
-		float cnDEC2 = acosf(ncZ2);
+		brX = maX;
+		brY = maY;
+		brZ = maZ;
 		
+		maX = (cosf(RA2)*brX+0*brY+sinf(RA2)*brZ);
+		maY = (0*brX+1*brY+0*brZ);
+		maZ = ((-sinf(RA2)*brX)+0*brY+cosf(RA2)*brZ);
 		
+		brX = maX;
+		brY = maY;
+		brZ = maZ;
 		
-		float deltaRA = coDEC2 - cnDEC2;
-		float deltaDEC = coDEC - cnDEC;
+		maX = (cosf(DEC2)*brX+(-sinf(DEC2)*brY)+0*brZ);
+		maY = (sinf(DEC2)*brX+cosf(DEC2)*brY+0*brZ);
+		maZ = (0*brX+0*brY+1*brZ);
+		
+		brX = maX;
+		brY = maY;
+		brZ = maZ;
 		
 		if(newFieldOfView > 0.1) {
-			if (zoomDeltaX > 0)
-				altitude = altitude + (deltaDEC * (180/M_PI));
-			else
-				altitude = altitude - (deltaDEC * (180/M_PI));
-			azimuth = azimuth + (deltaRA * (180/M_PI));
-			//NSLog(@"ra:%f dec:%f nra:%f ora:%f co:%f cn:%f",deltaRA,deltaDEC,cnRA,coRA,coX,ncX);
+			altitude = acosf(brZ)*(180/M_PI)-90;
+			azimuth = atan2f(brY,brX)*(180/M_PI);
+			NSLog(@"dec:%f ra:%f coRA:%f cnRA:%f",altitude,azimuth,RA1,-RA2);
 			fieldOfView = newFieldOfView;
 		}
 		
@@ -319,6 +357,8 @@
 	tapZoom = TRUE;
 	zoomDeltaX = deltaX;
 	zoomDeltaY = deltaY;
+	
+	NSLog(@"deltax:%i deltay:%i",deltaX,deltaY);
 	
 }
 

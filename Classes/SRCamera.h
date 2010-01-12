@@ -49,9 +49,13 @@
 	BOOL tapZoom;
 	BOOL planetView;
 	
-	float zoomDeltaX;
-	float zoomDeltaY;
+	int zoomDeltaX;
+	int zoomDeltaY;
 	
+	//float rotationY1;
+	//float rotationZ;
+	
+	float preRA;
 	int tSteps;
 	float hSteps;
 	float vSteps;
