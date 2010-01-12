@@ -15,10 +15,14 @@
 #import <Foundation/Foundation.h>
 #import "SRPlanetaryObject.h"
 
-@interface SRSun : SRPlanetaryObject {
+@class SRRenderer;
 
+@interface SRSun : SRPlanetaryObject {
+	float ra;
+	float dec;
 }
 
 //-(id)initWithEarth:(SRPlanetaryObject*)earth;
+-(float)height:(float)latitude lon:(float)longitude elapsed:(float)elapsed;
 
 @end

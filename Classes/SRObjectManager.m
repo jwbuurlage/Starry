@@ -210,7 +210,7 @@
 		// Mercurius
 		[[planets objectAtIndex:2] position].x, [[planets objectAtIndex:2] position].y, [[planets objectAtIndex:2] position].z,	0.7, 0.7, 0.7, 1.0, 10.0,
 		// Venus
-		[[planets objectAtIndex:3] position].x, [[planets objectAtIndex:3] position].y, [[planets objectAtIndex:3] position].z,	0.5, 1.0, 0.5, 1.0, 10.0,
+		[[planets objectAtIndex:3] position].x, [[planets objectAtIndex:3] position].y, [[planets objectAtIndex:3] position].z,	0.5, 0.5, 0.5, 1.0, 10.0,
 		// Mars
 		[[planets objectAtIndex:4] position].x, [[planets objectAtIndex:4] position].y, [[planets objectAtIndex:4] position].z,	1.0, 0.0, 0.0, 1.0, 10.0,
 		// Saturnus

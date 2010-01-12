@@ -16,7 +16,7 @@
 	if(self = [super init]) {
 		elements = [[NSMutableArray alloc] init];
 		
-		initialXValueIcon = 392;
+		initialXValueIcon = 382;
 		
 		//laad elements in - sla op in textures
 

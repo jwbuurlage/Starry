@@ -21,7 +21,7 @@
 -(id)init {
 	if(self = [super init]) {
 		
-		initialXValueIcon = 62;
+		initialXValueIcon = 58;
 		
 		manager = [[[UIApplication sharedApplication] delegate] timeManager];
 		[manager setModuleInstance:self];
