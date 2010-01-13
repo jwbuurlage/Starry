@@ -17,7 +17,8 @@
 
 @implementation SRRenderer
 
-@synthesize interface,location,myOwner,camera,highlight,planetView,highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted;
+@synthesize interface,location,myOwner,camera,highlight,planetView,
+highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,objectInFocus;
 
 -(id)setupWithOwner:(GLViewController*)theOwner {
 	if(self = [super init]) {
@@ -285,6 +286,9 @@
 		
 		[camera reenable]; 
 		return;
+	}
+	if(highlight && [[[interface timeModule] manager] isGoingFast]) {
+		[camera positionStayInFocus:objectInFocus];
 	}
 	
 	[camera adjustView];

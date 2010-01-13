@@ -83,7 +83,7 @@
 	
 	float height = ((180 / M_PI) * asin(sin(p) * sin(d) + (cos(p) * cos(d) * cos(H) ) ));    	
 	
-	NSLog(@"%f", height);
+	//NSLog(@"%f", height);
 	
 	return height;
 }

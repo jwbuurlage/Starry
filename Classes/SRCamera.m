@@ -13,6 +13,7 @@
 
 
 #import "SRCamera.h"
+#import "SterrenAppDelegate.h"
 
 
 @implementation SRCamera
@@ -47,7 +48,7 @@
 }
 
 - (void)doAnimations:(float)timeElapsed {
-	if(swipeHor && swipeVer) { NSLog(@"test"); }
+	//if(swipeHor && swipeVer) { NSLog(@"test"); }
 	
 	if(swipeHor) {
 		if(hSteps == 0) { hSteps = 20; }
@@ -71,84 +72,106 @@
 			vSteps = 0;
 		}
 	}
+	if(zoomOut) {
+		if(oSteps == 0) { oSteps = 30; }
+		float newFieldOfView = fieldOfView + (0.3/30);
+		if(!planetView) {
+			if(newFieldOfView > 0.1 && newFieldOfView < 1.0) {
+				fieldOfView = newFieldOfView;
+			}
+		}
+		else {
+			if(newFieldOfView > 0.2 && newFieldOfView < 2.4) {
+				fieldOfView = newFieldOfView;
+			}
+		}
+		--oSteps;
+		if(oSteps == 0) {
+			zoomOut = FALSE;
+		}
+	}
 	if(tapZoom) {
-		if(tSteps == 0) { tSteps = 50; }
+		if(tSteps == 0) { tSteps = 30; }
 		
-		float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
-		float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
-		
-		float fiX = zoomDeltaX * radPerPixel;
-		float fiY = zoomDeltaY * radPerPixel;
-		float fiZ = -standardHeight;
-		
-		float dSphere1 = sqrtf(powf(fiX,2) + powf(fiY,2) + powf(fiZ,2));
-		
-		float coX = fiX / dSphere1;
-		float coY = fiY / dSphere1;
-		float coZ = fiZ / dSphere1;
-		
-		float coDEC = acosf(coZ);
-		
-		float newFieldOfView = fieldOfView - (0.3/50);
-		float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))));
-		float newRadPerPixel = sinf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))))/(320+(newFieldOfView*160));
-		
-		float nfX = zoomDeltaX * newRadPerPixel;
-		float nfY = zoomDeltaY * newRadPerPixel;
-		float nfZ = -newStandardHeight;
-		
-		float dSphere2 = sqrtf(powf(nfX,2) + powf(nfY,2) + powf(nfZ,2));
-		
-		float ncX = nfX / dSphere2;
-		float ncY = nfY / dSphere2;
-		float ncZ = nfZ / dSphere2;
-
-		float cnDEC = acosf(ncZ);
-		
-		float standardHeight2 = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
-		float radPerPixel2 = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
-		
-		float fiX2 = zoomDeltaY * radPerPixel2;
-		float fiY2 = zoomDeltaX * radPerPixel2;
-		float fiZ2 = -standardHeight2;
-		
-		float dSphere12 = sqrtf(powf(fiX2,2) + powf(fiY2,2) + powf(fiZ2,2));
-		
-		float coX2 = fiX2 / dSphere12;
-		float coY2 = fiY2 / dSphere12;
-		float coZ2 = fiZ2 / dSphere12;
-		
-		float coDEC2 = acosf(coZ2);
-		
-		float newFieldOfView2 = fieldOfView - (0.3/50);
-		float newStandardHeight2 = cosf(0.5*(sqrtf(powf((newFieldOfView2*480)/320,2)+powf((newFieldOfView2*480)/320,2))));
-		float newRadPerPixel2 = sinf(0.5*(sqrtf(powf((newFieldOfView2*480)/320,2)+powf((newFieldOfView2*480)/320,2))))/(320+(newFieldOfView2*160));
-		
-		float nfX2 = zoomDeltaY * newRadPerPixel2;
-		float nfY2 = zoomDeltaX * newRadPerPixel2;
-		float nfZ2 = -newStandardHeight2;
-		
-		float dSphere22 = sqrtf(powf(nfX2,2) + powf(nfY2,2) + powf(nfZ2,2));
-		
-		float ncX2 = nfX2 / dSphere22;
-		float ncY2 = nfY2 / dSphere22;
-		float ncZ2 = nfZ2 / dSphere22;
-		
-		float cnDEC2 = acosf(ncZ2);
-		
-		
-		
-		float deltaRA = coDEC2 - cnDEC2;
-		float deltaDEC = coDEC - cnDEC;
-		
-		if(newFieldOfView > 0.1) {
-			if (zoomDeltaX > 0)
-				altitude = altitude + (deltaDEC * (180/M_PI));
-			else
-				altitude = altitude - (deltaDEC * (180/M_PI));
-			azimuth = azimuth + (deltaRA * (180/M_PI));
-			//NSLog(@"ra:%f dec:%f nra:%f ora:%f co:%f cn:%f",deltaRA,deltaDEC,cnRA,coRA,coX,ncX);
-			fieldOfView = newFieldOfView;
+	 
+	 //NSLog(@"deltax:%i deltay:%i",deltaX,deltaY);
+	 
+	 float DEC3 = (altitude-90)*(M_PI/180);
+	 float RA3 = azimuth*(M_PI/180);
+	 
+	 float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
+	 float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
+	 
+	 float X1 = zoomDeltaX * radPerPixel;
+	 float Y1 = zoomDeltaY * radPerPixel;
+	 float Z1 = -standardHeight;
+	 
+	 float dSphere1 = sqrtf(powf(X1,2) + powf(Y1,2) + powf(Z1,2));
+	 
+	 float X2 = X1 / dSphere1;
+	 float Y2 = Y1 / dSphere1;
+	 float Z2 = Z1 / dSphere1;
+	 
+	 float X6 = cosf(DEC3)*X2+sinf(DEC3)*Z2;
+	 float Y6 = Y2;
+	 float Z6 = -sinf(DEC3)*X2+cosf(DEC3)*Z2;
+	 
+	 X2 = X6;
+	 Y2 = Y6;
+	 Z2 = Z6;
+	 
+	 X6 = cosf(RA3)*X2-sinf(RA3)*Y2;
+	 Y6= sinf(RA3)*X2+cosf(RA3)*Y2;
+	 Z6 = Z2;
+	 
+	 float RA1 = atan2f(Y6,X6);
+	 float DEC1 = acosf(Z6);
+	 
+	 float newFieldOfView = fieldOfView - (0.3/30);
+	 float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))));
+	 float newRadPerPixel = sinf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))))/(320+(newFieldOfView*160));
+	 
+	 float X3 = zoomDeltaX * newRadPerPixel;
+	 float Y3 = zoomDeltaY * newRadPerPixel;
+	 float Z3 = -newStandardHeight;
+	 
+	 float dSphere2 = sqrtf(powf(X3,2) + powf(Y3,2) + powf(Z3,2));
+	 
+	 float X4 = X3 / dSphere2;
+	 float Y4 = Y3 / dSphere2;
+	 float Z4 = Z3 / dSphere2;
+	 
+	 float X5 = cosf(DEC3)*X4+sinf(DEC3)*Z4;
+	 float Y5 = Y4;
+	 float Z5 = -sinf(DEC3)*X4+cosf(DEC3)*Z4;
+	 
+	 X4 = X5;
+	 Y4 = Y5;
+	 Z4 = Z5;
+	 
+	 X5 = cosf(RA3)*X4-sinf(RA3)*Y4;
+	 Y5 = sinf(RA3)*X4+cosf(RA3)*Y4;
+	 Z5 = Z4;
+	 
+	 float RA2 = atan2f(Y5,X5);
+	 float DEC2 = acosf(Z5);
+	 
+	
+	float deltaRA = RA1 - RA2;
+	float deltaDEC = DEC1 - DEC2;
+		if(!planetView) {
+			if(newFieldOfView > 0.1 && newFieldOfView < 1.0) {
+				azimuth += (deltaRA)*(180/M_PI);
+				altitude += (deltaDEC)*(180/M_PI);
+				fieldOfView = newFieldOfView;
+			}
+		}
+		else {
+			if(newFieldOfView > 0.2 && newFieldOfView < 2.4) {
+				azimuth += (deltaRA)*(180/M_PI);
+				altitude += (deltaDEC)*(180/M_PI);
+				fieldOfView = newFieldOfView;
+			}
 		}
 		
 		--tSteps;
@@ -200,51 +223,15 @@
 // Berekeningen voor camera locatie
 
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
-	
-	//NSLog(@"brX:%f y:%f z:%f",brX,brY,brZ);
-	
+
 	float rotationConstant = 5.5850536;
-	/*float adjustment = (altitude/180)*(-abs(deltaX) / (rotationConstant/fieldOfView));
-	float deltaAzimuth = deltaY / (rotationConstant/fieldOfView) + 1*adjustment;
-	
-	float result,resultAdjustment1,resultAdjustment2;
-	resultAdjustment1 = pow(1.4,7*altitude/180)-1.197;
-	resultAdjustment2 = 0;*/
-	/*if(adjustment/2 > 1)
-		result = fmod(azimuth + deltaAzimuth*(adjustment/2), 360);
-	else*/
-		//result = fmod(azimuth + deltaAzimuth*(1+resultAdjustment1+resultAdjustment2),360);
 	float result = azimuth + ( deltaY / (rotationConstant/fieldOfView));
-	
-	//NSLog(@"Calculate azimuthFromX:%i andY:%i origiginal:%f delta:%f new:%f resultadjust1:%f resultadjust2:%f result:%f",deltaX,deltaY,deltaY / (rotationConstant/fieldOfView) ,adjustment,deltaAzimuth,resultAdjustment1,resultAdjustment2, result);
-	/*
-	if (deltaAzimuth > 0)
-		result = fmod((azimuth + pow(abs(deltaAzimuth),1.01)), 360);
-	else 
-		result = fmod((azimuth - pow(abs(deltaAzimuth),1.01)), 360);
-	 */
 	return result;
 }
 
 -(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY {
 	float rotationConstant = 5.5850536;
-	//float adjustment = (azimuth/360)*(abs(deltaY) / (rotationConstant/fieldOfView));
-	/*float adjustment = 0;
-	float deltaAltitude = (-deltaX / (rotationConstant/fieldOfView)) - 1*adjustment;
-	
-	float result,resultAdjustment1,resultAdjustment2;*/
-	/*if(adjustment/2 > 1)
-		result = altitude + deltaAltitude*(adjustment/2);
-	else*/
-	//resultAdjustment1 = 0;
-	//resultAdjustment2 = 0;
-		//result = altitude + deltaAltitude*(1+resultAdjustment1+resultAdjustment2);
 	float result = altitude + ( -deltaX / (rotationConstant/fieldOfView) );
-	//NSLog(@"Calculate altitudeFromX:%i andY:%i origiginal:%f delta:%f new:%f resultadust1:%f resultadjust2:%f",deltaX,deltaY,(-deltaX / (rotationConstant/fieldOfView)),adjustment,deltaAltitude,resultAdjustment1,resultAdjustment2);
-	/*if(deltaAltitude > 0) 
-		result = altitude + abs(deltaAltitude),1.01);
-	else 
-		result = altitude - pow(abs(deltaAltitude),1.01);*/
 	return result;
 
 }
@@ -297,6 +284,13 @@
 	//return 1;
 }
 
+-(void)positionStayInFocus:(id)object {
+		Vertex3D position = [object myCurrentPosition];
+		
+		azimuth = atan2f(position.y,position.x)*(180/M_PI);
+		altitude = (acosf(position.z)*(180/M_PI)-90);
+}
+
 -(void)reenable {
 	const GLfloat zNear = 0.01, zFar = 1000.0;
 	glMatrixMode(GL_PROJECTION); 
@@ -314,19 +308,14 @@
 }
 
 -(void)zoomCameraWithX:(int)deltaX andY:(int)deltaY {
-	
-	
 	tapZoom = TRUE;
 	zoomDeltaX = deltaX;
 	zoomDeltaY = deltaY;
-	
 }
 
-/*- (void)RAAndDecForPoint:(CGPoint)point {
-	//test
-	float RA = ( ((point.y - 240) / 240) * (fieldOfView * (180/M_PI) ) ) + azimuth;
-
-}*/
+- (void)zoomCameraOut {
+	zoomOut = TRUE;
+}
 
 -(void)resetZoomValue {
 	fieldOfView = 0.3 * M_PI;

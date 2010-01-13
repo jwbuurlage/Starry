@@ -49,5 +49,6 @@
 -(void)rew;
 -(void)reset;
 -(void)playPause;
+-(BOOL)isGoingFast;
 
 @end

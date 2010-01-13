@@ -42,4 +42,6 @@
 @property (readonly) GLView *theView;
 @property (readonly) SRRenderer *renderer;
 
+-(void)checkScreenObjectClicked:(NSSet *)touches;
+
 @end
