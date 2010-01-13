@@ -71,6 +71,24 @@
 			vSteps = 0;
 		}
 	}
+	if(zoomOut) {
+		if(oSteps == 0) { oSteps = 30; }
+		float newFieldOfView = fieldOfView + (0.3/30);
+		if(!planetView) {
+			if(newFieldOfView > 0.1 && newFieldOfView < 1.0) {
+				fieldOfView = newFieldOfView;
+			}
+		}
+		else {
+			if(newFieldOfView > 0.2 && newFieldOfView < 2.4) {
+				fieldOfView = newFieldOfView;
+			}
+		}
+		--oSteps;
+		if(oSteps == 0) {
+			zoomOut = FALSE;
+		}
+	}
 	if(tapZoom) {
 		if(tSteps == 0) { tSteps = 30; }
 		
@@ -290,6 +308,10 @@
 	
 	
 	
+}
+
+- (void)zoomCameraOut {
+	zoomOut = TRUE;
 }
 
 /*- (void)RAAndDecForPoint:(CGPoint)point {

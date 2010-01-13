@@ -641,7 +641,7 @@
 	UITouch *touch = [[event allTouches] anyObject];
 	
 	BOOL tappedTwice = NO;
-	if ([touch tapCount] == 2 && !UIClick && ScreenClick) {
+	if ([touch tapCount] == 2 && !UIClick && ScreenClick && touchCount == 1) {
 		tappedTwice = YES;
 		//NSLog(@"Tapped twice");
 		UITouch *aTouch = [touches anyObject];
@@ -650,6 +650,10 @@
 		int deltaX = -x+160;
 		int deltaY = -y+240;
 		[camera zoomCameraWithX:deltaX andY:deltaY];
+	}
+	
+	else if ([touch tapCount] == 2 && !UIClick && ScreenClick && touchCount == 2) {
+		[camera zoomCameraOut];
 	}
 	
 	if(UIClick && touchCount == 1) {

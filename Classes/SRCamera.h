@@ -47,6 +47,7 @@
 	BOOL swipeHor;
 	BOOL swipeVer;
 	BOOL tapZoom;
+	BOOL zoomOut;
 	BOOL planetView;
 	
 	int zoomDeltaX;
@@ -57,6 +58,7 @@
 	
 	float preRA;
 	int tSteps;
+	int oSteps;
 	float hSteps;
 	float vSteps;
 	
@@ -74,6 +76,7 @@
 - (void)rotateCameraWithX:(int)deltaX Y:(int)deltaY;
 - (void)zoomCameraWithDelta:(int)delta centerX:(int)cx centerY:(int)cy;
 - (void)zoomCameraWithX:(int)deltaX andY:(int)deltaY;
+- (void)zoomCameraOut;
 - (void)initiateHorizontalSwipeWithX:(int)theX;
 - (void)initiateVerticalSwipeWithY:(int)theY;
 - (void)reenable;
