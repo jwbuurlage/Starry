@@ -202,7 +202,7 @@
 	
 	const GLfloat planetPointsTmp[] = {
 		// de Zon
-		[sun position].x, [sun position].y, [sun position].z,																	1.0, 1.0, 0.0, 1.0, 20.0,
+		[sun position].x, [sun position].y, [sun position].z,																	1.0, 1.0, 1.0, 0.7, 128.0,
 		//de maan
 		[moon position].x, [moon position].y, [moon position].z,																1.0, 1.0, 1.0, 1.0, 20.0,		
 		// Jupiter

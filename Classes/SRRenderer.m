@@ -58,7 +58,7 @@
 		[interface loadTexture:@"phase_7.png" intoLocation:textures[18]];
 
 		//FIXME: verplaats naar app delegate		
-		glClearColor(0.0, 0.12, 0.18, 1.0);
+		glClearColor(0.0, 0.08, 0.14, 1.0);
 
 		
 		glEnable(GL_POINT_SMOOTH);
@@ -262,9 +262,9 @@
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 	
-	float bgConstant = ((M_PI / 180) * [[objectManager sun] height:[location latitude] lon:[location longitude] elapsed:[[[interface timeModule] manager] elapsed]]);
+	//float bgConstant = ((M_PI / 180) * [[objectManager sun] height:[location latitude] lon:[location longitude] elapsed:[[[interface timeModule] manager] elapsed]]);
 	//NSLog(@"%f",bgConstant);
-	glClearColor(0.0, 0.08 + bgConstant * 0.12, 0.12 + bgConstant * 0.18, 1.0);
+	//glClearColor(0.0, 0.08 + bgConstant * 0.12, 0.12 + bgConstant * 0.18, 1.0);
 	
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
