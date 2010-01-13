@@ -69,6 +69,7 @@
 	BOOL highlight;
 	BOOL planetHighlighted;
 	Vertex3D highlightPosition;
+	id objectInFocus;
 	float highlightSize;
 	
 	SRHUD* sharedHUD;
@@ -88,6 +89,7 @@
 @property (readonly) SRCamera* camera;
 @property (assign) BOOL highlight;
 @property (assign) BOOL planetHighlighted;
+@property (assign) id objectInFocus;
 @property (assign) SRStar* selectedStar;
 @property (assign) SRPlanetaryObject* selectedPlanet;
 @property (assign) BOOL planetView;

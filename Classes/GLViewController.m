@@ -346,6 +346,7 @@
 		//				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y, sun.position.z);
 		
 		[renderer setHighlightPosition:position];
+		[renderer setObjectInFocus:sun];
 		[renderer setSelectedStar:nil];
 		[renderer setPlanetHighlighted:TRUE];
 		[renderer setSelectedPlanet:sun];
@@ -368,6 +369,7 @@
 			//>>>>>>> 5b467e71baa2e98bbb44915d597b1fbd5ff73140:Classes/GLViewController.m
 			
 			[renderer setHighlightPosition:position];
+			[renderer setObjectInFocus:moon];
 			[renderer setSelectedStar:nil];
 			[renderer setPlanetHighlighted:FALSE];
 			[renderer setSelectedPlanet:nil];
@@ -403,6 +405,7 @@
 				Vertex3D position = closestPlanet.position;
 				
 				[renderer setHighlightPosition:position];
+				[renderer setObjectInFocus:closestPlanet];
 				[renderer setSelectedStar:nil];
 				[renderer setPlanetHighlighted:TRUE];
 				[renderer setSelectedPlanet:closestPlanet];
@@ -443,6 +446,7 @@
 					Vertex3D position = closestMessier.position;
 					
 					[renderer setHighlightPosition:position];
+					[renderer setObjectInFocus:closestMessier];
 					[renderer setSelectedStar:nil];
 					[renderer setPlanetHighlighted:FALSE];
 					[renderer setSelectedPlanet:nil];
@@ -587,6 +591,7 @@
 						Vertex3D position = Vector3DMake([closestStar position].x, [closestStar position].y, [closestStar position].z);
 						
 						[renderer setHighlightPosition:position];
+						[renderer setObjectInFocus:closestStar];
 						[renderer setSelectedStar:closestStar];
 						[renderer setPlanetHighlighted:FALSE];
 						[renderer setSelectedPlanet:nil];

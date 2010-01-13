@@ -13,6 +13,7 @@
 
 
 #import "SRCamera.h"
+#import "SterrenAppDelegate.h"
 
 
 @implementation SRCamera
@@ -283,6 +284,13 @@
 	//return 1;
 }
 
+-(void)positionStayInFocus:(id)object {
+		Vertex3D position = [object myCurrentPosition];
+		
+		azimuth = atan2f(position.y,position.x)*(180/M_PI);
+		altitude = (acosf(position.z)*(180/M_PI)-90);
+}
+
 -(void)reenable {
 	const GLfloat zNear = 0.01, zFar = 1000.0;
 	glMatrixMode(GL_PROJECTION); 
@@ -300,25 +308,14 @@
 }
 
 -(void)zoomCameraWithX:(int)deltaX andY:(int)deltaY {
-	
-	
 	tapZoom = TRUE;
 	zoomDeltaX = deltaX;
 	zoomDeltaY = deltaY;
-	
-	
-	
 }
 
 - (void)zoomCameraOut {
 	zoomOut = TRUE;
 }
-
-/*- (void)RAAndDecForPoint:(CGPoint)point {
-	//test
-	float RA = ( ((point.y - 240) / 240) * (fieldOfView * (180/M_PI) ) ) + azimuth;
-
-}*/
 
 -(void)resetZoomValue {
 	fieldOfView = 0.3 * M_PI;

@@ -150,5 +150,17 @@
 	totalInterval = 10001;
 }
 
+-(BOOL)isGoingFast {
+	if(speed > 1) {
+		return YES;
+	}
+	else if(speed < -1) {
+		return YES;
+	}
+	else {
+		return NO;
+	}
+}
+
 
 @end

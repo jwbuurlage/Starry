@@ -87,5 +87,6 @@
 -(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY;
 
 - (void)doAnimations:(float)timeElapsed;
+-(void)positionStayInFocus:(id)object;
 
 @end
