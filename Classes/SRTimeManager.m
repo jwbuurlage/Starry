@@ -29,12 +29,24 @@
 }
 
 -(NSString*)theTime {
-	NSString* returnString = [simulatedDate descriptionWithCalendarFormat:@"%H:%M" timeZone:nil locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
-	return returnString;
+	NSString* returnString;
+	if([[[NSLocale currentLocale] localeIdentifier] isEqualToString:@"en_US"]) {
+		returnString = [simulatedDate descriptionWithCalendarFormat:@"%I:%M %p" timeZone:nil locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
+	}
+	else {
+		returnString = [simulatedDate descriptionWithCalendarFormat:@"%H:%M" timeZone:nil locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
+	}
+		return returnString;
 }
 
 -(NSString*)theDate {
-	NSString* returnString = [simulatedDate descriptionWithCalendarFormat:@"%d-%m-%Y" timeZone:nil locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
+	NSString* returnString;
+	if([[[NSLocale currentLocale] localeIdentifier] isEqualToString:@"en_US"]) {
+		returnString = [simulatedDate descriptionWithCalendarFormat:@"%m-%d-%Y" timeZone:nil locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
+	}
+	else {
+		returnString = [simulatedDate descriptionWithCalendarFormat:@"%d-%m-%Y" timeZone:nil locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
+	}
 	return returnString;
 }
 

@@ -29,7 +29,7 @@
 	NSArray *languages = [defaults objectForKey:@"AppleLanguages"];
 	NSString *currentLanguage = [languages objectAtIndex:0];
 	
-	//NSLog(@"Current Locale: %@", [[NSLocale currentLocale] localeIdentifier]);
+	NSLog(@"Current Locale: %@", [[NSLocale currentLocale] localeIdentifier]);
 	//NSLog(@"Current language: %@", currentLanguage);
 	//NSLog(@"Welcome Text: %@", NSLocalizedString(@"WelcomeKey", @""));
 	
