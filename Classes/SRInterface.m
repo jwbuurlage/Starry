@@ -1101,10 +1101,19 @@
 	BOOL justCreated = NO;
 	if (!slider) {
 		slider = [[UISlider alloc] initWithFrame:CGRectMake(-9, 148, 80, 23)];
-		[slider setThumbImage:[UIImage imageNamed:@"slider_normal.png"] forState:UIControlStateNormal];
-		[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted.png"] forState:UIControlStateHighlighted];
-		[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max.png"] forState:UIControlStateNormal];
-		[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min.png"] forState:UIControlStateNormal];
+		
+		if([[appDelegate settingsManager] showRedOverlay]) {
+				[slider setThumbImage:[UIImage imageNamed:@"slider_normal_red.png"] forState:UIControlStateNormal];
+				[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted_red.png"] forState:UIControlStateHighlighted];
+				[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max_red.png"] forState:UIControlStateNormal];
+				[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min_red.png"] forState:UIControlStateNormal];
+		}
+		else {
+				[slider setThumbImage:[UIImage imageNamed:@"slider_normal.png"] forState:UIControlStateNormal];
+				[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted.png"] forState:UIControlStateHighlighted];
+				[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max.png"] forState:UIControlStateNormal];
+				[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min.png"] forState:UIControlStateNormal];
+		}
 		
 		justCreated = YES;
 		[slider setMinimumValue:0.5];

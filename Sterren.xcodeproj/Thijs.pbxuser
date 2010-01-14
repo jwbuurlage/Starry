@@ -9,9 +9,9 @@
 	};
 	1D3623250D0F684500981E51 /* SterrenAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1216, 1027}}";
+			sepNavIntBoundsRect = "{{0, 0}, {957, 1001}}";
 			sepNavSelRange = "{796, 0}";
-			sepNavVisRange = "{0, 1159}";
+			sepNavVisRange = "{1159, 1477}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -67,7 +67,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = 76FBD269109DE495005A0ADE /* Sterren */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Sterren */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Sterren */,
@@ -1511,7 +1511,7 @@
 		fRef = AC55F121109600990021D39C /* SRInterface.m */;
 		name = "SRInterface.m: 1112";
 		rLen = 0;
-		rLoc = 37044;
+		rLoc = 37561;
 		rType = 0;
 		vrLen = 1266;
 		vrLoc = 36949;
@@ -1711,9 +1711,9 @@
 	};
 	AC55F121109600990021D39C /* SRInterface.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1076, 20982}}";
-			sepNavSelRange = "{37044, 0}";
-			sepNavVisRange = "{36949, 1266}";
+			sepNavIntBoundsRect = "{{0, 0}, {1538, 21034}}";
+			sepNavSelRange = "{37441, 0}";
+			sepNavVisRange = "{35809, 2072}";
 			sepNavWindowFrame = "{{15, 80}, {1039, 798}}";
 		};
 	};
@@ -1726,9 +1726,9 @@
 	};
 	AC57693F10E7CF910031505E /* SRPlanetInfo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1930, 2275}}";
-			sepNavSelRange = "{4062, 44}";
-			sepNavVisRange = "{3342, 2175}";
+			sepNavIntBoundsRect = "{{0, 0}, {1930, 2249}}";
+			sepNavSelRange = "{4707, 0}";
+			sepNavVisRange = "{5792, 1889}";
 		};
 	};
 	AC57BD0D10C957DC00B0BD5C /* constellations.xml */ = {
@@ -1763,9 +1763,9 @@
 	};
 	AC5B303B10E78A4F00DE922B /* SRPlanetModule.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1900, 2084}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1937, 1599}}";
 			sepNavSelRange = "{2102, 0}";
-			sepNavVisRange = "{1100, 1969}";
+			sepNavVisRange = "{3066, 1615}";
 			sepNavWindowFrame = "{{15, 75}, {1039, 798}}";
 		};
 	};
@@ -1901,7 +1901,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1342, 8554}}";
 			sepNavSelRange = "{8521, 0}";
-			sepNavVisRange = "{8260, 1384}";
+			sepNavVisRange = "{6333, 1613}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
