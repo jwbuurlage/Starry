@@ -572,7 +572,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	if([[appDelegate settingsManager] showPlanetLabels]) {
 	i = 1;
 	while(i < [[objectManager planets] count]) {
-		glColor4f(1.0f, 1.0f, 1.0f, 1.0f * pow([camera zoomingValue],-3));
+		glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		[[[objectManager planets] objectAtIndex:i] drawHelio:NO];
 		++i;
 	}
@@ -660,11 +660,11 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	glEnable(GL_TEXTURE_2D);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
-	glColor4f(0.0, 1.0, 1.0, 0.05);
+	/* glColor4f(0.0, 1.0, 1.0, 0.05);
 	glTexCoordPointer(2, GL_FLOAT, 20, &verticesHorizonGlow[3]);
 	glBindTexture(GL_TEXTURE_2D, textures[0]);
 	glVertexPointer(3, GL_FLOAT, 20, verticesHorizonGlow);
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 10);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 10); */
 	
 }
 

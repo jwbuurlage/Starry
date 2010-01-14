@@ -19,8 +19,13 @@
 		initialXValueIcon = 382;
 		
 		//laad elements in - sla op in textures
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"indicator_overlay_modules.png"]] 
+															identifier:@"indicator_overlay_modules" 
+															 clickable:NO]];
 
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -55, 31, 31)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, -57, 31, 31)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"gears.png"]] 
 															identifier:@"icon" 
 															 clickable:YES]];
@@ -44,6 +49,8 @@
 															   texture:nil 
 															identifier:@"brightness_value" 
 															 clickable:NO]];*/
+		
+		
 		
 		//laad elements in - sla op in textures
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(376, -55, 32, 32)
@@ -96,7 +103,7 @@
 				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 			}
 			else {
-				[[elements objectAtIndex:0] setBounds:CGRectMake(xValueIcon, -55, 31, 31)];
+				[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57, 31, 31)];
 			}
 
 			[[mElement texture] drawInRect:[mElement bounds]];

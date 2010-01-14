@@ -58,13 +58,13 @@
 	if(playing) {
 		if(speed == -1) {
 			speed = 1;
-			speed = speed * 5;
+			speed = speed * 2;
 		}
 		else if(speed < 0) {
-			speed = speed / 5;
+			speed = speed / 2;
 		}
 		else if(speed >= 1) {
-			speed = speed * 5;
+			speed = speed * 2;
 		}
 	}
 	else {
@@ -73,7 +73,7 @@
 			playing = TRUE;
 		}
 		else {
-			speed = 5;
+			speed = 2;
 			playing = TRUE;
 		}
 	}
@@ -83,13 +83,13 @@
 	if(playing) {
 		if(speed == 1) {
 			speed = -1;
-			speed = speed * 5;
+			speed = speed * 2;
 		}
 		else if(speed <= -1) {
-			speed = speed * 5;
+			speed = speed * 2;
 		}
 		else if(speed > 1) {
-			speed = speed / 5;
+			speed = speed / 2;
 		}
 	}
 	else {
@@ -98,7 +98,7 @@
 			playing = TRUE;
 		}
 		else {
-			speed = -5;
+			speed = -2;
 			playing = TRUE;
 		}
 	}

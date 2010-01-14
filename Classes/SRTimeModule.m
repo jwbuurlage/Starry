@@ -29,32 +29,38 @@
 		elements = [[NSMutableArray alloc] init];
 		
 		//laad elements in - sla op in textures
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(62, -55, 31, 31)
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"indicator_overlay_modules.png"]] 
+															identifier:@"indicator_overlay_modules" 
+															 clickable:NO]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(62, -57, 31, 31)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"calendar.png"]] 
 															identifier:@"icon" 
 															 clickable:YES]];
 				
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(178, -60, 137, 40)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(178, -62, 137, 40)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"controls_bg.png"]] 
 															identifier:@"controls_bg" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(185, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(185, -57, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"stop.png"]] 
 															identifier:@"stop" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(215, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(215, -57, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"rew.png"]] 
 															identifier:@"rew" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(245, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(245, -57, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]] 
 															identifier:@"playpause" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(275, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(275, -57, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"fwd.png"]] 
 															identifier:@"fwd" 
 															 clickable:YES]];
@@ -136,7 +142,7 @@
 				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 			}
 			else {
-				[[elements objectAtIndex:0] setBounds:CGRectMake(xValueIcon, -55, 31, 31)];
+				[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57, 31, 31)];
 			}
 			
 			
@@ -153,10 +159,10 @@
 
 -(void)switchPlay:(BOOL)aFlag {
 	if(aFlag) {
-		[[elements objectAtIndex:4] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]]];	
+		[[elements objectAtIndex:5] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]]];	
 	}
 	else {
-		[[elements objectAtIndex:4] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"play.png"]]];	
+		[[elements objectAtIndex:5] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"play.png"]]];	
 	}
 }
 

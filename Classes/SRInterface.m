@@ -622,9 +622,11 @@
 			[[timeModule manager] playPause];
 			if([[timeModule manager] playing]) {
 				[timeModule switchPlay:TRUE];
+				[planetModule switchPlay:TRUE];
 			}
 			else {
 				[timeModule switchPlay:FALSE];
+				[planetModule switchPlay:FALSE];
 			}
 		}
 		else if(clicker == @"stop") {
@@ -908,11 +910,11 @@
 					}
 				}
 				else {
-					if([module xValueIcon] > 12) {
-						[module setXValueIcon:[module xValueIcon] - ((([module initialXValueIcon] - 12) / 8) * (timeElapsed / 0.05) )];
+					if([module xValueIcon] > 10) {
+						[module setXValueIcon:[module xValueIcon] - ((([module initialXValueIcon] - 10) / 8) * (timeElapsed / 0.05) )];
 					}
-					if([module xValueIcon] <= 12) {
-						[module setXValueIcon:12];	
+					if([module xValueIcon] <= 10) {
+						[module setXValueIcon:10];	
 					}					
 					
 					[module setAlphaValue:[module alphaValue] + ( 0.1f * (timeElapsed / 0.05) ) ];
@@ -920,7 +922,7 @@
 						[module setAlphaValue:1.0f];
 					}
 					
-					if([module alphaValue] == 1.0f && [module xValueIcon] == 12) {
+					if([module alphaValue] == 1.0f && [module xValueIcon] == 10) {
 						aModule = FALSE;
 						[module setHiding:TRUE];
 					}

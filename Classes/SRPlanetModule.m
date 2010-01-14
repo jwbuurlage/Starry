@@ -19,52 +19,57 @@
 		elements = [[NSMutableArray alloc] init];
 		
 		//laad elements in - sla op in textures
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -55, 31, 31)  
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"indicator_overlay_modules.png"]] 
+															identifier:@"indicator_overlay_modules" 
+															 clickable:NO]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -57, 31, 31)  
 																 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planeticon.png"]]
 															  identifier:@"icon" 
 															   clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(178, -60, 137, 40)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(188, -60, 137, 40)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"controls_bg.png"]] 
 															identifier:@"controls_bg" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(185, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(195, -55, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"stop.png"]] 
 															identifier:@"stop" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(215, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(225, -55, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"rew.png"]] 
 															identifier:@"rew" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(245, -55, 32, 32)
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"play.png"]] 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(255, -55, 32, 32)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]] 
 															identifier:@"playpause" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(275, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(285, -55, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"fwd.png"]] 
 															identifier:@"fwd" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(52, -60, 64,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(62, -60, 64,32) 
 															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Speed", @"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent"
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(105,-58, 64,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(115,-58, 64,32) 
 															   texture:nil
 															identifier:@"speed"
 															 clickable:NO]];		
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(65, -75, 64,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(75, -75, 64,32) 
 															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Date", @"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
 															identifier:@"text-transparent" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(105,-73, 64,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(115,-73, 64,32) 
 															   texture:nil
 															identifier:@"date" 
 															 clickable:NO]];
@@ -104,7 +109,7 @@
 				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 			}
 			else {
-				[[elements objectAtIndex:0] setBounds:CGRectMake(xValueIcon, -55, 31, 31)];
+				[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57, 31, 31)];
 			}
 			
 			
@@ -117,6 +122,15 @@
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
 	} 
+}
+
+-(void)switchPlay:(BOOL)aFlag {
+	if(aFlag) {
+		[[elements objectAtIndex:5] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]]];	
+	}
+	else {
+		[[elements objectAtIndex:5] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"play.png"]]];	
+	}
 }
 
 @end
