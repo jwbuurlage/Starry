@@ -209,7 +209,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		else {
 			if (i == 0) { // Bij de zon laad de zon texture in
 				glPointSize(15.0f);
-				glBindTexture(GL_TEXTURE_2D, textures[7]);
+				glBindTexture(GL_TEXTURE_2D, textures[9]);
 			}
 			else { // Bij planeten laad de planeet texture in
 				if(i == 10) { 
