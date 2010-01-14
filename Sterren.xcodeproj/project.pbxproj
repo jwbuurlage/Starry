@@ -19,8 +19,6 @@
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		76030C6C10CBBA260074B0CE /* SRSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76030C6B10CBBA260074B0CE /* SRSettingsManager.m */; };
 		76179CF410CA61D500768180 /* SRObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76179CF310CA61D500768180 /* SRObjectManager.m */; };
-		761B451E10F8962A0018894A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 761B451A10F896290018894A /* Default.png */; };
-		761B451F10F8962A0018894A /* defaultTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 761B451C10F8962A0018894A /* defaultTexture.png */; };
 		761B45A510F8A0F90018894A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 761B45A410F8A0F90018894A /* CFNetwork.framework */; };
 		761E581010E65B03003B9CFE /* notFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 761E580F10E65B03003B9CFE /* notFound.png */; };
 		7644565110C5837800AB935D /* SRSettingsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7644565010C5837800AB935D /* SRSettingsModule.m */; };
@@ -40,6 +38,8 @@
 		76F8DC7010FF2784004C91EF /* slider_max_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8DC6C10FF2784004C91EF /* slider_max_red.png */; };
 		76F8DC7110FF2784004C91EF /* slider_min_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8DC6D10FF2784004C91EF /* slider_min_red.png */; };
 		76F8DC7210FF2784004C91EF /* slider_normal_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8DC6E10FF2784004C91EF /* slider_normal_red.png */; };
+		76F8DC8610FF2AE3004C91EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8DC8410FF2AE3004C91EF /* Default.png */; };
+		76F8DC8710FF2AE3004C91EF /* defaultTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8DC8510FF2AE3004C91EF /* defaultTexture.png */; };
 		AC02D04A10FCD81A00BAD38A /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = AC02D04910FCD81A00BAD38A /* list.png */; };
 		AC045E33109E062B0066EAA6 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = AC045E32109E062B0066EAA6 /* menu.png */; };
 		AC080F5810D97F010078DA4D /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC080F5710D97F010078DA4D /* nav_bg.png */; };
@@ -267,10 +267,6 @@
 		76030C6B10CBBA260074B0CE /* SRSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSettingsManager.m; sourceTree = "<group>"; };
 		76179CF210CA61D500768180 /* SRObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRObjectManager.h; sourceTree = "<group>"; };
 		76179CF310CA61D500768180 /* SRObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRObjectManager.m; sourceTree = "<group>"; };
-		761B451B10F8962A0018894A /* nl */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nl; path = nl.lproj/Default.png; sourceTree = "<group>"; };
-		761B451D10F8962A0018894A /* nl */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nl; path = nl.lproj/defaultTexture.png; sourceTree = "<group>"; };
-		761B452610F896640018894A /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Default.png; sourceTree = "<group>"; };
-		761B452710F896640018894A /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/defaultTexture.png; sourceTree = "<group>"; };
 		761B45A410F8A0F90018894A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		761E580F10E65B03003B9CFE /* notFound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notFound.png; path = Resources/notFound.png; sourceTree = "<group>"; };
 		7644564F10C5837800AB935D /* SRSettingsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSettingsModule.h; sourceTree = "<group>"; };
@@ -297,6 +293,8 @@
 		76F8DC6C10FF2784004C91EF /* slider_max_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_max_red.png; path = Resources/slider/slider_max_red.png; sourceTree = "<group>"; };
 		76F8DC6D10FF2784004C91EF /* slider_min_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_min_red.png; path = Resources/slider/slider_min_red.png; sourceTree = "<group>"; };
 		76F8DC6E10FF2784004C91EF /* slider_normal_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_normal_red.png; path = Resources/slider/slider_normal_red.png; sourceTree = "<group>"; };
+		76F8DC8410FF2AE3004C91EF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
+		76F8DC8510FF2AE3004C91EF /* defaultTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultTexture.png; path = Resources/defaultTexture.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Sterren-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sterren-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		AC02D04910FCD81A00BAD38A /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = Resources/list.png; sourceTree = "<group>"; };
 		AC045E32109E062B0066EAA6 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = Resources/menu.png; sourceTree = "<group>"; };
@@ -604,9 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				76E6935010FA367100924A41 /* database.db */,
-				761B451A10F896290018894A /* Default.png */,
 				767820EA10F10CD3001ADE6D /* Localizable.strings */,
-				761B451C10F8962A0018894A /* defaultTexture.png */,
 				ACB60BED10F67A3000FD2097 /* Slider */,
 				AC5769BD10E7F0DE0031505E /* PlanetBG */,
 				AC3851F710DFF34500C94722 /* Phases */,
@@ -626,6 +622,8 @@
 				ACC493A110CD777600DC7967 /* moon.png */,
 				AC8A87ED10C56FCE0015CDF5 /* latitude.png */,
 				769733CC10EF73670057E29F /* starInfoBg.png */,
+				76F8DC8410FF2AE3004C91EF /* Default.png */,
+				76F8DC8510FF2AE3004C91EF /* defaultTexture.png */,
 				AC8AFB7A10F39D3C00517901 /* positionOverlay.png */,
 				AC8A87EE10C56FCE0015CDF5 /* location_off.png */,
 				ACB8F19A10CC76F700C0F87E /* location_on.png */,
@@ -1198,14 +1196,14 @@
 				ACB60BF210F67A3D00FD2097 /* slider_normal.png in Resources */,
 				ACB60BF910F67AFA00FD2097 /* slider_max.png in Resources */,
 				ACB60BFE10F67B2100FD2097 /* slider_min.png in Resources */,
-				761B451E10F8962A0018894A /* Default.png in Resources */,
-				761B451F10F8962A0018894A /* defaultTexture.png in Resources */,
 				76E6935110FA367100924A41 /* database.db in Resources */,
 				AC02D04A10FCD81A00BAD38A /* list.png in Resources */,
 				76F8DC6F10FF2784004C91EF /* slider_highlighted_red.png in Resources */,
 				76F8DC7010FF2784004C91EF /* slider_max_red.png in Resources */,
 				76F8DC7110FF2784004C91EF /* slider_min_red.png in Resources */,
 				76F8DC7210FF2784004C91EF /* slider_normal_red.png in Resources */,
+				76F8DC8610FF2AE3004C91EF /* Default.png in Resources */,
+				76F8DC8710FF2AE3004C91EF /* defaultTexture.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1257,24 +1255,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		761B451A10F896290018894A /* Default.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				761B451B10F8962A0018894A /* nl */,
-				761B452610F896640018894A /* en */,
-			);
-			name = Default.png;
-			sourceTree = "<group>";
-		};
-		761B451C10F8962A0018894A /* defaultTexture.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				761B451D10F8962A0018894A /* nl */,
-				761B452710F896640018894A /* en */,
-			);
-			name = defaultTexture.png;
-			sourceTree = "<group>";
-		};
 		767820EA10F10CD3001ADE6D /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

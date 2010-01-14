@@ -9,9 +9,9 @@
 	};
 	1D3623250D0F684500981E51 /* SterrenAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {957, 1040}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1216, 1027}}";
 			sepNavSelRange = "{796, 0}";
-			sepNavVisRange = "{0, 1461}";
+			sepNavVisRange = "{0, 1159}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -311,6 +311,13 @@
 			76F8DC7A10FF2882004C91EF /* PBXTextBookmark */ = 76F8DC7A10FF2882004C91EF /* PBXTextBookmark */;
 			76F8DC7B10FF2882004C91EF /* PBXTextBookmark */ = 76F8DC7B10FF2882004C91EF /* PBXTextBookmark */;
 			76F8DC7C10FF2882004C91EF /* PBXTextBookmark */ = 76F8DC7C10FF2882004C91EF /* PBXTextBookmark */;
+			76F8DC7D10FF29B2004C91EF /* PBXTextBookmark */ = 76F8DC7D10FF29B2004C91EF /* PBXTextBookmark */;
+			76F8DC7E10FF29B2004C91EF /* PBXTextBookmark */ = 76F8DC7E10FF29B2004C91EF /* PBXTextBookmark */;
+			76F8DC7F10FF29B2004C91EF /* PBXBookmark */ = 76F8DC7F10FF29B2004C91EF /* PBXBookmark */;
+			76F8DC8010FF29B2004C91EF /* PBXBookmark */ = 76F8DC8010FF29B2004C91EF /* PBXBookmark */;
+			76F8DC8110FF29B2004C91EF /* PBXBookmark */ = 76F8DC8110FF29B2004C91EF /* PBXBookmark */;
+			76F8DC8210FF29B2004C91EF /* PBXBookmark */ = 76F8DC8210FF29B2004C91EF /* PBXBookmark */;
+			76F8DC8310FF29B2004C91EF /* PBXBookmark */ = 76F8DC8310FF29B2004C91EF /* PBXBookmark */;
 		};
 		sourceControlManager = 76FBD280109DE49A005A0ADE /* Source Control */;
 		userBuildSettings = {
@@ -476,6 +483,34 @@
 		modificationTime = 284736995.3408819;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
+	};
+	761B451B10F8962A0018894A /* nl */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = nl;
+		path = /Users/Thijs/Desktop/Sterren/nl.lproj/Default.png;
+		sourceTree = "<absolute>";
+	};
+	761B451D10F8962A0018894A /* nl */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = nl;
+		path = /Users/Thijs/Desktop/Sterren/nl.lproj/defaultTexture.png;
+		sourceTree = "<absolute>";
+	};
+	761B452610F896640018894A /* en */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = en;
+		path = /Users/Thijs/Desktop/Sterren/en.lproj/Default.png;
+		sourceTree = "<absolute>";
+	};
+	761B452710F896640018894A /* en */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = en;
+		path = /Users/Thijs/Desktop/Sterren/en.lproj/defaultTexture.png;
+		sourceTree = "<absolute>";
 	};
 	761B45CF10F8A24E0018894A /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -646,9 +681,9 @@
 	};
 	765DA28910A0B19300C4B16A /* SRLocation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {957, 1677}}";
+			sepNavIntBoundsRect = "{{0, 0}, {957, 1664}}";
 			sepNavSelRange = "{1015, 0}";
-			sepNavVisRange = "{396, 1169}";
+			sepNavVisRange = "{398, 1167}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -1501,6 +1536,46 @@
 		vrLen = 1348;
 		vrLoc = 8665;
 	};
+	76F8DC7D10FF29B2004C91EF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 765DA28910A0B19300C4B16A /* SRLocation.m */;
+		name = "SRLocation.m: 34";
+		rLen = 0;
+		rLoc = 1015;
+		rType = 0;
+		vrLen = 1167;
+		vrLoc = 398;
+	};
+	76F8DC7E10FF29B2004C91EF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 249";
+		rLen = 0;
+		rLoc = 8521;
+		rType = 0;
+		vrLen = 1384;
+		vrLoc = 8260;
+	};
+	76F8DC7F10FF29B2004C91EF /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 761B451B10F8962A0018894A /* nl */;
+	};
+	76F8DC8010FF29B2004C91EF /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 761B452610F896640018894A /* en */;
+	};
+	76F8DC8110FF29B2004C91EF /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 761B451D10F8962A0018894A /* nl */;
+	};
+	76F8DC8210FF29B2004C91EF /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 761B452710F896640018894A /* en */;
+	};
+	76F8DC8310FF29B2004C91EF /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 761B452710F896640018894A /* en */;
+	};
 	76FBD269109DE495005A0ADE /* Sterren */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -1824,9 +1899,9 @@
 	};
 	ACB7B16B10615F4F00CA447E /* SRRenderer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1167, 8918}}";
-			sepNavSelRange = "{9382, 0}";
-			sepNavVisRange = "{8665, 1348}";
+			sepNavIntBoundsRect = "{{0, 0}, {1342, 8554}}";
+			sepNavSelRange = "{8521, 0}";
+			sepNavVisRange = "{8260, 1384}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
