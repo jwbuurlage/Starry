@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Project</string>
+	<string>Debug</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -268,12 +268,7 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>76179CF610CA61DE00768180</string>
 								<string>ACA875E7109DD08C00465577</string>
-								<string>AC28395510FF79DB002DD356</string>
-								<string>AC2839CB10FF7F88002DD356</string>
-								<string>ACB7B11110615AE000CA447E</string>
-								<string>AC1BA73710C021D00084CF6F</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>767820EA10F10CD3001ADE6D</string>
@@ -287,13 +282,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>44</integer>
+									<integer>14</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 438}, {249, 934}}</string>
+							<string>{{0, 0}, {249, 934}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -309,8 +304,6 @@
 							<string>MainColumn</string>
 							<real>249</real>
 						</array>
-						<key>RubberWindowFrame</key>
-						<string>5 34 1676 993 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -321,14 +314,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>ACB7B10810615AD200CA447E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRRenderer.m</string>
+								<string>SRCamera.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -336,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>ACB7B10910615AD200CA447E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SRRenderer.m</string>
+										<string>SRCamera.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>AC2839E110FF8128002DD356</string>
+										<string>AC283A1910FF862C002DD356</string>
 										<key>history</key>
 										<array>
 											<string>AC1EE9CC10F2A5B500EAE5C4</string>
@@ -378,7 +369,6 @@
 											<string>AC7953EC10FA42BB00F6AB6D</string>
 											<string>AC96C50A10FB7BC300DE9DBB</string>
 											<string>AC02CFB810FBB8A500BAD38A</string>
-											<string>AC02CFB910FBB8A500BAD38A</string>
 											<string>AC02CFBA10FBB8A500BAD38A</string>
 											<string>AC02CFBB10FBB8A500BAD38A</string>
 											<string>AC02D01310FCD63400BAD38A</string>
@@ -416,7 +406,6 @@
 											<string>AC02D0F310FCE7F400BAD38A</string>
 											<string>AC02D10D10FCE9C300BAD38A</string>
 											<string>AC02D10F10FCE9C300BAD38A</string>
-											<string>AC02D11110FCE9C300BAD38A</string>
 											<string>AC37219410FD115400198DE9</string>
 											<string>AC9F6BA410FD195F002A2EDC</string>
 											<string>AC28393F10FF78C7002DD356</string>
@@ -427,11 +416,9 @@
 											<string>AC28396210FF7B1C002DD356</string>
 											<string>AC28396410FF7B1C002DD356</string>
 											<string>AC28396510FF7B1C002DD356</string>
-											<string>AC28396610FF7B1C002DD356</string>
 											<string>AC28397A10FF7BEC002DD356</string>
 											<string>AC28397E10FF7BEC002DD356</string>
 											<string>AC28399B10FF7D72002DD356</string>
-											<string>AC28399C10FF7D72002DD356</string>
 											<string>AC28399F10FF7D72002DD356</string>
 											<string>AC2839BA10FF7F26002DD356</string>
 											<string>AC2839BB10FF7F26002DD356</string>
@@ -453,7 +440,11 @@
 											<string>AC2839D510FF802F002DD356</string>
 											<string>AC2839D610FF802F002DD356</string>
 											<string>AC2839DF10FF8128002DD356</string>
-											<string>AC2839E010FF8128002DD356</string>
+											<string>AC283A0710FF84E7002DD356</string>
+											<string>AC283A0810FF84E7002DD356</string>
+											<string>AC283A0D10FF85F4002DD356</string>
+											<string>AC283A0E10FF85F4002DD356</string>
+											<string>AC283A0F10FF85F4002DD356</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -468,8 +459,6 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1405, 947}}</string>
-								<key>RubberWindowFrame</key>
-								<string>5 34 1676 993 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -493,8 +482,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1405, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>5 34 1676 993 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -633,6 +620,8 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1676, 284}}</string>
+						<key>RubberWindowFrame</key>
+						<string>4 35 1676 993 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -707,7 +696,11 @@
 							</array>
 							<key>Frame</key>
 							<string>{{818, 0}, {858, 344}}</string>
+							<key>RubberWindowFrame</key>
+							<string>4 35 1676 993 0 0 1680 1028 </string>
 						</dict>
+						<key>RubberWindowFrame</key>
+						<string>4 35 1676 993 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -776,7 +769,7 @@
 		<string>/Users/Huis/Desktop/School/Profielwerkstuk/Sterren/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>5 34 1676 993 0 0 1680 1028 </string>
+	<string>4 35 1676 993 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

@@ -57,8 +57,8 @@
 	//float rotationZ;
 	
 	float preRA;
-	int tSteps;
-	int oSteps;
+	float tSteps;
+	float oSteps;
 	float hSteps;
 	float vSteps;
 	

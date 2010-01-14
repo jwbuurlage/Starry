@@ -85,9 +85,10 @@
 				fieldOfView = newFieldOfView;
 			}
 		}
-		--oSteps;
-		if(oSteps == 0) {
+		oSteps -= timeElapsed / 0.05;
+		if(oSteps <= 0) {
 			zoomOut = FALSE;
+			oSteps = 0;
 		}
 	}
 	if(tapZoom) {
@@ -174,9 +175,11 @@
 			}
 		}
 		
-		--tSteps;
-		if(tSteps == 0) {
+		tSteps -= 3 * timeElapsed / 0.05;
+		NSLog(@"%f", tSteps);
+		if(tSteps <= 0) {
 			tapZoom = FALSE;
+			tSteps = 0;
 		}
 	}
 	

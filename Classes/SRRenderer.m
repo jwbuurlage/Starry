@@ -209,7 +209,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		else {
 			if (i == 0) { // Bij de zon laad de zon texture in
 				glPointSize(15.0f);
-				glBindTexture(GL_TEXTURE_2D, textures[5]);
+				glBindTexture(GL_TEXTURE_2D, textures[7]);
 			}
 			else { // Bij planeten laad de planeet texture in
 				if(i == 10) { 
@@ -465,7 +465,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 				
 				[aConstellation draw];
 				
-				glColor4f(0.4f, 0.6f, 0.6f, (constAlpha / factor) * 4);
+				glColor4f(0.6f, 0.6f, 0.6f, (constAlpha / factor) * 4);
 				[aConstellation drawText];
 			} 
 		}
@@ -523,9 +523,18 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		glPointSize(size);
 		
 		if (i == 1) { // maan
+			
+			size = [camera zoomingValue] * size;
+			if(size < 48) {
+				glPointSize(size);
+			}
+			else {
+				glPointSize(48.0f);	
+			}
+
 			glBindTexture(GL_TEXTURE_2D, textures[6]);
 			glDrawArrays(GL_POINTS,i, 1);
-			
+						
 			switch([[objectManager moon] phase]) {
 				case 0:
 					glBindTexture(GL_TEXTURE_2D, textures[11]);
