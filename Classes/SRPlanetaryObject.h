@@ -44,6 +44,10 @@
 @property (readonly) Vertex3D position;
 @property (readonly) Vertex3D positionHelio;
 @property (readonly) float a;
+@property (readonly) float e;
+@property (readonly) float o;
+@property (readonly) float w;
+@property (readonly) float i;
 @property (readonly) NSString* name;
 @property (readwrite) BOOL selected;
 

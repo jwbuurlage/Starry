@@ -44,7 +44,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		[interface loadTexture:@"sun.png" intoLocation:textures[5]];
 		[interface loadTexture:@"moon.png" intoLocation:textures[6]];
 		[interface loadTexture:@"planet.png" intoLocation:textures[7]];
-		[interface loadTexture:@"highlight.png" intoLocation:textures[8]];
+		[interface loadTexture:@"sun_planet.png" intoLocation:textures[8]];
 		[interface loadTexture:@"highlight_small.png" intoLocation:textures[9]];
 		[interface loadTexture:@"messier.png" intoLocation:textures[10]];
 		
@@ -82,6 +82,20 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	[objectManager parseData];
 	[self loadStarPoints];
 	[self loadMessier];
+	[self loadOrbits];
+}
+
+-(void)loadOrbits {
+	//laten we mercurius proberen
+	float a, b, e;
+	e = [[[objectManager planets] objectAtIndex:2] e];
+	a = [[[objectManager planets] objectAtIndex:2] a];
+	b = sqrt(pow(a,2) - pow(a,2)*pow(e,2));
+	
+	NSLog(@"%f, %f", a, b);
+	
+	[interface loadOrbitTextureWitha:a b:b intoLocation:textures[19]];
+
 }
 
 -(void)loadPlanetPoints {
@@ -162,7 +176,52 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 -(void)renderPlanetView {
 	glRotatef(90.0f, 0.0, 1.0, 0.0);
 	glTranslatef(0.0f, 0.0f, -20.0f);
+	
+	glDisableClientState(GL_COLOR_ARRAY);
+	glDisable(GL_POINT_SPRITE_OES);
+	
+	glRotatef(90, 0, 0, 1.0f);
+	
+	const GLfloat pointer[] = {
+		0, 0,
+		0, 1,
+		1, 0,
+		1, 1
+	};
+	
+	glEnable(GL_TEXTURE_2D);
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);	
+	glColor4f(0.0f, 0.5f, 1.0f, 0.5f);
+	glTexCoordPointer(2, GL_FLOAT, 8, pointer);
+	glBindTexture(GL_TEXTURE_2D, textures[19]);
+	
+	
+	for(int i = 0; i < [[objectManager planets] count]; ++i) {
+		float a, b, e, c;
+		e = [[[objectManager planets] objectAtIndex:i] e];
+		a = [[[objectManager planets] objectAtIndex:i] a];
+		b = sqrt(pow(a,2) - pow(a,2)*pow(e,2));
+		c = sqrt(pow(a,2) - pow(b,2));
+			
+		const GLfloat planetOrbit[] = {
+			-c - a, -b, 0,
+			-c - a, b, 0,
+			-c + a, -b, 0,
+			-c + a, b, 0
+		};
+		
+		glVertexPointer(3, GL_FLOAT, 12, planetOrbit);
+		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+	}
+		
+	glRotatef(-90, 0, 0, 1.0f);
 
+	glDisableClientState(GL_TEXTURE_COORD_ARRAY);	
+
+	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_POINT_SPRITE_OES);
+	glEnableClientState(GL_COLOR_ARRAY);	
+	
 	const GLfloat planetViewPoints[] = {
 		0, 0, 0,
 		0, 0, 0,	
@@ -195,7 +254,6 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	int i = 0;
 	
 	glVertexPointer(3, GL_FLOAT, 12, planetViewPoints);
-	glEnableClientState(GL_COLOR_ARRAY);
     glColorPointer(4, GL_FLOAT, 32, &planetPoints[3]);
 	
 	GLfloat size = 0;
@@ -208,8 +266,8 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		}
 		else {
 			if (i == 0) { // Bij de zon laad de zon texture in
-				glPointSize(15.0f);
-				glBindTexture(GL_TEXTURE_2D, textures[9]);
+				glPointSize(16.0f);
+				glBindTexture(GL_TEXTURE_2D, textures[8]);
 			}
 			else { // Bij planeten laad de planeet texture in
 				if(i == 10) { 
@@ -238,7 +296,10 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		++i;
 	}
 	
-	[[objectManager sun] drawHelio:YES];
+	[[objectManager sun] drawHelio:YES]; 
+	
+	glRotatef(30, 0, 1.0, 0);
+	
 }
 
 -(void)render {
@@ -268,6 +329,9 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	if(!planetView) {
 		glClearColor(0.0, 0.08 + bgConstant * 0.12, 0.12 + bgConstant * 0.18, 1.0);
 	}
+	else {
+		glClearColor(0.0, 0.12, 0.16, 1.0);
+	}
 	
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
@@ -276,11 +340,11 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	glTexEnvi(GL_POINT_SPRITE_OES, GL_COORD_REPLACE_OES, GL_TRUE);	
 
 	if(planetView) {
-		glEnable(GL_DEPTH_TEST);
+		//glEnable(GL_DEPTH_TEST);
 		//[camera adjustView];
+		[self renderPlanetView];
 		glEnable(GL_TEXTURE_2D);
 		glEnable(GL_POINT_SPRITE_OES);
-		[self renderPlanetView];
 		glDisable(GL_DEPTH_TEST);
 		[interface renderInterface];
 		
@@ -667,14 +731,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 	
 	glEnable(GL_TEXTURE_2D);
-	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-
-	/* glColor4f(0.0, 1.0, 1.0, 0.05);
-	glTexCoordPointer(2, GL_FLOAT, 20, &verticesHorizonGlow[3]);
-	glBindTexture(GL_TEXTURE_2D, textures[0]);
-	glVertexPointer(3, GL_FLOAT, 20, verticesHorizonGlow);
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 10); */
-	
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);	
 }
 
 

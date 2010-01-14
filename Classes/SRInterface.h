@@ -130,6 +130,7 @@
 -(id)initWithRenderer:(SRRenderer*)theRenderer;
 -(void)loadNameplate;
 -(void)loadTextureWithString:(NSString *)text intoLocation:(GLuint)location;
+-(void)loadOrbitTextureWitha:(float)theA b:(float)theB intoLocation:(GLuint)location;
 -(void)loadTexture:(NSString *)name intoLocation:(GLuint)location;
 -(void)loadMenu;
 -(void)loadModules;

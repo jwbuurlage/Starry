@@ -153,6 +153,57 @@
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 }
+- (void)loadOrbitTextureWitha:(float)theA b:(float)theB intoLocation:(GLuint)location {
+	//Text opzetten
+	CGRect rect = {0,0,128,128};
+	
+	UIGraphicsBeginImageContext(rect.size);
+	
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextClearRect(ctx, rect);
+	
+	const CGFloat dashPattern[] = {
+		5, 5, 5, 5	
+	};
+	
+	CGContextSetLineDash(ctx, 0, dashPattern, 4);
+	CGContextSetLineWidth(ctx, 3.0f);
+	CGContextSetRGBStrokeColor(ctx, 1.0, 1.0, 1.0, 0.6);
+    CGContextStrokeEllipseInRect(ctx, CGRectInset(rect, 2.0, 2.0));
+	
+	UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	CGImageRef textureImageTemp = outputImage.CGImage;
+	
+	CGImageRef textureImage = [self CGImageRotatedByAngle:textureImageTemp angle:90];
+	
+	NSInteger texWidth = CGImageGetWidth(textureImage);
+    NSInteger texHeight = CGImageGetHeight(textureImage);
+	
+	GLubyte *textureData = (GLubyte *)malloc(texWidth * texHeight * 4);
+	
+	CGContextRef textureContext = CGBitmapContextCreate(textureData,
+														texWidth, texHeight,
+														8, texWidth * 4,
+														CGImageGetColorSpace(textureImage),
+														kCGImageAlphaPremultipliedLast);	
+	
+	CGContextTranslateCTM(textureContext, 0, rect.size.height);
+	CGContextScaleCTM(textureContext, 1.0, -1.0);
+	CGContextSetBlendMode(textureContext, kCGBlendModeCopy);
+	CGContextDrawImage(textureContext, CGRectMake(0.0, 0.0, (float)texWidth, (float)texHeight), textureImage);
+	CGContextRelease(textureContext);
+	
+	glBindTexture(GL_TEXTURE_2D, location);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, texWidth, texHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, textureData);
+	
+	free(textureData);
+	
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	
+}
+
 
 -(void)loadMenu {
 	//elementen inladen

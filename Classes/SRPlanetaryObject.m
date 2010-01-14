@@ -17,7 +17,7 @@
 
 @implementation SRPlanetaryObject
 
-@synthesize position, positionHelio, a, name, selected;
+@synthesize position, positionHelio, a, e, o, w, i, name, selected;
 
 
 -(id)initWitha:(float)ia		
@@ -84,7 +84,6 @@
 	X = distance * (cos(o)*cos(w + trueAnomaly) - sin(o)*cos(i)*sin(w + trueAnomaly));
 	Y = distance * (sin(o)*cos(w + trueAnomaly) + cos(o)*cos(i)*sin(w + trueAnomaly));
 	Z = distance * (sin(i) * sin(w + trueAnomaly));
-	
 	
 	positionHelio = Vertex3DMake(X,Y,Z);
 	

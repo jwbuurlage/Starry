@@ -36,18 +36,7 @@
 	SterrenAppDelegate *appDelegate;
 	SRObjectManager *objectManager;
 	GLViewController *myOwner;
-	
-	//lichamen
-	SRSun* sun;
-	SRPlanetaryObject *mercury;
-	SRPlanetaryObject *venus;
-	SRPlanetaryObject *earth;
-	SRPlanetaryObject *mars;
-	SRPlanetaryObject *jupiter;
-	SRPlanetaryObject *saturn;
-	SRPlanetaryObject *uranus;
-	SRPlanetaryObject *neptune;
-	
+	 	
 	SRStar * selectedStar;
 	SRPlanetaryObject * selectedPlanet;
 		
@@ -107,6 +96,7 @@
 -(void)drawCompass;
 -(void)drawEcliptic;
 
+-(void)loadOrbits;
 -(void)adjustViewToLocationAndTime:(BOOL)status;
 -(void)loadStarPoints;
 -(void)loadPlanetPoints;

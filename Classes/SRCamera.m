@@ -73,7 +73,7 @@
 		}
 	}
 	if(zoomOut) {
-		if(oSteps == 0) { oSteps = 30; }
+		if(oSteps == 0) { oSteps = 20; }
 		float newFieldOfView = fieldOfView + (0.3/30);
 		if(!planetView) {
 			if(newFieldOfView > 0.1 && newFieldOfView < 1.0) {
@@ -85,14 +85,14 @@
 				fieldOfView = newFieldOfView;
 			}
 		}
-		oSteps -= timeElapsed / 0.05;
+		oSteps -= (timeElapsed / 0.075);
 		if(oSteps <= 0) {
 			zoomOut = FALSE;
 			oSteps = 0;
 		}
 	}
 	if(tapZoom) {
-		if(tSteps == 0) { tSteps = 30; }
+		if(tSteps == 0) { tSteps = 20; }
 		
 	 
 	 //NSLog(@"deltax:%i deltay:%i",deltaX,deltaY);
@@ -175,7 +175,7 @@
 			}
 		}
 		
-		tSteps -= 3 * timeElapsed / 0.05;
+		tSteps -= (timeElapsed / 0.075);
 		NSLog(@"%f", tSteps);
 		if(tSteps <= 0) {
 			tapZoom = FALSE;

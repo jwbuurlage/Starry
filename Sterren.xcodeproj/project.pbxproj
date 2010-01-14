@@ -243,7 +243,7 @@
 		ACECC6C710CDA19600CBE4AC /* messier.png in Resources */ = {isa = PBXBuildFile; fileRef = ACECC6C610CDA19600CBE4AC /* messier.png */; };
 		ACF3D1FA10CBE50E002450B6 /* highlight_small.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF3D1F910CBE50E002450B6 /* highlight_small.png */; };
 		ACF937CA10D7FE56008A4845 /* messierInfoBg.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF937C910D7FE56008A4845 /* messierInfoBg.png */; };
-		ACFAF6F510CBD02400A6AB77 /* highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = ACFAF6F410CBD02400A6AB77 /* highlight.png */; };
+		ACFAF6F510CBD02400A6AB77 /* sun_planet.png in Resources */ = {isa = PBXBuildFile; fileRef = ACFAF6F410CBD02400A6AB77 /* sun_planet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -523,7 +523,7 @@
 		ACECC6C610CDA19600CBE4AC /* messier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = messier.png; path = Resources/messier.png; sourceTree = "<group>"; };
 		ACF3D1F910CBE50E002450B6 /* highlight_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = highlight_small.png; path = Resources/highlight_small.png; sourceTree = "<group>"; };
 		ACF937C910D7FE56008A4845 /* messierInfoBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = messierInfoBg.png; path = Resources/messierInfoBg.png; sourceTree = "<group>"; };
-		ACFAF6F410CBD02400A6AB77 /* highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = highlight.png; path = Resources/highlight.png; sourceTree = "<group>"; };
+		ACFAF6F410CBD02400A6AB77 /* sun_planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun_planet.png; path = Resources/sun_planet.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -634,7 +634,7 @@
 				AC8A89D110C5898B0015CDF5 /* nameplatebg.png */,
 				ACECC6C610CDA19600CBE4AC /* messier.png */,
 				AC4F8956109DF46900B8BD64 /* click.png */,
-				ACFAF6F410CBD02400A6AB77 /* highlight.png */,
+				ACFAF6F410CBD02400A6AB77 /* sun_planet.png */,
 				ACF3D1F910CBE50E002450B6 /* highlight_small.png */,
 				AC6636E010AB16C600D4FB1C /* horizon_bg.png */,
 				ACC380D210DA959D009ED92E /* indicator_overlay.png */,
@@ -675,8 +675,6 @@
 				AC1BA73B10C0225D0084CF6F /* SRConstellation.m */,
 				AC9A926910C6F1C500657268 /* SRConstellationLine.h */,
 				AC9A926A10C6F1C500657268 /* SRConstellationLine.m */,
-				76179CF210CA61D500768180 /* SRObjectManager.h */,
-				76179CF310CA61D500768180 /* SRObjectManager.m */,
 				AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */,
 				AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */,
 				ACEC7CEF109B25A700149C80 /* SRStar.h */,
@@ -768,6 +766,8 @@
 		AC2839CB10FF7F88002DD356 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				76179CF210CA61D500768180 /* SRObjectManager.h */,
+				76179CF310CA61D500768180 /* SRObjectManager.m */,
 				76030C6A10CBBA260074B0CE /* SRSettingsManager.h */,
 				76030C6B10CBBA260074B0CE /* SRSettingsManager.m */,
 				AC24C98510BAE6420063DF87 /* SRTimeManager.h */,
@@ -1062,7 +1062,7 @@
 				AC97059410C5B4190048DB59 /* sun.png in Resources */,
 				AC9A924410C6EC0A00657268 /* planet.png in Resources */,
 				AC57BD0E10C957DC00B0BD5C /* constellations.xml in Resources */,
-				ACFAF6F510CBD02400A6AB77 /* highlight.png in Resources */,
+				ACFAF6F510CBD02400A6AB77 /* sun_planet.png in Resources */,
 				ACF3D1FA10CBE50E002450B6 /* highlight_small.png in Resources */,
 				ACB8F19B10CC76F700C0F87E /* location_on.png in Resources */,
 				ACC493A210CD777600DC7967 /* moon.png in Resources */,
