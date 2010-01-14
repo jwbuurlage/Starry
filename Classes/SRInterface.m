@@ -671,9 +671,21 @@
 		}
 		else if(clicker == @"red") {
 			if(![[appDelegate settingsManager] showRedOverlay]) {
+				if(slider) {
+					[slider setThumbImage:[UIImage imageNamed:@"slider_normal_red.png"] forState:UIControlStateNormal];
+					[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted_red.png"] forState:UIControlStateHighlighted];
+					[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max_red.png"] forState:UIControlStateNormal];
+					[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min_red.png"] forState:UIControlStateNormal];
+				}
 				[[appDelegate settingsManager] setShowRedOverlay:TRUE];
 			}
 			else {
+				if(slider) {
+					[slider setThumbImage:[UIImage imageNamed:@"slider_normal.png"] forState:UIControlStateNormal];
+					[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted.png"] forState:UIControlStateHighlighted];
+					[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max.png"] forState:UIControlStateNormal];
+					[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min.png"] forState:UIControlStateNormal];
+				}
 				[[appDelegate settingsManager] setShowRedOverlay:FALSE];
 			}
 		}
@@ -1056,7 +1068,7 @@
 	
 	if(fieldTmp)
 		[fieldTmp release];
-	fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX-26), (locY+25), 80, 32)];
+	fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX-29), (locY+20), 80, 32)];
 	[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:11]];
 	[fieldTmp setTextColor:color];
 	[fieldTmp setTextAlignment:UITextAlignmentLeft];
