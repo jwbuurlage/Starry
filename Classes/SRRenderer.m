@@ -263,9 +263,11 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 	
-	//float bgConstant = ((M_PI / 180) * [[objectManager sun] height:[location latitude] lon:[location longitude] elapsed:[[[interface timeModule] manager] elapsed]]);
+	float bgConstant = ((M_PI / 180) * [[objectManager sun] height:[location latitude] lon:[location longitude] elapsed:[[[interface timeModule] manager] elapsed]]);
 	//NSLog(@"%f",bgConstant);
-	//glClearColor(0.0, 0.08 + bgConstant * 0.12, 0.12 + bgConstant * 0.18, 1.0);
+	if(!planetView) {
+		glClearColor(0.0, 0.08 + bgConstant * 0.12, 0.12 + bgConstant * 0.18, 1.0);
+	}
 	
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
