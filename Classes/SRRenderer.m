@@ -180,7 +180,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	glDisableClientState(GL_COLOR_ARRAY);
 	glDisable(GL_POINT_SPRITE_OES);
 	
-	glRotatef(90, 0, 0, 1.0f);
+	//glRotatef(90, 0, 0, 1.0f);
 	
 	const GLfloat pointer[] = {
 		0, 0,
@@ -210,11 +210,15 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 			-c + a, b, 0
 		};
 		
+		glRotatef(-[[[objectManager planets] objectAtIndex:i] i], 1, 0, 0);
+		glRotatef(-[[[objectManager planets] objectAtIndex:i] o], 0, 0, 1);
 		glVertexPointer(3, GL_FLOAT, 12, planetOrbit);
 		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+		glRotatef([[[objectManager planets] objectAtIndex:i] o], 0, 0, 1);
+		glRotatef([[[objectManager planets] objectAtIndex:i] i], 1, 0, 0);
 	}
 		
-	glRotatef(-90, 0, 0, 1.0f);
+	//glRotatef(-90, 0, 0, 1.0f);
 
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);	
 
