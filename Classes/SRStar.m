@@ -130,19 +130,19 @@
 	StarColor color;
 	if(ci > 1.2) {
 		//rood
-		color = StarColorMake(1.0f, 0.7f, 0.7f, [self alpha]);
+		color = StarColorMake(1.0f, 0.9f, 0.9f, [self alpha]);
 	}
 	else if(ci > 0.7) {
 		//oranje
-		color = StarColorMake(1.0, 0.8f, 0.7f, [self alpha]);
+		color = StarColorMake(1.0, 0.925f, 0.875f, [self alpha]);
 	}
 	else if(ci > 0.5) {
 		//geel
-		color = StarColorMake(1.0f, 1.0f, 0.7f, [self alpha]);
+		color = StarColorMake(1.0f, 1.0f, 0.9f, [self alpha]);
 	}
 	else if(ci > 0.25) {
 		//geelachtig
-		color = StarColorMake(1.0f, 1.0f, 0.8f, [self alpha]);
+		color = StarColorMake(1.0f, 1.0f, 0.95f, [self alpha]);
 	}
 	else if(ci > 0.0) {
 		//wit
@@ -150,7 +150,7 @@
 	}
 	else {
 		//blauw
-		color = StarColorMake(0.7f, 0.7f, 1.0f, [self alpha]);
+		color = StarColorMake(0.9f, 0.9f, 1.0f, [self alpha]);
 	}
 	
 	return color;

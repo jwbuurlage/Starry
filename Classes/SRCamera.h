@@ -13,6 +13,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 #import "GLView.h"
 #import "OpenGLCommon.h"
@@ -62,7 +63,13 @@
 	float hSteps;
 	float vSteps;
 	
+	BOOL usingCompass;
+	float azimuthCompass;
+	float altitudeCompass;
+	
 	GLfloat zoomingValue; 
+	
+	CLLocationManager* theManager;
 }
 
 @property (readwrite) BOOL planetView;

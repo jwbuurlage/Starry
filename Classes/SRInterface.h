@@ -116,6 +116,8 @@
 	BOOL showingStar;
 	BOOL showingMessier;
 	BOOL menuVisible;
+	
+	BOOL highlightUp;
 }
 
 @property (readonly) SRTimeModule* timeModule;

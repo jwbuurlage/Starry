@@ -267,7 +267,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 - (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions alignment:(UITextAlignment)alignment fontName:(NSString*)name fontSize:(CGFloat)size
 {
 	if(size == 1.0f) {
-		size = 9.0f;
+		size = 11.0f;
 		flipped = TRUE;
 	}
 	
@@ -307,7 +307,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 	 //NOTE: NSString draws in UIKit referential i.e. renders upside-down compared to CGBitmapContext referential
 	if(flipped) {
 		CGContextRotateCTM(context, M_PI / 2);
-		CGContextTranslateCTM(context, 0.0, -(dimensions.height / 2) + 8 );
+		CGContextTranslateCTM(context, 0.0, -(dimensions.height / 2) + 6 );
 	}
 	UIGraphicsPushContext(context);
 		/*CGRect rect = {0,0,64,64};

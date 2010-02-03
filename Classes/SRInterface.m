@@ -862,6 +862,20 @@
 		return;
 	}
 	
+		if([renderer highlightSize] > 40) {
+			highlightUp = FALSE;
+		}
+		else if([renderer highlightSize] < 24) {
+			highlightUp = TRUE;
+		}
+		
+		if(highlightUp) {
+			[renderer setHighlightSize:[renderer highlightSize] + (1 * (timeElapsed / 0.05))];
+		}
+		else {
+			[renderer setHighlightSize:[renderer highlightSize] - (1 * (timeElapsed / 0.05))];
+		}
+		
 	if(aMenu) {
 		if(hidingMenu) {
 			yTranslate += 7 * (timeElapsed / 0.05); 
