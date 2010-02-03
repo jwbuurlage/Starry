@@ -50,6 +50,7 @@
 	longitude = myLocation.coordinate.longitude;
 	latitude = myLocation.coordinate.latitude;
 	
+	
 	//NSLog(@"Longitude van GPS: %f",longitude);
 	//NSLog(@"Latitude van GPS: %f",latitude);
 	

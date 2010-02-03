@@ -32,7 +32,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		//[objectManager setRenderer:self];
 		interface = [[SRInterface alloc] initWithRenderer:self];
 		
-		glGenTextures(20, &textures[0]);
+		glGenTextures(21, &textures[0]);
 		[interface loadTexture:@"horizon_bg.png" intoLocation:textures[0]];
 		[interface loadTextureWithString:NSLocalizedString(@"comS", @"") intoLocation:textures[1]];
 		[interface loadTextureWithString:NSLocalizedString(@"comW", @"") intoLocation:textures[2]];		
@@ -57,6 +57,9 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		[interface loadTexture:@"phase_5.png" intoLocation:textures[16]];
 		[interface loadTexture:@"phase_6.png" intoLocation:textures[17]];
 		[interface loadTexture:@"phase_7.png" intoLocation:textures[18]];
+		
+		[interface loadTexture:@"starTexture.png" intoLocation:textures[20]];
+
 
 		//FIXME: verplaats naar app delegate		
 		glClearColor(0.0, 0.08, 0.14, 1.0);
@@ -330,8 +333,11 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	
 	float bgConstant = ((M_PI / 180) * [[objectManager sun] height:[location latitude] lon:[location longitude] elapsed:[[[interface timeModule] manager] elapsed]]);
 	//NSLog(@"%f",bgConstant);
+	if(bgConstant < 0) {
+		bgConstant = 0;
+	}
 	if(!planetView) {
-		glClearColor(0.0, 0.08 + bgConstant * 0.12, 0.12 + bgConstant * 0.18, 1.0);
+		glClearColor(0.05 + bgConstant * 0.07, 0.06 + bgConstant * 0.12, 0.12 + bgConstant * 0.30, 1.0);
 	}
 	else {
 		glClearColor(0.0, 0.12, 0.16, 1.0);
@@ -365,6 +371,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	[self adjustViewToLocationAndTime:YES];
 
 	if([[appDelegate settingsManager] showConstellations]) {
+		glPointSize(128.0f);
 		[self drawConstellations]; 
 	}
 	[self drawEcliptic];
@@ -427,15 +434,23 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	//NSMutableArray * starSizeNum = [objectManager starSizeNum];
 	GLfloat size;
 	
-	size = 4 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 5) { size = 5; }
+	glBindTexture(GL_TEXTURE_2D, textures[20]);
+	glEnable(GL_POINT_SPRITE_OES);
+	glEnable(GL_TEXTURE_2D);
+
+	size = 12 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	if(size > 14) { size = 14; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, 0, [[starSizeNum objectAtIndex:0] intValue]);
 	
-	size = 3 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 4) { size = 4; }
+
+	size = 8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	if(size > 8) { size = 8; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue], [[starSizeNum objectAtIndex:1] intValue]);
+	
+	glDisable(GL_POINT_SPRITE_OES);
+	glDisable(GL_TEXTURE_2D);
 	
 	size = 2 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
 	if(size > 3) { size = 3; }
@@ -518,22 +533,22 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		
 		float distance = (dAzi + fabs(apparentAltitude - [aConstellation dec])) / 2;
 
-		if(distance < 30) { 
+		if(distance < 40) { 
 			if(distance <= 11.0) { 
-				glColor4f(0.6f, 0.6f, 0.6f, constAlpha);
+				glColor4f(0.3f, 0.6f, 1.0f, constAlpha);
 				[aConstellation draw];
 				
-				glColor4f(1.0f, 1.0f, 1.0f, constAlpha * 2);
+				glColor4f(1.0f, 1.0f, 1.0f, constAlpha * 3);
 				[aConstellation drawText];
 			}
 			else { 
 				float factor = (distance - 10) / 4;
 				if(factor < 1) { factor = 1; }
-				glColor4f(0.4f, 0.6f, 0.6f, constAlpha / factor); 
+				glColor4f(0.3f, 0.6f, 1.0f, constAlpha / factor); 
 				
 				[aConstellation draw];
 				
-				glColor4f(0.6f, 0.6f, 0.6f, (constAlpha / factor) * 4);
+				glColor4f(1.0f, 1.0f, 1.0f, (constAlpha * 3 / factor) * 4);
 				[aConstellation drawText];
 			} 
 		}
@@ -541,7 +556,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 }
 
 -(void)drawEcliptic {
-	glLineWidth(1.0);
+	glLineWidth(1.5);
 	
 	const GLfloat verticesEcliptic[] = {
 		-25.0, 0.0, 0.0,													
@@ -561,7 +576,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 			highlightPosition.x, highlightPosition.y, highlightPosition.z
 		};
 		
-		glPointSize(32.0f);
+		glPointSize(highlightSize);
 		glBindTexture(GL_TEXTURE_2D, textures[9]);
 		
 		glColor4f(0.5f,0.5f,0.5f,0.75f);

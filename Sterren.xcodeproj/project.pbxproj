@@ -47,6 +47,7 @@
 		AC080F8110D983300078DA4D /* gears.png in Resources */ = {isa = PBXBuildFile; fileRef = AC080F7C10D983300078DA4D /* gears.png */; };
 		AC080F8210D983300078DA4D /* planeticon.png in Resources */ = {isa = PBXBuildFile; fileRef = AC080F7D10D983300078DA4D /* planeticon.png */; };
 		AC080F8310D983300078DA4D /* radar.png in Resources */ = {isa = PBXBuildFile; fileRef = AC080F7E10D983300078DA4D /* radar.png */; };
+		AC0DECF311187EA8003101D1 /* starTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0DECF211187EA8003101D1 /* starTexture.png */; };
 		AC1BA73C10C0225D0084CF6F /* SRConstellation.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1BA73B10C0225D0084CF6F /* SRConstellation.m */; };
 		AC2243B0109DB98F0049BF46 /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = AC2243AF109DB98F0049BF46 /* time.png */; };
 		AC24C98710BAE6420063DF87 /* SRTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC24C98610BAE6420063DF87 /* SRTimeManager.m */; };
@@ -304,6 +305,7 @@
 		AC080F7C10D983300078DA4D /* gears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gears.png; path = Resources/gears.png; sourceTree = "<group>"; };
 		AC080F7D10D983300078DA4D /* planeticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planeticon.png; path = Resources/planeticon.png; sourceTree = "<group>"; };
 		AC080F7E10D983300078DA4D /* radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = radar.png; path = Resources/radar.png; sourceTree = "<group>"; };
+		AC0DECF211187EA8003101D1 /* starTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = starTexture.png; path = Resources/Textures/starTexture.png; sourceTree = "<group>"; };
 		AC1BA73A10C0225D0084CF6F /* SRConstellation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRConstellation.h; sourceTree = "<group>"; };
 		AC1BA73B10C0225D0084CF6F /* SRConstellation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRConstellation.m; sourceTree = "<group>"; };
 		AC2243AF109DB98F0049BF46 /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = time.png; path = Resources/time.png; sourceTree = "<group>"; };
@@ -607,6 +609,7 @@
 				AC24C9AF10BAEB310063DF87 /* Time */,
 				ACE708CE10D029FD003DE4BB /* Messier */,
 				AC080F5710D97F010078DA4D /* nav_bg.png */,
+				AC0DECF211187EA8003101D1 /* starTexture.png */,
 				76F8DC6B10FF2784004C91EF /* slider_highlighted_red.png */,
 				76F8DC6C10FF2784004C91EF /* slider_max_red.png */,
 				76F8DC6D10FF2784004C91EF /* slider_min_red.png */,
@@ -772,8 +775,8 @@
 				76030C6B10CBBA260074B0CE /* SRSettingsManager.m */,
 				AC24C98510BAE6420063DF87 /* SRTimeManager.h */,
 				AC24C98610BAE6420063DF87 /* SRTimeManager.m */,
-				765DA28910A0B19300C4B16A /* SRLocation.m */,
 				765DA28810A0B19300C4B16A /* SRLocation.h */,
+				765DA28910A0B19300C4B16A /* SRLocation.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -1232,6 +1235,7 @@
 				76F8DC8610FF2AE3004C91EF /* Default.png in Resources */,
 				76F8DC8710FF2AE3004C91EF /* defaultTexture.png in Resources */,
 				AC28395B10FF7ADF002DD356 /* indicator_overlay_modules.png in Resources */,
+				AC0DECF311187EA8003101D1 /* starTexture.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

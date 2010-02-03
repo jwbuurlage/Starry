@@ -67,7 +67,7 @@
 	
 	BOOL planetView;
 	BOOL drawPlanetLabels;
-	
+		
 	NSTimeInterval lastDrawTime;
 	float timeElapsed;
 }

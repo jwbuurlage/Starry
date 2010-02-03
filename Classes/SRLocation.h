@@ -26,6 +26,8 @@
 	float longitude;
 	float latitude;
 	BOOL staticValues;
+	
+	float heading;
 }
 
 @property (nonatomic, retain) CLLocationManager *locationManager; 
