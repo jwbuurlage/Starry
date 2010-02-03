@@ -191,8 +191,8 @@
 			}
 		}
 		
-		tSteps -= (timeElapsed / 0.075);
-		NSLog(@"%f", tSteps);
+		tSteps -= (timeElapsed / 0.025);
+		NSLog(@"%f, %f", tSteps, timeElapsed);
 		if(tSteps <= 0) {
 			tapZoom = FALSE;
 			tSteps = 0;

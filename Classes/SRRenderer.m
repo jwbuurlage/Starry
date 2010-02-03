@@ -438,13 +438,13 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	glEnable(GL_POINT_SPRITE_OES);
 	glEnable(GL_TEXTURE_2D);
 
-	size = 12 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 14) { size = 14; }
+	size = 8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	if(size > 12) { size = 12; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, 0, [[starSizeNum objectAtIndex:0] intValue]);
 	
 
-	size = 8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	size = 6 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
 	if(size > 8) { size = 8; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue], [[starSizeNum objectAtIndex:1] intValue]);
@@ -538,7 +538,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 				glColor4f(0.3f, 0.6f, 1.0f, constAlpha);
 				[aConstellation draw];
 				
-				glColor4f(1.0f, 1.0f, 1.0f, constAlpha * 3);
+				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 				[aConstellation drawText];
 			}
 			else { 
@@ -548,7 +548,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 				
 				[aConstellation draw];
 				
-				glColor4f(1.0f, 1.0f, 1.0f, (constAlpha * 3 / factor) * 4);
+				glColor4f(1.0f, 1.0f, 1.0f, (constAlpha * 3 / factor));
 				[aConstellation drawText];
 			} 
 		}
@@ -664,7 +664,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	if([[appDelegate settingsManager] showPlanetLabels]) {
 	i = 1;
 	while(i < [[objectManager planets] count]) {
-		glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+		glColor4f(0.5f, 0.6f, 1.0f, 1.0f);
 		[[[objectManager planets] objectAtIndex:i] drawHelio:NO];
 		++i;
 	}
