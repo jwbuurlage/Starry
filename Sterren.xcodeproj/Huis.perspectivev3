@@ -285,7 +285,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 34}, {214, 893}}</string>
+							<string>{{0, 0}, {214, 893}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -332,7 +332,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>AC79BB821119E263002B2214</string>
+										<string>AC85C7CB1119FA73008E099A</string>
 										<key>history</key>
 										<array>
 											<string>ACD3B9ED10F50044007CD4C7</string>
@@ -436,16 +436,16 @@
 											<string>AC21798911174C7700B2F8C2</string>
 											<string>AC2179B511174DD100B2F8C2</string>
 											<string>AC0DED09111881AF003101D1</string>
-											<string>ACFD6C2A1119C17F0045ECC1</string>
 											<string>ACFD6C2B1119C17F0045ECC1</string>
 											<string>ACFD6C2C1119C17F0045ECC1</string>
 											<string>ACFD6C2D1119C17F0045ECC1</string>
 											<string>AC79BB4C1119DA7E002B2214</string>
 											<string>AC79BB7B1119E242002B2214</string>
 											<string>AC79BB7C1119E242002B2214</string>
-											<string>AC79BB7D1119E242002B2214</string>
 											<string>AC79BB7E1119E242002B2214</string>
-											<string>AC79BB7F1119E242002B2214</string>
+											<string>AC85C7B21119F7FE008E099A</string>
+											<string>AC85C7B31119F7FE008E099A</string>
+											<string>AC85C7B41119F7FE008E099A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -568,11 +568,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>AC79BB401119D0AB002B2214</string>
+				<string>AC85C7A61119F314008E099A</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>AC79BB411119D0AB002B2214</string>
+				<string>AC85C7A71119F314008E099A</string>
 				<string>ACB7B10810615AD200CA447E</string>
-				<string>AC79BB421119D0AB002B2214</string>
+				<string>AC85C7A81119F314008E099A</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -722,14 +722,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>AC79BB431119D0AB002B2214</string>
+				<string>AC85C7B61119F7FE008E099A</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>AC79BB441119D0AB002B2214</string>
-				<string>AC79BB451119D0AB002B2214</string>
-				<string>AC79BB461119D0AB002B2214</string>
-				<string>AC79BB471119D0AB002B2214</string>
-				<string>ACB7B10810615AD200CA447E</string>
+				<string>AC85C7B71119F7FE008E099A</string>
+				<string>AC85C7B81119F7FE008E099A</string>
+				<string>AC85C7B91119F7FE008E099A</string>
+				<string>AC85C7BA1119F7FE008E099A</string>
+				<string>AC85C7BB1119F7FE008E099A</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -763,7 +763,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>AC79BB571119DCAC002B2214</string>
+		<string>AC85C7CC1119FA73008E099A</string>
+		<string>AC85C7BC1119F7FE008E099A</string>
+		<string>AC85C7BD1119F7FE008E099A</string>
 		<string>/Users/Huis/Code/Applications/Sterren/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
