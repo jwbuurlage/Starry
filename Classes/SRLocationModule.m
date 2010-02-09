@@ -41,12 +41,12 @@
 		}
 		
 		//laad elements in - sla op in textures		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63)
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"indicator_overlay_modules.png"]] 
-															identifier:@"indicator_overlay_modules" 
-															 clickable:NO]];
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(190,-55, 28,28) 
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"longitude.png"]]
+															identifier:@"long-edit" 
+															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -57, 31, 31)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, -57, 41, 31)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"radar.png"]] 
 															identifier:@"icon" 
 															 clickable:YES]];	
@@ -64,11 +64,6 @@
 															identifier:@"lat" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-55, 28,28) 
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"latitude.png"]] 
-															identifier:@"lat-edit" 
-															 clickable:YES]];
-		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(224,-72, 80,32) 
 															   texture:nil 
 															identifier:@"long" 
@@ -79,10 +74,10 @@
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:locationString]]
 																							   identifier:@"gps-toggle" 
 																							  clickable:YES]];
-	
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(190,-55, 28,28) 
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"longitude.png"]]
-															identifier:@"long-edit" 
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-55, 28,28) 
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"latitude.png"]] 
+															identifier:@"lat-edit" 
 															 clickable:YES]];
 		latVisible = YES;
 		longVisible = YES;
@@ -188,7 +183,7 @@
 			if(hiding) {
 				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 			}
-			[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57, 31, 31)];
+			[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57, 41, 31)];
 			[[mElement texture] drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}

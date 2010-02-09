@@ -19,38 +19,43 @@
 		
 		elements = [[NSMutableArray alloc] init];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(112, 288, 256, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(112, 268, 235, 51)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"nameplatebg.png"]] 
 															identifier:@"nameplate" 
 															 clickable:NO]];
 		
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(335, 281, 32, 50)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(300, 275, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"info.png"]] 
 															identifier:@"info" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150,281, 128,32) 
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(165,279, 128,32) 
+															   texture:nil
+															identifier:@"text-black" 
+															 clickable:NO]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(165,266, 128,32) 
+															   texture:nil
+															identifier:@"text-black" 
+															 clickable:NO]];
+		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(165,280, 128,32) 
 															   texture:nil
 															identifier:@"text" 
 															 clickable:NO]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(205,279, 128,32) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(165,267, 128,32) 
 															   texture:nil
 															identifier:@"text-transparent" 
 															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(117, 289, 32, 32)
+				
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(130, 285, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"close.png"]] 
 															identifier:@"close_nameplate" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(313, 293, 25, 25)
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"add_list.png"]] 
-															identifier:@"add_list" 
-															 clickable:YES]];
-		
-		yTranslate = 32;
+		yTranslate = 51;
 		visible = NO;
 		info = NO;
 	}
@@ -73,6 +78,12 @@
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 			[[mElement texture] drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+		}
+		else if([mElement identifier] == @"text-black") {
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			glColor4f(0.0f, 0.0f, 0.0f, 1.0f);
+			[[mElement texture] drawInRect:[mElement bounds]];
+			glColor4f(0.0f, 0.0f, 0.0f, 1.0f);
 		}
 		else if([mElement identifier] == @"info") {
 			if(info) {
@@ -111,9 +122,12 @@
 	
 	[[[elements objectAtIndex:2] texture] release];
 	[[[elements objectAtIndex:3] texture] release];
+	[[[elements objectAtIndex:4] texture] release];
+	[[[elements objectAtIndex:5] texture] release];
+	[[elements objectAtIndex:4] setTexture:[[Texture2D alloc] initWithString:name dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]];
 	[[elements objectAtIndex:2] setTexture:[[Texture2D alloc] initWithString:name dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:12]];
 	[[elements objectAtIndex:3] setTexture:[[Texture2D alloc] initWithString:constellation dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9]];
-	[[elements objectAtIndex:3] setBounds:CGRectMake([name sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:12]].width + 155, 278, 128,32)];
+	[[elements objectAtIndex:5] setTexture:[[Texture2D alloc] initWithString:constellation dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9]];
 	info = theInfo;
 	if (![self visible]) {
 		[self show];

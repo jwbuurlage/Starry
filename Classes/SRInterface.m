@@ -217,47 +217,37 @@
 														  identifier:@"menu" 
 														   clickable:NO]];
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, -57, 31, 31)  
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, -56, 41, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"radar.png"]] 
 														  identifier:@"location" 
 														   clickable:YES]];
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(58, -57, 31, 31)  
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(63, -56, 41, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"calendar.png"]]
 														  identifier:@"time" 
 														   clickable:YES]];
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(106, -57, 31, 31)  
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(116, -56, 41, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planeticon.png"]]
 														  identifier:@"planet" 
 														   clickable:YES]];
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(158, -57, 179, 32)  
-															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"search.png"]] 
-														  identifier:@"searchfield" 
-														   clickable:YES]];
-	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(332, -58, 31, 31)  
-															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"list.png"]] 
-														  identifier:@"list" 
-														   clickable:YES]];
-	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(382, -57, 31, 31)  
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(168, -56, 41, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"gears.png"]] 
 														  identifier:@"settings" 
 														   clickable:YES]];
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63) 
-															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"indicator_overlay.png"]] 
-														  identifier:@"menu_overlay" 
-														   clickable:NO]];		
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(223, -56, 196, 31)  
+															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"search.png"]] 
+														  identifier:@"searchfield" 
+														   clickable:YES]];
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(172, -67, 128, 32) 
-							                                 texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Search", @"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11] 
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(255, -65, 128, 32) 
+							                                 texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Search", @"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:13] 
 							                                identifier:@"search_text" 
 							                                 clickable:NO]];    
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(435, 6, 32, 32)  
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(443, 14, 16, 16)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]] 
 														  identifier:@"arrow" 
 														   clickable:YES]];
@@ -813,18 +803,18 @@
 		else if(clicker == @"icon") {	
 			if([timeModule visible]) {
 				[timeModule hide];	
-				[[UIElements objectAtIndex:2] setBounds:CGRectMake(58, -57, 31, 31)];
+				[[UIElements objectAtIndex:2] setBounds:CGRectMake(63, -56, 41, 31)];
 				aModule = TRUE;
 			}
 			if([locationModule visible]) {
 				[locationModule hide];
-				[[UIElements objectAtIndex:1] setBounds:CGRectMake(10, -57, 31, 31)];
+				[[UIElements objectAtIndex:1] setBounds:CGRectMake(10, -56, 41, 31)];
 				aModule = TRUE;
 			}
 			if([settingsModule visible]) {
 				[settingsModule hide];
 				[self hideSliderWith:@"fade"];
-				[[UIElements objectAtIndex:6] setBounds:CGRectMake(382, -57, 31, 31)];
+				[[UIElements objectAtIndex:6] setBounds:CGRectMake(168, -56, 41, 31)];
 				aModule = TRUE;
 			}
 			if([planetModule visible]) {
@@ -832,7 +822,7 @@
 				[camera resetZoomValue];
 				[planetModule hide];
 				[[timeModule manager] setSpeed:1];
-				[[UIElements objectAtIndex:3] setBounds:CGRectMake(106, -57, 31, 31)];
+				[[UIElements objectAtIndex:3] setBounds:CGRectMake(116, -56, 41, 31)];
 				aModule = TRUE;
 				[renderer setPlanetView:FALSE];
 			}
@@ -1008,8 +998,8 @@
 			//[theNameplate setHiding:TRUE];
 			[theNameplate setYTranslate:0];
 		}
-		else if ([theNameplate yTranslate] >= 32) {
-			[theNameplate setYTranslate:32];
+		else if ([theNameplate yTranslate] >= 51) {
+			[theNameplate setYTranslate:51];
 			aNameplate = FALSE;
 			[theNameplate setVisible:NO];
 		} 

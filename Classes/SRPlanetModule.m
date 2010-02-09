@@ -19,21 +19,16 @@
 		elements = [[NSMutableArray alloc] init];
 		
 		//laad elements in - sla op in textures
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63)
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"indicator_overlay_modules.png"]] 
-															identifier:@"indicator_overlay_modules" 
-															 clickable:NO]];
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -57, 31, 31)  
-																 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planeticon.png"]]
-															  identifier:@"icon" 
-															   clickable:YES]];
-		
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(188, -60, 137, 40)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"controls_bg.png"]] 
 															identifier:@"controls_bg" 
 															 clickable:NO]];
 		
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(12, -57, 41, 31)  
+																 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planeticon.png"]]
+															  identifier:@"icon" 
+															   clickable:YES]];
+				
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(195, -55, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"stop.png"]] 
 															identifier:@"stop" 
@@ -109,7 +104,7 @@
 				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 			}
 			else {
-				[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57, 31, 31)];
+				[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57, 41, 31)];
 			}
 			
 			

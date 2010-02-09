@@ -16,16 +16,15 @@
 	if(self = [super init]) {
 		elements = [[NSMutableArray alloc] init];
 		
-		initialXValueIcon = 382;
+		initialXValueIcon = 180;
 		
 		//laad elements in - sla op in textures
-		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63)
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"indicator_overlay_modules.png"]] 
-															identifier:@"indicator_overlay_modules" 
-															 clickable:NO]];
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-55, 32,32)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"brightness_plus.png"]] 
+															identifier:@"brightness_plus" 
+															 clickable:NO]];		
 
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, -57, 31, 31)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(10, -57, 41, 31)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"gears.png"]] 
 															identifier:@"icon" 
 															 clickable:YES]];
@@ -35,10 +34,6 @@
 															identifier:@"brightness_minus" 
 															 clickable:NO]];		
 		*/	
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-55, 32,32)
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"brightness_plus.png"]] 
-															identifier:@"brightness_plus" 
-															 clickable:NO]];
 		
 		/*[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(150,-58, 80,32) 
 															   texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Brightness", @"") dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:9] 
@@ -103,7 +98,7 @@
 				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 			}
 			else {
-				[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57, 31, 31)];
+				[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57, 41, 31)];
 			}
 
 			[[mElement texture] drawInRect:[mElement bounds]];
