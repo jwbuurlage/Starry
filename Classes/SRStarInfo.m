@@ -283,7 +283,7 @@
 }
 
 - (void)draw {	
-	glTranslatef(245,-18,0);
+	glTranslatef(215,-25,0);
 	glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 	[interfaceBackground drawInRect:CGRectMake(20, 0, 200, 320)];
 	for (SRInterfaceElement* mElement in elements) {

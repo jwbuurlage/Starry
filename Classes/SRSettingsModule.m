@@ -16,7 +16,7 @@
 	if(self = [super init]) {
 		elements = [[NSMutableArray alloc] init];
 		
-		initialXValueIcon = 180;
+		initialXValueIcon = 168;
 		
 		//laad elements in - sla op in textures
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-55, 32,32)

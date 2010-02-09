@@ -247,7 +247,7 @@
 							                                identifier:@"search_text" 
 							                                 clickable:NO]];    
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(443, 14, 16, 16)  
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(435, 6, 32, 32)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]] 
 														  identifier:@"arrow" 
 														   clickable:YES]];
@@ -643,7 +643,7 @@
 		}
 		else if(clicker == @"searchfield" || clicker == @"search") {
 			currentlyEditingIdentifier = @"search";
-			[self bringUpTheKeyboardWithText:@"" onLocationX:9 Y:175 withColor:[UIColor blackColor] andSendResultsTo:self];
+			[self bringUpTheKeyboardWithText:@"" onLocationX:10 Y:259 withColor:[UIColor blackColor] andSendResultsTo:self];
 		}
 		else if(clicker == @"arrow") {
 			BOOL sliderHide = NO;
@@ -687,7 +687,7 @@
 			NSNumber* aNumber = [[NSNumber alloc] initWithFloat:[locationModule latitude]];
 			currentlyEditingIdentifier = @"lat";
 			[locationModule setLatVisible:NO];
-			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocationX:0 Y:104 withColor:[UIColor whiteColor] andSendResultsTo:self]; // 74 omdat dit ook de locatie is van de data
+			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocationX:4 Y:108 withColor:[UIColor whiteColor] andSendResultsTo:self]; // 74 omdat dit ook de locatie is van de data
 			//Waarom reset de interface zich naar alles ingeklapt?
 			
 			if([locationModule GPS]) {
@@ -700,7 +700,7 @@
 			NSNumber* aNumber = [[NSNumber alloc] initWithFloat:[locationModule longitude]];
 			currentlyEditingIdentifier = @"long";
 			[locationModule setLongVisible:NO];
-			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocationX:0 Y:224 withColor:[UIColor whiteColor] andSendResultsTo:self]; // 174 omdat dit ook de locatie is van de data
+			[self bringUpTheKeyboardWithText:[aNumber stringValue] onLocationX:4 Y:228 withColor:[UIColor whiteColor] andSendResultsTo:self]; // 174 omdat dit ook de locatie is van de data
 			//Waarom reset de interface zich naar alles ingeklapt?
 			
 			if([locationModule GPS]) {

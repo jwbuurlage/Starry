@@ -153,10 +153,10 @@
 
 -(void)switchPlay:(BOOL)aFlag {
 	if(aFlag) {
-		[[elements objectAtIndex:5] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]]];	
+		[[elements objectAtIndex:4] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]]];	
 	}
 	else {
-		[[elements objectAtIndex:5] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"play.png"]]];	
+		[[elements objectAtIndex:4] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"play.png"]]];	
 	}
 }
 

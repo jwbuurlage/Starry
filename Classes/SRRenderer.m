@@ -588,7 +588,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 
 -(void)drawMessier {
 	glPointSize(8.0);
-	glColor4f(0.2f, 0.2f, 0.2f, 0.6f);
+	glColor4f(0.5f, 0.5f, 0.5f, 1.0f);
 	glVertexPointer(3, GL_FLOAT, 12, messierPoints);
 	glBindTexture(GL_TEXTURE_2D, textures[10]);
     glDrawArrays(GL_POINTS, 0, messierNum);

@@ -19,7 +19,7 @@
 		elements = [[NSMutableArray alloc] init];
 		
 		//laad elements in - sla op in textures
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(188, -60, 137, 40)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(188, -61, 137, 40)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"controls_bg.png"]] 
 															identifier:@"controls_bg" 
 															 clickable:NO]];
@@ -29,22 +29,22 @@
 															  identifier:@"icon" 
 															   clickable:YES]];
 				
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(195, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(195, -56, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"stop.png"]] 
 															identifier:@"stop" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(225, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(225, -56, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"rew.png"]] 
 															identifier:@"rew" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(255, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(255, -56, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]] 
 															identifier:@"playpause" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(285, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(285, -56, 32, 32)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"fwd.png"]] 
 															identifier:@"fwd" 
 															 clickable:YES]];
@@ -121,10 +121,10 @@
 
 -(void)switchPlay:(BOOL)aFlag {
 	if(aFlag) {
-		[[elements objectAtIndex:5] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]]];	
+		[[elements objectAtIndex:4] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"pause.png"]]];	
 	}
 	else {
-		[[elements objectAtIndex:5] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"play.png"]]];	
+		[[elements objectAtIndex:4] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"play.png"]]];	
 	}
 }
 
