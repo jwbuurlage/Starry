@@ -263,8 +263,8 @@
 		28FD14FD0DC6FC130079059D /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* Sterren_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sterren_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Sterren_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sterren_Prefix.pch; path = ../Sterren_Prefix.pch; sourceTree = "<group>"; };
 		76030C6A10CBBA260074B0CE /* SRSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSettingsManager.h; sourceTree = "<group>"; };
 		76030C6B10CBBA260074B0CE /* SRSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSettingsManager.m; sourceTree = "<group>"; };
 		76179CF210CA61D500768180 /* SRObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRObjectManager.h; sourceTree = "<group>"; };
@@ -550,6 +550,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				ACB7B11110615AE000CA447E /* OpenGL */,
+				AC1BA73710C021D00084CF6F /* Helpers */,
 				76179CF610CA61DE00768180 /* Body's */,
 				ACA875E7109DD08C00465577 /* Interface */,
 				AC2839CB10FF7F88002DD356 /* Managers */,
@@ -559,8 +561,8 @@
 				ACB7B11610615C1000CA447E /* SRCamera.m */,
 				ACD3BA6810F50EEC007CD4C7 /* SRListManager.h */,
 				ACD3BA6910F50EEC007CD4C7 /* SRListManager.m */,
-				ACB7B11110615AE000CA447E /* OpenGL */,
-				AC1BA73710C021D00084CF6F /* Helpers */,
+				32CA4F630368D1EE00C91783 /* Sterren_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -577,22 +579,12 @@
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				76E6933710FA31BD00924A41 /* libsqlite3.0.dylib */,
 			);
 			name = CustomTemplate;
-			sourceTree = "<group>";
-		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				32CA4F630368D1EE00C91783 /* Sterren_Prefix.pch */,
-				29B97316FDCFA39411CA2CEA /* main.m */,
-			);
-			name = "Other Sources";
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
