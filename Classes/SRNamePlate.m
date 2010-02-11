@@ -19,7 +19,7 @@
 		
 		elements = [[NSMutableArray alloc] init];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(112, 268, 235, 51)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(112, 269, 235, 51)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"nameplatebg.png"]] 
 															identifier:@"nameplate" 
 															 clickable:NO]];
@@ -55,7 +55,7 @@
 															identifier:@"close_nameplate" 
 															 clickable:YES]];
 		
-		yTranslate = 51;
+		yTranslate = 50;
 		visible = NO;
 		info = NO;
 	}
