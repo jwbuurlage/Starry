@@ -330,17 +330,26 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
-	
-	float bgConstant = ((M_PI / 180) * [[objectManager sun] height:[location latitude] lon:[location longitude] elapsed:[[[interface timeModule] manager] elapsed]]);
-	//NSLog(@"%f",bgConstant);
-	if(bgConstant < 0) {
-		bgConstant = 0;
-	}
+	float bgConstant;
+	float height = [[objectManager sun] height:[location latitude] lon:[location longitude] elapsed:[[[interface timeModule] manager] elapsed]];
+					if(height > 20) {
+						bgConstant = 1.5;
+					}
+					else if(height < -20) {
+						bgConstant = 0;
+					}
+					else if(height > 0) {
+						bgConstant = (height / 14);
+					}
+					else if(height < 0) {
+						bgConstant = 0;
+					}
+					
 	if(!planetView) {
-		glClearColor(0.05 + bgConstant * 0.07, 0.06 + bgConstant * 0.12, 0.12 + bgConstant * 0.30, 1.0);
+		glClearColor(0.05 + bgConstant * 0.07, 0.06 + bgConstant * 0.12, 0.12 + bgConstant * 0.40, 1.0);
 	}
 	else {
-		glClearColor(0.0, 0.12, 0.16, 1.0);
+		glClearColor(0.05, 0.06, 0.12, 1.0);
 	}
 	
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -588,7 +597,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 
 -(void)drawMessier {
 	glPointSize(8.0);
-	glColor4f(0.5f, 0.5f, 0.5f, 1.0f);
+	glColor4f(1.0f, 1.0f, 1.0f, 0.2f);
 	glVertexPointer(3, GL_FLOAT, 12, messierPoints);
 	glBindTexture(GL_TEXTURE_2D, textures[10]);
     glDrawArrays(GL_POINTS, 0, messierNum);

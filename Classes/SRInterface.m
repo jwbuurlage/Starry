@@ -616,7 +616,7 @@
 			}
 			else {
 				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
-				[[UIElements objectAtIndex:6] setBounds:CGRectZero];
+				[[UIElements objectAtIndex:4] setBounds:CGRectZero];
 				[self hideAllModules];
 				[settingsModule show];
 				[self showSliderWith:@"fade"];
@@ -814,7 +814,7 @@
 			if([settingsModule visible]) {
 				[settingsModule hide];
 				[self hideSliderWith:@"fade"];
-				[[UIElements objectAtIndex:6] setBounds:CGRectMake(168, -56, 41, 31)];
+				[[UIElements objectAtIndex:4] setBounds:CGRectMake(168, -56, 41, 31)];
 				aModule = TRUE;
 			}
 			if([planetModule visible]) {
