@@ -27,6 +27,7 @@
 		azimuth = 0.0f;
 		sphereRadius = 3.0f;
 		deacco = 0.05f;
+		usingCompass = FALSE;
 		
 		zoomingValue = 1;
 		
@@ -43,25 +44,25 @@
 		
 		//NSLog(@"size: %f, width: %f, height:%f", size, rect.size.width, rect.size.height);
 		
-		theManager = [[CLLocationManager alloc] init];
+		/*theManager = [[CLLocationManager alloc] init];
 		if([theManager headingAvailable]) {
 			usingCompass = TRUE;
 			[theManager startUpdatingHeading];
 			theManager.delegate = self;
 			[[UIAccelerometer sharedAccelerometer] setDelegate:self];
-		}
+		}*/
 	}
 	
 	return self;
 }
 
-- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
+/* - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
 	altitudeCompass = 0.0;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
 	azimuthCompass = [newHeading trueHeading];
-}
+} */
 
 - (void)doAnimations:(float)timeElapsed {
 	//if(swipeHor && swipeVer) { NSLog(@"test"); }
@@ -101,14 +102,14 @@
 				fieldOfView = newFieldOfView;
 			}
 		}
-		oSteps -= (timeElapsed / 0.075);
+		oSteps -= (timeElapsed / 0.04);
 		if(oSteps <= 0) {
 			zoomOut = FALSE;
 			oSteps = 0;
 		}
 	}
 	if(tapZoom) {
-		if(tSteps == 0) { tSteps = 20; }
+		if(tSteps == 0) { tSteps = 15; }
 		
 	 
 	 //NSLog(@"deltax:%i deltay:%i",deltaX,deltaY);
@@ -191,7 +192,7 @@
 			}
 		}
 		
-		tSteps -= (timeElapsed / 0.025);
+		tSteps -= (timeElapsed / 0.05);
 		NSLog(@"%f, %f", tSteps, timeElapsed);
 		if(tSteps <= 0) {
 			tapZoom = FALSE;

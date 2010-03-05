@@ -657,7 +657,7 @@
 		[camera zoomCameraWithX:deltaX andY:deltaY];
 	}
 	
-	else if ([touch tapCount] == 2 && !UIClick && ScreenClick && touchCount == 2) {
+	else if ([touch tapCount] == 1 && !UIClick && ScreenClick && touchCount == 2) {
 		[camera zoomCameraOut];
 	}
 	
