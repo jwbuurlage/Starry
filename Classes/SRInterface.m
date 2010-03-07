@@ -646,17 +646,50 @@
 			[self bringUpTheKeyboardWithText:@"" onLocationX:10 Y:259 withColor:[UIColor blackColor] andSendResultsTo:self];
 		}
 		else if(clicker == @"arrow") {
-			BOOL sliderHide = NO;
-			if(sliderVisible && [settingsModule visible]) {
-				[self hideSliderWith:@"down"];
-				sliderHide = YES;
+			if ([timeModule visible] || [locationModule visible] || [settingsModule visible] || [planetModule visible]) {
+			if([timeModule visible]) {
+				[timeModule hide];	
+				[[UIElements objectAtIndex:2] setBounds:CGRectMake(63, -56, 41, 31)];
+				aModule = TRUE;
 			}
-			flagToggle = YES;
-			if (slider && !sliderHide && [settingsModule visible]) {
-				[self showSliderWith:@"up"];
-				//NSLog(@"Show");
+			if([locationModule visible]) {
+				[locationModule hide];
+				[[UIElements objectAtIndex:1] setBounds:CGRectMake(10, -56, 41, 31)];
+				aModule = TRUE;
 			}
-			[[[UIElements objectAtIndex:[UIElements count] - 1] texture] invertTexCoord];
+			if([settingsModule visible]) {
+				[settingsModule hide];
+				[self hideSliderWith:@"fade"];
+				[[UIElements objectAtIndex:4] setBounds:CGRectMake(168, -56, 41, 31)];
+				aModule = TRUE;
+			}
+			if([planetModule visible]) {
+				[camera setPlanetView:FALSE];
+				[camera resetZoomValue];
+				[planetModule hide];
+				[[timeModule manager] setSpeed:1];
+				[[UIElements objectAtIndex:3] setBounds:CGRectMake(116, -56, 41, 31)];
+				aModule = TRUE;
+				[renderer setPlanetView:FALSE];
+			}
+			
+			hidingMenu = FALSE;
+			aMenu = TRUE;
+			menuVisible = TRUE;
+			}
+			else {
+				BOOL sliderHide = NO;
+				if(sliderVisible && [settingsModule visible]) {
+					[self hideSliderWith:@"down"];
+					sliderHide = YES;
+				}
+				flagToggle = YES;
+				if (slider && !sliderHide && [settingsModule visible]) {
+					[self showSliderWith:@"up"];
+						//NSLog(@"Show");
+				}
+				[[[UIElements objectAtIndex:[UIElements count] - 1] texture] invertTexCoord];
+			}
 		}
 		// Knoppen voor de tijd module
 		else if(clicker == @"playpause") {
