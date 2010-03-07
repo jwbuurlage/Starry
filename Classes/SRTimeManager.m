@@ -58,13 +58,24 @@
 	if(playing) {
 		if(speed == -1) {
 			speed = 1;
+		}
+		else if(speed == 1) {
+			speed = 100;
+		}
+		else if(speed > 1 && speed < 500) {
+			speed = speed + 100;	
+		}
+		else if(speed >= 500) {
 			speed = speed * 2;
 		}
-		else if(speed < 0) {
+		else if(speed < -100 && speed >= -500) {
+			speed = speed + 100;
+		}
+		else if (speed >= -100) {
+			speed = -1;
+		}
+		else if(speed < -500) {
 			speed = speed / 2;
-		}
-		else if(speed >= 1) {
-			speed = speed * 2;
 		}
 	}
 	else {
@@ -83,14 +94,26 @@
 	if(playing) {
 		if(speed == 1) {
 			speed = -1;
+		}
+		else if(speed == -1) {
+			speed = -100;
+		}
+		else if(speed < -1 && speed > -500) {
+			speed = speed - 100;	
+		}
+		else if(speed <= -500) {
 			speed = speed * 2;
 		}
-		else if(speed <= -1) {
-			speed = speed * 2;
+		else if(speed > 100 && speed <= 500) {
+			speed = speed - 100;
 		}
-		else if(speed > 1) {
+		else if (speed <= 100) {
+			speed = 1;
+		}
+		else if(speed > 500) {
 			speed = speed / 2;
 		}
+		
 	}
 	else {
 		if(speedPause < 0) {

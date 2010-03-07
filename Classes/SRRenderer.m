@@ -346,7 +346,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 					}
 					
 	if(!planetView) {
-		glClearColor(0.05 + bgConstant * 0.07, 0.06 + bgConstant * 0.12, 0.12 + bgConstant * 0.40, 1.0);
+		glClearColor(0.05 + bgConstant * 0.06, 0.06 + bgConstant * 0.09, 0.12 + bgConstant * 0.30, 1.0);
 	}
 	else {
 		glClearColor(0.05, 0.06, 0.12, 1.0);

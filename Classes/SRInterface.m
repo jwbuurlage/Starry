@@ -796,6 +796,7 @@
 			[renderer setSelectedStar:nil];
 			[renderer setPlanetHighlighted:FALSE];
 			[renderer setSelectedPlanet:nil];
+			[renderer setObjectInFocus:nil];
 			[theNameplate hide];
 			aNameplate = TRUE;
 			
@@ -1389,6 +1390,7 @@
 					[renderer setHighlightPosition:position];
 					[renderer setSelectedStar:nil];
 					[renderer setPlanetHighlighted:FALSE];
+					[renderer setObjectInFocus:foundMessier];
 					[renderer setSelectedPlanet:nil];
 					[renderer setHighlightSize:32]; 
 					[renderer setHighlight:TRUE];
@@ -1417,6 +1419,7 @@
 					[renderer setSelectedStar:nil];
 					[renderer setPlanetHighlighted:TRUE];
 					[renderer setSelectedPlanet:foundPlanet];
+					[renderer setObjectInFocus:foundPlanet];
 					[renderer setHighlightSize:32]; 
 					[renderer setHighlight:TRUE];
 					
@@ -1550,6 +1553,7 @@
 					[renderer setSelectedStar:foundStar];
 					[renderer setPlanetHighlighted:FALSE];
 					[renderer setSelectedPlanet:nil];
+					[renderer setObjectInFocus:foundStar];
 					[renderer setHighlightSize:32]; 
 					[renderer setHighlight:TRUE];
 					
@@ -1606,6 +1610,7 @@
 					[renderer setSelectedStar:nil];
 					[renderer setPlanetHighlighted:TRUE];
 					[renderer setSelectedPlanet:foundSun];
+					[renderer setObjectInFocus:foundSun];
 					[renderer setHighlightSize:32]; 
 					[renderer setHighlight:TRUE];
 					
@@ -1630,10 +1635,11 @@
 					Vertex3D position = foundMoon.position;
 					
 					[renderer setHighlightPosition:position];
-					[renderer setHighlightSize:32]; 
+					[renderer setHighlightSize:32];
+					[renderer setObjectInFocus:foundMoon];
 					[renderer setSelectedStar:nil];
-					[renderer setPlanetHighlighted:FALSE];
-					[renderer setSelectedPlanet:nil];
+					[renderer setPlanetHighlighted:TRUE];
+					[renderer setSelectedPlanet:foundMoon];
 					[renderer setHighlight:TRUE];
 					
 					[self setANameplate:TRUE];

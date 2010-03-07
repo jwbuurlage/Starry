@@ -371,8 +371,8 @@
 			[renderer setHighlightPosition:position];
 			[renderer setObjectInFocus:moon];
 			[renderer setSelectedStar:nil];
-			[renderer setPlanetHighlighted:FALSE];
-			[renderer setSelectedPlanet:nil];
+			[renderer setPlanetHighlighted:TRUE];
+			[renderer setSelectedPlanet:moon];
 			[renderer setHighlightSize:32]; 
 			[renderer setHighlight:TRUE];
 		}
@@ -615,6 +615,7 @@
 							[renderer setSelectedStar:nil];
 							[renderer setPlanetHighlighted:FALSE];
 							[renderer setSelectedPlanet:nil];
+							[renderer setObjectInFocus:nil];
 							[[[renderer interface] theNameplate] hide];
 							[[renderer interface] setANameplate:TRUE];
 							/*SRStar * ster;
