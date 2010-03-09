@@ -495,7 +495,7 @@
 	
 	if(showingMessier == TRUE) {
 		[messierInfo hide];
-		if([settingsModule visible] && yTranslate == 0) 
+		if([settingsModule visible]) 
 			[self showSliderWith:@"fade"];
 		aMessier = YES;
 		clicker = @"messierinfo";
@@ -504,7 +504,7 @@
 	
 	if(showingPlanet == TRUE) {
 		[planetInfo hide];
-		if([settingsModule visible] && yTranslate == 0) 
+		if([settingsModule visible]) 
 			[self showSliderWith:@"fade"];
 		aPlanet = YES;
 		clicker = @"planetinfo";
@@ -625,7 +625,11 @@
 		}
 		else if(clicker == @"planet") {
 			if([planetModule visible]) {
-				[planetModule hide];	
+				[planetModule hide];
+				[renderer setPlanetHighlighted:FALSE];
+				[renderer setSelectedPlanet:nil];
+				[renderer setObjectInFocus:nil]; 
+				[renderer setHighlight:FALSE];
 				aModule = TRUE;
 			}
 			else {
@@ -671,6 +675,12 @@
 				[[UIElements objectAtIndex:3] setBounds:CGRectMake(116, -56, 41, 31)];
 				aModule = TRUE;
 				[renderer setPlanetView:FALSE];
+				[renderer setSelectedStar:nil];
+				[renderer setPlanetHighlighted:FALSE];
+				[renderer setSelectedPlanet:nil];
+				[renderer setObjectInFocus:nil]; 
+				[renderer setHighlight:FALSE];
+				
 			}
 			
 			hidingMenu = FALSE;
@@ -859,6 +869,12 @@
 				[[UIElements objectAtIndex:3] setBounds:CGRectMake(116, -56, 41, 31)];
 				aModule = TRUE;
 				[renderer setPlanetView:FALSE];
+				[renderer setSelectedStar:nil];
+				[renderer setPlanetHighlighted:FALSE];
+				[renderer setSelectedPlanet:nil];
+				[renderer setObjectInFocus:nil]; 
+				[renderer setHighlight:FALSE];
+				
 			}
 			
 			hidingMenu = FALSE;
@@ -1191,7 +1207,7 @@
 	//NSLog(@"Bring up the Keyboard");
 	BOOL justCreated = NO;
 	if (!slider) {
-		slider = [[UISlider alloc] initWithFrame:CGRectMake(-9, 148, 80, 23)];
+		slider = [[UISlider alloc] initWithFrame:CGRectMake(-29, 165, 120, 23)];
 		
 		if([[appDelegate settingsManager] showRedOverlay]) {
 				[slider setThumbImage:[UIImage imageNamed:@"slider_normal_red.png"] forState:UIControlStateNormal];
@@ -1316,7 +1332,7 @@
 			BOOL found = FALSE;
 			
 			int type; //0 = messier, 1 = planet, 2 = ster, 3 = sterrenbeeld, 4 = zon, 5 = maan
-			
+			if (![[aValue lowercaseString] isEqualToString:@""]) {
 			for(aMessierObject in [[appDelegate objectManager] messier]) {
 				if ([[[aMessierObject name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
 					foundMessier = aMessierObject;
@@ -1704,6 +1720,7 @@
 				alphaNotFound = 1.0f;
 				//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
 				notFoundTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notFoundFade:) userInfo:nil repeats:NO] retain];
+			}
 			}
 		}
 		

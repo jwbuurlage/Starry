@@ -547,7 +547,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 				glColor4f(0.3f, 0.6f, 1.0f, constAlpha);
 				[aConstellation draw];
 				
-				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+				glColor4f(1.0f, 1.0f, 1.0f, constAlpha*3);
 				[aConstellation drawText];
 			}
 			else { 

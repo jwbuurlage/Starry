@@ -56,6 +56,7 @@
 
 -(void)fwd {
 	if(playing) {
+		if(speed < 500000000) {
 		if(speed == -1) {
 			speed = 1;
 		}
@@ -77,6 +78,7 @@
 		else if(speed < -500) {
 			speed = speed / 2;
 		}
+		}
 	}
 	else {
 		if(speedPause > 0) {
@@ -92,6 +94,7 @@
 
 -(void)rew {
 	if(playing) {
+		if(speed > -500000000) {
 		if(speed == 1) {
 			speed = -1;
 		}
@@ -113,7 +116,7 @@
 		else if(speed > 500) {
 			speed = speed / 2;
 		}
-		
+		}
 	}
 	else {
 		if(speedPause < 0) {
