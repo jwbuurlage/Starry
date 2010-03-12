@@ -392,11 +392,13 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	glEnable(GL_TEXTURE_2D);
 	glDisableClientState(GL_COLOR_ARRAY);
 	if(highlight) {
+		glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 		[self drawHighlight];
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	}
 	[self drawMessier];
 	[self drawPlanets];
-	
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
 	[self adjustViewToLocationAndTime:NO];
 	
@@ -443,25 +445,17 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	//NSMutableArray * starSizeNum = [objectManager starSizeNum];
 	GLfloat size;
 	
-	glBindTexture(GL_TEXTURE_2D, textures[20]);
-	glEnable(GL_POINT_SPRITE_OES);
-	glEnable(GL_TEXTURE_2D);
-
-	size = 8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	size = 3.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
 	if(size > 12) { size = 12; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, 0, [[starSizeNum objectAtIndex:0] intValue]);
 	
-
-	size = 6 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	size = 2 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
 	if(size > 8) { size = 8; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue], [[starSizeNum objectAtIndex:1] intValue]);
-	
-	glDisable(GL_POINT_SPRITE_OES);
-	glDisable(GL_TEXTURE_2D);
-	
-	size = 2 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+		
+	size = 1.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
 	if(size > 3) { size = 3; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue], [[starSizeNum objectAtIndex:2] intValue]);
@@ -658,12 +652,16 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		}
 		else {
 			if (i == 0) { // Bij de zon laad de zon texture in
+				glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 				glBindTexture(GL_TEXTURE_2D, textures[5]);
 			}
 			else { // Bij planeten laad de planeet texture in
 				glBindTexture(GL_TEXTURE_2D, textures[7]);
 			}
 			glDrawArrays(GL_POINTS,i, 1);
+			if(i == 0) {
+				glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			}
 		}
 		++i;
 	}			
