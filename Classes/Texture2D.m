@@ -267,7 +267,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 - (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions alignment:(UITextAlignment)alignment fontName:(NSString*)name fontSize:(CGFloat)size
 {
 	if(size == 1.0f) {
-		size = 11.0f;
+		size = 12.0f;
 		flipped = TRUE;
 	}
 	
@@ -296,28 +296,49 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 		height = i;
 	}
 	
-	colorSpace = CGColorSpaceCreateDeviceGray();
-	data = calloc(height, width);
-	context = CGBitmapContextCreate(data, width, height, 8, width, colorSpace, kCGImageAlphaNone);
-	CGColorSpaceRelease(colorSpace);
-	
-	CGContextSetGrayFillColor(context, 1.0, 1.0);
-	CGContextTranslateCTM(context, 0.0, height);
-	CGContextScaleCTM(context, 1.0, -1.0);
 	 //NOTE: NSString draws in UIKit referential i.e. renders upside-down compared to CGBitmapContext referential
 	if(flipped) {
+		colorSpace = CGColorSpaceCreateDeviceRGB();
+		data = malloc(height * width * 4);
+		context = CGBitmapContextCreate(data, width, height, 8, 4 * width, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+		CGColorSpaceRelease(colorSpace);
+		CGContextClearRect(context, CGRectMake(0, 0, width, height));
+		
+		CGContextSetGrayFillColor(context, 0.0, 1.0);
+		CGContextTranslateCTM(context, 0.0, height);
+		CGContextScaleCTM(context, 1.0, -1.0);
+		
 		CGContextRotateCTM(context, M_PI / 2);
 		CGContextTranslateCTM(context, 0.0, -(dimensions.height / 2) + 6 );
-	}
-	UIGraphicsPushContext(context);
-		/*CGRect rect = {0,0,64,64};
-		CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 0.6);
-		CGContextFillEllipseInRect(context, rect);	*/		
-		[string drawInRect:CGRectMake(0, 0, dimensions.width, dimensions.height) withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
-	UIGraphicsPopContext();
+		
+		
+		UIGraphicsPushContext(context);
+		[string drawInRect:CGRectMake(0, 1, dimensions.width, 15) withFont:font lineBreakMode:UILineBreakModeTailTruncation alignment:alignment];
+		CGContextSetGrayFillColor(context, 1.0, 1.0);
+		[string drawInRect:CGRectMake(0, 0, dimensions.width, 15) withFont:font lineBreakMode:UILineBreakModeTailTruncation alignment:alignment];
+		UIGraphicsPopContext();
+		
+		
+		self = [self initWithData:data pixelFormat:kTexture2DPixelFormat_RGBA8888 pixelsWide:width pixelsHigh:height contentSize:dimensions];
 
+	}
+	else {
+		colorSpace = CGColorSpaceCreateDeviceGray();
+		data = calloc(height, width);
+		context = CGBitmapContextCreate(data, width, height, 8, width, colorSpace, kCGImageAlphaNone);
+		CGColorSpaceRelease(colorSpace);
+		
+		CGContextSetGrayFillColor(context, 1.0, 1.0);
+		CGContextTranslateCTM(context, 0.0, height);
+		CGContextScaleCTM(context, 1.0, -1.0);
+		
+		UIGraphicsPushContext(context);
+			[string drawInRect:CGRectMake(0, 0, dimensions.width, dimensions.height) withFont:font lineBreakMode:UILineBreakModeTailTruncation alignment:alignment];
+		UIGraphicsPopContext();
+		
+		self = [self initWithData:data pixelFormat:kTexture2DPixelFormat_A8 pixelsWide:width pixelsHigh:height contentSize:dimensions];
+	}
 	
-	self = [self initWithData:data pixelFormat:kTexture2DPixelFormat_A8 pixelsWide:width pixelsHigh:height contentSize:dimensions];
 	
 	CGContextRelease(context);
 	free(data);

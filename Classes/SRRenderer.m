@@ -676,8 +676,9 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		++i;
 	}
 	
-	[[objectManager sun] drawHelio:NO];
-		[[objectManager moon] draw]; }
+	//[[objectManager sun] drawHelio:NO];
+	//[[objectManager moon] draw]; 
+	}
 }
 
 
