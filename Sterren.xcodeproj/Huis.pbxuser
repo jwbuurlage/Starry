@@ -66,7 +66,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = ACB7B0F910615ACD00CA447E /* Sterren */;
-		activeSDKPreference = iphonesimulator3.1.3;
+		activeSDKPreference = iphoneos3.1.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Sterren */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Sterren */,
@@ -223,6 +223,10 @@
 			AC5392B8114ABC200019B4C2 /* PBXTextBookmark */ = AC5392B8114ABC200019B4C2 /* PBXTextBookmark */;
 			AC5392BB114ABC6C0019B4C2 /* PBXTextBookmark */ = AC5392BB114ABC6C0019B4C2 /* PBXTextBookmark */;
 			AC5392BE114ABC780019B4C2 /* PBXTextBookmark */ = AC5392BE114ABC780019B4C2 /* PBXTextBookmark */;
+			AC5392C1114ABCED0019B4C2 /* PBXTextBookmark */ = AC5392C1114ABCED0019B4C2 /* PBXTextBookmark */;
+			AC5392C4114ABDBC0019B4C2 /* PBXTextBookmark */ = AC5392C4114ABDBC0019B4C2 /* PBXTextBookmark */;
+			AC5392C5114ABDBC0019B4C2 /* PBXTextBookmark */ = AC5392C5114ABDBC0019B4C2 /* PBXTextBookmark */;
+			AC5392C6114ABDBC0019B4C2 /* PBXTextBookmark */ = AC5392C6114ABDBC0019B4C2 /* PBXTextBookmark */;
 			AC59C9C61141A55B003DC246 = AC59C9C61141A55B003DC246 /* PBXBookmark */;
 			AC59C9C71141A55B003DC246 = AC59C9C71141A55B003DC246 /* PBXTextBookmark */;
 			AC59C9C81141A55B003DC246 = AC59C9C81141A55B003DC246 /* PBXTextBookmark */;
@@ -859,7 +863,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 591";
 		rLen = 0;
-		rLoc = 19678;
+		rLoc = 19676;
 		rType = 0;
 		vrLen = 1643;
 		vrLoc = 18787;
@@ -869,7 +873,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 591";
 		rLen = 0;
-		rLoc = 19678;
+		rLoc = 19676;
 		rType = 0;
 		vrLen = 1582;
 		vrLoc = 18787;
@@ -1057,7 +1061,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 681";
 		rLen = 0;
-		rLoc = 21736;
+		rLoc = 21734;
 		rType = 0;
 		vrLen = 1457;
 		vrLoc = 20434;
@@ -1301,6 +1305,46 @@
 		rType = 0;
 		vrLen = 2126;
 		vrLoc = 8618;
+	};
+	AC5392C1114ABCED0019B4C2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC7AE68210BC49F500A63DFB /* Texture2D.m */;
+		name = "Texture2D.m: 270";
+		rLen = 0;
+		rLoc = 8841;
+		rType = 0;
+		vrLen = 2164;
+		vrLoc = 8618;
+	};
+	AC5392C4114ABDBC0019B4C2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC7AE68210BC49F500A63DFB /* Texture2D.m */;
+		name = "Texture2D.m: 285";
+		rLen = 0;
+		rLoc = 9129;
+		rType = 0;
+		vrLen = 2126;
+		vrLoc = 8618;
+	};
+	AC5392C5114ABDBC0019B4C2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 681";
+		rLen = 0;
+		rLoc = 21734;
+		rType = 0;
+		vrLen = 1383;
+		vrLoc = 20508;
+	};
+	AC5392C6114ABDBC0019B4C2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
+		name = "SRRenderer.m: 454";
+		rLen = 0;
+		rLoc = 14142;
+		rType = 0;
+		vrLen = 2887;
+		vrLoc = 13160;
 	};
 	AC55F120109600990021D39C /* SRInterface.h */ = {
 		uiCtxt = {
@@ -1556,7 +1600,7 @@
 	AC7AE68210BC49F500A63DFB /* Texture2D.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1188, 5720}}";
-			sepNavSelRange = "{8841, 0}";
+			sepNavSelRange = "{9129, 0}";
 			sepNavVisRange = "{8618, 2126}";
 			sepNavWindowFrame = "{{19, 0}, {996, 1028}}";
 		};
@@ -1915,9 +1959,9 @@
 	};
 	ACB7B16B10615F4F00CA447E /* SRRenderer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2525, 10348}}";
-			sepNavSelRange = "{21736, 0}";
-			sepNavVisRange = "{20434, 1457}";
+			sepNavIntBoundsRect = "{{0, 0}, {2028, 9841}}";
+			sepNavSelRange = "{14142, 0}";
+			sepNavVisRange = "{13160, 2887}";
 			sepNavWindowFrame = "{{547, 0}, {996, 1028}}";
 		};
 	};
@@ -2220,7 +2264,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 668";
 		rLen = 0;
-		rLoc = 21472;
+		rLoc = 21470;
 		rType = 0;
 		vrLen = 1338;
 		vrLoc = 20282;
@@ -2230,7 +2274,7 @@
 		fRef = ACB7B16B10615F4F00CA447E /* SRRenderer.m */;
 		name = "SRRenderer.m: 591";
 		rLen = 0;
-		rLoc = 19678;
+		rLoc = 19676;
 		rType = 0;
 		vrLen = 1561;
 		vrLoc = 18857;

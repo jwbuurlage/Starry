@@ -446,12 +446,12 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	GLfloat size;
 	
 	size = 3.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 12) { size = 12; }
+	if(size > 5) { size = 5; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, 0, [[starSizeNum objectAtIndex:0] intValue]);
 	
 	size = 2 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 8) { size = 8; }
+	if(size > 4) { size = 4; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue], [[starSizeNum objectAtIndex:1] intValue]);
 		
