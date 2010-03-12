@@ -71,6 +71,11 @@
 		AC38520710DFF35000C94722 /* phase_7.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3851FF10DFF35000C94722 /* phase_7.png */; };
 		AC4E0145109E187400C13AC5 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4E0144109E187400C13AC5 /* arrow.png */; };
 		AC4F8957109DF46900B8BD64 /* click.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4F8956109DF46900B8BD64 /* click.png */; };
+		AC539211114AA7230019B4C2 /* redmode_on.png in Resources */ = {isa = PBXBuildFile; fileRef = AC53920F114AA7230019B4C2 /* redmode_on.png */; };
+		AC539212114AA7230019B4C2 /* redmode.png in Resources */ = {isa = PBXBuildFile; fileRef = AC539210114AA7230019B4C2 /* redmode.png */; };
+		AC53923A114AAA8F0019B4C2 /* constellation_on.png in Resources */ = {isa = PBXBuildFile; fileRef = AC539237114AAA8F0019B4C2 /* constellation_on.png */; };
+		AC53923B114AAA8F0019B4C2 /* planetLabel_on.png in Resources */ = {isa = PBXBuildFile; fileRef = AC539238114AAA8F0019B4C2 /* planetLabel_on.png */; };
+		AC53923C114AAA8F0019B4C2 /* positionOverlayIcon_on.png in Resources */ = {isa = PBXBuildFile; fileRef = AC539239114AAA8F0019B4C2 /* positionOverlayIcon_on.png */; };
 		AC55F122109600990021D39C /* SRInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AC55F121109600990021D39C /* SRInterface.m */; };
 		AC57694010E7CF910031505E /* SRPlanetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC57693F10E7CF910031505E /* SRPlanetInfo.m */; };
 		AC5769BB10E7F0D30031505E /* planetInfoBg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5769B910E7F0D30031505E /* planetInfoBg.png */; };
@@ -335,6 +340,11 @@
 		AC3851FF10DFF35000C94722 /* phase_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phase_7.png; path = Resources/phases/phase_7.png; sourceTree = "<group>"; };
 		AC4E0144109E187400C13AC5 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = Resources/arrow.png; sourceTree = "<group>"; };
 		AC4F8956109DF46900B8BD64 /* click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = click.png; path = Resources/click.png; sourceTree = "<group>"; };
+		AC53920F114AA7230019B4C2 /* redmode_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redmode_on.png; path = Resources/redmode_on.png; sourceTree = "<group>"; };
+		AC539210114AA7230019B4C2 /* redmode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redmode.png; path = Resources/redmode.png; sourceTree = "<group>"; };
+		AC539237114AAA8F0019B4C2 /* constellation_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = constellation_on.png; path = Resources/constellation_on.png; sourceTree = "<group>"; };
+		AC539238114AAA8F0019B4C2 /* planetLabel_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planetLabel_on.png; path = Resources/planetLabel_on.png; sourceTree = "<group>"; };
+		AC539239114AAA8F0019B4C2 /* positionOverlayIcon_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = positionOverlayIcon_on.png; path = Resources/positionOverlayIcon_on.png; sourceTree = "<group>"; };
 		AC55F120109600990021D39C /* SRInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRInterface.h; sourceTree = "<group>"; };
 		AC55F121109600990021D39C /* SRInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInterface.m; sourceTree = "<group>"; };
 		AC57693E10E7CF910031505E /* SRPlanetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlanetInfo.h; sourceTree = "<group>"; };
@@ -698,6 +708,11 @@
 		AC224442109DBE2A0049BF46 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				AC539237114AAA8F0019B4C2 /* constellation_on.png */,
+				AC539238114AAA8F0019B4C2 /* planetLabel_on.png */,
+				AC539239114AAA8F0019B4C2 /* positionOverlayIcon_on.png */,
+				AC53920F114AA7230019B4C2 /* redmode_on.png */,
+				AC539210114AA7230019B4C2 /* redmode.png */,
 				AC080F7B10D983300078DA4D /* calendar.png */,
 				AC080F7C10D983300078DA4D /* gears.png */,
 				AC080F7D10D983300078DA4D /* planeticon.png */,
@@ -1228,6 +1243,11 @@
 				76F8DC8710FF2AE3004C91EF /* defaultTexture.png in Resources */,
 				AC28395B10FF7ADF002DD356 /* indicator_overlay_modules.png in Resources */,
 				AC0DECF311187EA8003101D1 /* starTexture.png in Resources */,
+				AC539211114AA7230019B4C2 /* redmode_on.png in Resources */,
+				AC539212114AA7230019B4C2 /* redmode.png in Resources */,
+				AC53923A114AAA8F0019B4C2 /* constellation_on.png in Resources */,
+				AC53923B114AAA8F0019B4C2 /* planetLabel_on.png in Resources */,
+				AC53923C114AAA8F0019B4C2 /* positionOverlayIcon_on.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

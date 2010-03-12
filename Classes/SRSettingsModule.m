@@ -48,25 +48,27 @@
 		
 		
 		//laad elements in - sla op in textures
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(376, -55, 32, 32)
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"constellation.png"]] 
-															identifier:@"constellations" 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(376, -60, 45, 40)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"redmode.png"]] 
+															identifier:@"red" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(336, -55, 32, 32)
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"red.png"]] 
-															identifier:@"red" 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(336, -60, 45, 40)
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"constellations.png"]] 
+															identifier:@"constellations" 
 															 clickable:YES]];		
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(296, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(296, -55, 45, 40)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planetLabel.png"]] 
 															identifier:@"planet_labels" 
 															 clickable:YES]];
 		
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(256, -55, 32, 32)
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(256, -55, 45, 40)
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"positionOverlayIcon.png"]] 
 															identifier:@"position_overlay" 
 															 clickable:YES]];
+		
+		[self reloadElements];
 	}
 	return self;
 }
@@ -118,6 +120,64 @@
 -(void)hide {
 	[super hide];
 	//[[[[UIApplication sharedApplication] delegate] settingsManager]
+}
+
+-(void)reloadElements {
+	//red mode
+	if([[[[UIApplication sharedApplication] delegate] settingsManager] showRedOverlay]) {
+		[elements replaceObjectAtIndex:2 withObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(376, -60, 45, 40)
+																					   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"redmode_on.png"]] 
+																					identifier:@"red" 
+																					 clickable:YES]];
+	}
+	else {
+		[elements replaceObjectAtIndex:2 withObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(376, -60, 45, 40)
+																					   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"redmode.png"]] 
+																					identifier:@"red" 
+																					 clickable:YES]];
+	}
+	
+	//constellations
+	if([[[[UIApplication sharedApplication] delegate] settingsManager] showConstellations]) {
+		[elements replaceObjectAtIndex:3 withObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(336, -60, 45, 40)
+																					   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"constellation_on.png"]] 
+																					identifier:@"constellations" 
+																					 clickable:YES]];
+	}
+	else {
+		[elements replaceObjectAtIndex:3 withObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(336, -60, 45, 40)
+																					   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"constellation.png"]] 
+																					identifier:@"constellations" 
+																					 clickable:YES]];
+	}
+	
+	//planeten
+	if([[[[UIApplication sharedApplication] delegate] settingsManager] showPlanetLabels]) {
+		[elements replaceObjectAtIndex:4 withObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(296, -60, 45, 40)
+																					   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planetLabel_on.png"]] 
+																					identifier:@"planet_labels" 
+																					 clickable:YES]];
+	}
+	else {
+		[elements replaceObjectAtIndex:4 withObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(296, -60, 45, 40)
+																					   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planetLabel.png"]] 
+																					identifier:@"planet_labels" 
+																					 clickable:YES]];
+	}
+	
+	//positionoverlay
+	if([[[[UIApplication sharedApplication] delegate] settingsManager] showPositionOverlay]) {
+		[elements replaceObjectAtIndex:5 withObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(256, -60, 45, 40)
+																					   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"positionOverlayIcon_on.png"]] 
+																					identifier:@"position_overlay" 
+																					 clickable:YES]];
+	}
+	else {
+		[elements replaceObjectAtIndex:5 withObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(256, -60, 45, 40)
+																					   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"positionOverlayIcon.png"]] 
+																					identifier:@"position_overlay" 
+																					 clickable:YES]];
+	}
 }
 
 @end

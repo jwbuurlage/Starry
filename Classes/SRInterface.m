@@ -774,6 +774,7 @@
 				}
 				[[appDelegate settingsManager] setShowRedOverlay:FALSE];
 			}
+			[settingsModule reloadElements];
 		}
 		/*else if(clicker == @"brightness_plus") {
 		 double brightness = [[appDelegate settingsManager] brightnessFactor];
@@ -793,6 +794,7 @@
 			else {
 				[[appDelegate settingsManager] setShowPlanetLabels:TRUE];
 			}
+			[settingsModule reloadElements];
 		}		
 		else if(clicker == @"position_overlay") {
 			BOOL showPositionOverlay = [[appDelegate settingsManager] showPositionOverlay];
@@ -802,6 +804,7 @@
 			else {
 				[[appDelegate settingsManager] setShowPositionOverlay:TRUE];
 			}
+			[settingsModule reloadElements];
 		}		
 		
 		else if(clicker == @"constellations") {
@@ -812,6 +815,7 @@
 			else {
 				[[appDelegate settingsManager] setShowConstellations:TRUE];
 			}
+			[settingsModule reloadElements];
 		}		
 		else if(clicker == @"info") {
 			if([theNameplate selectedType] == 0) {
