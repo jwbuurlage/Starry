@@ -28,6 +28,7 @@
 		7695E62310F29F540064FFD9 /* messierBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 7695E62210F29F540064FFD9 /* messierBack.png */; };
 		7695E64110F2A3350064FFD9 /* messierForeground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7695E64010F2A3350064FFD9 /* messierForeground.png */; };
 		769733CD10EF73670057E29F /* starInfoBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 769733CC10EF73670057E29F /* starInfoBg.png */; };
+		76A3BF0D114BA36C00DE6BB1 /* icon_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 76A3BF0C114BA36C00DE6BB1 /* icon_large.png */; };
 		76B2988510BD9EBB00EEDA5D /* SRLocationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */; };
 		76B7CC59108B235100F87C68 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B7CC58108B235100F87C68 /* XMLParser.m */; };
 		76D7294310EBD8F80018EB62 /* SRStarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7294210EBD8F80018EB62 /* SRStarInfo.m */; };
@@ -88,7 +89,7 @@
 		AC603F6510E0CF790017951C /* M43.png in Resources */ = {isa = PBXBuildFile; fileRef = AC603F6210E0CF790017951C /* M43.png */; };
 		AC603F6C10E0D5920017951C /* M78.png in Resources */ = {isa = PBXBuildFile; fileRef = AC603F6B10E0D5920017951C /* M78.png */; };
 		AC6636E110AB16C600D4FB1C /* horizon_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6636E010AB16C600D4FB1C /* horizon_bg.png */; };
-		AC75CA0C108B4A5F00463F3A /* icon_png.png in Resources */ = {isa = PBXBuildFile; fileRef = AC75CA0B108B4A5F00463F3A /* icon_png.png */; };
+		AC75CA0C108B4A5F00463F3A /* icon_png2.png in Resources */ = {isa = PBXBuildFile; fileRef = AC75CA0B108B4A5F00463F3A /* icon_png2.png */; };
 		AC7AE68310BC49F500A63DFB /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7AE68210BC49F500A63DFB /* Texture2D.m */; };
 		AC86C7A810E15BF900028136 /* M5.png in Resources */ = {isa = PBXBuildFile; fileRef = AC86C79A10E15BF900028136 /* M5.png */; };
 		AC86C7A910E15BF900028136 /* M6.png in Resources */ = {isa = PBXBuildFile; fileRef = AC86C79B10E15BF900028136 /* M6.png */; };
@@ -286,6 +287,7 @@
 		7695E62210F29F540064FFD9 /* messierBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = messierBack.png; path = Resources/messierBack.png; sourceTree = "<group>"; };
 		7695E64010F2A3350064FFD9 /* messierForeground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = messierForeground.png; path = Resources/messierForeground.png; sourceTree = "<group>"; };
 		769733CC10EF73670057E29F /* starInfoBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = starInfoBg.png; path = Resources/starInfoBg.png; sourceTree = "<group>"; };
+		76A3BF0C114BA36C00DE6BB1 /* icon_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_large.png; path = Resources/icon_large.png; sourceTree = "<group>"; };
 		76B2988310BD9EBB00EEDA5D /* SRLocationModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLocationModule.h; sourceTree = "<group>"; };
 		76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLocationModule.m; sourceTree = "<group>"; };
 		76B7CC57108B235100F87C68 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
@@ -361,7 +363,7 @@
 		AC603F6210E0CF790017951C /* M43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M43.png; path = Resources/messier/M43.png; sourceTree = "<group>"; };
 		AC603F6B10E0D5920017951C /* M78.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M78.png; path = Resources/messier/M78.png; sourceTree = "<group>"; };
 		AC6636E010AB16C600D4FB1C /* horizon_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = horizon_bg.png; path = Resources/horizon_bg.png; sourceTree = "<group>"; };
-		AC75CA0B108B4A5F00463F3A /* icon_png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_png.png; path = Resources/icon_png.png; sourceTree = "<group>"; };
+		AC75CA0B108B4A5F00463F3A /* icon_png2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_png2.png; path = Resources/icon_png2.png; sourceTree = "<group>"; };
 		AC7AE68110BC49F500A63DFB /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
 		AC7AE68210BC49F500A63DFB /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2D.m; sourceTree = "<group>"; };
 		AC86C79A10E15BF900028136 /* M5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M5.png; path = Resources/messier/M5.png; sourceTree = "<group>"; };
@@ -600,6 +602,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				76A3BF0C114BA36C00DE6BB1 /* icon_large.png */,
 				76E6935010FA367100924A41 /* database.db */,
 				767820EA10F10CD3001ADE6D /* Localizable.strings */,
 				ACB60BED10F67A3000FD2097 /* Slider */,
@@ -648,7 +651,7 @@
 				ACC380E610DA976D009ED92E /* controls_bg.png */,
 				AC24C9A710BAEB2B0063DF87 /* module_bg.png */,
 				AC045E32109E062B0066EAA6 /* menu.png */,
-				AC75CA0B108B4A5F00463F3A /* icon_png.png */,
+				AC75CA0B108B4A5F00463F3A /* icon_png2.png */,
 				ACECC68A10CD997300CBE4AC /* messier.xml */,
 				AC57BD0D10C957DC00B0BD5C /* constellations.xml */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -1001,9 +1004,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* Sterren */ = {
+		1D6058900D05DD3D006BFB54 /* Aster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Sterren" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Aster" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -1013,7 +1016,7 @@
 			);
 			dependencies = (
 			);
-			name = Sterren;
+			name = Aster;
 			productName = Sterren;
 			productReference = 1D6058910D05DD3D006BFB54 /* Sterren.app */;
 			productType = "com.apple.product-type.application";
@@ -1038,7 +1041,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* Sterren */,
+				1D6058900D05DD3D006BFB54 /* Aster */,
 			);
 		};
 /* End PBXProject section */
@@ -1049,7 +1052,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				AC75CA0C108B4A5F00463F3A /* icon_png.png in Resources */,
+				AC75CA0C108B4A5F00463F3A /* icon_png2.png in Resources */,
 				AC2243B0109DB98F0049BF46 /* time.png in Resources */,
 				ACA8757E109DC88900465577 /* search.png in Resources */,
 				AC4F8957109DF46900B8BD64 /* click.png in Resources */,
@@ -1248,6 +1251,7 @@
 				AC53923A114AAA8F0019B4C2 /* constellation_on.png in Resources */,
 				AC53923B114AAA8F0019B4C2 /* planetLabel_on.png in Resources */,
 				AC53923C114AAA8F0019B4C2 /* positionOverlayIcon_on.png in Resources */,
+				76A3BF0D114BA36C00DE6BB1 /* icon_large.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1336,6 +1340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mote of Life";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Sterren_Prefix.pch;
@@ -1346,6 +1351,7 @@
 				);
 				INFOPLIST_FILE = "Sterren-Info.plist";
 				PRODUCT_NAME = Sterren;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "484A7DD1-B34F-4034-90CC-BE302228913F";
 				USER_HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2 /usr/include/libxml2";
 			};
 			name = Release;
@@ -1386,7 +1392,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Sterren" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Aster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
