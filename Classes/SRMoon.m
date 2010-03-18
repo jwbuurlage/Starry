@@ -34,7 +34,7 @@
 	float second = [weekdayComponents second];
 	
 	//dagen sinds tabel geldig is http://www.astro.uu.nl/~strous/AA/en/reken/hemelpositie.html
-	float d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730530 + ((hour / 24) + (minute / 1440) + (second / 86400));
+	float d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730532 + ((hour / 24) + (minute / 1440) + (second / 86400));
 	//d = 1460.5;
 	
 	//positie uitrekenen:
