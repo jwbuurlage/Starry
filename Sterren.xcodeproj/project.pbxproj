@@ -1265,12 +1265,9 @@
 				AC53923A114AAA8F0019B4C2 /* constellation_on.png in Resources */,
 				AC53923B114AAA8F0019B4C2 /* planetLabel_on.png in Resources */,
 				AC53923C114AAA8F0019B4C2 /* positionOverlayIcon_on.png in Resources */,
-<<<<<<< HEAD
 				AC153B2D117DFA5500377E44 /* star.png in Resources */,
 				B587974311DA660800CE61C4 /* MainWindowiPad.xib in Resources */,
-=======
 				76A3BF0D114BA36C00DE6BB1 /* icon_large.png in Resources */,
->>>>>>> 9f88745b713c4df9884b1eded5b2a7473893ea77
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1362,11 +1359,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-<<<<<<< HEAD
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-=======
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mote of Life";
->>>>>>> 9f88745b713c4df9884b1eded5b2a7473893ea77
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Sterren_Prefix.pch;
@@ -1377,12 +1371,9 @@
 				);
 				INFOPLIST_FILE = "Sterren-Info.plist";
 				PRODUCT_NAME = Sterren;
-<<<<<<< HEAD
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "484A7DD1-B34F-4034-90CC-BE302228913F";
 				SDKROOT = iphoneos4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-=======
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "484A7DD1-B34F-4034-90CC-BE302228913F";
->>>>>>> 9f88745b713c4df9884b1eded5b2a7473893ea77
 				USER_HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2 /usr/include/libxml2";
 			};
 			name = Release;

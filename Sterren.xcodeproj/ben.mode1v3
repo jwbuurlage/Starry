@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -309,8 +311,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -325,10 +325,6 @@
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
 										<string>SRCamera.m</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>B5CA9D9711DA6E0E000CB1BE</string>
 										<key>history</key>
 										<array>
 											<string>B587975A11DA688B00CE61C4</string>
@@ -353,14 +349,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {947, 495}}</string>
+								<string>{{0, 0}, {947, 489}}</string>
 								<key>RubberWindowFrame</key>
 								<string>179 66 1155 728 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>495pt</string>
+							<string>489pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -373,14 +369,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 500}, {947, 187}}</string>
+								<string>{{0, 494}, {947, 193}}</string>
 								<key>RubberWindowFrame</key>
 								<string>179 66 1155 728 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>187pt</string>
+							<string>193pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -399,9 +395,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>B5CA9D6611DA6B7B000CB1BE</string>
+				<string>B5CA9DA211DA6FFC000CB1BE</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>B5CA9D6711DA6B7B000CB1BE</string>
+				<string>B5CA9DA311DA6FFC000CB1BE</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -539,10 +535,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B587968B11DA5BF700CE61C4</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/ben/Desktop/StarDust-iPhone/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -567,7 +560,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRCamera.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -584,8 +577,6 @@
 							<string>287pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -625,7 +616,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>B587968B11DA5BF700CE61C4</string>
-				<string>B5CA9D6811DA6B7B000CB1BE</string>
+				<string>B5CA9DA411DA6FFC000CB1BE</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

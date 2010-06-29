@@ -7,7 +7,7 @@
 			sepNavVisRange = "{1463, 1173}";
 		};
 	};
-	1D6058900D05DD3D006BFB54 /* Sterren */ = {
+	1D6058900D05DD3D006BFB54 /* Aster */ = {
 		activeExec = 0;
 		executables = (
 			B587967E11DA5BE900CE61C4 /* Sterren */,
@@ -31,9 +31,9 @@
 		activeBuildConfigurationName = Debug;
 		activeExecutable = B587967E11DA5BE900CE61C4 /* Sterren */;
 		activeSDKPreference = iphonesimulator3.2;
-		activeTarget = 1D6058900D05DD3D006BFB54 /* Sterren */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* Aster */;
 		addToTargets = (
-			1D6058900D05DD3D006BFB54 /* Sterren */,
+			1D6058900D05DD3D006BFB54 /* Aster */,
 		);
 		codeSenseManager = B587969011DA5C2B00CE61C4 /* Code sense */;
 		executables = (
@@ -98,8 +98,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 299527034;
-			PBXWorkspaceStateSaveDate = 299527034;
+			PBXPerProjectTemplateStateSaveDate = 299528180;
+			PBXWorkspaceStateSaveDate = 299528180;
 		};
 		perUserProjectItems = {
 			B587975A11DA688B00CE61C4 = B587975A11DA688B00CE61C4 /* PBXTextBookmark */;
@@ -113,19 +113,19 @@
 			B587977D11DA6B6500CE61C4 = B587977D11DA6B6500CE61C4 /* PBXTextBookmark */;
 			B587977E11DA6B6500CE61C4 = B587977E11DA6B6500CE61C4 /* PBXTextBookmark */;
 			B587977F11DA6B6500CE61C4 = B587977F11DA6B6500CE61C4 /* PBXTextBookmark */;
-			B5CA9D6511DA6B7B000CB1BE /* PBXTextBookmark */ = B5CA9D6511DA6B7B000CB1BE /* PBXTextBookmark */;
-			B5CA9D6D11DA6BBB000CB1BE /* PBXTextBookmark */ = B5CA9D6D11DA6BBB000CB1BE /* PBXTextBookmark */;
-			B5CA9D6E11DA6BBB000CB1BE /* PBXTextBookmark */ = B5CA9D6E11DA6BBB000CB1BE /* PBXTextBookmark */;
-			B5CA9D6F11DA6BBB000CB1BE /* PBXTextBookmark */ = B5CA9D6F11DA6BBB000CB1BE /* PBXTextBookmark */;
-			B5CA9D7911DA6BD0000CB1BE /* PBXTextBookmark */ = B5CA9D7911DA6BD0000CB1BE /* PBXTextBookmark */;
-			B5CA9D7A11DA6BE9000CB1BE /* PBXTextBookmark */ = B5CA9D7A11DA6BE9000CB1BE /* PBXTextBookmark */;
-			B5CA9D7F11DA6C55000CB1BE /* PBXTextBookmark */ = B5CA9D7F11DA6C55000CB1BE /* PBXTextBookmark */;
-			B5CA9D8D11DA6DF0000CB1BE /* XCBuildMessageTextBookmark */ = B5CA9D8D11DA6DF0000CB1BE /* XCBuildMessageTextBookmark */;
-			B5CA9D8E11DA6DF0000CB1BE /* PBXTextBookmark */ = B5CA9D8E11DA6DF0000CB1BE /* PBXTextBookmark */;
-			B5CA9D8F11DA6DF0000CB1BE /* PBXTextBookmark */ = B5CA9D8F11DA6DF0000CB1BE /* PBXTextBookmark */;
-			B5CA9D9111DA6DF0000CB1BE /* PBXTextBookmark */ = B5CA9D9111DA6DF0000CB1BE /* PBXTextBookmark */;
-			B5CA9D9611DA6E0E000CB1BE /* XCBuildMessageTextBookmark */ = B5CA9D9611DA6E0E000CB1BE /* XCBuildMessageTextBookmark */;
-			B5CA9D9711DA6E0E000CB1BE /* PBXTextBookmark */ = B5CA9D9711DA6E0E000CB1BE /* PBXTextBookmark */;
+			B5CA9D6511DA6B7B000CB1BE = B5CA9D6511DA6B7B000CB1BE /* PBXTextBookmark */;
+			B5CA9D6D11DA6BBB000CB1BE = B5CA9D6D11DA6BBB000CB1BE /* PBXTextBookmark */;
+			B5CA9D6E11DA6BBB000CB1BE = B5CA9D6E11DA6BBB000CB1BE /* PBXTextBookmark */;
+			B5CA9D6F11DA6BBB000CB1BE = B5CA9D6F11DA6BBB000CB1BE /* PBXTextBookmark */;
+			B5CA9D7911DA6BD0000CB1BE = B5CA9D7911DA6BD0000CB1BE /* PBXTextBookmark */;
+			B5CA9D7A11DA6BE9000CB1BE = B5CA9D7A11DA6BE9000CB1BE /* PBXTextBookmark */;
+			B5CA9D7F11DA6C55000CB1BE = B5CA9D7F11DA6C55000CB1BE /* PBXTextBookmark */;
+			B5CA9D8D11DA6DF0000CB1BE = B5CA9D8D11DA6DF0000CB1BE /* PBXTextBookmark */;
+			B5CA9D8E11DA6DF0000CB1BE = B5CA9D8E11DA6DF0000CB1BE /* PBXTextBookmark */;
+			B5CA9D8F11DA6DF0000CB1BE = B5CA9D8F11DA6DF0000CB1BE /* PBXTextBookmark */;
+			B5CA9D9111DA6DF0000CB1BE = B5CA9D9111DA6DF0000CB1BE /* PBXTextBookmark */;
+			B5CA9D9611DA6E0E000CB1BE = B5CA9D9611DA6E0E000CB1BE /* PBXTextBookmark */;
+			B5CA9D9711DA6E0E000CB1BE = B5CA9D9711DA6E0E000CB1BE /* PBXTextBookmark */;
 		};
 		sourceControlManager = B587968F11DA5C2B00CE61C4 /* Source Control */;
 		userBuildSettings = {
@@ -396,11 +396,10 @@
 		vrLen = 1028;
 		vrLoc = 396;
 	};
-	B5CA9D8D11DA6DF0000CB1BE /* XCBuildMessageTextBookmark */ = {
+	B5CA9D8D11DA6DF0000CB1BE /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		comments = "Expected ')' before ';' token";
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
-		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
 		rLoc = 121;
 		rType = 1;
@@ -428,11 +427,6 @@
 		name = SRCamera.m;
 		path = "/Users/ben/Desktop/StarDust-iPhone/Classes/SRCamera.m";
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {886, 4615}}";
-			sepNavSelRange = "{1081, 0}";
-			sepNavVisRange = "{476, 1109}";
-		};
 	};
 	B5CA9D9111DA6DF0000CB1BE /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -444,11 +438,10 @@
 		vrLen = 640;
 		vrLoc = 2960;
 	};
-	B5CA9D9611DA6E0E000CB1BE /* XCBuildMessageTextBookmark */ = {
+	B5CA9D9611DA6E0E000CB1BE /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		comments = "Expected ')' before ';' token";
 		fRef = ACB7B11610615C1000CA447E /* SRCamera.m */;
-		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
 		rLoc = 121;
 		rType = 1;
