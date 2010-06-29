@@ -34,11 +34,11 @@
 	float second = [weekdayComponents second];
 	
 	//dagen sinds tabel geldig is http://www.astro.uu.nl/~strous/AA/en/reken/hemelpositie.html
-<<<<<<< HEAD
-	float d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730530;
-=======
+//<<<<<<< HEAD
+//	float d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730530;
+//=======
 	float d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730532 + ((hour / 24) + (minute / 1440) + (second / 86400));
->>>>>>> 9f88745b713c4df9884b1eded5b2a7473893ea77
+//>>>>>>> 9f88745b713c4df9884b1eded5b2a7473893ea77
 	//d = 1460.5;
 	NSLog(@"day: %f", d);
 	d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730530 + ((hour / 24) + minute / 1440 + second / 86400);
