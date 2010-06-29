@@ -26,6 +26,7 @@
 #import "SRLocation.h"
 #import "SRObjectManager.h"
 #import "SRHUD.h"
+#import "Texture2D.h"
 
 @class GLViewController;
 
@@ -64,12 +65,16 @@
 	SRHUD* sharedHUD;
 	
 	Texture2D* testTexture3D;
+	Texture2D* messierLabel;
+	NSMutableArray* messierLabels;
 	
 	BOOL planetView;
 	BOOL drawPlanetLabels;
 		
 	NSTimeInterval lastDrawTime;
 	float timeElapsed;
+	
+	float sunHeight;
 }
 
 @property (readonly) SRInterface* interface;

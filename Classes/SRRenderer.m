@@ -58,12 +58,12 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		[interface loadTexture:@"phase_6.png" intoLocation:textures[17]];
 		[interface loadTexture:@"phase_7.png" intoLocation:textures[18]];
 		
-		[interface loadTexture:@"starTexture.png" intoLocation:textures[20]];
+		[interface loadTexture:@"star.png" intoLocation:textures[20]];
 
 
 		//FIXME: verplaats naar app delegate		
 		glClearColor(0.0, 0.08, 0.14, 1.0);
-
+		
 		
 		glEnable(GL_POINT_SMOOTH);
 		//glEnable (GL_LINE_SMOOTH);
@@ -119,6 +119,10 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		messierPoints[i] = [[messierPointsTmp objectAtIndex:i] floatValue];
 		//NSLog(@"%i set to :%f", i,[[planetPointsTmp objectAtIndex:i] floatValue]);
 	}	
+	messierLabels = [[NSMutableArray alloc] init];
+	for(int i = 0; i < messierNum; ++i) {
+		[messierLabels addObject:[[Texture2D alloc] initWithString:[NSString stringWithFormat:@"M%i",i + 1] dimensions:CGSizeMake(64, 64) alignment:UITextAlignmentCenter fontName:@"Helvetica-Bold" fontSize:1.0]];
+	}
 }
 
 -(void)loadStarPoints {
@@ -332,6 +336,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	glEnable(GL_BLEND);
 	float bgConstant;
 	float height = [[objectManager sun] height:[location latitude] lon:[location longitude] elapsed:[[[interface timeModule] manager] elapsed]];
+	sunHeight = height;
 					if(height > 20) {
 						bgConstant = 1.5;
 					}
@@ -346,7 +351,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 					}
 					
 	if(!planetView) {
-		glClearColor(0.05 + bgConstant * 0.06, 0.06 + bgConstant * 0.09, 0.12 + bgConstant * 0.30, 1.0);
+		glClearColor(0.05 + bgConstant * 0.03, 0.06 + bgConstant * 0.05, 0.12 + bgConstant * 0.30, 1.0);
 	}
 	else {
 		glClearColor(0.05, 0.06, 0.12, 1.0);
@@ -405,7 +410,9 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	
 	glDisable(GL_TEXTURE_2D);
 	glDisableClientState(GL_POINT_SIZE_ARRAY_OES);
-		
+	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+
+
 	[self drawHorizon];	
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 
@@ -445,16 +452,26 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	//NSMutableArray * starSizeNum = [objectManager starSizeNum];
 	GLfloat size;
 	
-	size = 3.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 5) { size = 5; }
+	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+
+	glEnable(GL_POINT_SPRITE_OES);
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, textures[20]);
+
+	size = 24 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	if(size > 32) { size = 32; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, 0, [[starSizeNum objectAtIndex:0] intValue]);
 	
-	size = 2 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 4) { size = 4; }
+	size = 12 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
+	if(size > 16) { size = 16; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue], [[starSizeNum objectAtIndex:1] intValue]);
-		
+	
+	glDisable(GL_POINT_SPRITE_OES);
+	glDisable(GL_TEXTURE_2D);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	
 	size = 1.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
 	if(size > 3) { size = 3; }
 	glPointSize(size);
@@ -590,11 +607,21 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 }
 
 -(void)drawMessier {
-	glPointSize(8.0);
-	glColor4f(1.0f, 1.0f, 1.0f, 0.2f);
+	
+	glColor4f(1.0f, 1.0f, 1.0f, 1.0f - (1 / [camera zoomingValue]));
+	if(1.0f - (1 / [camera zoomingValue]) > 0.0f) {
 	glVertexPointer(3, GL_FLOAT, 12, messierPoints);
-	glBindTexture(GL_TEXTURE_2D, textures[10]);
-    glDrawArrays(GL_POINTS, 0, messierNum);
+		glPointSize(8.0f);
+		glBindTexture(GL_TEXTURE_2D, textures[10]);
+		glDrawArrays(GL_POINTS, 0, messierNum);
+		glColor4f(0.5f, 1.0f, 0.5f, 1.0f - (1 / [camera zoomingValue]));
+
+	for(int i = 1; i <= messierNum; ++i) {
+		[[messierLabels objectAtIndex:i - 1] drawAtVertex:Vertex3DMake(messierPoints[(i - 1)*3], messierPoints[(i - 1)*3 + 1], messierPoints[(i - 1)*3 + 2])];
+	}
+	}
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 }
 
 
@@ -653,7 +680,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		else {
 			if (i == 0) { // Bij de zon laad de zon texture in
 				glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
-				glBindTexture(GL_TEXTURE_2D, textures[5]);
+				glBindTexture(GL_TEXTURE_2D, textures[20]);
 			}
 			else { // Bij planeten laad de planeet texture in
 				glBindTexture(GL_TEXTURE_2D, textures[7]);
@@ -694,6 +721,8 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 			
 	glPointSize(20.0f);
 	
+	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+	
 	glVertexPointer(3, GL_FLOAT, 12, points);
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);	
 	glBindTexture(GL_TEXTURE_2D, textures[1]);
@@ -720,17 +749,35 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		0.0, 2.0, 0.0
 	};
 	
+	float bgConstant;
+	
+	if(sunHeight > 20) {
+		bgConstant = 1.5;
+	}
+	else if(sunHeight < -20) {
+		bgConstant = 0;
+	}
+	else if(sunHeight > 0) {
+		bgConstant = (sunHeight / 14);
+	}
+	else if(sunHeight < 0) {
+		bgConstant = 0;
+	}
+	
+	
 	const GLfloat verticesHorizonGlow[] = {
-		-1.0, 0.0, 0.0,		0.0, 0.0,		//bottom-left
-		-1.0, 0.0, 0.75,	0.0, 1.0,		//top-left
-		0.0, 1.0, 0.0,		1.0, 0.0,		//bottom-right
-		0.0, 1.0, 0.75,		1.0, 1.0,		//top-right
-		1.0, 0.0, 0.0,		1.0, 0.0,		//bottom-left
-		1.0, 0.0, 0.75,		1.0, 1.0,		//top-left
-		0.0, -1.0, 0.0,		1.0, 0.0,		//top-left
-		0.0, -1.0, 0.75,	1.0, 1.0,		//top-left
-		-1.0, 0.0, 0.0,		1.0, 0.0,		//bottom-left
-		-1.0, 0.0, 0.75,	1.0, 1.0		//top-left
+		-1.0, 0.0, 0.0,		0.4, 0.8,	1.0, 0.1 * bgConstant, 
+		0.0, 1.0, 0.0,		0.4, 0.8,	1.0, 0.1 * bgConstant,  
+		0.0, 0.0, 0.5,		0.0, 0.0,	1.0, 0.0, 
+		0.0, 1.0, 0.0,		0.4, 0.8,	1.0, 0.1 * bgConstant, 
+		1.0, 0.0, 0.0,		0.4, 0.8,	1.0, 0.1 * bgConstant,  
+		0.0, 0.0, 0.5,		0.0, 0.0,	1.0, 0.0, 
+		1.0, 0.0, 0.0,		0.4, 0.8,	1.0, 0.1 * bgConstant, 
+		0.0, -1.0, 0.0,		0.4, 0.8,	1.0, 0.1 * bgConstant,  		
+		0.0, 0.0, 0.5,		0.0, 0.0,	1.0, 0.0, 
+		0.0, -1.0, 0.0,		0.4, 0.8,	1.0, 0.1 * bgConstant, 		
+		-1.0, 0.0, 0.0,		0.4, 0.8,	1.0, 0.1 * bgConstant,  		
+		0.0, 0.0, 0.5,		0.0, 0.0,	1.0, 0.0, 
 	};
 	
 	//alpha horizon test
@@ -757,8 +804,14 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	glColor4f(1.0f, 1.0f, 1.0f, 0.1f);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
 	
+	glEnableClientState(GL_COLOR_ARRAY);
+	glVertexPointer(3, GL_FLOAT, 28, verticesHorizonGlow);
+	glColorPointer(4, GL_FLOAT, 28, &verticesHorizonGlow[3]);
+	glDrawArrays(GL_TRIANGLES, 0, 12);
+	glDisableClientState(GL_COLOR_ARRAY);
 	glEnable(GL_TEXTURE_2D);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);	
+
 }
 
 

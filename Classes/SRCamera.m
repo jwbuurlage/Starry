@@ -36,9 +36,10 @@
 		fieldOfView = 0.3 * M_PI; 
 		size = zNear * tanf(fieldOfView / 2.0); 
 		rect = view.bounds; 
+		NSLog(@"bladiebla: %f",rect.size.width);
 		glFrustumf(-size, size, -size / (rect.size.width / rect.size.height), size / 
 				   (rect.size.width / rect.size.height), zNear, zFar); 
-		//NSLog(@"width:%f height:%f",rect.size.width ,rect.size.height);
+		NSLog(@"width:%f height:%f",rect.size.width ,rect.size.height);
 		//glOrthof( 0, 320, 480, 0, 1, 0 );
 		glViewport(0, 0, rect.size.width, rect.size.height);  
 		

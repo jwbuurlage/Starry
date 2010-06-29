@@ -294,7 +294,7 @@
 		NSNumber * secondsNumber = [[NSNumber alloc] initWithFloat:secondsF];
 		int seconds = [secondsNumber intValue];
 		
-		/* degrees = degrees * 24 / 360; // Uuren er van maken
+		/* degrees = degrees * 24 / 360; // Uren er van maken
 		 minutes = minutes / 15;
 		 seconds = seconds / 15; */
 		
@@ -423,8 +423,11 @@
 		glTexCoordPointer(2, GL_FLOAT, 0, touchCoords);
 		glVertexPointer(3, GL_FLOAT, 0, touchCorners);
 		
+		glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 		glBindTexture(GL_TEXTURE_2D, textures[[UIElements count]]);
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 	}
 	
 	if(showingMessier) {

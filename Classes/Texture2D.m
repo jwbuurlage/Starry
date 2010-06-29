@@ -304,7 +304,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 		CGColorSpaceRelease(colorSpace);
 		CGContextClearRect(context, CGRectMake(0, 0, width, height));
 		
-		CGContextSetGrayFillColor(context, 0.0, 1.0);
+		CGContextSetGrayFillColor(context, 0.5, 1.0);
 		CGContextTranslateCTM(context, 0.0, height);
 		CGContextScaleCTM(context, 1.0, -1.0);
 		

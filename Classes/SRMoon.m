@@ -34,8 +34,12 @@
 	float second = [weekdayComponents second];
 	
 	//dagen sinds tabel geldig is http://www.astro.uu.nl/~strous/AA/en/reken/hemelpositie.html
-	float d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730530 + ((hour / 24) + (minute / 1440) + (second / 86400));
+	float d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730530;
 	//d = 1460.5;
+	NSLog(@"day: %f", d);
+	d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730530 + ((hour / 24) + minute / 1440 + second / 86400);
+	NSLog(@"day: %f", d);
+	NSLog(@"hour: %f", hour);
 	
 	//positie uitrekenen:
 	float geoEclipticLongitude = 218.316 + (13.176396 * d);
@@ -70,9 +74,7 @@
 	z = 15.0f * cos(declination);
 	
 	position = Vertex3DMake(x, y, z);
-	
-	
-	
+		
 	//recalculate phase
 	//FIXME: phases moeten nog goed.
 	
