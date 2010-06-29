@@ -118,6 +118,9 @@
 	BOOL menuVisible;
 	
 	BOOL highlightUp;
+	
+	int iPadWidth;
+	int iPadHeight;
 }
 
 @property (readonly) SRTimeModule* timeModule;

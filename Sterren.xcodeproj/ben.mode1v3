@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -276,14 +278,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>11</integer>
-									<integer>2</integer>
-									<integer>1</integer>
+									<integer>45</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 669}}</string>
+							<string>{{0, 351}, {186, 669}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -313,14 +313,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>GLViewController.h</string>
+								<string>SRRenderer.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,14 +326,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>GLViewController.h</string>
+										<string>SRRenderer.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5CA9DCF11DA7402000CB1BE</string>
+										<string>B5CA9DF311DA757A000CB1BE</string>
 										<key>history</key>
 										<array>
-											<string>B587975A11DA688B00CE61C4</string>
 											<string>B587975C11DA688B00CE61C4</string>
 											<string>B587975D11DA688B00CE61C4</string>
 											<string>B587975E11DA688B00CE61C4</string>
@@ -344,12 +341,14 @@
 											<string>B587977D11DA6B6500CE61C4</string>
 											<string>B5CA9DB311DA7277000CB1BE</string>
 											<string>B5CA9DC811DA7402000CB1BE</string>
-											<string>B5CA9DC911DA7402000CB1BE</string>
-											<string>B5CA9DCA11DA7402000CB1BE</string>
 											<string>B5CA9DCB11DA7402000CB1BE</string>
 											<string>B5CA9DCC11DA7402000CB1BE</string>
 											<string>B5CA9DCD11DA7402000CB1BE</string>
-											<string>B5CA9DCE11DA7402000CB1BE</string>
+											<string>B5CA9DD311DA74CF000CB1BE</string>
+											<string>B5CA9DD511DA74CF000CB1BE</string>
+											<string>B5CA9DDC11DA7520000CB1BE</string>
+											<string>B5CA9DF111DA757A000CB1BE</string>
+											<string>B5CA9DF211DA757A000CB1BE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -547,10 +546,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>B587968B11DA5BF700CE61C4</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>B587968B11DA5BF700CE61C4</string>
 		<string>/Users/ben/Desktop/StarDust-iPhone/Sterren.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -577,7 +576,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SRMoon.m</string>
+								<string>SRInterface.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -788,8 +787,6 @@
 							<key>Dock</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
@@ -816,6 +813,8 @@
 							<string>212pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -861,7 +860,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

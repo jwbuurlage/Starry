@@ -60,6 +60,10 @@
 		pODecLabel = [[Texture2D alloc] initWithString:@"Alt:" dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
 		
 		bFade = FALSE;
+		
+		iPadWidth = [[theRenderer myOwner] iPadWidth];
+		iPadHeight = [[theRenderer myOwner] iPadHeight];
+		
 	}
 	return self;
 }
@@ -212,7 +216,7 @@
 	//main menu met knoppen
 	
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63) 
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, iPadHeight, 63) 
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"nav_bg.png"]] 
 														  identifier:@"menu" 
 														   clickable:NO]];
@@ -280,7 +284,7 @@
 	float alpha = (( [camera zoomingValue] / 4 ) - 1.0) / 2;
 	if(alpha > 0.0f) {
 		glColor4f(1.0f, 1.0f, 1.0f, alpha);
-		[positionOverlay drawInRect:CGRectMake(0,0,480,320)];
+		[positionOverlay drawInRect:CGRectMake(0,0,iPadHeight,iPadWidth)];
 		[pORALabel drawInRect:CGRectMake(200, 58, 64, 32)];
 		[pODecLabel drawInRect:CGRectMake(200, 43, 64, 32)];
 		
@@ -346,7 +350,7 @@
 	glMatrixMode(GL_PROJECTION); 
 	glLoadIdentity();
 	glRotatef(-90.0, 0.0, 0.0, 1.0); //x hor, y vert
-	glOrthof(0.0, 480, 0.0, 320, -1.0, 1.0); //projectie opzetten
+	glOrthof(0.0, iPadHeight, 0.0, iPadWidth, -1.0, 1.0); //projectie opzetten
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	
@@ -477,9 +481,9 @@
 	glDisable(GL_TEXTURE_2D);
 	const GLfloat redOverlay[] = {
 		0.0, 0.0, 0.0,			1.0f, 0.0f, 0.0f, 0.5f,			//bottom-left
-		0.0, 320.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//top-left
-		480.0, 0.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//bottom-right
-		480.0, 320.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//top-right
+		0.0, iPadWidth, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//top-left
+		iPadHeight, 0.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//bottom-right
+		iPadHeight, iPadWidth, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//top-right
 	};
 	
 	glBlendFunc(GL_DST_COLOR, GL_SRC_COLOR);
