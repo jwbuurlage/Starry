@@ -70,6 +70,9 @@
 	GLfloat zoomingValue; 
 	
 	CLLocationManager* theManager;
+	
+	int iPadWidth;
+	int iPadHeight;
 }
 
 @property (readwrite) BOOL planetView;

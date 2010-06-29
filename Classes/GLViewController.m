@@ -19,7 +19,7 @@
 
 @implementation GLViewController
 
-@synthesize camera,theView,renderer;
+@synthesize camera,theView,renderer,iPadWidth,iPadHeight;
 
 - (void)drawView:(UIView *)theView
 {
@@ -37,6 +37,10 @@
 	theView.multipleTouchEnabled = YES;
 	camera = [[SRCamera alloc] initWithView:view];
 	renderer = [[SRRenderer alloc] setupWithOwner:self];
+	
+	iPadWidth = view.bounds.size.width;
+	iPadHeight = view.bounds.size.height;
+	
 }
 
 - (void)dealloc 
@@ -182,9 +186,9 @@
 	
 	//[objectManager clickedAtX:x Y:y];
 	
-	// Tenopzichte van het midden uitrekenen iPhone screen (480*320)
-	int deltaX = -x+160;
-	int deltaY = -y+240;
+	// Tenopzichte van het midden uitrekenen iPhone screen (iPadHeight*iPadWidth)
+	int deltaX = -x+(iPadWidth/2);
+	int deltaY = -y+(iPadHeight/2);
 	
 	
 	// Voor het testen zoom de camera daar heen
@@ -218,20 +222,20 @@
 	float altitude = [camera altitude];
 	float azimuth = [camera azimuth];
 	
-	float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
+	float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))));
 	float radPerPixel;
 	
 	//FIXME: Fout in deze berekening voor volledig ingezoomd
 	//if(fieldOfView > 0.75) {
-	radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
+	radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/(iPadWidth+(fieldOfView*(iPadWidth/2)));
 	//}
 	//else {
-	//	radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/320;
+	//	radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/iPadWidth;
 	//NSLog(@"fieldofview:%f",fieldOfView);
 	//}
-	//float radPerPixel = sinf(0.5*(fieldOfView*480)/320)/480;
+	//float radPerPixel = sinf(0.5*(fieldOfView*iPadHeight)/iPadWidth)/iPadHeight;
 	//float standardHeight = 0.8910065242;
-	//float radPerPixel = (0.3*M_PI)/320;
+	//float radPerPixel = (0.3*M_PI)/iPadWidth;
 	// Coordinaten in het vlak
 	float fiX = deltaX * radPerPixel;
 	float fiY = deltaY * radPerPixel;
@@ -653,8 +657,8 @@
 		UITouch *aTouch = [touches anyObject];
 		int x = [aTouch locationInView:theView].x;
 		int y = [aTouch locationInView:theView].y;
-		int deltaX = -x+160;
-		int deltaY = -y+240;
+		int deltaX = -x+(iPadWidth/2);
+		int deltaY = -y+(iPadHeight/2);
 		[camera zoomCameraWithX:deltaX andY:deltaY];
 	}
 	

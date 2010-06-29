@@ -36,12 +36,15 @@
 		fieldOfView = 0.3 * M_PI; 
 		size = zNear * tanf(fieldOfView / 2.0); 
 		rect = view.bounds; 
-		NSLog(@"bladiebla: %f",rect.size.width);
+		//iPadWidthNSLog(@"bladiebla: %f",rect.size.width);
 		glFrustumf(-size, size, -size / (rect.size.width / rect.size.height), size / 
 				   (rect.size.width / rect.size.height), zNear, zFar); 
 		NSLog(@"width:%f height:%f",rect.size.width ,rect.size.height);
-		//glOrthof( 0, 320, 480, 0, 1, 0 );
+		//glOrthof( 0, iPadWidth, iPadHeight, 0, 1, 0 );
 		glViewport(0, 0, rect.size.width, rect.size.height);  
+		
+		iPadWidth = view.bounds.size.width;
+		iPadHeight = view.bounds.size.height;
 		
 		//NSLog(@"size: %f, width: %f, height:%f", size, rect.size.width, rect.size.height);
 		
@@ -118,8 +121,8 @@
 	 float DEC3 = (altitude-90)*(M_PI/180);
 	 float RA3 = azimuth*(M_PI/180);
 	 
-	 float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))));
-	 float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*480)/320,2)+powf((fieldOfView*480)/320,2))))/(320+(fieldOfView*160));
+	 float standardHeight = cosf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))));
+	 float radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/(iPadWidth+(fieldOfView*(iPadWidth/2)));
 	 
 	 float X1 = zoomDeltaX * radPerPixel;
 	 float Y1 = zoomDeltaY * radPerPixel;
@@ -147,8 +150,8 @@
 	 float DEC1 = acosf(Z6);
 	 
 	 float newFieldOfView = fieldOfView - (0.3/30);
-	 float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))));
-	 float newRadPerPixel = sinf(0.5*(sqrtf(powf((newFieldOfView*480)/320,2)+powf((newFieldOfView*480)/320,2))))/(320+(newFieldOfView*160));
+	 float newStandardHeight = cosf(0.5*(sqrtf(powf((newFieldOfView*iPadHeight)/iPadWidth,2)+powf((newFieldOfView*iPadHeight)/iPadWidth,2))));
+	 float newRadPerPixel = sinf(0.5*(sqrtf(powf((newFieldOfView*iPadHeight)/iPadWidth,2)+powf((newFieldOfView*iPadHeight)/iPadWidth,2))))/(iPadWidth+(newFieldOfView*(iPadWidth/2)));
 	 
 	 float X3 = zoomDeltaX * newRadPerPixel;
 	 float Y3 = zoomDeltaY * newRadPerPixel;
@@ -223,10 +226,10 @@
 - (void)rotateCameraWithX:(int)deltaX Y:(int)deltaY {
 	
 	float rotationConstant = 5.5850536;
-	// Berekening het scherm is 320 pixels hoog. fieldOfView is normaal 0.3*PI.
+	// Berekening het scherm is iPadWidth pixels hoog. fieldOfView is normaal 0.3*PI.
 	// 0.3PI * 180 / PI = 54 dus de complete verticale hoek in beeld is altijd 54.
 	// De bereking is deltaX/constante/fieldOfView=altitude
-	// 54=320/(x/0.3PI) => x=5.5850536
+	// 54=iPadWidth/(x/0.3PI) => x=5.5850536
 	
 	if(swipeHor) {
 		swipeHor = FALSE;

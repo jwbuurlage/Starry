@@ -36,10 +36,15 @@
 	
 	int dX;
 	int dY;
+	
+	int iPadWidth;
+	int iPadHeight;
 }
 
 @property (assign) SRCamera *camera;
 @property (readonly) GLView *theView;
+@property (readonly) int iPadHeight;
+@property (readonly) int iPadWidth;
 @property (readonly) SRRenderer *renderer;
 
 -(void)checkScreenObjectClicked:(NSSet *)touches;
