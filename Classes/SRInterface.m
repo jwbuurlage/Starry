@@ -63,7 +63,6 @@
 		
 		iPadWidth = [[theRenderer myOwner] iPadWidth];
 		iPadHeight = [[theRenderer myOwner] iPadHeight];
-		
 	}
 	return self;
 }
@@ -216,7 +215,7 @@
 	//main menu met knoppen
 	
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, iPadHeight, 63) 
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(0, -63, 480, 63) 
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"nav_bg.png"]] 
 														  identifier:@"menu" 
 														   clickable:NO]];
@@ -248,8 +247,8 @@
 	
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(255, -65, 128, 32) 
 							                                 texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Search", @"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:13] 
-							                                identifier:@"search_text" 
-							                                 clickable:NO]];    
+														  identifier:@"search_text" 
+														   clickable:NO]];    
 	
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(435, 6, 32, 32)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]] 
@@ -284,7 +283,7 @@
 	float alpha = (( [camera zoomingValue] / 4 ) - 1.0) / 2;
 	if(alpha > 0.0f) {
 		glColor4f(1.0f, 1.0f, 1.0f, alpha);
-		[positionOverlay drawInRect:CGRectMake(0,0,iPadHeight,iPadWidth)];
+		[positionOverlay drawInRect:CGRectMake(0,0,480,320)];
 		[pORALabel drawInRect:CGRectMake(200, 58, 64, 32)];
 		[pODecLabel drawInRect:CGRectMake(200, 43, 64, 32)];
 		
@@ -298,7 +297,7 @@
 		NSNumber * secondsNumber = [[NSNumber alloc] initWithFloat:secondsF];
 		int seconds = [secondsNumber intValue];
 		
-		/* degrees = degrees * 24 / 360; // Uren er van maken
+		/* degrees = degrees * 24 / 360; // Uuren er van maken
 		 minutes = minutes / 15;
 		 seconds = seconds / 15; */
 		
@@ -341,7 +340,7 @@
 	//we rekenen uit hoelang het per frame is om animaties smooth te laten verlopen
 	if (lastDrawTime) { timeElapsed = [NSDate timeIntervalSinceReferenceDate] - lastDrawTime; }
     lastDrawTime = [NSDate timeIntervalSinceReferenceDate];
-
+	
 	// -- animaties..
 	[self calculateAnimations];
 	[[timeModule manager] tickOfTime:timeElapsed];
@@ -350,7 +349,7 @@
 	glMatrixMode(GL_PROJECTION); 
 	glLoadIdentity();
 	glRotatef(-90.0, 0.0, 0.0, 1.0); //x hor, y vert
-	glOrthof(0.0, iPadHeight, 0.0, iPadWidth, -1.0, 1.0); //projectie opzetten
+	glOrthof(0.0, 480, 0.0, 320, -1.0, 1.0); //projectie opzetten
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	
@@ -385,7 +384,7 @@
 			[[element texture] drawInRect:[element bounds]];
 		}
 		else if (menuVisible) {
-			      glTranslatef(0, -yTranslate, 0);
+			glTranslatef(0, -yTranslate, 0);
 			if([element identifier] == @"search_text" && ![currentlyEditingIdentifier isEqual:@"search"]) {
 				glColor4f(0.5f, 0.5f, 0.5f, 1.0f);
 				[[element texture] drawInRect:[element bounds]];
@@ -427,11 +426,8 @@
 		glTexCoordPointer(2, GL_FLOAT, 0, touchCoords);
 		glVertexPointer(3, GL_FLOAT, 0, touchCorners);
 		
-		glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 		glBindTexture(GL_TEXTURE_2D, textures[[UIElements count]]);
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
 	}
 	
 	if(showingMessier) {
@@ -481,9 +477,9 @@
 	glDisable(GL_TEXTURE_2D);
 	const GLfloat redOverlay[] = {
 		0.0, 0.0, 0.0,			1.0f, 0.0f, 0.0f, 0.5f,			//bottom-left
-		0.0, iPadWidth, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//top-left
-		iPadHeight, 0.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//bottom-right
-		iPadHeight, iPadWidth, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//top-right
+		0.0, 320.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//top-left
+		480.0, 0.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//bottom-right
+		480.0, 320.0, 0.0,		1.0f, 0.0f, 0.0f, 0.5f,			//top-right
 	};
 	
 	glBlendFunc(GL_DST_COLOR, GL_SRC_COLOR);
@@ -658,41 +654,41 @@
 		}
 		else if(clicker == @"arrow") {
 			if ([timeModule visible] || [locationModule visible] || [settingsModule visible] || [planetModule visible]) {
-			if([timeModule visible]) {
-				[timeModule hide];	
-				[[UIElements objectAtIndex:2] setBounds:CGRectMake(63, -56, 41, 31)];
-				aModule = TRUE;
-			}
-			if([locationModule visible]) {
-				[locationModule hide];
-				[[UIElements objectAtIndex:1] setBounds:CGRectMake(10, -56, 41, 31)];
-				aModule = TRUE;
-			}
-			if([settingsModule visible]) {
-				[settingsModule hide];
-				[self hideSliderWith:@"fade"];
-				[[UIElements objectAtIndex:4] setBounds:CGRectMake(168, -56, 41, 31)];
-				aModule = TRUE;
-			}
-			if([planetModule visible]) {
-				[camera setPlanetView:FALSE];
-				[camera resetZoomValue];
-				[planetModule hide];
-				[[timeModule manager] setSpeed:1];
-				[[UIElements objectAtIndex:3] setBounds:CGRectMake(116, -56, 41, 31)];
-				aModule = TRUE;
-				[renderer setPlanetView:FALSE];
-				[renderer setSelectedStar:nil];
-				[renderer setPlanetHighlighted:FALSE];
-				[renderer setSelectedPlanet:nil];
-				[renderer setObjectInFocus:nil]; 
-				[renderer setHighlight:FALSE];
+				if([timeModule visible]) {
+					[timeModule hide];	
+					[[UIElements objectAtIndex:2] setBounds:CGRectMake(63, -56, 41, 31)];
+					aModule = TRUE;
+				}
+				if([locationModule visible]) {
+					[locationModule hide];
+					[[UIElements objectAtIndex:1] setBounds:CGRectMake(10, -56, 41, 31)];
+					aModule = TRUE;
+				}
+				if([settingsModule visible]) {
+					[settingsModule hide];
+					[self hideSliderWith:@"fade"];
+					[[UIElements objectAtIndex:4] setBounds:CGRectMake(168, -56, 41, 31)];
+					aModule = TRUE;
+				}
+				if([planetModule visible]) {
+					[camera setPlanetView:FALSE];
+					[camera resetZoomValue];
+					[planetModule hide];
+					[[timeModule manager] setSpeed:1];
+					[[UIElements objectAtIndex:3] setBounds:CGRectMake(116, -56, 41, 31)];
+					aModule = TRUE;
+					[renderer setPlanetView:FALSE];
+					[renderer setSelectedStar:nil];
+					[renderer setPlanetHighlighted:FALSE];
+					[renderer setSelectedPlanet:nil];
+					[renderer setObjectInFocus:nil]; 
+					[renderer setHighlight:FALSE];
+					
+				}
 				
-			}
-			
-			hidingMenu = FALSE;
-			aMenu = TRUE;
-			menuVisible = TRUE;
+				hidingMenu = FALSE;
+				aMenu = TRUE;
+				menuVisible = TRUE;
 			}
 			else {
 				BOOL sliderHide = NO;
@@ -703,7 +699,7 @@
 				flagToggle = YES;
 				if (slider && !sliderHide && [settingsModule visible]) {
 					[self showSliderWith:@"up"];
-						//NSLog(@"Show");
+					//NSLog(@"Show");
 				}
 				[[[UIElements objectAtIndex:[UIElements count] - 1] texture] invertTexCoord];
 			}
@@ -913,20 +909,20 @@
 		return;
 	}
 	
-		if([renderer highlightSize] > 40) {
-			highlightUp = FALSE;
-		}
-		else if([renderer highlightSize] < 24) {
-			highlightUp = TRUE;
-		}
-		
-		if(highlightUp) {
-			[renderer setHighlightSize:[renderer highlightSize] + (1 * (timeElapsed / 0.05))];
-		}
-		else {
-			[renderer setHighlightSize:[renderer highlightSize] - (1 * (timeElapsed / 0.05))];
-		}
-		
+	if([renderer highlightSize] > 40) {
+		highlightUp = FALSE;
+	}
+	else if([renderer highlightSize] < 24) {
+		highlightUp = TRUE;
+	}
+	
+	if(highlightUp) {
+		[renderer setHighlightSize:[renderer highlightSize] + (1 * (timeElapsed / 0.05))];
+	}
+	else {
+		[renderer setHighlightSize:[renderer highlightSize] - (1 * (timeElapsed / 0.05))];
+	}
+	
 	if(aMenu) {
 		if(hidingMenu) {
 			yTranslate += 7 * (timeElapsed / 0.05); 
@@ -1221,16 +1217,16 @@
 		slider = [[UISlider alloc] initWithFrame:CGRectMake(-29, 165, 120, 23)];
 		
 		if([[appDelegate settingsManager] showRedOverlay]) {
-				[slider setThumbImage:[UIImage imageNamed:@"slider_normal_red.png"] forState:UIControlStateNormal];
-				[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted_red.png"] forState:UIControlStateHighlighted];
-				[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max_red.png"] forState:UIControlStateNormal];
-				[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min_red.png"] forState:UIControlStateNormal];
+			[slider setThumbImage:[UIImage imageNamed:@"slider_normal_red.png"] forState:UIControlStateNormal];
+			[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted_red.png"] forState:UIControlStateHighlighted];
+			[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max_red.png"] forState:UIControlStateNormal];
+			[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min_red.png"] forState:UIControlStateNormal];
 		}
 		else {
-				[slider setThumbImage:[UIImage imageNamed:@"slider_normal.png"] forState:UIControlStateNormal];
-				[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted.png"] forState:UIControlStateHighlighted];
-				[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max.png"] forState:UIControlStateNormal];
-				[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min.png"] forState:UIControlStateNormal];
+			[slider setThumbImage:[UIImage imageNamed:@"slider_normal.png"] forState:UIControlStateNormal];
+			[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted.png"] forState:UIControlStateHighlighted];
+			[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max.png"] forState:UIControlStateNormal];
+			[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min.png"] forState:UIControlStateNormal];
 		}
 		
 		justCreated = YES;
@@ -1344,394 +1340,394 @@
 			
 			int type; //0 = messier, 1 = planet, 2 = ster, 3 = sterrenbeeld, 4 = zon, 5 = maan
 			if (![[aValue lowercaseString] isEqualToString:@""]) {
-			for(aMessierObject in [[appDelegate objectManager] messier]) {
-				if ([[[aMessierObject name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
-					foundMessier = aMessierObject;
-					searchResult = TRUE;
-					type = 0;
-					found = TRUE;
-				}
-				else if ([[[aMessierObject name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
-					foundMessier = aMessierObject;
-					searchResult = TRUE;
-					type = 0;
-				}						
-			}
-			
-			for(bPlanet in [[appDelegate objectManager] planets]) {
-				if ([[[bPlanet name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
-					foundPlanet = bPlanet;
-					searchResult = TRUE;
-					type = 1;
-					found = TRUE;
-				}
-				else if ([[[bPlanet name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
-					foundPlanet = bPlanet;
-					searchResult = TRUE;
-					type = 1;
-				}						
-			}
-			
-			for(aStar in [[appDelegate objectManager] stars]) {	
-				if ([[[aStar name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
-					foundStar = aStar;
-					searchResult = TRUE;
-					type = 2;
-					found = TRUE;
-				}
-				else if ([[[aStar name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
-					foundStar = aStar;
-					searchResult = TRUE;
-					type = 2;
-				}						
-			}
-			
-			for(aConstellation in [[appDelegate objectManager] constellations]) {
-				if ([[[aConstellation name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
-					foundConstellation = aConstellation;
-					searchResult = TRUE;
-					type = 3;
-					found = TRUE;
-				}
-				if ([[[aConstellation name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
-					foundConstellation = aConstellation;
-					searchResult = TRUE;
-					type = 3;
-				}	
-				if ([[[aConstellation localizedName] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
-					foundConstellation = aConstellation;
-					searchResult = TRUE;
-					type = 3;
-					found = TRUE;
-				}
-				if ([[[aConstellation localizedName] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
-					foundConstellation = aConstellation;
-					searchResult = TRUE;
-					type = 3;
-				}	
-			}
-			
-			if ([[[NSString stringWithString:NSLocalizedString(@"Sun",@"")] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
-				foundSun = [[appDelegate objectManager] sun];
-				searchResult = TRUE;
-				type = 4;
-				found = TRUE;
-			}
-			
-			if ([[[NSString stringWithString:NSLocalizedString(@"Moon",@"")] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
-				foundMoon = [[appDelegate objectManager] moon];
-				searchResult = TRUE;
-				type = 5;
-				found = TRUE;
-			}
-			
-			if(searchResult) {
-				if(searchIcon)
-					[searchIcon release];
-				searchIcon = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"searchYes.png"]];
-				
-				float azTmp, alTmp;
-				
-				if(type == 0) { // Messier
-					if(foundObjectText)
-						foundObjectTextString = foundMessier.name;
-					[foundObjectText release];
-					foundObjectText = [[Texture2D alloc] initWithString:foundMessier.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
-					[theNameplate setName:foundMessier.name inConstellation:NSLocalizedString(@"messier",@"") showInfo:YES];
-					[messierInfo messierClicked:foundMessier];
-					[theNameplate setSelectedType:0];
-					Vertex3D posForCam = [foundMessier myCurrentPosition];
-					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
-					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
-					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
-					
-					Vertex3D position = foundMessier.position;
-					
-					[renderer setHighlightPosition:position];
-					[renderer setSelectedStar:nil];
-					[renderer setPlanetHighlighted:FALSE];
-					[renderer setObjectInFocus:foundMessier];
-					[renderer setSelectedPlanet:nil];
-					[renderer setHighlightSize:32]; 
-					[renderer setHighlight:TRUE];
-					
-					[self setANameplate:TRUE];
-				}
-				else if(type == 1) { //Planeet
-					foundObjectTextString = foundPlanet.name;
-					
-					if(foundObjectText)
-						[foundObjectText release];
-					foundObjectText = [[Texture2D alloc] initWithString:foundPlanet.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
-					
-					[theNameplate setName:foundPlanet.name inConstellation:NSLocalizedString(@"planet",@"") showInfo:YES];
-					[planetInfo planetClicked:foundPlanet];
-					[theNameplate setSelectedType:type];
-					Vertex3D posForCam = [foundPlanet myCurrentPosition];
-					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
-					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
-					
-					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
-					
-					Vertex3D position = foundPlanet.position;
-					
-					[renderer setHighlightPosition:position];
-					[renderer setSelectedStar:nil];
-					[renderer setPlanetHighlighted:TRUE];
-					[renderer setSelectedPlanet:foundPlanet];
-					[renderer setObjectInFocus:foundPlanet];
-					[renderer setHighlightSize:32]; 
-					[renderer setHighlight:TRUE];
-					
-					[self setANameplate:TRUE];
-				}
-				else if(type == 2) { // Ster
-					if(foundObjectTextString) 
-						[foundObjectTextString release];
-					if (foundObjectText) 
-						[foundObjectText release];
-					
-					
-					NSString* name = [[NSString alloc] initWithString:foundStar.name];
-					if([name length] > 12) {
-						foundObjectTextString = [[NSString alloc] initWithString:[[name substringToIndex:10] stringByAppendingFormat:@".."]];
-						foundObjectText = [[Texture2D alloc] initWithString:foundObjectTextString dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
-						[name release];
+				for(aMessierObject in [[appDelegate objectManager] messier]) {
+					if ([[[aMessierObject name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+						foundMessier = aMessierObject;
+						searchResult = TRUE;
+						type = 0;
+						found = TRUE;
 					}
-					else {
-						foundObjectText = [[Texture2D alloc] initWithString:name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
-						foundObjectTextString = [[NSString alloc] initWithString:name];
-						[name release];
+					else if ([[[aMessierObject name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
+						foundMessier = aMessierObject;
+						searchResult = TRUE;
+						type = 0;
+					}						
+				}
+				
+				for(bPlanet in [[appDelegate objectManager] planets]) {
+					if ([[[bPlanet name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+						foundPlanet = bPlanet;
+						searchResult = TRUE;
+						type = 1;
+						found = TRUE;
 					}
+					else if ([[[bPlanet name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
+						foundPlanet = bPlanet;
+						searchResult = TRUE;
+						type = 1;
+					}						
+				}
+				
+				for(aStar in [[appDelegate objectManager] stars]) {	
+					if ([[[aStar name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+						foundStar = aStar;
+						searchResult = TRUE;
+						type = 2;
+						found = TRUE;
+					}
+					else if ([[[aStar name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
+						foundStar = aStar;
+						searchResult = TRUE;
+						type = 2;
+					}						
+				}
+				
+				for(aConstellation in [[appDelegate objectManager] constellations]) {
+					if ([[[aConstellation name] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+						foundConstellation = aConstellation;
+						searchResult = TRUE;
+						type = 3;
+						found = TRUE;
+					}
+					if ([[[aConstellation name] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
+						foundConstellation = aConstellation;
+						searchResult = TRUE;
+						type = 3;
+					}	
+					if ([[[aConstellation localizedName] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+						foundConstellation = aConstellation;
+						searchResult = TRUE;
+						type = 3;
+						found = TRUE;
+					}
+					if ([[[aConstellation localizedName] lowercaseString] hasPrefix:[aValue lowercaseString]] && !found) {
+						foundConstellation = aConstellation;
+						searchResult = TRUE;
+						type = 3;
+					}	
+				}
+				
+				if ([[[NSString stringWithString:NSLocalizedString(@"Sun",@"")] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+					foundSun = [[appDelegate objectManager] sun];
+					searchResult = TRUE;
+					type = 4;
+					found = TRUE;
+				}
+				
+				if ([[[NSString stringWithString:NSLocalizedString(@"Moon",@"")] lowercaseString] isEqualToString:[aValue lowercaseString]]) {
+					foundMoon = [[appDelegate objectManager] moon];
+					searchResult = TRUE;
+					type = 5;
+					found = TRUE;
+				}
+				
+				if(searchResult) {
+					if(searchIcon)
+						[searchIcon release];
+					searchIcon = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"searchYes.png"]];
 					
-					@try {
-						if([[foundStar bayer] isEqualToString:@""] || [[foundStar bayer] isEqualToString:@" "] || ![foundStar bayer]) {
-							[theNameplate setName:NSLocalizedString(foundStar.name, @"") inConstellation:@"" showInfo:YES];
+					float azTmp, alTmp;
+					
+					if(type == 0) { // Messier
+						if(foundObjectText)
+							foundObjectTextString = foundMessier.name;
+						[foundObjectText release];
+						foundObjectText = [[Texture2D alloc] initWithString:foundMessier.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+						[theNameplate setName:foundMessier.name inConstellation:NSLocalizedString(@"messier",@"") showInfo:YES];
+						[messierInfo messierClicked:foundMessier];
+						[theNameplate setSelectedType:0];
+						Vertex3D posForCam = [foundMessier myCurrentPosition];
+						azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+						alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+						//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+						
+						Vertex3D position = foundMessier.position;
+						
+						[renderer setHighlightPosition:position];
+						[renderer setSelectedStar:nil];
+						[renderer setPlanetHighlighted:FALSE];
+						[renderer setObjectInFocus:foundMessier];
+						[renderer setSelectedPlanet:nil];
+						[renderer setHighlightSize:32]; 
+						[renderer setHighlight:TRUE];
+						
+						[self setANameplate:TRUE];
+					}
+					else if(type == 1) { //Planeet
+						foundObjectTextString = foundPlanet.name;
+						
+						if(foundObjectText)
+							[foundObjectText release];
+						foundObjectText = [[Texture2D alloc] initWithString:foundPlanet.name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+						
+						[theNameplate setName:foundPlanet.name inConstellation:NSLocalizedString(@"planet",@"") showInfo:YES];
+						[planetInfo planetClicked:foundPlanet];
+						[theNameplate setSelectedType:type];
+						Vertex3D posForCam = [foundPlanet myCurrentPosition];
+						azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+						alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+						
+						//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+						
+						Vertex3D position = foundPlanet.position;
+						
+						[renderer setHighlightPosition:position];
+						[renderer setSelectedStar:nil];
+						[renderer setPlanetHighlighted:TRUE];
+						[renderer setSelectedPlanet:foundPlanet];
+						[renderer setObjectInFocus:foundPlanet];
+						[renderer setHighlightSize:32]; 
+						[renderer setHighlight:TRUE];
+						
+						[self setANameplate:TRUE];
+					}
+					else if(type == 2) { // Ster
+						if(foundObjectTextString) 
+							[foundObjectTextString release];
+						if (foundObjectText) 
+							[foundObjectText release];
+						
+						
+						NSString* name = [[NSString alloc] initWithString:foundStar.name];
+						if([name length] > 12) {
+							foundObjectTextString = [[NSString alloc] initWithString:[[name substringToIndex:10] stringByAppendingFormat:@".."]];
+							foundObjectText = [[Texture2D alloc] initWithString:foundObjectTextString dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+							[name release];
 						}
 						else {
-							NSString* constellationStr = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-3, 3)];
-							NSString* greekStrTmp;
-							NSString* numberStr;
-							NSString* numberStr2;
-							char first;
-							if(![[NSScanner scannerWithString:[[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-4, 1)]] scanInt:nil]) {
-								numberStr2 = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-4, 1)];
-								greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-7, 3)];
-								first = [greekStrTmp characterAtIndex:2];
-								if(isupper(first)) {
-									greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-6, 2)];
-								}
-								numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length]-7)];
-							}
-							else {
-								numberStr2 = [NSString stringWithString:@""];
-								greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-6, 3)];
-								first = [greekStrTmp characterAtIndex:2];
-								if(isupper(first)) {
-									greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-6, 2)];
-								}
-								numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length]-6)];
-							}
-							NSString* greekStr = [[NSString alloc] init];
-							if([greekStrTmp isEqualToString:@"Alp"])
-								greekStr = @"α";
-							else if([greekStrTmp isEqualToString:@"Bet"])
-								greekStr = @"β";
-							else if([greekStrTmp isEqualToString:@"Gam"])
-								greekStr = @"γ";
-							else if([greekStrTmp isEqualToString:@"Del"])
-								greekStr = @"δ";
-							else if([greekStrTmp isEqualToString:@"Eps"])
-								greekStr = @"ε";
-							else if([greekStrTmp isEqualToString:@"Zet"])
-								greekStr = @"ζ";
-							else if([greekStrTmp isEqualToString:@"Eta"])
-								greekStr = @"η";
-							else if([greekStrTmp isEqualToString:@"The"])
-								greekStr = @"θ";
-							else if([greekStrTmp isEqualToString:@"Iot"])
-								greekStr = @"ι";
-							else if([greekStrTmp isEqualToString:@"Kap"])
-								greekStr = @"κ";
-							else if([greekStrTmp isEqualToString:@"Lam"])
-								greekStr = @"λ";
-							else if([greekStrTmp isEqualToString:@"Mu"])
-								greekStr = @"μ";
-							else if([greekStrTmp isEqualToString:@"Nu"])
-								greekStr = @"ν";
-							else if([greekStrTmp isEqualToString:@"Xi"])
-								greekStr = @"ξ";
-							else if([greekStrTmp isEqualToString:@"Omi"])
-								greekStr = @"ο";
-							else if([greekStrTmp isEqualToString:@"Pi"])
-								greekStr = @"π";
-							else if([greekStrTmp isEqualToString:@"Rho"])
-								greekStr = @"ρ";
-							else if([greekStrTmp isEqualToString:@"Sig"])
-								greekStr = @"σ";
-							else if([greekStrTmp isEqualToString:@"Tau"])
-								greekStr = @"τ";
-							else if([greekStrTmp isEqualToString:@"Ups"])
-								greekStr = @"υ";
-							else if([greekStrTmp isEqualToString:@"Phi"])
-								greekStr = @"φ";
-							else if([greekStrTmp isEqualToString:@"Chi"])
-								greekStr = @"χ";
-							else if([greekStrTmp isEqualToString:@"Psi"])
-								greekStr = @"ψ";
-							else if([greekStrTmp isEqualToString:@"Ome"])
-								greekStr = @"ω";
-							else {
-								NSLog(@"Griekse letter: %@",greekStrTmp);
-								greekStr = @"";
-							}
-							//NSString* numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length] - 6)];
-							
-							[theNameplate setName:NSLocalizedString(foundStar.name, @"") inConstellation:[NSString stringWithFormat:@"%@ %@ %@",numberStr,greekStr,constellationStr] showInfo:YES];
-							//}
-							//[greekStrTmp release];
-							//[numberStr release];
-							//[constellationStr release];
-							//[greekStr release];
+							foundObjectText = [[Texture2D alloc] initWithString:name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+							foundObjectTextString = [[NSString alloc] initWithString:name];
+							[name release];
 						}
+						
+						@try {
+							if([[foundStar bayer] isEqualToString:@""] || [[foundStar bayer] isEqualToString:@" "] || ![foundStar bayer]) {
+								[theNameplate setName:NSLocalizedString(foundStar.name, @"") inConstellation:@"" showInfo:YES];
+							}
+							else {
+								NSString* constellationStr = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-3, 3)];
+								NSString* greekStrTmp;
+								NSString* numberStr;
+								NSString* numberStr2;
+								char first;
+								if(![[NSScanner scannerWithString:[[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-4, 1)]] scanInt:nil]) {
+									numberStr2 = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-4, 1)];
+									greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-7, 3)];
+									first = [greekStrTmp characterAtIndex:2];
+									if(isupper(first)) {
+										greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-6, 2)];
+									}
+									numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length]-7)];
+								}
+								else {
+									numberStr2 = [NSString stringWithString:@""];
+									greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-6, 3)];
+									first = [greekStrTmp characterAtIndex:2];
+									if(isupper(first)) {
+										greekStrTmp = [[foundStar bayer] substringWithRange:NSMakeRange([[foundStar bayer] length]-6, 2)];
+									}
+									numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length]-6)];
+								}
+								NSString* greekStr = [[NSString alloc] init];
+								if([greekStrTmp isEqualToString:@"Alp"])
+									greekStr = @"α";
+								else if([greekStrTmp isEqualToString:@"Bet"])
+									greekStr = @"β";
+								else if([greekStrTmp isEqualToString:@"Gam"])
+									greekStr = @"γ";
+								else if([greekStrTmp isEqualToString:@"Del"])
+									greekStr = @"δ";
+								else if([greekStrTmp isEqualToString:@"Eps"])
+									greekStr = @"ε";
+								else if([greekStrTmp isEqualToString:@"Zet"])
+									greekStr = @"ζ";
+								else if([greekStrTmp isEqualToString:@"Eta"])
+									greekStr = @"η";
+								else if([greekStrTmp isEqualToString:@"The"])
+									greekStr = @"θ";
+								else if([greekStrTmp isEqualToString:@"Iot"])
+									greekStr = @"ι";
+								else if([greekStrTmp isEqualToString:@"Kap"])
+									greekStr = @"κ";
+								else if([greekStrTmp isEqualToString:@"Lam"])
+									greekStr = @"λ";
+								else if([greekStrTmp isEqualToString:@"Mu"])
+									greekStr = @"μ";
+								else if([greekStrTmp isEqualToString:@"Nu"])
+									greekStr = @"ν";
+								else if([greekStrTmp isEqualToString:@"Xi"])
+									greekStr = @"ξ";
+								else if([greekStrTmp isEqualToString:@"Omi"])
+									greekStr = @"ο";
+								else if([greekStrTmp isEqualToString:@"Pi"])
+									greekStr = @"π";
+								else if([greekStrTmp isEqualToString:@"Rho"])
+									greekStr = @"ρ";
+								else if([greekStrTmp isEqualToString:@"Sig"])
+									greekStr = @"σ";
+								else if([greekStrTmp isEqualToString:@"Tau"])
+									greekStr = @"τ";
+								else if([greekStrTmp isEqualToString:@"Ups"])
+									greekStr = @"υ";
+								else if([greekStrTmp isEqualToString:@"Phi"])
+									greekStr = @"φ";
+								else if([greekStrTmp isEqualToString:@"Chi"])
+									greekStr = @"χ";
+								else if([greekStrTmp isEqualToString:@"Psi"])
+									greekStr = @"ψ";
+								else if([greekStrTmp isEqualToString:@"Ome"])
+									greekStr = @"ω";
+								else {
+									NSLog(@"Griekse letter: %@",greekStrTmp);
+									greekStr = @"";
+								}
+								//NSString* numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length] - 6)];
+								
+								[theNameplate setName:NSLocalizedString(foundStar.name, @"") inConstellation:[NSString stringWithFormat:@"%@ %@ %@",numberStr,greekStr,constellationStr] showInfo:YES];
+								//}
+								//[greekStrTmp release];
+								//[numberStr release];
+								//[constellationStr release];
+								//[greekStr release];
+							}
+						}
+						@catch(NSException * exception) {
+							[theNameplate setName:NSLocalizedString(foundStar.name, @"") inConstellation:@"" showInfo:YES];
+						}
+						[starInfo starClicked:foundStar];
+						//[messierInfo messierClicked:foundStar];
+						[theNameplate setSelectedType:type];
+						
+						Vertex3D posForCam = [foundStar myCurrentPosition];
+						azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+						alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+						//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+						
+						Vertex3D position = foundStar.position;
+						
+						[renderer setHighlightPosition:position];
+						[renderer setSelectedStar:foundStar];
+						[renderer setPlanetHighlighted:FALSE];
+						[renderer setSelectedPlanet:nil];
+						[renderer setObjectInFocus:foundStar];
+						[renderer setHighlightSize:32]; 
+						[renderer setHighlight:TRUE];
+						
+						[self setANameplate:TRUE];
 					}
-					@catch(NSException * exception) {
-						[theNameplate setName:NSLocalizedString(foundStar.name, @"") inConstellation:@"" showInfo:YES];
+					else if(type == 3) { // Constellation
+						if(foundObjectTextString) 
+							[foundObjectTextString release];
+						if (foundObjectText) 
+							[foundObjectText release];
+						
+						NSString* name = [[NSString alloc] initWithString:[foundConstellation localizedName]];
+						if([name length] > 12) {
+							foundObjectTextString = [[NSString alloc] initWithString:[[name substringToIndex:9] stringByAppendingFormat:@".."]];
+							foundObjectText = [[Texture2D alloc] initWithString:foundObjectTextString dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+							[name release];
+						}
+						else {
+							foundObjectText = [[Texture2D alloc] initWithString:name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+							foundObjectTextString = [[NSString alloc] initWithString:name];
+							[name release];
+						}
+						
+						//Vertex3D posForCam = [foundStar myCurrentPosition];
+						Vertex3D posForCam = [foundConstellation myCurrentPosition];
+						azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+						alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+						
+						
+						//azTmp = foundConstellation.ra;
+						//alTmp = foundConstellation.dec;
+						NSLog(@"Sterrenbeeld resultaat: azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+						
 					}
-					[starInfo starClicked:foundStar];
-					//[messierInfo messierClicked:foundStar];
-					[theNameplate setSelectedType:type];
+					else if(type == 4) {
+						foundObjectTextString = [NSString stringWithString:NSLocalizedString(@"Sun",@"")];
+						
+						if(foundObjectText)
+							[foundObjectText release];
+						foundObjectText = [[Texture2D alloc] initWithString:NSLocalizedString(@"Sun",@"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+						
+						[theNameplate setName:NSLocalizedString(@"Sun",@"") inConstellation:NSLocalizedString(@"our star",@"") showInfo:YES];
+						[planetInfo planetClicked:foundSun];
+						[theNameplate setSelectedType:type];
+						Vertex3D posForCam = [foundSun myCurrentPosition];
+						azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+						alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+						
+						//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+						
+						Vertex3D position = foundSun.position;
+						
+						[renderer setHighlightPosition:position];
+						[renderer setSelectedStar:nil];
+						[renderer setPlanetHighlighted:TRUE];
+						[renderer setSelectedPlanet:foundSun];
+						[renderer setObjectInFocus:foundSun];
+						[renderer setHighlightSize:32]; 
+						[renderer setHighlight:TRUE];
+						
+						[self setANameplate:TRUE];
+					}
+					else if (type == 5) {
+						foundObjectTextString = [NSString stringWithString:NSLocalizedString(@"Moon",@"")];
+						
+						if(foundObjectText)
+							[foundObjectText release];
+						foundObjectText = [[Texture2D alloc] initWithString:NSLocalizedString(@"Moon",@"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+						
+						[theNameplate setName:NSLocalizedString(@"Moon",@"") inConstellation:@"" showInfo:YES];
+						//[planetInfo planetClicked:foundMoon];
+						[theNameplate setSelectedType:type];
+						Vertex3D posForCam = [foundMoon myCurrentPosition];
+						azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
+						alTmp = 90-(180/M_PI)*acos(-posForCam.z);
+						
+						//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
+						
+						Vertex3D position = foundMoon.position;
+						
+						[renderer setHighlightPosition:position];
+						[renderer setHighlightSize:32];
+						[renderer setObjectInFocus:foundMoon];
+						[renderer setSelectedStar:nil];
+						[renderer setPlanetHighlighted:TRUE];
+						[renderer setSelectedPlanet:foundMoon];
+						[renderer setHighlight:TRUE];
+						
+						[self setANameplate:TRUE];
+					}
 					
-					Vertex3D posForCam = [foundStar myCurrentPosition];
-					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
-					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
-					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
 					
-					Vertex3D position = foundStar.position;
+					notFoundTextureBool = TRUE;
+					alphaNotFound = 1.0f;
+					//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
+					notFoundTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notFoundFade:) userInfo:nil repeats:NO] retain];				
 					
-					[renderer setHighlightPosition:position];
-					[renderer setSelectedStar:foundStar];
-					[renderer setPlanetHighlighted:FALSE];
-					[renderer setSelectedPlanet:nil];
-					[renderer setObjectInFocus:foundStar];
-					[renderer setHighlightSize:32]; 
-					[renderer setHighlight:TRUE];
 					
-					[self setANameplate:TRUE];
+					
+					[camera setAzimuth:azTmp];
+					[camera setAltitude:alTmp];
+					[camera adjustView];				
 				}
-				else if(type == 3) { // Constellation
-					if(foundObjectTextString) 
-						[foundObjectTextString release];
-					if (foundObjectText) 
-						[foundObjectText release];
-					
-					NSString* name = [[NSString alloc] initWithString:[foundConstellation localizedName]];
-					if([name length] > 12) {
-						foundObjectTextString = [[NSString alloc] initWithString:[[name substringToIndex:9] stringByAppendingFormat:@".."]];
-						foundObjectText = [[Texture2D alloc] initWithString:foundObjectTextString dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
-						[name release];
-					}
-					else {
-						foundObjectText = [[Texture2D alloc] initWithString:name dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
-						foundObjectTextString = [[NSString alloc] initWithString:name];
-						[name release];
-					}
-					
-					//Vertex3D posForCam = [foundStar myCurrentPosition];
-					Vertex3D posForCam = [foundConstellation myCurrentPosition];
-					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
-					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
-					
-					
-					//azTmp = foundConstellation.ra;
-					//alTmp = foundConstellation.dec;
-					NSLog(@"Sterrenbeeld resultaat: azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
-					
-				}
-				else if(type == 4) {
-					foundObjectTextString = [NSString stringWithString:NSLocalizedString(@"Sun",@"")];
+				else {
+					if(searchIcon)
+						[searchIcon release];
+					searchIcon = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"searchNo.png"]];
 					
 					if(foundObjectText)
 						[foundObjectText release];
-					foundObjectText = [[Texture2D alloc] initWithString:NSLocalizedString(@"Sun",@"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
+					foundObjectTextString = [[NSString alloc] initWithString:NSLocalizedString(@"Nothing",@"")];
+					foundObjectText = [[Texture2D alloc] initWithString:NSLocalizedString(@"Nothing",@"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];				
 					
-					[theNameplate setName:NSLocalizedString(@"Sun",@"") inConstellation:NSLocalizedString(@"our star",@"") showInfo:YES];
-					[planetInfo planetClicked:foundSun];
-					[theNameplate setSelectedType:type];
-					Vertex3D posForCam = [foundSun myCurrentPosition];
-					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
-					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
-					
-					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
-					
-					Vertex3D position = foundSun.position;
-					
-					[renderer setHighlightPosition:position];
-					[renderer setSelectedStar:nil];
-					[renderer setPlanetHighlighted:TRUE];
-					[renderer setSelectedPlanet:foundSun];
-					[renderer setObjectInFocus:foundSun];
-					[renderer setHighlightSize:32]; 
-					[renderer setHighlight:TRUE];
-					
-					[self setANameplate:TRUE];
+					notFoundTextureBool = TRUE;
+					alphaNotFound = 1.0f;
+					//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
+					notFoundTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notFoundFade:) userInfo:nil repeats:NO] retain];
 				}
-				else if (type == 5) {
-					foundObjectTextString = [NSString stringWithString:NSLocalizedString(@"Moon",@"")];
-					
-					if(foundObjectText)
-						[foundObjectText release];
-					foundObjectText = [[Texture2D alloc] initWithString:NSLocalizedString(@"Moon",@"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];
-					
-					[theNameplate setName:NSLocalizedString(@"Moon",@"") inConstellation:@"" showInfo:YES];
-					//[planetInfo planetClicked:foundMoon];
-					[theNameplate setSelectedType:type];
-					Vertex3D posForCam = [foundMoon myCurrentPosition];
-					azTmp = (180/M_PI)*atan2(posForCam.y,posForCam.x);
-					alTmp = 90-(180/M_PI)*acos(-posForCam.z);
-					
-					//NSLog(@"azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
-					
-					Vertex3D position = foundMoon.position;
-					
-					[renderer setHighlightPosition:position];
-					[renderer setHighlightSize:32];
-					[renderer setObjectInFocus:foundMoon];
-					[renderer setSelectedStar:nil];
-					[renderer setPlanetHighlighted:TRUE];
-					[renderer setSelectedPlanet:foundMoon];
-					[renderer setHighlight:TRUE];
-					
-					[self setANameplate:TRUE];
-				}
-				
-				
-				notFoundTextureBool = TRUE;
-				alphaNotFound = 1.0f;
-				//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
-				notFoundTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notFoundFade:) userInfo:nil repeats:NO] retain];				
-				
-				
-				
-				[camera setAzimuth:azTmp];
-				[camera setAltitude:alTmp];
-				[camera adjustView];				
-			}
-			else {
-				if(searchIcon)
-					[searchIcon release];
-				searchIcon = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"searchNo.png"]];
-				
-				if(foundObjectText)
-					[foundObjectText release];
-				foundObjectTextString = [[NSString alloc] initWithString:NSLocalizedString(@"Nothing",@"")];
-				foundObjectText = [[Texture2D alloc] initWithString:NSLocalizedString(@"Nothing",@"") dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0];				
-				
-				notFoundTextureBool = TRUE;
-				alphaNotFound = 1.0f;
-				//notFoundTexture = [[Texture2D alloc] initWithImage:[UIImage imageNamed:@"notFound.png"]];
-				notFoundTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notFoundFade:) userInfo:nil repeats:NO] retain];
-			}
 			}
 		}
 		

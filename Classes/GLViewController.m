@@ -56,7 +56,11 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *aTouch = [touches anyObject];
 	
-	if([[renderer interface] UIElementAtPoint:[aTouch locationInView:theView]]) {
+	CGPoint relativePoint;
+	relativePoint.x = [aTouch locationInView:theView].x*360/iPadWidth;
+	relativePoint.y = [aTouch locationInView:theView].y*480/iPadHeight;
+	
+	if([[renderer interface] UIElementAtPoint:relativePoint]) {
 		UIClick = YES;
 		ScreenClick = NO;
 	}
