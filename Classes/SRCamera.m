@@ -225,11 +225,13 @@
 
 - (void)rotateCameraWithX:(int)deltaX Y:(int)deltaY {
 	
-	float rotationConstant = 5.5850536;
+	float rotationConstant = iPadWidth*0.3*M_PI/54;
 	// Berekening het scherm is iPadWidth pixels hoog. fieldOfView is normaal 0.3*PI.
 	// 0.3PI * 180 / PI = 54 dus de complete verticale hoek in beeld is altijd 54.
 	// De bereking is deltaX/constante/fieldOfView=altitude
 	// 54=iPadWidth/(x/0.3PI) => x=5.5850536
+	// 54*x/0.3PI=iPadWidth
+	// iPadWidth*0.3PI/54=x
 	
 	if(swipeHor) {
 		swipeHor = FALSE;
@@ -254,13 +256,13 @@
 
 -(float)calculateAzimuthWithX:(int)deltaX Y:(int)deltaY {
 
-	float rotationConstant = 5.5850536;
+	float rotationConstant = iPadWidth*0.3*M_PI/54;
 	float result = azimuth + ( deltaY / (rotationConstant/fieldOfView));
 	return result;
 }
 
 -(float)calculateAltitudeWithX:(int)deltaX Y:(int)deltaY {
-	float rotationConstant = 5.5850536;
+	float rotationConstant = iPadWidth*0.3*M_PI/54;
 	float result = altitude + ( -deltaX / (rotationConstant/fieldOfView) );
 	return result;
 

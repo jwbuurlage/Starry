@@ -15,6 +15,7 @@
 #import "SRInterface.h"
 #import "SRRenderer.h"
 #import "SRModule.h"
+#import "GLViewController.h"
 
 @implementation SRInterface
 
@@ -63,6 +64,7 @@
 		
 		iPadWidth = [[theRenderer myOwner] iPadWidth];
 		iPadHeight = [[theRenderer myOwner] iPadHeight];
+		NSLog(@"width %i",iPadWidth);
 	}
 	return self;
 }
@@ -1180,9 +1182,13 @@
 -(void)bringUpTheKeyboardWithText:(NSString *)placeholder onLocationX:(int)locX Y:(int)locY withColor:(UIColor*)color andSendResultsTo:(id)delegate {
 	//NSLog(@"Bring up the Keyboard");
 	
+	iPadWidth = [[renderer myOwner] iPadWidth];
+	iPadHeight = [[renderer myOwner] iPadHeight];
+	NSLog(@"width %i",iPadWidth);
+	
 	if(fieldTmp)
 		[fieldTmp release];
-	fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX-29), (locY+20), 80, 32)];
+	fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX-36)*360/iPadWidth, (locY+20)*iPadHeight/480, 80, 32)];
 	[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:11]];
 	[fieldTmp setTextColor:color];
 	[fieldTmp setTextAlignment:UITextAlignmentLeft];
@@ -1206,15 +1212,18 @@
 	// Nu transleren we de hele glView naar boven om plaats te maken voor het keyboard, met animatie
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
-	[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(160 , 0)];
+	[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(160*iPadWidth/360 , 0)];
 	[UIView commitAnimations];
 }
 
 -(void)showSliderWith:(NSString*)method{
 	//NSLog(@"Bring up the Keyboard");
+	iPadWidth = [[renderer myOwner] iPadWidth];
+	iPadHeight = [[renderer myOwner] iPadHeight];
 	BOOL justCreated = NO;
 	if (!slider) {
-		slider = [[UISlider alloc] initWithFrame:CGRectMake(-29, 165, 120, 23)];
+		slider = [[UISlider alloc] initWithFrame:CGRectMake(-36*360/iPadWidth, 165*iPadHeight/480, 120, 23
+															)];
 		
 		if([[appDelegate settingsManager] showRedOverlay]) {
 			[slider setThumbImage:[UIImage imageNamed:@"slider_normal_red.png"] forState:UIControlStateNormal];
