@@ -56,6 +56,9 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *aTouch = [touches anyObject];
 	
+	iPadWidth = theView.bounds.size.width;
+	iPadHeight = theView.bounds.size.height;
+	
 	CGPoint relativePoint;
 	relativePoint.x = [aTouch locationInView:theView].x*360/iPadWidth;
 	relativePoint.y = [aTouch locationInView:theView].y*480/iPadHeight;

@@ -48,25 +48,27 @@
 		
 		//NSLog(@"size: %f, width: %f, height:%f", size, rect.size.width, rect.size.height);
 		
-		/*theManager = [[CLLocationManager alloc] init];
+		theManager = [[CLLocationManager alloc] init];
 		if([theManager headingAvailable]) {
 			usingCompass = TRUE;
 			[theManager startUpdatingHeading];
 			theManager.delegate = self;
 			[[UIAccelerometer sharedAccelerometer] setDelegate:self];
-		}*/
+			[[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.35]; 
+		}
 	}
 	
 	return self;
 }
 
-/* - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-	altitudeCompass = 0.0;
+- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
+	altitudeCompass = (acceleration.z)*90;
+	//NSLog(@"acceleration z:%f",(acceleration.z)*90);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
 	azimuthCompass = [newHeading trueHeading];
-} */
+}
 
 - (void)doAnimations:(float)timeElapsed {
 	//if(swipeHor && swipeVer) { NSLog(@"test"); }
@@ -206,20 +208,21 @@
 	
 }
 
-- (void)adjustView {		
+- (void)adjustView {
+	if(usingCompass) {
+		altitude = altitudeCompass;
+		azimuth = -(azimuthCompass + 90);
+	}
+	
 	if(altitude > 89.9) { altitude = 89.9; }
 	else if (altitude < -89.9) { altitude = -89.9; }
 	if(azimuth < 0) { azimuth += 360; }
 	if(azimuth > 360) { fmod(azimuth, 360); }
 	
-	/* if(usingCompass) {
-		glRotatef(-altitude, 0.0f, 1.0f, 0.0f);
-		glRotatef(azimuthCompass + 90, 0.0f, 0.0f, 1.0f);
-	}
-	else { */
-		glRotatef(-altitude, 0.0f, 1.0f, 0.0f);
-		glRotatef(-azimuth, 0.0f, 0.0f, 1.0f);
-	//}
+
+	glRotatef(-altitude, 0.0f, 1.0f, 0.0f);
+	glRotatef(-azimuth, 0.0f, 0.0f, 1.0f);
+	
 	//NSLog(@"%f ",altitude);
 }
 

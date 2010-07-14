@@ -66,6 +66,7 @@
 	BOOL usingCompass;
 	float azimuthCompass;
 	float altitudeCompass;
+	NSArray* altitudeCompassArray;
 	
 	GLfloat zoomingValue; 
 	

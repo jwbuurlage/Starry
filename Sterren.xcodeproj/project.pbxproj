@@ -1371,8 +1371,7 @@
 				);
 				INFOPLIST_FILE = "Sterren-Info.plist";
 				PRODUCT_NAME = Sterren;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "484A7DD1-B34F-4034-90CC-BE302228913F";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2 /usr/include/libxml2";
 			};
