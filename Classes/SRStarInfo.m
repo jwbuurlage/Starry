@@ -137,10 +137,21 @@
 	float decTmp = 90-(180/M_PI)*acosf([theStar position].z/20); 
 	//NSLog(@"test decTmp %f",decTmp);
 	
-
-	NSString* constellation = [[theStar bayer] substringWithRange:NSMakeRange([[theStar bayer] length]-3, 3)];
-	[[[elements objectAtIndex:[elements count] - 8] texture] release];
-	[[elements objectAtIndex:[elements count] - 8] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(constellation,@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
+	@try {
+		NSString* constellation = [[theStar bayer] substringWithRange:NSMakeRange([[theStar bayer] length]-3, 3)];
+		[[[elements objectAtIndex:[elements count] - 8] texture] release];
+		[[elements objectAtIndex:[elements count] - 8] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(constellation,@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
+		
+	}
+	@catch (NSException * e) {
+		NSString* constellation = [theStar bayer];
+		[[[elements objectAtIndex:[elements count] - 8] texture] release];
+		[[elements objectAtIndex:[elements count] - 8] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(constellation,@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
+		NSLog(@"Bayer exeption trown %@",e);
+	}
+	@finally {
+		
+	}
 	
 	[[[elements objectAtIndex:[elements count] - 7] texture] release];
 	//NSString* hip = [[theStar bayer] substringWithRange:NSMakeRange( length]-3, 3)];

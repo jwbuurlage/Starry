@@ -27,7 +27,7 @@
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSArray *languages = [defaults objectForKey:@"AppleLanguages"];
-	NSString *currentLanguage = [languages objectAtIndex:0];
+	//NSString *currentLanguage = [languages objectAtIndex:0];
 	
 	NSLog(@"Current Locale: %@", [[NSLocale currentLocale] localeIdentifier]);
 	//NSLog(@"Current language: %@", currentLanguage);
