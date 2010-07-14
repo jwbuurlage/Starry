@@ -60,7 +60,7 @@
 	iPadHeight = theView.bounds.size.height;
 	
 	CGPoint relativePoint;
-	relativePoint.x = [aTouch locationInView:theView].x*360/iPadWidth;
+	relativePoint.x = [aTouch locationInView:theView].x*320/iPadWidth;
 	relativePoint.y = [aTouch locationInView:theView].y*480/iPadHeight;
 	
 	if([[renderer interface] UIElementAtPoint:relativePoint]) {

@@ -1352,6 +1352,7 @@
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2 /usr/include/libxml2";
+				VALID_ARCHS = armv6;
 			};
 			name = Debug;
 		};

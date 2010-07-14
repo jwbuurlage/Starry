@@ -54,7 +54,8 @@
 			[theManager startUpdatingHeading];
 			theManager.delegate = self;
 			[[UIAccelerometer sharedAccelerometer] setDelegate:self];
-			[[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.35]; 
+			[[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.1
+			 ]; 
 		}
 	}
 	
@@ -210,8 +211,10 @@
 
 - (void)adjustView {
 	if(usingCompass) {
-		altitude = altitudeCompass;
-		azimuth = -(azimuthCompass + 90);
+		if((altitude - altitudeCompass) > 3 || (altitude - altitudeCompass) < -3) {
+			altitude = (altitude + floor(altitudeCompass*100.0 + 0.5)/100.0)/2;
+		}
+		azimuth = -azimuthCompass - 90;
 	}
 	
 	if(altitude > 89.9) { altitude = 89.9; }
