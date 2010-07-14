@@ -1213,10 +1213,21 @@
 	// Nu om focus te zetten op dit UI element
 	[fieldTmp becomeFirstResponder];
 	// Nu transleren we de hele glView naar boven om plaats te maken voor het keyboard, met animatie
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
-	[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(160*iPadWidth/320 , 0)];
-	[UIView commitAnimations];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	{
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
+		[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(160*iPadWidth/360 , 0)];
+		[UIView commitAnimations];
+	}
+	else
+	{
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
+		[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(160*iPadWidth/320 , 0)];
+		[UIView commitAnimations];
+	}
+	
 }
 
 -(void)showSliderWith:(NSString*)method{
