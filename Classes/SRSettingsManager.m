@@ -25,6 +25,7 @@
 		showRedOverlay = [prefs boolForKey:@"SRshowRedOverlay"];
 		showPlanetLabels = [prefs boolForKey:@"SRshowPlanetLabels"];
 		showPositionOverlay = [prefs boolForKey:@"SRshowPositionOverlay"];
+		
 	}
 	return self;
 }

@@ -15,7 +15,7 @@
 
 @implementation SRLocationModule
 
-@synthesize latitude,longitude,longVisible,latVisible,locationManager, GPS;
+@synthesize latitude,longitude,longVisible,latVisible,locationManager, GPS, Compass;
 
 -(id)initWithSRLocation:(SRLocation*)aLocation {
 	if(self = [super init]) {
@@ -68,13 +68,20 @@
 															   texture:nil 
 															identifier:@"long" 
 															 clickable:YES]];
+		
+		
 				 
 
-		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(380,-53, 28,28) 
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(380,-55, 28,28) 
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:locationString]]
 																							   identifier:@"gps-toggle" 
 																							  clickable:YES]];
-		
+		if([[[CLLocationManager alloc] init] headingAvailable]) {
+		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(345,-55, 28,28) 
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"compass.png"]]
+															identifier:@"compass" 
+															 clickable:YES]];
+		}
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(70,-55, 28,28) 
 															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"latitude.png"]] 
 															identifier:@"lat-edit" 
@@ -213,6 +220,19 @@
 		[locationManager useGPSValues];
 		[[elements objectAtIndex:6] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"location_on.png"]]];
 		GPS = TRUE;
+	}
+}
+
+-(void)toggleCompass {
+	if(Compass) {
+		[locationManager setUseCompass:FALSE];
+		[[elements objectAtIndex:7] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"compass_off.png"]]];
+		Compass = FALSE;
+	}
+	else {
+		[locationManager setUseCompass:TRUE];
+		[[elements objectAtIndex:7] setTexture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"compass.png"]]];
+		Compass = TRUE;
 	}
 }
 

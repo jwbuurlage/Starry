@@ -210,7 +210,7 @@
 }
 
 - (void)adjustView {
-	if(usingCompass) {
+	if(usingCompass && [[[[UIApplication sharedApplication] delegate] location] useCompass]) {
 		if((altitude - altitudeCompass) > 3 || (altitude - altitudeCompass) < -3) {
 			altitude = (altitude + floor(altitudeCompass*100.0 + 0.5)/100.0)/2;
 		}

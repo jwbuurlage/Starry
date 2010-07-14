@@ -760,6 +760,9 @@
 		else if(clicker == @"gps-toggle") {
 			[locationModule toggleGPS];
 		}
+		else if(clicker == @"compass") {
+			[locationModule toggleCompass];
+		}
 		else if(clicker == @"red") {
 			if(![[appDelegate settingsManager] showRedOverlay]) {
 				if(slider) {

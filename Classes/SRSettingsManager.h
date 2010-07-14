@@ -13,6 +13,7 @@
 	double brightnessFactor;
 	BOOL showConstellations;
 	BOOL showRedOverlay;
+
 	BOOL showPlanetLabels;
 	BOOL showPositionOverlay;
 }
@@ -20,6 +21,7 @@
 @property (nonatomic,readwrite) double brightnessFactor;
 @property (nonatomic,readwrite) BOOL showConstellations;
 @property (nonatomic,readwrite) BOOL showPlanetLabels;
+
 @property (nonatomic,readwrite) BOOL showPositionOverlay;
 @property (nonatomic,readwrite) BOOL showRedOverlay;
 

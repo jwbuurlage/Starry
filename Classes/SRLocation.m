@@ -16,7 +16,7 @@
 
 @implementation SRLocation
 
-@synthesize locationManager,latitude,longitude,staticValues;
+@synthesize locationManager,latitude,longitude,staticValues,useCompass;
 
 - (id) init {
     self = [super init];
@@ -28,6 +28,7 @@
 		// Locatie opvragen van vorige keer
 		NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 		staticValues = [prefs boolForKey:@"SRstaticCoordinates"];
+		useCompass = [prefs boolForKey:@"SRuseCompass"];
 		
 		if (staticValues) {
 			longitude = [prefs floatForKey:@"SRlong"];
@@ -36,6 +37,7 @@
 		else {
 			[self useGPSValues];
 		}
+		
     }
     return self;
 }

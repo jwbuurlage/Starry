@@ -26,7 +26,7 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSArray *languages = [defaults objectForKey:@"AppleLanguages"];
+	//NSArray *languages = [defaults objectForKey:@"AppleLanguages"];
 	//NSString *currentLanguage = [languages objectAtIndex:0];
 	
 	NSLog(@"Current Locale: %@", [[NSLocale currentLocale] localeIdentifier]);
@@ -62,7 +62,8 @@
 	[prefs setBool:		[settingsManager showRedOverlay]		forKey:@"SRshowRedOverlay"];
 	[prefs setBool:		[settingsManager showConstellations]	forKey:@"SRshowConstellations"];
 	[prefs setBool:		[settingsManager showPlanetLabels]		forKey:@"SRshowPlanetLabels"];
-	[prefs setBool:		[settingsManager showPositionOverlay]		forKey:@"SRshowPositionOverlay"];
+	[prefs setBool:		[settingsManager showPositionOverlay]	forKey:@"SRshowPositionOverlay"];
+	[prefs setBool:		[location useCompass]					forKey:@"SRuseCompass"];
 	[prefs setFloat:	[settingsManager brightnessFactor]		forKey:@"SRbrightness"];
 	[prefs synchronize];
 }

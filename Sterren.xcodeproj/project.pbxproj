@@ -30,6 +30,8 @@
 		769733CD10EF73670057E29F /* starInfoBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 769733CC10EF73670057E29F /* starInfoBg.png */; };
 		76A3BF0D114BA36C00DE6BB1 /* icon_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 76A3BF0C114BA36C00DE6BB1 /* icon_large.png */; };
 		76B2988510BD9EBB00EEDA5D /* SRLocationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */; };
+		76B49EC311EDD7C400519896 /* compass_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B49EC111EDD7C400519896 /* compass_off.png */; };
+		76B49EC411EDD7C400519896 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B49EC211EDD7C400519896 /* compass.png */; };
 		76B7CC59108B235100F87C68 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B7CC58108B235100F87C68 /* XMLParser.m */; };
 		76D7294310EBD8F80018EB62 /* SRStarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7294210EBD8F80018EB62 /* SRStarInfo.m */; };
 		76E6933810FA31BD00924A41 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6933710FA31BD00924A41 /* libsqlite3.0.dylib */; };
@@ -292,6 +294,8 @@
 		76A3BF0C114BA36C00DE6BB1 /* icon_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_large.png; path = Resources/icon_large.png; sourceTree = "<group>"; };
 		76B2988310BD9EBB00EEDA5D /* SRLocationModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLocationModule.h; sourceTree = "<group>"; };
 		76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLocationModule.m; sourceTree = "<group>"; };
+		76B49EC111EDD7C400519896 /* compass_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass_off.png; path = Resources/compass_off.png; sourceTree = "<group>"; };
+		76B49EC211EDD7C400519896 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass.png; path = Resources/compass.png; sourceTree = "<group>"; };
 		76B7CC57108B235100F87C68 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		76B7CC58108B235100F87C68 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		76D7294110EBD8F80018EB62 /* SRStarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStarInfo.h; sourceTree = "<group>"; };
@@ -625,6 +629,8 @@
 				76F8DC6B10FF2784004C91EF /* slider_highlighted_red.png */,
 				76F8DC6C10FF2784004C91EF /* slider_max_red.png */,
 				76F8DC6D10FF2784004C91EF /* slider_min_red.png */,
+				76B49EC111EDD7C400519896 /* compass_off.png */,
+				76B49EC211EDD7C400519896 /* compass.png */,
 				76F8DC6E10FF2784004C91EF /* slider_normal_red.png */,
 				7695E64010F2A3350064FFD9 /* messierForeground.png */,
 				761E580F10E65B03003B9CFE /* notFound.png */,
@@ -1268,6 +1274,8 @@
 				AC153B2D117DFA5500377E44 /* star.png in Resources */,
 				B587974311DA660800CE61C4 /* MainWindowiPad.xib in Resources */,
 				76A3BF0D114BA36C00DE6BB1 /* icon_large.png in Resources */,
+				76B49EC311EDD7C400519896 /* compass_off.png in Resources */,
+				76B49EC411EDD7C400519896 /* compass.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

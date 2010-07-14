@@ -26,11 +26,12 @@
 	float longitude;
 	float latitude;
 	BOOL staticValues;
-	
+	BOOL useCompass;
 	float heading;
 }
 
 @property (nonatomic, retain) CLLocationManager *locationManager; 
+@property (nonatomic,readwrite) BOOL useCompass;
 @property (readwrite, assign) float longitude;
 @property (readwrite, assign) float latitude;
 @property (readonly) BOOL staticValues;

@@ -1,0 +1,14 @@
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m:19: error: no declaration of property 'useCompass' found in the interface
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m: In function '-[SRLocation init]':
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m:31: error: 'useCompass' undeclared (first use in this function)
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m:31: error: (Each undeclared identifier is reported only once
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m:31: error: for each function it appears in.)
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m: In function '-[SRLocation locationManager:didUpdateToLocation:fromLocation:]':
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m:65: warning: no '-updateDisplayedLocationData' method found
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m:65: warning: (Messages without a matching method signature
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m:65: warning: will be assumed to return 'id' and accept
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m:65: warning: '...' as arguments.)
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m: In function '-[SRLocation setLatitude:]':
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m:125: warning: no '-updateDisplayedLocationData' method found
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m: In function '-[SRLocation setLongitude:]':
+/Users/Thijs/Desktop/StarDust-iPhone/Classes/SRLocation.m:133: warning: no '-updateDisplayedLocationData' method found

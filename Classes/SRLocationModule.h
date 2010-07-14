@@ -28,6 +28,8 @@
 	BOOL longVisible;
 	
 	BOOL GPS;
+	BOOL Compass
+	;
 }
 
 @property (readonly) float latitude;
@@ -36,11 +38,13 @@
 @property (readwrite) BOOL latVisible;
 @property (readwrite) BOOL longVisible;
 @property (readonly) BOOL GPS;
+@property (readonly) BOOL Compass;
 
 -(id)initWithSRLocation:(SRLocation*)aLocation;
 -(void)updateDisplayedLocationData;
 
 -(void)toggleGPS;
+-(void)toggleCompass;
 
 /*-(void)hideLongitude;
 -(void)showLongitude;
