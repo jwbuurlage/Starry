@@ -16,7 +16,7 @@
 
 @implementation SRModule
 
-@synthesize visible, hiding, alphaValue, xValueIcon, initialXValueIcon, elements;
+@synthesize visible, hiding, alphaValue, xValueIcon, initialXValueIcon, elements, keyboardVisible;
 
 -(void)show {
 	xValueIcon = initialXValueIcon;

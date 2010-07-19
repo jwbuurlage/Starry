@@ -23,6 +23,7 @@
 	NSMutableArray* elements;
 	BOOL visible; 
 	BOOL hiding;
+	BOOL keyboardVisible;
 		
 	GLuint textures[9];
 	GLfloat textureCorners[150];
@@ -35,6 +36,7 @@
 
 @property (nonatomic, assign) BOOL visible;
 @property (nonatomic, assign) BOOL hiding;
+@property (nonatomic, assign) BOOL keyboardVisible;
 @property (nonatomic, assign) float alphaValue;
 @property (nonatomic, assign) float xValueIcon;
 @property (nonatomic, assign) float initialXValueIcon;

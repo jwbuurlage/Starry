@@ -1228,9 +1228,11 @@
 			
 		}
 		
+		
+		
 		for (SRModule* module in modules) {
 			
-			
+			[module setKeyboardVisible:TRUE];
 			
 			for (SRInterfaceElement* element in [module elements]) {
 				
@@ -1239,6 +1241,7 @@
 			}
 			
 		}
+		
 	}
 	else
 	{
@@ -1353,7 +1356,7 @@
 			
 			for (SRModule* module in modules) {
 				
-				
+				[module setKeyboardVisible:FALSE];
 				
 				for (SRInterfaceElement* element in [module elements]) {
 					
@@ -1362,6 +1365,8 @@
 				}
 				
 			}
+			
+			
 			
 		}
 		else

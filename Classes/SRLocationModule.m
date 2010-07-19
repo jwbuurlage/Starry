@@ -190,7 +190,10 @@
 			if(hiding) {
 				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 			}
-			[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57, 41, 31)];
+			if(keyboardVisible)
+				[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57+145, 41, 31)];
+			else 
+				[[elements objectAtIndex:1] setBounds:CGRectMake(xValueIcon, -57, 41, 31)];
 			[[mElement texture] drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
