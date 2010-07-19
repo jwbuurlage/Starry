@@ -1191,11 +1191,15 @@
 	
 	if(fieldTmp)
 		[fieldTmp release];
-	fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX-36)*320/iPadWidth, (locY+20)*iPadHeight/480, 80, 32)];
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX*320/iPadWidth)+288, (locY*iPadHeight/480)+77
+																 , 200, 32)];
 		[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:22]];
-	else
+	}
+	else {
+		fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX-36)*320/iPadWidth, (locY+20)*iPadHeight/480, 80, 32)];
 		[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:11]];	
+	}
 	[fieldTmp setTextColor:color];
 	[fieldTmp setTextAlignment:UITextAlignmentLeft];
 	[fieldTmp setDelegate:delegate];
