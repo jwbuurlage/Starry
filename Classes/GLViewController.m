@@ -234,7 +234,10 @@
 	
 	//FIXME: Fout in deze berekening voor volledig ingezoomd
 	//if(fieldOfView > 0.75) {
-	radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/(iPadWidth+(fieldOfView*(iPadWidth/2)));
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+		radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/(iPadWidth+(fieldOfView*(iPadWidth/4)));
+	else 
+		radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/(iPadWidth+(fieldOfView*(iPadWidth/2)));
 	//}
 	//else {
 	//	radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/iPadWidth;

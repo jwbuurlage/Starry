@@ -67,7 +67,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 76FBD269109DE495005A0ADE /* Aster */;
-		activeSDKPreference = iphonesimulator3.2;
+		activeSDKPreference = iphoneos3.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Aster */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Aster */,
@@ -502,7 +502,7 @@
 		ignoreCount = 0;
 		lineNumber = 405;
 		location = Sterren;
-		modificationTime = 301261065.765151;
+		modificationTime = 301261290.428972;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -2474,9 +2474,9 @@
 	};
 	AC55F121109600990021D39C /* SRInterface.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {980, 24024}}";
-			sepNavSelRange = "{35329, 9}";
-			sepNavVisRange = "{31145, 1278}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 23881}}";
+			sepNavSelRange = "{38721, 0}";
+			sepNavVisRange = "{37183, 3218}";
 			sepNavWindowFrame = "{{15, 80}, {1039, 798}}";
 		};
 	};
