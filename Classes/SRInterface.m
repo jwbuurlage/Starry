@@ -1192,7 +1192,10 @@
 	if(fieldTmp)
 		[fieldTmp release];
 	fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX-36)*320/iPadWidth, (locY+20)*iPadHeight/480, 80, 32)];
-	[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:11]];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+		[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:22]];
+	else
+		[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:11]];	
 	[fieldTmp setTextColor:color];
 	[fieldTmp setTextAlignment:UITextAlignmentLeft];
 	[fieldTmp setDelegate:delegate];
@@ -1215,10 +1218,23 @@
 	// Nu transleren we de hele glView naar boven om plaats te maken voor het keyboard, met animatie
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 	{
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
-		[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(160*iPadWidth/360 , 0)];
-		[UIView commitAnimations];
+		for (SRInterfaceElement* element in UIElements) {
+			
+			[element setBounds:CGRectApplyAffineTransform([element bounds],CGAffineTransformMakeTranslation(0 , 145))];
+			
+		}
+		
+		for (SRModule* module in modules) {
+			
+			
+			
+			for (SRInterfaceElement* element in [module elements]) {
+				
+				[element setBounds:CGRectApplyAffineTransform([element bounds],CGAffineTransformMakeTranslation(0 , 145))];
+				
+			}
+			
+		}
 	}
 	else
 	{
@@ -1323,11 +1339,37 @@
 		// Hide de uiElementsView
 		[[appDelegate uiElementsView] setHidden:YES];
 		// Nu transleren we de hele glView weer naar beneden omdat het keyboard weg gaat.
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
-		// van 160,0 terug naar 0,0
-		[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(0 , 0)];
-		[UIView commitAnimations];
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+		{
+			for (SRInterfaceElement* element in UIElements) {
+				
+				[element setBounds:CGRectApplyAffineTransform([element bounds],CGAffineTransformMakeTranslation(0 , -145))];
+				
+			}
+			
+			for (SRModule* module in modules) {
+				
+				
+				
+				for (SRInterfaceElement* element in [module elements]) {
+					
+					[element setBounds:CGRectApplyAffineTransform([element bounds],CGAffineTransformMakeTranslation(0 , -145))];
+					
+				}
+				
+			}
+			
+		}
+		else
+		{
+			[UIView beginAnimations:nil context:NULL];
+			[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
+			// van 160,0 terug naar 0,0
+			[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(0 , 0)];
+			[UIView commitAnimations];
+		}
+		
+		
 		
 		NSString *aValue = [[NSString alloc] initWithString:[fieldTmp text]];
 		
