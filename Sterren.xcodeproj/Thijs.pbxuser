@@ -416,6 +416,14 @@
 			761CC4F711F4E744001C040B /* PBXTextBookmark */ = 761CC4F711F4E744001C040B /* PBXTextBookmark */;
 			761CC4F811F4E744001C040B /* PBXTextBookmark */ = 761CC4F811F4E744001C040B /* PBXTextBookmark */;
 			761CC4F911F4E744001C040B /* PlistBookmark */ = 761CC4F911F4E744001C040B /* PlistBookmark */;
+			761CC50311F4E96E001C040B /* PBXTextBookmark */ = 761CC50311F4E96E001C040B /* PBXTextBookmark */;
+			761CC50411F4E96E001C040B /* PBXTextBookmark */ = 761CC50411F4E96E001C040B /* PBXTextBookmark */;
+			761CC50711F4EA25001C040B /* PBXTextBookmark */ = 761CC50711F4EA25001C040B /* PBXTextBookmark */;
+			761CC50811F4EA25001C040B /* PBXTextBookmark */ = 761CC50811F4EA25001C040B /* PBXTextBookmark */;
+			761CC50911F4EA25001C040B /* PBXTextBookmark */ = 761CC50911F4EA25001C040B /* PBXTextBookmark */;
+			761CC50A11F4EA25001C040B /* PBXTextBookmark */ = 761CC50A11F4EA25001C040B /* PBXTextBookmark */;
+			761CC50B11F4EA25001C040B /* PBXTextBookmark */ = 761CC50B11F4EA25001C040B /* PBXTextBookmark */;
+			761CC50C11F4EA25001C040B /* PlistBookmark */ = 761CC50C11F4EA25001C040B /* PlistBookmark */;
 			76B49E3911EDCAA900519896 = 76B49E3911EDCAA900519896 /* PBXTextBookmark */;
 			76B49E5F11EDCC6800519896 = 76B49E5F11EDCC6800519896 /* PBXTextBookmark */;
 			76B49EAC11EDD63400519896 = 76B49EAC11EDD63400519896 /* PBXTextBookmark */;
@@ -574,7 +582,7 @@
 		ignoreCount = 0;
 		lineNumber = 405;
 		location = Sterren;
-		modificationTime = 301262643.94945;
+		modificationTime = 301263345.651272;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -1365,7 +1373,7 @@
 		fRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */;
 		name = "SRLocationModule.m: 84";
 		rLen = 0;
-		rLoc = 3452;
+		rLoc = 3716;
 		rType = 0;
 		vrLen = 3803;
 		vrLoc = 1139;
@@ -2431,7 +2439,7 @@
 		fRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */;
 		name = "SRLocationModule.m: 193";
 		rLen = 0;
-		rLoc = 7516;
+		rLoc = 7780;
 		rType = 0;
 		vrLen = 2384;
 		vrLoc = 6440;
@@ -2441,7 +2449,7 @@
 		fRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */;
 		name = "SRLocationModule.m: 194";
 		rLen = 0;
-		rLoc = 7589;
+		rLoc = 7853;
 		rType = 0;
 		vrLen = 2472;
 		vrLoc = 6465;
@@ -2467,6 +2475,84 @@
 		rLen = 0;
 		rLoc = 9223372036854775807;
 	};
+	761CC50311F4E96E001C040B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC24C99410BAE8F00063DF87 /* SRTimeModule.m */;
+		rLen = 6;
+		rLoc = 5929;
+		rType = 0;
+	};
+	761CC50411F4E96E001C040B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC24C99410BAE8F00063DF87 /* SRTimeModule.m */;
+		name = "SRTimeModule.m: 139";
+		rLen = 6;
+		rLoc = 5929;
+		rType = 0;
+		vrLen = 315;
+		vrLoc = 5750;
+	};
+	761CC50711F4EA25001C040B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SterrenAppDelegate.m */;
+		name = "SterrenAppDelegate.m: 66";
+		rLen = 0;
+		rLoc = 2497;
+		rType = 0;
+		vrLen = 2708;
+		vrLoc = 0;
+	};
+	761CC50811F4EA25001C040B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7644565010C5837800AB935D /* SRSettingsModule.m */;
+		name = "SRSettingsModule.m: 77";
+		rLen = 0;
+		rLoc = 3053;
+		rType = 0;
+		vrLen = 3413;
+		vrLoc = 932;
+	};
+	761CC50911F4EA25001C040B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */;
+		name = "SRLocationModule.m: 194";
+		rLen = 0;
+		rLoc = 7853;
+		rType = 0;
+		vrLen = 2461;
+		vrLoc = 6476;
+	};
+	761CC50A11F4EA25001C040B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */;
+		name = "SRLocationModule.m: 50";
+		rLen = 0;
+		rLoc = 1390;
+		rType = 0;
+		vrLen = 3394;
+		vrLoc = 629;
+	};
+	761CC50B11F4EA25001C040B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AC55F121109600990021D39C /* SRInterface.m */;
+		name = "SRInterface.m: 1194";
+		rLen = 57;
+		rLoc = 38578;
+		rType = 0;
+		vrLen = 2187;
+		vrLoc = 37936;
+	};
+	761CC50C11F4EA25001C040B /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Sterren-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/Thijs/Desktop/StarDust-iPhone/Sterren-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
 	7644564F10C5837800AB935D /* SRSettingsModule.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1161, 631}}";
@@ -2477,9 +2563,9 @@
 	};
 	7644565010C5837800AB935D /* SRSettingsModule.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1699, 1612}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1699, 2457}}";
 			sepNavSelRange = "{3053, 0}";
-			sepNavVisRange = "{1802, 1813}";
+			sepNavVisRange = "{932, 3413}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -2527,9 +2613,9 @@
 	};
 	76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1818, 3029}}";
-			sepNavSelRange = "{7589, 0}";
-			sepNavVisRange = "{6465, 2472}";
+			sepNavIntBoundsRect = "{{0, 0}, {1692, 3172}}";
+			sepNavSelRange = "{1390, 0}";
+			sepNavVisRange = "{629, 3394}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -2636,7 +2722,7 @@
 		fRef = 76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */;
 		name = "SRLocationModule.m: 84";
 		rLen = 0;
-		rLoc = 3452;
+		rLoc = 3716;
 		rType = 0;
 		vrLen = 3722;
 		vrLoc = 1142;
@@ -2948,9 +3034,9 @@
 	};
 	AC24C99410BAE8F00063DF87 /* SRTimeModule.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1664, 2132}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1524, 2327}}";
 			sepNavSelRange = "{5929, 6}";
-			sepNavVisRange = "{3342, 2923}";
+			sepNavVisRange = "{5750, 315}";
 		};
 	};
 	AC55F120109600990021D39C /* SRInterface.h */ = {
@@ -2962,9 +3048,9 @@
 	};
 	AC55F121109600990021D39C /* SRInterface.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1076, 23686}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 23673}}";
 			sepNavSelRange = "{38578, 57}";
-			sepNavVisRange = "{37849, 1952}";
+			sepNavVisRange = "{37936, 2187}";
 			sepNavWindowFrame = "{{15, 80}, {1039, 798}}";
 		};
 	};

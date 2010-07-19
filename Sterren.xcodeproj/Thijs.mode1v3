@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>761CC4F811F4E744001C040B</string>
+						<string>761CC50B11F4EA25001C040B</string>
 						<key>history</key>
 						<array>
 							<string>76B49F8711EDED2600519896</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>761CC4F911F4E744001C040B</string>
+						<string>761CC50C11F4EA25001C040B</string>
 						<key>history</key>
 						<array>
 							<string>76B49F8611EDED2600519896</string>
@@ -370,7 +370,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 288}, {290, 1300}}</string>
+							<string>{{0, 0}, {290, 1300}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -419,7 +419,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>761CC4F711F4E744001C040B</string>
+										<string>761CC50A11F4EA25001C040B</string>
 										<key>history</key>
 										<array>
 											<string>76142E3711DBAEA6001E2C0B</string>
@@ -436,7 +436,6 @@
 											<string>76B49ECF11EDD91A00519896</string>
 											<string>76B49ED711EDDA7A00519896</string>
 											<string>76B49EF011EDDEC400519896</string>
-											<string>76B49F4911EDE87300519896</string>
 											<string>76B49F4A11EDE87300519896</string>
 											<string>76B49F7711EDEB1100519896</string>
 											<string>761CC3AA11F4D8E1001C040B</string>
@@ -504,7 +503,9 @@
 											<string>761CC4F311F4E744001C040B</string>
 											<string>761CC4F411F4E744001C040B</string>
 											<string>761CC4F511F4E744001C040B</string>
-											<string>761CC4F611F4E744001C040B</string>
+											<string>761CC50711F4EA25001C040B</string>
+											<string>761CC50811F4EA25001C040B</string>
+											<string>761CC50911F4EA25001C040B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -702,14 +703,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>761CC4FC11F4E744001C040B</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>761CC39F11F4D7DB001C040B</string>
 		<string>761CC39B11F4D7B8001C040B</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>7637AACD11DB681C00580921</string>
 		<string>76B49F4F11EDE87300519896</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>76B49F0411EDE05200519896</string>
 		<string>/Users/Thijs/Desktop/StarDust-iPhone/Sterren.xcodeproj</string>
 	</array>
@@ -1019,7 +1019,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

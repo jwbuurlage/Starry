@@ -20,6 +20,7 @@
 -(id)initWithSRLocation:(SRLocation*)aLocation {
 	if(self = [super init]) {
 		NSString* locationString;
+		NSString* compassString;
 		
 		locationManager = aLocation;
 		
@@ -38,6 +39,15 @@
 		else {
 			locationString = [[NSString alloc] initWithString:@"location_on.png"];
 			GPS = TRUE;
+		}
+		
+		if([locationManager useCompass]) {
+			compassString = [[NSString alloc] initWithString:@"compass.png"];
+			Compass = TRUE;
+		}
+		else {
+			compassString = [[NSString alloc] initWithString:@"compass_off.png"];
+			Compass = FALSE;
 		}
 		
 		//laad elements in - sla op in textures		
@@ -78,7 +88,7 @@
 																							  clickable:YES]];
 		if([[[CLLocationManager alloc] init] headingAvailable]) {
 		[elements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(345,-55, 28,28) 
-															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"compass.png"]]
+															   texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:compassString]]
 															identifier:@"compass" 
 															 clickable:YES]];
 		}
