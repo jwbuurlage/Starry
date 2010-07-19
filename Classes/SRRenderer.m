@@ -680,7 +680,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		else {
 			if (i == 0) { // Bij de zon laad de zon texture in
 				glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
-				glBindTexture(GL_TEXTURE_2D, textures[20]);
+				glBindTexture(GL_TEXTURE_2D, textures[5]);
 			}
 			else { // Bij planeten laad de planeet texture in
 				glBindTexture(GL_TEXTURE_2D, textures[7]);
